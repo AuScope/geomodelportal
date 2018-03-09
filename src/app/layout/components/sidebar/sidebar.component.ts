@@ -10,6 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class SidebarComponent {
     isActive: boolean = false;
     showMenu: string = '';
+    showMenu2: string = '';
     pushRightClass: string = 'push-right';
 
     constructor(private translate: TranslateService, public router: Router) {
@@ -38,6 +39,14 @@ export class SidebarComponent {
             this.showMenu = '0';
         } else {
             this.showMenu = element;
+        }
+    }
+    
+    addExpandClass2(element: any) {
+        if (element === this.showMenu2) {
+            this.showMenu2 = '0';
+        } else {
+            this.showMenu2 = element;
         }
     }
 

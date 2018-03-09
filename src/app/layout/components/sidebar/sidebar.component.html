@@ -9,29 +9,46 @@
             </a>
             <li class="nested" [class.expand]="showMenu === 'pages'">
                 <ul class="submenu">
-                    <li>
-                        <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;South Australia</span></a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;Tasmania</span></a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;New South Wales</span></a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;Victoria</span></a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;Queensland</span></a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;Northern Territory</span></a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;Western Australia</span></a>
-                    </li>
+                    <div class="nested-menu">
+                        <a class="list-group-item" (click)="addExpandClass2('pages')">
+                            <span><i class="fa fa-plus"></i>&nbsp;South Australia</span>
+                        </a>
+                        <li class="nested" [class.expand]="showMenu2 === 'pages'">
+                            <ul class="submenu">
+                                <li>
+                                   <a href="javascript:void(0)"><span>&nbsp;North Gawler</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </div>
                 </ul>
-            </li>
+            </li>                        
+                        <li class="nested" [class.expand]="showMenu2 === 'pages'">
+                            <ul class="submenu">
+                                <li>
+                                   <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;South Australia</span></a>
+                                </li>
+                                <li>
+                                   <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;Tasmania</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;New South Wales</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;Victoria</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;Queensland</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;Northern Territory</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;Western Australia</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                   
         </div>
     </div>
 </nav>
