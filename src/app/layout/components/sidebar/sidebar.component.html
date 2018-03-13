@@ -1,54 +1,45 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+    <h2 class="text-muted">North Gawler</h2>
     <div class="list-group">
-        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-dashboard"></i>&nbsp;Dashboard
-        </a>
         <div class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass('pages')">
-                <span><i class="fa fa-plus"></i>&nbsp;Models</span>
+                <span><i class="fa fa-plus"></i>&nbsp;Faults</span>
             </a>
             <li class="nested" [class.expand]="showMenu === 'pages'">
-                <ul class="submenu">
+                <ul class="submenu" style="padding-left: 10px;">
                     <div class="nested-menu">
                         <a class="list-group-item" (click)="addExpandClass2('pages')">
-                            <span><i class="fa fa-plus"></i>&nbsp;South Australia</span>
+                            <div class="checkbox-inline"><span><i class="fa fa-plus"></i>Ammaroodinna&nbsp;</span><input type="checkbox" value=""></div>
                         </a>
                         <li class="nested" [class.expand]="showMenu2 === 'pages'">
-                            <ul class="submenu">
+                            <ul class="submenu" style="padding-left: 20px;">
                                 <li>
-                                   <a href="javascript:void(0)"><span>&nbsp;North Gawler</span></a>
+                                   <a class="list-group-item"><span>Ammaroodinna Fault 1&nbsp;<input type="checkbox" value=""></span></a>
+                                </li>
+                                <li>
+                                   <a class="list-group-item"><span>Ammaroodinna Fault 2&nbsp;<input type="checkbox" value=""></span></a>
+                                </li>
+                                <li>
+                                    <a class="list-group-item"><span>Ammaroodinna Fault 3&nbsp;<input type="checkbox" value=""></span></a>
+                                </li>
+                                <li>
+                                    <a class="list-group-item"><span>Ammaroodinna Fault 4&nbsp;<input type="checkbox" value=""></span></a>
                                 </li>
                             </ul>
                         </li>
                     </div>
                 </ul>
-            </li>                        
-                        <li class="nested" [class.expand]="showMenu2 === 'pages'">
-                            <ul class="submenu">
-                                <li>
-                                   <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;South Australia</span></a>
-                                </li>
-                                <li>
-                                   <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;Tasmania</span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;New South Wales</span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;Victoria</span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;Queensland</span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;Northern Territory</span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><span><i class="fa fa-plus"></i>&nbsp;Western Australia</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                   
+            </li>
+
+            <a class="list-group-item">
+                <span><i class="fa fa-plus"></i>&nbsp;Boreholes</span>
+            </a>
+            <a class="list-group-item">
+                <span><i class="fa fa-plus"></i>&nbsp;Gravity</span>
+            </a>
+            <a class="list-group-item">
+                <span><i class="fa fa-plus"></i>&nbsp;Magnetism</span>
+            </a>
         </div>
     </div>
 </nav>
