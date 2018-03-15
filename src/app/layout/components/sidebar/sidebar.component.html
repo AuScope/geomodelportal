@@ -6,31 +6,23 @@
                 <span><i class="fa fa-plus"></i>&nbsp;Faults</span>
             </a>
             <li class="nested" [class.expand]="showMenu === 'pages'">
-                <ul class="submenu" style="padding-left: 10px;">
-                    <div class="nested-menu">
-                        <a class="list-group-item" (click)="addExpandClass2('pages')">
-                            <div class="checkbox-inline"><span><i class="fa fa-plus"></i>Ammaroodinna&nbsp;</span><input type="checkbox" value=""></div>
-                        </a>
-                        <li class="nested" [class.expand]="showMenu2 === 'pages'">
-                            <ul class="submenu" style="padding-left: 20px;">
-                                <li>
-                                   <a class="list-group-item"><span>Ammaroodinna Fault 1&nbsp;<input type="checkbox" value=""></span></a>
-                                </li>
-                                <li>
-                                   <a class="list-group-item"><span>Ammaroodinna Fault 2&nbsp;<input type="checkbox" value=""></span></a>
-                                </li>
-                                <li>
-                                    <a class="list-group-item"><span>Ammaroodinna Fault 3&nbsp;<input type="checkbox" value=""></span></a>
-                                </li>
-                                <li>
-                                    <a class="list-group-item"><span>Ammaroodinna Fault 4&nbsp;<input type="checkbox" value=""></span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
+                <ul class="nested" [class.expand]="showMenu === 'pages'" style="padding-left: 20px;">
+                    <li>
+                        <a class="list-group-item"><span>Ammaroodinna&nbsp;</span></a>
+                    </li>
+                </ul>
+                <ul class="submenu" style="font-size: 12px; padding-left: 40px;">
+                    <li>
+                        <a class="list-group-item"><span><i class="fa fa-gear"></i>&nbsp;Settings</span></a>
+                    </li>
+                    <li>
+                        <a class="list-group-item"><span>Height Offset&nbsp;<mat-slider thumbLabel min="1" max="100" step="1" value="1"></mat-slider></span></a>
+                    </li>
+                    <li>
+                        <a class="list-group-item"><span>Transparency&nbsp;<mat-slider thumbLabel min="1" max="100" step="1" value="100"></mat-slider></span></a>
+                    </li>
                 </ul>
             </li>
-
             <a class="list-group-item">
                 <span><i class="fa fa-plus"></i>&nbsp;Boreholes</span>
             </a>
@@ -39,6 +31,9 @@
             </a>
             <a class="list-group-item">
                 <span><i class="fa fa-plus"></i>&nbsp;Magnetism</span>
+            </a>
+            <a class="list-group-item">
+                <span><i class="fa fa-gear"></i>&nbsp;Settings</span>
             </a>
         </div>
     </div>

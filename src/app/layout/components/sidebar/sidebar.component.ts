@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import {MatSliderModule} from '@angular/material/slider';
+
 
 @Component({
     selector: 'app-sidebar',
@@ -8,10 +10,10 @@ import { TranslateService } from '@ngx-translate/core';
     styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-    isActive: boolean = false;
-    showMenu: string = '';
-    showMenu2: string = '';
-    pushRightClass: string = 'push-right';
+    isActive = false;
+    showMenu = '';
+    showMenu2 = '';
+    pushRightClass: 'push-right';
 
     constructor(private translate: TranslateService, public router: Router) {
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de']);
@@ -41,7 +43,6 @@ export class SidebarComponent {
             this.showMenu = element;
         }
     }
-    
     addExpandClass2(element: any) {
         if (element === this.showMenu2) {
             this.showMenu2 = '0';
