@@ -8,10 +8,16 @@ import { routerTransition } from '../../router.animations';
     animations: [routerTransition()]
 })
 export class ModelSelectionComponent implements OnInit {
-    public alerts: Array<any> = [];
+    // Model showcase images
     public sliders: Array<any> = [];
 
+    // Sources of geological models
+    public sources: Array<any> = [];
+
     constructor() {
+        // At the moment this information is all hard-coded; this is temporary.
+        // Eventually I would like this information to be retrieved from the server
+        //
         this.sliders.push(
             {
                 imagePath: 'assets/images/Otway.PNG',
@@ -30,30 +36,58 @@ export class ModelSelectionComponent implements OnInit {
             }
         );
 
-        this.alerts.push(
+        this.sources =  [
             {
-                id: 1,
-                type: 'success',
-                message: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptates est animi quibusdam praesentium quam, et perspiciatis,
-                consectetur velit culpa molestias dignissimos
-                voluptatum veritatis quod aliquam! Rerum placeat necessitatibus, vitae dolorum`
+                name: 'Victoria',
+                numberModels: 4,
+                icon: 'fa-leaf',
+                colourClass: 'primary'
             },
             {
-                id: 2,
-                type: 'warning',
-                message: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptates est animi quibusdam praesentium quam, et perspiciatis,
-                consectetur velit culpa molestias dignissimos
-                voluptatum veritatis quod aliquam! Rerum placeat necessitatibus, vitae dolorum`
+                name: 'Western Australia',
+                numberModels: 17,
+                icon: 'fa-map-signs',
+                colourClass: 'warning'
+            },
+            {
+                name: 'South Australia',
+                numberModels: 13,
+                icon: 'fa-bookmark',
+                colourClass: 'success'
+            },
+            {
+                name: 'Tasmania',
+                numberModels: 5,
+                icon: 'fa-tree',
+                colourClass: 'secondary'
+            },
+            {
+                name: 'Queensland',
+                numberModels: 10,
+                icon: 'fa-sun-o',
+                colourClass: 'danger'
+            },
+            {
+                name: 'N.S.W.',
+                numberModels: 8,
+                icon: 'fa-institution',
+                colourClass: 'info'
+            },
+            {
+                name: 'Northern Territory',
+                numberModels: 9,
+                icon: 'fa-anchor',
+                colourClass: 'dark'
+            },
+            {
+                name: 'Geoscience Australia',
+                numberModels: 20,
+                icon: 'fa-flag',
+                colourClass: 'primary'
             }
-        );
+        ];
     }
 
     ngOnInit() {}
 
-    public closeAlert(alert: any) {
-        const index: number = this.alerts.indexOf(alert);
-        this.alerts.splice(index, 1);
-    }
 }
