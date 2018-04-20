@@ -2,26 +2,26 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { ModelSelectionRoutingModule } from './modelselection-routing.module';
-import { ModelSelectionComponent } from './modelselection.component';
+import { ProviderSelectionRoutingModule } from './providerselection-routing.module';
+import { ProviderSelectionComponent } from './providerselection.component';
 import {
     TimelineComponent,
     NotificationComponent
 } from './components';
-import { ModelCardModule } from '../../shared';
+import { ProviderCardModule } from '../../shared';
 
 @NgModule({
     imports: [
         CommonModule,
         NgbCarouselModule.forRoot(),
         NgbAlertModule.forRoot(),
-        ModelSelectionRoutingModule,
-        ModelCardModule
+        ProviderSelectionRoutingModule,
+        ProviderCardModule
     ],
     declarations: [
-        ModelSelectionComponent,
+        ProviderSelectionComponent,
         TimelineComponent,
         NotificationComponent
     ]
 })
-export class ModelSelectionModule {}
+export class ProviderSelectionModule {}

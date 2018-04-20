@@ -1,21 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StatComponent } from './stat.component';
+import { ModelCardComponent } from './modelcard.component';
 
-describe('StatComponent', () => {
-    let component: StatComponent;
-    let fixture: ComponentFixture<StatComponent>;
+describe('ModelCardComponent', () => {
+    let component: ModelCardComponent;
+    let fixture: ComponentFixture<ModelCardComponent>;
 
     beforeEach(
         async(() => {
             TestBed.configureTestingModule({
-                declarations: [StatComponent]
+                declarations: [ModelCardComponent]
             }).compileComponents();
         })
     );
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(StatComponent);
+        fixture = TestBed.createComponent(ModelCardComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

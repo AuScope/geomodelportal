@@ -8,7 +8,7 @@ import {
     TimelineComponent,
     NotificationComponent
 } from './components';
-import { StatModule } from '../../shared';
+import { ModelCardModule } from '../../shared';
 
 @NgModule({
     imports: [
@@ -16,7 +16,7 @@ import { StatModule } from '../../shared';
         NgbCarouselModule.forRoot(),
         NgbAlertModule.forRoot(),
         ModelViewRoutingModule,
-        StatModule
+        ModelCardModule
     ],
     declarations: [
         ModelViewComponent,
