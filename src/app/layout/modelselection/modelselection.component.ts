@@ -67,7 +67,7 @@ export class ModelSelectionComponent implements OnInit {
                     }
                 ]
             },
-            'tasmania': {
+            'tas': {
                 name: 'Tasmania',
                 models: [
                     {

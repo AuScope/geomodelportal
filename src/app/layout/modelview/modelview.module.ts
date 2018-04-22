@@ -4,6 +4,7 @@ import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ModelViewRoutingModule } from './modelview-routing.module';
 import { ModelViewComponent } from './modelview.component';
+import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import {
     TimelineComponent,
     NotificationComponent
@@ -21,7 +22,8 @@ import { ModelCardModule } from '../../shared';
     declarations: [
         ModelViewComponent,
         TimelineComponent,
-        NotificationComponent
+        NotificationComponent,
+        SidebarComponent
     ]
 })
 export class ModelViewModule {}

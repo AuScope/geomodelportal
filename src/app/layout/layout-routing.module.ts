@@ -8,10 +8,22 @@ const routes: Routes = [
         path: '',
         component: LayoutComponent,
         children: [
-            { path: '', redirectTo: 'provider' },
-            { path: 'provider', loadChildren: './providerselection/providerselection.module#ProviderSelectionModule' },
-            { path: 'provider/:providerPath', loadChildren: './modelselection/modelselection.module#ModelSelectionModule'},
-            { path: 'model/:modelPath', loadChildren: './modelview/modelview.module#ModelViewModule'}
+            {
+                path: '',
+                redirectTo: 'provider'
+            },
+            {
+                path: 'provider',
+                loadChildren: './providerselection/providerselection.module#ProviderSelectionModule',
+            },
+            {
+                path: 'provider/:providerPath',
+                loadChildren: './modelselection/modelselection.module#ModelSelectionModule'
+            },
+            {
+                path: 'model/:modelPath',
+                loadChildren: './modelview/modelview.module#ModelViewModule'
+            }
         ]
     }
 ];
