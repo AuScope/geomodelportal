@@ -10,12 +10,12 @@ const routes: Routes = [
         children: [
             {
                 path: '',
-                redirectTo: 'provider'
+                loadChildren: './providerselection/providerselection.module#ProviderSelectionModule'
             },
-            {
+            /*{
                 path: 'provider',
                 loadChildren: './providerselection/providerselection.module#ProviderSelectionModule',
-            },
+            },*/
             {
                 path: 'provider/:providerPath',
                 loadChildren: './modelselection/modelselection.module#ModelSelectionModule'
