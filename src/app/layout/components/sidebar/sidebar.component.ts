@@ -21,6 +21,7 @@ export class SidebarComponent  implements OnInit {
     title = '';
     modelInfo: any;
     modelPath = '';
+    groupList: Array<String> = [];
 
     constructor(private translate: TranslateService, private modelInfoService: ModelInfoService, private route: ActivatedRoute,
                 public router: Router) {
@@ -48,6 +49,9 @@ export class SidebarComponent  implements OnInit {
                 this.modelInfo = data as string [];
                 console.log('ModelJson Loaded', this.modelInfo);
                 this.title = this.modelInfo['properties'].name;
+                console.log('groups = ', this.modelInfo['groups']);
+                this.groupList = Object.keys(this.modelInfo['groups']);
+                console.log('this.groupList = ', this.groupList);
             },
             (err: HttpErrorResponse) => {
                 console.log('Cannot load JSON', err);
