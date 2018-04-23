@@ -1,0 +1,1098 @@
+{
+    "groups": {
+        "Group Name": [
+            {
+                "display_name": "FINAL OTWAY STRAT SURFACES 13-07-11",
+                "displayed": true,
+                "include": true,
+                "model_url": "FINAL_OTWAY_STRAT_SURFACES_13-07-11.gltf",
+                "popups": {
+                    "STRAT_BASEMENT_SEEBASE_FINAL": {
+                        "name": "STRAT_BASEMENT_SEEBASE_FINAL",
+                        "title": "STRAT_BASEMENT_SEEBASE_FINAL"
+                    },
+                    "STRAT_BATHY-TOPO": {
+                        "name": "STRAT_BATHY-TOPO",
+                        "title": "STRAT_BATHY-TOPO"
+                    },
+                    "STRAT_MOHO": {
+                        "name": "STRAT_MOHO",
+                        "title": "STRAT_MOHO"
+                    },
+                    "STRAT_TOP-CRAYFISH_FROGTECH_FINAL": {
+                        "name": "STRAT_TOP-CRAYFISH_FROGTECH_FINAL",
+                        "title": "STRAT_TOP-CRAYFISH_FROGTECH_FINAL"
+                    },
+                    "STRAT_TOP-EUMERALLA_FROGTECH_FINAL": {
+                        "name": "STRAT_TOP-EUMERALLA_FROGTECH_FINAL",
+                        "title": "STRAT_TOP-EUMERALLA_FROGTECH_FINAL"
+                    },
+                    "STRAT_TOP-PROTEROZOIC_FINAL": {
+                        "name": "STRAT_TOP-PROTEROZOIC_FINAL",
+                        "title": "STRAT_TOP-PROTEROZOIC_FINAL"
+                    },
+                    "STRAT_TOP-SHERBROOK_FROGTECH_FINAL": {
+                        "name": "STRAT_TOP-SHERBROOK_FROGTECH_FINAL",
+                        "title": "STRAT_TOP-SHERBROOK_FROGTECH_FINAL"
+                    },
+                    "STRAT_TOP-WANGERRIP_GSV_FINAL": {
+                        "name": "STRAT_TOP-WANGERRIP_GSV_FINAL",
+                        "title": "STRAT_TOP-WANGERRIP_GSV_FINAL"
+                    },
+                    "STRAT_TORQUAY_TOP-EASTERN_VIEW_GSV_FINAL": {
+                        "name": "STRAT_TORQUAY_TOP-EASTERN_VIEW_GSV_FINAL",
+                        "title": "STRAT_TORQUAY_TOP-EASTERN_VIEW_GSV_FINAL"
+                    },
+                    "STRAT_TORQUAY_TOP-EUMERALLA_GSV": {
+                        "name": "STRAT_TORQUAY_TOP-EUMERALLA_GSV",
+                        "title": "STRAT_TORQUAY_TOP-EUMERALLA_GSV"
+                    },
+                    "STRAT_TORQUAY_TOP-OTWAYGP_GSV_FINAL": {
+                        "name": "STRAT_TORQUAY_TOP-OTWAYGP_GSV_FINAL",
+                        "title": "STRAT_TORQUAY_TOP-OTWAYGP_GSV_FINAL"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "West Vic intrusives Final z54 06-07-11",
+                "displayed": true,
+                "include": true,
+                "model_url": "West_Vic_intrusives_Final_z54_06-07-11.gltf",
+                "popups": {
+                    "GG100-INV1": {
+                        "name": "GG100-INV1",
+                        "title": "GG100-INV1"
+                    },
+                    "GG101-INV1": {
+                        "name": "GG101-INV1",
+                        "title": "GG101-INV1"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART1": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART1",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART1"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART10": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART10",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART10"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART12": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART12",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART12"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART13": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART13",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART13"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART15": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART15",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART15"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART16": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART16",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART16"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART18": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART18",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART18"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART19": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART19",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART19"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART2": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART2",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART2"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART20": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART20",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART20"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART22": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART22",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART22"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART23": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART23",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART23"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART24": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART24",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART24"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART25": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART25",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART25"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART27": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART27",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART27"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART28": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART28",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART28"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART29": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART29",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART29"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART3": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART3",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART3"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART30": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART30",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART30"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART31": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART31",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART31"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART32": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART32",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART32"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART33": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART33",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART33"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART34": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART34",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART34"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART35": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART35",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART35"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART37": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART37",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART37"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART38": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART38",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART38"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART39": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART39",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART39"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART42": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART42",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART42"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART44": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART44",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART44"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART48": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART48",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART48"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART5": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART5",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART5"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART50": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART50",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART50"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART54": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART54",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART54"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART55": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART55",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART55"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART58": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART58",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART58"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART59": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART59",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART59"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART6": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART6",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART6"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART60": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART60",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART60"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART61": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART61",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART61"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART62": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART62",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART62"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART63": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART63",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART63"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART65": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART65",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART65"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART8": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART8",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART8"
+                    },
+                    "GRANITES_NORTH_HET-BKGRD_INV5_PART9": {
+                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART9",
+                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART9"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART1": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART1",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART1"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART10": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART10",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART10"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART12": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART12",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART12"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART13": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART13",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART13"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART14": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART14",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART14"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART16": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART16",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART16"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART17": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART17",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART17"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART18": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART18",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART18"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART2": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART2",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART2"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART20": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART20",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART20"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART21": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART21",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART21"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART22": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART22",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART22"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART24": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART24",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART24"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART26": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART26",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART26"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART27": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART27",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART27"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART28": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART28",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART28"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART29": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART29",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART29"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART3": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART3",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART3"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART31": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART31",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART31"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART32": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART32",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART32"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART33": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART33",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART33"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART34": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART34",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART34"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART35": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART35",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART35"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART36": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART36",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART36"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART37": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART37",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART37"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART38": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART38",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART38"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART39": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART39",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART39"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART4": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART4",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART4"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART42": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART42",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART42"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART43": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART43",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART43"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART45": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART45",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART45"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART46": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART46",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART46"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART48": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART48",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART48"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART49": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART49",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART49"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART5": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART5",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART5"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART53": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART53",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART53"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART55": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART55",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART55"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART6": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART6",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART6"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART7": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART7",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART7"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART8": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART8",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART8"
+                    },
+                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART9": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART9",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART9"
+                    },
+                    "OB_GRANITE1": {
+                        "name": "OB_GRANITE1",
+                        "title": "OB_GRANITE1"
+                    },
+                    "OB_GRANITE2": {
+                        "name": "OB_GRANITE2",
+                        "title": "OB_GRANITE2"
+                    },
+                    "OB_GRANITE3": {
+                        "name": "OB_GRANITE3",
+                        "title": "OB_GRANITE3"
+                    },
+                    "OB_GRANITE4": {
+                        "name": "OB_GRANITE4",
+                        "title": "OB_GRANITE4"
+                    },
+                    "OB_GRANITE5": {
+                        "name": "OB_GRANITE5",
+                        "title": "OB_GRANITE5"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "FINAL OTWAY FAULTS 14-07-11",
+                "displayed": true,
+                "include": true,
+                "model_url": "FINAL_OTWAY_FAULTS_14-07-11.gltf",
+                "popups": {
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_APSLEY": {
+                        "name": "FLT_APSLEY",
+                        "title": "FLT_APSLEY"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_ARDONACHIESOUTH": {
+                        "name": "FLT_ARDONACHIESOUTH",
+                        "title": "FLT_ARDONACHIESOUTH"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_BAMBRA": {
+                        "name": "FLT_BAMBRA",
+                        "title": "FLT_BAMBRA"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_COASTAL": {
+                        "name": "FLT_COASTAL",
+                        "title": "FLT_COASTAL"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_ESCONDIDA": {
+                        "name": "FLT_ESCONDIDA",
+                        "title": "FLT_ESCONDIDA"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_KALANGADOO-A": {
+                        "name": "FLT_KALANGADOO-A",
+                        "title": "FLT_KALANGADOO-A"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_KALANGADOO-B": {
+                        "name": "FLT_KALANGADOO-B",
+                        "title": "FLT_KALANGADOO-B"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_KANAWINKA-A": {
+                        "name": "FLT_KANAWINKA-A",
+                        "title": "FLT_KANAWINKA-A"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_KANAWINKA-B": {
+                        "name": "FLT_KANAWINKA-B",
+                        "title": "FLT_KANAWINKA-B"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_KANAWINKA-C": {
+                        "name": "FLT_KANAWINKA-C",
+                        "title": "FLT_KANAWINKA-C"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_MIAKITECREEK": {
+                        "name": "FLT_MIAKITECREEK",
+                        "title": "FLT_MIAKITECREEK"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_MINERVASOUTH": {
+                        "name": "FLT_MINERVASOUTH",
+                        "title": "FLT_MINERVASOUTH"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_MOYSTON": {
+                        "name": "FLT_MOYSTON",
+                        "title": "FLT_MOYSTON"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_MUSSEL": {
+                        "name": "FLT_MUSSEL",
+                        "title": "FLT_MUSSEL"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_PRAWN-A": {
+                        "name": "FLT_PRAWN-A",
+                        "title": "FLT_PRAWN-A"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_PRAWN-B": {
+                        "name": "FLT_PRAWN-B",
+                        "title": "FLT_PRAWN-B"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_SHIPWRECK": {
+                        "name": "FLT_SHIPWRECK",
+                        "title": "FLT_SHIPWRECK"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_SORELL-A": {
+                        "name": "FLT_SORELL-A",
+                        "title": "FLT_SORELL-A"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_SORELL-B": {
+                        "name": "FLT_SORELL-B",
+                        "title": "FLT_SORELL-B"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_TARTWAUP": {
+                        "name": "FLT_TARTWAUP",
+                        "title": "FLT_TARTWAUP"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_TYAR": {
+                        "name": "FLT_TYAR",
+                        "title": "FLT_TYAR"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN1": {
+                        "name": "FLT_UN1",
+                        "title": "FLT_UN1"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN10": {
+                        "name": "FLT_UN10",
+                        "title": "FLT_UN10"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN11": {
+                        "name": "FLT_UN11",
+                        "title": "FLT_UN11"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN12": {
+                        "name": "FLT_UN12",
+                        "title": "FLT_UN12"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN13": {
+                        "name": "FLT_UN13",
+                        "title": "FLT_UN13"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN14": {
+                        "name": "FLT_UN14",
+                        "title": "FLT_UN14"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN15": {
+                        "name": "FLT_UN15",
+                        "title": "FLT_UN15"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN16": {
+                        "name": "FLT_UN16",
+                        "title": "FLT_UN16"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN17": {
+                        "name": "FLT_UN17",
+                        "title": "FLT_UN17"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN18": {
+                        "name": "FLT_UN18",
+                        "title": "FLT_UN18"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN19": {
+                        "name": "FLT_UN19",
+                        "title": "FLT_UN19"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN2": {
+                        "name": "FLT_UN2",
+                        "title": "FLT_UN2"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN20": {
+                        "name": "FLT_UN20",
+                        "title": "FLT_UN20"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN21": {
+                        "name": "FLT_UN21",
+                        "title": "FLT_UN21"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN22": {
+                        "name": "FLT_UN22",
+                        "title": "FLT_UN22"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN23": {
+                        "name": "FLT_UN23",
+                        "title": "FLT_UN23"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN24": {
+                        "name": "FLT_UN24",
+                        "title": "FLT_UN24"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN25": {
+                        "name": "FLT_UN25",
+                        "title": "FLT_UN25"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN26": {
+                        "name": "FLT_UN26",
+                        "title": "FLT_UN26"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN27": {
+                        "name": "FLT_UN27",
+                        "title": "FLT_UN27"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN28": {
+                        "name": "FLT_UN28",
+                        "title": "FLT_UN28"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN29": {
+                        "name": "FLT_UN29",
+                        "title": "FLT_UN29"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN3": {
+                        "name": "FLT_UN3",
+                        "title": "FLT_UN3"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN30": {
+                        "name": "FLT_UN30",
+                        "title": "FLT_UN30"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN31": {
+                        "name": "FLT_UN31",
+                        "title": "FLT_UN31"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN32": {
+                        "name": "FLT_UN32",
+                        "title": "FLT_UN32"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN33": {
+                        "name": "FLT_UN33",
+                        "title": "FLT_UN33"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN34": {
+                        "name": "FLT_UN34",
+                        "title": "FLT_UN34"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN35": {
+                        "name": "FLT_UN35",
+                        "title": "FLT_UN35"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN36": {
+                        "name": "FLT_UN36",
+                        "title": "FLT_UN36"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN37": {
+                        "name": "FLT_UN37",
+                        "title": "FLT_UN37"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN38": {
+                        "name": "FLT_UN38",
+                        "title": "FLT_UN38"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN39": {
+                        "name": "FLT_UN39",
+                        "title": "FLT_UN39"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN4": {
+                        "name": "FLT_UN4",
+                        "title": "FLT_UN4"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN40": {
+                        "name": "FLT_UN40",
+                        "title": "FLT_UN40"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN41": {
+                        "name": "FLT_UN41",
+                        "title": "FLT_UN41"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN42": {
+                        "name": "FLT_UN42",
+                        "title": "FLT_UN42"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN43": {
+                        "name": "FLT_UN43",
+                        "title": "FLT_UN43"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN44": {
+                        "name": "FLT_UN44",
+                        "title": "FLT_UN44"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN45": {
+                        "name": "FLT_UN45",
+                        "title": "FLT_UN45"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN46": {
+                        "name": "FLT_UN46",
+                        "title": "FLT_UN46"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN47": {
+                        "name": "FLT_UN47",
+                        "title": "FLT_UN47"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN48": {
+                        "name": "FLT_UN48",
+                        "title": "FLT_UN48"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN49": {
+                        "name": "FLT_UN49",
+                        "title": "FLT_UN49"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN5": {
+                        "name": "FLT_UN5",
+                        "title": "FLT_UN5"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN50": {
+                        "name": "FLT_UN50",
+                        "title": "FLT_UN50"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN51": {
+                        "name": "FLT_UN51",
+                        "title": "FLT_UN51"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN52": {
+                        "name": "FLT_UN52",
+                        "title": "FLT_UN52"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN53": {
+                        "name": "FLT_UN53",
+                        "title": "FLT_UN53"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN54": {
+                        "name": "FLT_UN54",
+                        "title": "FLT_UN54"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN55": {
+                        "name": "FLT_UN55",
+                        "title": "FLT_UN55"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN56": {
+                        "name": "FLT_UN56",
+                        "title": "FLT_UN56"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN57": {
+                        "name": "FLT_UN57",
+                        "title": "FLT_UN57"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN58": {
+                        "name": "FLT_UN58",
+                        "title": "FLT_UN58"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN59": {
+                        "name": "FLT_UN59",
+                        "title": "FLT_UN59"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN6": {
+                        "name": "FLT_UN6",
+                        "title": "FLT_UN6"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN60": {
+                        "name": "FLT_UN60",
+                        "title": "FLT_UN60"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN61": {
+                        "name": "FLT_UN61",
+                        "title": "FLT_UN61"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN62": {
+                        "name": "FLT_UN62",
+                        "title": "FLT_UN62"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN63": {
+                        "name": "FLT_UN63",
+                        "title": "FLT_UN63"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN64": {
+                        "name": "FLT_UN64",
+                        "title": "FLT_UN64"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN65": {
+                        "name": "FLT_UN65",
+                        "title": "FLT_UN65"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN66": {
+                        "name": "FLT_UN66",
+                        "title": "FLT_UN66"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN67": {
+                        "name": "FLT_UN67",
+                        "title": "FLT_UN67"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN68": {
+                        "name": "FLT_UN68",
+                        "title": "FLT_UN68"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN69": {
+                        "name": "FLT_UN69",
+                        "title": "FLT_UN69"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN7": {
+                        "name": "FLT_UN7",
+                        "title": "FLT_UN7"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN70": {
+                        "name": "FLT_UN70",
+                        "title": "FLT_UN70"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN71": {
+                        "name": "FLT_UN71",
+                        "title": "FLT_UN71"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN72": {
+                        "name": "FLT_UN72",
+                        "title": "FLT_UN72"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN73": {
+                        "name": "FLT_UN73",
+                        "title": "FLT_UN73"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN74": {
+                        "name": "FLT_UN74",
+                        "title": "FLT_UN74"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN75": {
+                        "name": "FLT_UN75",
+                        "title": "FLT_UN75"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN76": {
+                        "name": "FLT_UN76",
+                        "title": "FLT_UN76"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN77": {
+                        "name": "FLT_UN77",
+                        "title": "FLT_UN77"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN78": {
+                        "name": "FLT_UN78",
+                        "title": "FLT_UN78"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN79": {
+                        "name": "FLT_UN79",
+                        "title": "FLT_UN79"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN8": {
+                        "name": "FLT_UN8",
+                        "title": "FLT_UN8"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN80": {
+                        "name": "FLT_UN80",
+                        "title": "FLT_UN80"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN81": {
+                        "name": "FLT_UN81",
+                        "title": "FLT_UN81"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN82": {
+                        "name": "FLT_UN82",
+                        "title": "FLT_UN82"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN83": {
+                        "name": "FLT_UN83",
+                        "title": "FLT_UN83"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN84": {
+                        "name": "FLT_UN84",
+                        "title": "FLT_UN84"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN85": {
+                        "name": "FLT_UN85",
+                        "title": "FLT_UN85"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN86": {
+                        "name": "FLT_UN86",
+                        "title": "FLT_UN86"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN87": {
+                        "name": "FLT_UN87",
+                        "title": "FLT_UN87"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN88": {
+                        "name": "FLT_UN88",
+                        "title": "FLT_UN88"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN89": {
+                        "name": "FLT_UN89",
+                        "title": "FLT_UN89"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN9": {
+                        "name": "FLT_UN9",
+                        "title": "FLT_UN9"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "FINAL OTWAY EXTRA STRAT 13-07-11 0",
+                "displayed": true,
+                "include": true,
+                "model_url": "FINAL_OTWAY_EXTRA_STRAT_13-07-11_0.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "FINAL OTWAY EXTRA STRAT 13-07-11 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "FINAL_OTWAY_EXTRA_STRAT_13-07-11_1.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "FINAL OTWAY EXTRA STRAT 13-07-11 2",
+                "displayed": true,
+                "include": true,
+                "model_url": "FINAL_OTWAY_EXTRA_STRAT_13-07-11_2.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "FINAL OTWAY EXTRA STRAT 13-07-11 3",
+                "displayed": true,
+                "include": true,
+                "model_url": "FINAL_OTWAY_EXTRA_STRAT_13-07-11_3.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "FINAL OTWAY EXTRA STRAT 13-07-11 4",
+                "displayed": true,
+                "include": true,
+                "model_url": "FINAL_OTWAY_EXTRA_STRAT_13-07-11_4.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "FINAL OTWAY INTRUSIVES 13-07-11",
+                "displayed": true,
+                "include": true,
+                "model_url": "FINAL_OTWAY_INTRUSIVES_13-07-11.gltf",
+                "popups": {
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GG100-INV1": {
+                        "name": "GG100-INV1",
+                        "title": "GG100-INV1"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GG101-INV1": {
+                        "name": "GG101-INV1",
+                        "title": "GG101-INV1"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM28E": {
+                        "name": "GM28E",
+                        "title": "GM28E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART1": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART1",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART1"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART10": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART10",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART10"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART12": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART12",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART12"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART13": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART13",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART13"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART14": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART14",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART14"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART16": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART16",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART16"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART2": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART2",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART2"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART20": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART20",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART20"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART21": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART21",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART21"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART27": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART27",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART27"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART28": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART28",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART28"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART32": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART32",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART32"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART33": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART33",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART33"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART34": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART34",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART34"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART35": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART35",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART35"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART37": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART37",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART37"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART38": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART38",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART38"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART39": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART39",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART39"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART4": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART4",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART4"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART42": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART42",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART42"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART43": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART43",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART43"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART45": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART45",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART45"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART48": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART48",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART48"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART49": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART49",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART49"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART53": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART53",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART53"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART55": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART55",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART55"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART6": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART6",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART6"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART7": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART7",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART7"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART8": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART8",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART8"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART9": {
+                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART9",
+                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART9"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-OB_GRANITE1": {
+                        "name": "OB_GRANITE1",
+                        "title": "OB_GRANITE1"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-OB_GRANITE2": {
+                        "name": "OB_GRANITE2",
+                        "title": "OB_GRANITE2"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-OB_GRANITE3": {
+                        "name": "OB_GRANITE3",
+                        "title": "OB_GRANITE3"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-OB_GRANITE4": {
+                        "name": "OB_GRANITE4",
+                        "title": "OB_GRANITE4"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-OB_GRANITE5": {
+                        "name": "OB_GRANITE5",
+                        "title": "OB_GRANITE5"
+                    }
+                },
+                "type": "GLTFObject"
+            }
+        ]
+    },
+    "properties": {
+        "crs": "EPSG:3857",
+        "extent": [
+            460034.84375,
+            877601.125,
+            5528939.0625,
+            6206367.5703125
+        ],
+        "name": "Name of model"
+    },
+    "type": "GeologicalModel",
+    "version": 1.0
+}

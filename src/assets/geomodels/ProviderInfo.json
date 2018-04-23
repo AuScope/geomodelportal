@@ -1,0 +1,58 @@
+[
+            {
+                "name": "Victoria",
+                "numberModels": 4,
+                "icon": "fa-leaf",
+                "colourClass": "primary",
+                "providerPath": "vic"
+            },
+            {
+                "name": "Western Australia",
+                "numberModels": 17,
+                "icon": "fa-map-signs",
+                "colourClass": "warning",
+                "providerPath": "wa"
+            },
+            {
+                "name": "South Australia",
+                "numberModels": 13,
+                "icon": "fa-bookmark",
+                "colourClass": "success",
+                "providerPath": "sa"
+            },
+            {
+                "name": "Tasmania",
+                "numberModels": 5,
+                "icon": "fa-tree",
+                "colourClass": "secondary",
+                "providerPath": "tas"
+            },
+            {
+                "name": "Queensland",
+                "numberModels": 10,
+                "icon": "fa-sun-o",
+                "colourClass": "danger",
+                "providerPath": "qld"
+            },
+            {
+                "name": "N.S.W.",
+                "numberModels": 8,
+                "icon": "fa-institution",
+                "colourClass": "info",
+                "providerPath": "nsw"
+            },
+            {
+                "name": "Northern Territory",
+                "numberModels": 9,
+                "icon": "fa-anchor",
+                "colourClass": "dark",
+                "providerPath": "nt"
+            },
+            {
+                "name": "Geoscience Australia",
+                "numberModels": 20,
+                "icon": "fa-flag",
+                "colourClass": "primary",
+                "providerPath": "ga"
+            }
+]

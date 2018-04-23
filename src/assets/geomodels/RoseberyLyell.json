@@ -1,0 +1,2552 @@
+{
+    "groups": {
+        "Group Name": [
+            {
+                "display_name": "F 075",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_075.gltf",
+                "popups": {
+                    "F_075": {
+                        "name": "F_075",
+                        "title": "F_075"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault 08",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_08.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_08": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_08",
+                        "title": "F_022_ULTRAMAFIC_FAULT_08"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 023 Firewood Siding fault 01",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_023_Firewood_Siding_fault_01.gltf",
+                "popups": {
+                    "F_023_FIREWOOD_SIDING_FAULT_01": {
+                        "name": "F_023_FIREWOOD_SIDING_FAULT_01",
+                        "title": "F_023_FIREWOOD_SIDING_FAULT_01"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 104",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_104.gltf",
+                "popups": {
+                    "F_104": {
+                        "name": "F_104",
+                        "title": "F_104"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 015 Anthony River Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_015_Anthony_River_Fault.gltf",
+                "popups": {
+                    "F_015_ANTHONY_RIVER_FAULT": {
+                        "name": "F_015_ANTHONY_RIVER_FAULT",
+                        "title": "F_015_ANTHONY_RIVER_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 035",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_035.gltf",
+                "popups": {
+                    "F_035": {
+                        "name": "F_035",
+                        "title": "F_035"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 057",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_057.gltf",
+                "popups": {
+                    "F_057": {
+                        "name": "F_057",
+                        "title": "F_057"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 100",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_100.gltf",
+                "popups": {
+                    "F_100": {
+                        "name": "F_100",
+                        "title": "F_100"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 003 Moxons Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_003_Moxons_Fault.gltf",
+                "popups": {
+                    "F_003_MOXONS_FAULT": {
+                        "name": "F_003_MOXONS_FAULT",
+                        "title": "F_003_MOXONS_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 06",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_06.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_06": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_06",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_06"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "06 Devonian granite",
+                "displayed": false,
+                "include": true,
+                "model_url": "06_Devonian_granite.gltf",
+                "popups": {
+                    "06_DEVONIAN_GRANITE": {
+                        "name": "06_DEVONIAN_GRANITE",
+                        "title": "06_DEVONIAN_GRANITE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 050",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_050.gltf",
+                "popups": {
+                    "F_050": {
+                        "name": "F_050",
+                        "title": "F_050"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 055",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_055.gltf",
+                "popups": {
+                    "F_055": {
+                        "name": "F_055",
+                        "title": "F_055"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "14 andesite",
+                "displayed": false,
+                "include": true,
+                "model_url": "14_andesite.gltf",
+                "popups": {
+                    "14_ANDESITE": {
+                        "name": "14_ANDESITE",
+                        "title": "14_ANDESITE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 014",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_014.gltf",
+                "popups": {
+                    "F_014": {
+                        "name": "F_014",
+                        "title": "F_014"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 070",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_070.gltf",
+                "popups": {
+                    "F_070": {
+                        "name": "F_070",
+                        "title": "F_070"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 103",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_103.gltf",
+                "popups": {
+                    "F_103": {
+                        "name": "F_103",
+                        "title": "F_103"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 030 Great Lyell Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_030_Great_Lyell_Fault.gltf",
+                "popups": {
+                    "F_030_GREAT_LYELL_FAULT": {
+                        "name": "F_030_GREAT_LYELL_FAULT",
+                        "title": "F_030_GREAT_LYELL_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault 11",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_11.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_11": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_11",
+                        "title": "F_022_ULTRAMAFIC_FAULT_11"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 079",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_079.gltf",
+                "popups": {
+                    "F_079": {
+                        "name": "F_079",
+                        "title": "F_079"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 107",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_107.gltf",
+                "popups": {
+                    "F_107": {
+                        "name": "F_107",
+                        "title": "F_107"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 109",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_109.gltf",
+                "popups": {
+                    "F_109": {
+                        "name": "F_109",
+                        "title": "F_109"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 076",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_076.gltf",
+                "popups": {
+                    "F_076": {
+                        "name": "F_076",
+                        "title": "F_076"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 10",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_10.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_10": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_10",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_10"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 023 Firewood Siding Fault 05",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_023_Firewood_Siding_Fault_05.gltf",
+                "popups": {
+                    "F_023_FIREWOOD_SIDING_FAULT_05": {
+                        "name": "F_023_FIREWOOD_SIDING_FAULT_05",
+                        "title": "F_023_FIREWOOD_SIDING_FAULT_05"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 072",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_072.gltf",
+                "popups": {
+                    "F_072": {
+                        "name": "F_072",
+                        "title": "F_072"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 029",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_029.gltf",
+                "popups": {
+                    "F_029": {
+                        "name": "F_029",
+                        "title": "F_029"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "28 Success Creek Group",
+                "displayed": false,
+                "include": true,
+                "model_url": "28_Success_Creek_Group.gltf",
+                "popups": {
+                    "28_SUCCESS_CREEK_GROUP": {
+                        "name": "28_SUCCESS_CREEK_GROUP",
+                        "title": "28_SUCCESS_CREEK_GROUP"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 052",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_052.gltf",
+                "popups": {
+                    "F_052": {
+                        "name": "F_052",
+                        "title": "F_052"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 023 Firewood Siding Fault 04",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_023_Firewood_Siding_Fault_04.gltf",
+                "popups": {
+                    "F_023_FIREWOOD_SIDING_FAULT_04": {
+                        "name": "F_023_FIREWOOD_SIDING_FAULT_04",
+                        "title": "F_023_FIREWOOD_SIDING_FAULT_04"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 006 South Henty Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_006_South_Henty_Fault.gltf",
+                "popups": {
+                    "F_006_SOUTH_HENTY_FAULT": {
+                        "name": "F_006_SOUTH_HENTY_FAULT",
+                        "title": "F_006_SOUTH_HENTY_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 078",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_078.gltf",
+                "popups": {
+                    "F_078": {
+                        "name": "F_078",
+                        "title": "F_078"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 009",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_009.gltf",
+                "popups": {
+                    "F_009": {
+                        "name": "F_009",
+                        "title": "F_009"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 023 Firewood Siding Fault 02",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_023_Firewood_Siding_Fault_02.gltf",
+                "popups": {
+                    "F_023_FIREWOOD_SIDING_FAULT_02": {
+                        "name": "F_023_FIREWOOD_SIDING_FAULT_02",
+                        "title": "F_023_FIREWOOD_SIDING_FAULT_02"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault 03",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_03.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_03": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_03",
+                        "title": "F_022_ULTRAMAFIC_FAULT_03"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 08",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_08.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_08": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_08",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_08"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 038 East Jukes Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_038_East_Jukes_Fault.gltf",
+                "popups": {
+                    "F_038_EAST_JUKES_FAULT": {
+                        "name": "F_038_EAST_JUKES_FAULT",
+                        "title": "F_038_EAST_JUKES_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 086",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_086.gltf",
+                "popups": {
+                    "F_086": {
+                        "name": "F_086",
+                        "title": "F_086"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "12 Que Hellyer Volcanics",
+                "displayed": false,
+                "include": true,
+                "model_url": "12_Que_Hellyer_Volcanics.gltf",
+                "popups": {
+                    "12_QUE_HELLYER_VOLCANICS": {
+                        "name": "12_QUE_HELLYER_VOLCANICS",
+                        "title": "12_QUE_HELLYER_VOLCANICS"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 092",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_092.gltf",
+                "popups": {
+                    "F_092": {
+                        "name": "F_092",
+                        "title": "F_092"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 01",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_01.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_01": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_01",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_01"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 027 Glen Lyell Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_027_Glen_Lyell_Fault.gltf",
+                "popups": {
+                    "F_027_GLEN_LYELL_FAULT": {
+                        "name": "F_027_GLEN_LYELL_FAULT",
+                        "title": "F_027_GLEN_LYELL_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 108",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_108.gltf",
+                "popups": {
+                    "F_108": {
+                        "name": "F_108",
+                        "title": "F_108"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "27 Crimson Creek Formation",
+                "displayed": false,
+                "include": true,
+                "model_url": "27_Crimson_Creek_Formation.gltf",
+                "popups": {
+                    "27_CRIMSON_CREEK_FORMATION": {
+                        "name": "27_CRIMSON_CREEK_FORMATION",
+                        "title": "27_CRIMSON_CREEK_FORMATION"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 16",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_16.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_16": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_16",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_16"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 105",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_105.gltf",
+                "popups": {
+                    "F_105": {
+                        "name": "F_105",
+                        "title": "F_105"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 059",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_059.gltf",
+                "popups": {
+                    "F_059": {
+                        "name": "F_059",
+                        "title": "F_059"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 001 Rosebery Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_001_Rosebery_Fault.gltf",
+                "popups": {
+                    "F_001_ROSEBERY_FAULT": {
+                        "name": "F_001_ROSEBERY_FAULT",
+                        "title": "F_001_ROSEBERY_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 043 Little Henty Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_043_Little_Henty_Fault.gltf",
+                "popups": {
+                    "F_043_LITTLE_HENTY_FAULT": {
+                        "name": "F_043_LITTLE_HENTY_FAULT",
+                        "title": "F_043_LITTLE_HENTY_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 13",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_13.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_13": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_13",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_13"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 062",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_062.gltf",
+                "popups": {
+                    "F_062": {
+                        "name": "F_062",
+                        "title": "F_062"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 044",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_044.gltf",
+                "popups": {
+                    "F_044": {
+                        "name": "F_044",
+                        "title": "F_044"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 020",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_020.gltf",
+                "popups": {
+                    "F_020": {
+                        "name": "F_020",
+                        "title": "F_020"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 065",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_065.gltf",
+                "popups": {
+                    "F_065": {
+                        "name": "F_065",
+                        "title": "F_065"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 011",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_011.gltf",
+                "popups": {
+                    "F_011": {
+                        "name": "F_011",
+                        "title": "F_011"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 19",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_19.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_19": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_19",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_19"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 067",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_067.gltf",
+                "popups": {
+                    "F_067": {
+                        "name": "F_067",
+                        "title": "F_067"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault 04",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_04.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_04": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_04",
+                        "title": "F_022_ULTRAMAFIC_FAULT_04"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 102",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_102.gltf",
+                "popups": {
+                    "F_102": {
+                        "name": "F_102",
+                        "title": "F_102"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "12 Western Volcano Sedimentary sequence",
+                "displayed": false,
+                "include": true,
+                "model_url": "12_Western_Volcano_Sedimentary_sequence.gltf",
+                "popups": {
+                    "12_WESTERN_VOLCANO_SEDIMENTARY_SEQUENCE": {
+                        "name": "12_WESTERN_VOLCANO_SEDIMENTARY_SEQUENCE",
+                        "title": "12_WESTERN_VOLCANO_SEDIMENTARY_SEQUENCE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 12",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_12.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_12": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_12",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_12"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 077",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_077.gltf",
+                "popups": {
+                    "F_077": {
+                        "name": "F_077",
+                        "title": "F_077"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 106",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_106.gltf",
+                "popups": {
+                    "F_106": {
+                        "name": "F_106",
+                        "title": "F_106"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 098",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_098.gltf",
+                "popups": {
+                    "F_098": {
+                        "name": "F_098",
+                        "title": "F_098"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 085",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_085.gltf",
+                "popups": {
+                    "F_085": {
+                        "name": "F_085",
+                        "title": "F_085"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 14",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_14.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_14": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_14",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_14"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 041",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_041.gltf",
+                "popups": {
+                    "F_041": {
+                        "name": "F_041",
+                        "title": "F_041"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "18 Cambrian granite non magnetic",
+                "displayed": false,
+                "include": true,
+                "model_url": "18_Cambrian_granite_non_magnetic.gltf",
+                "popups": {
+                    "18_CAMBRIAN_GRANITE_NON_MAGNETIC": {
+                        "name": "18_CAMBRIAN_GRANITE_NON_MAGNETIC",
+                        "title": "18_CAMBRIAN_GRANITE_NON_MAGNETIC"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "19 quartz feldspar porphyry",
+                "displayed": false,
+                "include": true,
+                "model_url": "19_quartz_feldspar_porphyry.gltf",
+                "popups": {
+                    "19_QUARTZ_FELDSPAR_PORPHYRY": {
+                        "name": "19_QUARTZ_FELDSPAR_PORPHYRY",
+                        "title": "19_QUARTZ_FELDSPAR_PORPHYRY"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "07 Parmeener Supergroup",
+                "displayed": false,
+                "include": true,
+                "model_url": "07_Parmeener_Supergroup.gltf",
+                "popups": {
+                    "07_PARMEENER_SUPERGROUP": {
+                        "name": "07_PARMEENER_SUPERGROUP",
+                        "title": "07_PARMEENER_SUPERGROUP"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 046",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_046.gltf",
+                "popups": {
+                    "F_046": {
+                        "name": "F_046",
+                        "title": "F_046"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 09",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_09.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_09": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_09",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_09"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 082",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_082.gltf",
+                "popups": {
+                    "F_082": {
+                        "name": "F_082",
+                        "title": "F_082"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 012 Mt Charter Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_012_Mt_Charter_Fault.gltf",
+                "popups": {
+                    "F_012_MT_CHARTER_FAULT": {
+                        "name": "F_012_MT_CHARTER_FAULT",
+                        "title": "F_012_MT_CHARTER_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "02 water",
+                "displayed": false,
+                "include": true,
+                "model_url": "02_water.gltf",
+                "popups": {
+                    "02_WATER": {
+                        "name": "02_WATER",
+                        "title": "02_WATER"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault 07",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_07.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_07": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_07",
+                        "title": "F_022_ULTRAMAFIC_FAULT_07"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault 09",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_09.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_09": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_09",
+                        "title": "F_022_ULTRAMAFIC_FAULT_09"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 000 Federal Bassett fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_000_Federal_Bassett_fault.gltf",
+                "popups": {
+                    "F_000_FEDERAL_BASSETT_FAULT": {
+                        "name": "F_000_FEDERAL_BASSETT_FAULT",
+                        "title": "F_000_FEDERAL_BASSETT_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 096",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_096.gltf",
+                "popups": {
+                    "F_096": {
+                        "name": "F_096",
+                        "title": "F_096"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 048 Comstock Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_048_Comstock_Fault.gltf",
+                "popups": {
+                    "F_048_COMSTOCK_FAULT": {
+                        "name": "F_048_COMSTOCK_FAULT",
+                        "title": "F_048_COMSTOCK_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 07",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_07.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_07": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_07",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_07"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 061",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_061.gltf",
+                "popups": {
+                    "F_061": {
+                        "name": "F_061",
+                        "title": "F_061"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 010 Mt Cripps Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_010_Mt_Cripps_Fault.gltf",
+                "popups": {
+                    "F_010_MT_CRIPPS_FAULT": {
+                        "name": "F_010_MT_CRIPPS_FAULT",
+                        "title": "F_010_MT_CRIPPS_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 058",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_058.gltf",
+                "popups": {
+                    "F_058": {
+                        "name": "F_058",
+                        "title": "F_058"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 053",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_053.gltf",
+                "popups": {
+                    "F_053": {
+                        "name": "F_053",
+                        "title": "F_053"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 025",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_025.gltf",
+                "popups": {
+                    "F_025": {
+                        "name": "F_025",
+                        "title": "F_025"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 15",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_15.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_15": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_15",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_15"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "10 Owen Group",
+                "displayed": false,
+                "include": true,
+                "model_url": "10_Owen_Group.gltf",
+                "popups": {
+                    "10_OWEN_GROUP": {
+                        "name": "10_OWEN_GROUP",
+                        "title": "10_OWEN_GROUP"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "08 Eldon Group",
+                "displayed": false,
+                "include": true,
+                "model_url": "08_Eldon_Group.gltf",
+                "popups": {
+                    "08_ELDON_GROUP": {
+                        "name": "08_ELDON_GROUP",
+                        "title": "08_ELDON_GROUP"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 001 Rosebery Fault inferred",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_001_Rosebery_Fault_inferred.gltf",
+                "popups": {
+                    "F_001_ROSEBERY_FAULT_INFERRED": {
+                        "name": "F_001_ROSEBERY_FAULT_INFERRED",
+                        "title": "F_001_ROSEBERY_FAULT_INFERRED"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 019",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_019.gltf",
+                "popups": {
+                    "F_019": {
+                        "name": "F_019",
+                        "title": "F_019"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 013",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_013.gltf",
+                "popups": {
+                    "F_013": {
+                        "name": "F_013",
+                        "title": "F_013"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 069",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_069.gltf",
+                "popups": {
+                    "F_069": {
+                        "name": "F_069",
+                        "title": "F_069"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "22 Farrell Slate",
+                "displayed": false,
+                "include": true,
+                "model_url": "22_Farrell_Slate.gltf",
+                "popups": {
+                    "22_FARRELL_SLATE": {
+                        "name": "22_FARRELL_SLATE",
+                        "title": "22_FARRELL_SLATE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault 06",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_06.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_06": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_06",
+                        "title": "F_022_ULTRAMAFIC_FAULT_06"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 028 Great Northern Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_028_Great_Northern_Fault.gltf",
+                "popups": {
+                    "F_028_GREAT_NORTHERN_FAULT": {
+                        "name": "F_028_GREAT_NORTHERN_FAULT",
+                        "title": "F_028_GREAT_NORTHERN_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 090",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_090.gltf",
+                "popups": {
+                    "F_090": {
+                        "name": "F_090",
+                        "title": "F_090"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "21 Bonds Range Porphyry",
+                "displayed": false,
+                "include": true,
+                "model_url": "21_Bonds_Range_Porphyry.gltf",
+                "popups": {
+                    "21_BONDS_RANGE_PORPHYRY": {
+                        "name": "21_BONDS_RANGE_PORPHYRY",
+                        "title": "21_BONDS_RANGE_PORPHYRY"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "25 Luina Group",
+                "displayed": false,
+                "include": true,
+                "model_url": "25_Luina_Group.gltf",
+                "popups": {
+                    "25_LUINA_GROUP": {
+                        "name": "25_LUINA_GROUP",
+                        "title": "25_LUINA_GROUP"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 073",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_073.gltf",
+                "popups": {
+                    "F_073": {
+                        "name": "F_073",
+                        "title": "F_073"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 097",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_097.gltf",
+                "popups": {
+                    "F_097": {
+                        "name": "F_097",
+                        "title": "F_097"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 008",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_008.gltf",
+                "popups": {
+                    "F_008": {
+                        "name": "F_008",
+                        "title": "F_008"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 088",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_088.gltf",
+                "popups": {
+                    "F_088": {
+                        "name": "F_088",
+                        "title": "F_088"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 016",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_016.gltf",
+                "popups": {
+                    "F_016": {
+                        "name": "F_016",
+                        "title": "F_016"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 02",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_02.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_02": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_02",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_02"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 087",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_087.gltf",
+                "popups": {
+                    "F_087": {
+                        "name": "F_087",
+                        "title": "F_087"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 068",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_068.gltf",
+                "popups": {
+                    "F_068": {
+                        "name": "F_068",
+                        "title": "F_068"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 054",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_054.gltf",
+                "popups": {
+                    "F_054": {
+                        "name": "F_054",
+                        "title": "F_054"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 071",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_071.gltf",
+                "popups": {
+                    "F_071": {
+                        "name": "F_071",
+                        "title": "F_071"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 056",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_056.gltf",
+                "popups": {
+                    "F_056": {
+                        "name": "F_056",
+                        "title": "F_056"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 064",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_064.gltf",
+                "popups": {
+                    "F_064": {
+                        "name": "F_064",
+                        "title": "F_064"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 084",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_084.gltf",
+                "popups": {
+                    "F_084": {
+                        "name": "F_084",
+                        "title": "F_084"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "11 Tyndall Group",
+                "displayed": false,
+                "include": true,
+                "model_url": "11_Tyndall_Group.gltf",
+                "popups": {
+                    "11_TYNDALL_GROUP": {
+                        "name": "11_TYNDALL_GROUP",
+                        "title": "11_TYNDALL_GROUP"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "06 Devonian granite base",
+                "displayed": false,
+                "include": true,
+                "model_url": "06_Devonian_granite_base.gltf",
+                "popups": {
+                    "06_DEVONIAN_GRANITE_BASE": {
+                        "name": "06_DEVONIAN_GRANITE_BASE",
+                        "title": "06_DEVONIAN_GRANITE_BASE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "30 Rocky Cape Group",
+                "displayed": false,
+                "include": true,
+                "model_url": "30_Rocky_Cape_Group.gltf",
+                "popups": {
+                    "30_ROCKY_CAPE_GROUP": {
+                        "name": "30_ROCKY_CAPE_GROUP",
+                        "title": "30_ROCKY_CAPE_GROUP"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 095",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_095.gltf",
+                "popups": {
+                    "F_095": {
+                        "name": "F_095",
+                        "title": "F_095"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 047",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_047.gltf",
+                "popups": {
+                    "F_047": {
+                        "name": "F_047",
+                        "title": "F_047"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 099",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_099.gltf",
+                "popups": {
+                    "F_099": {
+                        "name": "F_099",
+                        "title": "F_099"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 026",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_026.gltf",
+                "popups": {
+                    "F_026": {
+                        "name": "F_026",
+                        "title": "F_026"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 005 Henty Fault 2",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_005_Henty_Fault_2.gltf",
+                "popups": {
+                    "F_005_HENTY_FAULT_2": {
+                        "name": "F_005_HENTY_FAULT_2",
+                        "title": "F_005_HENTY_FAULT_2"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 081",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_081.gltf",
+                "popups": {
+                    "F_081": {
+                        "name": "F_081",
+                        "title": "F_081"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 03",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_03.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_03": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_03",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_03"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 110",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_110.gltf",
+                "popups": {
+                    "F_110": {
+                        "name": "F_110",
+                        "title": "F_110"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 04",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_04.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_04": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_04",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_04"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "24 Sticht Range Formation",
+                "displayed": false,
+                "include": true,
+                "model_url": "24_Sticht_Range_Formation.gltf",
+                "popups": {
+                    "24_STICHT_RANGE_FORMATION": {
+                        "name": "24_STICHT_RANGE_FORMATION",
+                        "title": "24_STICHT_RANGE_FORMATION"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "23 Eastern Quartz Phyric Sequence",
+                "displayed": false,
+                "include": true,
+                "model_url": "23_Eastern_Quartz_Phyric_Sequence.gltf",
+                "popups": {
+                    "23_EASTERN_QUARTZ_PHYRIC_SEQUENCE": {
+                        "name": "23_EASTERN_QUARTZ_PHYRIC_SEQUENCE",
+                        "title": "23_EASTERN_QUARTZ_PHYRIC_SEQUENCE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "03 Cenozoic basalt",
+                "displayed": false,
+                "include": true,
+                "model_url": "03_Cenozoic_basalt.gltf",
+                "popups": {
+                    "03_CENOZOIC_BASALT": {
+                        "name": "03_CENOZOIC_BASALT",
+                        "title": "03_CENOZOIC_BASALT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 083 Brickfield Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_083_Brickfield_Fault.gltf",
+                "popups": {
+                    "F_083_BRICKFIELD_FAULT": {
+                        "name": "F_083_BRICKFIELD_FAULT",
+                        "title": "F_083_BRICKFIELD_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 045",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_045.gltf",
+                "popups": {
+                    "F_045": {
+                        "name": "F_045",
+                        "title": "F_045"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 091",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_091.gltf",
+                "popups": {
+                    "F_091": {
+                        "name": "F_091",
+                        "title": "F_091"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 20",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_20.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_20": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_20",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_20"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 17",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_17.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_17": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_17",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_17"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 031 King River Fault splay",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_031_King_River_Fault_splay.gltf",
+                "popups": {
+                    "F_031_KING_RIVER_FAULT_SPLAY": {
+                        "name": "F_031_KING_RIVER_FAULT_SPLAY",
+                        "title": "F_031_KING_RIVER_FAULT_SPLAY"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 023 Firewood Siding Fault 03",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_023_Firewood_Siding_Fault_03.gltf",
+                "popups": {
+                    "F_023_FIREWOOD_SIDING_FAULT_03": {
+                        "name": "F_023_FIREWOOD_SIDING_FAULT_03",
+                        "title": "F_023_FIREWOOD_SIDING_FAULT_03"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 039 West Jukes Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_039_West_Jukes_Fault.gltf",
+                "popups": {
+                    "F_039_WEST_JUKES_FAULT": {
+                        "name": "F_039_WEST_JUKES_FAULT",
+                        "title": "F_039_WEST_JUKES_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 018 Ewart Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_018_Ewart_Fault.gltf",
+                "popups": {
+                    "F_018_EWART_FAULT": {
+                        "name": "F_018_EWART_FAULT",
+                        "title": "F_018_EWART_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 089",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_089.gltf",
+                "popups": {
+                    "F_089": {
+                        "name": "F_089",
+                        "title": "F_089"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 004 Marionoak Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_004_Marionoak_Fault.gltf",
+                "popups": {
+                    "F_004_MARIONOAK_FAULT": {
+                        "name": "F_004_MARIONOAK_FAULT",
+                        "title": "F_004_MARIONOAK_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 094",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_094.gltf",
+                "popups": {
+                    "F_094": {
+                        "name": "F_094",
+                        "title": "F_094"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 032 King River Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_032_King_River_Fault.gltf",
+                "popups": {
+                    "F_032_KING_RIVER_FAULT": {
+                        "name": "F_032_KING_RIVER_FAULT",
+                        "title": "F_032_KING_RIVER_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 05",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_05.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_05": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_05",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_05"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 11",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_11.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_11": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_11",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_11"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 074",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_074.gltf",
+                "popups": {
+                    "F_074": {
+                        "name": "F_074",
+                        "title": "F_074"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 017",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_017.gltf",
+                "popups": {
+                    "F_017": {
+                        "name": "F_017",
+                        "title": "F_017"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 066",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_066.gltf",
+                "popups": {
+                    "F_066": {
+                        "name": "F_066",
+                        "title": "F_066"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault 05",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_05.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_05": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_05",
+                        "title": "F_022_ULTRAMAFIC_FAULT_05"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 024",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_024.gltf",
+                "popups": {
+                    "F_024": {
+                        "name": "F_024",
+                        "title": "F_024"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 002 Mt Black Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_002_Mt_Black_Fault.gltf",
+                "popups": {
+                    "F_002_MT_BLACK_FAULT": {
+                        "name": "F_002_MT_BLACK_FAULT",
+                        "title": "F_002_MT_BLACK_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 060",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_060.gltf",
+                "popups": {
+                    "F_060": {
+                        "name": "F_060",
+                        "title": "F_060"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "09 Moina Sandstone",
+                "displayed": false,
+                "include": true,
+                "model_url": "09_Moina_Sandstone.gltf",
+                "popups": {
+                    "09_MOINA_SANDSTONE": {
+                        "name": "09_MOINA_SANDSTONE",
+                        "title": "09_MOINA_SANDSTONE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 033",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_033.gltf",
+                "popups": {
+                    "F_033": {
+                        "name": "F_033",
+                        "title": "F_033"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 005 Henty Fault 3",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_005_Henty_Fault_3.gltf",
+                "popups": {
+                    "F_005_HENTY_FAULT_3": {
+                        "name": "F_005_HENTY_FAULT_3",
+                        "title": "F_005_HENTY_FAULT_3"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "20 Central Volcanic Complex",
+                "displayed": false,
+                "include": true,
+                "model_url": "20_Central_Volcanic_Complex.gltf",
+                "popups": {
+                    "20_CENTRAL_VOLCANIC_COMPLEX": {
+                        "name": "20_CENTRAL_VOLCANIC_COMPLEX",
+                        "title": "20_CENTRAL_VOLCANIC_COMPLEX"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault 01",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_01.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_01": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_01",
+                        "title": "F_022_ULTRAMAFIC_FAULT_01"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault 10",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_10.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_10": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_10",
+                        "title": "F_022_ULTRAMAFIC_FAULT_10"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 042 Teepookana",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_042_Teepookana.gltf",
+                "popups": {
+                    "F_042_TEEPOOKANA": {
+                        "name": "F_042_TEEPOOKANA",
+                        "title": "F_042_TEEPOOKANA"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 007 Mt Strahan Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_007_Mt_Strahan_Fault.gltf",
+                "popups": {
+                    "F_007_MT_STRAHAN_FAULT": {
+                        "name": "F_007_MT_STRAHAN_FAULT",
+                        "title": "F_007_MT_STRAHAN_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "09 Gordon Group",
+                "displayed": false,
+                "include": true,
+                "model_url": "09_Gordon_Group.gltf",
+                "popups": {
+                    "09_GORDON_GROUP": {
+                        "name": "09_GORDON_GROUP",
+                        "title": "09_GORDON_GROUP"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault 02",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_02.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_02": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_02",
+                        "title": "F_022_ULTRAMAFIC_FAULT_02"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 034",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_034.gltf",
+                "popups": {
+                    "F_034": {
+                        "name": "F_034",
+                        "title": "F_034"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 040 North Lyell Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_040_North_Lyell_Fault.gltf",
+                "popups": {
+                    "F_040_NORTH_LYELL_FAULT": {
+                        "name": "F_040_NORTH_LYELL_FAULT",
+                        "title": "F_040_NORTH_LYELL_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 021 Engineer Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_021_Engineer_Fault.gltf",
+                "popups": {
+                    "F_021_ENGINEER_FAULT": {
+                        "name": "F_021_ENGINEER_FAULT",
+                        "title": "F_021_ENGINEER_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 037 North Lyell Fault",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_037_North_Lyell_Fault.gltf",
+                "popups": {
+                    "F_037_NORTH_LYELL_FAULT": {
+                        "name": "F_037_NORTH_LYELL_FAULT",
+                        "title": "F_037_NORTH_LYELL_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 036",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_036.gltf",
+                "popups": {
+                    "F_036": {
+                        "name": "F_036",
+                        "title": "F_036"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 093",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_093.gltf",
+                "popups": {
+                    "F_093": {
+                        "name": "F_093",
+                        "title": "F_093"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 022 ultramafic fault inferred 18",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_022_ultramafic_fault_inferred_18.gltf",
+                "popups": {
+                    "F_022_ULTRAMAFIC_FAULT_INFERRED_18": {
+                        "name": "F_022_ULTRAMAFIC_FAULT_INFERRED_18",
+                        "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_18"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 005 Henty Fault 1",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_005_Henty_Fault_1.gltf",
+                "popups": {
+                    "F_005_HENTY_FAULT_1": {
+                        "name": "F_005_HENTY_FAULT_1",
+                        "title": "F_005_HENTY_FAULT_1"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 049 Tenth Legion Thrust",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_049_Tenth_Legion_Thrust.gltf",
+                "popups": {
+                    "F_049_TENTH_LEGION_THRUST": {
+                        "name": "F_049_TENTH_LEGION_THRUST",
+                        "title": "F_049_TENTH_LEGION_THRUST"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 080",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_080.gltf",
+                "popups": {
+                    "F_080": {
+                        "name": "F_080",
+                        "title": "F_080"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 051",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_051.gltf",
+                "popups": {
+                    "F_051": {
+                        "name": "F_051",
+                        "title": "F_051"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "17 Cambrian granite magnetic",
+                "displayed": false,
+                "include": true,
+                "model_url": "17_Cambrian_granite_magnetic.gltf",
+                "popups": {
+                    "17_CAMBRIAN_GRANITE_MAGNETIC": {
+                        "name": "17_CAMBRIAN_GRANITE_MAGNETIC",
+                        "title": "17_CAMBRIAN_GRANITE_MAGNETIC"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "RL DEM100m",
+                "displayed": false,
+                "include": true,
+                "model_url": "RL_DEM100m.gltf",
+                "popups": {
+                    "RL_DEM100M": {
+                        "name": "RL_DEM100M",
+                        "title": "RL_DEM100M"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "05 Tasmanian Dolerite",
+                "displayed": false,
+                "include": true,
+                "model_url": "05_Tasmanian_Dolerite.gltf",
+                "popups": {
+                    "05_TASMANIAN_DOLERITE": {
+                        "name": "05_TASMANIAN_DOLERITE",
+                        "title": "05_TASMANIAN_DOLERITE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "04 Cenozoic sediment",
+                "displayed": false,
+                "include": true,
+                "model_url": "04_Cenozoic_sediment.gltf",
+                "popups": {
+                    "04_CENOZOIC_SEDIMENT": {
+                        "name": "04_CENOZOIC_SEDIMENT",
+                        "title": "04_CENOZOIC_SEDIMENT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F 101",
+                "displayed": false,
+                "include": true,
+                "model_url": "F_101.gltf",
+                "popups": {
+                    "F_101": {
+                        "name": "F_101",
+                        "title": "F_101"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "397000mE 5320000mN",
+                "displayed": false,
+                "include": true,
+                "model_url": "397000mE_5320000mN.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "397000mE 5335000mN",
+                "displayed": false,
+                "include": true,
+                "model_url": "397000mE_5335000mN.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "397000mE 5395000mN",
+                "displayed": false,
+                "include": true,
+                "model_url": "397000mE_5395000mN.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Hellyer",
+                "displayed": false,
+                "include": true,
+                "model_url": "Hellyer.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "352000mE 5375000mN",
+                "displayed": false,
+                "include": true,
+                "model_url": "352000mE_5375000mN.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Strahan",
+                "displayed": false,
+                "include": true,
+                "model_url": "Strahan.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "372000mE 5395000mN",
+                "displayed": false,
+                "include": true,
+                "model_url": "372000mE_5395000mN.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "372000mE 5320000mN",
+                "displayed": false,
+                "include": true,
+                "model_url": "372000mE_5320000mN.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "372000mE 5335000mN",
+                "displayed": false,
+                "include": true,
+                "model_url": "372000mE_5335000mN.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "352000mE 5395000mN",
+                "displayed": false,
+                "include": true,
+                "model_url": "352000mE_5395000mN.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "372000mE 5375000mN",
+                "displayed": false,
+                "include": true,
+                "model_url": "372000mE_5375000mN.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Henty",
+                "displayed": false,
+                "include": true,
+                "model_url": "Henty.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Zeehan",
+                "displayed": false,
+                "include": true,
+                "model_url": "Zeehan.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "397000mE 5355000mN",
+                "displayed": false,
+                "include": true,
+                "model_url": "397000mE_5355000mN.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Mt Lindsay",
+                "displayed": false,
+                "include": true,
+                "model_url": "Mt_Lindsay.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "397000mE 5375000mN",
+                "displayed": false,
+                "include": true,
+                "model_url": "397000mE_5375000mN.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "352000mE 5335000mN",
+                "displayed": false,
+                "include": true,
+                "model_url": "352000mE_5335000mN.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "372000mE 5355000mN",
+                "displayed": false,
+                "include": true,
+                "model_url": "372000mE_5355000mN.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Queenstown",
+                "displayed": false,
+                "include": true,
+                "model_url": "Queenstown.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Avebury",
+                "displayed": false,
+                "include": true,
+                "model_url": "Avebury.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "352000mE 5320000mN",
+                "displayed": false,
+                "include": true,
+                "model_url": "352000mE_5320000mN.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Renison",
+                "displayed": false,
+                "include": true,
+                "model_url": "Renison.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Rosebery",
+                "displayed": false,
+                "include": true,
+                "model_url": "Rosebery.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "352000mE 5355000mN",
+                "displayed": false,
+                "include": true,
+                "model_url": "352000mE_5355000mN.gltf",
+                "popups": null,
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "RL Grav model grids density",
+                "displayed": false,
+                "include": true,
+                "model_url": "RL_Grav_model_grids_density.PNG",
+                "popups": {
+                    "RL_Grav_model_grids_density": {
+                        "name": "RL_GRAV_MODEL_GRIDS_DENSITY",
+                        "title": "RL_GRAV_MODEL_GRIDS_DENSITY"
+                    }
+                },
+                "type": "ImagePlane",
+                "position": [
+                    351050.0,
+                    5318750.0,
+                    1003.0
+                ]
+            },
+            {
+                "display_name": "Rosebery Lyell geology",
+                "displayed": false,
+                "include": false,
+                "model_url": "Rosebery_Lyell_geology.PNG",
+                "popups": {},
+                "type": "ImagePlane",
+                "position": [
+                    351050.0,
+                    5318750.0,
+                    2003.0
+                ]
+            },
+            {
+                "display_name": "Rosebery Lyell geophysics",
+                "displayed": false,
+                "include": true,
+                "model_url": "Rosebery_Lyell_geophysics.PNG",
+                "popups": {
+                    "Rosebery_Lyell_geophysics": {
+                        "name": "ROSEBERY_LYELL_GEOPHYSICS",
+                        "title": "ROSEBERY_LYELL_GEOPHYSICS"
+                    }
+                },
+                "type": "ImagePlane",
+                "position": [
+                    351050.0,
+                    5318750.0,
+                    3003.0
+                ]
+            },
+            {
+                "display_name": "RL Mag model grids susc",
+                "displayed": false,
+                "include": true,
+                "model_url": "RL_Mag_model_grids_susc.PNG",
+                "popups": {
+                    "RL_Mag_model_grids_susc": {
+                        "name": "RL_MAG_MODEL_GRIDS_SUSC",
+                        "title": "RL_MAG_MODEL_GRIDS_SUSC"
+                    }
+                },
+                "type": "ImagePlane",
+                "position": [
+                    351050.0,
+                    5318750.0,
+                    4003.0
+                ]
+            }
+        ]
+    },
+    "properties": {
+        "crs": "EPSG:3857",
+        "extent": [
+            351050.0,
+            401066.54296875,
+            5318750.0,
+            5396450.0
+        ],
+        "name": "Name of model"
+    },
+    "type": "GeologicalModel",
+    "version": 1.0
+}

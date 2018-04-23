@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
+import { ModelInfoService } from '../../shared/services/model-info.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
     selector: 'app-providerselection',
@@ -14,7 +16,7 @@ export class ProviderSelectionComponent implements OnInit {
     // Sources of geological models
     public sources: Array<any> = [];
 
-    constructor() {
+    constructor(private modelInfoService: ModelInfoService) {
         // At the moment this information is all hard-coded; this is temporary.
         // Eventually I would like this information to be retrieved from the server
         //
@@ -36,66 +38,20 @@ export class ProviderSelectionComponent implements OnInit {
             }
         );
 
-        this.sources =  [
-            {
-                name: 'Victoria',
-                numberModels: 4,
-                icon: 'fa-leaf',
-                colourClass: 'primary',
-                providerPath: 'vic'
-            },
-            {
-                name: 'Western Australia',
-                numberModels: 17,
-                icon: 'fa-map-signs',
-                colourClass: 'warning',
-                providerPath: 'wa'
-            },
-            {
-                name: 'South Australia',
-                numberModels: 13,
-                icon: 'fa-bookmark',
-                colourClass: 'success',
-                providerPath: 'sa'
-            },
-            {
-                name: 'Tasmania',
-                numberModels: 5,
-                icon: 'fa-tree',
-                colourClass: 'secondary',
-                providerPath: 'tas'
-            },
-            {
-                name: 'Queensland',
-                numberModels: 10,
-                icon: 'fa-sun-o',
-                colourClass: 'danger',
-                providerPath: 'qld'
-            },
-            {
-                name: 'N.S.W.',
-                numberModels: 8,
-                icon: 'fa-institution',
-                colourClass: 'info',
-                providerPath: 'nsw'
-            },
-            {
-                name: 'Northern Territory',
-                numberModels: 9,
-                icon: 'fa-anchor',
-                colourClass: 'dark',
-                providerPath: 'nt'
-            },
-            {
-                name: 'Geoscience Australia',
-                numberModels: 20,
-                icon: 'fa-flag',
-                colourClass: 'primary',
-                providerPath: 'ga'
-            }
-        ];
+
     }
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.modelInfoService.getProviderInfo().subscribe(
+            data => {
+                this.sources = data as string [];
+                console.log('!!! this.sources = ', this.sources);
+            },
+            (err: HttpErrorResponse) => {
+                console.log('Cannot load JSON', err);
+            }
+        );
+
+    }
 
 }

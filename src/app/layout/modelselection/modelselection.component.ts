@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { routerTransition } from '../../router.animations';
+import { HttpErrorResponse } from '@angular/common/http';
 
 import 'rxjs/add/operator/switchMap';
+
+import { ModelInfoService } from '../../shared/services/model-info.service';
 
 @Component({
     selector: 'app-modelselection',
@@ -12,153 +15,28 @@ import 'rxjs/add/operator/switchMap';
 })
 export class ModelSelectionComponent implements OnInit {
 
-    // Sources of geological models
+    // Geological models for each provider
     public providerModels: any = {};
 
-    // List of model information
-    public models: any = {};
-
-    // Name of current provider
-    public providerName = '';
+    public providerPath = '';
 
     constructor(private route: ActivatedRoute,
-                private router: Router) {
-
-        // At the moment this information is all hard-coded; this is temporary.
-        // Eventually I would like this information to be retrieved from the server
-        //
-        this.providerModels =  {
-            'vic': {
-                name: 'Victoria',
-                models: [
-                    {
-                        name: 'Otway Basin',
-                        modelPath: 'otway',
-                        icon: 'fa-map-signs',
-                        colourClass: 'warning'
-                    }
-                ]
-            },
-            'wa': {
-                name: 'Western Australia',
-                models: [
-                    {
-                        name: 'Sandstone',
-                        modelPath: 'sandstone',
-                        icon: 'fa-map-signs',
-                        colourClass: 'warning'
-                    },
-                    {
-                        name: 'Rocklea Inliner',
-                        modelPath: 'rocklea',
-                        icon: 'fa-map-signs',
-                        colourClass: 'warning'
-                    }
-                ]
-            },
-            'sa': {
-                name: 'South Australia',
-                models: [
-                    {
-                        name: 'North Gawler',
-                        modelPath: 'ngawler',
-                        icon: 'fa-map-signs',
-                        colourClass: 'warning'
-                    }
-                ]
-            },
-            'tas': {
-                name: 'Tasmania',
-                models: [
-                    {
-                        name: 'Rosebery Lyell',
-                        modelPath: 'rosebery',
-                        icon: 'fa-map-signs',
-                        colourClass: 'warning'
-                    }
-                ]
-            },
-            'qld': {
-                name: 'Queensland',
-                models: [
-                    {
-                        name: 'Mt Dore',
-                        modelPath: 'mtdore',
-                        icon: 'fa-map-signs',
-                        colourClass: 'warning'
-                    },
-                    {
-                        name: 'Quamby',
-                        modelPath: 'quamby',
-                        icon: 'fa-map-signs',
-                        colourClass: 'warning'
-                    }
-                ]
-            },
-            'nsw': {
-                name: 'N.S.W.',
-                models: [
-                    {
-                        name: 'Southern New England',
-                        modelPath: 'neweng',
-                        icon: 'fa-map-signs',
-                        colourClass: 'warning'
-                    },
-                    {
-                        name: 'Western Tamworth',
-                        modelPath: 'tamwor',
-                        icon: 'fa-map-signs',
-                        colourClass: 'warning'
-                    }
-                ]
-            },
-            'nt': {
-                name: 'Northern Territory',
-                models: [
-                    {
-                        name: 'Not yet',
-                        modelPath: 'NA',
-                        icon: 'fa-map-signs',
-                        colourClass: 'warning'
-                    }
-                ]
-            },
-            'ga': {
-                name: 'Geoscience Australia',
-                models: [
-                    {
-                        name: 'Capel-Faust',
-                        modelPath: 'capel',
-                        icon: 'fa-map-signs',
-                        colourClass: 'warning'
-                    },
-                    {
-                        name: 'North-Queensland',
-                        modelPath: 'norqld',
-                        icon: 'fa-map-signs',
-                        colourClass: 'warning'
-                    },
-                    {
-                        name: 'Gunnedah-Surat',
-                        modelPath: 'gunnedah',
-                        icon: 'fa-map-signs',
-                        colourClass: 'warning'
-                    }
-                ]
-            }
-        };
+                private modelInfoService: ModelInfoService) {
     }
 
     ngOnInit() {
-        const providerPath = this.route.snapshot.paramMap.get('providerPath');
-        let providerObj = { name: 'Unknown', models: [] };
-        if (providerPath in this.providerModels) {
-            providerObj = this.providerModels[providerPath];
-        }
-        console.log('providerPath=', providerPath);
-        console.log('this.providerModels[providerPath]=', providerObj);
-        this.providerName = providerObj.name;
-        this.models = providerObj.models;
+        this.providerPath = this.route.snapshot.paramMap.get('providerPath');
+        this.modelInfoService.getProviderModelInfo().subscribe(
+            data => {
+                this.providerModels = data as string [];
+                console.log('ProviderModelInfo Loaded', this.providerModels);
+                console.log('providerPath=', this.providerPath);
+                console.log('this.providerModels[providerPath]=', this.providerModels[this.providerPath]);
+            },
+            (err: HttpErrorResponse) => {
+                console.log('Cannot load JSON', err);
+            }
+        );
     }
 
 }

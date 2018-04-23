@@ -8,6 +8,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ModelInfoService } from './shared/services/model-info.service';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -30,6 +31,9 @@ export function createTranslateLoader(http: HttpClient) {
             }
         }),
         AppRoutingModule
+    ],
+    providers: [
+        ModelInfoService
     ],
     declarations: [AppComponent],
     bootstrap: [AppComponent]
