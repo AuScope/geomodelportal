@@ -1,4 +1,24 @@
 <div [@routerTransition]>
         <app-sidebar>  </app-sidebar>
-    <h2 class="text-muted">Model View HERE!</h2>
+
+        <div class="jumbotron">
+            <div id="viewerDiv" style="height: 100%"></div>
+        </div>
+            <div class="row">
+                <div class="col-md-2" id="help">
+                    <p>Key bindings</p>
+                    <ul>
+                      <li>Left-Click: rotate model</li>
+                      <li>Right-Click: move model</li>
+                      <li>Mouse Wheel: zoom in/out</li>
+                      <li>Double Click: more information</li>
+                    </ul>
+                </div>
+                <div class="col-md-2" id="modelControlsDiv">
+                    <p>Model Controls</p>
+                    <input type="button" style="bg-color: black"/>Reset View
+                </div>
+
+            </div>
+            <div id="popupBoxDiv"></div>
 </div>

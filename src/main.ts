@@ -6,6 +6,8 @@ import { environment } from './environments/environment';
 
 import 'hammerjs';
 
+// declare var itowns: any;
+
 if (environment.production) {
     enableProdMode();
 }
