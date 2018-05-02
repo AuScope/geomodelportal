@@ -1,41 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
-// import * as THREE from 'three';
-declare const THREE;
 
-const GLTFLoader = THREE.GLTFLoader;
-// import * as GLTFLoader from '../../../assets/GLTFLoader';
+// Include threejs library
+import * as THREE from 'three';
 
-declare const itowns;
+// GLTFLoader is not part of threejs' set of package exports, so we need this wrapper function
+import * as GLTFLoader from '../../../../node_modules/three-gltf2-loader/lib/main';
 
-const ITOWNS = itowns;
+// Import itowns library
+import * as ITOWNS from '../../../../node_modules/itowns/dist/itowns';
 
-// declare const itowns;
-// import * as ITOWNS from '../../../../node_modules/itowns/dist/itowns';
+// If you want to use your own CRS instead of the default one, you must use ITOWNS' version of proj4
 const proj4 = ITOWNS.proj4;
 
-
-
-
+// Three axis virtual globe controller
 import GeoModelControls from '../../../assets/GeoModelControls';
 
-declare const Detector;
-// import * as Detector from '../../../assets/Detector';
-
-
-
-
-
-// require('proj4/package.json'); // proj4 is a peer dependency.
-
-// require('three/package.json'); // three is a peer dependency.
-
-// require('three.meshline/package.json'); // three.meshline is a peer dependency.
-
-// const itowns = require('itowns');
-
-// const THREE = require('three');
-
+// Detects if WebGL is available in the browser
+import * as Detector from '../../../../node_modules/three/examples/js/Detector';
 
 
 @Component({
@@ -87,16 +69,7 @@ export class ModelViewComponent implements OnInit {
 
     constructor() {
         const exports = {};
-
-        console.log('Detector =', Detector);
-        console.log('THREE = ', THREE);
-        console.log('itowns =', itowns);
-        console.log('GLTFLoader =', GLTFLoader);
-
-
         const local = this;
-
-
 
         // Detect if webGL is available and inform viewer if cannot proceed
         if (Detector.webgl) {
@@ -209,20 +182,11 @@ export class ModelViewComponent implements OnInit {
     }
 
     initialise_model(config, model_name) {
-
-        console.log('initialise_model(', model_name, ') this = ', this);
-
         const props = config.properties;
         const i = 0;
 
         this.model_dir = model_name;
-
-        console.log('ITOWNS = ', ITOWNS);
-
         if (props.proj4_defn) {
-            console.log('proj4 = ', proj4);
-            console.log('proj4.defs = ', proj4.defs);
-            console.log('props = ', props);
             proj4.defs(props.crs, props.proj4_defn);
         }
 
@@ -271,10 +235,14 @@ export class ModelViewComponent implements OnInit {
 
     // Add GLTF objects
     add_3dobjects() {
-        console.log('add_3dobjects() this = ',  this);
         const manager = new ITOWNS.THREE.LoadingManager();
-        const loader = new GLTFLoader(manager);
-        // const loader = new GltfLoader();
+
+        // This adds the 'GLTFLoader' object to ;THREE'
+        GLTFLoader(THREE);
+
+        // Create our new GLTFLoader object
+        const loader = new THREE['GLTFLoader'](manager);
+
         const onProgress = function ( xhr ) {
             // console.log('GLTF/OBJ onProgress()', xhr);
             // if ( xhr.lengthComputable ) {
@@ -299,7 +267,6 @@ export class ModelViewComponent implements OnInit {
                     if (parts[i].type === 'GLTFObject' && parts[i].include) {
                         promiseList.push( new Promise( function( resolve, reject ) {
                             (function(part, grp) {
-                                console.log('loading: ', local.model_dir + '/' + part.model_url);
                                 loader.load('./assets/geomodels/' + local.model_dir + '/' + part.model_url, function (g_object) {
                                     console.log('loaded: ', local.model_dir + '/' + part.model_url);
                                     g_object.scene.name = part.model_url;
@@ -325,7 +292,6 @@ export class ModelViewComponent implements OnInit {
 
     add_planes() {
         // Add planes
-        console.log('add_planes() this = ', this);
         const manager = new ITOWNS.THREE.LoadingManager();
         manager.onProgress = function ( item, loaded, total ) {
             // console.log( item, loaded, total );
@@ -390,8 +356,6 @@ export class ModelViewComponent implements OnInit {
     // other objects in the scene.
     //
     initialise_view(config) {
-
-        console.log('initialize_view() this = ', this);
         const props = config.properties;
 
         // Create an instance of PlanarView
@@ -434,6 +398,7 @@ export class ModelViewComponent implements OnInit {
             }
         }
 
+        // The Raycaster is used to find which part of the model was clicked on, then create a popup box
         this.raycaster = new THREE.Raycaster();
         this.viewerDiv.addEventListener( 'dblclick',   function(event: any) {
 
@@ -526,7 +491,6 @@ export class ModelViewComponent implements OnInit {
 
 
     update_group_tickbox(groupName: string) {
-        console.log('update_group_tickbox() this = ', this);
         for (let ulIdx = 0; ulIdx < this.ulElem.childNodes.length; ulIdx++) {
             let liElem = this.ulElem.childNodes[ulIdx];
             if (liElem.style.listStyleType === 'circle') {
