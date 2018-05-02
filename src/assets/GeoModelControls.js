@@ -41,6 +41,7 @@ function GeoModelControls(camera, view, rotCentre) {
     var yawObject = new THREE.Object3D();
     yawObject.add(pitchObject);
     var rollObject = new THREE.Object3D();
+    rollObject.name = 'GeoModelControls';
     rollObject.position.set(rotCentre.x, rotCentre.y, rotCentre.z);
     rollObject.add(yawObject);
 

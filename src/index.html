@@ -9,10 +9,41 @@
         <link rel="icon" type="image/x-icon" href="favicon.ico">
     </head>
     <body>
-        <!-- <script src="../node_modules/three/examples/js/loaders/GLTFLoader.js"></script>
-        <script src="../node_modules/three/examples/js/Detector.js"></script>
-        <script src="../dist/itowns.js"></script> -->
+        <!-- <script src="../../node_modules/three/examples/js/loaders/GLTFLoader.js"></script>
+        <script src="../../node_modules/three/examples/js/Detector.js"></script>
+        <script src="../../node_modules/itowns/dist/itowns.js"></script> -->
         <!-- <script src="https://unpkg.com/three@0.86.0/examples/js/Detector.js"></script> -->
+        <script src="assets/orig/three.js"></script>
+        <script src="assets/orig/GLTFLoader.js"></script>
+        <script src="assets/orig/Detector.js"></script>
+        <script src="assets/orig/itowns.js"></script>
+        <!-- <div id="modelControlsDiv">
+    <p>Model Controls</p>
+    <input type="button" style="bg-color: black">Reset View</input>
+</div>
+        <div id="viewerDiv" style="margin : auto auto; height: 100%; padding: 0; min-height: 600px;"></div>
+ <div id="popupBoxDiv">
+ </div>
+ <script type="text/javascript">
+     var exports = {};
+     var proj4 = itowns.proj4;
+ </script>
+ <script src ="assets/GeoModel.js"></script>
+ <script type="text/javascript">
+     if (Detector.webgl) {
+         // Load and parse the file containing the model details
+         var loader = new THREE.FileLoader();
+         loader.load('assets/geomodels/NorthGawler.json', function (text) {
+             config = JSON.parse(text);
+             initialise_model(config, 'assets/geomodels/NorthGawler');
+         } );
+         exports.view = view;
+         exports.scene = scene;
+     } else {
+         var warning = Detector.getWebGLErrorMessage();
+         document.getElementById('viewerDiv').appendChild(warning);
+     }
+ </script> -->
         <app-root>
             <div class="spinner">
                 <div class="bounce1"></div>

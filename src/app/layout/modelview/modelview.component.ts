@@ -1,15 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
-import * as THREE from 'three';
+// import * as THREE from 'three';
+declare const THREE;
 
-// declare const GLTFLoader;
-import * as GLTFLoader from '../../../assets/GLTFLoader';
+const GLTFLoader = THREE.GLTFLoader;
+// import * as GLTFLoader from '../../../assets/GLTFLoader';
+
+declare const itowns;
+
+const ITOWNS = itowns;
 
 // declare const itowns;
-import * as ITOWNS from '../../../../node_modules/itowns/dist/itowns';
+// import * as ITOWNS from '../../../../node_modules/itowns/dist/itowns';
 const proj4 = ITOWNS.proj4;
 
+
+
+
 import GeoModelControls from '../../../assets/GeoModelControls';
+
+declare const Detector;
+// import * as Detector from '../../../assets/Detector';
+
+
+
+
 
 // require('proj4/package.json'); // proj4 is a peer dependency.
 
@@ -73,13 +88,18 @@ export class ModelViewComponent implements OnInit {
     constructor() {
         const exports = {};
 
-        console.log('itowns =', ITOWNS);
+        console.log('Detector =', Detector);
+        console.log('THREE = ', THREE);
+        console.log('itowns =', itowns);
+        console.log('GLTFLoader =', GLTFLoader);
 
 
         const local = this;
 
-        // FIXME: Where is Detector??
-        if (1 === 1 /*ITOWNS.Detector.webgl*/) {
+
+
+        // Detect if webGL is available and inform viewer if cannot proceed
+        if (Detector.webgl) {
             const params = new URLSearchParams(document.location.search.substring(1));
             const model_name = 'NorthGawler';  // FIXME: params.get('model');
 
@@ -91,7 +111,7 @@ export class ModelViewComponent implements OnInit {
                 local.initialise_model(local.config, model_name);
             } );
         } else {
-            const warning = ITOWNS.Detector.getWebGLErrorMessage();
+            const warning = Detector.getWebGLErrorMessage();
             document.getElementById('viewerDiv').appendChild(warning);
         }
     }
@@ -167,7 +187,7 @@ export class ModelViewComponent implements OnInit {
             scObj.visible = !scObj.visible;
             // Must do this update after the tickbox has been updated
             setTimeout(function() {
-                this.update_group_tickbox(grName);
+                // this.update_group_tickbox(grName);
             }, 500);
             this.view.notifyChange(true);
         };
@@ -214,20 +234,20 @@ export class ModelViewComponent implements OnInit {
         this.viewerDiv = document.getElementById('viewerDiv');
 
         // Contains checkboxes for model parts
-        const modelControlsDiv = document.getElementById('modelControlsDiv');
-        this.ulElem = document.createElement('ul');
-        modelControlsDiv.appendChild(this.ulElem);
+        // const modelControlsDiv = document.getElementById('modelControlsDiv');
+        // this.ulElem = document.createElement('ul');
+        // modelControlsDiv.appendChild(this.ulElem);
 
 
         this.sceneArr = {};
 
         // Add in the groups to the LHS panel
-        for (const group of config.groups) {
-            this.add_display_groups(group);
-        }
+        // for (const group of config.groups) {
+        //     this.add_display_groups(group);
+        // }
 
         // Scene
-        this.scene = new THREE.Scene();
+        this.scene = new ITOWNS.THREE.Scene();
 
         /*var axesHelper = new THREE.AxisHelper( 5 );
         scene.add( axesHelper );*/
@@ -236,7 +256,7 @@ export class ModelViewComponent implements OnInit {
         this.scene.background = new THREE.Color(0x555555);
 
         // Ambient light
-        const ambient = new THREE.AmbientLight(0xFFFFFF);
+        const ambient = new ITOWNS.THREE.AmbientLight(0xFFFFFF);
         ambient.name = 'Ambient Light';
         this.scene.add(ambient);
 
@@ -246,14 +266,14 @@ export class ModelViewComponent implements OnInit {
         pointlight.name = 'Point Light';
         this.scene.add(pointlight);
 
-        this.add_planes();
+        this.add_3dobjects();
     }
 
     // Add GLTF objects
     add_3dobjects() {
         console.log('add_3dobjects() this = ',  this);
-        const manager = new THREE.LoadingManager();
-        const loader = new GLTFLoader.GLTFLoader(manager);
+        const manager = new ITOWNS.THREE.LoadingManager();
+        const loader = new GLTFLoader(manager);
         // const loader = new GltfLoader();
         const onProgress = function ( xhr ) {
             // console.log('GLTF/OBJ onProgress()', xhr);
@@ -282,8 +302,9 @@ export class ModelViewComponent implements OnInit {
                                 console.log('loading: ', local.model_dir + '/' + part.model_url);
                                 loader.load('./assets/geomodels/' + local.model_dir + '/' + part.model_url, function (g_object) {
                                     console.log('loaded: ', local.model_dir + '/' + part.model_url);
+                                    g_object.scene.name = part.model_url;
                                     local.scene.add(g_object.scene);
-                                    local.add_display(part, g_object.scene, grp);
+                                    // local.add_display(part, g_object.scene, grp);
                                     resolve(g_object.scene);
                                 }, onProgress, onError);
                             })(parts[i], group);
@@ -295,9 +316,7 @@ export class ModelViewComponent implements OnInit {
 
         Promise.all(promiseList).then( function( sceneObjList ) {
            console.log('GLTFs are loaded, now init view scene=', local.scene);
-           local.initialise_view(local.config);
-           local.view.notifyChange(true);
-
+           local.add_planes();
         }, function( error ) {
             console.error( 'Could not load all textures:', error );
         });
@@ -307,7 +326,7 @@ export class ModelViewComponent implements OnInit {
     add_planes() {
         // Add planes
         console.log('add_planes() this = ', this);
-        const manager = new THREE.LoadingManager();
+        const manager = new ITOWNS.THREE.LoadingManager();
         manager.onProgress = function ( item, loaded, total ) {
             // console.log( item, loaded, total );
         };
@@ -333,12 +352,12 @@ export class ModelViewComponent implements OnInit {
                                 } );
                                 const geometry = new THREE.PlaneGeometry(local.extentObj.dimensions().x, local.extentObj.dimensions().y);
                                 const plane = new THREE.Mesh(geometry, material);
-                                const position = new THREE.Vector3(local.extentObj.center().x(),
+                                const position = new ITOWNS.THREE.Vector3(local.extentObj.center().x(),
                                                                       local.extentObj.center().y(), part.position[2]);
                                 plane.position.copy(position);
                                 plane.name = part.display_name; // Need this to display popup windows
                                 local.scene.add(plane);
-                                local.add_display(part, plane, grp);
+                                // local.add_display(part, plane, grp);
                                 resolve(plane);
                             },
                             // Function called when download progresses
@@ -359,7 +378,7 @@ export class ModelViewComponent implements OnInit {
 
         Promise.all(promiseList).then( function( sceneObjList ) {
            // Planes are loaded, now for GLTF objects
-           local.add_3dobjects();
+           local.initialise_view(local.config);
 
         }, function( error ) {
             console.error( 'Could not load all textures:', error );
@@ -478,27 +497,30 @@ export class ModelViewComponent implements OnInit {
         const hex_z = 0x0000ff;
 
         const arrowHelper_x = new THREE.ArrowHelper( x_dir, origin, length, hex_x );
+        arrowHelper_x.name = 'arrowHelper_x';
         this.scene.add( arrowHelper_x );
         const arrowHelper_y = new THREE.ArrowHelper( y_dir, origin, length, hex_y );
+        arrowHelper_y.name = 'arrowHelper_y';
         this.scene.add( arrowHelper_y );
         const arrowHelper_z = new THREE.ArrowHelper( z_dir, origin, length - 130000, hex_z );
+        arrowHelper_z.name = 'arrowHelper_z';
         this.scene.add( arrowHelper_z );
 
         // Modified version of pointer lock controls
         const trackBallControls = new GeoModelControls(this.view.camera.camera3D, this.view, this.extentObj.center().xyz());
         this.scene.add(trackBallControls.getObject());
 
-        // Hide any parts of the model that are not ticked
-        for (const sKey in this.sceneArr) {
-            if (!this.sceneArr[sKey]['checkbox'].hasAttribute('checked')
-              || this.sceneArr[sKey]['checkbox'].getAttribute('checked') === false) {
-                this.sceneArr[sKey]['scene'].visible = false;
-            }
-        }
+        // // Hide any parts of the model that are not ticked
+        // for (const sKey in this.sceneArr) {
+        //    if (!this.sceneArr[sKey]['checkbox'].hasAttribute('checked')
+        //      || this.sceneArr[sKey]['checkbox'].getAttribute('checked') === false) {
+        //        this.sceneArr[sKey]['scene'].visible = false;
+        //    }
+        // }
 
         // Update group tick boxes so that if one of the group is not ticked then the overall one is not ticked also
-        this.update_group_tickbox(null);
-
+        // this.update_group_tickbox(null);
+        console.log('scene = ', this.scene);
         this.view.notifyChange(true);
     }
 
