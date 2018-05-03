@@ -8,7 +8,9 @@
                         "icon": "fa-map-signs",
                         "colourClass": "warning"
                     }
-                ]
+                ],
+                "icon": "fa-leaf",
+                "colourClass": "primary"
             },
             "wa": {
                 "name": "Western Australia",
@@ -25,7 +27,9 @@
                         "icon": "fa-map-signs",
                         "colourClass": "warning"
                     }
-                ]
+                ],
+                "icon": "fa-map-signs",
+                "colourClass": "warning"
             },
             "sa": {
                 "name": "South Australia",
@@ -36,7 +40,9 @@
                         "icon": "fa-map-signs",
                         "colourClass": "warning"
                     }
-                ]
+                ],
+                "icon": "fa-bookmark",
+                "colourClass": "success"
             },
             "tas": {
                 "name": "Tasmania",
@@ -47,7 +53,9 @@
                         "icon": "fa-map-signs",
                         "colourClass": "warning"
                     }
-                ]
+                ],
+                "icon": "fa-tree",
+                "colourClass": "secondary"
             },
             "qld": {
                 "name": "Queensland",
@@ -64,7 +72,9 @@
                         "icon": "fa-map-signs",
                         "colourClass": "warning"
                     }
-                ]
+                ],
+                "icon": "fa-sun-o",
+                "colourClass": "danger"
             },
             "nsw": {
                 "name": "N.S.W.",
@@ -81,7 +91,9 @@
                         "icon": "fa-map-signs",
                         "colourClass": "warning"
                     }
-                ]
+                ],
+                "icon": "fa-institution",
+                "colourClass": "info"
             },
             "nt": {
                 "name": "Northern Territory",
@@ -92,7 +104,9 @@
                         "icon": "fa-map-signs",
                         "colourClass": "warning"
                     }
-                ]
+                ],
+                "icon": "fa-anchor",
+                "colourClass": "dark"
             },
             "ga": {
                 "name": "Geoscience Australia",
@@ -115,6 +129,8 @@
                         "icon": "fa-map-signs",
                         "colourClass": "warning"
                     }
-                ]
+                ],
+                "icon": "fa-flag",
+                "colourClass": "primary"
             }
 }

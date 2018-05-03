@@ -14,7 +14,7 @@ export class ProviderSelectionComponent implements OnInit {
     public sliders: Array<any> = [];
 
     // Sources of geological models
-    public sources: Array<any> = [];
+    public sources: any;
 
     constructor(private modelInfoService: ModelInfoService) {
         // At the moment this information is all hard-coded; this is temporary.
@@ -37,21 +37,12 @@ export class ProviderSelectionComponent implements OnInit {
                 text: 'Rosebery Lyell Model'
             }
         );
-
+        console.log('ProviderSelectionComponent ngOnInit()');
+        this.modelInfoService.getProviderInfo().then(res => { this.sources = res; console.log('this.sources = ', this.sources); });
 
     }
 
     ngOnInit() {
-        this.modelInfoService.getProviderInfo().subscribe(
-            data => {
-                this.sources = data as string [];
-                console.log('!!! this.sources = ', this.sources);
-            },
-            (err: HttpErrorResponse) => {
-                console.log('Cannot load JSON', err);
-            }
-        );
-
     }
 
 }
