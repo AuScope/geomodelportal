@@ -5,15 +5,18 @@ import { routerTransition } from '../../router.animations';
 import * as THREE from 'three';
 
 // GLTFLoader is not part of threejs' set of package exports, so we need this wrapper function
+// FIXME: Needs typescript bindings
 import * as GLTFLoader from '../../../../node_modules/three-gltf2-loader/lib/main';
 
 // Import itowns library
+// FIXME: Needs typescript bindings
 import * as ITOWNS from '../../../../node_modules/itowns/dist/itowns';
 
-// If you want to use your own CRS instead of the default one, you must use ITOWNS' version of proj4
+// If you want to use your own CRS instead of the ITOWNS' default one then you must use ITOWNS' version of proj4
 const proj4 = ITOWNS.proj4;
 
 // Three axis virtual globe controller
+// FIXME: Needs typescript bindings
 import GeoModelControls from '../../../assets/GeoModelControls';
 
 // Detects if WebGL is available in the browser
@@ -85,6 +88,7 @@ export class ModelViewComponent implements OnInit {
             } );
         } else {
             const warning = Detector.getWebGLErrorMessage();
+            // FIXME: Do this the angular way
             document.getElementById('viewerDiv').appendChild(warning);
         }
     }
@@ -424,12 +428,15 @@ export class ModelViewComponent implements OnInit {
                                 const parts = modelViewObj.config.groups[group];
                                 for (let i = 0; i < parts.length; i++) {
                                     if (parts[i].hasOwnProperty('popups')) {
-                                        for (const popup_key of parts[i]['popups']) {
-                                            if (popup_key + '_0' === intersects[n].object.name) {
-                                                modelViewObj.make_popup(event, parts[i]['popups'][popup_key]);
-                                                return;
+                                        for (const popup_key in parts[i]['popups']) {
+                                            if (parts[i]['popups'].hasOwnProperty(popup_key)) {
+                                                if (popup_key + '_0' === intersects[n].object.name) {
+                                                    modelViewObj.make_popup(event, parts[i]['popups'][popup_key]);
+                                                    return;
+                                                }
                                             }
                                         }
+                                    // FIXME: Update config file and this so that we only use 'popups' code above
                                     } else if (parts[i].hasOwnProperty('3dobject_label') &&
                                            parts[i].hasOwnProperty('popup_info') &&
                                            intersects[n].object.name === parts[i]['3dobject_label'] + '_0') {
@@ -449,6 +456,7 @@ export class ModelViewComponent implements OnInit {
             });
         this.viewerDiv.modelViewObj = this;
 
+        // Insert some arrows to give us some orientation information
         const x_dir = new THREE.Vector3( 1, 0, 0 );
         const y_dir = new THREE.Vector3( 0, 1, 0 );
         const z_dir = new THREE.Vector3( 0, 0, 1 );
@@ -471,7 +479,7 @@ export class ModelViewComponent implements OnInit {
         arrowHelper_z.name = 'arrowHelper_z';
         this.scene.add( arrowHelper_z );
 
-        // Modified version of pointer lock controls
+        // 3 axis virtual globe controller
         const trackBallControls = new GeoModelControls(this.view.camera.camera3D, this.view, this.extentObj.center().xyz());
         this.scene.add(trackBallControls.getObject());
 
