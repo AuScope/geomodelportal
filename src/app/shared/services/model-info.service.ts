@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
-import { OnInit } from '@angular/core';
 
 export interface ProviderInfo {
     name: string;
@@ -12,7 +11,7 @@ export interface ProviderInfo {
 }
 
 @Injectable()
-export class ModelInfoService implements OnInit {
+export class ModelInfoService {
     private providerModelInfo;
     private providerInfoList: ProviderInfo[] = [];
     public initialised = false;
@@ -69,10 +68,6 @@ export class ModelInfoService implements OnInit {
         }
         const result = await this.initialise();
         return new Promise(resolve => resolve(result[1]));
-    }
-
-    ngOnInit() {
-        console.log('ModelInfoService ngOnInit()');
     }
 
 }

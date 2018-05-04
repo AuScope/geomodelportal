@@ -21,7 +21,6 @@
             ],
             "scripts": ["../node_modules/chart.js/dist/Chart.js"
             ],
-            "not_used_scripts": ["./assets/GLTFLoader.js", "../node_modules/itowns/dist/itowns.js", "./assets/Detector.js", "../node_modules/proj4/dist/proj4-src.js" ],
             "environmentSource": "environments/environment.ts",
             "environments": {
                 "dev": "environments/environment.ts",

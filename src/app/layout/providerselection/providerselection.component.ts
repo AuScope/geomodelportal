@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { ModelInfoService } from '../../shared/services/model-info.service';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -9,7 +9,7 @@ import { HttpErrorResponse } from '@angular/common/http';
     styleUrls: ['./providerselection.component.scss'],
     animations: [routerTransition()]
 })
-export class ProviderSelectionComponent implements OnInit {
+export class ProviderSelectionComponent {
     // Model showcase images
     public sliders: Array<any> = [];
 
@@ -40,9 +40,6 @@ export class ProviderSelectionComponent implements OnInit {
         console.log('ProviderSelectionComponent ngOnInit()');
         this.modelInfoService.getProviderInfo().then(res => { this.sources = res; console.log('this.sources = ', this.sources); });
 
-    }
-
-    ngOnInit() {
     }
 
 }
