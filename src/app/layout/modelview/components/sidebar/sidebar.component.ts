@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import {MatSliderModule} from '@angular/material/slider';
+import { HttpErrorResponse } from '@angular/common/http';
+
+import {ModelInfoService} from '../../../../shared/services/model-info.service';
 
 
 @Component({
@@ -9,13 +12,19 @@ import {MatSliderModule} from '@angular/material/slider';
     templateUrl: './sidebar.component.html',
     styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent {
+export class SidebarComponent  implements OnInit {
     isActive = false;
     showMenu = '';
     showMenu2 = '';
     pushRightClass: 'push-right';
 
-    constructor(private translate: TranslateService, public router: Router) {
+    title = '';
+    modelInfo: any;
+    modelPath = '';
+    groupList: Array<String> = [];
+
+    constructor(private translate: TranslateService, private modelInfoService: ModelInfoService, private route: ActivatedRoute,
+                public router: Router) {
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de']);
         this.translate.setDefaultLang('en');
         const browserLang = this.translate.getBrowserLang();
@@ -30,6 +39,24 @@ export class SidebarComponent {
                 this.toggleSidebar();
             }
         });
+    }
+
+    ngOnInit() {
+        this.modelPath = this.route.snapshot.paramMap.get('modelPath');
+        console.log('sidebar modelPath=', this.modelPath);
+        this.modelInfoService.getModelInfo(this.modelPath).then(
+            data => {
+                this.modelInfo = data as string [];
+                console.log('ModelJson Loaded', this.modelInfo);
+                this.title = this.modelInfo['properties'].name;
+                console.log('groups = ', this.modelInfo['groups']);
+                this.groupList = Object.keys(this.modelInfo['groups']);
+                console.log('this.groupList = ', this.groupList);
+            }
+        );
+
+
+
     }
 
     eventCalled() {

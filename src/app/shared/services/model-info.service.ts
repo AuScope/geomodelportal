@@ -41,7 +41,7 @@ export class ModelInfoService {
                     resolve([local.providerModelInfo, local.providerInfoList]);
                 },
                 (err: HttpErrorResponse) => {
-                    console.log('Cannot load JSON', err);
+                    console.log('Cannot load provider model JSON file', err);
                     reject(err);
                 }
             );
@@ -49,7 +49,19 @@ export class ModelInfoService {
     }
 
     getModelInfo(modelKey: string) {
-         return this.httpService.get('./assets/geomodels/NorthGawler.json');
+        const local = this;
+        return new Promise(function(resolve, reject) {
+            local.httpService.get('./assets/geomodels/NorthGawler.json').subscribe(
+                data => {
+                    const modelInfo = data as string [];
+                    resolve(data);
+                },
+                (err: HttpErrorResponse) => {
+                    console.log('Cannot load model JSON file', err);
+                    reject(err);
+                }
+            );
+        });
     }
 
     async getProviderModelInfo() {

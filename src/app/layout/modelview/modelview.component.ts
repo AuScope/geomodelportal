@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
+import { ModelInfoService } from '../../shared/services/model-info.service';
 
 // Include threejs library
 import * as THREE from 'three';
@@ -70,22 +71,15 @@ export class ModelViewComponent implements OnInit {
     model_dir;
 
 
-    constructor() {
+    constructor(private modelInfoService: ModelInfoService) {
         const exports = {};
         const local = this;
 
         // Detect if webGL is available and inform viewer if cannot proceed
         if (Detector.webgl) {
             const params = new URLSearchParams(document.location.search.substring(1));
-            const model_name = 'NorthGawler';  // FIXME: params.get('model');
-
-            // Load and parse the file containing the model details
-            const loader = new THREE.FileLoader();
-            loader.load('./assets/geomodels/' + model_name + '.json', function (text) {
-                local.config = JSON.parse(text);
-                console.log('this = ', local);
-                local.initialise_model(local.config, model_name);
-            } );
+            const model_name = 'NorthGawler';  // FIXME: should eventually be params.get('model');
+            this.modelInfoService.getModelInfo(model_name).then(res => { local.initialise_model(res, model_name); });
         } else {
             const warning = Detector.getWebGLErrorMessage();
             // FIXME: Do this the angular way
@@ -188,7 +182,8 @@ export class ModelViewComponent implements OnInit {
     initialise_model(config, model_name) {
         const props = config.properties;
         const i = 0;
-
+        console.log('config =', config, model_name);
+        this.config = config;
         this.model_dir = model_name;
         if (props.proj4_defn) {
             proj4.defs(props.crs, props.proj4_defn);
@@ -261,6 +256,8 @@ export class ModelViewComponent implements OnInit {
         const promiseList = [];
 
         const local = this;
+
+        console.log('this.config =', this.config);
 
         // Load GLTF objects into scene
         for (const group in this.config.groups) {
