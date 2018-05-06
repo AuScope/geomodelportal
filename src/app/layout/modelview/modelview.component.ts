@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { routerTransition } from '../../router.animations';
-import { ModelInfoService } from '../../shared/services/model-info.service';
+import { ModelInfoService, ModelPartCallbackType,
+         ModelPartStateChange, ModelPartStateChangeType } from '../../shared/services/model-info.service';
 
 // Include threejs library
 import * as THREE from 'three';
@@ -30,46 +31,45 @@ import * as Detector from '../../../../node_modules/three/examples/js/Detector';
     styleUrls: ['./modelview.component.scss'],
     animations: [routerTransition()]
 })
-export class ModelViewComponent implements OnInit {
+export class ModelViewComponent {
     // iTowns extent object
-    extentObj;
+    private extentObj;
 
     // div where the 3d objects are displayed
-    viewerDiv;
+    private viewerDiv;
 
     // view object
-    view;
+    private view;
 
     // scene object
-    scene;
+    private scene;
 
     // Dictionary of {scene, checkbox, group name} objects used by model controls div, key is model URL
-    sceneArr = {};
+    private sceneArr = {};
 
     //
-    ulElem;
+    private ulElem;
 
     // camera object
-    camera;
+    private camera;
 
     // renderer object
-    renderer;
+    private renderer;
 
     // track ball controls object
-    trackBallControls;
+    private trackBallControls;
 
     // raycaster object
-    raycaster;
+    private raycaster;
 
     // mouse object
-    mouse = new THREE.Vector2();
+    private mouse = new THREE.Vector2();
 
     // configuration object
-    config;
+    private config;
 
     // directory where model files are kept
-    model_dir;
-
+    private model_dir;
 
     constructor(private modelInfoService: ModelInfoService) {
         const exports = {};
@@ -79,7 +79,15 @@ export class ModelViewComponent implements OnInit {
         if (Detector.webgl) {
             const params = new URLSearchParams(document.location.search.substring(1));
             const model_name = 'NorthGawler';  // FIXME: should eventually be params.get('model');
+            // Initialise model by downloading its JSON file
             this.modelInfoService.getModelInfo(model_name).then(res => { local.initialise_model(res, model_name); });
+            const callbackFn: ModelPartCallbackType =  function(groupName: string, modelUrl: string, state: ModelPartStateChange) {
+                if (state.type === ModelPartStateChangeType.DISPLAYED) {
+                    local.sceneArr[groupName][modelUrl].visible = state.new_value;
+                    local.view.notifyChange(true);
+                }
+            };
+            this.modelInfoService.registerModelPartCallback(callbackFn);
         } else {
             const warning = Detector.getWebGLErrorMessage();
             // FIXME: Do this the angular way
@@ -87,96 +95,11 @@ export class ModelViewComponent implements OnInit {
         }
     }
 
-    ngOnInit() {}
-
-
-    add_display_groups(groupName: string) {
-
-        // Make a group name
-        const liElem = document.createElement('li');
-        const oText = document.createTextNode(groupName);
-        liElem.appendChild(oText);
-        liElem.style.setProperty('font-weight', 'bold');
-        liElem.style.setProperty('color', 'rgb(255, 255, 255)');
-        liElem.style.setProperty('list-style-type', 'circle');
-        this.ulElem.appendChild(liElem);
-
-        // Make a check box for the group
-        const grpChkBox = document.createElement('input');
-        grpChkBox.setAttribute('type', 'checkbox');
-        grpChkBox.setAttribute('checked', 'true');
-
-        // This handles a click event on the group checkbox
-        const grpClickEvtHandler = function (event, grName, sceneArr) {
-            const new_state = event.target.checked;
-            // Look for any parts that are associated with the group
-            for (const sKey in sceneArr) {
-                if (sceneArr[sKey] && sceneArr[sKey]['group'] === grName) {
-                    sceneArr[sKey]['scene'].visible = new_state;
-                    if (!new_state) {
-                        sceneArr[sKey]['checkbox'].checked = false;
-                        sceneArr[sKey]['checkbox'].removeAttribute('checked');
-                    } else {
-                        sceneArr[sKey]['checkbox'].checked = true;
-                        sceneArr[sKey]['checkbox'].setAttribute('checked', true);
-                    }
-                }
-            }
-            this.view.notifyChange(true);
-        };
-        grpChkBox.addEventListener('click', (function (grName, sceneArr, grChkBox) {
-            return function(event) { this.grpClickEvtHandler(event, grName, sceneArr, grChkBox); };
-        }) (groupName, this.sceneArr, grpChkBox));
-
-        liElem.appendChild(grpChkBox);
-    }
-
-    add_display(part, sceneObj, groupName) {
-        console.log('add_display()  this =', this);
-        const liElem = document.createElement('li');
-        liElem.style.setProperty('color', 'rgb(150, 150, 150)');
-        liElem.style.setProperty('list-style-type', 'square');
-        liElem.style.setProperty('margin-left', '6px;');
-        const oText = document.createTextNode(part.display_name);
-        liElem.appendChild(oText);
-        const chBox = document.createElement('input');
-        chBox.setAttribute('type', 'checkbox');
-        if (part.displayed) {
-          chBox.checked = true;
-          chBox.setAttribute('checked', 'true');
-        } else {
-          chBox.checked = false;
-          chBox.removeAttribute('checked');
+    add_part(part, sceneObj, groupName) {
+        if (!this.sceneArr.hasOwnProperty(groupName)) {
+            this.sceneArr[groupName] = {};
         }
-
-        // Initialise sceneArr for each checkbox
-        this.sceneArr[part.model_url] = {'scene': sceneObj, 'checkbox': chBox, 'group': groupName};
-        // console.log('this.sceneArr = ', this.sceneArr);
-
-        // This handles the click event to show/hide for each part of the model
-        const clickEvtHandler = function (event, scObj, grName, chkBox) {
-            scObj.visible = !scObj.visible;
-            // Must do this update after the tickbox has been updated
-            setTimeout(function() {
-                // this.update_group_tickbox(grName);
-            }, 500);
-            this.view.notifyChange(true);
-        };
-
-        chBox.addEventListener('mousedown', (function (scObj, grName, chkBox) {
-            return function(event) { clickEvtHandler(event, scObj, grName, chkBox); };
-        }) (sceneObj, groupName, chBox));
-
-        liElem.appendChild(chBox);
-
-        // Search through DOM to add in checkbox
-        for (let i = 0; i < this.ulElem.childNodes.length; i++) {
-            const firstCh = this.ulElem.childNodes[i].firstChild;
-            if (firstCh.nodeName === '#text' && firstCh.nodeValue === groupName) {
-                this.ulElem.insertBefore(liElem, this.ulElem.childNodes[i].nextSibling);
-            }
-        }
-        part.loaded = true;
+        this.sceneArr[groupName][part.model_url] = sceneObj;
     }
 
     initialise_model(config, model_name) {
@@ -236,7 +159,7 @@ export class ModelViewComponent implements OnInit {
     add_3dobjects() {
         const manager = new ITOWNS.THREE.LoadingManager();
 
-        // This adds the 'GLTFLoader' object to ;THREE'
+        // This adds the 'GLTFLoader' object to 'THREE'
         GLTFLoader(THREE);
 
         // Create our new GLTFLoader object
@@ -257,13 +180,10 @@ export class ModelViewComponent implements OnInit {
 
         const local = this;
 
-        console.log('this.config =', this.config);
-
         // Load GLTF objects into scene
         for (const group in this.config.groups) {
             if (this.config.groups.hasOwnProperty(group)) {
                 const parts = this.config.groups[group];
-                console.log('group=', group, 'parts=', parts);
                 for (let i = 0; i < parts.length; i++) {
                     if (parts[i].type === 'GLTFObject' && parts[i].include) {
                         promiseList.push( new Promise( function( resolve, reject ) {
@@ -271,8 +191,11 @@ export class ModelViewComponent implements OnInit {
                                 loader.load('./assets/geomodels/' + local.model_dir + '/' + part.model_url, function (g_object) {
                                     console.log('loaded: ', local.model_dir + '/' + part.model_url);
                                     g_object.scene.name = part.model_url;
+                                    if (!part.displayed) {
+                                        g_object.scene.visible = false;
+                                    }
                                     local.scene.add(g_object.scene);
-                                    // local.add_display(part, g_object.scene, grp);
+                                    local.add_part(part, g_object.scene, grp);
                                     resolve(g_object.scene);
                                 }, onProgress, onError);
                             })(parts[i], group);
@@ -324,7 +247,7 @@ export class ModelViewComponent implements OnInit {
                                 plane.position.copy(position);
                                 plane.name = part.display_name; // Need this to display popup windows
                                 local.scene.add(plane);
-                                // local.add_display(part, plane, grp);
+                                local.add_part(part, plane, grp);
                                 resolve(plane);
                             },
                             // Function called when download progresses

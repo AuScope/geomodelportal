@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import {MatSliderModule} from '@angular/material/slider';
 import { HttpErrorResponse } from '@angular/common/http';
 
-import {ModelInfoService} from '../../../../shared/services/model-info.service';
+import {ModelInfoService, ModelPartStateChangeType } from '../../../../shared/services/model-info.service';
 
 
 @Component({
@@ -19,9 +19,10 @@ export class SidebarComponent  implements OnInit {
     pushRightClass: 'push-right';
 
     title = '';
-    modelInfo: any;
+    modelInfo = {};
     modelPath = '';
     groupList: Array<String> = [];
+    modelPartState = {};
 
     constructor(private translate: TranslateService, private modelInfoService: ModelInfoService, private route: ActivatedRoute,
                 public router: Router) {
@@ -42,21 +43,22 @@ export class SidebarComponent  implements OnInit {
     }
 
     ngOnInit() {
+        const local = this;
         this.modelPath = this.route.snapshot.paramMap.get('modelPath');
-        console.log('sidebar modelPath=', this.modelPath);
         this.modelInfoService.getModelInfo(this.modelPath).then(
             data => {
                 this.modelInfo = data as string [];
-                console.log('ModelJson Loaded', this.modelInfo);
                 this.title = this.modelInfo['properties'].name;
-                console.log('groups = ', this.modelInfo['groups']);
                 this.groupList = Object.keys(this.modelInfo['groups']);
-                console.log('this.groupList = ', this.groupList);
+                this.modelPartState = this.modelInfoService.getModelPartStateObj();
             }
         );
+    }
 
-
-
+    checkBoxClick(groupName: string, modelUrl: string) {
+        this.modelPartState[groupName][modelUrl].displayed = !this.modelPartState[groupName][modelUrl].displayed;
+        this.modelInfoService.setModelPartStateChange(groupName, modelUrl,
+            { type: ModelPartStateChangeType.DISPLAYED, new_value: this.modelPartState[groupName][modelUrl].displayed } );
     }
 
     eventCalled() {
