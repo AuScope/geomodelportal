@@ -16,6 +16,8 @@ const mouseButtons = {
     RIGHTCLICK: THREE.MOUSE.RIGHT,
 };
 
+// FIXME: Clean up the mouse event handling code, it's a mess
+// FIXME: Rotation can still get in a confused state sometimes
 
 function GeoModelControls(camera, view, rotCentre) {
     var scope = this;
@@ -73,7 +75,7 @@ function GeoModelControls(camera, view, rotCentre) {
         // console.log('onMouseWheel', event);
         event.preventDefault();
         event.stopPropagation();
-        if (event.wheelDelta > 0) {
+        if (event.deltaY > 0) {
             camera.position.multiplyScalar(1.04);
         } else {
             camera.position.multiplyScalar(0.96);
@@ -108,7 +110,7 @@ function GeoModelControls(camera, view, rotCentre) {
         if (event.button === mouseButtons.LEFTCLICK) {
             scope.initiateRotation();
         } else if (event.button === mouseButtons.RIGHTCLICK) {
-            scope.initiateDrag();
+            // scope.initiateDrag();
         }
 
         scope.updateMouseCursorType();
@@ -118,7 +120,7 @@ function GeoModelControls(camera, view, rotCentre) {
         document.removeEventListener('mousemove', this.onMouseMove, false);
         document.removeEventListener('mouseup', this.onMouseUp, false);
         document.removeEventListener('mousedown', this.onMouseDown, false);
-        document.removeEventListener('mousewheel', this.onMouseWheel, false);
+        document.removeEventListener('wheel', this.onMouseWheel, false);
     };
 
     this.initiateRotation = function initiateRotation() {
@@ -322,7 +324,7 @@ function GeoModelControls(camera, view, rotCentre) {
     document.addEventListener('mousemove', this.onMouseMove, false);
     document.addEventListener('mouseup', this.onMouseUp, false);
     document.addEventListener('mousedown', this.onMouseDown, false);
-    document.addEventListener('mousewheel', this.onMouseWheel, false);
+    document.addEventListener('wheel', this.onMouseWheel, false);
 }
 
 export default GeoModelControls;

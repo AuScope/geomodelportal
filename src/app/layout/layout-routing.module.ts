@@ -12,10 +12,6 @@ const routes: Routes = [
                 path: '',
                 loadChildren: './providerselection/providerselection.module#ProviderSelectionModule'
             },
-            /*{
-                path: 'provider',
-                loadChildren: './providerselection/providerselection.module#ProviderSelectionModule',
-            },*/
             {
                 path: 'provider/:providerPath',
                 loadChildren: './modelselection/modelselection.module#ModelSelectionModule'
