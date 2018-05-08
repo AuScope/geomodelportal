@@ -34,18 +34,18 @@ function GeoModelControls(camera, view, rotCentre) {
     const dragEnd = new THREE.Vector3();
     const dragDelta = new THREE.Vector3();
 
-    var pitchObject = new THREE.Object3D();
-    pitchObject.add(camera);
+    var rObject = new THREE.Object3D();
+    rObject.add(camera);
+    // Set relative to model centre
     camera.position.set(0.0, 0.0, 200000.0);
     this.camera = camera;
-    this.rotateSpeed = 1.0;
+    this.rotateSpeed = 1.5;
     var viewObject = view;
-    var yawObject = new THREE.Object3D();
-    yawObject.add(pitchObject);
-    var rollObject = new THREE.Object3D();
-    rollObject.name = 'GeoModelControls';
-    rollObject.position.set(rotCentre.x, rotCentre.y, rotCentre.z);
-    rollObject.add(yawObject);
+
+
+    // Set relative to world centre
+    rObject.name = 'GeoModelControls';
+    rObject.position.set(rotCentre.x, rotCentre.y, rotCentre.z);
 
     var PI_2 = Math.PI / 2;
 
@@ -179,29 +179,20 @@ function GeoModelControls(camera, view, rotCentre) {
     viewObject.addFrameRequester(MAIN_LOOP_EVENTS.AFTER_CAMERA_UPDATE, this.update.bind(this));
 
     this.onRotate = function onRotate() {
-        // eslint-disable-next-line no-console
-        // console.log('onRotate()');
 
-        // This translates our mouse coords into 'world coords'
+        // This translates our mouse coords into Three.js coords
         var lastMousePosition = new THREE.Vector2(0, 0);
         lastMousePosition.copy(mousePosition).sub(deltaMousePosition);
-        // eslint-disable-next-line no-console
-        // console.log('lastMousePosition = ', lastMousePosition);
-        // eslint-disable-next-line no-console
-        // console.log('mousePosition = ', mousePosition);
         var centreOffsetX = scope.domElement.clientWidth / 2.0;
         var centreOffsetY = scope.domElement.clientHeight / 2.0;
-        // eslint-disable-next-line no-console
-        // console.log('centreOffsetX, centreOffsetY = ', centreOffsetX, centreOffsetY);
         var mp = new THREE.Vector2(mousePosition.x - centreOffsetX, centreOffsetY - mousePosition.y);
         var lmp = new THREE.Vector2(lastMousePosition.x - centreOffsetX, centreOffsetY - lastMousePosition.y);
-        var r = scope.domElement.clientHeight / 3.0;
-        var rotAxisLocal;
-        var rDelta;
-        var rotAxis;
-        var modelMat;
-        var modelQuat;
+        var r = scope.domElement.clientHeight / 3.0; // size of virtual sphere
+        var rotAxisLocal;  // rotational axis in virtual sphere coords
+        var rDelta; // rotational angle
+        var rotAxis; // rotational axis in camera coords
 
+        // Exit if no change
         if (deltaMousePosition.x === 0.0 && deltaMousePosition.y === 0.0) {
             return;
         }
@@ -234,17 +225,14 @@ function GeoModelControls(camera, view, rotCentre) {
             } else {
                 rDelta = scope.rotateSpeed * dy;
             }
-            rotAxisLocal = new THREE.Vector3(0.0, 0.0, -1.0);
+
+            // Rotational axis in camera coordinates
+            rotAxis = new THREE.Vector3(0.0, 0.0, -1.0);
+            rotAxis.normalize();
+
         } else {
-            // eslint-disable-next-line no-console
-            // console.log('current mp=', mp);
-
-            // eslint-disable-next-line no-console
-            // console.log('previous mp=', lmp);
-
             // If inside the sphere ...
             // Calculate start point and end point on sphere of radius r
-            // Note that these are local sphere coordinates
             var endVecLocal = new THREE.Vector3(mp.x, mp.y, Math.sqrt(r * r - mp.x * mp.x - mp.y * mp.y));
             endVecLocal.normalize();
             var startVecLocal = new THREE.Vector3(lmp.x, lmp.y, Math.sqrt(r * r - lmp.x * lmp.x - lmp.y * lmp.y));
@@ -253,30 +241,17 @@ function GeoModelControls(camera, view, rotCentre) {
             // Cross product of start and end vectors on sphere gives rotational vector, in local camera coords
             rotAxisLocal.cross(startVecLocal);
             rotAxisLocal.normalize();
-            // Calculate rotational angle
+
+            // Calculate rotational angle and rotational axis
             rDelta = endVecLocal.angleTo(startVecLocal);
+            rotAxis = new THREE.Vector3(-rotAxisLocal.y, rotAxisLocal.x, rotAxisLocal.z);
         }
-        // Create a matrix to transform local camera coords to model coords
-        modelMat = scope.camera.matrix.clone();
-        modelMat.premultiply(pitchObject.matrix);
-
-
-        // Transform rotation in local camera coords to model coords
-        rotAxis = rotAxisLocal.clone();
-        rotAxis.transformDirection(modelMat);
-        rotAxis.normalize();
-
-        // eslint-disable-next-line no-console
-        // console.log('*** rotAxis =', rotAxis);
 
         // Rotate camera relative to model
-        yawObject.rotation.y += rotAxis.y * rDelta;
-        pitchObject.rotation.x += rotAxis.x * rDelta;
-        // pitchObject.rotation.x = Math.max(-PI_2, Math.min(PI_2, pitchObject.rotation.x));
-        rollObject.rotation.z += rotAxis.z * rDelta;
-
-        // eslint-disable-next-line no-console
-        // console.log('pitchObject.rotation.x yawObject.rotation.y, rollObject.rotation.z = ', pitchObject.rotation.x, yawObject.rotation.y, rollObject.rotation.z);
+        var rMat = new THREE.Matrix4();
+        rMat.makeRotationAxis(rotAxis, rDelta);
+        rObject.matrix.multiply(rMat);
+        rObject.rotation.setFromRotationMatrix(rObject.matrix);
 
         // Update view
         viewObject.notifyChange(true);
@@ -305,7 +280,7 @@ function GeoModelControls(camera, view, rotCentre) {
     };
 
     this.getObject = function getObject() {
-        return rollObject;
+        return rObject;
     };
 
     this.getDirection = (() => {
@@ -313,7 +288,7 @@ function GeoModelControls(camera, view, rotCentre) {
         var rotation = new THREE.Euler(0, 0, 0, 'YXZ');
 
         return (v) => {
-            rotation.set(pitchObject.rotation.x, yawObject.rotation.y, rollObject.z);
+            rotation.set(rObject.rotation.x, rObject.rotation.y, rObject.rotation.z);
 
             v.copy(direction).applyEuler(rotation);
 
