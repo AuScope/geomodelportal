@@ -17,7 +17,6 @@ const mouseButtons = {
 };
 
 // FIXME: Clean up the mouse event handling code, it's a mess
-// FIXME: Rotation can still get in a confused state sometimes
 
 function GeoModelControls(camera, view, rotCentre) {
     var scope = this;
