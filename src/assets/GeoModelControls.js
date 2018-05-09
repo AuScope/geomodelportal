@@ -6,8 +6,7 @@ import { MAIN_LOOP_EVENTS } from '../../node_modules/itowns/lib/Core/MainLoop';
 const STATE = {
     NONE: -1,
     DRAG: 0,
-    PAN: 1,
-    ROTATE: 2,
+    ROTATE: 1,
 };
 
 const mouseButtons = {
@@ -16,8 +15,9 @@ const mouseButtons = {
     RIGHTCLICK: THREE.MOUSE.RIGHT,
 };
 
-// FIXME: Clean up the mouse event handling code, it's a mess
-
+/**
+* Three axis virtual globe controller
+*/
 function GeoModelControls(camera, view, rotCentre) {
     var scope = this;
     this.domElement = view.mainLoop.gfxEngine.renderer.domElement;
@@ -28,11 +28,11 @@ function GeoModelControls(camera, view, rotCentre) {
     const lastMousePosition = new THREE.Vector2();
     const deltaMousePosition = new THREE.Vector2(0, 0);
 
-    // drag movement
-    const dragStart = new THREE.Vector3();
-    const dragEnd = new THREE.Vector3();
-    const dragDelta = new THREE.Vector3();
+    // Keeps track of camera's movement due to mouse drag
+    // This helps us move the virtual sphere around the page
+    this.cameraOffset = new THREE.Vector3();
 
+    // Rotational object, used to rotate the camera around the model
     var rObject = new THREE.Object3D();
     rObject.add(camera);
     // Set relative to model centre
@@ -41,13 +41,11 @@ function GeoModelControls(camera, view, rotCentre) {
     this.rotateSpeed = 1.5;
     var viewObject = view;
 
-
-    // Set relative to world centre
+    // Set position of rotational object relative to world centre
     rObject.name = 'GeoModelControls';
     rObject.position.set(rotCentre.x, rotCentre.y, rotCentre.z);
 
-    var PI_2 = Math.PI / 2;
-
+    // Set mouse state for drag and rotate
     this.state = STATE.NONE;
 
     this.updateMousePositionAndDelta = function updateMousePositionAndDelta(event) {
@@ -57,10 +55,7 @@ function GeoModelControls(camera, view, rotCentre) {
     };
 
     this.onMouseMove = function onMouseMove(event) {
-        // eslint-disable-next-line no-console
-        // console.log('onMouseMove');
         event.preventDefault();
-
         scope.updateMousePositionAndDelta(event);
 
         // notify change if moving
@@ -70,8 +65,6 @@ function GeoModelControls(camera, view, rotCentre) {
     };
 
     this.onMouseWheel = function onMouseWheel(event) {
-        // eslint-disable-next-line no-console
-        // console.log('onMouseWheel', event);
         event.preventDefault();
         event.stopPropagation();
         if (event.deltaY > 0) {
@@ -81,15 +74,9 @@ function GeoModelControls(camera, view, rotCentre) {
         }
         // Update view
         viewObject.notifyChange(true);
-
-        if (scope.state === STATE.NONE) {
-            scope.initiateZoom(event);
-        }
     };
 
     this.onMouseUp = function onMouseUp(event) {
-        // eslint-disable-next-line no-console
-        // console.log('mouseUp');
         event.preventDefault();
         scope.state = STATE.NONE;
         scope.updateMouseCursorType();
@@ -99,19 +86,14 @@ function GeoModelControls(camera, view, rotCentre) {
         // eslint-disable-next-line no-console
         // console.log('mouseDown');
         event.preventDefault();
-
-        if (scope.state === STATE.TRAVEL) {
-            return;
-        }
-
         scope.updateMousePositionAndDelta(event);
 
+        // Left click does rotation, right click does drag
         if (event.button === mouseButtons.LEFTCLICK) {
             scope.initiateRotation();
         } else if (event.button === mouseButtons.RIGHTCLICK) {
-            // scope.initiateDrag();
+            scope.initiateDrag();
         }
-
         scope.updateMouseCursorType();
     };
 
@@ -123,73 +105,63 @@ function GeoModelControls(camera, view, rotCentre) {
     };
 
     this.initiateRotation = function initiateRotation() {
-        // eslint-disable-next-line no-console
-        // console.log('initiateRotation()', STATE.ROTATE);
         scope.state = STATE.ROTATE;
-        // eslint-disable-next-line no-console
-        // console.log('initiateRotation() scope.state = ', scope.state);
     };
 
     this.initiateDrag = function initiateDrag() {
-        // eslint-disable-next-line no-console
-        // console.log('initiateDrag()');
         scope.state = STATE.DRAG;
-        // eslint-disable-next-line no-console
-        // console.log('initiateDrag() scope.state = ', scope.state);
     };
 
-    this.initiateZoom = function initiateZoom(event) {
-        // eslint-disable-next-line no-console
-        // console.log('initiateZoom()');
-        let delta;
-
-        // mousewheel delta
-        if (event.wheelDelta !== undefined) {
-            delta = event.wheelDelta;
-        } else if (event.detail !== undefined) {
-            delta = -event.detail;
-        }
-    };
-
-    // Updates the view and camera if needed, and handles the animated travel
+    /*
+    * Updates the view and camera if needed
+    */
     this.update = function update(dt, updateLoopRestarted) {
-        // dt will not be relevant when we just started rendering, we consider a 1-frame move in this case
-        /* if (updateLoopRestarted) {
-            dt = 16;
-        }
-        if (this.state === STATE.TRAVEL) {
-            this.handleTravel(dt);
-            this.view.notifyChange(true);
-        } */
         if (scope.state === STATE.DRAG) {
-            /* this.handleDragMovement(); */
+            scope.handleDragMovement();
         }
         if (scope.state === STATE.ROTATE) {
             scope.onRotate();
         }
-        if (scope.state === STATE.PAN) {
-            /* this.handlePanMovement(); */
-        }
         deltaMousePosition.set(0, 0);
     };
 
-    // add this GeoModelControl instance to the view's frame requesters
-    // with this, GeoModelControl.update() will be called each frame
+    /**
+    * Add this GeoModelControl instance to the view's frame requesters
+    * with this, GeoModelControl.update() will be called each frame
+    */
     viewObject.addFrameRequester(MAIN_LOOP_EVENTS.AFTER_CAMERA_UPDATE, this.update.bind(this));
 
-    this.onRotate = function onRotate() {
+    /**
+    * Moves the camera in its XY plane according to the mouse movements
+    */
+    this.handleDragMovement = function handleDragMovement() {
+        const MOVEMENT_FACTOR = 0.0006;
+        // Move the camera
+        scope.camera.position.x -= deltaMousePosition.y*MOVEMENT_FACTOR*scope.camera.position.length();
+        scope.camera.position.y -= deltaMousePosition.x*MOVEMENT_FACTOR*scope.camera.position.length();
+        // Keep track of this movement so we can move the virtual sphere with the model
+        scope.cameraOffset.x += deltaMousePosition.x;
+        scope.cameraOffset.y += deltaMousePosition.y;
+    };
 
+    /**
+    * Rotates the camera about the centre of the model
+    */
+    this.onRotate = function onRotate() {
         // This translates our mouse coords into Three.js coords
         var lastMousePosition = new THREE.Vector2(0, 0);
         lastMousePosition.copy(mousePosition).sub(deltaMousePosition);
-        var centreOffsetX = scope.domElement.clientWidth / 2.0;
-        var centreOffsetY = scope.domElement.clientHeight / 2.0;
+        // The centre of the virtual sphere is centre of screen +/- offset due to mouse movement
+        var centreOffsetX = scope.domElement.clientWidth / 2.0 + scope.cameraOffset.x;
+        var centreOffsetY = scope.domElement.clientHeight / 2.0 + scope.cameraOffset.y;
+        // Mouse position in normal XY coords
         var mp = new THREE.Vector2(mousePosition.x - centreOffsetX, centreOffsetY - mousePosition.y);
+        // Last mouse position in normal XY coords
         var lmp = new THREE.Vector2(lastMousePosition.x - centreOffsetX, centreOffsetY - lastMousePosition.y);
-        var r = scope.domElement.clientHeight / 3.0; // size of virtual sphere
-        var rotAxisLocal;  // rotational axis in virtual sphere coords
-        var rDelta; // rotational angle
-        var rotAxis; // rotational axis in camera coords
+        var r = scope.domElement.clientHeight / 3.0; // Size of virtual globe
+        var rotAxisLocal;  // Rotational axis in virtual sphere coords
+        var rDelta; // Rotational angle
+        var rotAxis; // Rotational axis in camera coords
 
         // Exit if no change
         if (deltaMousePosition.x === 0.0 && deltaMousePosition.y === 0.0) {
@@ -230,8 +202,7 @@ function GeoModelControls(camera, view, rotCentre) {
             rotAxis.normalize();
 
         } else {
-            // If inside the sphere ...
-            // Calculate start point and end point on sphere of radius r
+            // If inside the sphere calculate start point and end point on sphere of radius r
             var endVecLocal = new THREE.Vector3(mp.x, mp.y, Math.sqrt(r * r - mp.x * mp.x - mp.y * mp.y));
             endVecLocal.normalize();
             var startVecLocal = new THREE.Vector3(lmp.x, lmp.y, Math.sqrt(r * r - lmp.x * lmp.x - lmp.y * lmp.y));
@@ -257,7 +228,7 @@ function GeoModelControls(camera, view, rotCentre) {
     };
 
     /**
-    * update the cursor image according to the control state
+    * Update the cursor image according to the control state
     */
     this.updateMouseCursorType = function updateMouseCursorType() {
         switch (this.state) {
@@ -267,17 +238,17 @@ function GeoModelControls(camera, view, rotCentre) {
             case STATE.DRAG:
                 scope.domElement.style.cursor = 'move';
                 break;
-            case STATE.PAN:
-                scope.domElement.style.cursor = 'cell';
-                break;
             case STATE.ROTATE:
-                scope.domElement.style.cursor = 'move';
+                scope.domElement.style.cursor = 'cell';
                 break;
             default:
                 break;
         }
     };
 
+    /**
+    * This function is called externally to add camera to the scene
+    */
     this.getObject = function getObject() {
         return rObject;
     };
@@ -285,12 +256,9 @@ function GeoModelControls(camera, view, rotCentre) {
     this.getDirection = (() => {
         var direction = new THREE.Vector3(0, 0, -1);
         var rotation = new THREE.Euler(0, 0, 0, 'YXZ');
-
         return (v) => {
             rotation.set(rObject.rotation.x, rObject.rotation.y, rObject.rotation.z);
-
             v.copy(direction).applyEuler(rotation);
-
             return v;
         };
     })();
