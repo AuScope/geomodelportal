@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { ModelInfoService, ModelPartCallbackType,
          ModelPartStateChange, ModelPartStateChangeType } from '../../shared/services/model-info.service';
@@ -24,19 +24,24 @@ import GeoModelControls from '../../../assets/GeoModelControls';
 // Detects if WebGL is available in the browser
 import * as Detector from '../../../../node_modules/three/examples/js/Detector';
 
-
 @Component({
     selector: 'app-modelview',
     templateUrl: './modelview.component.html',
     styleUrls: ['./modelview.component.scss'],
     animations: [routerTransition()]
 })
-export class ModelViewComponent {
+export class ModelViewComponent  implements AfterViewInit {
+    @ViewChild('viewerDiv') viewerDivElem;
+    @ViewChild('popupBoxDiv') popupBoxDivElem;
+
     // iTowns extent object
     private extentObj;
 
-    // div where the 3d objects are displayed
-    private viewerDiv;
+    // <div> where the 3d objects are displayed
+    private viewerDiv = null;
+
+    // <div> where popup information boxes live
+    private popupBoxDiv = null;
 
     // view object
     private view;
@@ -46,9 +51,6 @@ export class ModelViewComponent {
 
     // Dictionary of {scene, checkbox, group name} objects used by model controls div, key is model URL
     private sceneArr = {};
-
-    //
-    private ulElem;
 
     // camera object
     private camera;
@@ -72,7 +74,11 @@ export class ModelViewComponent {
     private model_dir;
 
     constructor(private modelInfoService: ModelInfoService) {
-        const exports = {};
+    }
+
+    ngAfterViewInit() {
+        this.viewerDiv = this.viewerDivElem.nativeElement;
+        this.popupBoxDiv = this.popupBoxDivElem.nativeElement;
         const local = this;
 
         // Detect if webGL is available and inform viewer if cannot proceed
@@ -90,8 +96,7 @@ export class ModelViewComponent {
             this.modelInfoService.registerModelPartCallback(callbackFn);
         } else {
             const warning = Detector.getWebGLErrorMessage();
-            // FIXME: Do this the angular way
-            document.getElementById('viewerDiv').appendChild(warning);
+            this.viewerDiv.appendChild(warning);
         }
     }
 
@@ -115,9 +120,6 @@ export class ModelViewComponent {
         // Define geographic extent: CRS, min/max X, min/max Y
         // Model boundary according to the North Gawler Province Metadata PDF using projection: UTM Zone 52 Datum: GDA94 => EPSG:28352
         this.extentObj = new ITOWNS.Extent(props.crs, props.extent[0], props.extent[1], props.extent[2], props.extent[3]);
-
-        // `viewerDiv` will contain iTowns' rendering area (`<canvas>`)
-        this.viewerDiv = document.getElementById('viewerDiv');
 
         this.sceneArr = {};
 
@@ -272,7 +274,8 @@ export class ModelViewComponent {
         const props = config.properties;
 
         // Create an instance of PlanarView
-        this.view = new ITOWNS.PlanarView(this.viewerDiv, this.extentObj, {near: 0.001, renderer: this.renderer, scene3D: this.scene});
+        this.view = new ITOWNS.PlanarView(this.viewerDiv, this.extentObj,
+                               {near: 0.001, renderer: this.renderer, scene3D: this.scene});
 
         // Change defaults to allow the camera to get very close and very far away without exceeding boundaries of field of view
         this.view.camera.camera3D.near = 0.01;
@@ -396,57 +399,27 @@ export class ModelViewComponent {
         this.view.notifyChange(true);
     }
 
-
-    update_group_tickbox(groupName: string) {
-        for (let ulIdx = 0; ulIdx < this.ulElem.childNodes.length; ulIdx++) {
-            let liElem = this.ulElem.childNodes[ulIdx];
-            if (liElem.style.listStyleType === 'circle') {
-                if (groupName === null || groupName === liElem.childNodes[0].nodeValue) {
-                    const gName = liElem.childNodes[0].nodeValue;
-                    const chBox = liElem.childNodes[1];
-                    ulIdx++;
-                    let checked = true;
-                    liElem = this.ulElem.childNodes[ulIdx];
-                    while (ulIdx < this.ulElem.childNodes.length && liElem.style.listStyleType === 'square') {
-                        if (!liElem.childNodes[1].checked) {
-                            checked = false;
-                        }
-                        ulIdx++;
-                        liElem = this.ulElem.childNodes[ulIdx];
-                    }
-                    if (!checked) {
-                        chBox.checked = false;
-                        chBox.removeAttribute('checked');
-                    } else {
-                        chBox.checked = true;
-                        chBox.setAttribute('checked', true);
-                    }
-                }
-            }
-        }
-    }
-
     // FIXME: Style popup the same as the rest of the website
     // FIXME: Do the CSS the Angular way
     make_popup(event, popupInfo) {
-        const popupDiv = document.getElementById('popupBoxDiv');
-        popupDiv.style.top = event.clientY;
-        popupDiv.style.left = event.clientX;
-        popupDiv.style.display = 'inline';
-        while (popupDiv.firstChild) {
-            popupDiv.removeChild(popupDiv.firstChild);
+        const local = this;
+        this.popupBoxDiv.style.top = event.clientY;
+        this.popupBoxDiv.style.left = event.clientX;
+        this.popupBoxDiv.style.display = 'inline';
+        while (this.popupBoxDiv.firstChild) {
+            this.popupBoxDiv.removeChild(this.popupBoxDiv.firstChild);
         }
         // Make 'X' for exit button in corner of popup window
         const exitDiv = document.createElement('div');
         exitDiv.id = 'popupExitDiv';
         exitDiv.innerHTML = 'X';
-        exitDiv.onclick = function() { document.getElementById('popupBoxDiv').style.display = 'none'; };
-        popupDiv.appendChild(exitDiv);
+        exitDiv.onclick = function() { local.popupBoxDiv.style.display = 'none'; };
+        this.popupBoxDiv.appendChild(exitDiv);
         // Make popup title
         const hText = document.createTextNode(popupInfo['title']);
         // hText.style.setProperty('font-weight', 'bold');
         // hText.style.setProperty('color', 'rgb(255, 255, 255);');
-        popupDiv.appendChild(hText);
+        this.popupBoxDiv.appendChild(hText);
         // Add in popup information
         for (const key in popupInfo) {
              if (key !== 'href' && key !== 'title') {
@@ -456,7 +429,7 @@ export class ModelViewComponent {
                 liElem.style.setProperty('margin-left', '6px;');
                 const oText = document.createTextNode(key + ': ' + popupInfo[key]);
                 liElem.appendChild(oText);
-                popupDiv.appendChild(liElem);
+                this.popupBoxDiv.appendChild(liElem);
             // Make URLs
             } else if (key === 'href') {
                 for (let hIdx = 0; hIdx < popupInfo['href'].length; hIdx++) {
@@ -470,13 +443,11 @@ export class ModelViewComponent {
                     oLink.innerHTML = popupInfo['href'][hIdx]['label'];
                     oLink.target = '_blank';
                     liElem.appendChild(oLink);
-                    popupDiv.appendChild(liElem);
+                    this.popupBoxDiv.appendChild(liElem);
                 }
             }
         }
     }
-
-
 
     render() {
         this.renderer.render(this.scene, this.view.camera.camera3D);
