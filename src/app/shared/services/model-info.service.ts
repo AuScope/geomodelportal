@@ -74,8 +74,10 @@ export class ModelInfoService {
             if (modelInfo.groups.hasOwnProperty(groupName)) {
                 this.modelPartState[groupName] = {};
                 for (const partObj of modelInfo.groups[groupName]) {
+                    if (partObj.include) {
                         this.modelPartState[groupName][partObj.model_url] = { displayed: partObj.displayed,
                                                                                  visibility: 1.0, heightOffset: 0.0 };
+                    }
                 }
             }
         }

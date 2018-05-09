@@ -119,18 +119,7 @@ export class ModelViewComponent {
         // `viewerDiv` will contain iTowns' rendering area (`<canvas>`)
         this.viewerDiv = document.getElementById('viewerDiv');
 
-        // Contains checkboxes for model parts
-        // const modelControlsDiv = document.getElementById('modelControlsDiv');
-        // this.ulElem = document.createElement('ul');
-        // modelControlsDiv.appendChild(this.ulElem);
-
-
         this.sceneArr = {};
-
-        // Add in the groups to the LHS panel
-        // for (const group of config.groups) {
-        //     this.add_display_groups(group);
-        // }
 
         // Scene
         this.scene = new ITOWNS.THREE.Scene();
@@ -403,16 +392,6 @@ export class ModelViewComponent {
         const trackBallControls = new GeoModelControls(this.view.camera.camera3D, this.view, this.extentObj.center().xyz());
         this.scene.add(trackBallControls.getObject());
 
-        // // Hide any parts of the model that are not ticked
-        // for (const sKey in this.sceneArr) {
-        //    if (!this.sceneArr[sKey]['checkbox'].hasAttribute('checked')
-        //      || this.sceneArr[sKey]['checkbox'].getAttribute('checked') === false) {
-        //        this.sceneArr[sKey]['scene'].visible = false;
-        //    }
-        // }
-
-        // Update group tick boxes so that if one of the group is not ticked then the overall one is not ticked also
-        // this.update_group_tickbox(null);
         console.log('scene = ', this.scene);
         this.view.notifyChange(true);
     }
@@ -447,6 +426,8 @@ export class ModelViewComponent {
         }
     }
 
+    // FIXME: Style popup the same as the rest of the website
+    // FIXME: Do the CSS the Angular way
     make_popup(event, popupInfo) {
         const popupDiv = document.getElementById('popupBoxDiv');
         popupDiv.style.top = event.clientY;

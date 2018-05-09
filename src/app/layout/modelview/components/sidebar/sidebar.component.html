@@ -4,12 +4,20 @@
         <div *ngFor="let groupName of groupList" class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass(groupName)">
                 <span><i class="fa fa-plus"></i>&nbsp;{{groupName}}</span>
+                <input *ngIf="getGroupTickBoxState(groupName)" (click)="groupCheckBoxClick($event, groupName, false)" checked="true" style="margin-left: 3px;" type="checkbox"/>
+                <input *ngIf="!getGroupTickBoxState(groupName)" (click)="groupCheckBoxClick($event, groupName, true)" style="margin-left: 3px;" type="checkbox"/>
             </a>
             <li class="nested" [class.expand]="showMenu === groupName">
                 <ul *ngFor="let subGroupObj of modelInfo['groups'][groupName]" class="submenu" style="font-size: 12px; padding-left: 40px; margin-bottom: 4px;">
                     <li *ngIf="subGroupObj.include && modelPartState[groupName][subGroupObj.model_url]">
-                        <a *ngIf="modelPartState[groupName][subGroupObj.model_url].displayed" class="list-group-item" style="padding: 0"><span>{{subGroupObj.display_name}}</span><input (click)="checkBoxClick(groupName, subGroupObj.model_url)" checked="true" style="margin-left: 3px;" type="checkbox"/></a>
-                        <a *ngIf="!modelPartState[groupName][subGroupObj.model_url].displayed" class="list-group-item" style="padding: 0"><span>{{subGroupObj.display_name}}</span><input (click)="checkBoxClick(groupName, subGroupObj.model_url)" style="margin-left: 3px;" type="checkbox"/></a>
+                        <a *ngIf="modelPartState[groupName][subGroupObj.model_url].displayed" class="list-group-item" style="padding: 0">
+                            <span>{{subGroupObj.display_name}}</span>
+                            <input (click)="checkBoxClick(groupName, subGroupObj.model_url, false)" checked="true" style="margin-left: 3px;" type="checkbox"/>
+                        </a>
+                        <a *ngIf="!modelPartState[groupName][subGroupObj.model_url].displayed" class="list-group-item" style="padding: 0">
+                            <span>{{subGroupObj.display_name}}</span>
+                            <input (click)="checkBoxClick(groupName, subGroupObj.model_url, true)" style="margin-left: 3px;" type="checkbox"/>
+                        </a>
                         <a class="list-group-item" style="padding: 0 0 0 20px; color: #999"><span>Height Offset&nbsp;{{modelPartState[groupName][subGroupObj.model_url].heightOffset}}<!-- <mat-slider thumbLabel min="1" max="100" step="1" value="1"></mat-slider>--></span></a>
                         <a class="list-group-item" style="padding: 0 0 0 20px; color: #999"><span>Transparency&nbsp;{{modelPartState[groupName][subGroupObj.model_url].visibility}}<!-- <mat-slider thumbLabel min="1" max="100" step="1" value="100"></mat-slider>--></span></a>
                     </li>

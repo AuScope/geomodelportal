@@ -55,10 +55,32 @@ export class SidebarComponent  implements OnInit {
         );
     }
 
-    checkBoxClick(groupName: string, modelUrl: string) {
-        this.modelPartState[groupName][modelUrl].displayed = !this.modelPartState[groupName][modelUrl].displayed;
+    checkBoxClick(groupName: string, modelUrl: string, state: boolean) {
+        this.modelPartState[groupName][modelUrl].displayed = state;
         this.modelInfoService.setModelPartStateChange(groupName, modelUrl,
             { type: ModelPartStateChangeType.DISPLAYED, new_value: this.modelPartState[groupName][modelUrl].displayed } );
+    }
+
+    groupCheckBoxClick(event: any, groupName: string, state: boolean) {
+        event.stopPropagation();
+        for (const modelUrl in this.modelPartState[groupName]) {
+            if (this.modelPartState[groupName].hasOwnProperty(modelUrl)) {
+                this.checkBoxClick(groupName, modelUrl, state);
+            }
+        }
+    }
+
+    getGroupTickBoxState(groupName: string) {
+        let state = true;
+        for (const modelUrl in this.modelPartState[groupName]) {
+            if (this.modelPartState[groupName].hasOwnProperty(modelUrl)) {
+                if (!this.modelPartState[groupName][modelUrl].displayed) {
+                    state = false;
+                    break;
+                }
+            }
+        }
+        return state;
     }
 
     eventCalled() {
