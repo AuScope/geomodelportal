@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatSliderModule} from '@angular/material/slider';
 
 import { ModelViewRoutingModule } from './modelview-routing.module';
 import { ModelViewComponent } from './modelview.component';
@@ -17,7 +18,8 @@ import { ModelCardModule } from '../../shared';
         NgbCarouselModule.forRoot(),
         NgbAlertModule.forRoot(),
         ModelViewRoutingModule,
-        ModelCardModule
+        ModelCardModule,
+        MatSliderModule
     ],
     declarations: [
         ModelViewComponent,

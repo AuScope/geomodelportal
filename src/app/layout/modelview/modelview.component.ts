@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, Renderer2, ElementRef } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { ModelInfoService, ModelPartCallbackType,
          ModelPartStateChange, ModelPartStateChangeType } from '../../shared/services/model-info.service';
@@ -31,8 +31,8 @@ import * as Detector from '../../../../node_modules/three/examples/js/Detector';
     animations: [routerTransition()]
 })
 export class ModelViewComponent  implements AfterViewInit {
-    @ViewChild('viewerDiv') viewerDivElem;
-    @ViewChild('popupBoxDiv') popupBoxDivElem;
+    @ViewChild('viewerDiv') private viewerDivElem: ElementRef;
+    @ViewChild('popupBoxDiv') private popupBoxDivElem: ElementRef;
 
     // iTowns extent object
     private extentObj;
@@ -73,7 +73,7 @@ export class ModelViewComponent  implements AfterViewInit {
     // directory where model files are kept
     private model_dir;
 
-    constructor(private modelInfoService: ModelInfoService) {
+    constructor(private modelInfoService: ModelInfoService, private elRef: ElementRef, private ngRenderer: Renderer2) {
     }
 
     ngAfterViewInit() {
@@ -96,7 +96,7 @@ export class ModelViewComponent  implements AfterViewInit {
             this.modelInfoService.registerModelPartCallback(callbackFn);
         } else {
             const warning = Detector.getWebGLErrorMessage();
-            this.viewerDiv.appendChild(warning);
+            this.ngRenderer.appendChild(this.viewerDiv, warning);
         }
     }
 
@@ -272,6 +272,7 @@ export class ModelViewComponent  implements AfterViewInit {
     //
     initialise_view(config) {
         const props = config.properties;
+        const local = this;
 
         // Create an instance of PlanarView
         this.view = new ITOWNS.PlanarView(this.viewerDiv, this.extentObj,
@@ -316,14 +317,14 @@ export class ModelViewComponent  implements AfterViewInit {
 
         // The Raycaster is used to find which part of the model was clicked on, then create a popup box
         this.raycaster = new THREE.Raycaster();
-        this.viewerDiv.addEventListener( 'dblclick',   function(event: any) {
+        this.ngRenderer.listen(this.viewerDiv, 'dblclick', function(event: any) {
 
                 event.preventDefault();
 
-                const modelViewObj = this.modelViewObj;
+                const modelViewObj = local;
 
-                modelViewObj.mouse.x = (event.offsetX / this.clientWidth) * 2 - 1;
-                modelViewObj.mouse.y = -(event.offsetY / this.clientHeight) * 2 + 1;
+                modelViewObj.mouse.x = (event.offsetX / local.viewerDiv.clientWidth) * 2 - 1;
+                modelViewObj.mouse.y = -(event.offsetY / local.viewerDiv.clientHeight) * 2 + 1;
 
                 modelViewObj.raycaster.setFromCamera(modelViewObj.mouse, modelViewObj.view.camera.camera3D);
 
@@ -366,7 +367,7 @@ export class ModelViewComponent  implements AfterViewInit {
                     }
                 }
             });
-        this.viewerDiv.modelViewObj = this;
+        // this.viewerDiv.modelViewObj = this;
 
         // Insert some arrows to give us some orientation information
         const x_dir = new THREE.Vector3( 1, 0, 0 );
@@ -400,50 +401,45 @@ export class ModelViewComponent  implements AfterViewInit {
     }
 
     // FIXME: Style popup the same as the rest of the website
-    // FIXME: Do the CSS the Angular way
     make_popup(event, popupInfo) {
         const local = this;
-        this.popupBoxDiv.style.top = event.clientY;
-        this.popupBoxDiv.style.left = event.clientX;
-        this.popupBoxDiv.style.display = 'inline';
-        while (this.popupBoxDiv.firstChild) {
-            this.popupBoxDiv.removeChild(this.popupBoxDiv.firstChild);
+        // Position it and let it be seen
+        this.ngRenderer.setStyle(this.popupBoxDiv, 'top', event.clientY);
+        this.ngRenderer.setStyle(this.popupBoxDiv, 'left', event.clientX);
+        this.ngRenderer.setStyle(this.popupBoxDiv, 'display', 'inline');
+        // Empty its contents using DOM operations (Renderer2 does not currently support proper element querying)
+        while (this.popupBoxDiv.hasChildNodes()) {
+            this.popupBoxDiv.removeChild(this.popupBoxDiv.lastChild);
         }
-        // Make 'X' for exit button in corner of popup window
-        const exitDiv = document.createElement('div');
-        exitDiv.id = 'popupExitDiv';
-        exitDiv.innerHTML = 'X';
-        exitDiv.onclick = function() { local.popupBoxDiv.style.display = 'none'; };
-        this.popupBoxDiv.appendChild(exitDiv);
+
+        // // Make 'X' for exit button in corner of popup window
+        const exitDiv = this.ngRenderer.createElement('div');
+        this.ngRenderer.setAttribute(exitDiv, 'id', 'popupExitDiv');  // Attributes are HTML entities
+        this.ngRenderer.addClass(exitDiv, 'popupClass');
+        this.ngRenderer.setProperty(exitDiv, 'innerHTML', 'X'); // Properties are DOM entities
+        this.ngRenderer.setProperty(exitDiv, 'onclick', function() { local.ngRenderer.setStyle(local.popupBoxDiv, 'display', 'none'); });
+        this.ngRenderer.appendChild(this.popupBoxDiv, exitDiv);
         // Make popup title
-        const hText = document.createTextNode(popupInfo['title']);
-        // hText.style.setProperty('font-weight', 'bold');
-        // hText.style.setProperty('color', 'rgb(255, 255, 255);');
-        this.popupBoxDiv.appendChild(hText);
+        const hText = this.ngRenderer.createText(popupInfo['title']);
+        this.ngRenderer.appendChild(this.popupBoxDiv, hText);
         // Add in popup information
         for (const key in popupInfo) {
              if (key !== 'href' && key !== 'title') {
-                const liElem = document.createElement('li');
-                liElem.style.setProperty('color', 'rgb(150, 150, 150)');
-                liElem.style.setProperty('list-style-type', 'square');
-                liElem.style.setProperty('margin-left', '6px;');
-                const oText = document.createTextNode(key + ': ' + popupInfo[key]);
-                liElem.appendChild(oText);
-                this.popupBoxDiv.appendChild(liElem);
+                const liElem = this.ngRenderer.createElement('li');
+                const oText = this.ngRenderer.createText(key + ': ' + popupInfo[key]);
+                this.ngRenderer.appendChild(liElem, oText);
+                this.ngRenderer.addClass(liElem, 'popupClass');
+                this.ngRenderer.appendChild(this.popupBoxDiv, liElem);
             // Make URLs
             } else if (key === 'href') {
                 for (let hIdx = 0; hIdx < popupInfo['href'].length; hIdx++) {
-                    const liElem = document.createElement('li');
-                    liElem.style.setProperty('color', 'rgb(150, 150, 150)');
-                    liElem.style.setProperty('list-style-type', 'square');
-                    liElem.style.setProperty('margin-left', '6px;');
-                    const oLink = document.createElement('a');
-                    oLink.href = popupInfo['href'][hIdx]['URL'];
-                    oLink.style.setProperty('color', 'rgb(190, 190, 190);');
-                    oLink.innerHTML = popupInfo['href'][hIdx]['label'];
-                    oLink.target = '_blank';
-                    liElem.appendChild(oLink);
-                    this.popupBoxDiv.appendChild(liElem);
+                    const liElem = this.ngRenderer.createElement('li');
+                    const oLink = this.ngRenderer.createElement('a');
+                    this.ngRenderer.setAttribute(oLink, 'href', popupInfo['href'][hIdx]['URL']); // Attributes are HTML entities
+                    this.ngRenderer.setProperty(oLink, 'innerHTML', popupInfo['href'][hIdx]['label']); // Properties are DOM entities
+                    this.ngRenderer.setAttribute(oLink, 'target', '_blank');
+                    this.ngRenderer.appendChild(liElem, oLink);
+                    this.ngRenderer.appendChild(this.popupBoxDiv, liElem);
                 }
             }
         }

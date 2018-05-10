@@ -40,6 +40,12 @@
         opacity: 1.0;
     }
 
+    #popupBoxDiv li {
+        color: rgb(150, 150, 150);
+        list-style-type: square;
+        margin-left: 6px;
+    }
+
     #help {
         position: absolute;
         z-index: 0;

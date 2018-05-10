@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import {MatSliderModule} from '@angular/material/slider';
+import { MatSliderModule} from '@angular/material/slider';
 import { HttpErrorResponse } from '@angular/common/http';
 
 import {ModelInfoService, ModelPartStateChangeType } from '../../../../shared/services/model-info.service';
 
+
+const DISPLAY_CTRL_ON = 'block';
+const DISPLAY_CTRL_OFF = 'none';
 
 @Component({
     selector: 'app-sidebar',
@@ -13,16 +16,18 @@ import {ModelInfoService, ModelPartStateChangeType } from '../../../../shared/se
     styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent  implements OnInit {
-    isActive = false;
-    showMenu = '';
-    showMenu2 = '';
-    pushRightClass: 'push-right';
+    private isActive = false;
+    private showMenu = '';
+    private showMenu2 = '';
+    private pushRightClass: 'push-right';
 
-    title = '';
-    modelInfo = {};
-    modelPath = '';
-    groupList: Array<String> = [];
-    modelPartState = {};
+    private title = '';
+    private modelInfo = {};
+    private modelPath = '';
+    private groupList: Array<String> = [];
+    private modelPartState = {};
+    private displayControls = {};
+
 
     constructor(private translate: TranslateService, private modelInfoService: ModelInfoService, private route: ActivatedRoute,
                 public router: Router) {
@@ -51,8 +56,31 @@ export class SidebarComponent  implements OnInit {
                 this.title = this.modelInfo['properties'].name;
                 this.groupList = Object.keys(this.modelInfo['groups']);
                 this.modelPartState = this.modelInfoService.getModelPartStateObj();
+                this.displayControls = {};
+                for (const groupName in this.modelPartState) {
+                    if (this.modelPartState.hasOwnProperty(groupName)) {
+                        this.displayControls[groupName] = {};
+                        for (const modelUrl in this.modelPartState[groupName]) {
+                            if (this.modelPartState[groupName].hasOwnProperty(modelUrl)) {
+                                this.displayControls[groupName][modelUrl] = DISPLAY_CTRL_OFF;
+                            }
+                        }
+                    }
+                }
             }
         );
+    }
+
+    toggleControls(groupName, modelUrl) {
+        if (this.displayControls[groupName][modelUrl] === DISPLAY_CTRL_ON) {
+            this.displayControls[groupName][modelUrl] = DISPLAY_CTRL_OFF;
+        } else {
+            this.displayControls[groupName][modelUrl] = DISPLAY_CTRL_ON;
+        }
+    }
+
+    getDisplayControls(groupName, modelUrl) {
+        return this.displayControls[groupName][modelUrl];
     }
 
     checkBoxClick(groupName: string, modelUrl: string, state: boolean) {
@@ -121,7 +149,4 @@ export class SidebarComponent  implements OnInit {
         this.translate.use(language);
     }
 
-    onLoggedout() {
-        localStorage.removeItem('isLoggedin');
-    }
 }
