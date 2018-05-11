@@ -4,27 +4,27 @@
         <div *ngFor="let groupName of groupList" class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass(groupName)">
                 <span><i class="fa fa-plus"></i>&nbsp;{{groupName}}</span>
-                <input *ngIf="getGroupTickBoxState(groupName)" (click)="groupCheckBoxClick($event, groupName, false)" checked="true" style="margin-left: 3px;" type="checkbox"/>
-                <input *ngIf="!getGroupTickBoxState(groupName)" (click)="groupCheckBoxClick($event, groupName, true)" style="margin-left: 3px;" type="checkbox"/>
+                <input *ngIf="getGroupTickBoxState(groupName)" (click)="groupCheckBoxClick($event, groupName, false)" checked="true" class="vis-toggle" type="checkbox"/>
+                <input *ngIf="!getGroupTickBoxState(groupName)" (click)="groupCheckBoxClick($event, groupName, true)" class="vis-toggle" type="checkbox"/>
             </a>
             <li class="nested" [class.expand]="showMenu === groupName">
-                <ul *ngFor="let subGroupObj of modelInfo['groups'][groupName]" class="submenu" style="font-size: 12px; padding-left: 40px; margin-bottom: 4px;">
+                <ul *ngFor="let subGroupObj of modelInfo['groups'][groupName]" class="submenu ul-part-name">
                     <li *ngIf="subGroupObj.include && modelPartState[groupName][subGroupObj.model_url]">
-                        <a  class="list-group-item" style="padding: 0">
+                        <a class="a-part-name list-group-item">
                             <span>{{subGroupObj.display_name}}</span>
-                            <input *ngIf="modelPartState[groupName][subGroupObj.model_url].displayed" (click)="checkBoxClick(groupName, subGroupObj.model_url, false)" checked="true" style="margin-left: 3px;" type="checkbox"/>
-                            <input *ngIf="!modelPartState[groupName][subGroupObj.model_url].displayed" (click)="checkBoxClick(groupName, subGroupObj.model_url, true)" style="margin-left: 3px;" type="checkbox"/>
-                            <i class="fa fa-cog" (click)="toggleControls(groupName, subGroupObj.model_url)"></i>
+                            <input *ngIf="modelPartState[groupName][subGroupObj.model_url].displayed" (click)="checkBoxClick(groupName, subGroupObj.model_url, false)" checked="true" class="vis-toggle" type="checkbox"/>
+                            <input *ngIf="!modelPartState[groupName][subGroupObj.model_url].displayed" (click)="checkBoxClick(groupName, subGroupObj.model_url, true)" class="vis-toggle" type="checkbox"/>
+                            <i class="fa fa-lg fa-cog part-controls" (click)="toggleControls(groupName, subGroupObj.model_url)"></i>
                         </a>
                         <div id="controlsDiv" [style.display]="getDisplayControls(groupName, subGroupObj.model_url)">
-                            <a class="list-group-item" style="padding: 0 0 0 20px; color: #999">
-                                <span>Height Offset&nbsp;{{modelPartState[groupName][subGroupObj.model_url].heightOffset}}
-                                    <mat-slider thumbLabel min="1" max="100" step="1" value="1"></mat-slider>
+                            <a class="list-group-item">
+                                <span class="span-part-controls">Height Offset&nbsp;{{modelPartState[groupName][subGroupObj.model_url].heightOffset}}
+                                    <mat-slider (change)="changeHeight($event, groupName, subGroupObj.model_url)" thumbLabel min="0" max="10000" step="500" value="0"></mat-slider>
                                 </span>
                             </a>
-                            <a class="list-group-item" style="padding: 0 0 0 20px; color: #999">
-                                <span>Transparency&nbsp;{{modelPartState[groupName][subGroupObj.model_url].visibility}}
-                                    <mat-slider thumbLabel min="1" max="100" step="1" value="100"></mat-slider>
+                            <a class="list-group-item">
+                                <span class="span-part-controls">Transparency&nbsp;{{modelPartState[groupName][subGroupObj.model_url].transparency.toFixed(1)}}
+                                    <mat-slider (change)="changeTransparency($event, groupName, subGroupObj.model_url)" thumbLabel min="0.0" max="1.0" step="0.1" value="1.0"></mat-slider>
                                 </span>
                             </a>
                         </div>

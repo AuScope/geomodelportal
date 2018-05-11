@@ -76,7 +76,7 @@ export class ModelInfoService {
                 for (const partObj of modelInfo.groups[groupName]) {
                     if (partObj.include) {
                         this.modelPartState[groupName][partObj.model_url] = { displayed: partObj.displayed,
-                                                                                 visibility: 1.0, heightOffset: 0.0 };
+                                                                                 transparency: 1.0, heightOffset: 0.0 };
                     }
                 }
             }

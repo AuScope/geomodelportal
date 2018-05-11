@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { MatSliderModule} from '@angular/material/slider';
+import { MatSliderModule, MatSliderChange } from '@angular/material/slider';
 import { HttpErrorResponse } from '@angular/common/http';
 
 import {ModelInfoService, ModelPartStateChangeType } from '../../../../shared/services/model-info.service';
@@ -27,6 +27,7 @@ export class SidebarComponent  implements OnInit {
     private groupList: Array<String> = [];
     private modelPartState = {};
     private displayControls = {};
+    private value;
 
 
     constructor(private translate: TranslateService, private modelInfoService: ModelInfoService, private route: ActivatedRoute,
@@ -60,9 +61,9 @@ export class SidebarComponent  implements OnInit {
                 for (const groupName in this.modelPartState) {
                     if (this.modelPartState.hasOwnProperty(groupName)) {
                         this.displayControls[groupName] = {};
-                        for (const modelUrl in this.modelPartState[groupName]) {
-                            if (this.modelPartState[groupName].hasOwnProperty(modelUrl)) {
-                                this.displayControls[groupName][modelUrl] = DISPLAY_CTRL_OFF;
+                        for (const partId in this.modelPartState[groupName]) {
+                            if (this.modelPartState[groupName].hasOwnProperty(partId)) {
+                                this.displayControls[groupName][partId] = DISPLAY_CTRL_OFF;
                             }
                         }
                     }
@@ -71,38 +72,48 @@ export class SidebarComponent  implements OnInit {
         );
     }
 
-    toggleControls(groupName, modelUrl) {
-        if (this.displayControls[groupName][modelUrl] === DISPLAY_CTRL_ON) {
-            this.displayControls[groupName][modelUrl] = DISPLAY_CTRL_OFF;
+    private changeHeight(event: MatSliderChange, groupName: string, partId: string) {
+        this.modelInfoService.setModelPartStateChange(groupName, partId,
+            { type: ModelPartStateChangeType.HEIGHT_OFFSET, new_value: event.value } );
+    }
+
+    private changeTransparency(event: MatSliderChange, groupName: string, partId: string) {
+        this.modelInfoService.setModelPartStateChange(groupName, partId,
+            { type: ModelPartStateChangeType.TRANSPARENCY, new_value: event.value } );
+    }
+
+    public toggleControls(groupName: string, partId: string) {
+        if (this.displayControls[groupName][partId] === DISPLAY_CTRL_ON) {
+            this.displayControls[groupName][partId] = DISPLAY_CTRL_OFF;
         } else {
-            this.displayControls[groupName][modelUrl] = DISPLAY_CTRL_ON;
+            this.displayControls[groupName][partId] = DISPLAY_CTRL_ON;
         }
     }
 
-    getDisplayControls(groupName, modelUrl) {
-        return this.displayControls[groupName][modelUrl];
+    public getDisplayControls(groupName: string, partId: string) {
+        return this.displayControls[groupName][partId];
     }
 
-    checkBoxClick(groupName: string, modelUrl: string, state: boolean) {
-        this.modelPartState[groupName][modelUrl].displayed = state;
-        this.modelInfoService.setModelPartStateChange(groupName, modelUrl,
-            { type: ModelPartStateChangeType.DISPLAYED, new_value: this.modelPartState[groupName][modelUrl].displayed } );
+    public checkBoxClick(groupName: string, partId: string, state: boolean) {
+        this.modelPartState[groupName][partId].displayed = state;
+        this.modelInfoService.setModelPartStateChange(groupName, partId,
+            { type: ModelPartStateChangeType.DISPLAYED, new_value: this.modelPartState[groupName][partId].displayed } );
     }
 
-    groupCheckBoxClick(event: any, groupName: string, state: boolean) {
+    public groupCheckBoxClick(event: any, groupName: string, state: boolean) {
         event.stopPropagation();
-        for (const modelUrl in this.modelPartState[groupName]) {
-            if (this.modelPartState[groupName].hasOwnProperty(modelUrl)) {
-                this.checkBoxClick(groupName, modelUrl, state);
+        for (const partId in this.modelPartState[groupName]) {
+            if (this.modelPartState[groupName].hasOwnProperty(partId)) {
+                this.checkBoxClick(groupName, partId, state);
             }
         }
     }
 
-    getGroupTickBoxState(groupName: string) {
+    public getGroupTickBoxState(groupName: string) {
         let state = true;
-        for (const modelUrl in this.modelPartState[groupName]) {
-            if (this.modelPartState[groupName].hasOwnProperty(modelUrl)) {
-                if (!this.modelPartState[groupName][modelUrl].displayed) {
+        for (const partId in this.modelPartState[groupName]) {
+            if (this.modelPartState[groupName].hasOwnProperty(partId)) {
+                if (!this.modelPartState[groupName][partId].displayed) {
                     state = false;
                     break;
                 }
@@ -111,18 +122,19 @@ export class SidebarComponent  implements OnInit {
         return state;
     }
 
-    eventCalled() {
+    public eventCalled() {
         this.isActive = !this.isActive;
     }
 
-    addExpandClass(element: any) {
+    public addExpandClass(element: any) {
         if (element === this.showMenu) {
             this.showMenu = '0';
         } else {
             this.showMenu = element;
         }
     }
-    addExpandClass2(element: any) {
+
+    public addExpandClass2(element: any) {
         if (element === this.showMenu2) {
             this.showMenu2 = '0';
         } else {
@@ -130,23 +142,22 @@ export class SidebarComponent  implements OnInit {
         }
     }
 
-    isToggled(): boolean {
+    public isToggled(): boolean {
         const dom: Element = document.querySelector('body');
         return dom.classList.contains(this.pushRightClass);
     }
 
-    toggleSidebar() {
+    public toggleSidebar() {
         const dom: any = document.querySelector('body');
         dom.classList.toggle(this.pushRightClass);
     }
 
-    rltAndLtr() {
+    public rltAndLtr() {
         const dom: any = document.querySelector('body');
         dom.classList.toggle('rtl');
     }
 
-    changeLang(language: string) {
+    public changeLang(language: string) {
         this.translate.use(language);
     }
-
 }

@@ -41,7 +41,7 @@ $topnav-background-color: #222;
         }
         .header-fields {
             padding-top: 10px;
-        
+
             > .list-group-item:first-child {
                 border-top: 1px solid rgba(255, 255, 255, 0.2);
             }
@@ -150,4 +150,32 @@ $topnav-background-color: #222;
 ::-webkit-scrollbar-thumb {
     border-radius: 3px;
     -webkit-box-shadow: inset 0 0 3px rgba(255, 255, 255, 1);
+}
+
+.mat-slider {
+    padding: 0px;
+}
+
+.part-controls {
+    vertical-align: 10%;
+    padding-left: 10px;
+}
+
+.span-part-controls  {
+    padding: 0 0 0 20px;
+    color: #AAA;
+}
+
+.vis-toggle {
+    margin-left: 3px;
+}
+
+.ul-part-name {
+    font-size: 12px;
+    padding-left: 40px;
+    margin-bottom: 4px;
+}
+
+.a-part-name {
+    padding: 0px !important;
 }

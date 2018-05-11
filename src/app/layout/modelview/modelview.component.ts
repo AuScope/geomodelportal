@@ -86,10 +86,17 @@ export class ModelViewComponent  implements AfterViewInit {
             const params = new URLSearchParams(document.location.search.substring(1));
             const model_name = 'NorthGawler';  // FIXME: should eventually be params.get('model');
             // Initialise model by downloading its JSON file
-            this.modelInfoService.getModelInfo(model_name).then(res => { local.initialise_model(res, model_name); });
-            const callbackFn: ModelPartCallbackType =  function(groupName: string, modelUrl: string, state: ModelPartStateChange) {
+            this.modelInfoService.getModelInfo(model_name).then(res => { local.initialiseModel(res, model_name); });
+            const callbackFn: ModelPartCallbackType =  function(groupName: string, partId: string, state: ModelPartStateChange) {
                 if (state.type === ModelPartStateChangeType.DISPLAYED) {
-                    local.sceneArr[groupName][modelUrl].visible = state.new_value;
+                    local.sceneArr[groupName][partId].visible = state.new_value;
+                    local.view.notifyChange(true);
+                } else if (state.type ===  ModelPartStateChangeType.TRANSPARENCY) {
+                    local.setPartTransparency(local.sceneArr[groupName][partId], <number> state.new_value);
+                    local.view.notifyChange(true);
+                } else if (state.type === ModelPartStateChangeType.HEIGHT_OFFSET) {
+                    const displacement = new THREE.Vector3(0.0, 0.0, <number> state.new_value);
+                    local.movePart(local.sceneArr[groupName][partId], displacement);
                     local.view.notifyChange(true);
                 }
             };
@@ -100,19 +107,47 @@ export class ModelViewComponent  implements AfterViewInit {
         }
     }
 
-    add_part(part, sceneObj, groupName) {
+    private addPart(part, sceneObj: THREE.Object3D, groupName: string) {
         if (!this.sceneArr.hasOwnProperty(groupName)) {
             this.sceneArr[groupName] = {};
         }
         this.sceneArr[groupName][part.model_url] = sceneObj;
     }
 
-    initialise_model(config, model_name) {
+    private movePart(sceneObj: THREE.Object3D, displacement: THREE.Vector3) {
+        sceneObj.traverseVisible( function(child) {
+            if (child instanceof THREE.Object3D) {
+                if (!child.userData.hasOwnProperty('origPosition')) {
+                    child.userData.origPosition = child.position.clone();
+                }
+                child.position.addVectors(child.userData.origPosition, displacement);
+            }
+        });
+    }
+
+    private setPartTransparency(sceneObj: THREE.Object3D, value: number) {
+        sceneObj.traverseVisible( function(child) {
+            if (child instanceof THREE.Mesh) {
+                if (child.material instanceof THREE.MeshStandardMaterial) {
+                    const material: THREE.MeshStandardMaterial = child.material;
+                    if (value >= 0.0 && value < 1.0) {
+                        material.transparent = true;
+                        material.opacity = value;
+                    } else if (value === 1.0) {
+                        material.transparent = false;
+                        material.opacity = 1.0;
+                    }
+                }
+            }
+        });
+    }
+
+    private initialiseModel(config, modelName: string) {
         const props = config.properties;
         const i = 0;
-        console.log('config =', config, model_name);
+        console.log('config =', config, modelName);
         this.config = config;
-        this.model_dir = model_name;
+        this.model_dir = modelName;
         if (props.proj4_defn) {
             proj4.defs(props.crs, props.proj4_defn);
         }
@@ -143,11 +178,11 @@ export class ModelViewComponent  implements AfterViewInit {
         pointlight.name = 'Point Light';
         this.scene.add(pointlight);
 
-        this.add_3dobjects();
+        this.add3DObjects();
     }
 
     // Add GLTF objects
-    add_3dobjects() {
+    private add3DObjects() {
         const manager = new ITOWNS.THREE.LoadingManager();
 
         // This adds the 'GLTFLoader' object to 'THREE'
@@ -186,7 +221,7 @@ export class ModelViewComponent  implements AfterViewInit {
                                         g_object.scene.visible = false;
                                     }
                                     local.scene.add(g_object.scene);
-                                    local.add_part(part, g_object.scene, grp);
+                                    local.addPart(part, g_object.scene, grp);
                                     resolve(g_object.scene);
                                 }, onProgress, onError);
                             })(parts[i], group);
@@ -198,14 +233,14 @@ export class ModelViewComponent  implements AfterViewInit {
 
         Promise.all(promiseList).then( function( sceneObjList ) {
            console.log('GLTFs are loaded, now init view scene=', local.scene);
-           local.add_planes();
+           local.addPlanes();
         }, function( error ) {
             console.error( 'Could not load all textures:', error );
         });
     }
 
 
-    add_planes() {
+    private addPlanes() {
         // Add planes
         const manager = new ITOWNS.THREE.LoadingManager();
         manager.onProgress = function ( item, loaded, total ) {
@@ -213,9 +248,7 @@ export class ModelViewComponent  implements AfterViewInit {
         };
 
         const local = this;
-
         const textureLoader = new THREE.TextureLoader(manager);
-
         const promiseList = [];
         for (const group in this.config.groups) {
             if (this.config.groups.hasOwnProperty(group)) {
@@ -238,7 +271,7 @@ export class ModelViewComponent  implements AfterViewInit {
                                 plane.position.copy(position);
                                 plane.name = part.display_name; // Need this to display popup windows
                                 local.scene.add(plane);
-                                local.add_part(part, plane, grp);
+                                local.addPart(part, plane, grp);
                                 resolve(plane);
                             },
                             // Function called when download progresses
@@ -259,7 +292,7 @@ export class ModelViewComponent  implements AfterViewInit {
 
         Promise.all(promiseList).then( function( sceneObjList ) {
            // Planes are loaded, now for GLTF objects
-           local.initialise_view(local.config);
+           local.initialiseView(local.config);
 
         }, function( error ) {
             console.error( 'Could not load all textures:', error );
@@ -270,7 +303,7 @@ export class ModelViewComponent  implements AfterViewInit {
     // Itowns code assumes that only its view objects have been added to the scene, and gets confused when there are
     // other objects in the scene.
     //
-    initialise_view(config) {
+    private initialiseView(config) {
         const props = config.properties;
         const local = this;
 
@@ -344,7 +377,7 @@ export class ModelViewComponent  implements AfterViewInit {
                                         for (const popup_key in parts[i]['popups']) {
                                             if (parts[i]['popups'].hasOwnProperty(popup_key)) {
                                                 if (popup_key + '_0' === intersects[n].object.name) {
-                                                    modelViewObj.make_popup(event, parts[i]['popups'][popup_key]);
+                                                    modelViewObj.makePopup(event, parts[i]['popups'][popup_key]);
                                                     return;
                                                 }
                                             }
@@ -353,7 +386,7 @@ export class ModelViewComponent  implements AfterViewInit {
                                     } else if (parts[i].hasOwnProperty('3dobject_label') &&
                                            parts[i].hasOwnProperty('popup_info') &&
                                            intersects[n].object.name === parts[i]['3dobject_label'] + '_0') {
-                                        modelViewObj.make_popup(event, parts[i]['popup_info']);
+                                        modelViewObj.makePopup(event, parts[i]['popup_info']);
                                         return;
                                     } else if (parts[i].hasOwnProperty('3dobject_label') &&
                                            intersects[n].object.name === parts[i]['3dobject_label'] &&
@@ -367,7 +400,6 @@ export class ModelViewComponent  implements AfterViewInit {
                     }
                 }
             });
-        // this.viewerDiv.modelViewObj = this;
 
         // Insert some arrows to give us some orientation information
         const x_dir = new THREE.Vector3( 1, 0, 0 );
@@ -401,7 +433,7 @@ export class ModelViewComponent  implements AfterViewInit {
     }
 
     // FIXME: Style popup the same as the rest of the website
-    make_popup(event, popupInfo) {
+    makePopup(event, popupInfo) {
         const local = this;
         // Position it and let it be seen
         this.ngRenderer.setStyle(this.popupBoxDiv, 'top', event.clientY);
