@@ -126,20 +126,33 @@ export class ModelViewComponent  implements AfterViewInit {
     }
 
     private setPartTransparency(sceneObj: THREE.Object3D, value: number) {
-        sceneObj.traverseVisible( function(child) {
-            if (child instanceof THREE.Mesh) {
-                if (child.material instanceof THREE.MeshStandardMaterial) {
-                    const material: THREE.MeshStandardMaterial = child.material;
-                    if (value >= 0.0 && value < 1.0) {
-                        material.transparent = true;
-                        material.opacity = value;
-                    } else if (value === 1.0) {
-                        material.transparent = false;
-                        material.opacity = 1.0;
+        // Plane objects
+        if (sceneObj instanceof THREE.Mesh && sceneObj.material instanceof THREE.MeshBasicMaterial) {
+            const material: THREE.MeshBasicMaterial = sceneObj.material;
+            if (value >= 0.0 && value < 1.0) {
+                material.transparent = true;
+                material.opacity = value;
+            } else if (value === 1.0) {
+                material.transparent = false;
+                material.opacity = 1.0;
+            }
+        } else {
+            // GLTF objects
+            sceneObj.traverseVisible( function(child) {
+                if (child instanceof THREE.Mesh) {
+                    if (child.material instanceof THREE.MeshStandardMaterial) {
+                        const material: THREE.MeshStandardMaterial = child.material;
+                        if (value >= 0.0 && value < 1.0) {
+                            material.transparent = true;
+                            material.opacity = value;
+                        } else if (value === 1.0) {
+                            material.transparent = false;
+                            material.opacity = 1.0;
+                        }
                     }
                 }
-            }
-        });
+            });
+        }
     }
 
     private initialiseModel(config, modelName: string) {
