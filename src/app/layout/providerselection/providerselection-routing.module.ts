@@ -4,7 +4,7 @@ import { ProviderSelectionComponent } from './providerselection.component';
 
 const routes: Routes = [
     {
-        path: '', component: ProviderSelectionComponent
+        path: 'geomodels', component: ProviderSelectionComponent
     }
 ];
 

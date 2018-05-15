@@ -13,11 +13,11 @@ const routes: Routes = [
                 loadChildren: './providerselection/providerselection.module#ProviderSelectionModule'
             },
             {
-                path: 'provider/:providerPath',
+                path: 'geomodels/provider/:providerPath',
                 loadChildren: './modelselection/modelselection.module#ModelSelectionModule'
             },
             {
-                path: 'model/:modelPath',
+                path: 'geomodels/model/:modelPath',
                 loadChildren: './modelview/modelview.module#ModelViewModule'
             }
         ]

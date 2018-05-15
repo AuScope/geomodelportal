@@ -10,6 +10,7 @@ export class ModelCardComponent implements OnInit {
     @Input() icon: string;
     @Input() label: string;
     @Input() modelPath: string;
+    @Input() prePath = '/geomodels';
     @Output() event: EventEmitter<any> = new EventEmitter();
 
     constructor() {}

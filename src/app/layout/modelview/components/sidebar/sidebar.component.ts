@@ -16,15 +16,15 @@ const DISPLAY_CTRL_OFF = 'none';
     styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent  implements OnInit {
-    private isActive = false;
+    public isActive = false;
     private showMenu = '';
     private showMenu2 = '';
     private pushRightClass: 'push-right';
 
-    private title = '';
+    public title = '';
     private modelInfo = {};
     private modelPath = '';
-    private groupList: Array<String> = [];
+    public groupList: Array<String> = [];
     private modelPartState = {};
     private displayControls = {};
     private value;

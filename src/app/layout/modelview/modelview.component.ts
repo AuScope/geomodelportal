@@ -24,6 +24,8 @@ import GeoModelControls from '../../../assets/GeoModelControls';
 // Detects if WebGL is available in the browser
 import * as Detector from '../../../../node_modules/three/examples/js/Detector';
 
+const BACKGROUND_COLOUR = new THREE.Color(0x777777);
+
 @Component({
     selector: 'app-modelview',
     templateUrl: './modelview.component.html',
@@ -89,7 +91,9 @@ export class ModelViewComponent  implements AfterViewInit {
             this.modelInfoService.getModelInfo(model_name).then(res => { local.initialiseModel(res, model_name); });
             const callbackFn: ModelPartCallbackType =  function(groupName: string, partId: string, state: ModelPartStateChange) {
                 if (state.type === ModelPartStateChangeType.DISPLAYED) {
+                    // local.printMeshes();
                     local.sceneArr[groupName][partId].visible = state.new_value;
+                    // local.printMeshes();
                     local.view.notifyChange(true);
                 } else if (state.type ===  ModelPartStateChangeType.TRANSPARENCY) {
                     local.setPartTransparency(local.sceneArr[groupName][partId], <number> state.new_value);
@@ -104,6 +108,14 @@ export class ModelViewComponent  implements AfterViewInit {
         } else {
             const warning = Detector.getWebGLErrorMessage();
             this.ngRenderer.appendChild(this.viewerDiv, warning);
+        }
+    }
+
+    private printMeshes() {
+        for (const child of this.scene.children) {
+            if (child instanceof THREE.Mesh) {
+                console.log(child.name, JSON.stringify(child));
+            }
         }
     }
 
@@ -172,16 +184,16 @@ export class ModelViewComponent  implements AfterViewInit {
         this.sceneArr = {};
 
         // Scene
-        this.scene = new ITOWNS.THREE.Scene();
+        this.scene = new THREE.Scene();
 
         /*var axesHelper = new THREE.AxisHelper( 5 );
         scene.add( axesHelper );*/
 
         // Grey background
-        this.scene.background = new THREE.Color(0x555555);
+        this.scene.background = BACKGROUND_COLOUR;
 
         // Ambient light
-        const ambient = new ITOWNS.THREE.AmbientLight(0xFFFFFF);
+        const ambient = new THREE.AmbientLight(0xFFFFFF);
         ambient.name = 'Ambient Light';
         this.scene.add(ambient);
 
@@ -191,32 +203,20 @@ export class ModelViewComponent  implements AfterViewInit {
         pointlight.name = 'Point Light';
         this.scene.add(pointlight);
 
+        // this.addPlanes();
         this.add3DObjects();
     }
 
     // Add GLTF objects
     private add3DObjects() {
-        const manager = new ITOWNS.THREE.LoadingManager();
+        const manager = new THREE.LoadingManager();
 
         // This adds the 'GLTFLoader' object to 'THREE'
         GLTFLoader(THREE);
 
         // Create our new GLTFLoader object
         const loader = new THREE['GLTFLoader'](manager);
-
-        const onProgress = function ( xhr ) {
-            // console.log('GLTF/OBJ onProgress()', xhr);
-            // if ( xhr.lengthComputable ) {
-            //    const percentComplete = xhr.loaded / xhr.total * 100;
-            //    console.log( xhr.currentTarget.responseURL, Math.round(percentComplete) + '% downloaded' );
-            // }
-        };
-        const onError = function ( xhr ) {
-            console.log('GLTF/OBJ load error!', xhr);
-        };
-
         const promiseList = [];
-
         const local = this;
 
         // Load GLTF objects into scene
@@ -227,16 +227,32 @@ export class ModelViewComponent  implements AfterViewInit {
                     if (parts[i].type === 'GLTFObject' && parts[i].include) {
                         promiseList.push( new Promise( function( resolve, reject ) {
                             (function(part, grp) {
-                                loader.load('./assets/geomodels/' + local.model_dir + '/' + part.model_url, function (g_object) {
-                                    console.log('loaded: ', local.model_dir + '/' + part.model_url);
-                                    g_object.scene.name = part.model_url;
-                                    if (!part.displayed) {
-                                        g_object.scene.visible = false;
+                                loader.load('./assets/geomodels/' + local.model_dir + '/' + part.model_url,
+                                    // function called if loading successful
+                                    function (g_object) {
+                                        console.log('loaded: ', local.model_dir + '/' + part.model_url);
+                                        g_object.scene.name = part.model_url;
+                                        if (!part.displayed) {
+                                            g_object.scene.visible = false;
+                                        }
+                                        local.scene.add(g_object.scene);
+                                        local.addPart(part, g_object.scene, grp);
+                                        resolve(g_object.scene);
+                                    },
+                                    // function called during loading
+                                    function ( xhr ) {
+                                        // console.log('GLTF/OBJ onProgress()', xhr);
+                                        // if ( xhr.lengthComputable ) {
+                                        //    const percentComplete = xhr.loaded / xhr.total * 100;
+                                        //    console.log( xhr.currentTarget.responseURL, Math.round(percentComplete) + '% downloaded' );
+                                        // }
+                                    },
+                                    // function called when loading fails
+                                    function ( xhr ) {
+                                         console.log('GLTF/OBJ load error!', xhr);
+                                         reject(null);
                                     }
-                                    local.scene.add(g_object.scene);
-                                    local.addPart(part, g_object.scene, grp);
-                                    resolve(g_object.scene);
-                                }, onProgress, onError);
+                                );
                             })(parts[i], group);
                         }));
                     }
@@ -244,18 +260,23 @@ export class ModelViewComponent  implements AfterViewInit {
             }
         }
 
-        Promise.all(promiseList).then( function( sceneObjList ) {
-           console.log('GLTFs are loaded, now init view scene=', local.scene);
-           local.addPlanes();
-        }, function( error ) {
-            console.error( 'Could not load all textures:', error );
-        });
+        Promise.all(promiseList).then(
+            // function called when all objects are loaded
+            function( sceneObjList ) {
+                console.log('GLTFs are loaded, now init view scene=', local.scene);
+                // local.initialiseView(local.config);
+                local.addPlanes();
+            },
+            // function called when one object fails
+            function( error ) {
+                console.error( 'Could not load all textures:', error );
+            });
     }
 
 
     private addPlanes() {
         // Add planes
-        const manager = new ITOWNS.THREE.LoadingManager();
+        const manager = new THREE.LoadingManager();
         manager.onProgress = function ( item, loaded, total ) {
             // console.log( item, loaded, total );
         };
@@ -271,6 +292,7 @@ export class ModelViewComponent  implements AfterViewInit {
                         promiseList.push( new Promise( function( resolve, reject ) {
                         (function(part, grp) {
                           const texture = textureLoader.load('./assets/geomodels/' + local.model_dir + '/' + part.model_url,
+                            // Function called when download successful
                             function (textya) {
                                 textya.minFilter = THREE.LinearFilter;
                                 const material = new THREE.MeshBasicMaterial( {
@@ -279,7 +301,7 @@ export class ModelViewComponent  implements AfterViewInit {
                                 } );
                                 const geometry = new THREE.PlaneGeometry(local.extentObj.dimensions().x, local.extentObj.dimensions().y);
                                 const plane = new THREE.Mesh(geometry, material);
-                                const position = new ITOWNS.THREE.Vector3(local.extentObj.center().x(),
+                                const position = new THREE.Vector3(local.extentObj.center().x(),
                                                                       local.extentObj.center().y(), part.position[2]);
                                 plane.position.copy(position);
                                 plane.name = part.display_name; // Need this to display popup windows
@@ -294,6 +316,7 @@ export class ModelViewComponent  implements AfterViewInit {
                             // Function called when download errors
                             function ( xhr ) {
                                 console.error('An error happened loading image plane');
+                                reject(null);
                             }
                           );
                        })(parts[i], group);
@@ -303,11 +326,15 @@ export class ModelViewComponent  implements AfterViewInit {
             }
         }
 
-        Promise.all(promiseList).then( function( sceneObjList ) {
+        Promise.all(promiseList).then(
+        // function called when all objects successfully loaded
+        function( sceneObjList ) {
            // Planes are loaded, now for GLTF objects
+           //  local.add3DObjects();
            local.initialiseView(local.config);
-
-        }, function( error ) {
+        },
+        // function called when one GLTF object failed to load
+        function( error ) {
             console.error( 'Could not load all textures:', error );
         });
     }
@@ -321,6 +348,8 @@ export class ModelViewComponent  implements AfterViewInit {
         const local = this;
 
         // Create an instance of PlanarView
+        console.log('PlanarView():', this.viewerDiv, this.extentObj, this.renderer, this.scene);
+        // debugger;
         this.view = new ITOWNS.PlanarView(this.viewerDiv, this.extentObj,
                                {near: 0.001, renderer: this.renderer, scene3D: this.scene});
 

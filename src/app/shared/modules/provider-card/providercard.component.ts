@@ -12,6 +12,7 @@ export class ProviderCardComponent implements OnInit {
     @Input() label: string;
     @Input() data: number;
     @Input() providerPath: string;
+    @Input() prePath = '/geomodels';
     @Output() event: EventEmitter<any> = new EventEmitter();
 
     constructor() {}
