@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-provider-card',
     templateUrl: './providercard.component.html',
     styleUrls: ['./providercard.component.scss']
 })
-export class ProviderCardComponent implements OnInit {
+export class ProviderCardComponent {
     @Input() bgClass: string;
     @Input() icon: string;
     @Input() count: number;
@@ -13,9 +13,10 @@ export class ProviderCardComponent implements OnInit {
     @Input() data: number;
     @Input() providerPath: string;
     @Input() prePath = '/geomodels';
-    @Output() event: EventEmitter<any> = new EventEmitter();
 
     constructor() {}
 
-    ngOnInit() {}
+    public navigateToProvider() {
+        window.location.assign(this.prePath + '/provider/' + this.providerPath);
+    }
 }

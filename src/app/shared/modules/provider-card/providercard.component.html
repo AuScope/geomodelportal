@@ -1,20 +1,18 @@
-<div class="card text-white bg-{{bgClass}}" style="margin:5px;">
+<div class="card text-white bg-{{bgClass}}" (click)='navigateToProvider()'>
     <div class="card-header">
         <div class="row">
             <div class="col col-xs-3">
                 <i class="fa {{icon}} fa-4x"></i>
             </div>
             <div class="col col-xs-9 text-right">
-                <div class="d-block" style="font-size: 14px;">{{label}}</div>
-                <div *ngIf="count==1" class="d-block huge" style="font-size: 14px;">{{count}} Model</div>
-                <div *ngIf="count>1" class="d-block huge" style="font-size: 14px;">{{count}} Models</div>
+                <div class="d-block">{{label}}</div>
+                <div *ngIf="count==1" class="d-block huge">{{count}} Model</div>
+                <div *ngIf="count>1" class="d-block huge">{{count}} Models</div>
             </div>
         </div>
     </div>
     <div class="card-footer">
         <span class="float-left">View Provider Models {{data}}</span>
-        <a href='{{prePath}}/provider/{{providerPath}}' class="float-right card-inverse">
-            <span ><i class="fa fa-2x fa-arrow-circle-right" style="color: #FFFFFF"></i></span>
-        </a>
+        <span class="float-right"><i class="fa fa-2x fa-arrow-circle-right"></i></span>
     </div>
 </div>
