@@ -7,9 +7,9 @@ It is broadly based on these:
 
 1. <https://github.com/start-angular/SB-Admin-BS4-Angular-5> provides a basic angular-bootstrap website framework.
 
-2. (ThreeJS)[https://threejs.org/] provides 3d.
+2. [https://threejs.org/](ThreeJS) provides 3d.
 
-3. (itowns)[http://www.itowns-project.org/] provides geospatial support.
+3. [http://www.itowns-project.org/](itowns) provides geospatial support.
 
 4. <https://github.com/AuScope/geomodel-2-3dweb> converts GOCAD models into graphics files.
 
