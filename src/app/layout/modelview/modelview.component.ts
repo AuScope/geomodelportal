@@ -500,8 +500,12 @@ export class ModelViewComponent  implements AfterViewInit {
         for (const key in popupInfo) {
              if (key !== 'href' && key !== 'title') {
                 const liElem = this.ngRenderer.createElement('li');
-                const oText = this.ngRenderer.createText(key + ': ' + popupInfo[key]);
-                this.ngRenderer.appendChild(liElem, oText);
+                const spElem = this.ngRenderer.createElement('span');
+                const keyText = this.ngRenderer.createText(key);
+                const valText = this.ngRenderer.createText(': ' + popupInfo[key]);
+                this.ngRenderer.appendChild(spElem, keyText);
+                this.ngRenderer.appendChild(liElem, spElem);
+                this.ngRenderer.appendChild(liElem, valText);
                 this.ngRenderer.addClass(liElem, 'popupClass');
                 this.ngRenderer.appendChild(this.popupBoxDiv, liElem);
             // Make URLs
