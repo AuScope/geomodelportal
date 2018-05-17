@@ -3,10 +3,13 @@ This project is a website designed to display geological models in 3d.
 
 It is based on these:
 
-https://github.com/start-angular/SB-Admin-BS4-Angular-5 provides a basic angular-bootstrap framework
-ThreeJS https://threejs.org/ provides 3d
-itowns http://www.itowns-project.org/ provides geospatial
-https://github.com/AuScope/geomodel-2-3dweb converts models to displayable format
+https://github.com/start-angular/SB-Admin-BS4-Angular-5 provides a basic angular-bootstrap framework.
+
+ThreeJS https://threejs.org/ provides 3d.
+
+itowns http://www.itowns-project.org/ provides geospatial.
+
+https://github.com/AuScope/geomodel-2-3dweb converts models to displayable format.
 
 
 ### How to start
