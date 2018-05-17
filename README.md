@@ -1,16 +1,16 @@
 
 This project is a website designed to display geological models in 3d.
 
-It is based on these:
+It is broadly based on these:
+```
+1) https://github.com/start-angular/SB-Admin-BS4-Angular-5 provides a basic angular-bootstrap website framework.
 
-https://github.com/start-angular/SB-Admin-BS4-Angular-5 provides a basic angular-bootstrap framework.
+2) ThreeJS https://threejs.org/ provides 3d.
 
-ThreeJS https://threejs.org/ provides 3d.
+3) itowns http://www.itowns-project.org/ provides geospatial.
 
-itowns http://www.itowns-project.org/ provides geospatial.
-
-https://github.com/AuScope/geomodel-2-3dweb converts models to displayable format.
-
+4) https://github.com/AuScope/geomodel-2-3dweb converts models to displayable format.
+```
 
 ### How to start
 **Note** that this seed project requires  **node >=v6.9.0 and npm >=3**.
@@ -27,6 +27,6 @@ $ npm install
 $ npm start
 
 # As currently set up, the prod build will output the production application in `dist`
-# and is designed deployed to a directory named 'geomodels'
+# and is designed to be deployed to a directory named 'geomodels'
 $ ng build --prod --base-href ./geomodels
 ```
