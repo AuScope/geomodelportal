@@ -1,6 +1,8 @@
 
 ### Purpose
 
+**NB: It is not fully developed, still a work in progress!**
+
 This project is a website that is designed to display geological models in 3d.
 
 It is broadly based on these:
@@ -14,8 +16,8 @@ It is broadly based on these:
 4. <https://github.com/AuScope/geomodel-2-3dweb> converts GOCAD models into graphics files.
 
 
-### How to start
-**Note** that this seed project requires  **node >=v6.9.0 and npm >=3**.
+### How to initiate
+**Note** that this project requires  **node >=v6.9.0 and npm >=3**.
 
 In order to start the project use:
 ```bash
@@ -31,11 +33,11 @@ $ cp <source dir>/* src/assets/geomodels
 # To install the project's dependencies
 $ npm install
 
-# To watch your files and use livereload by default run `npm start` for a dev server.
-# Navigate to `http://localhost:4200/geomodels`. The app will automatically reload if you change any of the source files.
+# Run `npm start` to start the dev server.
+# Navigate to `http://localhost:4200/geomodels`. It should automatically reload if you change any of the source files.
 $ npm start
 
-# As currently set up, the prod build will output the production application in `dist`
+# As currently set up, the prod build will output the production website files to `dist` directory
 # and is designed to be deployed to a directory named 'geomodels'
 $ ng build --prod --base-href ./geomodels
 ```
