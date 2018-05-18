@@ -5,11 +5,11 @@
                     {
                         "name": "Otway Basin",
                         "modelPath": "otway",
-                        "icon": "fa-map-signs",
+                        "icon": "vic-white-icon.png",
                         "colourClass": "warning"
                     }
                 ],
-                "icon": "fa-leaf",
+                "icon": "vic-white-icon.png",
                 "colourClass": "primary"
             },
             "wa": {
@@ -18,17 +18,17 @@
                     {
                         "name": "Sandstone",
                         "modelPath": "sandstone",
-                        "icon": "fa-map-signs",
+                        "icon": "wa-white-icon.png",
                         "colourClass": "warning"
                     },
                     {
                         "name": "Rocklea Inliner",
                         "modelPath": "rocklea",
-                        "icon": "fa-map-signs",
+                        "icon": "wa-white-icon.png",
                         "colourClass": "warning"
                     }
                 ],
-                "icon": "fa-map-signs",
+                "icon": "wa-white-icon.png",
                 "colourClass": "warning"
             },
             "sa": {
@@ -37,11 +37,11 @@
                     {
                         "name": "North Gawler",
                         "modelPath": "ngawler",
-                        "icon": "fa-map-signs",
+                        "icon": "sa-white-icon.png",
                         "colourClass": "warning"
                     }
                 ],
-                "icon": "fa-bookmark",
+                "icon": "sa-white-icon.png",
                 "colourClass": "success"
             },
             "tas": {
@@ -50,11 +50,11 @@
                     {
                         "name": "Rosebery Lyell",
                         "modelPath": "rosebery",
-                        "icon": "fa-map-signs",
+                        "icon": "tas-white-icon.png",
                         "colourClass": "warning"
                     }
                 ],
-                "icon": "fa-tree",
+                "icon": "tas-white-icon.png",
                 "colourClass": "secondary"
             },
             "qld": {
@@ -63,17 +63,17 @@
                     {
                         "name": "Mt Dore",
                         "modelPath": "mtdore",
-                        "icon": "fa-map-signs",
+                        "icon": "qld-white-icon.png",
                         "colourClass": "warning"
                     },
                     {
                         "name": "Quamby",
                         "modelPath": "quamby",
-                        "icon": "fa-map-signs",
+                        "icon": "qld-white-icon.png",
                         "colourClass": "warning"
                     }
                 ],
-                "icon": "fa-sun-o",
+                "icon": "qld-white-icon.png",
                 "colourClass": "danger"
             },
             "nsw": {
@@ -82,17 +82,17 @@
                     {
                         "name": "Southern New England",
                         "modelPath": "neweng",
-                        "icon": "fa-map-signs",
+                        "icon": "nsw-white-icon.png",
                         "colourClass": "warning"
                     },
                     {
                         "name": "Western Tamworth",
                         "modelPath": "tamwor",
-                        "icon": "fa-map-signs",
+                        "icon": "nsw-white-icon.png",
                         "colourClass": "warning"
                     }
                 ],
-                "icon": "fa-institution",
+                "icon": "nsw-white-icon.png",
                 "colourClass": "info"
             },
             "nt": {
@@ -101,11 +101,11 @@
                     {
                         "name": "Not yet",
                         "modelPath": "NA",
-                        "icon": "fa-map-signs",
+                        "icon": "nt-white-icon.png",
                         "colourClass": "warning"
                     }
                 ],
-                "icon": "fa-anchor",
+                "icon": "nt-white-icon.png",
                 "colourClass": "dark"
             },
             "ga": {
@@ -114,23 +114,23 @@
                     {
                         "name": "Capel-Faust",
                         "modelPath": "capel",
-                        "icon": "fa-map-signs",
+                        "icon": "aus-white-icon.png",
                         "colourClass": "warning"
                     },
                     {
                         "name": "North-Queensland",
                         "modelPath": "norqld",
-                        "icon": "fa-map-signs",
+                        "icon": "aus-white-icon.png",
                         "colourClass": "warning"
                     },
                     {
                         "name": "Gunnedah-Surat",
                         "modelPath": "gunnedah",
-                        "icon": "fa-map-signs",
+                        "icon": "aus-white-icon.png",
                         "colourClass": "warning"
                     }
                 ],
-                "icon": "fa-flag",
+                "icon": "aus-white-icon.png",
                 "colourClass": "primary"
             }
 }
