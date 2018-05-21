@@ -451,7 +451,7 @@ export class ModelViewComponent  implements AfterViewInit {
         const origin = new THREE.Vector3( );
         origin.copy(this.extentObj.center().xyz());
 
-        const length = 200000;
+        const length = 150000;
         const hex_x = 0xff0000;
         const hex_y = 0x00ff00;
         const hex_z = 0x0000ff;
@@ -462,7 +462,7 @@ export class ModelViewComponent  implements AfterViewInit {
         const arrowHelper_y = new THREE.ArrowHelper( y_dir, origin, length, hex_y );
         arrowHelper_y.name = 'arrowHelper_y';
         this.scene.add( arrowHelper_y );
-        const arrowHelper_z = new THREE.ArrowHelper( z_dir, origin, length - 130000, hex_z );
+        const arrowHelper_z = new THREE.ArrowHelper( z_dir, origin, length - 50000, hex_z );
         arrowHelper_z.name = 'arrowHelper_z';
         this.scene.add( arrowHelper_z );
 
@@ -474,7 +474,6 @@ export class ModelViewComponent  implements AfterViewInit {
         this.view.notifyChange(true);
     }
 
-    // FIXME: Style popup the same as the rest of the website
     makePopup(event, popupInfo) {
         const local = this;
         // Position it and let it be seen

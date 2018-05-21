@@ -36,7 +36,7 @@ function GeoModelControls(camera, view, rotCentre) {
     var rObject = new THREE.Object3D();
     rObject.add(camera);
     // Set relative to model centre
-    camera.position.set(0.0, 0.0, 200000.0);
+    camera.position.set(0.0, 0.0, 500000.0);
     this.camera = camera;
     this.rotateSpeed = 1.5;
     var viewObject = view;
@@ -44,6 +44,9 @@ function GeoModelControls(camera, view, rotCentre) {
     // Set position of rotational object relative to world centre
     rObject.name = 'GeoModelControls';
     rObject.position.set(rotCentre.x, rotCentre.y, rotCentre.z);
+
+    // Move camera to look at model at a nice angle
+    rObject.rotateY(0.8);
 
     // Set mouse state for drag and rotate
     this.state = STATE.NONE;
