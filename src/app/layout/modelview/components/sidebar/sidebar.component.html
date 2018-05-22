@@ -15,6 +15,7 @@
                             <input *ngIf="modelPartState[groupName][subGroupObj.model_url].displayed" (click)="checkBoxClick(groupName, subGroupObj.model_url, false)" checked="true" class="vis-toggle" type="checkbox"/>
                             <input *ngIf="!modelPartState[groupName][subGroupObj.model_url].displayed" (click)="checkBoxClick(groupName, subGroupObj.model_url, true)" class="vis-toggle" type="checkbox"/>
                             <i class="fa fa-lg fa-cog part-controls" (click)="toggleControls(groupName, subGroupObj.model_url)"></i>
+                            <i class="fa fa-lg fa-eye" (mouseenter)="revealPart(groupName, subGroupObj.model_url, true)" (mouseleave)="revealPart(groupName, subGroupObj.model_url, false)"></i>
                         </a>
                         <div id="controlsDiv" [style.display]="getDisplayControls(groupName, subGroupObj.model_url)">
                             <a class="list-group-item">

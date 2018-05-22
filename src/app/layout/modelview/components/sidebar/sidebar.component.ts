@@ -72,6 +72,10 @@ export class SidebarComponent  implements OnInit {
         );
     }
 
+    private revealPart(groupName: string, partId: string, toggle: boolean) {
+        this.modelInfoService.revealPart(groupName, partId, toggle);
+    }
+
     private changeHeight(event: MatSliderChange, groupName: string, partId: string) {
         this.modelInfoService.setModelPartStateChange(groupName, partId,
             { type: ModelPartStateChangeType.HEIGHT_OFFSET, new_value: event.value } );

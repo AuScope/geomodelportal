@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 
 export interface ProviderInfo {
@@ -32,9 +32,19 @@ export type ModelPartCallbackType =  (groupName: string, modelUrl: string, state
 export class ModelInfoService {
     private providerModelInfo = {};
     private providerInfoList: ProviderInfo[] = [];
+
+    // Set to true once service has been initialised
     private initialised = false;
+
+    // An attempt to make sure loaded files are cached so that files are not downloaded
+    // multiple times
     private modelCache = {};
+
+    // A callback used when some part of the model changes
+    // Only one callback can be registered at a time
     private modelPartCallback: ModelPartCallbackType;
+
+    // Stores the current state of the model parts
     private modelPartState = {};
 
     constructor(private httpService: HttpClient) {
@@ -76,7 +86,7 @@ export class ModelInfoService {
                 for (const partObj of modelInfo.groups[groupName]) {
                     if (partObj.include) {
                         this.modelPartState[groupName][partObj.model_url] = { displayed: partObj.displayed,
-                                                                                 transparency: 1.0, heightOffset: 0.0 };
+                                              transparency: 1.0, heightOffset: 0.0, oldTransparency: 1.0 };
                     }
                 }
             }
@@ -85,7 +95,6 @@ export class ModelInfoService {
 
     public getModelInfo(modelKey: string) {
         const local = this;
-        // FIXME: this does not stop the model being retrieved from the network twice
         if (this.modelCache.hasOwnProperty(modelKey)) {
             return new Promise(resolve => resolve(this.modelCache[modelKey]));
         }
@@ -123,27 +132,54 @@ export class ModelInfoService {
         return new Promise(resolve => resolve(result[1]));
     }
 
+    public revealPart(groupName: string, partId: string, toggle: boolean) {
+        const TRANSPARENT = 0.05;
+        for (const group in this.modelPartState) {
+            if (this.modelPartState.hasOwnProperty(group)) {
+                for (const part in this.modelPartState[group]) {
+                    if (this.modelPartState[group].hasOwnProperty(part)) {
+                        if (groupName !== group || partId !== part) {
+                            if (toggle) {
+                                this.modelPartState[group][part].oldTransparency =
+                                                           this.modelPartState[group][part].transparency;
+                                this.modelPartState[group][part].transparency = TRANSPARENT;
+                                this.modelPartCallback(group, part, { type: ModelPartStateChangeType.TRANSPARENCY,
+                                                                        new_value: TRANSPARENT });
+                            } else {
+                                this.modelPartState[group][part].transparency =
+                                                           this.modelPartState[group][part].oldTransparency;
+                                this.modelPartCallback(group, part, { type: ModelPartStateChangeType.TRANSPARENCY,
+                                                                        new_value: this.modelPartState[group][part].transparency });
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
     //
-    public setModelPartState(groupName: string, modelUrl: string, state: ModelPartStateType) {
-        this.modelPartState[groupName][modelUrl] = state;
+    public setModelPartState(groupName: string, partId: string, state: ModelPartStateType) {
+        this.modelPartState[groupName][partId] = state;
     }
 
     // Called from the sidebar when tickbox is toggled
-    public setModelPartStateChange(groupName: string, modelUrl: string, stateChange: ModelPartStateChange) {
+    public setModelPartStateChange(groupName: string, partId: string, stateChange: ModelPartStateChange) {
         // Update our records with the state change
         if (stateChange.type === ModelPartStateChangeType.DISPLAYED) {
-            this.modelPartState[groupName][modelUrl].displayed = stateChange.new_value;
+            this.modelPartState[groupName][partId].displayed = stateChange.new_value;
         } else if (stateChange.type === ModelPartStateChangeType.TRANSPARENCY) {
-            this.modelPartState[groupName][modelUrl].transparency = stateChange.new_value;
+            this.modelPartState[groupName][partId].transparency = stateChange.new_value;
         } else if (stateChange.type === ModelPartStateChangeType.HEIGHT_OFFSET) {
-            this.modelPartState[groupName][modelUrl].heightOffset = stateChange.new_value;
+            this.modelPartState[groupName][partId].heightOffset = stateChange.new_value;
         }
         // Inform the listener with a callback
-        this.modelPartCallback(groupName, modelUrl, stateChange);
+        this.modelPartCallback(groupName, partId, stateChange);
     }
 
-    public getModelPartState(groupName: string, modelUrl: string) {
-        return this.modelPartState[groupName][modelUrl];
+    public getModelPartState(groupName: string, partId: string) {
+        return this.modelPartState[groupName][partId];
     }
 
     public getModelPartStateObj() {
