@@ -2,6 +2,7 @@ import { Component, ViewChild, AfterViewInit, Renderer2, ElementRef } from '@ang
 import { routerTransition } from '../../router.animations';
 import { ModelInfoService, ModelPartCallbackType,
          ModelPartStateChange, ModelPartStateChangeType } from '../../shared/services/model-info.service';
+import { SidebarService, MenuChangeType, MenuStateChangeType } from '../../shared/services/sidebar.service';
 
 // Include threejs library
 import * as THREE from 'three';
@@ -75,7 +76,8 @@ export class ModelViewComponent  implements AfterViewInit {
     // directory where model files are kept
     private model_dir;
 
-    constructor(private modelInfoService: ModelInfoService, private elRef: ElementRef, private ngRenderer: Renderer2) {
+    constructor(private modelInfoService: ModelInfoService, private elRef: ElementRef, private ngRenderer: Renderer2,
+                private sidebarService: SidebarService) {
     }
 
     ngAfterViewInit() {
@@ -420,6 +422,9 @@ export class ModelViewComponent  implements AfterViewInit {
                                             if (parts[i]['popups'].hasOwnProperty(popup_key)) {
                                                 if (popup_key + '_0' === intersects[n].object.name) {
                                                     modelViewObj.makePopup(event, parts[i]['popups'][popup_key]);
+                                                    if (parts[i].hasOwnProperty('model_url')) {
+                                                        modelViewObj.openSidebarMenu(group, parts[i]['model_url']);
+                                                    }
                                                     return;
                                                 }
                                             }
@@ -429,6 +434,9 @@ export class ModelViewComponent  implements AfterViewInit {
                                            parts[i].hasOwnProperty('popup_info') &&
                                            intersects[n].object.name === parts[i]['3dobject_label'] + '_0') {
                                         modelViewObj.makePopup(event, parts[i]['popup_info']);
+                                        if (parts[i].hasOwnProperty('model_url')) {
+                                            modelViewObj.openSidebarMenu(group, parts[i]['model_url']);
+                                        }
                                         return;
                                     } else if (parts[i].hasOwnProperty('3dobject_label') &&
                                            intersects[n].object.name === parts[i]['3dobject_label'] &&
@@ -522,11 +530,16 @@ export class ModelViewComponent  implements AfterViewInit {
         }
     }
 
-    render() {
+    private openSidebarMenu(groupName: string, subGroup: string) {
+        const menuChange: MenuChangeType = { group: groupName, subGroup: subGroup, state: MenuStateChangeType.OPENED };
+        this.sidebarService.changeMenuState(menuChange);
+    }
+
+    private render() {
         this.renderer.render(this.scene, this.view.camera.camera3D);
     }
 
-    refresh() {
+    private refresh() {
         this.view.notifyChange(true);
     }
 

@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { MatSliderModule, MatSliderChange } from '@angular/material/slider';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Subscription } from 'rxjs/Subscription';
 
 import {ModelInfoService, ModelPartStateChangeType } from '../../../../shared/services/model-info.service';
+import {SidebarService, MenuStateChangeType, MenuChangeType } from '../../../../shared/services/sidebar.service';
 
 
 const DISPLAY_CTRL_ON = 'block';
@@ -15,10 +17,9 @@ const DISPLAY_CTRL_OFF = 'none';
     templateUrl: './sidebar.component.html',
     styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent  implements OnInit {
+export class SidebarComponent  implements OnInit, OnDestroy {
     public isActive = false;
     private showMenu = '';
-    private showMenu2 = '';
     private pushRightClass: 'push-right';
 
     public title = '';
@@ -28,10 +29,11 @@ export class SidebarComponent  implements OnInit {
     private modelPartState = {};
     private displayControls = {};
     private value;
+    private subscription: Subscription;
 
 
     constructor(private translate: TranslateService, private modelInfoService: ModelInfoService, private route: ActivatedRoute,
-                public router: Router) {
+                public router: Router, private sideBarService: SidebarService) {
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de']);
         this.translate.setDefaultLang('en');
         const browserLang = this.translate.getBrowserLang();
@@ -46,6 +48,8 @@ export class SidebarComponent  implements OnInit {
                 this.toggleSidebar();
             }
         });
+        // subscribe to home component messages
+       this.subscription = this.sideBarService.getMenuChanges().subscribe(changes => { this.revealMenuItem(changes); });
     }
 
     ngOnInit() {
@@ -70,6 +74,13 @@ export class SidebarComponent  implements OnInit {
                 }
             }
         );
+    }
+
+    private revealMenuItem(changes: MenuChangeType) {
+        if (changes.state === MenuStateChangeType.OPENED) {
+            this.showMenu = changes.group;
+            this.toggleControls(changes.group, changes.subGroup);
+        }
     }
 
     private revealPart(groupName: string, partId: string, toggle: boolean) {
@@ -138,14 +149,6 @@ export class SidebarComponent  implements OnInit {
         }
     }
 
-    public addExpandClass2(element: any) {
-        if (element === this.showMenu2) {
-            this.showMenu2 = '0';
-        } else {
-            this.showMenu2 = element;
-        }
-    }
-
     public isToggled(): boolean {
         const dom: Element = document.querySelector('body');
         return dom.classList.contains(this.pushRightClass);
@@ -163,5 +166,10 @@ export class SidebarComponent  implements OnInit {
 
     public changeLang(language: string) {
         this.translate.use(language);
+    }
+
+    public ngOnDestroy() {
+        // unsubscribe to ensure no memory leaks
+        this.subscription.unsubscribe();
     }
 }

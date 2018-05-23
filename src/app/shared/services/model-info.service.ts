@@ -25,7 +25,7 @@ export interface ModelPartStateType {
     heightOffset: number;
 }
 
-// Callback function used to get information about a state change
+// Callback function used to get information about a state change in the model
 export type ModelPartCallbackType =  (groupName: string, modelUrl: string, state: ModelPartStateChange) => any;
 
 @Injectable()
