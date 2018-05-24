@@ -80,6 +80,10 @@ export class ModelViewComponent  implements AfterViewInit {
                 private sidebarService: SidebarService) {
     }
 
+    /**
+     * Called after the view is initialised, this code downloads tje model information and kicks off
+     * this process of drawing the model
+     */
     ngAfterViewInit() {
         this.viewerDiv = this.viewerDivElem.nativeElement;
         this.popupBoxDiv = this.popupBoxDivElem.nativeElement;
@@ -113,6 +117,9 @@ export class ModelViewComponent  implements AfterViewInit {
         }
     }
 
+    /**
+     * Prints out mesh data structures to browser console
+     */
     private printMeshes() {
         for (const child of this.scene.children) {
             if (child instanceof THREE.Mesh) {
@@ -121,6 +128,12 @@ export class ModelViewComponent  implements AfterViewInit {
         }
     }
 
+    /**
+     * Adds a model part to the scene array for future reference
+     * @param part
+     * @param sceneObj scene object
+     * @param groupName group name
+     */
     private addPart(part, sceneObj: THREE.Object3D, groupName: string) {
         if (!this.sceneArr.hasOwnProperty(groupName)) {
             this.sceneArr[groupName] = {};
@@ -128,6 +141,11 @@ export class ModelViewComponent  implements AfterViewInit {
         this.sceneArr[groupName][part.model_url] = sceneObj;
     }
 
+    /**
+     * Displaces a part of the model
+     * @param sceneObj the Object3D of the part
+     * @param displacement a Vector3 containing the amount of displacement
+     */
     private movePart(sceneObj: THREE.Object3D, displacement: THREE.Vector3) {
         sceneObj.traverseVisible( function(child) {
             if (child instanceof THREE.Object3D) {
@@ -139,6 +157,11 @@ export class ModelViewComponent  implements AfterViewInit {
         });
     }
 
+    /**
+     * Changes the transparency of a part of the model
+     * @param sceneObj the part's Object3D
+     * @param value amout of transparency, a floating point number between 0.0 and 1.0
+     */
     private setPartTransparency(sceneObj: THREE.Object3D, value: number) {
         // Plane objects
         if (sceneObj instanceof THREE.Mesh && sceneObj.material instanceof THREE.MeshBasicMaterial) {
@@ -169,6 +192,11 @@ export class ModelViewComponent  implements AfterViewInit {
         }
     }
 
+    /**
+     * This commences the process of drawing the model
+     * @param config model configuration JSON
+     * @param modelName name of model
+     */
     private initialiseModel(config, modelName: string) {
         const props = config.properties;
         const i = 0;
@@ -209,7 +237,9 @@ export class ModelViewComponent  implements AfterViewInit {
         this.add3DObjects();
     }
 
-    // Add GLTF objects
+    /**
+     * Loads and draws the GLTF objects
+     */
     private add3DObjects() {
         const manager = new THREE.LoadingManager();
 
@@ -275,7 +305,9 @@ export class ModelViewComponent  implements AfterViewInit {
             });
     }
 
-
+    /**
+     * This draws the planar parts of the model e.g. PNG files
+     */
     private addPlanes() {
         // Add planes
         const manager = new THREE.LoadingManager();
@@ -341,10 +373,15 @@ export class ModelViewComponent  implements AfterViewInit {
         });
     }
 
-    // NOTA BENE: The view objects must be added AFTER all the objects that are added to the scene directly.
-    // Itowns code assumes that only its view objects have been added to the scene, and gets confused when there are
-    // other objects in the scene.
-    //
+    /**
+     * The final stage of drawing the model on screen. This is where WMS layers and XYZ axes are drawn,
+     * and popup boxes are initialiseModel
+     * @param config model configuration JSON
+     *
+     * NOTA BENE: The view objects must be added AFTER all the objects that are added to the scene directly.
+     * Itowns code assumes that only its view objects have been added to the scene, and gets confused when there are
+     * other objects in the scene.
+     */
     private initialiseView(config) {
         const props = config.properties;
         const local = this;
@@ -482,6 +519,11 @@ export class ModelViewComponent  implements AfterViewInit {
         this.view.notifyChange(true);
     }
 
+    /**
+     * Make a popup box appear on the screen near where the user has queried the model
+     * @param event click event
+     * @param popupInfo JSON object of the information to be displayed in the popup box
+     */
     makePopup(event, popupInfo) {
         const local = this;
         // Position it and let it be seen
@@ -530,15 +572,26 @@ export class ModelViewComponent  implements AfterViewInit {
         }
     }
 
+    /**
+     * Opens up a menu item in the sidebar
+     * @param groupName name of menu item's group
+     * @param subGroupName name of menu item's subgroup
+     */
     private openSidebarMenu(groupName: string, subGroup: string) {
         const menuChange: MenuChangeType = { group: groupName, subGroup: subGroup, state: MenuStateChangeType.OPENED };
         this.sidebarService.changeMenuState(menuChange);
     }
 
+    /**
+     * Render view of model
+     */
     private render() {
         this.renderer.render(this.scene, this.view.camera.camera3D);
     }
 
+    /**
+     * Refresh view of model
+     */
     private refresh() {
         this.view.notifyChange(true);
     }

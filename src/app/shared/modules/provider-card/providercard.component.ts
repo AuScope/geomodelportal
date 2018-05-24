@@ -1,5 +1,9 @@
 import { Component, Input } from '@angular/core';
 
+/**
+ * Used to create a set of card on the screen which user can click on to select
+ * a particular provider
+ */
 @Component({
     selector: 'app-provider-card',
     templateUrl: './providercard.component.html',
@@ -16,6 +20,9 @@ export class ProviderCardComponent {
 
     constructor() {}
 
+    /**
+     * Navigates the browser to a new page of models associated with a certain provider
+     */
     public navigateToProvider() {
         window.location.assign(this.prePath + '/provider/' + this.providerPath);
     }

@@ -28,6 +28,9 @@ export interface ModelPartStateType {
 // Callback function used to get information about a state change in the model
 export type ModelPartCallbackType =  (groupName: string, modelUrl: string, state: ModelPartStateChange) => any;
 
+/**
+ * Class used to share model state information between components (e.g. which parts are visible, transparency & displacement values)
+ */
 @Injectable()
 export class ModelInfoService {
     private providerModelInfo = {};
@@ -50,6 +53,9 @@ export class ModelInfoService {
     constructor(private httpService: HttpClient) {
     }
 
+    /**
+     * Initialise service
+     */
     private initialise() {
         const local = this;
         return new Promise(function(resolve, reject) {
@@ -78,7 +84,9 @@ export class ModelInfoService {
         });
     }
 
-    // Initialise state of model
+    /**
+     * Initialise state of model
+     */
     private parse_model(modelInfo) {
         for (const groupName in modelInfo.groups) {
             if (modelInfo.groups.hasOwnProperty(groupName)) {
@@ -93,6 +101,12 @@ export class ModelInfoService {
         }
     }
 
+    /**
+     * Retrieves all the model information by retrieving the model file from network
+     * Model is intended to be stored in a model cache for future reference
+     * @param modelKey key used as a handle to retrieve the model from the model cache
+     * @return a promise of the model information in JSON format
+     */
     public getModelInfo(modelKey: string) {
         const local = this;
         if (this.modelCache.hasOwnProperty(modelKey)) {
@@ -114,6 +128,10 @@ export class ModelInfoService {
         });
     }
 
+    /**
+     * Retrieves the provider model information from the model information
+     * @return a promise of the provider model information in JSON format
+     */
     public async getProviderModelInfo() {
         const local = this;
         if (this.initialised) {
@@ -123,6 +141,10 @@ export class ModelInfoService {
         return new Promise(resolve => resolve(result[0]));
     }
 
+    /**
+     * Retrieves the provider information from the model information
+     * @return a promise of the provider information in JSON format
+     */
     public async getProviderInfo() {
         const local = this;
         if (this.initialised) {
@@ -132,6 +154,12 @@ export class ModelInfoService {
         return new Promise(resolve => resolve(result[1]));
     }
 
+    /**
+     * Reveals a part of the model by making all the other parts of the model transparent
+     * @param groupName group name of the model part
+     * @param partId part id of the model part
+     * @param toggle if true will reveal the part, false will hide it
+     */
     public revealPart(groupName: string, partId: string, toggle: boolean) {
         const TRANSPARENT = 0.05;
         for (const group in this.modelPartState) {
@@ -159,7 +187,11 @@ export class ModelInfoService {
         }
     }
 
-    //
+    /**
+     * Sets the state of the model part
+     * @param groupName group name of the model part
+     * @param partId part id of the model part
+     */
     public setModelPartState(groupName: string, partId: string, state: ModelPartStateType) {
         this.modelPartState[groupName][partId] = state;
     }
@@ -178,15 +210,26 @@ export class ModelInfoService {
         this.modelPartCallback(groupName, partId, stateChange);
     }
 
-    public getModelPartState(groupName: string, partId: string) {
+    /**
+     * Retrieves the state of a model part
+     * @return state of a model part
+     */
+    public getModelPartState(groupName: string, partId: string): ModelPartStateType {
         return this.modelPartState[groupName][partId];
     }
 
+    /**
+     * Retrieves an object containing the states of all parts of the model
+     * @return an object containing the states of all parts of the model
+     */
     public getModelPartStateObj() {
         return this.modelPartState;
     }
 
-    // Registers a model part callback, registered by the viewer so it knows what to do
+    /**
+     * Registers a model part callback, registered by the viewer so it knows what to do
+     * @return callback function
+     */
     public registerModelPartCallback(callback: ModelPartCallbackType) {
         this.modelPartCallback = callback;
     }

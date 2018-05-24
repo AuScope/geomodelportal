@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
+/**
+ * Header component
+ */
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
     pushRightClass = 'push-right';
 
     constructor(private translate: TranslateService, public router: Router) {
@@ -28,23 +31,34 @@ export class HeaderComponent implements OnInit {
         });
     }
 
-    ngOnInit() {}
-
+    /**
+     * Returns true if header is displayed
+     * @returns true if header is displayed
+     */
     isToggled(): boolean {
         const dom: Element = document.querySelector('body');
         return dom.classList.contains(this.pushRightClass);
     }
 
+    /**
+     * Toggles display of sidebar
+     */
     toggleSidebar() {
         const dom: any = document.querySelector('body');
         dom.classList.toggle(this.pushRightClass);
     }
 
+    /**
+     * Toggles layout from right-to-left <-> left-to-right
+     */
     rltAndLtr() {
         const dom: any = document.querySelector('body');
         dom.classList.toggle('rtl');
     }
 
+    /**
+     * Changes language
+     */
     changeLang(language: string) {
         this.translate.use(language);
     }

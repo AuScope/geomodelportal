@@ -2,10 +2,15 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
-// What has changed in the sidebar menu's state?
+// Is a menu item in the sidebar open or closed?
 export enum  MenuStateChangeType { OPENED, CLOSED }
+
+// Stores which menu item changed and what its current state is
 export interface MenuChangeType { group: string; subGroup: string; state: MenuStateChangeType; }
 
+/**
+ * Used to share state changes in the sidebar menu tree between components
+ */
 @Injectable()
 export class SidebarService {
 
@@ -13,10 +18,18 @@ export class SidebarService {
 
     constructor() { }
 
+    /**
+     * Call this to notify the service that a menu item has changed state
+     * @param menuChange contains information about which menu item changed and what is state is
+     */
     changeMenuState(menuChange: MenuChangeType) {
         this.menuChangeSub.next(menuChange);
     }
 
+    /**
+     * Call this to get informed of any changes in menu state
+     * @return an observable of the menu item state
+     */
     getMenuChanges(): Observable<any> {
         return this.menuChangeSub.asObservable();
     }
