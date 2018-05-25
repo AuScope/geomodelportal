@@ -1,33 +1,13 @@
 {
             "vic": {
                 "name": "Victoria",
-                "models": [
-                    {
-                        "name": "Otway Basin",
-                        "modelPath": "otway",
-                        "icon": "vic-white-icon.png",
-                        "colourClass": "warning"
-                    }
-                ],
+                "models": [],
                 "icon": "vic-white-icon.png",
                 "colourClass": "primary"
             },
             "wa": {
                 "name": "Western Australia",
-                "models": [
-                    {
-                        "name": "Sandstone",
-                        "modelPath": "sandstone",
-                        "icon": "wa-white-icon.png",
-                        "colourClass": "warning"
-                    },
-                    {
-                        "name": "Rocklea Inliner",
-                        "modelPath": "rocklea",
-                        "icon": "wa-white-icon.png",
-                        "colourClass": "warning"
-                    }
-                ],
+                "models": [],
                 "icon": "wa-white-icon.png",
                 "colourClass": "warning"
             },
@@ -36,9 +16,11 @@
                 "models": [
                     {
                         "name": "North Gawler",
-                        "modelPath": "ngawler",
+                        "modelUrlPath": "ngawler",
                         "icon": "sa-white-icon.png",
-                        "colourClass": "warning"
+                        "colourClass": "warning",
+                        "configFile": "NorthGawler.json",
+                        "modelDir": "NorthGawler"
                     }
                 ],
                 "icon": "sa-white-icon.png",
@@ -49,9 +31,11 @@
                 "models": [
                     {
                         "name": "Rosebery Lyell",
-                        "modelPath": "rosebery",
+                        "modelUrlPath": "rosebery",
                         "icon": "tas-white-icon.png",
-                        "colourClass": "warning"
+                        "colourClass": "warning",
+                        "configFile": "RoseberyLyell.json",
+                        "modelDir": "RoseberyLyell"
                     }
                 ],
                 "icon": "tas-white-icon.png",
@@ -59,77 +43,25 @@
             },
             "qld": {
                 "name": "Queensland",
-                "models": [
-                    {
-                        "name": "Mt Dore",
-                        "modelPath": "mtdore",
-                        "icon": "qld-white-icon.png",
-                        "colourClass": "warning"
-                    },
-                    {
-                        "name": "Quamby",
-                        "modelPath": "quamby",
-                        "icon": "qld-white-icon.png",
-                        "colourClass": "warning"
-                    }
-                ],
+                "models": [],
                 "icon": "qld-white-icon.png",
                 "colourClass": "danger"
             },
             "nsw": {
                 "name": "N.S.W.",
-                "models": [
-                    {
-                        "name": "Southern New England",
-                        "modelPath": "neweng",
-                        "icon": "nsw-white-icon.png",
-                        "colourClass": "warning"
-                    },
-                    {
-                        "name": "Western Tamworth",
-                        "modelPath": "tamwor",
-                        "icon": "nsw-white-icon.png",
-                        "colourClass": "warning"
-                    }
-                ],
+                "models": [],
                 "icon": "nsw-white-icon.png",
                 "colourClass": "info"
             },
             "nt": {
                 "name": "Northern Territory",
-                "models": [
-                    {
-                        "name": "Not yet",
-                        "modelPath": "NA",
-                        "icon": "nt-white-icon.png",
-                        "colourClass": "warning"
-                    }
-                ],
+                "models": [],
                 "icon": "nt-white-icon.png",
                 "colourClass": "dark"
             },
             "ga": {
                 "name": "Geoscience Australia",
-                "models": [
-                    {
-                        "name": "Capel-Faust",
-                        "modelPath": "capel",
-                        "icon": "aus-white-icon.png",
-                        "colourClass": "warning"
-                    },
-                    {
-                        "name": "North-Queensland",
-                        "modelPath": "norqld",
-                        "icon": "aus-white-icon.png",
-                        "colourClass": "warning"
-                    },
-                    {
-                        "name": "Gunnedah-Surat",
-                        "modelPath": "gunnedah",
-                        "icon": "aus-white-icon.png",
-                        "colourClass": "warning"
-                    }
-                ],
+                "models": [],
                 "icon": "aus-white-icon.png",
                 "colourClass": "primary"
             }

@@ -1,8 +1,8 @@
 <div *ngIf="providerModels[providerPath]" [@routerTransition]>
     <h2 class="text-muted">Model Selection - {{this.providerModels[providerPath].name}}</h2>
     <div class="row">
-        <div  *ngFor="let model of providerModels[providerPath].models" class="col-xl-3 col-lg-6">
-            <app-model-card [label]="model.name" [bgClass]="model.colourClass" [icon]="model.icon" [label]="model.name" [modelPath]="model.modelPath"></app-model-card>
+        <div *ngFor="let model of providerModels[providerPath].models" class="col-xl-3 col-lg-6">
+            <app-model-card [label]="model.name" [bgClass]="model.colourClass" [icon]="model.icon" [label]="model.name" [modelPath]="model.modelUrlPath"></app-model-card>
         </div>
     </div>
 </div>

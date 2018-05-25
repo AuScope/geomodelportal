@@ -64,7 +64,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
         this.modelPath = this.route.snapshot.paramMap.get('modelPath');
         this.modelInfoService.getModelInfo(this.modelPath).then(
             data => {
-                this.modelInfo = data as string [];
+                this.modelInfo = data[0] as string [];
                 this.title = this.modelInfo['properties'].name;
                 this.groupList = Object.keys(this.modelInfo['groups']);
                 this.modelPartState = this.modelInfoService.getModelPartStateObj();

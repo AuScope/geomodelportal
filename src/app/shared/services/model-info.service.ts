@@ -105,26 +105,49 @@ export class ModelInfoService {
      * Retrieves all the model information by retrieving the model file from network
      * Model is intended to be stored in a model cache for future reference
      * @param modelKey key used as a handle to retrieve the model from the model cache
-     * @return a promise of the model information in JSON format
+     * @return a promise of the model information in JSON format, and the directory name of the model files as an array[]
      */
-    public getModelInfo(modelKey: string) {
+    public async getModelInfo(modelKey: string): Promise<any> {
         const local = this;
         if (this.modelCache.hasOwnProperty(modelKey)) {
             return new Promise(resolve => resolve(this.modelCache[modelKey]));
         }
-        return new Promise(function(resolve, reject) {
-            local.httpService.get('./assets/geomodels/NorthGawler.json').subscribe(
-                data => {
-                    const modelInfo = data as string [];
-                    local.modelCache[modelKey] = data;
-                    local.parse_model(data);
-                    resolve(data);
-                },
-                (err: HttpErrorResponse) => {
-                    console.log('Cannot load model JSON file', err);
-                    reject(err);
+        if (!this.initialised) {
+            const result = await this.initialise();
+        }
+        let model;
+        for (const providerKey in local.providerModelInfo) {
+            if (local.providerModelInfo.hasOwnProperty(providerKey)) {
+                for (const modelInfo of local.providerModelInfo[providerKey]['models']) {
+                    if (modelKey === modelInfo['modelUrlPath']) {
+                        model = modelInfo;
+                        break;
+                    }
                 }
-            );
+                if (model !== undefined) {
+                    break;
+                }
+            }
+        }
+        if (model !== undefined) {
+            return new Promise(function(resolve, reject) {
+                local.httpService.get('./assets/geomodels/' + model['configFile']).subscribe(
+                    data => {
+                        const modelInfo = data as string [];
+                        local.modelCache[modelKey] = data;
+                        local.parse_model(data);
+                        resolve([data, model['modelDir']]);
+                    },
+                    (err: HttpErrorResponse) => {
+                        console.log('Cannot load model JSON file', err);
+                        reject(err);
+                    }
+                );
+            });
+        }
+        return new Promise(function(resolve, reject) {
+            console.log('Model not found in config file');
+            reject('Model not found in config file');
         });
     }
 

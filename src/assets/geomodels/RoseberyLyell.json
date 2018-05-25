@@ -2469,71 +2469,199 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "RL Grav model grids density",
+                "display_name": "RL Grav model grids density 1",
                 "displayed": false,
                 "include": true,
-                "model_url": "RL_Grav_model_grids_density.PNG",
+                "model_url": "RL_Grav_model_grids_density_1.PNG",
                 "popups": {
-                    "RL_Grav_model_grids_density": {
-                        "name": "RL_GRAV_MODEL_GRIDS_DENSITY",
-                        "title": "RL_GRAV_MODEL_GRIDS_DENSITY"
+                    "RL_Grav_model_grids_density_5": {
+                        "name": "\"VPMG_OBS_GRV\"",
+                        "title": "\"VPMG_OBS_GRV\""
                     }
                 },
-                "type": "ImagePlane",
-                "position": [
-                    351050.0,
-                    5318750.0,
-                    1003.0
-                ]
+                "type": "ImagePlane"
             },
             {
-                "display_name": "Rosebery Lyell geology",
-                "displayed": false,
-                "include": false,
-                "model_url": "Rosebery_Lyell_geology.PNG",
-                "popups": {},
-                "type": "ImagePlane",
-                "position": [
-                    351050.0,
-                    5318750.0,
-                    2003.0
-                ]
-            },
-            {
-                "display_name": "Rosebery Lyell geophysics",
+                "display_name": "RL Grav model grids density 2",
                 "displayed": false,
                 "include": true,
-                "model_url": "Rosebery_Lyell_geophysics.PNG",
+                "model_url": "RL_Grav_model_grids_density_2.PNG",
                 "popups": {
-                    "Rosebery_Lyell_geophysics": {
-                        "name": "ROSEBERY_LYELL_GEOPHYSICS",
-                        "title": "ROSEBERY_LYELL_GEOPHYSICS"
+                    "RL_Grav_model_grids_density_6": {
+                        "name": "\"VPMG_RESID_GRV\"",
+                        "title": "\"VPMG_RESID_GRV\""
                     }
                 },
-                "type": "ImagePlane",
-                "position": [
-                    351050.0,
-                    5318750.0,
-                    3003.0
-                ]
+                "type": "ImagePlane"
             },
             {
-                "display_name": "RL Mag model grids susc",
+                "display_name": "RL Grav model grids density 3",
                 "displayed": false,
                 "include": true,
-                "model_url": "RL_Mag_model_grids_susc.PNG",
+                "model_url": "RL_Grav_model_grids_density_3.PNG",
                 "popups": {
-                    "RL_Mag_model_grids_susc": {
-                        "name": "RL_MAG_MODEL_GRIDS_SUSC",
-                        "title": "RL_MAG_MODEL_GRIDS_SUSC"
+                    "RL_Grav_model_grids_density_3": {
+                        "name": "\"VPMG_OBS_GRV\"",
+                        "title": "\"VPMG_OBS_GRV\""
                     }
                 },
-                "type": "ImagePlane",
-                "position": [
-                    351050.0,
-                    5318750.0,
-                    4003.0
-                ]
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "RL Grav model grids density 4",
+                "displayed": false,
+                "include": true,
+                "model_url": "RL_Grav_model_grids_density_4.PNG",
+                "popups": {
+                    "RL_Grav_model_grids_density_2": {
+                        "name": "\"VPMG_OBS_GRV\"",
+                        "title": "\"VPMG_OBS_GRV\""
+                    }
+                },
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "RL Grav model grids density 5",
+                "displayed": false,
+                "include": true,
+                "model_url": "RL_Grav_model_grids_density_5.PNG",
+                "popups": {
+                    "RL_Grav_model_grids_density_1": {
+                        "name": "\"VPMG_OBS_GRV\"",
+                        "title": "\"VPMG_OBS_GRV\""
+                    }
+                },
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "RL Grav model grids density 6",
+                "displayed": false,
+                "include": true,
+                "model_url": "RL_Grav_model_grids_density_6.PNG",
+                "popups": {
+                    "RL_Grav_model_grids_density_4": {
+                        "name": "\"VPMG_RESID_GRV\"",
+                        "title": "\"VPMG_RESID_GRV\""
+                    }
+                },
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "Rosebery Lyell geophysics 1",
+                "displayed": false,
+                "include": true,
+                "model_url": "Rosebery_Lyell_geophysics_1.PNG",
+                "popups": {
+                    "Rosebery_Lyell_geophysics_3": {
+                        "name": "\"VPMG_WORKFLOW_DEN_HET_151215_IMPORTED_DEN_PROP\"",
+                        "title": "\"VPMG_WORKFLOW_DEN_HET_151215_IMPORTED_DEN_PROP\""
+                    }
+                },
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "Rosebery Lyell geophysics 2",
+                "displayed": false,
+                "include": true,
+                "model_url": "Rosebery_Lyell_geophysics_2.PNG",
+                "popups": {
+                    "Rosebery_Lyell_geophysics_2": {
+                        "name": "\"VPMG_WORKFLOW_SUS_HET_151215_IMPORTED_SUS_PROP\"",
+                        "title": "\"VPMG_WORKFLOW_SUS_HET_151215_IMPORTED_SUS_PROP\""
+                    }
+                },
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "Rosebery Lyell geophysics 3",
+                "displayed": false,
+                "include": true,
+                "model_url": "Rosebery_Lyell_geophysics_3.PNG",
+                "popups": {
+                    "Rosebery_Lyell_geophysics_1": {
+                        "name": "\"RL_RECLASSIFICATION\"",
+                        "title": "\"RL_RECLASSIFICATION\""
+                    }
+                },
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "RL Mag model grids susc 1",
+                "displayed": false,
+                "include": true,
+                "model_url": "RL_Mag_model_grids_susc_1.PNG",
+                "popups": {
+                    "RL_Mag_model_grids_susc_5": {
+                        "name": "\"VPMG_OBS_MAG\"",
+                        "title": "\"VPMG_OBS_MAG\""
+                    }
+                },
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "RL Mag model grids susc 2",
+                "displayed": false,
+                "include": true,
+                "model_url": "RL_Mag_model_grids_susc_2.PNG",
+                "popups": {
+                    "RL_Mag_model_grids_susc_6": {
+                        "name": "\"VPMG_RESID_MAG\"",
+                        "title": "\"VPMG_RESID_MAG\""
+                    }
+                },
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "RL Mag model grids susc 3",
+                "displayed": false,
+                "include": true,
+                "model_url": "RL_Mag_model_grids_susc_3.PNG",
+                "popups": {
+                    "RL_Mag_model_grids_susc_3": {
+                        "name": "\"VPMG_OBS_MAG\"",
+                        "title": "\"VPMG_OBS_MAG\""
+                    }
+                },
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "RL Mag model grids susc 4",
+                "displayed": false,
+                "include": true,
+                "model_url": "RL_Mag_model_grids_susc_4.PNG",
+                "popups": {
+                    "RL_Mag_model_grids_susc_2": {
+                        "name": "\"VPMG_OBS_MAG\"",
+                        "title": "\"VPMG_OBS_MAG\""
+                    }
+                },
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "RL Mag model grids susc 5",
+                "displayed": false,
+                "include": true,
+                "model_url": "RL_Mag_model_grids_susc_5.PNG",
+                "popups": {
+                    "RL_Mag_model_grids_susc_1": {
+                        "name": "\"VPMG_OBS_MAG\"",
+                        "title": "\"VPMG_OBS_MAG\""
+                    }
+                },
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "RL Mag model grids susc 6",
+                "displayed": false,
+                "include": true,
+                "model_url": "RL_Mag_model_grids_susc_6.PNG",
+                "popups": {
+                    "RL_Mag_model_grids_susc_4": {
+                        "name": "\"VPMG_RESID_MAG\"",
+                        "title": "\"VPMG_RESID_MAG\""
+                    }
+                },
+                "type": "ImagePlane"
             }
         ]
     },

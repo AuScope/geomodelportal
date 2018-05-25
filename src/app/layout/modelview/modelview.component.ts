@@ -1,5 +1,6 @@
 import { Component, ViewChild, AfterViewInit, Renderer2, ElementRef } from '@angular/core';
 import { routerTransition } from '../../router.animations';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ModelInfoService, ModelPartCallbackType,
          ModelPartStateChange, ModelPartStateChangeType } from '../../shared/services/model-info.service';
 import { SidebarService, MenuChangeType, MenuStateChangeType } from '../../shared/services/sidebar.service';
@@ -77,11 +78,12 @@ export class ModelViewComponent  implements AfterViewInit {
     private model_dir;
 
     constructor(private modelInfoService: ModelInfoService, private elRef: ElementRef, private ngRenderer: Renderer2,
-                private sidebarService: SidebarService) {
+                private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router) {
+
     }
 
     /**
-     * Called after the view is initialised, this code downloads tje model information and kicks off
+     * Called after the view is initialised, this code downloads the model information and kicks off
      * this process of drawing the model
      */
     ngAfterViewInit() {
@@ -91,10 +93,12 @@ export class ModelViewComponent  implements AfterViewInit {
 
         // Detect if webGL is available and inform viewer if cannot proceed
         if (Detector.webgl) {
-            const params = new URLSearchParams(document.location.search.substring(1));
-            const model_name = 'NorthGawler';  // FIXME: should eventually be params.get('model');
+            const modelUrlPath = this.route.snapshot.paramMap.get('modelPath');
+
             // Initialise model by downloading its JSON file
-            this.modelInfoService.getModelInfo(model_name).then(res => { local.initialiseModel(res, model_name); });
+            this.modelInfoService.getModelInfo(modelUrlPath).then(res => {
+                local.initialiseModel(res[0], res[1]);
+            });
             const callbackFn: ModelPartCallbackType =  function(groupName: string, partId: string, state: ModelPartStateChange) {
                 if (state.type === ModelPartStateChangeType.DISPLAYED) {
                     // local.printMeshes();
@@ -195,14 +199,12 @@ export class ModelViewComponent  implements AfterViewInit {
     /**
      * This commences the process of drawing the model
      * @param config model configuration JSON
-     * @param modelName name of model
+     * @param modelDir directory where model files are found
      */
-    private initialiseModel(config, modelName: string) {
+    private initialiseModel(config, modelDir: string) {
         const props = config.properties;
-        const i = 0;
-        console.log('config =', config, modelName);
         this.config = config;
-        this.model_dir = modelName;
+        this.model_dir = modelDir;
         if (props.proj4_defn) {
             proj4.defs(props.crs, props.proj4_defn);
         }

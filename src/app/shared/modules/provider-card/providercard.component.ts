@@ -21,9 +21,13 @@ export class ProviderCardComponent {
     constructor() {}
 
     /**
-     * Navigates the browser to a new page of models associated with a certain provider
+     * Navigates the browser to a new page of models associated with a certain provider,
+     * but only if there are more than zero models
+     * @param modelCount number of models belonging to that provider
      */
-    public navigateToProvider() {
-        window.location.assign(this.prePath + '/provider/' + this.providerPath);
+    public navigateToProvider(modelCount: number) {
+        if (modelCount > 0) {
+            window.location.assign(this.prePath + '/provider/' + this.providerPath);
+        }
     }
 }
