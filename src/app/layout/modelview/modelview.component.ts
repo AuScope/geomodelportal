@@ -337,8 +337,12 @@ export class ModelViewComponent  implements AfterViewInit {
                                 } );
                                 const geometry = new THREE.PlaneGeometry(local.extentObj.dimensions().x, local.extentObj.dimensions().y);
                                 const plane = new THREE.Mesh(geometry, material);
+                                let z_offset = 0.0;
+                                if (part.hasOwnProperty('position')) {
+                                    z_offset = part.position[2];
+                                }
                                 const position = new THREE.Vector3(local.extentObj.center().x(),
-                                                                      local.extentObj.center().y(), part.position[2]);
+                                                                      local.extentObj.center().y(), z_offset);
                                 plane.position.copy(position);
                                 plane.name = part.display_name; // Need this to display popup windows
                                 local.scene.add(plane);
