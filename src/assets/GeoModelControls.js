@@ -17,11 +17,16 @@ const mouseButtons = {
 
 /**
 * Three axis virtual globe controller
+* @param viewerDiv div where the graphics will be displayed
+* @param camera camera object for viewing
+* @param view view object
+* @param rotCentre centre of rotation (THREE.Vector3)
 */
-function GeoModelControls(camera, view, rotCentre) {
+function GeoModelControls(viewerDiv, camera, view, rotCentre) {
     var scope = this;
     this.domElement = view.mainLoop.gfxEngine.renderer.domElement;
     this.rotCentre = rotCentre;
+    this.viewerDiv = viewerDiv;
 
     // mouse movement
     const mousePosition = new THREE.Vector2();
@@ -51,12 +56,20 @@ function GeoModelControls(camera, view, rotCentre) {
     // Set mouse state for drag and rotate
     this.state = STATE.NONE;
 
+    /**
+     * Called when we need to update our record of the mouse position and delta
+     * @param event mouse event
+     */
     this.updateMousePositionAndDelta = function updateMousePositionAndDelta(event) {
         mousePosition.set(event.offsetX, event.offsetY);
         deltaMousePosition.copy(mousePosition).sub(lastMousePosition);
         lastMousePosition.copy(mousePosition);
     };
 
+    /**
+      * Called when mouse pointer is moved
+      * @param event mouse event
+      */
     this.onMouseMove = function onMouseMove(event) {
         event.preventDefault();
         scope.updateMousePositionAndDelta(event);
@@ -67,6 +80,10 @@ function GeoModelControls(camera, view, rotCentre) {
         }
     };
 
+    /**
+     * Called when mouse wheel is rotated
+     * @param event mouse event
+     */
     this.onMouseWheel = function onMouseWheel(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -79,15 +96,21 @@ function GeoModelControls(camera, view, rotCentre) {
         viewObject.notifyChange(true);
     };
 
+    /**
+     * Updates state when a mouse button is released
+     * @param event mouse event
+     */
     this.onMouseUp = function onMouseUp(event) {
         event.preventDefault();
         scope.state = STATE.NONE;
         scope.updateMouseCursorType();
     };
 
+    /**
+     * Initiates rotation or drag when any mouse button is pressed down
+     * @param event mouse event
+     */
     this.onMouseDown = function onMouseDown(event) {
-        // eslint-disable-next-line no-console
-        // console.log('mouseDown');
         event.preventDefault();
         scope.updateMousePositionAndDelta(event);
 
@@ -100,17 +123,26 @@ function GeoModelControls(camera, view, rotCentre) {
         scope.updateMouseCursorType();
     };
 
+    /**
+      * Releases event listeners
+      */
     this.dispose = function dispose() {
-        document.removeEventListener('mousemove', this.onMouseMove, false);
-        document.removeEventListener('mouseup', this.onMouseUp, false);
-        document.removeEventListener('mousedown', this.onMouseDown, false);
-        document.removeEventListener('wheel', this.onMouseWheel, false);
+        scope.viewerDiv.removeEventListener('mousemove', scope.onMouseMove, false);
+        scope.viewerDiv.removeEventListener('mouseup', scope.onMouseUp, false);
+        scope.viewerDiv.removeEventListener('mousedown', scope.onMouseDown, false);
+        scope.viewerDiv.removeEventListener('wheel', scope.onMouseWheel, false);
     };
 
+    /**
+      * Initiates rotation state
+      */
     this.initiateRotation = function initiateRotation() {
         scope.state = STATE.ROTATE;
     };
 
+    /**
+      * Initiates drag state
+      */
     this.initiateDrag = function initiateDrag() {
         scope.state = STATE.DRAG;
     };
@@ -128,10 +160,8 @@ function GeoModelControls(camera, view, rotCentre) {
         deltaMousePosition.set(0, 0);
     };
 
-    /**
-    * Add this GeoModelControl instance to the view's frame requesters
-    * with this, GeoModelControl.update() will be called each frame
-    */
+    // Add this GeoModelControl instance to the view's frame requesters
+    // with this, GeoModelControl.update() will be called each frame
     viewObject.addFrameRequester(MAIN_LOOP_EVENTS.AFTER_CAMERA_UPDATE, this.update.bind(this));
 
     /**
@@ -256,6 +286,9 @@ function GeoModelControls(camera, view, rotCentre) {
         return rObject;
     };
 
+    /**
+     * @return direction that camera is facing (THREE.Vector3)
+     */
     this.getDirection = (() => {
         var direction = new THREE.Vector3(0, 0, -1);
         var rotation = new THREE.Euler(0, 0, 0, 'YXZ');
@@ -266,10 +299,11 @@ function GeoModelControls(camera, view, rotCentre) {
         };
     })();
 
-    document.addEventListener('mousemove', this.onMouseMove, false);
-    document.addEventListener('mouseup', this.onMouseUp, false);
-    document.addEventListener('mousedown', this.onMouseDown, false);
-    document.addEventListener('wheel', this.onMouseWheel, false);
+    // Add event listeners for mouse events
+    this.viewerDiv.addEventListener('mousemove', this.onMouseMove, false);
+    this.viewerDiv.addEventListener('mouseup', this.onMouseUp, false);
+    this.viewerDiv.addEventListener('mousedown', this.onMouseDown, false);
+    this.viewerDiv.addEventListener('wheel', this.onMouseWheel, false);
 }
 
 export default GeoModelControls;

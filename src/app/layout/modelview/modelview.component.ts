@@ -518,7 +518,7 @@ export class ModelViewComponent  implements AfterViewInit {
         this.scene.add( arrowHelper_z );
 
         // 3 axis virtual globe controller
-        const trackBallControls = new GeoModelControls(this.view.camera.camera3D, this.view, this.extentObj.center().xyz());
+        const trackBallControls = new GeoModelControls(this.viewerDiv, this.view.camera.camera3D, this.view, this.extentObj.center().xyz());
         this.scene.add(trackBallControls.getObject());
 
         console.log('scene = ', this.scene);
