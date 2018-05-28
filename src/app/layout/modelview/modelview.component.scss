@@ -26,6 +26,8 @@
         border-radius: 5px;
         opacity: 1.0;
         display: none;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 
     #popupExitDiv {
@@ -47,6 +49,8 @@
         color: rgb(150, 150, 150);
         list-style-type: none;
         margin-left: 2px;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 
     #popupBoxDiv li span {
