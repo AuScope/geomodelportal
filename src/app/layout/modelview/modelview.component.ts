@@ -344,7 +344,12 @@ export class ModelViewComponent  implements AfterViewInit {
                                 const position = new THREE.Vector3(local.extentObj.center().x(),
                                                                       local.extentObj.center().y(), z_offset);
                                 plane.position.copy(position);
-                                plane.name = part.display_name; // Need this to display popup windows
+                                plane.name =  part.model_url.substring(0, part.model_url.lastIndexOf('.')) + '_0'; // For displaying popups
+                                if (!part.displayed) {
+                                    plane.visible = false;
+                                } else {
+                                    plane.visible = true;
+                                }
                                 local.scene.add(plane);
                                 local.addPart(part, plane, grp);
                                 resolve(plane);
