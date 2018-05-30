@@ -30,6 +30,9 @@ $topnav-background-color: #222;
             .fa {
                 margin-right: 10px;
             }
+            .fa-eye {
+                vertical-align: 0%;
+            }
         }
         a:hover {
             background: darken($topnav-background-color, 5%);
