@@ -1,0 +1,4 @@
+<p>
+  <button type="button" class="btn btn-outline-secondary mr-2 help-buttons" (click)="doTour()" placement="left">{{buttonStr}}</button>
+  <button *ngIf="tourStarted" type="button" class="btn btn-outline-secondary mr-2 help-buttons" (click)="endTour()" placement="right">Stop Tour</button>
+</p>

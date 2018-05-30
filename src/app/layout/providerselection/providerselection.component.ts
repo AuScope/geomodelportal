@@ -37,9 +37,7 @@ export class ProviderSelectionComponent {
                 text: 'Rosebery Lyell Model'
             }
         );
-        console.log('ProviderSelectionComponent ngOnInit()');
-        this.modelInfoService.getProviderInfo().then(res => { this.sources = res; console.log('this.sources = ', this.sources); });
-
+        this.modelInfoService.getProviderInfo().then(res => { this.sources = res; });
     }
 
 }

@@ -3,29 +3,39 @@
     <div *ngIf="groupList.length > 0" class="list-group">
         <div *ngFor="let groupName of groupList" class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass(groupName)">
-                <span><i class="fa fa-plus"></i>&nbsp;{{groupName}}</span>
-                <input *ngIf="getGroupTickBoxState(groupName)" (click)="groupCheckBoxClick($event, groupName, false)" checked="true" class="vis-toggle" type="checkbox"/>
-                <input *ngIf="!getGroupTickBoxState(groupName)" (click)="groupCheckBoxClick($event, groupName, true)" class="vis-toggle" type="checkbox"/>
+                <span><i class="fa fa-plus" ngbPopover="{{groupMenuToggle.desc}}" popoverTitle="{{groupMenuToggle.title}}" placement="right" #group_menu_popover="ngbPopover" triggers="manual"></i>&nbsp;{{groupName}}</span>
+                <input *ngIf="getGroupTickBoxState(groupName)" (click)="groupCheckBoxClick($event, groupName, false)"
+                    ngbPopover="{{groupVisToggle.desc}}" popoverTitle="{{groupVisToggle.title}}" placement="right" #group_tick_popover="ngbPopover" triggers="manual"
+                    checked="true" class="vis-toggle" type="checkbox"/>
+                <input *ngIf="!getGroupTickBoxState(groupName)" (click)="groupCheckBoxClick($event, groupName, true)"
+                    ngbPopover="{{groupVisToggle.desc}}" popoverTitle="{{groupVisToggle.title}}" placement="right" #group_tick_popover="ngbPopover" triggers="manual"
+                                   class="vis-toggle" type="checkbox"/>
             </a>
             <li class="nested" [class.expand]="showMenu === groupName">
                 <ul *ngFor="let subGroupObj of modelInfo['groups'][groupName]" class="submenu ul-part-name">
                     <li *ngIf="subGroupObj.include && modelPartState[groupName][subGroupObj.model_url]">
                         <a class="a-part-name list-group-item">
                             <span>{{subGroupObj.display_name}}</span>
-                            <input *ngIf="modelPartState[groupName][subGroupObj.model_url].displayed" (click)="checkBoxClick(groupName, subGroupObj.model_url, false)" checked="true" class="vis-toggle" type="checkbox"/>
-                            <input *ngIf="!modelPartState[groupName][subGroupObj.model_url].displayed" (click)="checkBoxClick(groupName, subGroupObj.model_url, true)" class="vis-toggle" type="checkbox"/>
-                            <i class="fa fa-lg fa-cog part-controls" (click)="toggleControls(groupName, subGroupObj.model_url)"></i>
-                            <i class="fa fa-lg fa-eye" (mouseenter)="revealPart(groupName, subGroupObj.model_url, true)" (mouseleave)="revealPart(groupName, subGroupObj.model_url, false)"></i>
+                            <input *ngIf="modelPartState[groupName][subGroupObj.model_url].displayed" (click)="checkBoxClick(groupName, subGroupObj.model_url, false)" checked="true" class="vis-toggle" type="checkbox"
+                                   ngbPopover="{{partTick.desc}}" popoverTitle="{{partTick.title}}" placement="right" #part_tick_popover="ngbPopover" triggers="manual"/>
+                            <input *ngIf="!modelPartState[groupName][subGroupObj.model_url].displayed" (click)="checkBoxClick(groupName, subGroupObj.model_url, true)" class="vis-toggle" type="checkbox"
+                                   ngbPopover="{{partTick.desc}}" popoverTitle="{{partTick.title}}" placement="right" #part_tick_popover="ngbPopover" triggers="manual"/>
+                            <i class="fa fa-lg fa-cog part-controls" (click)="toggleControls(groupName, subGroupObj.model_url)"
+                                ngbPopover="{{partConfigToggle.desc}}" popoverTitle="{{partConfigToggle.title}}" placement="right" #part_config_popover="ngbPopover" triggers="manual"></i>
+                            <i class="fa fa-lg fa-eye" (mouseenter)="revealPart(groupName, subGroupObj.model_url, true)" (mouseleave)="revealPart(groupName, subGroupObj.model_url, false)"
+                               ngbPopover="{{partEyeball.desc}}" popoverTitle="{{partEyeball.title}}" placement="right" #part_eyeball_popover="ngbPopover" triggers="manual"></i>
                         </a>
                         <div id="controlsDiv" [style.display]="getDisplayControls(groupName, subGroupObj.model_url)">
                             <a class="list-group-item">
                                 <span class="span-part-controls">Height Offset&nbsp;{{modelPartState[groupName][subGroupObj.model_url].heightOffset}}
-                                    <mat-slider (change)="changeHeight($event, groupName, subGroupObj.model_url)" thumbLabel min="0" max="10000" step="500" value="0"></mat-slider>
+                                    <mat-slider (change)="changeHeight($event, groupName, subGroupObj.model_url)" thumbLabel min="0" max="10000" step="500" value="0"
+                                    ngbPopover="{{partOffset.desc}}" popoverTitle="{{partOffset.title}}" placement="bottom" #part_trans_popover="ngbPopover" triggers="manual"></mat-slider>
                                 </span>
                             </a>
                             <a class="list-group-item">
                                 <span class="span-part-controls">Transparency&nbsp;{{modelPartState[groupName][subGroupObj.model_url].transparency.toFixed(1)}}
-                                    <mat-slider (change)="changeTransparency($event, groupName, subGroupObj.model_url)" thumbLabel min="0.0" max="1.0" step="0.1" value="1.0"></mat-slider>
+                                    <mat-slider (change)="changeTransparency($event, groupName, subGroupObj.model_url)" thumbLabel min="0.0" max="1.0" step="0.1" value="1.0"
+                                    ngbPopover="{{partTransp.desc}}" popoverTitle="{{partTransp.title}}" placement="bottom" #part_offset_popover="ngbPopover" triggers="manual"></mat-slider>
                                 </span>
                             </a>
                         </div>

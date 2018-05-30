@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ModelInfoService } from './shared/services/model-info.service';
 import { SidebarService } from './shared/services/sidebar.service';
+import { HelpinfoService } from './shared/services/helpinfo.service';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -33,7 +34,8 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     providers: [
         ModelInfoService,
-        SidebarService
+        SidebarService,
+        HelpinfoService
     ],
     declarations: [AppComponent],
     bootstrap: [AppComponent]

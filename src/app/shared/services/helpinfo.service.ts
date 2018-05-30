@@ -1,0 +1,49 @@
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+
+// NB: 'END_TOUR' must always be the last item in the list
+export enum  WidgetType { GROUP_TICKBOX, GROUP_TOGGLE, PART_TICKBOX, PART_CONFIG, PART_OFFSET, PART_VISIBILITY, PART_EYEBALL, END_TOUR }
+
+@Injectable()
+export class HelpinfoService {
+
+  private seqNum = 0;
+  private subObj = new Subject<any>();
+  private widgetList: WidgetType[] = [];
+  constructor() {}
+
+  /**
+   * Components can register their help facilities here.
+   * If you are the first of your type to register, then you will get an observable
+   * else you'll get null
+   * @param widgetTypeList input your widget types as an array
+   * @return an observable so that you know when its your turn to display a helpful hint or null
+   */
+  public waitForSignal(widgetTypeList: WidgetType[]): Observable<any> {
+      // If 'widgetType' not in widgetList then include 'widgetType' in our list etc.
+      let found = false;
+      for (const widgetType of widgetTypeList) {
+          if (this.widgetList.indexOf(widgetType) < 0) {
+              this.widgetList.push(widgetType);
+              found = true;
+          }
+      }
+      // If you're the first to register
+      if (found) {
+          return this.subObj.asObservable();
+      // return 'null' if we're not the first to register
+      } else {
+          return null;
+      }
+  }
+
+  /**
+   * This is called by the help component when it is doing a tour, it triggers the waiting object to
+   * display a helpful hint or to stop display of helpful hint
+   * @param seqNum determines which component is triggered, corresponds to the values in WidgetType enum
+   */
+  public triggerHelp(seqNum: number) {
+      this.subObj.next(seqNum);
+  }
+}

@@ -1,16 +1,21 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { MatSliderModule, MatSliderChange } from '@angular/material/slider';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
+import { NgbPopover} from '@ng-bootstrap/ng-bootstrap';
 
-import {ModelInfoService, ModelPartStateChangeType } from '../../../../shared/services/model-info.service';
-import {SidebarService, MenuStateChangeType, MenuChangeType } from '../../../../shared/services/sidebar.service';
+import { ModelInfoService, ModelPartStateChangeType } from '../../../../shared/services/model-info.service';
+import { SidebarService, MenuStateChangeType, MenuChangeType } from '../../../../shared/services/sidebar.service';
+import { HelpinfoService, WidgetType } from '../../../../shared/services/helpinfo.service';
 
 
 const DISPLAY_CTRL_ON = 'block';
 const DISPLAY_CTRL_OFF = 'none';
+
+
 
 /**
  * Class used to display a sidebar with a menu tree, used to interact with the model
@@ -18,7 +23,8 @@ const DISPLAY_CTRL_OFF = 'none';
 @Component({
     selector: 'app-sidebar',
     templateUrl: './sidebar.component.html',
-    styleUrls: ['./sidebar.component.scss']
+    styleUrls: ['./sidebar.component.scss'],
+    encapsulation: ViewEncapsulation.None // NB: Needed to style the popovers
 })
 export class SidebarComponent  implements OnInit, OnDestroy {
     public isActive = false;
@@ -28,15 +34,35 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     public title = '';
     private modelInfo = {};
     private modelPath = '';
-    public groupList: Array<String> = [];
+    public groupList: Array<string> = [];
     private modelPartState = {};
     private displayControls = {};
-    private value;
-    private subscription: Subscription;
+    private helpSubscr: Subscription;
+    private compSubscr: Subscription;
+    private helpObs: Observable<any> = null;
+
+    // These are all the help message for the sidebar
+    private groupVisToggle = { title: 'Toggle Group Visibility', desc: 'Click on this tick box to hide/display groups of objects.' };
+    private groupMenuToggle = { title: 'Group Menu Toggle', desc: 'Click on this to hide/display objects within a group' };
+    private partConfigToggle = { title: 'Controls', desc: 'Click here to reveal the controls for this part of the model' };
+    private partEyeball = { title: 'Reveal a model part', desc: 'To reveal this part, move your mouse over the eyeball icon' };
+    private partOffset = { title: 'Adjust height offset', desc: 'To adjust this part\'s height, move this slider by clicking or dragging' };
+    private partTransp = { title: 'Adjust transparency',
+                           desc: 'To adjust this part\'s transparency, move this slider by clicking or dragging' };
+    private partTick = { title: 'Toggle Part visibility', desc: 'Click on this tick box to hide/display this part' };
+
+    @ViewChild('group_tick_popover') public groupTickPopover: NgbPopover = null;
+    @ViewChild('group_menu_popover') public groupMenuPopover: NgbPopover = null;
+    @ViewChild('part_config_popover') public partConfigPopover: NgbPopover = null;
+    @ViewChild('part_eyeball_popover') public partEyeballPopover: NgbPopover = null;
+    @ViewChild('part_offset_popover') public partOffsetPopover: NgbPopover = null;
+    @ViewChild('part_trans_popover') public partTransPopover: NgbPopover = null;
+    @ViewChild('part_tick_popover') public partTickPopover: NgbPopover = null;
+
 
 
     constructor(private translate: TranslateService, private modelInfoService: ModelInfoService, private route: ActivatedRoute,
-                public router: Router, private sideBarService: SidebarService) {
+                public router: Router, private sideBarService: SidebarService, private helpinfoService: HelpinfoService) {
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de']);
         this.translate.setDefaultLang('en');
         const browserLang = this.translate.getBrowserLang();
@@ -51,8 +77,15 @@ export class SidebarComponent  implements OnInit, OnDestroy {
                 this.toggleSidebar();
             }
         });
-        // subscribe to component messages
-       this.subscription = this.sideBarService.getMenuChanges().subscribe(changes => { this.revealMenuItem(changes); });
+        // Subscribe to component messages
+        this.compSubscr = this.sideBarService.getMenuChanges().subscribe(changes => { this.revealMenuItem(changes); });
+
+        // Subscribe to help hint triggers
+        // When trigger occurs, a sidebar component will display its help information
+        this.helpObs = this.helpinfoService.waitForSignal([WidgetType.GROUP_TICKBOX]);
+        if (this.helpObs != null) {
+            this.helpSubscr = this.helpObs.subscribe(seqNum => { this.showHelpHints(seqNum); });
+        }
     }
 
     /**
@@ -81,6 +114,69 @@ export class SidebarComponent  implements OnInit, OnDestroy {
                 }
             }
         );
+    }
+
+    /**
+     * This is called by the subscription to the help info service
+     * It a state machine that displays popovers for various parts of the model view
+     * @param seqNum sequnce number
+     */
+    private showHelpHints(seqNum: number) {
+        // NB: This list must contain all the ViewChild popovers above  & in the correct order
+        // The order must correspond to the WidgetType enum
+        const popoverList = [ this.groupTickPopover, this.groupMenuPopover, this.partConfigPopover,
+                             this.partEyeballPopover, this.partOffsetPopover, this.partTransPopover, this.partTickPopover ];
+        // Open up menu items at first group
+        if (seqNum === 0 && this.groupList.length > 0) {
+            this.revealFirstMenus(true);
+        }
+        // Open new help info
+        if (seqNum < popoverList.length && popoverList[seqNum] !== null) {
+            popoverList[seqNum].open();
+        }
+        // Close old help info
+        if (seqNum > 0 && seqNum <= popoverList.length && popoverList[seqNum - 1] !== null) {
+            popoverList[seqNum - 1].close();
+        }
+        // Close everything if user terminates the tour
+        if (seqNum === WidgetType.END_TOUR) {
+            for (const popover of popoverList) {
+                if (popover !== null && popover.isOpen()) {
+                    popover.close();
+                }
+            }
+            // Closes menu item
+            this.showMenu = null;
+            this.revealFirstMenus(false);
+        }
+    }
+
+    /**
+      * Open and closes the first menu item and first descendants for use by the popover
+      * @param open if true then opens menus else closes them
+      */
+    private revealFirstMenus(open: boolean) {
+        if (this.groupList.length > 0) {
+            // Find first menu item and first descendants
+            const firstGroupName = this.groupList[0];
+            let firstPartId: string = null;
+            if (this.modelInfo['groups'][firstGroupName].length > 0) {
+                firstPartId = this.modelInfo['groups'][firstGroupName][0].model_url;
+            }
+            // Open first menu and first descendants
+            if (open) {
+                this.showMenu = firstGroupName;
+                if (firstPartId !== null) {
+                    this.displayControls[firstGroupName][firstPartId] = DISPLAY_CTRL_ON;
+                }
+            // Close first menu and first descendants
+            } else {
+                this.showMenu = null;
+                if (firstPartId !== null) {
+                    this.displayControls[firstGroupName][firstPartId] = DISPLAY_CTRL_OFF;
+                }
+            }
+        }
     }
 
     /**
@@ -241,6 +337,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * Destroys objects and unsubscribes to ensure no memory leaks
      */
     public ngOnDestroy() {
-        this.subscription.unsubscribe();
+        this.compSubscr.unsubscribe();
+        this.helpSubscr.unsubscribe();
     }
 }
