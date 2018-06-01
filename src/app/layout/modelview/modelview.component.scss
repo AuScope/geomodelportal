@@ -1,5 +1,23 @@
-
+    #demoPopup {
+        position: absolute;
+        color: #FF0000;
+        top:200px;
+        left:200px;
+        width: 200px;
+        height: 300px;
+    }
     #viewerDiv {
+        margin : auto auto;
+        height: 100%;
+        padding: 0;
+        min-height: 100vh;
+    }
+
+    #modelDemoDiv {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 500;
         margin : auto auto;
         height: 100%;
         padding: 0;
@@ -59,7 +77,7 @@
 
     #help {
         position: absolute;
-        z-index: 0;
+        z-index: 700;
         top: 0;
         right: 0;
         color: white;

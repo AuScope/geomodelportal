@@ -82,7 +82,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
 
         // Subscribe to help hint triggers
         // When trigger occurs, a sidebar component will display its help information
-        this.helpObs = this.helpinfoService.waitForSignal([WidgetType.GROUP_TICKBOX]);
+        this.helpObs = this.helpinfoService.waitForPopoverSignal([WidgetType.GROUP_TICKBOX]);
         if (this.helpObs != null) {
             this.helpSubscr = this.helpObs.subscribe(seqNum => { this.showHelpHints(seqNum); });
         }

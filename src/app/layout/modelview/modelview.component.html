@@ -1,6 +1,41 @@
 <div [@routerTransition]>
         <app-sidebar></app-sidebar>
-        <div id="viewerDiv" #viewerDiv></div>
+        <div [style.opacity]="isRunningModelDemo()? 0.5 : 1.0" id="viewerDiv" #viewerDiv></div>
+        <div *ngIf="isRunningModelDemo()" id="modelDemoDiv" #modelDemoDiv>
+            <svg [style.height]="2.0*sphereCentreY" [style.width]="2.0*sphereCentreX">
+                <circle [style.height]="2.0*sphereRadius" [style.width]="2.0*sphereRadius" [attr.r]="sphereRadius"
+                              style="fill:none; stroke-width: 0.5px; stroke: #202020;" [attr.cx]="sphereCentreX" [attr.cy]="sphereCentreY"></circle>
+                <g *ngIf="modelDemoSeqNum == 0" style="stroke: rgb(255,0,0); stroke-width: 2;">
+                    <line [attr.x1]="-100+sphereCentreX" [attr.y1]="0+sphereCentreY" [attr.x2]="100+sphereCentreX" [attr.y2]="0+sphereCentreY" />
+                    <line [attr.x1]="-90+sphereCentreX" [attr.y1]="-10+sphereCentreY" [attr.x2]="-100+sphereCentreX" [attr.y2]="0+sphereCentreY" />
+                    <line [attr.x1]="-100+sphereCentreX" [attr.y1]="0+sphereCentreY" [attr.x2]="-90+sphereCentreX" [attr.y2]="10+sphereCentreY" />
+                    <line [attr.x1]="90+sphereCentreX" [attr.y1]="-10+sphereCentreY" [attr.x2]="100+sphereCentreX" [attr.y2]="0+sphereCentreY" />
+                    <line [attr.x1]="100+sphereCentreX" [attr.y1]="0+sphereCentreY" [attr.x2]="90+sphereCentreX" [attr.y2]="10+sphereCentreY" />
+                </g>
+                <g *ngIf="modelDemoSeqNum == 1" style="stroke: rgb(255,0,0); stroke-width: 2;">
+                    <line [attr.x1]="0+sphereCentreX" [attr.y1]="-100+sphereCentreY" [attr.x2]="0+sphereCentreX" [attr.y2]="100+sphereCentreY" />
+                    <line [attr.x1]="-10+sphereCentreX" [attr.y1]="-90+sphereCentreY" [attr.x2]="0+sphereCentreX" [attr.y2]="-100+sphereCentreY" />
+                    <line [attr.x1]="0+sphereCentreX" [attr.y1]="-100+sphereCentreY" [attr.x2]="10+sphereCentreX" [attr.y2]="-90+sphereCentreY" />
+                    <line [attr.x1]="-10+sphereCentreX" [attr.y1]="90+sphereCentreY" [attr.x2]="0+sphereCentreX" [attr.y2]="100+sphereCentreY" />
+                    <line [attr.x1]="0+sphereCentreX" [attr.y1]="100+sphereCentreY" [attr.x2]="10+sphereCentreX" [attr.y2]="90+sphereCentreY" />
+                </g>
+                <g *ngIf="modelDemoSeqNum == 2" style="stroke: rgb(255,0,0); stroke-width: 2;">
+                    <line [attr.x1]="0+sphereCentreX - sphereRadius - 50" [attr.y1]="-100+sphereCentreY" [attr.x2]="0+sphereCentreX - sphereRadius - 50" [attr.y2]="100+sphereCentreY" />
+                    <line [attr.x1]="-10+sphereCentreX - sphereRadius - 50" [attr.y1]="-90+sphereCentreY" [attr.x2]="0+sphereCentreX - sphereRadius - 50" [attr.y2]="-100+sphereCentreY" />
+                    <line [attr.x1]="0+sphereCentreX - sphereRadius - 50" [attr.y1]="-100+sphereCentreY" [attr.x2]="10+sphereCentreX - sphereRadius - 50" [attr.y2]="-90+sphereCentreY" />
+                    <line [attr.x1]="-10+sphereCentreX - sphereRadius - 50" [attr.y1]="90+sphereCentreY" [attr.x2]="0+sphereCentreX - sphereRadius - 50" [attr.y2]="100+sphereCentreY" />
+                    <line [attr.x1]="0+sphereCentreX - sphereRadius - 50" [attr.y1]="100+sphereCentreY" [attr.x2]="10+sphereCentreX - sphereRadius - 50" [attr.y2]="90+sphereCentreY" />
+
+                    <line [attr.x1]="0+sphereCentreX + sphereRadius + 50" [attr.y1]="-100+sphereCentreY" [attr.x2]="0+sphereCentreX + sphereRadius + 50" [attr.y2]="100+sphereCentreY" />
+                    <line [attr.x1]="-10+sphereCentreX + sphereRadius + 50" [attr.y1]="-90+sphereCentreY" [attr.x2]="0+sphereCentreX + sphereRadius + 50" [attr.y2]="-100+sphereCentreY" />
+                    <line [attr.x1]="0+sphereCentreX + sphereRadius + 50" [attr.y1]="-100+sphereCentreY" [attr.x2]="10+sphereCentreX + sphereRadius + 50" [attr.y2]="-90+sphereCentreY" />
+                    <line [attr.x1]="-10+sphereCentreX + sphereRadius + 50" [attr.y1]="90+sphereCentreY" [attr.x2]="0+sphereCentreX + sphereRadius + 50" [attr.y2]="100+sphereCentreY" />
+                    <line [attr.x1]="0+sphereCentreX + sphereRadius + 50" [attr.y1]="100+sphereCentreY" [attr.x2]="10+sphereCentreX + sphereRadius + 50" [attr.y2]="90+sphereCentreY" />
+                </g>
+            </svg>
+        </div>
+        <div *ngIf="isRunningModelDemo()" id="demoPopup"><p>{{demoPopupMsg}}</p></div>
+
         <div class="row">
             <div class="col-md-2" id="help">
                 <p>Key bindings</p>

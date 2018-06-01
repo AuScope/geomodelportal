@@ -1,4 +1,6 @@
 <p>
-  <button type="button" class="btn btn-outline-secondary mr-2 help-buttons" (click)="doTour()" placement="left">{{buttonStr}}</button>
-  <button *ngIf="tourStarted" type="button" class="btn btn-outline-secondary mr-2 help-buttons" (click)="endTour()" placement="right">Stop Tour</button>
+  <button type="button" class="btn btn-outline-secondary mr-2 help-buttons" (click)="doModelDemo()" placement="left">{{modelButtonStr}}</button>
+  <button *ngIf="modelDemoStarted" type="button" class="btn btn-outline-secondary mr-2 help-buttons" (click)="endModelDemo()" placement="right">Stop Tour</button>
+  <button type="button" class="btn btn-outline-secondary mr-2 help-buttons" (click)="doSidebarTour()" placement="left">{{sidebarButtonStr}}</button>
+  <button *ngIf="sidebarTourStarted" type="button" class="btn btn-outline-secondary mr-2 help-buttons" (click)="endSidebarTour()" placement="right">Stop Tour</button>
 </p>

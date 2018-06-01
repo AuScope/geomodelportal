@@ -28,6 +28,13 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre) {
     this.rotCentre = rotCentre;
     this.viewerDiv = viewerDiv;
 
+    this.demoState = 0;
+
+    var mixer = null;
+    var xAction = null;
+    var yAction = null;
+    var zAction = null;
+
     // mouse movement
     const mousePosition = new THREE.Vector2();
     const lastMousePosition = new THREE.Vector2();
@@ -55,6 +62,9 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre) {
 
     // Set mouse state for drag and rotate
     this.state = STATE.NONE;
+
+    // Setup the AnimationMixer
+    var runningDemo = false;
 
     /**
      * Called when we need to update our record of the mouse position and delta
@@ -158,11 +168,13 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre) {
             scope.onRotate();
         }
         deltaMousePosition.set(0, 0);
-    };
 
-    // Add this GeoModelControl instance to the view's frame requesters
-    // with this, GeoModelControl.update() will be called each frame
-    viewObject.addFrameRequester(MAIN_LOOP_EVENTS.AFTER_CAMERA_UPDATE, this.update.bind(this));
+        // Animation
+        if (runningDemo) {
+            scope.mixer.update(0.04);
+            viewObject.notifyChange(true);
+        }
+    };
 
     /**
     * Moves the camera in its XY plane according to the mouse movements
@@ -178,6 +190,30 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre) {
     };
 
     /**
+     * Returns the radius of the virtual sphere used by the controller
+     * @return the radius of the virtual sphere in pixels
+     */
+    this.getVirtualSphereRadius = function getVirtualSphereRadius() {
+        return scope.domElement.clientHeight / 3.0;
+    }
+
+    /**
+     * Returns the centre point of the virtual sphere used by the controller
+     * @return returns the centre point in screen coordinates as [x,y], units are pixels
+     */
+     this.getVirtualSphereCentre = function getVirtualSphereCentre() {
+         return [ scope.domElement.clientWidth / 2.0, scope.domElement.clientHeight / 2.0];
+     }
+
+    /**
+     * Returns true iff currently running the model demonstration
+     * @return returns true iff currently running the model demonstration
+     */
+    this.isRunningDemo = function isRunningDemo() {
+        return runningDemo;
+    }
+
+    /**
     * Rotates the camera about the centre of the model
     */
     this.onRotate = function onRotate() {
@@ -191,7 +227,7 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre) {
         var mp = new THREE.Vector2(mousePosition.x - centreOffsetX, centreOffsetY - mousePosition.y);
         // Last mouse position in normal XY coords
         var lmp = new THREE.Vector2(lastMousePosition.x - centreOffsetX, centreOffsetY - lastMousePosition.y);
-        var r = scope.domElement.clientHeight / 3.0; // Size of virtual globe
+        var r = this.getVirtualSphereRadius(); // Size of virtual globe
         var rotAxisLocal;  // Rotational axis in virtual sphere coords
         var rDelta; // Rotational angle
         var rotAxis; // Rotational axis in camera coords
@@ -299,11 +335,61 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre) {
         };
     })();
 
+
+    /**
+     * Stops the demo loop
+     */
+    this.stopDemoLoop = function stopDemoLoop(e) {
+        runningDemo = false;
+    }
+
+    /**
+     * Use threejs animation to perform model rotation demonstration
+     * @param axisState 0 = rotate along x-axis, 1 = y-axis, 2 = z-axis, 3 = stop demo
+     */
+    this.runModelRotate = function runModelRotate(axisState) {
+
+        var axis = null;
+        switch(axisState) {
+            case 0:
+                axis = new THREE.Vector3( 1, 0, 0 );
+                break;
+            case 1:
+                axis = new THREE.Vector3( 0, 1, 0 );
+                break;
+            case 2:
+                axis = new THREE.Vector3( 0, 0, 1 );
+                break;
+            default:
+                runningDemo = false;
+                return;
+        }
+        var qInitial = new THREE.Quaternion().setFromAxisAngle( axis, 0 );
+        var qFinal = new THREE.Quaternion().setFromAxisAngle( axis, Math.PI/4.0 );
+        var quaternionKF = new THREE.QuaternionKeyframeTrack( '.quaternion', [ 0.0, 1.0, 2.0], [ qInitial.x, qInitial.y, qInitial.z, qInitial.w, qFinal.x, qFinal.y, qFinal.z, qFinal.w, qInitial.x, qInitial.y, qInitial.z, qInitial.w ] );
+
+        // Create an animation sequence from the keyframe track
+        var clip = new THREE.AnimationClip( 'Action', 10.0, [ quaternionKF ] );
+        this.mixer = new THREE.AnimationMixer(rObject);
+        this.mixer.addEventListener('finished', this.stopDemoLoop);
+        var action = this.mixer.clipAction(clip);
+        action.setLoop(THREE.LoopOnce, 1);
+        action.play();
+        runningDemo = true;
+        viewObject.notifyChange(true);
+    };
+
+
+    // Add this GeoModelControl instance to the view's frame requesters
+    // with this, GeoModelControl.update() will be called each frame
+    viewObject.addFrameRequester(MAIN_LOOP_EVENTS.AFTER_CAMERA_UPDATE, this.update.bind(this));
+
     // Add event listeners for mouse events
     this.viewerDiv.addEventListener('mousemove', this.onMouseMove, false);
     this.viewerDiv.addEventListener('mouseup', this.onMouseUp, false);
     this.viewerDiv.addEventListener('mousedown', this.onMouseDown, false);
     this.viewerDiv.addEventListener('wheel', this.onMouseWheel, false);
+
 }
 
 export default GeoModelControls;

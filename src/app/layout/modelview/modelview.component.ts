@@ -1,9 +1,13 @@
-import { Component, ViewChild, AfterViewInit, Renderer2, ElementRef } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, Renderer2, ElementRef, OnDestroy } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
+
 import { ModelInfoService, ModelPartCallbackType,
          ModelPartStateChange, ModelPartStateChangeType } from '../../shared/services/model-info.service';
 import { SidebarService, MenuChangeType, MenuStateChangeType } from '../../shared/services/sidebar.service';
+import { HelpinfoService } from '../../shared/services/helpinfo.service';
 
 // Include threejs library
 import * as THREE from 'three';
@@ -34,7 +38,7 @@ const BACKGROUND_COLOUR = new THREE.Color(0x777777);
     styleUrls: ['./modelview.component.scss'],
     animations: [routerTransition()]
 })
-export class ModelViewComponent  implements AfterViewInit {
+export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     @ViewChild('viewerDiv') private viewerDivElem: ElementRef;
     @ViewChild('popupBoxDiv') private popupBoxDivElem: ElementRef;
 
@@ -47,39 +51,54 @@ export class ModelViewComponent  implements AfterViewInit {
     // <div> where popup information boxes live
     private popupBoxDiv = null;
 
-    // view object
+    // View object
     private view;
 
-    // scene object
+    // Scene object
     private scene;
 
     // Dictionary of {scene, checkbox, group name} objects used by model controls div, key is model URL
     private sceneArr = {};
 
-    // camera object
+    // Camera object
     private camera;
 
-    // renderer object
+    // Tenderer object
     private renderer;
 
-    // track ball controls object
-    private trackBallControls;
+    // Track ball controls object
+    private trackBallControls = null;
 
-    // raycaster object
+    // Raycaster object
     private raycaster;
 
-    // mouse object
+    // Mouse object
     private mouse = new THREE.Vector2();
 
-    // configuration object
+    // Configuration object
     private config;
 
-    // directory where model files are kept
+    // Directory where model files are kept
     private model_dir;
 
-    constructor(private modelInfoService: ModelInfoService, private elRef: ElementRef, private ngRenderer: Renderer2,
-                private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router) {
+    // Virtual sphere radius
+    private sphereRadius = 0.0;
 
+    // Virtual sphere centre (X,Y) in screen coords
+    private sphereCentreX = 0.0;
+    private sphereCentreY = 0.0;
+
+    // Keep track of the model demostration
+    private modelDemoSeqNum = -1.0;
+
+    // Subscribe to help info service to allow model demonstrations
+    private helpSubscr: Subscription;
+
+    private demoPopupMsg = '';
+
+    constructor(private modelInfoService: ModelInfoService, private elRef: ElementRef, private ngRenderer: Renderer2,
+                private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
+                private helpinfoService: HelpinfoService) {
     }
 
     /**
@@ -130,6 +149,26 @@ export class ModelViewComponent  implements AfterViewInit {
                 console.log(child.name, JSON.stringify(child));
             }
         }
+    }
+
+    /**
+     * @return the radius of the virtual sphere used to rotate the model with the mouse, units are pixels
+     */
+    private getVirtualSphereRadius(): number {
+        if (this.trackBallControls) {
+            return this.trackBallControls.getVirtualSphereRadius();
+        }
+        return 0.0;
+    }
+
+    /**
+     * @return the [X,Y] screen coordinates (in pixels) of the virtual sphere used to rotate the model with the mouse
+     */
+    private getVirtualSphereCentre(): [number, number] {
+        if (this.trackBallControls) {
+            return this.trackBallControls.getVirtualSphereCentre();
+        }
+        return [0.0, 0.0];
     }
 
     /**
@@ -512,7 +551,7 @@ export class ModelViewComponent  implements AfterViewInit {
         const hex_y = 0x00ff00;
         const hex_z = 0x0000ff;
 
-        const arrowHelper_x = new THREE.ArrowHelper( x_dir, origin, length, hex_x );
+        /*const arrowHelper_x = new THREE.ArrowHelper( x_dir, origin, length, hex_x );
         arrowHelper_x.name = 'arrowHelper_x';
         this.scene.add( arrowHelper_x );
         const arrowHelper_y = new THREE.ArrowHelper( y_dir, origin, length, hex_y );
@@ -520,14 +559,58 @@ export class ModelViewComponent  implements AfterViewInit {
         this.scene.add( arrowHelper_y );
         const arrowHelper_z = new THREE.ArrowHelper( z_dir, origin, length - 50000, hex_z );
         arrowHelper_z.name = 'arrowHelper_z';
-        this.scene.add( arrowHelper_z );
+        this.scene.add( arrowHelper_z );*/
 
         // 3 axis virtual globe controller
-        const trackBallControls = new GeoModelControls(this.viewerDiv, this.view.camera.camera3D, this.view, this.extentObj.center().xyz());
-        this.scene.add(trackBallControls.getObject());
+        this.trackBallControls = new GeoModelControls(this.viewerDiv, this.view.camera.camera3D, this.view, this.extentObj.center().xyz());
+        this.scene.add(this.trackBallControls.getObject());
+        this.sphereRadius = this.getVirtualSphereRadius();
+        const sphereCentre = this.getVirtualSphereCentre();
+        this.sphereCentreX = sphereCentre[0];
+        this.sphereCentreY = sphereCentre[1];
+
+        // Wait for the signal to start model demonstration
+        const helpObs = this.helpinfoService.waitForModelDemo();
+        this.helpSubscr = helpObs.subscribe(seqNum => { this.runModelDemo(seqNum); });
 
         console.log('scene = ', this.scene);
         this.view.notifyChange(true);
+    }
+
+    /**
+     * Perform model rotation demonstration
+     * @param demoState 0 = rotate along x-axis, 1 = y-axis, 2 = z-axis
+     */
+    public runModelDemo(demoState: number) {
+        if (this.trackBallControls) {
+            this.trackBallControls.runModelRotate(demoState);
+        }
+        switch (demoState) {
+            case 0:
+                this.demoPopupMsg = 'To rotate model along vertical axis, hold down left mouse button and drag' +
+                                    ' mouse horizontally through centre of circle';
+                break;
+            case 1:
+                this.demoPopupMsg = 'To rotate model along horizontal axis, hold down left mouse button and drag' +
+                                    ' mouse vertically through centre of circle';
+                break;
+            case 2:
+                this.demoPopupMsg = 'To rotate model around the screen centre, hold down left mouse button and drag' +
+                                    ' mouse outside of the circle';
+                break;
+        }
+        this.modelDemoSeqNum = demoState;
+    }
+
+    /**
+     * Returns true iff running a model demonstration
+     * @return Returns true iff running a model demonstration
+     */
+    public isRunningModelDemo() {
+        if (this.trackBallControls) {
+            return this.trackBallControls.isRunningDemo();
+        }
+        return false;
     }
 
     /**
@@ -535,7 +618,7 @@ export class ModelViewComponent  implements AfterViewInit {
      * @param event click event
      * @param popupInfo JSON object of the information to be displayed in the popup box
      */
-    makePopup(event, popupInfo) {
+    public makePopup(event, popupInfo) {
         const local = this;
         // Position it and let it be seen
         this.ngRenderer.setStyle(this.popupBoxDiv, 'top', event.clientY);
@@ -605,6 +688,13 @@ export class ModelViewComponent  implements AfterViewInit {
      */
     private refresh() {
         this.view.notifyChange(true);
+    }
+
+    /**
+     * Destroys objects and unsubscribes to ensure no memory leaks
+     */
+    public ngOnDestroy() {
+        this.helpSubscr.unsubscribe();
     }
 
 }
