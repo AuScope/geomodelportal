@@ -12,10 +12,10 @@ const MODEL_INIT_MSG = 'Model demonstration';
 })
 export class HelpComponent {
 
-  private sidebarButtonStr = SIDEBAR_INIT_MSG;
-  private sidebarTourStarted = false;
-  private modelButtonStr = MODEL_INIT_MSG;
-  private modelDemoStarted = false;
+  public sidebarButtonStr = SIDEBAR_INIT_MSG;
+  public sidebarTourStarted = false;
+  public modelButtonStr = MODEL_INIT_MSG;
+  public modelDemoStarted = false;
   private helpItemCount = -1;
   private modelDemoSeqNum = -1;
 
