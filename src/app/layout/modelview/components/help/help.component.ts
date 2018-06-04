@@ -108,7 +108,7 @@ export class HelpComponent {
    * @return true iff a model demo is in progress else false
    */
   public isDoingModelDemo() {
-      return this.modelDemoStarted;
+      return this.modelDemoSeqNum !== -1;
   }
 
   /**
@@ -116,7 +116,7 @@ export class HelpComponent {
    * @return true iff a sidebar tour is in progress else false
    */
   public isDoingSidebarTour() {
-      return this.sidebarTourStarted;
+      return  this.helpItemCount !== -1;
   }
 
 }

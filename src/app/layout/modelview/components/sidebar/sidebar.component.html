@@ -5,7 +5,7 @@
             <a class="list-group-item" (click)="addExpandClass(groupName)">
                 <span><i class="fa fa-plus" ngbPopover="{{groupMenuToggle.desc}}" popoverTitle="{{groupMenuToggle.title}}" placement="right" #group_menu_popover="ngbPopover" triggers="manual"></i>&nbsp;{{groupName}}</span>
                 <input *ngIf="getGroupTickBoxState(groupName)" (click)="groupCheckBoxClick($event, groupName, false)"
-                    ngbPopover="{{groupVisToggle.desc}}" popoverTitle="{{groupVisToggle.title}}" placement="right" #group_tick_popover="ngbPopover" triggers="manual"
+                    ngbPopover="{{groupVisToggle.desc}}" popoverTitle="{{groupVisToggle.title}}" placement="bottom" #group_tick_popover="ngbPopover" triggers="manual"
                     checked="true" class="vis-toggle" type="checkbox"/>
                 <input *ngIf="!getGroupTickBoxState(groupName)" (click)="groupCheckBoxClick($event, groupName, true)"
                     ngbPopover="{{groupVisToggle.desc}}" popoverTitle="{{groupVisToggle.title}}" placement="right" #group_tick_popover="ngbPopover" triggers="manual"
