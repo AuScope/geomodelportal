@@ -36,21 +36,26 @@
         </div>
         <div *ngIf="isRunningModelDemo()" id="demoPopup"><p>{{demoPopupMsg}}</p></div>
 
-        <div class="row">
-            <div class="col-md-2" id="help">
-                <p>Key bindings</p>
-                <ul>
-                      <li>Left-Click: rotate</li>
-                      <li>Right-Click: move</li>
-                      <li>Mouse Wheel: zoom</li>
-                      <li>Double Click: more info</li>
-                </ul>
-                <app-help></app-help>
+        <div id="helpButton">
+            <a style="color: white" (click)="isHelpCollapsed = !isHelpCollapsed">Help</a>
+        </div>
+        <div id="helpCollapse" [ngbCollapse]="isHelpCollapsed">
+            <div class="row">
+                <div class="col-md-2" id="help">
+                    <p>Key bindings</p>
+                    <ul>
+                          <li>Left-Click: rotate</li>
+                          <li>Right-Click: move</li>
+                          <li>Mouse Wheel: zoom</li>
+                          <li>Double Click: more info</li>
+                    </ul>
+                    <app-help></app-help>
+                </div>
             </div>
+        </div>
             <!-- <div class="col-md-2" id="modelControlsDiv">
                 <p>Model Controls</p>
                 <input type="button" style="bg-color: black"/>Reset View
             </div> -->
-        </div>
         <div id="popupBoxDiv" #popupBoxDiv><div id="popupExitDiv">X</div></div>
 </div>

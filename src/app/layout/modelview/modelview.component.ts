@@ -96,6 +96,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
     private demoPopupMsg = '';
 
+    public isHelpCollapsed = true;
+
     constructor(private modelInfoService: ModelInfoService, private elRef: ElementRef, private ngRenderer: Renderer2,
                 private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
                 private helpinfoService: HelpinfoService) {

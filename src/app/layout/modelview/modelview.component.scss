@@ -1,3 +1,7 @@
+a, div {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
     #demoPopup {
         position: absolute;
         color: #FF0000;
@@ -85,12 +89,28 @@
     }
 
     #help {
+        font-size: 12px;
+        font-weight: 400;
         position: absolute;
         z-index: 700;
         top: 0;
         right: 0;
         color: white;
-        font: 11px 'Lucida Grande',sans-serif;
+        line-height: normal;
+        text-shadow: 0 -1px 0 #111;
+        padding: 0 1rem;
+        background: #1a1a1a;
+        border: 1px solid #2c2c2c;
+        opacity: 0.8;
+    }
+
+    #helpButton {
+        font-size: 12px;
+        font-weight: 400;
+        position: absolute;
+        z-index: 2000;
+        top: 5px;
+        right: 0;
         line-height: normal;
         text-shadow: 0 -1px 0 #111;
         padding: 0 1rem;
