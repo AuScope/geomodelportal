@@ -2,7 +2,7 @@
         <app-sidebar></app-sidebar>
         <div [style.opacity]="isRunningModelDemo()? 0.5 : 1.0" id="viewerDiv" #viewerDiv></div>
         <div *ngIf="isRunningModelDemo()" id="modelDemoDiv" #modelDemoDiv>
-            <svg [style.height]="2.0*sphereCentreY" [style.width]="2.0*sphereCentreX">
+            <svg>
                 <circle [style.height]="2.0*sphereRadius" [style.width]="2.0*sphereRadius" [attr.r]="sphereRadius"
                               style="fill:none; stroke-width: 0.5px; stroke: #202020;" [attr.cx]="sphereCentreX" [attr.cy]="sphereCentreY"></circle>
                 <g *ngIf="modelDemoSeqNum == 0" style="stroke: rgb(255,0,0); stroke-width: 2;">

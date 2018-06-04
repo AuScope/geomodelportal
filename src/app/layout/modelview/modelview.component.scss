@@ -22,7 +22,16 @@
         height: 100%;
         padding: 0;
         min-height: 100vh;
+        min-width: 100vw;
     }
+
+#modelDemoDiv svg {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
 
     #popupBoxDiv {
         position: absolute;
