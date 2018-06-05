@@ -42,16 +42,22 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     private helpObs: Observable<any> = null;
 
     // These are all the help message for the sidebar
-    private groupVisToggle = { title: 'Toggle Group Visibility', desc: 'Click on this tick box to hide/display groups of objects.' };
-    private groupMenuToggle = { title: 'Group Menu Toggle', desc: 'Click on this to hide/display objects within a group' };
-    private partConfigToggle = { title: 'Controls', desc: 'Click here to reveal the controls for this part of the model' };
-    private partEyeball = { title: 'Reveal a model part', desc: 'To reveal this part, move your mouse over the eyeball icon' };
-    private partOffset = { title: 'Adjust height offset', desc: 'To adjust this part\'s height, move this slider by clicking or dragging' };
-    private partTransp = { title: 'Adjust transparency',
-                           desc: 'To adjust this part\'s transparency, move this slider by clicking or dragging' };
-    private partTick = { title: 'Toggle Part visibility', desc: 'Click on this tick box to hide/display this part' };
-    private resetView = { title: 'Reset Model View',
-                          desc: 'Click on this button to reset the view of the model back to its original state' };
+    public groupVisToggle = { title: 'Toggle Group Visibility',
+                              desc: 'Click on this tick box to hide/display groups of model parts in the viewing area.' };
+    public groupMenuToggle = { title: 'Group Menu Toggle',
+                               desc: 'Click on this to open/close view of parts within a group menu.' };
+    public partConfigToggle = { title: 'Model Part Controls',
+                                desc: 'Click here to open/close the controls for this model part.' };
+    public partEyeball = { title: 'Reveal a Model Part',
+                           desc: 'To reveal this model part in the viewing area, move your mouse over the eyeball icon.' };
+    public partOffset = { title: 'Adjust Height Offset',
+                          desc: 'To adjust this model part\'s height, move this slider by clicking or dragging.' };
+    public partTransp = { title: 'Adjust Transparency',
+                          desc: 'To adjust this model part\'s transparency, move this slider by clicking or dragging.' };
+    public partTick = { title: 'Toggle Part Visibility',
+                        desc: 'Click on this tick box to hide/display this model part.' };
+    public resetView = { title: 'Reset Model View',
+                         desc: 'Click on this button to reset the view of the model back to its original state.' };
 
     @ViewChild('group_tick_popover') public groupTickPopover: NgbPopover = null;
     @ViewChild('group_menu_popover') public groupMenuPopover: NgbPopover = null;
