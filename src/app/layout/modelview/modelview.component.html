@@ -44,18 +44,18 @@
                 <div class="col-md-2" id="help">
                     <p>Key bindings</p>
                     <ul>
-                          <li>Left-Click: rotate</li>
-                          <li>Right-Click: move</li>
-                          <li>Mouse Wheel: zoom</li>
-                          <li>Double Click: more info</li>
+                          <li>Left-Click: rotate model</li>
+                          <li>Right-Click: move model</li>
+                          <li>Mouse Wheel: zoom in/out</li>
+                          <li>Double Click: display more information</li>
                     </ul>
                     <app-help></app-help>
                 </div>
             </div>
         </div>
-            <!-- <div class="col-md-2" id="modelControlsDiv">
-                <p>Model Controls</p>
-                <input type="button" style="bg-color: black"/>Reset View
-            </div> -->
+        <div class="col-md-2" id="modelControlsDiv">
+            <p>Model Controls</p>
+            <button type="button" (click)="resetView()" class="btn btn-primary btn-sm">Reset View</button>
+        </div>
         <div id="popupBoxDiv" #popupBoxDiv><div id="popupExitDiv">X</div></div>
 </div>

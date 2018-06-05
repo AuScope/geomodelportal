@@ -678,6 +678,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.sidebarService.changeMenuState(menuChange);
     }
 
+    private resetView() {
+        console.log('Reset view');
+        this.trackBallControls.resetView();
+    }
+
     /**
      * Render view of model
      */

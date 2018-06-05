@@ -66,6 +66,10 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre) {
     // Setup the AnimationMixer
     var runningDemo = false;
 
+    // Update rObject's local matrix and store the value of the camera, rObject and offset for a future reset operation
+    rObject.updateMatrix();
+    this.resetState = { rObj: rObject.clone(), camera: this.camera.clone(), offset: this.cameraOffset.clone() };
+
     /**
      * Called when we need to update our record of the mouse position and delta
      * @param event mouse event
@@ -376,6 +380,21 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre) {
         action.setLoop(THREE.LoopOnce, 1);
         action.play();
         runningDemo = true;
+        viewObject.notifyChange(true);
+    };
+
+    /**
+     * Sets the camera back to its initial position
+     */
+    this.resetView = function resetView() {
+        // Restore rObject, camera position and offset 
+        rObject.position.copy(this.resetState.rObj.position);
+        rObject.matrix.copy(this.resetState.rObj.matrix);
+        rObject.rotation.setFromRotationMatrix(rObject.matrix);
+        scope.camera.position.copy(this.resetState.camera.position);
+        scope.cameraOffset.copy(this.resetState.offset);
+
+        // Update view
         viewObject.notifyChange(true);
     };
 
