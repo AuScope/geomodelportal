@@ -1,5 +1,11 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
     <h2 class="text-muted">{{title}}</h2>
+    <div id="modelControlsDiv">
+        <button type="button" (click)="resetModelView()" class="btn btn-outline-secondary btn-sm"
+            ngbPopover="{{resetView.desc}}" popoverTitle="{{resetView.title}}" placement="right" #reset_view_popover="ngbPopover" triggers="manual">
+            Reset View&nbsp;<i class="fa fa-undo" aria-hidden="true"></i></button>
+
+    </div>
     <div *ngIf="groupList.length > 0" class="list-group">
         <div *ngFor="let groupName of groupList" class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass(groupName)">

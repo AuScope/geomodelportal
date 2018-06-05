@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 
 export interface ProviderInfo {
     name: string;
@@ -49,6 +51,8 @@ export class ModelInfoService {
 
     // Stores the current state of the model parts
     private modelPartState = {};
+
+    private modelViewResetSub = new Subject<any>();
 
     constructor(private httpService: HttpClient) {
     }
@@ -219,7 +223,13 @@ export class ModelInfoService {
         this.modelPartState[groupName][partId] = state;
     }
 
-    // Called from the sidebar when tickbox is toggled
+    /**
+     * Indicate that something has changed
+     * Called from the sidebar when tickbox is toggled
+     * @param groupName name of group
+     * @param partId model part identifier
+     * @param stateChange object used to specify what has changed
+     */
     public setModelPartStateChange(groupName: string, partId: string, stateChange: ModelPartStateChange) {
         // Update our records with the state change
         if (stateChange.type === ModelPartStateChangeType.DISPLAYED) {
@@ -255,5 +265,20 @@ export class ModelInfoService {
      */
     public registerModelPartCallback(callback: ModelPartCallbackType) {
         this.modelPartCallback = callback;
+    }
+
+    /**
+     * Resets the view of the model back to the starting point
+     */
+    public resetModelView() {
+        this.modelViewResetSub.next();
+    }
+
+    /**
+     * Call this to get informed when user tries to reset model view
+     * @return an observable of the model reset view
+     */
+    public waitForModelViewReset(): Observable<any> {
+        return this.modelViewResetSub.asObservable();
     }
 }

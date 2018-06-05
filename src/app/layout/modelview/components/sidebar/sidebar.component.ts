@@ -50,6 +50,8 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     private partTransp = { title: 'Adjust transparency',
                            desc: 'To adjust this part\'s transparency, move this slider by clicking or dragging' };
     private partTick = { title: 'Toggle Part visibility', desc: 'Click on this tick box to hide/display this part' };
+    private resetView = { title: 'Reset Model View',
+                          desc: 'Click on this button to reset the view of the model back to its original state' };
 
     @ViewChild('group_tick_popover') public groupTickPopover: NgbPopover = null;
     @ViewChild('group_menu_popover') public groupMenuPopover: NgbPopover = null;
@@ -58,6 +60,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     @ViewChild('part_offset_popover') public partOffsetPopover: NgbPopover = null;
     @ViewChild('part_trans_popover') public partTransPopover: NgbPopover = null;
     @ViewChild('part_tick_popover') public partTickPopover: NgbPopover = null;
+    @ViewChild('reset_view_popover') public resetViewPopover: NgbPopover = null;
 
 
 
@@ -125,7 +128,8 @@ export class SidebarComponent  implements OnInit, OnDestroy {
         // NB: This list must contain all the ViewChild popovers above  & in the correct order
         // The order must correspond to the WidgetType enum
         const popoverList = [ this.groupTickPopover, this.groupMenuPopover, this.partConfigPopover,
-                             this.partEyeballPopover, this.partOffsetPopover, this.partTransPopover, this.partTickPopover ];
+                             this.partEyeballPopover, this.partOffsetPopover, this.partTransPopover, this.partTickPopover,
+                             this.resetViewPopover ];
         // Open up menu items at first group
         if (seqNum === 0 && this.groupList.length > 0) {
             this.revealFirstMenus(true);
@@ -287,6 +291,13 @@ export class SidebarComponent  implements OnInit, OnDestroy {
             }
         }
         return state;
+    }
+
+    /**
+     * Resets the view of the model back to its original state
+     */
+    public resetModelView() {
+        this.modelInfoService.resetModelView();
     }
 
     /**

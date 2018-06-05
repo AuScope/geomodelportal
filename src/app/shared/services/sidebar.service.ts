@@ -22,7 +22,7 @@ export class SidebarService {
      * Call this to notify the service that a menu item has changed state
      * @param menuChange contains information about which menu item changed and what is state is
      */
-    changeMenuState(menuChange: MenuChangeType) {
+    public changeMenuState(menuChange: MenuChangeType) {
         this.menuChangeSub.next(menuChange);
     }
 
@@ -30,7 +30,7 @@ export class SidebarService {
      * Call this to get informed of any changes in menu state
      * @return an observable of the menu item state
      */
-    getMenuChanges(): Observable<any> {
+    public getMenuChanges(): Observable<any> {
         return this.menuChangeSub.asObservable();
     }
 

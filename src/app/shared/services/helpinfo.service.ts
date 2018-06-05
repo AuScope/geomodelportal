@@ -3,7 +3,8 @@ import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
 // NB: 'END_TOUR' must always be the last item in the list
-export enum  WidgetType { GROUP_TICKBOX, GROUP_TOGGLE, PART_TICKBOX, PART_CONFIG, PART_OFFSET, PART_VISIBILITY, PART_EYEBALL, END_TOUR }
+export enum  WidgetType { GROUP_TICKBOX, GROUP_TOGGLE, PART_TICKBOX, PART_CONFIG,
+                          PART_OFFSET, PART_VISIBILITY, PART_EYEBALL, RESET_VIEW, END_TOUR }
 
 @Injectable()
 export class HelpinfoService {

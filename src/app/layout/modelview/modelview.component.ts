@@ -94,6 +94,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     // Subscribe to help info service to allow model demonstrations
     private helpSubscr: Subscription;
 
+    // Subscribe to model view reset events
+    private modelViewResetSubscr: Subscription;
+
     private demoPopupMsg = '';
 
     public isHelpCollapsed = true;
@@ -574,7 +577,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         // Wait for the signal to start model demonstration
         const helpObs = this.helpinfoService.waitForModelDemo();
         this.helpSubscr = helpObs.subscribe(seqNum => { this.runModelDemo(seqNum); });
-
+        const viewResetObs = this.modelInfoService.waitForModelViewReset();
+        this.modelViewResetSubscr = viewResetObs.subscribe(val => { this.resetModelView(); });
         console.log('scene = ', this.scene);
         this.view.notifyChange(true);
     }
@@ -678,7 +682,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.sidebarService.changeMenuState(menuChange);
     }
 
-    private resetView() {
+    /**
+     * Resets the view of the model back to the starting point
+     */
+    private resetModelView() {
         console.log('Reset view');
         this.trackBallControls.resetView();
     }
