@@ -3,8 +3,7 @@
     <div id="modelControlsDiv">
         <button type="button" (click)="resetModelView()" class="btn btn-outline-secondary btn-sm"
             ngbPopover="{{resetView.desc}}" popoverTitle="{{resetView.title}}" placement="right" #reset_view_popover="ngbPopover" triggers="manual">
-            Reset View&nbsp;<i class="fa fa-undo" aria-hidden="true"></i></button>
-
+            <i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Reset View</button>
     </div>
     <div *ngIf="groupList.length > 0" class="list-group">
         <div *ngFor="let groupName of groupList" class="nested-menu">

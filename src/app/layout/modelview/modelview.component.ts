@@ -588,6 +588,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param demoState 0 = rotate along x-axis, 1 = y-axis, 2 = z-axis
      */
     public runModelDemo(demoState: number) {
+        // When demo starts, reset model to initial position
+        if (demoState === 0) {
+            this.resetModelView();
+        }
         if (this.trackBallControls) {
             this.trackBallControls.runModelRotate(demoState);
         }

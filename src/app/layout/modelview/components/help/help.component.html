@@ -1,12 +1,23 @@
 <div class="row">
-    <div class="col col-xs-12">
-        <button type="button" class="btn btn-outline-secondary mr-2 help-buttons" [disabled]="isDoingSidebarTour()" (click)="doModelDemo()" placement="left">{{modelButtonStr}}</button>
-        <button *ngIf="modelDemoStarted" type="button" class="btn btn-outline-secondary mr-2 help-buttons" (click)="endModelDemo()" placement="left">Stop Demo</button>
-    </div>
-</div>
-<div class="row">
-    <div class="col col-xs-12">
-        <button type="button" class="btn btn-outline-secondary mr-2 help-buttons" [disabled]="isDoingModelDemo()" (click)="doSidebarTour()" placement="left">{{sidebarButtonStr}}</button>
-        <button *ngIf="sidebarTourStarted" type="button" class="btn btn-outline-secondary mr-2 help-buttons" (click)="endSidebarTour()" placement="right">Stop Tour</button>
+    <div class="col-md-3" id="help">
+        <p>Mouse controls</p>
+        <ul>
+              <li>Left-Click: rotate model</li>
+              <li>Right-Click: move model</li>
+              <li>Mouse Wheel: zoom in/out</li>
+              <li>Double Click: display more information</li>
+        </ul>
+        <div class="row">
+            <div class="col col-xs-12">
+                <button type="button" class="btn btn-outline-secondary mr-2 help-buttons" [disabled]="isDoingSidebarTour()" (click)="doModelDemo()" placement="left">{{modelButtonStr}}</button>
+                <button *ngIf="modelDemoStarted" type="button" class="btn btn-outline-secondary mr-2 help-buttons" (click)="endModelDemo()" placement="left">Stop Demo</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-xs-12">
+                <button type="button" class="btn btn-outline-secondary mr-2 help-buttons" [disabled]="isDoingModelDemo()" (click)="doSidebarTour()" placement="left">{{sidebarButtonStr}}</button>
+                <button *ngIf="sidebarTourStarted" type="button" class="btn btn-outline-secondary mr-2 help-buttons" (click)="endSidebarTour()" placement="right">Stop Tour</button>
+            </div>
+        </div>
     </div>
 </div>
