@@ -47,7 +47,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     public groupMenuToggle = { title: 'Group Menu Toggle',
                                desc: 'Click on this to open/close view of parts within a group menu.' };
     public partConfigToggle = { title: 'Model Part Controls',
-                                desc: 'Click here to open/close the controls for this model part.' };
+                                desc: 'Click here to open/close the control panel for this model part.' };
     public partEyeball = { title: 'Reveal a Model Part',
                            desc: 'To reveal this model part in the viewing area, move your mouse over the eyeball icon.' };
     public partOffset = { title: 'Adjust Height Offset',
@@ -55,7 +55,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     public partTransp = { title: 'Adjust Transparency',
                           desc: 'To adjust this model part\'s transparency, move this slider by clicking or dragging.' };
     public partTick = { title: 'Toggle Part Visibility',
-                        desc: 'Click on this tick box to hide/display this model part.' };
+                        desc: 'Click on this tick box to hide/display this model part in the viewing area.' };
     public resetView = { title: 'Reset Model View',
                          desc: 'Click on this button to reset the view of the model back to its original state.' };
 
@@ -233,14 +233,15 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     }
 
     /**
-     * Opens up the controls for a part of the model within the sidebar
+     * Opens up the controls for a part of the model within the sidebar, but
+     * only if the part is displayed in viewing area
      * @param groupName model part's group name
      * @param partId model part's id
      */
     public toggleControls(groupName: string, partId: string) {
         if (this.displayControls[groupName][partId] === DISPLAY_CTRL_ON) {
             this.displayControls[groupName][partId] = DISPLAY_CTRL_OFF;
-        } else {
+        } else if (this.modelPartState[groupName][partId].displayed) {
             this.displayControls[groupName][partId] = DISPLAY_CTRL_ON;
         }
     }
@@ -250,7 +251,10 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * @param groupName model part's group name
      * @param partId model part's id
      */
-    public getDisplayControls(groupName: string, partId: string) {
+    public getDisplayControls(groupName: string, partId: string): string {
+        if (!this.modelPartState[groupName][partId].displayed) {
+            this.displayControls[groupName][partId] = DISPLAY_CTRL_OFF;
+        }
         return this.displayControls[groupName][partId];
     }
 
@@ -262,6 +266,10 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      */
     public checkBoxClick(groupName: string, partId: string, state: boolean) {
         this.modelPartState[groupName][partId].displayed = state;
+        // If making part invisible, then collapse the control panel
+        if (!state) {
+            this.displayControls[groupName][partId] = DISPLAY_CTRL_OFF;
+        }
         this.modelInfoService.setModelPartStateChange(groupName, partId,
             { type: ModelPartStateChangeType.DISPLAYED, new_value: this.modelPartState[groupName][partId].displayed } );
     }

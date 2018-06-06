@@ -25,9 +25,11 @@
                                    ngbPopover="{{partTick.desc}}" popoverTitle="{{partTick.title}}" placement="right" #part_tick_popover="ngbPopover" triggers="manual"/>
                             <input *ngIf="!modelPartState[groupName][subGroupObj.model_url].displayed" (click)="checkBoxClick(groupName, subGroupObj.model_url, true)" class="vis-toggle" type="checkbox"
                                    ngbPopover="{{partTick.desc}}" popoverTitle="{{partTick.title}}" placement="right" #part_tick_popover="ngbPopover" triggers="manual"/>
-                            <i class="fa fa-lg fa-cog part-controls" (click)="toggleControls(groupName, subGroupObj.model_url)"
-                                ngbPopover="{{partConfigToggle.desc}}" popoverTitle="{{partConfigToggle.title}}" placement="right" #part_config_popover="ngbPopover" triggers="manual"></i>
-                            <i class="fa fa-lg fa-eye" (mouseenter)="revealPart(groupName, subGroupObj.model_url, true)" (mouseleave)="revealPart(groupName, subGroupObj.model_url, false)"
+                            <i class="fa fa-lg fa-cog part-controls" [ngClass]="{'fa-disabled': !modelPartState[groupName][subGroupObj.model_url].displayed}"
+                               (click)="toggleControls(groupName, subGroupObj.model_url)"
+                               ngbPopover="{{partConfigToggle.desc}}" popoverTitle="{{partConfigToggle.title}}" placement="right" #part_config_popover="ngbPopover" triggers="manual"></i>
+                            <i class="fa fa-lg fa-eye" [ngClass]="{'fa-disabled': !modelPartState[groupName][subGroupObj.model_url].displayed}"
+                               (mouseenter)="revealPart(groupName, subGroupObj.model_url, true)" (mouseleave)="revealPart(groupName, subGroupObj.model_url, false)"
                                ngbPopover="{{partEyeball.desc}}" popoverTitle="{{partEyeball.title}}" placement="right" #part_eyeball_popover="ngbPopover" triggers="manual"></i>
                         </a>
                         <div id="controlsDiv" [style.display]="getDisplayControls(groupName, subGroupObj.model_url)">

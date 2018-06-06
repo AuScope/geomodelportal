@@ -194,3 +194,10 @@ $topnav-background-color: #222;
 .btn-sm {
     font-size: 11px;
 }
+
+.fa-disabled {
+    opacity: 0.6;
+    /* cursor: not-allowed;*/
+    color: lightgrey;
+    pointer-events: none;
+}
