@@ -3,7 +3,7 @@
         "Mineral Formations": [
             {
                 "display_name": "02 water",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "02_water.gltf",
                 "popups": {
@@ -16,7 +16,7 @@
             },
             {
                 "display_name": "03 Cenozoic basalt",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "03_Cenozoic_basalt.gltf",
                 "popups": {
@@ -29,7 +29,7 @@
             },
             {
                 "display_name": "04 Cenozoic sediment",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "04_Cenozoic_sediment.gltf",
                 "popups": {
@@ -42,7 +42,7 @@
             },
             {
                 "display_name": "05 Tasmanian Dolerite",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "05_Tasmanian_Dolerite.gltf",
                 "popups": {
@@ -55,7 +55,7 @@
             },
             {
                 "display_name": "06 Devonian granite",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "06_Devonian_granite.gltf",
                 "popups": {
@@ -68,7 +68,7 @@
             },
             {
                 "display_name": "06 Devonian granite base",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "06_Devonian_granite_base.gltf",
                 "popups": {
@@ -81,7 +81,7 @@
             },
             {
                 "display_name": "07 Parmeener Supergroup",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "07_Parmeener_Supergroup.gltf",
                 "popups": {
@@ -94,7 +94,7 @@
             },
             {
                 "display_name": "08 Eldon Group",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "08_Eldon_Group.gltf",
                 "popups": {
@@ -107,7 +107,7 @@
             },
             {
                 "display_name": "09 Gordon Group",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "09_Gordon_Group.gltf",
                 "popups": {
@@ -120,7 +120,7 @@
             },
             {
                 "display_name": "09 Moina Sandstone",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "09_Moina_Sandstone.gltf",
                 "popups": {
@@ -133,7 +133,7 @@
             },
             {
                 "display_name": "10 Owen Group",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "10_Owen_Group.gltf",
                 "popups": {
@@ -146,7 +146,7 @@
             },
             {
                 "display_name": "11 Tyndall Group",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "11_Tyndall_Group.gltf",
                 "popups": {
@@ -159,7 +159,7 @@
             },
             {
                 "display_name": "12 Que Hellyer Volcanics",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "12_Que_Hellyer_Volcanics.gltf",
                 "popups": {
@@ -172,7 +172,7 @@
             },
             {
                 "display_name": "12 Western Volcano Sed Seq",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "12_Western_Volcano_Sedimentary_sequence.gltf",
                 "popups": {
@@ -185,7 +185,7 @@
             },
             {
                 "display_name": "14 andesite",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "14_andesite.gltf",
                 "popups": {
@@ -198,7 +198,7 @@
             },
             {
                 "display_name": "17 Cambrian granite mag",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "17_Cambrian_granite_magnetic.gltf",
                 "popups": {
@@ -211,7 +211,7 @@
             },
             {
                 "display_name": "18 Cambrian granite non mag",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "18_Cambrian_granite_non_magnetic.gltf",
                 "popups": {
@@ -224,7 +224,7 @@
             },
             {
                 "display_name": "19 quartz feldspar porphyry",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "19_quartz_feldspar_porphyry.gltf",
                 "popups": {
@@ -237,7 +237,7 @@
             },
             {
                 "display_name": "20 Central Volcanic Complex",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "20_Central_Volcanic_Complex.gltf",
                 "popups": {
@@ -250,7 +250,7 @@
             },
             {
                 "display_name": "21 Bonds Range Porphyry",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "21_Bonds_Range_Porphyry.gltf",
                 "popups": {
@@ -263,7 +263,7 @@
             },
             {
                 "display_name": "22 Farrell Slate",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "22_Farrell_Slate.gltf",
                 "popups": {
@@ -276,7 +276,7 @@
             },
             {
                 "display_name": "23 Eastern Quartz Phyric Seq",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "23_Eastern_Quartz_Phyric_Sequence.gltf",
                 "popups": {
@@ -289,7 +289,7 @@
             },
             {
                 "display_name": "24 Sticht Range Formation",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "24_Sticht_Range_Formation.gltf",
                 "popups": {
@@ -302,7 +302,7 @@
             },
             {
                 "display_name": "25 Luina Group",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "25_Luina_Group.gltf",
                 "popups": {
@@ -315,7 +315,7 @@
             },
             {
                 "display_name": "27 Crimson Creek Formation",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "27_Crimson_Creek_Formation.gltf",
                 "popups": {
@@ -328,7 +328,7 @@
             },
             {
                 "display_name": "28 Success Creek Group",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "28_Success_Creek_Group.gltf",
                 "popups": {
@@ -341,7 +341,7 @@
             },
             {
                 "display_name": "30 Rocky Cape Group",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "30_Rocky_Cape_Group.gltf",
                 "popups": {
@@ -356,7 +356,7 @@
         "Geograpic Grids": [
             {
                 "display_name": "352000mE 5320000mN",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "352000mE_5320000mN.gltf",
                 "popups": null,
@@ -364,7 +364,7 @@
             },
             {
                 "display_name": "352000mE 5335000mN",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "352000mE_5335000mN.gltf",
                 "popups": null,
@@ -372,7 +372,7 @@
             },
             {
                 "display_name": "352000mE 5355000mN",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "352000mE_5355000mN.gltf",
                 "popups": null,
@@ -380,7 +380,7 @@
             },
             {
                 "display_name": "352000mE 5375000mN",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "352000mE_5375000mN.gltf",
                 "popups": null,
@@ -388,7 +388,7 @@
             },
             {
                 "display_name": "352000mE 5395000mN",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "352000mE_5395000mN.gltf",
                 "popups": null,
@@ -396,7 +396,7 @@
             },
             {
                 "display_name": "372000mE 5320000mN",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "372000mE_5320000mN.gltf",
                 "popups": null,
@@ -404,7 +404,7 @@
             },
             {
                 "display_name": "372000mE 5335000mN",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "372000mE_5335000mN.gltf",
                 "popups": null,
@@ -412,7 +412,7 @@
             },
             {
                 "display_name": "372000mE 5355000mN",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "372000mE_5355000mN.gltf",
                 "popups": null,
@@ -420,7 +420,7 @@
             },
             {
                 "display_name": "372000mE 5375000mN",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "372000mE_5375000mN.gltf",
                 "popups": null,
@@ -428,7 +428,7 @@
             },
             {
                 "display_name": "372000mE 5395000mN",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "372000mE_5395000mN.gltf",
                 "popups": null,
@@ -436,7 +436,7 @@
             },
             {
                 "display_name": "397000mE 5320000mN",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "397000mE_5320000mN.gltf",
                 "popups": null,
@@ -444,7 +444,7 @@
             },
             {
                 "display_name": "397000mE 5335000mN",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "397000mE_5335000mN.gltf",
                 "popups": null,
@@ -452,7 +452,7 @@
             },
             {
                 "display_name": "397000mE 5355000mN",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "397000mE_5355000mN.gltf",
                 "popups": null,
@@ -460,7 +460,7 @@
             },
             {
                 "display_name": "397000mE 5375000mN",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "397000mE_5375000mN.gltf",
                 "popups": null,
@@ -468,7 +468,7 @@
             },
             {
                 "display_name": "397000mE 5395000mN",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "397000mE_5395000mN.gltf",
                 "popups": null,
@@ -478,7 +478,7 @@
         "Faults": [
             {
                 "display_name": "F 000 Federal Bassett fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_000_Federal_Bassett_fault.gltf",
                 "popups": {
@@ -491,7 +491,7 @@
             },
             {
                 "display_name": "F 001 Rosebery Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_001_Rosebery_Fault.gltf",
                 "popups": {
@@ -504,7 +504,7 @@
             },
             {
                 "display_name": "F 001 Rosebery Fault inferred",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_001_Rosebery_Fault_inferred.gltf",
                 "popups": {
@@ -517,7 +517,7 @@
             },
             {
                 "display_name": "F 002 Mt Black Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_002_Mt_Black_Fault.gltf",
                 "popups": {
@@ -530,7 +530,7 @@
             },
             {
                 "display_name": "F 003 Moxons Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_003_Moxons_Fault.gltf",
                 "popups": {
@@ -543,7 +543,7 @@
             },
             {
                 "display_name": "F 004 Marionoak Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_004_Marionoak_Fault.gltf",
                 "popups": {
@@ -556,7 +556,7 @@
             },
             {
                 "display_name": "F 005 Henty Fault 1",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_005_Henty_Fault_1.gltf",
                 "popups": {
@@ -569,7 +569,7 @@
             },
             {
                 "display_name": "F 005 Henty Fault 2",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_005_Henty_Fault_2.gltf",
                 "popups": {
@@ -582,7 +582,7 @@
             },
             {
                 "display_name": "F 005 Henty Fault 3",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_005_Henty_Fault_3.gltf",
                 "popups": {
@@ -595,7 +595,7 @@
             },
             {
                 "display_name": "F 006 South Henty Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_006_South_Henty_Fault.gltf",
                 "popups": {
@@ -608,7 +608,7 @@
             },
             {
                 "display_name": "F 007 Mt Strahan Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_007_Mt_Strahan_Fault.gltf",
                 "popups": {
@@ -621,7 +621,7 @@
             },
             {
                 "display_name": "F 008",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_008.gltf",
                 "popups": {
@@ -634,7 +634,7 @@
             },
             {
                 "display_name": "F 009",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_009.gltf",
                 "popups": {
@@ -647,7 +647,7 @@
             },
             {
                 "display_name": "F 010 Mt Cripps Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_010_Mt_Cripps_Fault.gltf",
                 "popups": {
@@ -660,7 +660,7 @@
             },
             {
                 "display_name": "F 011",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_011.gltf",
                 "popups": {
@@ -673,7 +673,7 @@
             },
             {
                 "display_name": "F 012 Mt Charter Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_012_Mt_Charter_Fault.gltf",
                 "popups": {
@@ -686,7 +686,7 @@
             },
             {
                 "display_name": "F 013",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_013.gltf",
                 "popups": {
@@ -699,7 +699,7 @@
             },
             {
                 "display_name": "F 014",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_014.gltf",
                 "popups": {
@@ -712,7 +712,7 @@
             },
             {
                 "display_name": "F 015 Anthony River Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_015_Anthony_River_Fault.gltf",
                 "popups": {
@@ -725,7 +725,7 @@
             },
             {
                 "display_name": "F 016",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_016.gltf",
                 "popups": {
@@ -738,7 +738,7 @@
             },
             {
                 "display_name": "F 017",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_017.gltf",
                 "popups": {
@@ -751,7 +751,7 @@
             },
             {
                 "display_name": "F 018 Ewart Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_018_Ewart_Fault.gltf",
                 "popups": {
@@ -764,7 +764,7 @@
             },
             {
                 "display_name": "F 019",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_019.gltf",
                 "popups": {
@@ -777,7 +777,7 @@
             },
             {
                 "display_name": "F 020",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_020.gltf",
                 "popups": {
@@ -790,7 +790,7 @@
             },
             {
                 "display_name": "F 021 Engineer Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_021_Engineer_Fault.gltf",
                 "popups": {
@@ -803,7 +803,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault 01",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_01.gltf",
                 "popups": {
@@ -816,7 +816,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault 02",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_02.gltf",
                 "popups": {
@@ -829,7 +829,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault 03",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_03.gltf",
                 "popups": {
@@ -842,7 +842,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault 04",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_04.gltf",
                 "popups": {
@@ -855,7 +855,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault 05",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_05.gltf",
                 "popups": {
@@ -868,7 +868,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault 06",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_06.gltf",
                 "popups": {
@@ -881,7 +881,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault 07",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_07.gltf",
                 "popups": {
@@ -894,7 +894,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault 08",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_08.gltf",
                 "popups": {
@@ -907,7 +907,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault 09",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_09.gltf",
                 "popups": {
@@ -920,7 +920,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault 10",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_10.gltf",
                 "popups": {
@@ -933,7 +933,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault 11",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_11.gltf",
                 "popups": {
@@ -946,7 +946,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 01",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_01.gltf",
                 "popups": {
@@ -959,7 +959,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 02",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_02.gltf",
                 "popups": {
@@ -972,7 +972,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 03",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_03.gltf",
                 "popups": {
@@ -985,7 +985,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 04",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_04.gltf",
                 "popups": {
@@ -998,7 +998,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 05",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_05.gltf",
                 "popups": {
@@ -1011,7 +1011,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 06",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_06.gltf",
                 "popups": {
@@ -1024,7 +1024,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 07",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_07.gltf",
                 "popups": {
@@ -1037,7 +1037,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 08",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_08.gltf",
                 "popups": {
@@ -1050,7 +1050,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 09",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_09.gltf",
                 "popups": {
@@ -1063,7 +1063,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 10",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_10.gltf",
                 "popups": {
@@ -1076,7 +1076,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 11",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_11.gltf",
                 "popups": {
@@ -1089,7 +1089,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 12",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_12.gltf",
                 "popups": {
@@ -1102,7 +1102,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 13",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_13.gltf",
                 "popups": {
@@ -1115,7 +1115,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 14",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_14.gltf",
                 "popups": {
@@ -1128,7 +1128,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 15",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_15.gltf",
                 "popups": {
@@ -1141,7 +1141,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 16",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_16.gltf",
                 "popups": {
@@ -1154,7 +1154,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 17",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_17.gltf",
                 "popups": {
@@ -1167,7 +1167,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 18",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_18.gltf",
                 "popups": {
@@ -1180,7 +1180,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 19",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_19.gltf",
                 "popups": {
@@ -1193,7 +1193,7 @@
             },
             {
                 "display_name": "F 022 ultramafic fault inferred 20",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_20.gltf",
                 "popups": {
@@ -1206,7 +1206,7 @@
             },
             {
                 "display_name": "F 023 Firewood Siding Fault 02",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_023_Firewood_Siding_Fault_02.gltf",
                 "popups": {
@@ -1219,7 +1219,7 @@
             },
             {
                 "display_name": "F 023 Firewood Siding Fault 03",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_023_Firewood_Siding_Fault_03.gltf",
                 "popups": {
@@ -1232,7 +1232,7 @@
             },
             {
                 "display_name": "F 023 Firewood Siding Fault 04",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_023_Firewood_Siding_Fault_04.gltf",
                 "popups": {
@@ -1245,7 +1245,7 @@
             },
             {
                 "display_name": "F 023 Firewood Siding Fault 05",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_023_Firewood_Siding_Fault_05.gltf",
                 "popups": {
@@ -1258,7 +1258,7 @@
             },
             {
                 "display_name": "F 023 Firewood Siding fault 01",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_023_Firewood_Siding_fault_01.gltf",
                 "popups": {
@@ -1271,7 +1271,7 @@
             },
             {
                 "display_name": "F 024",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_024.gltf",
                 "popups": {
@@ -1284,7 +1284,7 @@
             },
             {
                 "display_name": "F 025",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_025.gltf",
                 "popups": {
@@ -1297,7 +1297,7 @@
             },
             {
                 "display_name": "F 026",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_026.gltf",
                 "popups": {
@@ -1310,7 +1310,7 @@
             },
             {
                 "display_name": "F 027 Glen Lyell Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_027_Glen_Lyell_Fault.gltf",
                 "popups": {
@@ -1323,7 +1323,7 @@
             },
             {
                 "display_name": "F 028 Great Northern Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_028_Great_Northern_Fault.gltf",
                 "popups": {
@@ -1336,7 +1336,7 @@
             },
             {
                 "display_name": "F 029",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_029.gltf",
                 "popups": {
@@ -1349,7 +1349,7 @@
             },
             {
                 "display_name": "F 030 Great Lyell Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_030_Great_Lyell_Fault.gltf",
                 "popups": {
@@ -1362,7 +1362,7 @@
             },
             {
                 "display_name": "F 031 King River Fault splay",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_031_King_River_Fault_splay.gltf",
                 "popups": {
@@ -1375,7 +1375,7 @@
             },
             {
                 "display_name": "F 032 King River Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_032_King_River_Fault.gltf",
                 "popups": {
@@ -1388,7 +1388,7 @@
             },
             {
                 "display_name": "F 033",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_033.gltf",
                 "popups": {
@@ -1401,7 +1401,7 @@
             },
             {
                 "display_name": "F 034",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_034.gltf",
                 "popups": {
@@ -1414,7 +1414,7 @@
             },
             {
                 "display_name": "F 035",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_035.gltf",
                 "popups": {
@@ -1427,7 +1427,7 @@
             },
             {
                 "display_name": "F 036",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_036.gltf",
                 "popups": {
@@ -1440,7 +1440,7 @@
             },
             {
                 "display_name": "F 037 North Lyell Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_037_North_Lyell_Fault.gltf",
                 "popups": {
@@ -1453,7 +1453,7 @@
             },
             {
                 "display_name": "F 038 East Jukes Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_038_East_Jukes_Fault.gltf",
                 "popups": {
@@ -1466,7 +1466,7 @@
             },
             {
                 "display_name": "F 039 West Jukes Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_039_West_Jukes_Fault.gltf",
                 "popups": {
@@ -1479,7 +1479,7 @@
             },
             {
                 "display_name": "F 040 North Lyell Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_040_North_Lyell_Fault.gltf",
                 "popups": {
@@ -1492,7 +1492,7 @@
             },
             {
                 "display_name": "F 041",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_041.gltf",
                 "popups": {
@@ -1505,7 +1505,7 @@
             },
             {
                 "display_name": "F 042 Teepookana",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_042_Teepookana.gltf",
                 "popups": {
@@ -1518,7 +1518,7 @@
             },
             {
                 "display_name": "F 043 Little Henty Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_043_Little_Henty_Fault.gltf",
                 "popups": {
@@ -1531,7 +1531,7 @@
             },
             {
                 "display_name": "F 044",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_044.gltf",
                 "popups": {
@@ -1544,7 +1544,7 @@
             },
             {
                 "display_name": "F 045",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_045.gltf",
                 "popups": {
@@ -1557,7 +1557,7 @@
             },
             {
                 "display_name": "F 046",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_046.gltf",
                 "popups": {
@@ -1570,7 +1570,7 @@
             },
             {
                 "display_name": "F 047",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_047.gltf",
                 "popups": {
@@ -1583,7 +1583,7 @@
             },
             {
                 "display_name": "F 048 Comstock Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_048_Comstock_Fault.gltf",
                 "popups": {
@@ -1596,7 +1596,7 @@
             },
             {
                 "display_name": "F 049 Tenth Legion Thrust",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_049_Tenth_Legion_Thrust.gltf",
                 "popups": {
@@ -1609,7 +1609,7 @@
             },
             {
                 "display_name": "F 050",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_050.gltf",
                 "popups": {
@@ -1622,7 +1622,7 @@
             },
             {
                 "display_name": "F 051",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_051.gltf",
                 "popups": {
@@ -1635,7 +1635,7 @@
             },
             {
                 "display_name": "F 052",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_052.gltf",
                 "popups": {
@@ -1648,7 +1648,7 @@
             },
             {
                 "display_name": "F 053",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_053.gltf",
                 "popups": {
@@ -1661,7 +1661,7 @@
             },
             {
                 "display_name": "F 054",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_054.gltf",
                 "popups": {
@@ -1674,7 +1674,7 @@
             },
             {
                 "display_name": "F 055",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_055.gltf",
                 "popups": {
@@ -1687,7 +1687,7 @@
             },
             {
                 "display_name": "F 056",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_056.gltf",
                 "popups": {
@@ -1700,7 +1700,7 @@
             },
             {
                 "display_name": "F 057",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_057.gltf",
                 "popups": {
@@ -1713,7 +1713,7 @@
             },
             {
                 "display_name": "F 058",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_058.gltf",
                 "popups": {
@@ -1726,7 +1726,7 @@
             },
             {
                 "display_name": "F 059",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_059.gltf",
                 "popups": {
@@ -1739,7 +1739,7 @@
             },
             {
                 "display_name": "F 060",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_060.gltf",
                 "popups": {
@@ -1752,7 +1752,7 @@
             },
             {
                 "display_name": "F 061",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_061.gltf",
                 "popups": {
@@ -1765,7 +1765,7 @@
             },
             {
                 "display_name": "F 062",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_062.gltf",
                 "popups": {
@@ -1778,7 +1778,7 @@
             },
             {
                 "display_name": "F 064",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_064.gltf",
                 "popups": {
@@ -1791,7 +1791,7 @@
             },
             {
                 "display_name": "F 065",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_065.gltf",
                 "popups": {
@@ -1804,7 +1804,7 @@
             },
             {
                 "display_name": "F 066",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_066.gltf",
                 "popups": {
@@ -1817,7 +1817,7 @@
             },
             {
                 "display_name": "F 067",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_067.gltf",
                 "popups": {
@@ -1830,7 +1830,7 @@
             },
             {
                 "display_name": "F 068",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_068.gltf",
                 "popups": {
@@ -1843,7 +1843,7 @@
             },
             {
                 "display_name": "F 069",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_069.gltf",
                 "popups": {
@@ -1856,7 +1856,7 @@
             },
             {
                 "display_name": "F 070",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_070.gltf",
                 "popups": {
@@ -1869,7 +1869,7 @@
             },
             {
                 "display_name": "F 071",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_071.gltf",
                 "popups": {
@@ -1882,7 +1882,7 @@
             },
             {
                 "display_name": "F 072",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_072.gltf",
                 "popups": {
@@ -1895,7 +1895,7 @@
             },
             {
                 "display_name": "F 073",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_073.gltf",
                 "popups": {
@@ -1908,7 +1908,7 @@
             },
             {
                 "display_name": "F 074",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_074.gltf",
                 "popups": {
@@ -1921,7 +1921,7 @@
             },
             {
                 "display_name": "F 075",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_075.gltf",
                 "popups": {
@@ -1934,7 +1934,7 @@
             },
             {
                 "display_name": "F 076",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_076.gltf",
                 "popups": {
@@ -1947,7 +1947,7 @@
             },
             {
                 "display_name": "F 077",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_077.gltf",
                 "popups": {
@@ -1960,7 +1960,7 @@
             },
             {
                 "display_name": "F 078",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_078.gltf",
                 "popups": {
@@ -1973,7 +1973,7 @@
             },
             {
                 "display_name": "F 079",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_079.gltf",
                 "popups": {
@@ -1986,7 +1986,7 @@
             },
             {
                 "display_name": "F 080",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_080.gltf",
                 "popups": {
@@ -1999,7 +1999,7 @@
             },
             {
                 "display_name": "F 081",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_081.gltf",
                 "popups": {
@@ -2012,7 +2012,7 @@
             },
             {
                 "display_name": "F 082",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_082.gltf",
                 "popups": {
@@ -2025,7 +2025,7 @@
             },
             {
                 "display_name": "F 083 Brickfield Fault",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_083_Brickfield_Fault.gltf",
                 "popups": {
@@ -2038,7 +2038,7 @@
             },
             {
                 "display_name": "F 084",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_084.gltf",
                 "popups": {
@@ -2051,7 +2051,7 @@
             },
             {
                 "display_name": "F 085",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_085.gltf",
                 "popups": {
@@ -2064,7 +2064,7 @@
             },
             {
                 "display_name": "F 086",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_086.gltf",
                 "popups": {
@@ -2077,7 +2077,7 @@
             },
             {
                 "display_name": "F 087",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_087.gltf",
                 "popups": {
@@ -2090,7 +2090,7 @@
             },
             {
                 "display_name": "F 088",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_088.gltf",
                 "popups": {
@@ -2103,7 +2103,7 @@
             },
             {
                 "display_name": "F 089",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_089.gltf",
                 "popups": {
@@ -2116,7 +2116,7 @@
             },
             {
                 "display_name": "F 090",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_090.gltf",
                 "popups": {
@@ -2129,7 +2129,7 @@
             },
             {
                 "display_name": "F 091",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_091.gltf",
                 "popups": {
@@ -2142,7 +2142,7 @@
             },
             {
                 "display_name": "F 092",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_092.gltf",
                 "popups": {
@@ -2155,7 +2155,7 @@
             },
             {
                 "display_name": "F 093",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_093.gltf",
                 "popups": {
@@ -2168,7 +2168,7 @@
             },
             {
                 "display_name": "F 094",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_094.gltf",
                 "popups": {
@@ -2181,7 +2181,7 @@
             },
             {
                 "display_name": "F 095",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_095.gltf",
                 "popups": {
@@ -2194,7 +2194,7 @@
             },
             {
                 "display_name": "F 096",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_096.gltf",
                 "popups": {
@@ -2207,7 +2207,7 @@
             },
             {
                 "display_name": "F 097",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_097.gltf",
                 "popups": {
@@ -2220,7 +2220,7 @@
             },
             {
                 "display_name": "F 098",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_098.gltf",
                 "popups": {
@@ -2233,7 +2233,7 @@
             },
             {
                 "display_name": "F 099",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_099.gltf",
                 "popups": {
@@ -2246,7 +2246,7 @@
             },
             {
                 "display_name": "F 100",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_100.gltf",
                 "popups": {
@@ -2259,7 +2259,7 @@
             },
             {
                 "display_name": "F 101",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_101.gltf",
                 "popups": {
@@ -2272,7 +2272,7 @@
             },
             {
                 "display_name": "F 102",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_102.gltf",
                 "popups": {
@@ -2285,7 +2285,7 @@
             },
             {
                 "display_name": "F 103",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_103.gltf",
                 "popups": {
@@ -2298,7 +2298,7 @@
             },
             {
                 "display_name": "F 104",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_104.gltf",
                 "popups": {
@@ -2311,7 +2311,7 @@
             },
             {
                 "display_name": "F 105",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_105.gltf",
                 "popups": {
@@ -2324,7 +2324,7 @@
             },
             {
                 "display_name": "F 106",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_106.gltf",
                 "popups": {
@@ -2337,7 +2337,7 @@
             },
             {
                 "display_name": "F 107",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_107.gltf",
                 "popups": {
@@ -2350,7 +2350,7 @@
             },
             {
                 "display_name": "F 108",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_108.gltf",
                 "popups": {
@@ -2363,7 +2363,7 @@
             },
             {
                 "display_name": "F 109",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_109.gltf",
                 "popups": {
@@ -2376,7 +2376,7 @@
             },
             {
                 "display_name": "F 110",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "F_110.gltf",
                 "popups": {
@@ -2391,7 +2391,7 @@
         "Geography": [
             {
                 "display_name": "Avebury",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "Avebury.gltf",
                 "popups": null,
@@ -2399,7 +2399,7 @@
             },
             {
                 "display_name": "Hellyer",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "Hellyer.gltf",
                 "popups": null,
@@ -2407,7 +2407,7 @@
             },
             {
                 "display_name": "Henty",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "Henty.gltf",
                 "popups": null,
@@ -2415,7 +2415,7 @@
             },
             {
                 "display_name": "Mt Lindsay",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "Mt_Lindsay.gltf",
                 "popups": null,
@@ -2423,7 +2423,7 @@
             },
             {
                 "display_name": "Queenstown",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "Queenstown.gltf",
                 "popups": null,
@@ -2431,7 +2431,7 @@
             },
             {
                 "display_name": "Renison",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "Renison.gltf",
                 "popups": null,
@@ -2439,7 +2439,7 @@
             },
             {
                 "display_name": "Rosebery",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "Rosebery.gltf",
                 "popups": null,
@@ -2447,7 +2447,7 @@
             },
             {
                 "display_name": "Strahan",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "Strahan.gltf",
                 "popups": null,
@@ -2455,17 +2455,22 @@
             },
             {
                 "display_name": "Zeehan",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "Zeehan.gltf",
-                "popups": null,
+                "popups": {
+                    "ZEEHAN": {
+                        "name": "Zeehan",
+                        "title": "Zeehan"
+                    }
+                },
                 "type": "GLTFObject"
             }
         ],
         "DEM": [
             {
                 "display_name": "RL DEM100m",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "RL_DEM100m.gltf",
                 "popups": {
