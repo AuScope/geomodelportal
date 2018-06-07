@@ -911,7 +911,7 @@
                 "type": "ImagePlane"
             }
         ],
-        "UBC": [
+        "UBC Basement Input": [
             {
                 "display_name": "UBC Basement Input",
                 "displayed": true,
@@ -1019,7 +1019,7 @@
                 "type": "GLTFObject"
             }
         ],
-        "UBC Gravity": [
+        "UBC Gravity Observations": [
             {
                 "display_name": "UBC Gravity Observations",
                 "displayed": true,
@@ -14850,7 +14850,7 @@
                 "type": "GLTFObject"
             }
         ],
-        "UBC Magnetism": [
+        "UBC Magnetic Observations": [
             {
                 "display_name": "UBC Magnetic Observations",
                 "displayed": true,
