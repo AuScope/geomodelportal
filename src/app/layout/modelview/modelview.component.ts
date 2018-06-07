@@ -30,7 +30,7 @@ import GeoModelControls from '../../../assets/GeoModelControls';
 // Detects if WebGL is available in the browser
 import * as Detector from '../../../../node_modules/three/examples/js/Detector';
 
-const BACKGROUND_COLOUR = new THREE.Color(0x777777);
+const BACKGROUND_COLOUR = new THREE.Color(0xC0C0C0);
 
 @Component({
     selector: 'app-modelview',
@@ -269,15 +269,35 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.scene.background = BACKGROUND_COLOUR;
 
         // Ambient light
-        const ambient = new THREE.AmbientLight(0xFFFFFF);
+        const ambient = new THREE.AmbientLight(0x404040);
         ambient.name = 'Ambient Light';
         this.scene.add(ambient);
 
-        // Point light
-        const pointlight = new THREE.PointLight();
-        pointlight.position.set(this.extentObj.west(), this.extentObj.south(), 400000);
-        pointlight.name = 'Point Light';
-        this.scene.add(pointlight);
+        // Add point lights from all directions to show surfaces
+        const pointLightZDist = 100000;
+        const pointLightXYOffset = 20000;
+        const pointLightColour = 0x404040;
+        const pointLightIntensity = 1.0;
+        const plPosArray = [[ this.extentObj.west() - pointLightXYOffset, this.extentObj.south() - pointLightXYOffset, pointLightZDist ],
+                            [ this.extentObj.west() - pointLightXYOffset, this.extentObj.south() - pointLightXYOffset, -pointLightZDist],
+
+                            [ this.extentObj.west() - pointLightXYOffset, this.extentObj.north() + pointLightXYOffset, pointLightZDist],
+                            [ this.extentObj.west() - pointLightXYOffset, this.extentObj.north() + pointLightXYOffset, -pointLightZDist],
+
+                            [this.extentObj.east() + pointLightXYOffset, this.extentObj.north() + pointLightXYOffset, pointLightZDist ],
+                            [this.extentObj.east() + pointLightXYOffset, this.extentObj.north() + pointLightXYOffset, -pointLightZDist],
+
+                            [this.extentObj.east() + pointLightXYOffset, this.extentObj.south() - pointLightXYOffset, pointLightZDist ],
+                            [this.extentObj.east() + pointLightXYOffset, this.extentObj.south() - pointLightXYOffset, -pointLightZDist ]
+                            ];
+        let num = 1;
+        for (const plPos of plPosArray) {
+            const pointlight = new THREE.PointLight(pointLightColour, pointLightIntensity);
+            pointlight.position.set(plPos[0], plPos[1], plPos[2]);
+            pointlight.name = 'Point Light ' + num.toString();
+            this.scene.add(pointlight);
+            num += 1;
+        }
 
         // this.addPlanes();
         this.add3DObjects();
