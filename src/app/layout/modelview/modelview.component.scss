@@ -84,19 +84,6 @@
         font-weight: bold;
     }
 
-    #help {
-        font-size: 12px;
-        font-weight: 400;
-        position: absolute;
-        z-index: 700;
-        top: 0;
-        right: 0;
-        padding: 0 1rem;
-        background: #1a1a1a;
-        border: 1px solid #2c2c2c;
-        opacity: 0.8;
-    }
-
     #helpButton {
         font-size: 12px;
         font-weight: 400;
@@ -108,18 +95,4 @@
         background: #1a1a1a;
         border: 1px solid #2c2c2c;
         opacity: 0.8;
-    }
-
-    #help > p {
-        margin: 0.5rem 0;
-    }
-
-    #help > ul {
-        padding: 0 1rem;
-    }
-
-    @media (max-width: 600px) {
-        #help {
-            display: none;
-        }
     }
