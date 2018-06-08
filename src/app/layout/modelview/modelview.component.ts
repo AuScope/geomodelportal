@@ -196,7 +196,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      */
     private movePart(sceneObj: THREE.Object3D, displacement: THREE.Vector3) {
         sceneObj.traverseVisible( function(child) {
-            if (child instanceof THREE.Object3D) {
+            if (child.type === 'Object3D') {
                 if (!child.userData.hasOwnProperty('origPosition')) {
                     child.userData.origPosition = child.position.clone();
                 }
@@ -208,12 +208,13 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     /**
      * Changes the transparency of a part of the model
      * @param sceneObj the part's Object3D
-     * @param value amout of transparency, a floating point number between 0.0 and 1.0
+     * @param value amount of transparency, a floating point number between 0.0 and 1.0
      */
     private setPartTransparency(sceneObj: THREE.Object3D, value: number) {
         // Plane objects
-        if (sceneObj instanceof THREE.Mesh && sceneObj.material instanceof THREE.MeshBasicMaterial) {
-            const material: THREE.MeshBasicMaterial = sceneObj.material;
+        if (sceneObj.type === 'Mesh' && sceneObj.hasOwnProperty('material')
+                               && sceneObj['material'].type === 'MeshBasicMaterial') {
+            const material: THREE.MeshBasicMaterial = <THREE.MeshBasicMaterial> sceneObj['material'];
             if (value >= 0.0 && value < 1.0) {
                 material.transparent = true;
                 material.opacity = value;
@@ -224,9 +225,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         } else {
             // GLTF objects
             sceneObj.traverseVisible( function(child) {
-                if (child instanceof THREE.Mesh) {
-                    if (child.material instanceof THREE.MeshStandardMaterial) {
-                        const material: THREE.MeshStandardMaterial = child.material;
+                if (child.type === 'Mesh' && child.hasOwnProperty('material')) {
+                    if (child['material'].type === 'MeshStandardMaterial') {
+                        const material: THREE.MeshStandardMaterial =  <THREE.MeshStandardMaterial> child['material'];
                         if (value >= 0.0 && value < 1.0) {
                             material.transparent = true;
                             material.opacity = value;
@@ -307,13 +308,16 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Loads and draws the GLTF objects
      */
     private add3DObjects() {
-        const manager = new THREE.LoadingManager();
+        // Note: In threeJS, buffer geometry ids are created by incrementing a counter.
+        // So we are forced to use ITOWNS' version of THREE to ensure that there is no overlap in ids
+        // and all objects are reliably rendered to screen
+        const manager = new ITOWNS.THREE.LoadingManager();
 
         // This adds the 'GLTFLoader' object to 'THREE'
-        GLTFLoader(THREE);
+        GLTFLoader(ITOWNS.THREE);
 
         // Create our new GLTFLoader object
-        const loader = new THREE['GLTFLoader'](manager);
+        const loader = new ITOWNS.THREE['GLTFLoader'](manager);
         const promiseList = [];
         const local = this;
 
@@ -362,7 +366,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             // function called when all objects are loaded
             function( sceneObjList ) {
                 console.log('GLTFs are loaded, now init view scene=', local.scene);
-                // local.initialiseView(local.config);
+                // local.finaliseView(local.config);
                 local.addPlanes();
             },
             // function called when one object fails
@@ -375,14 +379,16 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * This draws the planar parts of the model e.g. PNG files
      */
     private addPlanes() {
-        // Add planes
-        const manager = new THREE.LoadingManager();
+        // Note: In threeJS, buffer geometry ids are created by incrementing a counter.
+        // So we are forced to use ITOWNS' version of THREE to ensure that there is no overlap in ids
+        // and all object are reliably rendered to screen
+        const manager = new ITOWNS.THREE.LoadingManager();
         manager.onProgress = function ( item, loaded, total ) {
             // console.log( item, loaded, total );
         };
 
         const local = this;
-        const textureLoader = new THREE.TextureLoader(manager);
+        const textureLoader = new ITOWNS.THREE.TextureLoader(manager);
         const promiseList = [];
         for (const group in this.config.groups) {
             if (this.config.groups.hasOwnProperty(group)) {
@@ -394,13 +400,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                           const texture = textureLoader.load('./assets/geomodels/' + local.model_dir + '/' + part.model_url,
                             // Function called when download successful
                             function (textya) {
-                                textya.minFilter = THREE.LinearFilter;
-                                const material = new THREE.MeshBasicMaterial( {
+                                textya.minFilter = ITOWNS.THREE.LinearFilter;
+                                const material = new ITOWNS.THREE.MeshBasicMaterial( {
                                     map: textya,
                                    side: THREE.DoubleSide
                                 } );
-                                const geometry = new THREE.PlaneGeometry(local.extentObj.dimensions().x, local.extentObj.dimensions().y);
-                                const plane = new THREE.Mesh(geometry, material);
+                                const geometry = new ITOWNS.THREE.PlaneGeometry(local.extentObj.dimensions().x,
+                                                                                local.extentObj.dimensions().y);
+                                const plane = new ITOWNS.THREE.Mesh(geometry, material);
                                 let z_offset = 0.0;
                                 if (part.hasOwnProperty('position')) {
                                     z_offset = part.position[2];
@@ -439,8 +446,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         // function called when all objects successfully loaded
         function( sceneObjList ) {
            // Planes are loaded, now for GLTF objects
-           //  local.add3DObjects();
-           local.initialiseView(local.config);
+           // local.add3DObjects();
+           local.finaliseView(local.config);
         },
         // function called when one GLTF object failed to load
         function( error ) {
@@ -457,7 +464,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Itowns code assumes that only its view objects have been added to the scene, and gets confused when there are
      * other objects in the scene.
      */
-    private initialiseView(config) {
+    private finaliseView(config) {
         const props = config.properties;
         const local = this;
 
