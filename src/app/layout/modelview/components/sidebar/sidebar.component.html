@@ -9,21 +9,17 @@
         <div *ngFor="let groupName of groupList" class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass(groupName)">
                 <span><i class="fa fa-plus" ngbPopover="{{groupMenuToggle.desc}}" popoverTitle="{{groupMenuToggle.title}}" placement="right" #group_menu_popover="ngbPopover" triggers="manual"></i>&nbsp;{{groupName}}</span>
-                <input *ngIf="getGroupTickBoxState(groupName)" (click)="groupCheckBoxClick($event, groupName, false)"
+                <input (click)="groupCheckBoxClick($event, groupName, !getGroupTickBoxState(groupName))"
                     ngbPopover="{{groupVisToggle.desc}}" popoverTitle="{{groupVisToggle.title}}" placement="bottom" #group_tick_popover="ngbPopover" triggers="manual"
-                    checked="true" class="vis-toggle" type="checkbox"/>
-                <input *ngIf="!getGroupTickBoxState(groupName)" (click)="groupCheckBoxClick($event, groupName, true)"
-                    ngbPopover="{{groupVisToggle.desc}}" popoverTitle="{{groupVisToggle.title}}" placement="right" #group_tick_popover="ngbPopover" triggers="manual"
-                                   class="vis-toggle" type="checkbox"/>
+                    [checked] ="getGroupTickBoxState(groupName)" class="vis-toggle" type="checkbox"/>
             </a>
             <li class="nested" [class.expand]="showMenu === groupName">
                 <ul *ngFor="let subGroupObj of modelInfo['groups'][groupName]" class="submenu ul-part-name">
                     <li *ngIf="subGroupObj.include && modelPartState[groupName][subGroupObj.model_url]">
                         <a class="a-part-name list-group-item">
                             <span>{{subGroupObj.display_name}}</span>
-                            <input *ngIf="modelPartState[groupName][subGroupObj.model_url].displayed" (click)="checkBoxClick(groupName, subGroupObj.model_url, false)" checked="true" class="vis-toggle" type="checkbox"
-                                   ngbPopover="{{partTick.desc}}" popoverTitle="{{partTick.title}}" placement="right" #part_tick_popover="ngbPopover" triggers="manual"/>
-                            <input *ngIf="!modelPartState[groupName][subGroupObj.model_url].displayed" (click)="checkBoxClick(groupName, subGroupObj.model_url, true)" class="vis-toggle" type="checkbox"
+                            <input (click)="checkBoxClick(groupName, subGroupObj.model_url, !modelPartState[groupName][subGroupObj.model_url].displayed)"
+                                   [checked]="modelPartState[groupName][subGroupObj.model_url].displayed" class="vis-toggle" type="checkbox"
                                    ngbPopover="{{partTick.desc}}" popoverTitle="{{partTick.title}}" placement="right" #part_tick_popover="ngbPopover" triggers="manual"/>
                             <i class="fa fa-lg fa-cog part-controls" [ngClass]="{'fa-disabled': !modelPartState[groupName][subGroupObj.model_url].displayed}"
                                (click)="toggleControls(groupName, subGroupObj.model_url)"

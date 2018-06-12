@@ -169,6 +169,15 @@ export class SidebarComponent  implements OnInit, OnDestroy {
         if (this.groupList.length > 0) {
             // Find first menu item and first descendants
             const firstGroupName = this.groupList[0];
+            // Control panel used by demo will not open, unless it is ticked (displayed), so must enable it
+            if (open && !this.getGroupTickBoxState(firstGroupName)) {
+                for (const partId in this.modelPartState[firstGroupName]) {
+                    if (this.modelPartState[firstGroupName].hasOwnProperty(partId)) {
+                        this.checkBoxClick(firstGroupName, partId, true);
+                    }
+                }
+            }
+            // Get partId of first part in first group
             let firstPartId: string = null;
             if (this.modelInfo['groups'][firstGroupName].length > 0) {
                 firstPartId = this.modelInfo['groups'][firstGroupName][0].model_url;
