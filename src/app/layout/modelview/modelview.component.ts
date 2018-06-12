@@ -195,14 +195,25 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param displacement a Vector3 containing the amount of displacement
      */
     private movePart(sceneObj: THREE.Object3D, displacement: THREE.Vector3) {
-        sceneObj.traverseVisible( function(child) {
-            if (child.type === 'Object3D') {
-                if (!child.userData.hasOwnProperty('origPosition')) {
-                    child.userData.origPosition = child.position.clone();
-                }
-                child.position.addVectors(child.userData.origPosition, displacement);
+        // Move image object
+        if (sceneObj.type === 'Mesh') {
+            if (!sceneObj.userData.hasOwnProperty('origPosition')) {
+                sceneObj.userData.origPosition = sceneObj.position.clone();
             }
-        });
+            sceneObj.position.addVectors(sceneObj.userData.origPosition, displacement);
+        } else {
+            // Move GLTF object
+            let found = false;
+            sceneObj.traverseVisible( function(child) {
+                if (!found && child.type === 'Object3D') {
+                    if (!child.userData.hasOwnProperty('origPosition')) {
+                        child.userData.origPosition = child.position.clone();
+                    }
+                    child.position.addVectors(child.userData.origPosition, displacement);
+                    found = true;
+                }
+            });
+        }
     }
 
     /**
