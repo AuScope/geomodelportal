@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
 import { NgbPopover} from '@ng-bootstrap/ng-bootstrap';
 
-import { ModelInfoService, ModelPartStateChangeType } from '../../../../shared/services/model-info.service';
+import { ModelInfoService, ModelPartStateChangeType, FIXED_HEIGHT } from '../../../../shared/services/model-info.service';
 import { SidebarService, MenuStateChangeType, MenuChangeType } from '../../../../shared/services/sidebar.service';
 import { HelpinfoService, WidgetType } from '../../../../shared/services/helpinfo.service';
 
@@ -40,6 +40,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     private helpSubscr: Subscription;
     private compSubscr: Subscription;
     private helpObs: Observable<any> = null;
+    private FIXED_HEIGHT = FIXED_HEIGHT;
 
     // These are all the help message for the sidebar
     public groupVisToggle = { title: 'Toggle Group Visibility',

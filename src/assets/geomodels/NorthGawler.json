@@ -27720,9 +27720,9 @@
         "WMS": [
             {
                 "display_name": "Australian Base Map",
-                "displayed": false,
+                "displayed": true,
                 "id": "wms_imagery",
-                "include": false,
+                "include": true,
                 "model_url": "http://services.ga.gov.au/site_11/services/Global_Map_Project_Australian_Base_Map/MapServer/WMSServer",
                 "name": "Elevation",
                 "position": [

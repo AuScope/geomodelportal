@@ -12,6 +12,8 @@ export interface ProviderInfo {
     providerPath: string;
 }
 
+export const FIXED_HEIGHT = -1.0;
+
 // What has changed in the model part's state?
 export enum  ModelPartStateChangeType { DISPLAYED, TRANSPARENCY, HEIGHT_OFFSET }
 
@@ -96,9 +98,14 @@ export class ModelInfoService {
             if (modelInfo.groups.hasOwnProperty(groupName)) {
                 this.modelPartState[groupName] = {};
                 for (const partObj of modelInfo.groups[groupName]) {
+                    // FIXME: Currently cannot change height of WMS layers
+                    let heightOffset = 0.0;
+                    if (partObj.type === 'WMSLayer') {
+                        heightOffset = FIXED_HEIGHT;
+                    }
                     if (partObj.include) {
                         this.modelPartState[groupName][partObj.model_url] = { displayed: partObj.displayed,
-                                              transparency: 1.0, heightOffset: 0.0, oldTransparency: 1.0 };
+                                              transparency: 1.0, heightOffset: heightOffset, oldTransparency: 1.0 };
                     }
                 }
             }

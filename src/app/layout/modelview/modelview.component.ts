@@ -101,6 +101,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
     public isHelpCollapsed = true;
 
+    // itowns' tile layer
+    private tileLayer = null;
+
     constructor(private modelInfoService: ModelInfoService, private elRef: ElementRef, private ngRenderer: Renderer2,
                 private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
                 private helpinfoService: HelpinfoService) {
@@ -125,9 +128,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             });
             const callbackFn: ModelPartCallbackType =  function(groupName: string, partId: string, state: ModelPartStateChange) {
                 if (state.type === ModelPartStateChangeType.DISPLAYED) {
-                    // local.printMeshes();
                     local.sceneArr[groupName][partId].visible = state.new_value;
-                    // local.printMeshes();
+                    // Turn on/off tile layer visibility if this is a WMS layer
+                    const parts = local.config.groups[groupName];
+                    for (let i = 0; i < parts.length; i++) {
+                        if (parts[i].model_url === partId && parts[i].type === 'WMSLayer') {
+                            local.tileLayer.visible = state.new_value;
+                        }
+                    }
                     local.view.notifyChange(true);
                 } else if (state.type ===  ModelPartStateChangeType.TRANSPARENCY) {
                     local.setPartTransparency(local.sceneArr[groupName][partId], <number> state.new_value);
@@ -142,17 +150,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         } else {
             const warning = Detector.getWebGLErrorMessage();
             this.ngRenderer.appendChild(this.viewerDiv, warning);
-        }
-    }
-
-    /**
-     * Prints out mesh data structures to browser console
-     */
-    private printMeshes() {
-        for (const child of this.scene.children) {
-            if (child instanceof THREE.Mesh) {
-                console.log(child.name, JSON.stringify(child));
-            }
         }
     }
 
@@ -195,24 +192,28 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param displacement a Vector3 containing the amount of displacement
      */
     private movePart(sceneObj: THREE.Object3D, displacement: THREE.Vector3) {
-        // Move image object
-        if (sceneObj.type === 'Mesh') {
-            if (!sceneObj.userData.hasOwnProperty('origPosition')) {
-                sceneObj.userData.origPosition = sceneObj.position.clone();
-            }
-            sceneObj.position.addVectors(sceneObj.userData.origPosition, displacement);
-        } else {
-            // Move GLTF object
-            let found = false;
-            sceneObj.traverseVisible( function(child) {
-                if (!found && child.type === 'Object3D') {
-                    if (!child.userData.hasOwnProperty('origPosition')) {
-                        child.userData.origPosition = child.position.clone();
-                    }
-                    child.position.addVectors(child.userData.origPosition, displacement);
-                    found = true;
+        // Move image object, but only if it is Object3D
+        if (sceneObj.isObject3D) {
+            if (sceneObj.type === 'Mesh') {
+                if (!sceneObj.userData.hasOwnProperty('origPosition')) {
+                    sceneObj.userData.origPosition = sceneObj.position.clone();
                 }
-            });
+                sceneObj.position.addVectors(sceneObj.userData.origPosition, displacement);
+            } else {
+                // Move GLTF object
+                let found = false;
+                sceneObj.traverseVisible( function(child) {
+                    if (!found && child.type === 'Object3D') {
+                        if (!child.userData.hasOwnProperty('origPosition')) {
+                            child.userData.origPosition = child.position.clone();
+                        }
+                        child.position.addVectors(child.userData.origPosition, displacement);
+                        found = true;
+                    }
+                });
+            }
+        } else {
+            // TODO: Move itowns' WMS layers
         }
     }
 
@@ -221,34 +222,40 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param sceneObj the part's Object3D
      * @param value amount of transparency, a floating point number between 0.0 and 1.0
      */
-    private setPartTransparency(sceneObj: THREE.Object3D, value: number) {
+    private setPartTransparency(sceneObj: any, value: number) {
         // Plane objects
-        if (sceneObj.type === 'Mesh' && sceneObj.hasOwnProperty('material')
-                               && sceneObj['material'].type === 'MeshBasicMaterial') {
-            const material: THREE.MeshBasicMaterial = <THREE.MeshBasicMaterial> sceneObj['material'];
-            if (value >= 0.0 && value < 1.0) {
-                material.transparent = true;
-                material.opacity = value;
-            } else if (value === 1.0) {
-                material.transparent = false;
-                material.opacity = 1.0;
-            }
-        } else {
-            // GLTF objects
-            sceneObj.traverseVisible( function(child) {
-                if (child.type === 'Mesh' && child.hasOwnProperty('material')) {
-                    if (child['material'].type === 'MeshStandardMaterial') {
-                        const material: THREE.MeshStandardMaterial =  <THREE.MeshStandardMaterial> child['material'];
-                        if (value >= 0.0 && value < 1.0) {
-                            material.transparent = true;
-                            material.opacity = value;
-                        } else if (value === 1.0) {
-                            material.transparent = false;
-                            material.opacity = 1.0;
+        if (sceneObj.isObject3D) {
+            if (sceneObj.type === 'Mesh' && sceneObj.hasOwnProperty('material')
+                                   && sceneObj['material'].type === 'MeshBasicMaterial') {
+                const material: THREE.MeshBasicMaterial = <THREE.MeshBasicMaterial> sceneObj['material'];
+                if (value >= 0.0 && value < 1.0) {
+                    material.transparent = true;
+                    material.opacity = value;
+                } else if (value === 1.0) {
+                    material.transparent = false;
+                    material.opacity = 1.0;
+                }
+            } else {
+                // GLTF objects
+                sceneObj.traverseVisible( function(child) {
+                    if (child.type === 'Mesh' && child.hasOwnProperty('material')) {
+                        if (child['material'].type === 'MeshStandardMaterial') {
+                            const material: THREE.MeshStandardMaterial =  <THREE.MeshStandardMaterial> child['material'];
+                            if (value >= 0.0 && value < 1.0) {
+                                material.transparent = true;
+                                material.opacity = value;
+                            } else if (value === 1.0) {
+                                material.transparent = false;
+                                material.opacity = 1.0;
+                            }
                         }
                     }
-                }
-            });
+                });
+            }
+        // itowns' WMS layers and tile layer
+        } else {
+            sceneObj.opacity = value;
+            this.tileLayer.opacity = value;
         }
     }
 
@@ -311,7 +318,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             num += 1;
         }
 
-        // this.addPlanes();
+        // Start by adding GLTF objects
         this.add3DObjects();
     }
 
@@ -376,11 +383,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         Promise.all(promiseList).then(
             // function called when all objects are loaded
             function( sceneObjList ) {
-                console.log('GLTFs are loaded, now init view scene=', local.scene);
-                // local.finaliseView(local.config);
+                console.log('GLTFs are loaded');
+                // Add image files to scene
                 local.addPlanes();
             },
-            // function called when one object fails
+            // function called when one or more objects fail
             function( error ) {
                 console.error( 'Could not load all textures:', error );
             });
@@ -394,10 +401,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         // So we are forced to use ITOWNS' version of THREE to ensure that there is no overlap in ids
         // and all object are reliably rendered to screen
         const manager = new ITOWNS.THREE.LoadingManager();
-        manager.onProgress = function ( item, loaded, total ) {
-            // console.log( item, loaded, total );
-        };
-
         const local = this;
         const textureLoader = new ITOWNS.THREE.TextureLoader(manager);
         const promiseList = [];
@@ -427,11 +430,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                                                       local.extentObj.center().y(), z_offset);
                                 plane.position.copy(position);
                                 plane.name =  part.model_url.substring(0, part.model_url.lastIndexOf('.')) + '_0'; // For displaying popups
-                                if (!part.displayed) {
-                                    plane.visible = false;
-                                } else {
-                                    plane.visible = true;
-                                }
+                                plane.visible = part.displayed;
                                 local.scene.add(plane);
                                 local.addPart(part, plane, grp);
                                 resolve(plane);
@@ -456,8 +455,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         Promise.all(promiseList).then(
         // function called when all objects successfully loaded
         function( sceneObjList ) {
-           // Planes are loaded, now for GLTF objects
-           // local.add3DObjects();
+           // Planes are loaded, now to finalise view
            local.finaliseView(local.config);
         },
         // function called when one GLTF object failed to load
@@ -480,10 +478,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         const local = this;
 
         // Create an instance of PlanarView
-        console.log('PlanarView():', this.viewerDiv, this.extentObj, this.renderer, this.scene);
-        // debugger;
-        this.view = new ITOWNS.PlanarView(this.viewerDiv, this.extentObj,
-                               {near: 0.001, renderer: this.renderer, scene3D: this.scene});
+        this.view = new ITOWNS.PlanarView(this.viewerDiv, this.extentObj, {renderer: this.renderer, scene3D: this.scene});
 
         // Change defaults to allow the camera to get very close and very far away without exceeding boundaries of field of view
         this.view.camera.camera3D.near = 0.01;
@@ -492,14 +487,18 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.view.camera.camera3D.updateMatrixWorld(true);
 
         // Disable ugly tile skirts
-        this.view.tileLayer.disableSkirt = true;
+        const layers = this.view.getLayers();
+        this.tileLayer = layers[0];
+        this.tileLayer.disableSkirt = true;
 
         // Add WMS layers
-        for (const group of config.groups) {
+        let doneOne = false;
+        for (const group in config.groups) {
             if (this.config.groups.hasOwnProperty(group)) {
                 const parts = config.groups[group];
                 for (let i = 0; i < parts.length; i++) {
                     if (parts[i].type === 'WMSLayer' && parts[i].include) {
+                        doneOne = true;
                         this.view.addLayer({
                             url: parts[i].model_url,
                             networkOptions: { crossOrigin: 'anonymous' },
@@ -516,10 +515,25 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 type: ITOWNS.STRATEGY_DICHOTOMY,
                                 options: {},
                             },
-                        }).then(this.refresh);
+                        }).then(function(response) {
+                            // Retrieve WMS layer and add it to sidebar
+                            const allLayers = local.view.getLayers(layer => layer.id === parts[i].id);
+                            if (allLayers.length > 0) {
+                                local.addPart(parts[i], allLayers[0], group);
+                            }
+                        },
+                        function(err) {
+                            console.error('Cannot load WMS layer', err);
+                        });
                     }
                 }
             }
+        }
+
+        // If there are no WMS layers then disable the tile layer
+        // otherwise it appears as an annoying dark blue square
+        if (!doneOne) {
+            this.tileLayer.visible = false;
         }
 
         // The Raycaster is used to find which part of the model was clicked on, then create a popup box
@@ -581,7 +595,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 }
             });
 
-        // Insert some arrows to give us some orientation information
+        /*// Insert some arrows to give us some orientation information
         const x_dir = new THREE.Vector3( 1, 0, 0 );
         const y_dir = new THREE.Vector3( 0, 1, 0 );
         const z_dir = new THREE.Vector3( 0, 0, 1 );
@@ -594,7 +608,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         const hex_y = 0x00ff00;
         const hex_z = 0x0000ff;
 
-        /*const arrowHelper_x = new THREE.ArrowHelper( x_dir, origin, length, hex_x );
+        const arrowHelper_x = new THREE.ArrowHelper( x_dir, origin, length, hex_x );
         arrowHelper_x.name = 'arrowHelper_x';
         this.scene.add( arrowHelper_x );
         const arrowHelper_y = new THREE.ArrowHelper( y_dir, origin, length, hex_y );
@@ -615,9 +629,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         // Wait for the signal to start model demonstration
         const helpObs = this.helpinfoService.waitForModelDemo();
         this.helpSubscr = helpObs.subscribe(seqNum => { this.runModelDemo(seqNum); });
+
+        // Wait for signal to reset the view of the model
         const viewResetObs = this.modelInfoService.waitForModelViewReset();
         this.modelViewResetSubscr = viewResetObs.subscribe(val => { this.resetModelView(); });
-        console.log('scene = ', this.scene);
         this.view.notifyChange(true);
     }
 
@@ -677,7 +692,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             this.popupBoxDiv.removeChild(this.popupBoxDiv.lastChild);
         }
 
-        // // Make 'X' for exit button in corner of popup window
+        // Make 'X' for exit button in corner of popup window
         const exitDiv = this.ngRenderer.createElement('div');
         this.ngRenderer.setAttribute(exitDiv, 'id', 'popupExitDiv');  // Attributes are HTML entities
         this.ngRenderer.addClass(exitDiv, 'popupClass');
@@ -728,7 +743,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Resets the view of the model back to the starting point
      */
     private resetModelView() {
-        console.log('Reset view');
         this.trackBallControls.resetView();
     }
 
