@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { environment } from '../../../../environments/environment';
 
 /**
  * Used to create a set of card on the screen which user can click on to select
@@ -16,9 +17,13 @@ export class ProviderCardComponent {
     @Input() label: string;
     @Input() data: number;
     @Input() providerPath: string;
-    @Input() prePath = '/geomodels';
+    @Input() prePath = '';
 
-    constructor() {}
+    constructor() {
+        if (environment.usePrePath) {
+            this.prePath = '/geomodels';
+        }
+    }
 
     /**
      * Navigates the browser to a new page of models associated with a certain provider,

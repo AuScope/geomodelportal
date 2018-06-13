@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { environment } from '../../../../environments/environment';
 
 /**
  * Component used to display a series of cards, representing models supplied by a certain provider
@@ -13,9 +14,13 @@ export class ModelCardComponent {
     @Input() icon: string;
     @Input() label: string;
     @Input() modelPath: string;
-    @Input() prePath = '/geomodels';
+    @Input() prePath = '';
 
-    constructor() {}
+    constructor() {
+        if (environment.usePrePath) {
+            this.prePath = '/geomodels';
+        }
+    }
 
     /**
      * Navigates the browser to a new page to view the chosen model
