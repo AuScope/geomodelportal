@@ -584,7 +584,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         for (const popup_key in parts[i]['popups']) {
                                             if (parts[i]['popups'].hasOwnProperty(popup_key)) {
                                                 if (popup_key + '_0' === intersects[n].object.name) {
-                                                    modelViewObj.makePopup(event, parts[i]['popups'][popup_key]);
+                                                    modelViewObj.makePopup(event, parts[i]['popups'][popup_key], intersects[n].point);
                                                     if (parts[i].hasOwnProperty('model_url')) {
                                                         modelViewObj.openSidebarMenu(group, parts[i]['model_url']);
                                                     }
@@ -596,7 +596,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     } else if (parts[i].hasOwnProperty('3dobject_label') &&
                                            parts[i].hasOwnProperty('popup_info') &&
                                            intersects[n].object.name === parts[i]['3dobject_label'] + '_0') {
-                                        modelViewObj.makePopup(event, parts[i]['popup_info']);
+                                        modelViewObj.makePopup(event, parts[i]['popup_info'], intersects[n].point);
                                         if (parts[i].hasOwnProperty('model_url')) {
                                             modelViewObj.openSidebarMenu(group, parts[i]['model_url']);
                                         }
@@ -697,11 +697,29 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     }
 
     /**
+     * Adds a text line to the popup information window
+     * @param key key value
+     * @param val value
+     */
+    private addTextLineToPopup(key: string, val: string) {
+        const liElem = this.ngRenderer.createElement('li');
+        const spElem = this.ngRenderer.createElement('span');
+        const keyText = this.ngRenderer.createText(key + ': ');
+        const valText = this.ngRenderer.createText(val);
+        this.ngRenderer.appendChild(spElem, keyText);
+        this.ngRenderer.appendChild(liElem, spElem);
+        this.ngRenderer.appendChild(liElem, valText);
+        this.ngRenderer.addClass(liElem, 'popupClass');
+        this.ngRenderer.appendChild(this.popupBoxDiv, liElem);
+    }
+
+    /**
      * Make a popup box appear on the screen near where the user has queried the model
      * @param event click event
      * @param popupInfo JSON object of the information to be displayed in the popup box
+     * @param point point clicked on in XYZ coordinates (format is {x: XX, y: XX, z: ZZ})
      */
-    public makePopup(event, popupInfo) {
+    public makePopup(event, popupInfo, point: THREE.Vector3) {
         const local = this;
         // Position it and let it be seen
         this.ngRenderer.setStyle(this.popupBoxDiv, 'top', event.clientY);
@@ -722,18 +740,12 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         // Make popup title
         const hText = this.ngRenderer.createText(popupInfo['title']);
         this.ngRenderer.appendChild(this.popupBoxDiv, hText);
+        // Add in XYZ coordinates
+        this.addTextLineToPopup('X,Y,Z (m)', point.x.toFixed(0) + ', ' + point.y.toFixed(0) + ', ' + point.z.toFixed(0));
         // Add in popup information
         for (const key in popupInfo) {
              if (key !== 'href' && key !== 'title') {
-                const liElem = this.ngRenderer.createElement('li');
-                const spElem = this.ngRenderer.createElement('span');
-                const keyText = this.ngRenderer.createText(key);
-                const valText = this.ngRenderer.createText(': ' + popupInfo[key]);
-                this.ngRenderer.appendChild(spElem, keyText);
-                this.ngRenderer.appendChild(liElem, spElem);
-                this.ngRenderer.appendChild(liElem, valText);
-                this.ngRenderer.addClass(liElem, 'popupClass');
-                this.ngRenderer.appendChild(this.popupBoxDiv, liElem);
+                 this.addTextLineToPopup(key, popupInfo[key]);
             // Make URLs
             } else if (key === 'href') {
                 for (let hIdx = 0; hIdx < popupInfo['href'].length; hIdx++) {
