@@ -61,7 +61,16 @@
             },
             "ga": {
                 "name": "Geoscience Australia",
-                "models": [],
+                "models": [
+                    {
+                        "name": "North Queensland",
+                        "modelUrlPath": "nqueensland",
+                        "icon": "aus-white-icon.png",
+                        "colourClass": "primary",
+                        "configFile": "NorthQueensland.json",
+                        "modelDir": "NorthQueensland"
+                    }
+                ],
                 "icon": "aus-white-icon.png",
                 "colourClass": "primary"
             }
