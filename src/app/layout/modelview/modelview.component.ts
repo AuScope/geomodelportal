@@ -24,7 +24,7 @@ import * as ITOWNS from '../../../../node_modules/itowns/dist/itowns';
 const proj4 = ITOWNS.proj4;
 
 // Three axis virtual globe controller
-// FIXME: Needs typescript bindings
+// FIXME: Convert to typescript
 import GeoModelControls from '../../../assets/GeoModelControls';
 
 // Detects if WebGL is available in the browser
@@ -97,12 +97,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     // Subscribe to model view reset events
     private modelViewResetSubscr: Subscription;
 
+    // Popup box that is created during sidebar help tour
     private demoPopupMsg = '';
-
-    public isHelpCollapsed = true;
 
     // itowns' tile layer
     private tileLayer = null;
+
+    // Default distance from model to camera in metres, can be overidden in model file
+    private initCamDist = 500000.0;
 
     constructor(private modelInfoService: ModelInfoService, private elRef: ElementRef, private ngRenderer: Renderer2,
                 private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
@@ -114,8 +116,13 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * this process of drawing the model
      */
     ngAfterViewInit() {
+        // viewerDiv is the <div> where the model is rendered
         this.viewerDiv = this.viewerDivElem.nativeElement;
+
+        // popupBoxDiv is the <div> reversed for the popup information boxes
         this.popupBoxDiv = this.popupBoxDivElem.nativeElement;
+
+        // Used to access 'this' from within callback functions
         const local = this;
 
         // Detect if webGL is available and inform viewer if cannot proceed
@@ -126,10 +133,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             this.modelInfoService.getModelInfo(modelUrlPath).then(res => {
                 local.initialiseModel(res[0], res[1]);
             });
+
+            // Set up a callback function so this code can be informed when the sidebar controls are changed, so this code
+            // can manipulate the model accordingly
             const callbackFn: ModelPartCallbackType =  function(groupName: string, partId: string, state: ModelPartStateChange) {
+                // Make a part of the model visible or invisible
                 if (state.type === ModelPartStateChangeType.DISPLAYED) {
                     local.sceneArr[groupName][partId].visible = state.new_value;
-                    // Turn on/off tile layer visibility if this is a WMS layer
+                    // Also turn on/off tile layer visibility if this is a WMS layer
                     const parts = local.config.groups[groupName];
                     for (let i = 0; i < parts.length; i++) {
                         if (parts[i].model_url === partId && parts[i].type === 'WMSLayer') {
@@ -137,9 +148,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                         }
                     }
                     local.view.notifyChange(true);
+                // Change the transparency of a part of the model
                 } else if (state.type ===  ModelPartStateChangeType.TRANSPARENCY) {
                     local.setPartTransparency(local.sceneArr[groupName][partId], <number> state.new_value);
                     local.view.notifyChange(true);
+                // Move a part of the model up or down
                 } else if (state.type === ModelPartStateChangeType.HEIGHT_OFFSET) {
                     const displacement = new THREE.Vector3(0.0, 0.0, <number> state.new_value);
                     local.movePart(local.sceneArr[groupName][partId], displacement);
@@ -148,6 +161,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             };
             this.modelInfoService.registerModelPartCallback(callbackFn);
         } else {
+            // Sorry, your browser does not have WebGL
             const warning = Detector.getWebGLErrorMessage();
             this.ngRenderer.appendChild(this.viewerDiv, warning);
         }
@@ -219,7 +233,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
     /**
      * Changes the transparency of a part of the model
-     * @param sceneObj the part's Object3D
+     * @param sceneObj the part's Object3D or itowns layer object
      * @param value amount of transparency, a floating point number between 0.0 and 1.0
      */
     private setPartTransparency(sceneObj: any, value: number) {
@@ -270,6 +284,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.model_dir = modelDir;
         if (props.proj4_defn) {
             proj4.defs(props.crs, props.proj4_defn);
+        }
+
+        // If defined in config file, set the initial distance from model to camera
+        if (props.hasOwnProperty('init_cam_dist')) {
+            this.initCamDist = props.init_cam_dist;
         }
 
         // Define geographic extent: CRS, min/max X, min/max Y
@@ -619,7 +638,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.scene.add( arrowHelper_z );*/
 
         // 3 axis virtual globe controller
-        this.trackBallControls = new GeoModelControls(this.viewerDiv, this.view.camera.camera3D, this.view, this.extentObj.center().xyz());
+        this.trackBallControls = new GeoModelControls(this.viewerDiv, this.view.camera.camera3D,
+                                                      this.view, this.extentObj.center().xyz(), this.initCamDist);
         this.scene.add(this.trackBallControls.getObject());
         this.sphereRadius = this.getVirtualSphereRadius();
         const sphereCentre = this.getVirtualSphereCentre();

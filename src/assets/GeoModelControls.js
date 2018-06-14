@@ -21,8 +21,9 @@ const mouseButtons = {
 * @param camera camera object for viewing
 * @param view view object
 * @param rotCentre centre of rotation (THREE.Vector3)
+* @param cameraDist distance from camera to centre of model (metres)
 */
-function GeoModelControls(viewerDiv, camera, view, rotCentre) {
+function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist) {
     var scope = this;
     this.domElement = view.mainLoop.gfxEngine.renderer.domElement;
     this.rotCentre = rotCentre;
@@ -47,8 +48,9 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre) {
     // Rotational object, used to rotate the camera around the model
     var rObject = new THREE.Object3D();
     rObject.add(camera);
-    // Set relative to model centre
-    camera.position.set(0.0, 0.0, 500000.0);
+
+    // Set camera position relative to model centre
+    camera.position.set(0.0, 0.0, cameraDist);
     this.camera = camera;
     this.rotateSpeed = 1.5;
     var viewObject = view;
@@ -387,7 +389,7 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre) {
      * Sets the camera back to its initial position
      */
     this.resetView = function resetView() {
-        // Restore rObject, camera position and offset 
+        // Restore rObject, camera position and offset
         rObject.position.copy(this.resetState.rObj.position);
         rObject.matrix.copy(this.resetState.rObj.matrix);
         rObject.rotation.setFromRotationMatrix(rObject.matrix);
