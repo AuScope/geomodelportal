@@ -2767,6 +2767,7 @@
             5318750.0,
             5396450.0
         ],
+        "init_cam_dist": 170000.0,
         "name": "Rosebery Lyell"
     },
     "type": "GeologicalModel",

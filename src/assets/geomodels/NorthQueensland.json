@@ -128,7 +128,7 @@
             7560325.0,
             8120445.0
         ],
-        "init_cam_dist": 1500000.0,
+        "init_cam_dist": 2000000.0,
         "name": "North Queensland"
     },
     "type": "GeologicalModel",
