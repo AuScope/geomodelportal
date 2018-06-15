@@ -1,6 +1,6 @@
 <div [@routerTransition]>
         <app-sidebar></app-sidebar>
-        <div [style.opacity]="isRunningModelDemo()? 0.5 : 1.0" id="viewerDiv" #viewerDiv></div>
+        <div (window:resize)="onResize($event)" [style.opacity]="isRunningModelDemo()? 0.5 : 1.0" id="viewerDiv" #viewerDiv></div>
         <div *ngIf="isRunningModelDemo()" id="modelDemoDiv" #modelDemoDiv>
             <svg>
                 <circle [style.height]="2.0*sphereRadius" [style.width]="2.0*sphereRadius" [attr.r]="sphereRadius"

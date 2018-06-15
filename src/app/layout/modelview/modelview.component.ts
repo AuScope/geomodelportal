@@ -106,6 +106,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     // Default distance from model to camera in metres, can be overidden in model file
     private initCamDist = 500000.0;
 
+    // Is help dropdown collapsed or not
+    public isHelpCollapsed = true;
+
     constructor(private modelInfoService: ModelInfoService, private elRef: ElementRef, private ngRenderer: Renderer2,
                 private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
                 private helpinfoService: HelpinfoService) {
@@ -711,6 +714,16 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.ngRenderer.appendChild(liElem, valText);
         this.ngRenderer.addClass(liElem, 'popupClass');
         this.ngRenderer.appendChild(this.popupBoxDiv, liElem);
+    }
+
+    /**
+     * Capture window resize events to re-centre the display of the virtual sphere
+     * @param event event object
+     */
+    public onResize(event) {
+        const sphereCentre = this.getVirtualSphereCentre();
+        this.sphereCentreX = sphereCentre[0];
+        this.sphereCentreY = sphereCentre[1];
     }
 
     /**

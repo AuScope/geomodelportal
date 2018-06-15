@@ -208,7 +208,8 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist) {
      * @return returns the centre point in screen coordinates as [x,y], units are pixels
      */
      this.getVirtualSphereCentre = function getVirtualSphereCentre() {
-         return [ scope.domElement.clientWidth / 2.0, scope.domElement.clientHeight / 2.0];
+         return [ scope.domElement.clientWidth / 2.0 + scope.cameraOffset.x,
+                 scope.domElement.clientHeight / 2.0 + scope.cameraOffset.y];
      }
 
     /**
