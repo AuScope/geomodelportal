@@ -21,7 +21,7 @@
         min-height: 100vh;
     }
 
-    #modelDemoDiv {
+    #mouseGuideDiv {
         position: absolute;
         top: 0;
         left: 0;
@@ -31,9 +31,10 @@
         padding: 0;
         min-height: 100vh;
         min-width: 100vw;
+        pointer-events: none;
     }
 
-    #modelDemoDiv svg {
+    #mouseGuideDiv svg {
         height: 100%;
         width: 100%;
         min-height: 100vh;

@@ -2,15 +2,18 @@
     <h2 class="text-muted">{{title}}</h2>
     <div id="modelControlsDiv">
         <button type="button" (click)="resetModelView()" class="btn btn-outline-secondary btn-sm"
-            ngbPopover="{{resetView.desc}}" popoverTitle="{{resetView.title}}" placement="right" #reset_view_popover="ngbPopover" triggers="manual">
+            ngbPopover="{{HELP_TEXT.resetView.desc}}" popoverTitle="{{HELP_TEXT.resetView.title}}" placement="right" #reset_view_popover="ngbPopover" triggers="manual">
             <i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Reset View</button>
+        <button type="button" (click)="toggleMouseGuide()" class="btn btn-outline-secondary btn-sm" [style.color]="mouseGuideBtnState?'white':'#868e96'"
+            ngbPopover="{{HELP_TEXT.mouseGuide.desc}}" popoverTitle="{{HELP_TEXT.mouseGuide.title}}" placement="right" #reset_view_popover="ngbPopover" triggers="manual">
+            <i class="fa fa-circle-thin" aria-hidden="true"></i>&nbsp;Mouse Guide</button>
     </div>
     <div *ngIf="groupList.length > 0" class="list-group">
         <div *ngFor="let groupName of groupList" class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass(groupName)">
-                <span><i class="fa fa-plus" ngbPopover="{{groupMenuToggle.desc}}" popoverTitle="{{groupMenuToggle.title}}" placement="right" #group_menu_popover="ngbPopover" triggers="manual"></i>&nbsp;{{groupName}}</span>
+                <span><i class="fa fa-plus" ngbPopover="{{HELP_TEXT.groupMenuToggle.desc}}" popoverTitle="{{HELP_TEXT.groupMenuToggle.title}}" placement="right" #group_menu_popover="ngbPopover" triggers="manual"></i>&nbsp;{{groupName}}</span>
                 <input (click)="groupCheckBoxClick($event, groupName, !getGroupTickBoxState(groupName))"
-                    ngbPopover="{{groupVisToggle.desc}}" popoverTitle="{{groupVisToggle.title}}" placement="bottom" #group_tick_popover="ngbPopover" triggers="manual"
+                    ngbPopover="{{HELP_TEXT.groupVisToggle.desc}}" popoverTitle="{{HELP_TEXT.groupVisToggle.title}}" placement="bottom" #group_tick_popover="ngbPopover" triggers="manual"
                     [checked] ="getGroupTickBoxState(groupName)" class="vis-toggle" type="checkbox"/>
             </a>
             <li class="nested" [class.expand]="showMenu === groupName">
@@ -20,25 +23,25 @@
                             <span>{{subGroupObj.display_name}}</span>
                             <input (click)="checkBoxClick(groupName, subGroupObj.model_url, !modelPartState[groupName][subGroupObj.model_url].displayed)"
                                    [checked]="modelPartState[groupName][subGroupObj.model_url].displayed" class="vis-toggle" type="checkbox"
-                                   ngbPopover="{{partTick.desc}}" popoverTitle="{{partTick.title}}" placement="right" #part_tick_popover="ngbPopover" triggers="manual"/>
+                                   ngbPopover="{{HELP_TEXT.partTick.desc}}" popoverTitle="{{HELP_TEXT.partTick.title}}" placement="right" #part_tick_popover="ngbPopover" triggers="manual"/>
                             <i class="fa fa-lg fa-cog part-controls" [ngClass]="{'fa-disabled': !modelPartState[groupName][subGroupObj.model_url].displayed}"
                                (click)="toggleControls(groupName, subGroupObj.model_url)"
-                               ngbPopover="{{partConfigToggle.desc}}" popoverTitle="{{partConfigToggle.title}}" placement="right" #part_config_popover="ngbPopover" triggers="manual"></i>
+                               ngbPopover="{{HELP_TEXT.partConfigToggle.desc}}" popoverTitle="{{HELP_TEXT.partConfigToggle.title}}" placement="right" #part_config_popover="ngbPopover" triggers="manual"></i>
                             <i class="fa fa-lg fa-eye" [ngClass]="{'fa-disabled': !modelPartState[groupName][subGroupObj.model_url].displayed}"
                                (mouseenter)="revealPart(groupName, subGroupObj.model_url, true)" (mouseleave)="revealPart(groupName, subGroupObj.model_url, false)"
-                               ngbPopover="{{partEyeball.desc}}" popoverTitle="{{partEyeball.title}}" placement="right" #part_eyeball_popover="ngbPopover" triggers="manual"></i>
+                               ngbPopover="{{HELP_TEXT.partEyeball.desc}}" popoverTitle="{{HELP_TEXT.partEyeball.title}}" placement="right" #part_eyeball_popover="ngbPopover" triggers="manual"></i>
                         </a>
                         <div id="controlsDiv" [style.display]="getDisplayControls(groupName, subGroupObj.model_url)">
                             <a *ngIf="modelPartState[groupName][subGroupObj.model_url].heightOffset !== FIXED_HEIGHT" class="list-group-item">
                                 <span class="span-part-controls">Height Offset&nbsp;{{modelPartState[groupName][subGroupObj.model_url].heightOffset}}
                                     <mat-slider (change)="changeHeight($event, groupName, subGroupObj.model_url)" thumbLabel min="0" max="20000" step="1000" value="0"
-                                    ngbPopover="{{partOffset.desc}}" popoverTitle="{{partOffset.title}}" placement="bottom" #part_trans_popover="ngbPopover" triggers="manual"></mat-slider>
+                                    ngbPopover="{{HELP_TEXT.partOffset.desc}}" popoverTitle="{{HELP_TEXT.partOffset.title}}" placement="bottom" #part_trans_popover="ngbPopover" triggers="manual"></mat-slider>
                                 </span>
                             </a>
                             <a class="list-group-item">
                                 <span class="span-part-controls">Transparency&nbsp;{{modelPartState[groupName][subGroupObj.model_url].transparency.toFixed(1)}}
                                     <mat-slider (change)="changeTransparency($event, groupName, subGroupObj.model_url)" thumbLabel min="0.0" max="1.0" step="0.1" value="1.0"
-                                    ngbPopover="{{partTransp.desc}}" popoverTitle="{{partTransp.title}}" placement="bottom" #part_offset_popover="ngbPopover" triggers="manual"></mat-slider>
+                                    ngbPopover="{{HELP_TEXT.partTransp.desc}}" popoverTitle="{{HELP_TEXT.partTransp.title}}" placement="bottom" #part_offset_popover="ngbPopover" triggers="manual"></mat-slider>
                                 </span>
                             </a>
                         </div>

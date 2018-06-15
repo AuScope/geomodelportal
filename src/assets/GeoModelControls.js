@@ -1,4 +1,6 @@
 
+// TODO: Rewrite as typescript
+
 import * as THREE from 'three';
 import { MAIN_LOOP_EVENTS } from '../../node_modules/itowns/lib/Core/MainLoop';
 
@@ -22,21 +24,22 @@ const mouseButtons = {
 * @param view view object
 * @param rotCentre centre of rotation (THREE.Vector3)
 * @param cameraDist distance from camera to centre of model (metres)
+* @param mouseEventCallback function to be called upon mouse events format: function()
 */
-function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist) {
+function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelMoveCallback) {
     var scope = this;
     this.domElement = view.mainLoop.gfxEngine.renderer.domElement;
     this.rotCentre = rotCentre;
     this.viewerDiv = viewerDiv;
+    this.modelMoveCallback = modelMoveCallback;
 
+    // State of the model movement demonstration
     this.demoState = 0;
 
+    // Animation mixer, used for model movement demonstration
     var mixer = null;
-    var xAction = null;
-    var yAction = null;
-    var zAction = null;
 
-    // mouse movement
+    // Mouse movement
     const mousePosition = new THREE.Vector2();
     const lastMousePosition = new THREE.Vector2();
     const deltaMousePosition = new THREE.Vector2(0, 0);
@@ -193,6 +196,8 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist) {
         // Keep track of this movement so we can move the virtual sphere with the model
         scope.cameraOffset.x += deltaMousePosition.x;
         scope.cameraOffset.y += deltaMousePosition.y;
+        // Tell everyone that the model has moved
+        scope.modelMoveCallback();
     };
 
     /**

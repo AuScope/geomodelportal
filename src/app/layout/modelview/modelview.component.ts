@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
 
-import { ModelInfoService, ModelPartCallbackType,
+import { ModelInfoService, ModelPartCallbackType, ModelControlEvent,
          ModelPartStateChange, ModelPartStateChangeType } from '../../shared/services/model-info.service';
 import { SidebarService, MenuChangeType, MenuStateChangeType } from '../../shared/services/sidebar.service';
 import { HelpinfoService } from '../../shared/services/helpinfo.service';
@@ -109,6 +109,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     // Is help dropdown collapsed or not
     public isHelpCollapsed = true;
 
+    // Is mouse guide on/off
+    public isMouseGuideOn = false;
+
     constructor(private modelInfoService: ModelInfoService, private elRef: ElementRef, private ngRenderer: Renderer2,
                 private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
                 private helpinfoService: HelpinfoService) {
@@ -188,6 +191,16 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             return this.trackBallControls.getVirtualSphereCentre();
         }
         return [0.0, 0.0];
+    }
+
+    /**
+      * Updates our version of the centre point of the model
+      * used to realign the mouse guide
+      */
+    private updateMouseGuide() {
+        const sphereCentre = this.getVirtualSphereCentre();
+        this.sphereCentreX = sphereCentre[0];
+        this.sphereCentreY = sphereCentre[1];
     }
 
     /**
@@ -641,8 +654,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.scene.add( arrowHelper_z );*/
 
         // 3 axis virtual globe controller
-        this.trackBallControls = new GeoModelControls(this.viewerDiv, this.view.camera.camera3D,
-                                                      this.view, this.extentObj.center().xyz(), this.initCamDist);
+        this.trackBallControls = new GeoModelControls(this.viewerDiv, this.view.camera.camera3D, this.view,
+                                           this.extentObj.center().xyz(), this.initCamDist, this.updateMouseGuide.bind(this));
         this.scene.add(this.trackBallControls.getObject());
         this.sphereRadius = this.getVirtualSphereRadius();
         const sphereCentre = this.getVirtualSphereCentre();
@@ -654,8 +667,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.helpSubscr = helpObs.subscribe(seqNum => { this.runModelDemo(seqNum); });
 
         // Wait for signal to reset the view of the model
-        const viewResetObs = this.modelInfoService.waitForModelViewReset();
-        this.modelViewResetSubscr = viewResetObs.subscribe(val => { this.resetModelView(); });
+        const viewResetObs = this.modelInfoService.waitForModelControlEvent();
+        this.modelViewResetSubscr = viewResetObs.subscribe(val => {
+            if (val === ModelControlEvent.RESET_VIEW) {
+                this.resetModelView();
+            } else {
+                this.isMouseGuideOn = (val === ModelControlEvent.MOUSE_GUIDE_ON);
+            }
+        });
         this.view.notifyChange(true);
     }
 
@@ -674,15 +693,15 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         switch (demoState) {
             case 0:
                 this.demoPopupMsg = 'To rotate model along vertical axis, hold down left mouse button and drag' +
-                                    ' mouse horizontally through centre of circle';
+                                    ' mouse horizontally through centre of mouse guide';
                 break;
             case 1:
                 this.demoPopupMsg = 'To rotate model along horizontal axis, hold down left mouse button and drag' +
-                                    ' mouse vertically through centre of circle';
+                                    ' mouse vertically through centre of mouse guide';
                 break;
             case 2:
                 this.demoPopupMsg = 'To rotate model around the screen centre, hold down left mouse button and drag' +
-                                    ' mouse outside of the circle';
+                                    ' mouse outside of the mouse guide';
                 break;
         }
         this.modelDemoSeqNum = demoState;
@@ -721,9 +740,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param event event object
      */
     public onResize(event) {
-        const sphereCentre = this.getVirtualSphereCentre();
-        this.sphereCentreX = sphereCentre[0];
-        this.sphereCentreY = sphereCentre[1];
+        this.updateMouseGuide();
     }
 
     /**
@@ -789,6 +806,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      */
     private resetModelView() {
         this.trackBallControls.resetView();
+        this.updateMouseGuide();
     }
 
     /**

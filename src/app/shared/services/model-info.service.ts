@@ -17,6 +17,8 @@ export const FIXED_HEIGHT = -1.0;
 // What has changed in the model part's state?
 export enum  ModelPartStateChangeType { DISPLAYED, TRANSPARENCY, HEIGHT_OFFSET }
 
+export enum ModelControlEvent { RESET_VIEW, MOUSE_GUIDE_ON, MOUSE_GUIDE_OFF }
+
 // Vessel for communicating change, note limitation: only one change at a time
 export interface ModelPartStateChange {
     type: ModelPartStateChangeType;
@@ -54,7 +56,8 @@ export class ModelInfoService {
     // Stores the current state of the model parts
     private modelPartState = {};
 
-    private modelViewResetSub = new Subject<any>();
+    // Subject for catching model control events
+    private modelControlEventSub = new Subject<ModelControlEvent>();
 
     constructor(private httpService: HttpClient) {
     }
@@ -189,13 +192,15 @@ export class ModelInfoService {
     }
 
     /**
-     * Reveals a part of the model by making all the other parts of the model transparent
+     * Reveals a part of the model by making all the other parts of the model translucent
      * @param groupName group name of the model part
      * @param partId part id of the model part
      * @param toggle if true will reveal the part, false will hide it
      */
     public revealPart(groupName: string, partId: string, toggle: boolean) {
+        // Transparency setting for parts that are made translucent
         const TRANSPARENT = 0.05;
+        // Make all other parts translucent
         for (const group in this.modelPartState) {
             if (this.modelPartState.hasOwnProperty(group)) {
                 for (const part in this.modelPartState[group]) {
@@ -278,14 +283,26 @@ export class ModelInfoService {
      * Resets the view of the model back to the starting point
      */
     public resetModelView() {
-        this.modelViewResetSub.next();
+        this.modelControlEventSub.next(ModelControlEvent.RESET_VIEW);
     }
 
     /**
-     * Call this to get informed when user tries to reset model view
-     * @return an observable of the model reset view
+     * Call this to get informed when user tries to reset model view or turn on/off the mouse guide
+     * @return an observable of the model control event
      */
-    public waitForModelViewReset(): Observable<any> {
-        return this.modelViewResetSub.asObservable();
+    public waitForModelControlEvent(): Observable<ModelControlEvent> {
+        return this.modelControlEventSub.asObservable();
+    }
+
+    /**
+     * Call this to turn on/off the mouse guide
+     * @param state boolean value indicating whether it must be turned on or off
+     */
+    public displayMouseGuide(state: boolean) {
+        if (state) {
+            this.modelControlEventSub.next(ModelControlEvent.MOUSE_GUIDE_ON);
+        } else {
+            this.modelControlEventSub.next(ModelControlEvent.MOUSE_GUIDE_OFF);
+        }
     }
 }

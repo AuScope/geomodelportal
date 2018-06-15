@@ -1,10 +1,10 @@
 <div [@routerTransition]>
         <app-sidebar></app-sidebar>
         <div (window:resize)="onResize($event)" [style.opacity]="isRunningModelDemo()? 0.5 : 1.0" id="viewerDiv" #viewerDiv></div>
-        <div *ngIf="isRunningModelDemo()" id="modelDemoDiv" #modelDemoDiv>
+        <div *ngIf="isRunningModelDemo()||isMouseGuideOn" id="mouseGuideDiv" #mouseGuideDiv>
             <svg>
                 <circle [style.height]="2.0*sphereRadius" [style.width]="2.0*sphereRadius" [attr.r]="sphereRadius"
-                              style="fill:none; stroke-width: 0.5px; stroke: #202020;" [attr.cx]="sphereCentreX" [attr.cy]="sphereCentreY"></circle>
+                              style="fill:none; stroke-width: 0.5px; stroke: #606060;" [attr.cx]="sphereCentreX" [attr.cy]="sphereCentreY"></circle>
                 <g *ngIf="modelDemoSeqNum == 0" style="stroke: rgb(255,0,0); stroke-width: 2;">
                     <line [attr.x1]="-100+sphereCentreX" [attr.y1]="0+sphereCentreY" [attr.x2]="100+sphereCentreX" [attr.y2]="0+sphereCentreY" />
                     <line [attr.x1]="-90+sphereCentreX" [attr.y1]="-10+sphereCentreY" [attr.x2]="-100+sphereCentreX" [attr.y2]="0+sphereCentreY" />

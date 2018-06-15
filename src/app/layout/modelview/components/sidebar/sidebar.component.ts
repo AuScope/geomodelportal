@@ -41,24 +41,29 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     private compSubscr: Subscription;
     private helpObs: Observable<any> = null;
     private FIXED_HEIGHT = FIXED_HEIGHT;
+    public mouseGuideBtnState = false;
 
     // These are all the help message for the sidebar
-    public groupVisToggle = { title: 'Toggle Group Visibility',
-                              desc: 'Click on this tick box to hide/display groups of model parts in the viewing area.' };
-    public groupMenuToggle = { title: 'Group Menu Toggle',
-                               desc: 'Click on this to open/close view of parts within a group menu.' };
-    public partConfigToggle = { title: 'Model Part Controls',
-                                desc: 'Click here to open/close the control panel for this model part.' };
-    public partEyeball = { title: 'Reveal a Model Part',
-                           desc: 'To reveal this model part in the viewing area, move your mouse over the eyeball icon.' };
-    public partOffset = { title: 'Adjust Height Offset',
-                          desc: 'To adjust this model part\'s height, move this slider by clicking or dragging.' };
-    public partTransp = { title: 'Adjust Transparency',
-                          desc: 'To adjust this model part\'s transparency, move this slider by clicking or dragging.' };
-    public partTick = { title: 'Toggle Part Visibility',
-                        desc: 'Click on this tick box to hide/display this model part in the viewing area.' };
-    public resetView = { title: 'Reset Model View',
-                         desc: 'Click on this button to reset the view of the model back to its original state.' };
+    public HELP_TEXT = {
+        groupVisToggle: { title: 'Toggle Group Visibility',
+                              desc: 'Click on this tick box to hide/display groups of model parts in the viewing area.' },
+        groupMenuToggle: { title: 'Group Menu Toggle',
+                               desc: 'Click on this to open/close view of parts within a group menu.' },
+        partConfigToggle: { title: 'Model Part Controls',
+                                desc: 'Click here to open/close the control panel for this model part.' },
+        partEyeball: { title: 'Reveal a Model Part',
+                           desc: 'To reveal this model part in the viewing area, move your mouse over the eyeball icon.' },
+        partOffset: { title: 'Adjust Height Offset',
+                          desc: 'To adjust this model part\'s height, move this slider by clicking or dragging.' },
+        partTransp: { title: 'Adjust Transparency',
+                          desc: 'To adjust this model part\'s transparency, move this slider by clicking or dragging.' },
+        partTick: { title: 'Toggle Part Visibility',
+                        desc: 'Click on this tick box to hide/display this model part in the viewing area.' },
+        resetView: { title: 'Reset Model View',
+                         desc: 'Click on this button to reset the view of the model back to its original state.' },
+        mouseGuide: { title: 'Turn on/off mouse guide',
+                          desc: 'Click on this to hide/display the circle that helps guide the mouse when rotating the model' }
+    };
 
     @ViewChild('group_tick_popover') public groupTickPopover: NgbPopover = null;
     @ViewChild('group_menu_popover') public groupMenuPopover: NgbPopover = null;
@@ -322,6 +327,14 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      */
     public resetModelView() {
         this.modelInfoService.resetModelView();
+    }
+
+    /**
+     * Toggles the state of the mouse guide (displayed/hidden)
+     */
+    public toggleMouseGuide() {
+        this.mouseGuideBtnState = !this.mouseGuideBtnState;
+        this.modelInfoService.displayMouseGuide(this.mouseGuideBtnState);
     }
 
     /**
