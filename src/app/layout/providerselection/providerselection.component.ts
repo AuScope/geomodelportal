@@ -17,7 +17,7 @@ export class ProviderSelectionComponent {
     public sources: any;
 
     constructor(private modelInfoService: ModelInfoService) {
-        // At the moment this information is all hard-coded; this is temporary.
+        // FIXME: At the moment this information is all hard-coded; this is temporary.
         // Eventually I would like this information to be retrieved from the server
         //
         this.sliders.push(

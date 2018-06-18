@@ -1,6 +1,3 @@
-
-// TODO: Rewrite as typescript
-
 import * as THREE from 'three';
 import { MAIN_LOOP_EVENTS } from '../../node_modules/itowns/lib/Core/MainLoop';
 
@@ -27,7 +24,7 @@ const mouseButtons = {
 * @param mouseEventCallback function to be called upon mouse events format: function()
 */
 function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelMoveCallback) {
-    var scope = this;
+    const scope = this;
     this.domElement = view.mainLoop.gfxEngine.renderer.domElement;
     this.rotCentre = rotCentre;
     this.viewerDiv = viewerDiv;
@@ -37,11 +34,11 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
     this.demoState = 0;
 
     // Animation mixer, used for model movement demonstration
-    var mixer = null;
+    const mixer = null;
 
     // Mouse movement
     const mousePosition = new THREE.Vector2();
-    const lastMousePosition = new THREE.Vector2();
+    let lastMousePosition = new THREE.Vector2();
     const deltaMousePosition = new THREE.Vector2(0, 0);
 
     // Keeps track of camera's movement due to mouse drag
@@ -49,14 +46,14 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
     this.cameraOffset = new THREE.Vector3();
 
     // Rotational object, used to rotate the camera around the model
-    var rObject = new THREE.Object3D();
+    const rObject = new THREE.Object3D();
     rObject.add(camera);
 
     // Set camera position relative to model centre
     camera.position.set(0.0, 0.0, cameraDist);
     this.camera = camera;
     this.rotateSpeed = 1.5;
-    var viewObject = view;
+    const viewObject = view;
 
     // Set position of rotational object relative to world centre
     rObject.name = 'GeoModelControls';
@@ -69,7 +66,7 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
     this.state = STATE.NONE;
 
     // Setup the AnimationMixer
-    var runningDemo = false;
+    let runningDemo = false;
 
     // Update rObject's local matrix and store the value of the camera, rObject and offset for a future reset operation
     rObject.updateMatrix();
@@ -191,8 +188,8 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
     this.handleDragMovement = function handleDragMovement() {
         const MOVEMENT_FACTOR = 0.0006;
         // Move the camera
-        scope.camera.position.x -= deltaMousePosition.y*MOVEMENT_FACTOR*scope.camera.position.length();
-        scope.camera.position.y -= deltaMousePosition.x*MOVEMENT_FACTOR*scope.camera.position.length();
+        scope.camera.position.x -= deltaMousePosition.y * MOVEMENT_FACTOR * scope.camera.position.length();
+        scope.camera.position.y -= deltaMousePosition.x * MOVEMENT_FACTOR * scope.camera.position.length();
         // Keep track of this movement so we can move the virtual sphere with the model
         scope.cameraOffset.x += deltaMousePosition.x;
         scope.cameraOffset.y += deltaMousePosition.y;
@@ -206,7 +203,7 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
      */
     this.getVirtualSphereRadius = function getVirtualSphereRadius() {
         return scope.domElement.clientHeight / 3.0;
-    }
+    };
 
     /**
      * Returns the centre point of the virtual sphere used by the controller
@@ -215,7 +212,7 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
      this.getVirtualSphereCentre = function getVirtualSphereCentre() {
          return [ scope.domElement.clientWidth / 2.0 + scope.cameraOffset.x,
                  scope.domElement.clientHeight / 2.0 + scope.cameraOffset.y];
-     }
+     };
 
     /**
      * Returns true iff currently running the model demonstration
@@ -223,26 +220,26 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
      */
     this.isRunningDemo = function isRunningDemo() {
         return runningDemo;
-    }
+    };
 
     /**
     * Rotates the camera about the centre of the model
     */
     this.onRotate = function onRotate() {
         // This translates our mouse coords into Three.js coords
-        var lastMousePosition = new THREE.Vector2(0, 0);
+        lastMousePosition = new THREE.Vector2(0, 0);
         lastMousePosition.copy(mousePosition).sub(deltaMousePosition);
         // The centre of the virtual sphere is centre of screen +/- offset due to mouse movement
-        var centreOffsetX = scope.domElement.clientWidth / 2.0 + scope.cameraOffset.x;
-        var centreOffsetY = scope.domElement.clientHeight / 2.0 + scope.cameraOffset.y;
+        const centreOffsetX = scope.domElement.clientWidth / 2.0 + scope.cameraOffset.x;
+        const centreOffsetY = scope.domElement.clientHeight / 2.0 + scope.cameraOffset.y;
         // Mouse position in normal XY coords
-        var mp = new THREE.Vector2(mousePosition.x - centreOffsetX, centreOffsetY - mousePosition.y);
+        const mp = new THREE.Vector2(mousePosition.x - centreOffsetX, centreOffsetY - mousePosition.y);
         // Last mouse position in normal XY coords
-        var lmp = new THREE.Vector2(lastMousePosition.x - centreOffsetX, centreOffsetY - lastMousePosition.y);
-        var r = this.getVirtualSphereRadius(); // Size of virtual globe
-        var rotAxisLocal;  // Rotational axis in virtual sphere coords
-        var rDelta; // Rotational angle
-        var rotAxis; // Rotational axis in camera coords
+        const lmp = new THREE.Vector2(lastMousePosition.x - centreOffsetX, centreOffsetY - lastMousePosition.y);
+        const r = this.getVirtualSphereRadius(); // Size of virtual globe
+        let rotAxisLocal;  // Rotational axis in virtual sphere coords
+        let rDelta = 0.0; // Rotational angle
+        let rotAxis; // Rotational axis in camera coords
 
         // Exit if no change
         if (deltaMousePosition.x === 0.0 && deltaMousePosition.y === 0.0) {
@@ -251,9 +248,8 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
 
         if (mp.length() > r || lmp.length() > r) {
             // If outside the sphere do a pure rotation
-            var dx = deltaMousePosition.x / scope.domElement.clientWidth;
-            var dy = deltaMousePosition.y / scope.domElement.clientHeight;
-            rDelta = 0.0;
+            const dx = deltaMousePosition.x / scope.domElement.clientWidth;
+            const dy = deltaMousePosition.y / scope.domElement.clientHeight;
             if (Math.abs(dx) > Math.abs(dy)) {
                 if (dx > 0) {
                     if (mp.y > 0) {
@@ -284,9 +280,9 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
 
         } else {
             // If inside the sphere calculate start point and end point on sphere of radius r
-            var endVecLocal = new THREE.Vector3(mp.x, mp.y, Math.sqrt(r * r - mp.x * mp.x - mp.y * mp.y));
+            const endVecLocal = new THREE.Vector3(mp.x, mp.y, Math.sqrt(r * r - mp.x * mp.x - mp.y * mp.y));
             endVecLocal.normalize();
-            var startVecLocal = new THREE.Vector3(lmp.x, lmp.y, Math.sqrt(r * r - lmp.x * lmp.x - lmp.y * lmp.y));
+            const startVecLocal = new THREE.Vector3(lmp.x, lmp.y, Math.sqrt(r * r - lmp.x * lmp.x - lmp.y * lmp.y));
             startVecLocal.normalize();
             rotAxisLocal = endVecLocal.clone();
             // Cross product of start and end vectors on sphere gives rotational vector, in local camera coords
@@ -299,7 +295,7 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
         }
 
         // Rotate camera relative to model
-        var rMat = new THREE.Matrix4();
+        const rMat = new THREE.Matrix4();
         rMat.makeRotationAxis(rotAxis, rDelta);
         rObject.matrix.multiply(rMat);
         rObject.rotation.setFromRotationMatrix(rObject.matrix);
@@ -338,8 +334,8 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
      * @return direction that camera is facing (THREE.Vector3)
      */
     this.getDirection = (() => {
-        var direction = new THREE.Vector3(0, 0, -1);
-        var rotation = new THREE.Euler(0, 0, 0, 'YXZ');
+        const direction = new THREE.Vector3(0, 0, -1);
+        const rotation = new THREE.Euler(0, 0, 0, 'YXZ');
         return (v) => {
             rotation.set(rObject.rotation.x, rObject.rotation.y, rObject.rotation.z);
             v.copy(direction).applyEuler(rotation);
@@ -353,7 +349,7 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
      */
     this.stopDemoLoop = function stopDemoLoop(e) {
         runningDemo = false;
-    }
+    };
 
     /**
      * Use threejs animation to perform model rotation demonstration
@@ -361,8 +357,8 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
      */
     this.runModelRotate = function runModelRotate(axisState) {
 
-        var axis = null;
-        switch(axisState) {
+        let axis = null;
+        switch (axisState) {
             case 0:
                 axis = new THREE.Vector3( 1, 0, 0 );
                 break;
@@ -376,15 +372,18 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
                 runningDemo = false;
                 return;
         }
-        var qInitial = new THREE.Quaternion().setFromAxisAngle( axis, 0 );
-        var qFinal = new THREE.Quaternion().setFromAxisAngle( axis, Math.PI/4.0 );
-        var quaternionKF = new THREE.QuaternionKeyframeTrack( '.quaternion', [ 0.0, 1.0, 2.0], [ qInitial.x, qInitial.y, qInitial.z, qInitial.w, qFinal.x, qFinal.y, qFinal.z, qFinal.w, qInitial.x, qInitial.y, qInitial.z, qInitial.w ] );
+        const qInitial = new THREE.Quaternion().setFromAxisAngle( axis, 0 );
+        const qFinal = new THREE.Quaternion().setFromAxisAngle( axis, Math.PI / 4.0 );
+        const quaternionKF = new THREE.QuaternionKeyframeTrack( '.quaternion', [ 0.0, 1.0, 2.0],
+                                [ qInitial.x, qInitial.y, qInitial.z, qInitial.w,
+                                  qFinal.x, qFinal.y, qFinal.z, qFinal.w,
+                                  qInitial.x, qInitial.y, qInitial.z, qInitial.w ], THREE.InterpolateLinear);
 
         // Create an animation sequence from the keyframe track
-        var clip = new THREE.AnimationClip( 'Action', 10.0, [ quaternionKF ] );
+        const clip = new THREE.AnimationClip( 'Action', 10.0, [ quaternionKF ] );
         this.mixer = new THREE.AnimationMixer(rObject);
         this.mixer.addEventListener('finished', this.stopDemoLoop);
-        var action = this.mixer.clipAction(clip);
+        const action = this.mixer.clipAction(clip);
         action.setLoop(THREE.LoopOnce, 1);
         action.play();
         runningDemo = true;

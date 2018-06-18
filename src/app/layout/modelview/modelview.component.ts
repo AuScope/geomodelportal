@@ -41,6 +41,7 @@ const BACKGROUND_COLOUR = new THREE.Color(0xC0C0C0);
 export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     @ViewChild('viewerDiv') private viewerDivElem: ElementRef;
     @ViewChild('popupBoxDiv') private popupBoxDivElem: ElementRef;
+    @ViewChild('errorDiv') private errorDivElem: ElementRef;
 
     // iTowns extent object
     private extentObj;
@@ -112,9 +113,43 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     // Is mouse guide on/off
     public isMouseGuideOn = false;
 
+    // Used to tell user that their browser is not supported
+    private errorDiv;
+
     constructor(private modelInfoService: ModelInfoService, private elRef: ElementRef, private ngRenderer: Renderer2,
                 private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
                 private helpinfoService: HelpinfoService) {
+    }
+
+    /**
+     * Detects IE
+     * @return version of IE or false, if browser is not Internet Explorer
+     */
+    private detectIE() {
+        const ua = window.navigator.userAgent;
+        // Test values; Uncomment to check result …
+        // IE 10
+        // ua = 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)';
+        // IE 11
+        // ua = 'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko';
+        // IE 12 / Spartan
+        // ua = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
+        // 'Chrome/39.0.2171.71 Safari/537.36 Edge/12.0';
+        // Edge (IE 12+)
+        // ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
+        // 'Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586';
+        const msie = ua.indexOf('MSIE ');
+        if (msie > 0) {
+            // IE 10 or older => return version number
+            return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+        }
+        const trident = ua.indexOf('Trident/');
+        if (trident > 0) {
+            // IE 11 => return version number
+            const rv = ua.indexOf('rv:');
+            return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+        }
+        return false;
     }
 
     /**
@@ -125,11 +160,28 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         // viewerDiv is the <div> where the model is rendered
         this.viewerDiv = this.viewerDivElem.nativeElement;
 
-        // popupBoxDiv is the <div> reversed for the popup information boxes
+        // popupBoxDiv is the <div> used for the popup information boxes
         this.popupBoxDiv = this.popupBoxDivElem.nativeElement;
+
+        // errorDiv is used to tell user that WebGL is not supported, or IE is not supported
+        this.errorDiv = this.errorDivElem. nativeElement;
 
         // Used to access 'this' from within callback functions
         const local = this;
+
+        // If the browser is Internet Explorer then produce a fatal warning message
+        if (this.detectIE()) {
+            const p1 = this.ngRenderer.createElement('p');
+            const p2 = this.ngRenderer.createElement('p');
+            const hText1 = this.ngRenderer.createText('Sorry - your Internet Explorer browser is not supported.  ');
+            const hText2 = this.ngRenderer.createText('Please install Firefox, Chrome or Microsoft Edge');
+            this.ngRenderer.appendChild(p1, hText1);
+            this.ngRenderer.appendChild(p2, hText2);
+            this.ngRenderer.appendChild(this.errorDiv, p1);
+            this.ngRenderer.appendChild(this.errorDiv, p2);
+            this.ngRenderer.setStyle(this.errorDiv, 'display', 'inline');
+            return;
+        }
 
         // Detect if webGL is available and inform viewer if cannot proceed
         if (Detector.webgl) {
@@ -169,7 +221,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         } else {
             // Sorry, your browser does not have WebGL
             const warning = Detector.getWebGLErrorMessage();
-            this.ngRenderer.appendChild(this.viewerDiv, warning);
+            this.ngRenderer.appendChild(this.errorDiv, warning);
+            this.ngRenderer.setStyle(this.errorDiv, 'display', 'inline');
         }
     }
 
