@@ -38,7 +38,7 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
 
     // Mouse movement
     const mousePosition = new THREE.Vector2();
-    let lastMousePosition = new THREE.Vector2();
+    const lastMousePosition = new THREE.Vector2();
     const deltaMousePosition = new THREE.Vector2(0, 0);
 
     // Keeps track of camera's movement due to mouse drag
@@ -227,15 +227,15 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
     */
     this.onRotate = function onRotate() {
         // This translates our mouse coords into Three.js coords
-        lastMousePosition = new THREE.Vector2(0, 0);
-        lastMousePosition.copy(mousePosition).sub(deltaMousePosition);
+        const myLastMousePosition = new THREE.Vector2(0, 0);
+        myLastMousePosition.copy(mousePosition).sub(deltaMousePosition);
         // The centre of the virtual sphere is centre of screen +/- offset due to mouse movement
         const centreOffsetX = scope.domElement.clientWidth / 2.0 + scope.cameraOffset.x;
         const centreOffsetY = scope.domElement.clientHeight / 2.0 + scope.cameraOffset.y;
         // Mouse position in normal XY coords
         const mp = new THREE.Vector2(mousePosition.x - centreOffsetX, centreOffsetY - mousePosition.y);
         // Last mouse position in normal XY coords
-        const lmp = new THREE.Vector2(lastMousePosition.x - centreOffsetX, centreOffsetY - lastMousePosition.y);
+        const lmp = new THREE.Vector2(myLastMousePosition.x - centreOffsetX, centreOffsetY - myLastMousePosition.y);
         const r = this.getVirtualSphereRadius(); // Size of virtual globe
         let rotAxisLocal;  // Rotational axis in virtual sphere coords
         let rDelta = 0.0; // Rotational angle
