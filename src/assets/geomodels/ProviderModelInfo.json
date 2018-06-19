@@ -69,6 +69,14 @@
                         "colourClass": "primary",
                         "configFile": "NorthQueensland.json",
                         "modelDir": "NorthQueensland"
+                    },
+                    {
+                        "name": "Tasmania",
+                        "modelUrlPath": "tas",
+                        "icon": "aus-white-icon.png",
+                        "colourClass": "primary",
+                        "configFile": "Tas.json",
+                        "modelDir": "Tas"
                     }
                 ],
                 "icon": "aus-white-icon.png",
