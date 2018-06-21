@@ -58,7 +58,16 @@
             },
             "nsw": {
                 "name": "N.S.W.",
-                "models": [],
+                "models": [
+                    {
+                        "name": "Western Tamworth",
+                        "modelUrlPath": "tamworth",
+                        "icon": "nsw-white-icon.png",
+                        "colourClass": "info",
+                        "configFile": "Tamworth.json",
+                        "modelDir": "Tamworth"
+                    }
+                ],
                 "icon": "nsw-white-icon.png",
                 "colourClass": "info"
             },

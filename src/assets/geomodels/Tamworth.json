@@ -1,0 +1,617 @@
+{
+    "groups": {
+        "DTM": [
+            {
+                "display_name": "NEO DTM 1000m Palaeozoic",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_DTM_1000m_Palaeozoic.gltf",
+                "popups": {
+                    "NEO_DTM_1000M_PALAEOZOIC": {
+                        "name": "NEO_DTM_1000M_PALAEOZOIC",
+                        "title": "NEO_DTM_1000M_PALAEOZOIC"
+                    }
+                },
+                "type": "GLTFObject"
+            }
+        ],
+        "Structures and Faults": [
+            {
+                "display_name": "NEO TB CA1",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_CA1.gltf",
+                "popups": {
+                    "NEO_TB_CA1": {
+                        "name": "NEO_TB_CA1",
+                        "title": "NEO_TB_CA1"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB CA2",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_CA2.gltf",
+                "popups": {
+                    "NEO_TB_CA2": {
+                        "name": "NEO_TB_CA2",
+                        "title": "NEO_TB_CA2"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB CA3",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_CA3.gltf",
+                "popups": {
+                    "NEO_TB_CA3": {
+                        "name": "NEO_TB_CA3",
+                        "title": "NEO_TB_CA3"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB CA4",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_CA4.gltf",
+                "popups": {
+                    "NEO_TB_CA4": {
+                        "name": "NEO_TB_CA4",
+                        "title": "NEO_TB_CA4"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB CA5",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_CA5.gltf",
+                "popups": {
+                    "NEO_TB_CA5": {
+                        "name": "NEO_TB_CA5",
+                        "title": "NEO_TB_CA5"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB CAGr5",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_CAGr5.gltf",
+                "popups": {
+                    "NEO_TB_CAGR5": {
+                        "name": "NEO_TB_CAGR5",
+                        "title": "NEO_TB_CAGR5"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB Carboniferous Devonian z56",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_Carboniferous_Devonian_z56.gltf",
+                "popups": {
+                    "NEO_TB_CARBONIFEROUS_DEVONIAN_Z56": {
+                        "name": "NEO_TB_CARBONIFEROUS_DEVONIAN_Z56",
+                        "title": "NEO_TB_CARBONIFEROUS_DEVONIAN_Z56"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB Carboniferous z56",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_Carboniferous_z56.gltf",
+                "popups": {
+                    "NEO_TB_CARBONIFEROUS_Z56": {
+                        "name": "NEO_TB_CARBONIFEROUS_Z56",
+                        "title": "NEO_TB_CARBONIFEROUS_Z56"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB Devonian z56",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_Devonian_z56.gltf",
+                "popups": {
+                    "NEO_TB_DEVONIAN_Z56": {
+                        "name": "NEO_TB_DEVONIAN_Z56",
+                        "title": "NEO_TB_DEVONIAN_Z56"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB Fault Package Far North",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_Fault_Package_Far_North.gltf",
+                "popups": {
+                    "NEO_TBFN_FLT_SEAMGEO_CAMPO_SANTO": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_CAMPO_SANTO",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_CAMPO_SANTO"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_HORETON": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_HORETON",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_HORETON"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_TREVELLYN_NTH": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_TREVELLYN_NTH",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_TREVELLYN_NTH"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_TREVELLYN_SW": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_TREVELLYN_SW",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_TREVELLYN_SW"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN01": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN01",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN01"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN02": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN02",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN02"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN03": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN03",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN03"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN04": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN04",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN04"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN05": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN05",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN05"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN07": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN07",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN07"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN08": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN08",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN08"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN09": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN09",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN09"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN10": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN10",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN10"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN10B": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN10B",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN10B"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN10C": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN10C",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN10C"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN10D": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN10D",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN10D"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN10E": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN10E",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN10E"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN11": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN11",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN11"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN12": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN12",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN12"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN13": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN13",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN13"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN14": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN14",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN14"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN15": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN15",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN15"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN16": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN16",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN16"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN17": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN17",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN17"
+                    },
+                    "NEO_TBFN_FLT_SEAMGEO_UKN18": {
+                        "name": "NEO_TBFN_FLT_SEAMGEO_UKN18",
+                        "title": "NEO_TBFN_FLT_SEAMGEO_UKN18"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB Fault Package Major",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_Fault_Package_Major.gltf",
+                "popups": {
+                    "NEO_FLT_SEAMGEO_HUNTER_MOOKI": {
+                        "name": "NEO_FLT_SEAMGEO_HUNTER_MOOKI",
+                        "title": "NEO_FLT_SEAMGEO_HUNTER_MOOKI"
+                    },
+                    "NEO_FLT_SEAMGEO_PEEL_MANNING": {
+                        "name": "NEO_FLT_SEAMGEO_PEEL_MANNING",
+                        "title": "NEO_FLT_SEAMGEO_PEEL_MANNING"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB Fault Package North",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_Fault_Package_North.gltf",
+                "popups": {
+                    "NEO_TBN_FLT_SEAMGEO_BALDWIN": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_BALDWIN",
+                        "title": "NEO_TBN_FLT_SEAMGEO_BALDWIN"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_BRUSHYHILL": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_BRUSHYHILL",
+                        "title": "NEO_TBN_FLT_SEAMGEO_BRUSHYHILL"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_COBBADAH_NTH": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_COBBADAH_NTH",
+                        "title": "NEO_TBN_FLT_SEAMGEO_COBBADAH_NTH"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_COBBADAH_STH": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_COBBADAH_STH",
+                        "title": "NEO_TBN_FLT_SEAMGEO_COBBADAH_STH"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_KARRAKURRA": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_KARRAKURRA",
+                        "title": "NEO_TBN_FLT_SEAMGEO_KARRAKURRA"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_KELVIN": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_KELVIN",
+                        "title": "NEO_TBN_FLT_SEAMGEO_KELVIN"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_MOOKI_NORTH_SPLAY": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_MOOKI_NORTH_SPLAY",
+                        "title": "NEO_TBN_FLT_SEAMGEO_MOOKI_NORTH_SPLAY"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_MURRURUNDI": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_MURRURUNDI",
+                        "title": "NEO_TBN_FLT_SEAMGEO_MURRURUNDI"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_NAMOI": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_NAMOI",
+                        "title": "NEO_TBN_FLT_SEAMGEO_NAMOI"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_PLAGYAN": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_PLAGYAN",
+                        "title": "NEO_TBN_FLT_SEAMGEO_PLAGYAN"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN01": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN01",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN01"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN02": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN02",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN02"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN03": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN03",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN03"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN04": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN04",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN04"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN05": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN05",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN05"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN07": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN07",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN07"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN08": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN08",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN08"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN09": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN09",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN09"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN10": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN10",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN10"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN11": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN11",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN11"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN12": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN12",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN12"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN13": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN13",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN13"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN14": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN14",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN14"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN15": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN15",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN15"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN16": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN16",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN16"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN17": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN17",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN17"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN18": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN18",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN18"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN19": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN19",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN19"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN20": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN20",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN20"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN21": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN21",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN21"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN22": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN22",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN22"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN23": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN23",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN23"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN24": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN24",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN24"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN25": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN25",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN25"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_UKN26": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_UKN26",
+                        "title": "NEO_TBN_FLT_SEAMGEO_UKN26"
+                    },
+                    "NEO_TBN_FLT_SEAMGEO_WAVERLEY": {
+                        "name": "NEO_TBN_FLT_SEAMGEO_WAVERLEY",
+                        "title": "NEO_TBN_FLT_SEAMGEO_WAVERLEY"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB Fault Package Southeast",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_Fault_Package_Southeast.gltf",
+                "popups": {
+                    "NEO_TBGB_FLT_SEAMGEO_UKN06": {
+                        "name": "NEO_TBGB_FLT_SEAMGEO_UKN06",
+                        "title": "NEO_TBGB_FLT_SEAMGEO_UKN06"
+                    },
+                    "NEO_TBGB_FLT_SEAMGEO_UKN07": {
+                        "name": "NEO_TBGB_FLT_SEAMGEO_UKN07",
+                        "title": "NEO_TBGB_FLT_SEAMGEO_UKN07"
+                    },
+                    "NEO_TBGB_FLT_SEAMGEO_UKN09": {
+                        "name": "NEO_TBGB_FLT_SEAMGEO_UKN09",
+                        "title": "NEO_TBGB_FLT_SEAMGEO_UKN09"
+                    },
+                    "NEO_TBGB_FLT_SEAMGEO_UKN12": {
+                        "name": "NEO_TBGB_FLT_SEAMGEO_UKN12",
+                        "title": "NEO_TBGB_FLT_SEAMGEO_UKN12"
+                    },
+                    "NEO_TBGB_FLT_SEAMGEO_UKN13": {
+                        "name": "NEO_TBGB_FLT_SEAMGEO_UKN13",
+                        "title": "NEO_TBGB_FLT_SEAMGEO_UKN13"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_CAMYRALLYN": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_CAMYRALLYN",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_CAMYRALLYN"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_MANNINGSPLAY1": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_MANNINGSPLAY1",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_MANNINGSPLAY1"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_TAREAN": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_TAREAN",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_TAREAN"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN01": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN01",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN01"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN02": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN02",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN02"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN04": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN04",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN04"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN05": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN05",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN05"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN08": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN08",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN08"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN10": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN10",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN10"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN11": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN11",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN11"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN12": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN12",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN12"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN13": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN13",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN13"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN14": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN14",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN14"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN15": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN15",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN15"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN16": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN16",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN16"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN17": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN17",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN17"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN18": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN18",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN18"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN19": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN19",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN19"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN20": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN20",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN20"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN21": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN21",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN21"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN22": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN22",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN22"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN23": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN23",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN23"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN24": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN24",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN24"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN25": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN25",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN25"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN26": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN26",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN26"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN27": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN27",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN27"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN28": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN28",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN28"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN29": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN29",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN29"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN30": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN30",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN30"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN31": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN31",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN31"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN32": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN32",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN32"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_UKN33": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_UKN33",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_UKN33"
+                    },
+                    "NEO_TBSE_FLT_SEAMGEO_WILLIAMSRIV": {
+                        "name": "NEO_TBSE_FLT_SEAMGEO_WILLIAMSRIV",
+                        "title": "NEO_TBSE_FLT_SEAMGEO_WILLIAMSRIV"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB Permian Intrusives",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_Permian_Intrusives.gltf",
+                "popups": {
+                    "NEO_TB_PERMIAN_INTRUSIVES": {
+                        "name": "NEO_TB_PERMIAN_INTRUSIVES",
+                        "title": "NEO_TB_PERMIAN_INTRUSIVES"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB Permian z56",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_Permian_z56.gltf",
+                "popups": {
+                    "NEO_TB_PERMIAN_Z56": {
+                        "name": "NEO_TB_PERMIAN_Z56",
+                        "title": "NEO_TB_PERMIAN_Z56"
+                    }
+                },
+                "type": "GLTFObject"
+            }
+        ]
+    },
+    "properties": {
+        "crs": "EPSG:3857",
+        "extent": [
+            215459.5078125,
+            561074.0,
+            6366597.6796875,
+            6885822.09375
+        ],
+        "init_cam_dist": 500000.0,
+        "name": "Western Tamworth"
+    },
+    "type": "GeologicalModel",
+    "version": 1.0
+}
