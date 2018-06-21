@@ -105,6 +105,7 @@ export class ModelInfoService {
 
     /**
      * Initialise state of model
+     * @param modelInfo model information used to initialise state of model
      */
     private parse_model(modelInfo) {
         for (const groupName in modelInfo.groups) {
@@ -140,11 +141,13 @@ export class ModelInfoService {
             const result = await this.initialise();
         }
         let model;
+        let sourceOrgName = '';
         for (const providerKey in local.providerModelInfo) {
             if (local.providerModelInfo.hasOwnProperty(providerKey)) {
                 for (const modelInfo of local.providerModelInfo[providerKey]['models']) {
                     if (modelKey === modelInfo['modelUrlPath']) {
                         model = modelInfo;
+                        sourceOrgName = local.providerModelInfo[providerKey]['name'];
                         break;
                     }
                 }
@@ -161,7 +164,7 @@ export class ModelInfoService {
                             const modelInfo = data as string [];
                             local.modelCache[modelKey] = data;
                             local.parse_model(data);
-                            resolve([data, model['modelDir']]);
+                            resolve([data, model['modelDir'], sourceOrgName]);
                         },
                         (err: HttpErrorResponse) => {
                             console.log('Cannot load model JSON file', err);

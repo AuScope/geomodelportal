@@ -32,6 +32,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     private pushRightClass: 'push-right';
 
     public title = '';
+    public sourceOrgName = '';
     private modelInfo = {};
     private modelPath = '';
     public groupList: Array<string> = [];
@@ -113,6 +114,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
         this.modelInfoService.getModelInfo(this.modelPath).then(
             data => {
                 this.modelInfo = data[0] as string [];
+                this.sourceOrgName = data[2];
                 this.title = this.modelInfo['properties'].name;
                 this.groupList = Object.keys(this.modelInfo['groups']);
                 this.modelPartState = this.modelInfoService.getModelPartStateObj();
