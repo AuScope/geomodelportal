@@ -59,6 +59,12 @@ export class ModelInfoService {
     // Subject for catching model control events
     private modelControlEventSub = new Subject<ModelControlEvent>();
 
+    // A promise to provider inform data and initialise
+    private initPromise: Promise<any> = null;
+
+    // A promise to fetch model data
+    private modelPromise: Promise<any> = null;
+
     constructor(private httpService: HttpClient) {
     }
 
@@ -67,30 +73,34 @@ export class ModelInfoService {
      */
     private initialise() {
         const local = this;
-        return new Promise(function(resolve, reject) {
-            local.httpService.get('./assets/geomodels/ProviderModelInfo.json').subscribe(
-                data => {
-                    local.providerModelInfo = data as string [];
-                    for (const providerKey in local.providerModelInfo) {
-                        if (local.providerModelInfo.hasOwnProperty(providerKey)) {
-                            const providerInfo: ProviderInfo = { name: local.providerModelInfo[providerKey].name,
+        if (!this.initPromise) {
+            this.initPromise =  new Promise(function(resolve, reject) {
+                local.httpService.get('./assets/geomodels/ProviderModelInfo.json').subscribe(
+                    data => {
+                        local.providerModelInfo = data as string [];
+                        local.providerInfoList = [];
+                        for (const providerKey in local.providerModelInfo) {
+                            if (local.providerModelInfo.hasOwnProperty(providerKey)) {
+                                const providerInfo: ProviderInfo = { name: local.providerModelInfo[providerKey].name,
                                                                  numberModels: local.providerModelInfo[providerKey].models.length,
                                                                  icon: local.providerModelInfo[providerKey].icon,
                                                                  colourClass: local.providerModelInfo[providerKey].colourClass,
                                                                  providerPath: providerKey
                                                              };
-                            local.providerInfoList.push(providerInfo);
+                                local.providerInfoList.push(providerInfo);
+                            }
                         }
+                        local.initialised = true;
+                        resolve([local.providerModelInfo, local.providerInfoList]);
+                    },
+                    (err: HttpErrorResponse) => {
+                        console.log('Cannot load provider model JSON file', err);
+                        reject(err);
                     }
-                    local.initialised = true;
-                    resolve([local.providerModelInfo, local.providerInfoList]);
-                },
-                (err: HttpErrorResponse) => {
-                    console.log('Cannot load provider model JSON file', err);
-                    reject(err);
-                }
-            );
-        });
+                );
+            });
+        }
+        return this.initPromise;
     }
 
     /**
@@ -144,20 +154,23 @@ export class ModelInfoService {
             }
         }
         if (model !== undefined) {
-            return new Promise(function(resolve, reject) {
-                local.httpService.get('./assets/geomodels/' + model['configFile']).subscribe(
-                    data => {
-                        const modelInfo = data as string [];
-                        local.modelCache[modelKey] = data;
-                        local.parse_model(data);
-                        resolve([data, model['modelDir']]);
-                    },
-                    (err: HttpErrorResponse) => {
-                        console.log('Cannot load model JSON file', err);
-                        reject(err);
-                    }
-                );
-            });
+            if (!this.modelPromise) {
+                this.modelPromise = new Promise(function(resolve, reject) {
+                    local.httpService.get('./assets/geomodels/' + model['configFile']).subscribe(
+                        data => {
+                            const modelInfo = data as string [];
+                            local.modelCache[modelKey] = data;
+                            local.parse_model(data);
+                            resolve([data, model['modelDir']]);
+                        },
+                        (err: HttpErrorResponse) => {
+                            console.log('Cannot load model JSON file', err);
+                            reject(err);
+                        }
+                    );
+                });
+            }
+            return this.modelPromise;
         }
         return new Promise(function(resolve, reject) {
             console.log('Model not found in config file');
