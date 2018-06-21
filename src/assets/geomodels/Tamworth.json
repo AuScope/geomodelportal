@@ -609,7 +609,7 @@
             6366597.6796875,
             6885822.09375
         ],
-        "init_cam_dist": 500000.0,
+        "init_cam_dist": 900000.0,
         "name": "Western Tamworth"
     },
     "type": "GeologicalModel",
