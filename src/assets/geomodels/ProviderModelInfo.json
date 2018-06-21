@@ -7,7 +7,16 @@
             },
             "wa": {
                 "name": "Western Australia",
-                "models": [],
+                "models": [
+                    {
+                        "name": "Windimurra",
+                        "modelUrlPath": "windimurra",
+                        "icon": "wa-white-icon.png",
+                        "colourClass": "warning",
+                        "configFile": "Windimurra.json",
+                        "modelDir": "Windimurra"
+                    }
+                ],
                 "icon": "wa-white-icon.png",
                 "colourClass": "warning"
             },
