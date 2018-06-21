@@ -43,7 +43,16 @@
             },
             "qld": {
                 "name": "Queensland",
-                "models": [],
+                "models": [
+                    {
+                        "name": "Quamby",
+                        "modelUrlPath": "quamby",
+                        "icon": "qld-white-icon.png",
+                        "colourClass": "danger",
+                        "configFile": "Quamby.json",
+                        "modelDir": "Quamby"
+                    }
+                ],
                 "icon": "qld-white-icon.png",
                 "colourClass": "danger"
             },
@@ -77,7 +86,16 @@
                         "colourClass": "primary",
                         "configFile": "Tas.json",
                         "modelDir": "Tas"
+                    },
+                    {
+                        "name": "Yilgarn NWS",
+                        "modelUrlPath": "yilgarn",
+                        "icon": "aus-white-icon.png",
+                        "colourClass": "primary",
+                        "configFile": "Yilgarn.json",
+                        "modelDir": "Yilgarn"
                     }
+                    
                 ],
                 "icon": "aus-white-icon.png",
                 "colourClass": "primary"
