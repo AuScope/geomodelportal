@@ -42,6 +42,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     @ViewChild('viewerDiv') private viewerDivElem: ElementRef;
     @ViewChild('popupBoxDiv') private popupBoxDivElem: ElementRef;
     @ViewChild('errorDiv') private errorDivElem: ElementRef;
+    @ViewChild('spinnerDiv') private spinnerDivElem: ElementRef;
 
     // iTowns extent object
     private extentObj;
@@ -116,6 +117,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     // Used to tell user that their browser is not supported
     private errorDiv;
 
+    // Used to indicate that the model is loading
+    private spinnerDiv;
+
     constructor(private modelInfoService: ModelInfoService, private elRef: ElementRef, private ngRenderer: Renderer2,
                 private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
                 private helpinfoService: HelpinfoService) {
@@ -166,6 +170,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         // errorDiv is used to tell user that WebGL is not supported, or IE is not supported
         this.errorDiv = this.errorDivElem. nativeElement;
 
+        // spinnerDiv is used to indicate that the model is loading
+        this.spinnerDiv = this.spinnerDivElem. nativeElement;
+
         // Used to access 'this' from within callback functions
         const local = this;
 
@@ -186,6 +193,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         // Detect if webGL is available and inform viewer if cannot proceed
         if (Detector.webgl) {
             const modelUrlPath = this.route.snapshot.paramMap.get('modelPath');
+
+            // Turn on loading spinner
+            this.ngRenderer.setStyle(this.spinnerDiv, 'display', 'inline');
 
             // Initialise model by downloading its JSON file
             this.modelInfoService.getModelInfo(modelUrlPath).then(res => {
@@ -642,6 +652,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 // Look at all the intersecting objects to see that if any of them have information for popups
                 if (intersects.length > 0) {
                     for (let n = 0; n < intersects.length; n++) {
+                        // console.log('intersects[n].object.name = ', intersects[n].object.name);
                         if (intersects[n].object.name === '') {
                             continue;
                         }
@@ -652,6 +663,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     if (parts[i].hasOwnProperty('popups')) {
                                         for (const popup_key in parts[i]['popups']) {
                                             if (parts[i]['popups'].hasOwnProperty(popup_key)) {
+                                                // console.log('popup_key = ', popup_key);
                                                 if (popup_key + '_0' === intersects[n].object.name) {
                                                     modelViewObj.makePopup(event, parts[i]['popups'][popup_key], intersects[n].point);
                                                     if (parts[i].hasOwnProperty('model_url')) {
@@ -729,6 +741,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             }
         });
         this.view.notifyChange(true);
+
+        // Everything except the WMS layers are loaded at this point, so turn off loading spinner
+        this.ngRenderer.setStyle(this.spinnerDiv, 'display', 'none');
     }
 
     /**

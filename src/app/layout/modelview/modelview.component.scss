@@ -115,3 +115,22 @@
         display: none;
         overflow: hidden;
     }
+
+    #spinnerDiv {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -50px;
+        width: 100px;
+        height: 100px;
+        z-index: 1990;
+        padding: 0;
+        font-size: 12px;
+        padding: 0 1rem;
+        background: white;
+        color: black;
+        border: none;
+        opacity: 1.0;
+        display: inline;
+    }
