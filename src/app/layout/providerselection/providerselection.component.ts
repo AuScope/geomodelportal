@@ -22,9 +22,9 @@ export class ProviderSelectionComponent {
         //
         this.sliders.push(
             {
-                imagePath: 'assets/images/Otway.PNG',
-                label: 'Victoria',
-                text: 'Otway Basin Model'
+                imagePath: 'assets/images/Windimurra.PNG',
+                label: 'Western Australia',
+                text: 'Windimurra Model'
             },
             {
                 imagePath: 'assets/images/NorthGawler.PNG',
@@ -35,6 +35,11 @@ export class ProviderSelectionComponent {
                 imagePath: 'assets/images/RoseberyLyell.PNG',
                 label: 'Tasmania',
                 text: 'Rosebery Lyell Model'
+            },
+            {
+                imagePath: 'assets/images/Yilgarn.PNG',
+                label: 'Geoscience Australia',
+                text: 'Yilgarn Model'
             }
         );
         this.modelInfoService.getProviderInfo().then(res => { this.sources = res; });
