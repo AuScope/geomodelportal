@@ -15,6 +15,7 @@ export class ModelCardComponent {
     @Input() label: string;
     @Input() modelPath: string;
     @Input() prePath = '';
+    @Input() modelInfoLink = '';
 
     constructor() {
         if (environment.usePrePath) {
@@ -27,5 +28,11 @@ export class ModelCardComponent {
      */
     public navigateToModel() {
         window.location.assign(this.prePath + '/model/' + this.modelPath);
+    }
+
+    /** Open up a window to more information about the model
+     */
+    public openModelInfoLink() {
+        window.open(this.modelInfoLink);
     }
 }

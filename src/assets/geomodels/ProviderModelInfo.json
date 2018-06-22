@@ -1,7 +1,17 @@
 {
             "vic": {
                 "name": "Victoria",
-                "models": [],
+                "models": [
+                    {
+                        "name": "Otway",
+                        "modelUrlPath": "otway",
+                        "icon": "vic-white-icon.png",
+                        "colourClass": "warning",
+                        "configFile": "Otway.json",
+                        "modelDir": "Otway",
+                        "srcUrl" : "http://earthresources.efirst.com.au/product.asp?pID=1083&cID=54"
+                    }
+                ],
                 "icon": "vic-white-icon.png",
                 "colourClass": "primary"
             },
@@ -14,7 +24,8 @@
                         "icon": "wa-white-icon.png",
                         "colourClass": "warning",
                         "configFile": "Windimurra.json",
-                        "modelDir": "Windimurra"
+                        "modelDir": "Windimurra",
+                        "srcUrl" : "https://dasc.dmp.wa.gov.au/DASC?productAlias=Windimurra3D"
                     }
                 ],
                 "icon": "wa-white-icon.png",
@@ -29,7 +40,8 @@
                         "icon": "sa-white-icon.png",
                         "colourClass": "warning",
                         "configFile": "NorthGawler.json",
-                        "modelDir": "NorthGawler"
+                        "modelDir": "NorthGawler",
+                        "srcUrl" : "http://www.minerals.statedevelopment.sa.gov.au/geoscience/geoscientific_data/3d_geological_models/northern_gawler_province"
                     }
                 ],
                 "icon": "sa-white-icon.png",
@@ -44,7 +56,8 @@
                         "icon": "tas-white-icon.png",
                         "colourClass": "warning",
                         "configFile": "RoseberyLyell.json",
-                        "modelDir": "RoseberyLyell"
+                        "modelDir": "RoseberyLyell",
+                        "srcUrl" : "http://www.mrt.tas.gov.au/portal/west-tasmania-3d-geological-geophysical-modelling"
                     }
                 ],
                 "icon": "tas-white-icon.png",
@@ -59,7 +72,8 @@
                         "icon": "qld-white-icon.png",
                         "colourClass": "danger",
                         "configFile": "Quamby.json",
-                        "modelDir": "Quamby"
+                        "modelDir": "Quamby",
+                        "srcUrl" : "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/search?REPORT_ID=89698&COLLECTION_ID=999"
                     }
                 ],
                 "icon": "qld-white-icon.png",
@@ -74,7 +88,8 @@
                         "icon": "nsw-white-icon.png",
                         "colourClass": "info",
                         "configFile": "Tamworth.json",
-                        "modelDir": "Tamworth"
+                        "modelDir": "Tamworth",
+                        "srcUrl" : "https://www.resourcesandenergy.nsw.gov.au/miners-and-explorers/geoscience-information/products-and-data/3d-mapping-data"
                     }
                 ],
                 "icon": "nsw-white-icon.png",
@@ -95,7 +110,8 @@
                         "icon": "aus-white-icon.png",
                         "colourClass": "primary",
                         "configFile": "NorthQueensland.json",
-                        "modelDir": "NorthQueensland"
+                        "modelDir": "NorthQueensland",
+                        "srcUrl" : "https://ecat.ga.gov.au/geonetwork/srv/eng/catalog.search?node=srv#/metadata/a05f7892-eeeb-7506-e044-00144fdd4fa6"
                     },
                     {
                         "name": "Tasmania",
@@ -103,7 +119,8 @@
                         "icon": "aus-white-icon.png",
                         "colourClass": "primary",
                         "configFile": "Tas.json",
-                        "modelDir": "Tas"
+                        "modelDir": "Tas",
+                        "srcUrl" : "https://ecat.ga.gov.au/geonetwork/srv/eng/catalog.search?node=srv#/metadata/a05f7892-c08a-7506-e044-00144fdd4fa6"
                     },
                     {
                         "name": "Yilgarn NWS",
@@ -111,9 +128,10 @@
                         "icon": "aus-white-icon.png",
                         "colourClass": "primary",
                         "configFile": "Yilgarn.json",
-                        "modelDir": "Yilgarn"
+                        "modelDir": "Yilgarn",
+                        "srcUrl" : ""
                     }
-                    
+
                 ],
                 "icon": "aus-white-icon.png",
                 "colourClass": "primary"
