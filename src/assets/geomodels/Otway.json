@@ -1,438 +1,75 @@
 {
     "groups": {
-        "Group Name": [
+        "Stratigraphy": [
             {
-                "display_name": "FINAL OTWAY STRAT SURFACES 13-07-11",
+                "display_name": "BSMT",
                 "displayed": true,
                 "include": true,
-                "model_url": "FINAL_OTWAY_STRAT_SURFACES_13-07-11.gltf",
+                "model_url": "FINAL_OTWAY_EXTRA_STRAT_13-07-11_0.gltf",
                 "popups": {
-                    "STRAT_BASEMENT_SEEBASE_FINAL": {
-                        "name": "STRAT_BASEMENT_SEEBASE_FINAL",
-                        "title": "STRAT_BASEMENT_SEEBASE_FINAL"
-                    },
-                    "STRAT_BATHY-TOPO": {
-                        "name": "STRAT_BATHY-TOPO",
-                        "title": "STRAT_BATHY-TOPO"
-                    },
-                    "STRAT_MOHO": {
-                        "name": "STRAT_MOHO",
-                        "title": "STRAT_MOHO"
-                    },
-                    "STRAT_TOP-CRAYFISH_FROGTECH_FINAL": {
-                        "name": "STRAT_TOP-CRAYFISH_FROGTECH_FINAL",
-                        "title": "STRAT_TOP-CRAYFISH_FROGTECH_FINAL"
-                    },
-                    "STRAT_TOP-EUMERALLA_FROGTECH_FINAL": {
-                        "name": "STRAT_TOP-EUMERALLA_FROGTECH_FINAL",
-                        "title": "STRAT_TOP-EUMERALLA_FROGTECH_FINAL"
-                    },
-                    "STRAT_TOP-PROTEROZOIC_FINAL": {
-                        "name": "STRAT_TOP-PROTEROZOIC_FINAL",
-                        "title": "STRAT_TOP-PROTEROZOIC_FINAL"
-                    },
-                    "STRAT_TOP-SHERBROOK_FROGTECH_FINAL": {
-                        "name": "STRAT_TOP-SHERBROOK_FROGTECH_FINAL",
-                        "title": "STRAT_TOP-SHERBROOK_FROGTECH_FINAL"
-                    },
-                    "STRAT_TOP-WANGERRIP_GSV_FINAL": {
-                        "name": "STRAT_TOP-WANGERRIP_GSV_FINAL",
-                        "title": "STRAT_TOP-WANGERRIP_GSV_FINAL"
-                    },
-                    "STRAT_TORQUAY_TOP-EASTERN_VIEW_GSV_FINAL": {
-                        "name": "STRAT_TORQUAY_TOP-EASTERN_VIEW_GSV_FINAL",
-                        "title": "STRAT_TORQUAY_TOP-EASTERN_VIEW_GSV_FINAL"
-                    },
-                    "STRAT_TORQUAY_TOP-EUMERALLA_GSV": {
-                        "name": "STRAT_TORQUAY_TOP-EUMERALLA_GSV",
-                        "title": "STRAT_TORQUAY_TOP-EUMERALLA_GSV"
-                    },
-                    "STRAT_TORQUAY_TOP-OTWAYGP_GSV_FINAL": {
-                        "name": "STRAT_TORQUAY_TOP-OTWAYGP_GSV_FINAL",
-                        "title": "STRAT_TORQUAY_TOP-OTWAYGP_GSV_FINAL"
+                    "FINAL_OTWAY_EXTRA_STRAT_13-07-11-STRAT_TOP-BSMT_GSV": {
+                        "name": "STRAT_TOP-BSMT_GSV",
+                        "title": "STRAT_TOP-BSMT_GSV"
                     }
                 },
                 "type": "GLTFObject"
             },
             {
-                "display_name": "West Vic intrusives Final z54 06-07-11",
+                "display_name": "CRAYFISH",
                 "displayed": true,
                 "include": true,
-                "model_url": "West_Vic_intrusives_Final_z54_06-07-11.gltf",
+                "model_url": "FINAL_OTWAY_EXTRA_STRAT_13-07-11_1.gltf",
                 "popups": {
-                    "GG100-INV1": {
-                        "name": "GG100-INV1",
-                        "title": "GG100-INV1"
-                    },
-                    "GG101-INV1": {
-                        "name": "GG101-INV1",
-                        "title": "GG101-INV1"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART1": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART1",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART1"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART10": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART10",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART10"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART12": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART12",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART12"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART13": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART13",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART13"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART15": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART15",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART15"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART16": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART16",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART16"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART18": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART18",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART18"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART19": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART19",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART19"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART2": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART2",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART2"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART20": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART20",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART20"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART22": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART22",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART22"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART23": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART23",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART23"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART24": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART24",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART24"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART25": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART25",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART25"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART27": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART27",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART27"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART28": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART28",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART28"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART29": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART29",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART29"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART3": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART3",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART3"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART30": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART30",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART30"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART31": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART31",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART31"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART32": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART32",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART32"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART33": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART33",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART33"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART34": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART34",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART34"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART35": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART35",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART35"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART37": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART37",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART37"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART38": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART38",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART38"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART39": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART39",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART39"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART42": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART42",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART42"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART44": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART44",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART44"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART48": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART48",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART48"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART5": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART5",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART5"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART50": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART50",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART50"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART54": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART54",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART54"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART55": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART55",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART55"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART58": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART58",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART58"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART59": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART59",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART59"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART6": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART6",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART6"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART60": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART60",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART60"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART61": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART61",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART61"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART62": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART62",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART62"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART63": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART63",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART63"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART65": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART65",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART65"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART8": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART8",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART8"
-                    },
-                    "GRANITES_NORTH_HET-BKGRD_INV5_PART9": {
-                        "name": "GRANITES_NORTH_HET-BKGRD_INV5_PART9",
-                        "title": "GRANITES_NORTH_HET-BKGRD_INV5_PART9"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART1": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART1",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART1"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART10": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART10",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART10"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART12": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART12",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART12"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART13": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART13",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART13"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART14": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART14",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART14"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART16": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART16",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART16"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART17": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART17",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART17"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART18": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART18",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART18"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART2": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART2",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART2"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART20": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART20",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART20"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART21": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART21",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART21"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART22": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART22",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART22"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART24": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART24",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART24"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART26": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART26",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART26"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART27": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART27",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART27"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART28": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART28",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART28"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART29": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART29",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART29"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART3": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART3",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART3"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART31": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART31",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART31"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART32": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART32",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART32"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART33": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART33",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART33"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART34": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART34",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART34"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART35": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART35",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART35"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART36": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART36",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART36"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART37": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART37",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART37"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART38": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART38",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART38"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART39": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART39",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART39"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART4": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART4",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART4"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART42": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART42",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART42"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART43": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART43",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART43"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART45": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART45",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART45"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART46": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART46",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART46"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART48": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART48",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART48"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART49": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART49",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART49"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART5": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART5",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART5"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART53": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART53",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART53"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART55": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART55",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART55"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART6": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART6",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART6"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART7": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART7",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART7"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART8": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART8",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART8"
-                    },
-                    "GRANITES_SOUTH_HET-BKGRD_INV5_PART9": {
-                        "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART9",
-                        "title": "GRANITES_SOUTH_HET-BKGRD_INV5_PART9"
-                    },
-                    "OB_GRANITE1": {
-                        "name": "OB_GRANITE1",
-                        "title": "OB_GRANITE1"
-                    },
-                    "OB_GRANITE2": {
-                        "name": "OB_GRANITE2",
-                        "title": "OB_GRANITE2"
-                    },
-                    "OB_GRANITE3": {
-                        "name": "OB_GRANITE3",
-                        "title": "OB_GRANITE3"
-                    },
-                    "OB_GRANITE4": {
-                        "name": "OB_GRANITE4",
-                        "title": "OB_GRANITE4"
-                    },
-                    "OB_GRANITE5": {
-                        "name": "OB_GRANITE5",
-                        "title": "OB_GRANITE5"
+                    "FINAL_OTWAY_EXTRA_STRAT_13-07-11-STRAT_TOP-CRAYFISH_GSV": {
+                        "name": "STRAT_TOP-CRAYFISH_GSV",
+                        "title": "STRAT_TOP-CRAYFISH_GSV"
                     }
                 },
                 "type": "GLTFObject"
             },
             {
-                "display_name": "FINAL OTWAY FAULTS 14-07-11",
+                "display_name": "EUMERALLA",
+                "displayed": true,
+                "include": true,
+                "model_url": "FINAL_OTWAY_EXTRA_STRAT_13-07-11_2.gltf",
+                "popups": {
+                    "FINAL_OTWAY_EXTRA_STRAT_13-07-11-STRAT_TOP-EUMERALLA_GSV": {
+                        "name": "STRAT_TOP-EUMERALLA_GSV",
+                        "title": "STRAT_TOP-EUMERALLA_GSV"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "PRETTY HILL EAST",
+                "displayed": true,
+                "include": true,
+                "model_url": "FINAL_OTWAY_EXTRA_STRAT_13-07-11_3.gltf",
+                "popups": {
+                    "FINAL_OTWAY_EXTRA_STRAT_13-07-11-STRAT_TOP-PRETTY-HILL-EAST_FROGTECH_FINAL": {
+                        "name": "STRAT_TOP-PRETTY-HILL-EAST_FROGTECH_FINAL",
+                        "title": "STRAT_TOP-PRETTY-HILL-EAST_FROGTECH_FINAL"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "PRETTY HILL WEST",
+                "displayed": true,
+                "include": true,
+                "model_url": "FINAL_OTWAY_EXTRA_STRAT_13-07-11_4.gltf",
+                "popups": {
+                    "FINAL_OTWAY_EXTRA_STRAT_13-07-11-STRAT_TOP-PRETTY-HILL-WEST_FROGTECH_FINAL": {
+                        "name": "STRAT_TOP-PRETTY-HILL-WEST_FROGTECH_FINAL",
+                        "title": "STRAT_TOP-PRETTY-HILL-WEST_FROGTECH_FINAL"
+                    }
+                },
+                "type": "GLTFObject"
+            }
+        ],
+        "Faults": [
+            {
+                "display_name": "OTWAY FAULTS 14-07-11",
                 "displayed": true,
                 "include": true,
                 "model_url": "FINAL_OTWAY_FAULTS_14-07-11.gltf",
@@ -444,6 +81,10 @@
                     "FINAL_OTWAY_FAULTS_14-07-11-FLT_ARDONACHIESOUTH": {
                         "name": "FLT_ARDONACHIESOUTH",
                         "title": "FLT_ARDONACHIESOUTH"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_AVOCA": {
+                        "name": "FLT_AVOCA",
+                        "title": "FLT_AVOCA"
                     },
                     "FINAL_OTWAY_FAULTS_14-07-11-FLT_BAMBRA": {
                         "name": "FLT_BAMBRA",
@@ -500,6 +141,18 @@
                     "FINAL_OTWAY_FAULTS_14-07-11-FLT_PRAWN-B": {
                         "name": "FLT_PRAWN-B",
                         "title": "FLT_PRAWN-B"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_SHALLOW_EW": {
+                        "name": "FLT_SHALLOW_EW",
+                        "title": "FLT_SHALLOW_EW"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_SHALLOW_NE": {
+                        "name": "FLT_SHALLOW_NE",
+                        "title": "FLT_SHALLOW_NE"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_SHALLOW_NW": {
+                        "name": "FLT_SHALLOW_NW",
+                        "title": "FLT_SHALLOW_NW"
                     },
                     "FINAL_OTWAY_FAULTS_14-07-11-FLT_SHIPWRECK": {
                         "name": "FLT_SHIPWRECK",
@@ -876,52 +529,18 @@
                     "FINAL_OTWAY_FAULTS_14-07-11-FLT_UN9": {
                         "name": "FLT_UN9",
                         "title": "FLT_UN9"
+                    },
+                    "FINAL_OTWAY_FAULTS_14-07-11-FLT_YARRAMYLJUP": {
+                        "name": "FLT_YARRAMYLJUP",
+                        "title": "FLT_YARRAMYLJUP"
                     }
                 },
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Granitic Magnetics and Gravity": [
             {
-                "display_name": "FINAL OTWAY EXTRA STRAT 13-07-11 0",
-                "displayed": true,
-                "include": true,
-                "model_url": "FINAL_OTWAY_EXTRA_STRAT_13-07-11_0.gltf",
-                "popups": null,
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "FINAL OTWAY EXTRA STRAT 13-07-11 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "FINAL_OTWAY_EXTRA_STRAT_13-07-11_1.gltf",
-                "popups": null,
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "FINAL OTWAY EXTRA STRAT 13-07-11 2",
-                "displayed": true,
-                "include": true,
-                "model_url": "FINAL_OTWAY_EXTRA_STRAT_13-07-11_2.gltf",
-                "popups": null,
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "FINAL OTWAY EXTRA STRAT 13-07-11 3",
-                "displayed": true,
-                "include": true,
-                "model_url": "FINAL_OTWAY_EXTRA_STRAT_13-07-11_3.gltf",
-                "popups": null,
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "FINAL OTWAY EXTRA STRAT 13-07-11 4",
-                "displayed": true,
-                "include": true,
-                "model_url": "FINAL_OTWAY_EXTRA_STRAT_13-07-11_4.gltf",
-                "popups": null,
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "FINAL OTWAY INTRUSIVES 13-07-11",
+                "display_name": "OTWAY INTRUSIVES 13-07-11",
                 "displayed": true,
                 "include": true,
                 "model_url": "FINAL_OTWAY_INTRUSIVES_13-07-11.gltf",
@@ -934,9 +553,117 @@
                         "name": "GG101-INV1",
                         "title": "GG101-INV1"
                     },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM15E": {
+                        "name": "GM15E",
+                        "title": "GM15E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM16E": {
+                        "name": "GM16E",
+                        "title": "GM16E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM17E": {
+                        "name": "GM17E",
+                        "title": "GM17E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM18E": {
+                        "name": "GM18E",
+                        "title": "GM18E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM19E": {
+                        "name": "GM19E",
+                        "title": "GM19E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM20E": {
+                        "name": "GM20E",
+                        "title": "GM20E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM22E": {
+                        "name": "GM22E",
+                        "title": "GM22E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM23E": {
+                        "name": "GM23E",
+                        "title": "GM23E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM24E": {
+                        "name": "GM24E",
+                        "title": "GM24E"
+                    },
                     "FINAL_OTWAY_INTRUSIVES_13-07-11-GM28E": {
                         "name": "GM28E",
                         "title": "GM28E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM33E": {
+                        "name": "GM33E",
+                        "title": "GM33E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM35E": {
+                        "name": "GM35E",
+                        "title": "GM35E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM36E": {
+                        "name": "GM36E",
+                        "title": "GM36E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM37E": {
+                        "name": "GM37E",
+                        "title": "GM37E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM38E": {
+                        "name": "GM38E",
+                        "title": "GM38E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM39E": {
+                        "name": "GM39E",
+                        "title": "GM39E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM40E": {
+                        "name": "GM40E",
+                        "title": "GM40E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM41E": {
+                        "name": "GM41E",
+                        "title": "GM41E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM42E": {
+                        "name": "GM42E",
+                        "title": "GM42E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM43E": {
+                        "name": "GM43E",
+                        "title": "GM43E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM44E": {
+                        "name": "GM44E",
+                        "title": "GM44E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM45E": {
+                        "name": "GM45E",
+                        "title": "GM45E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM46E": {
+                        "name": "GM46E",
+                        "title": "GM46E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM47E": {
+                        "name": "GM47E",
+                        "title": "GM47E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM49E": {
+                        "name": "GM49E",
+                        "title": "GM49E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM50E": {
+                        "name": "GM50E",
+                        "title": "GM50E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM51E": {
+                        "name": "GM51E",
+                        "title": "GM51E"
+                    },
+                    "FINAL_OTWAY_INTRUSIVES_13-07-11-GM52E": {
+                        "name": "GM52E",
+                        "title": "GM52E"
                     },
                     "FINAL_OTWAY_INTRUSIVES_13-07-11-GRANITES_SOUTH_HET-BKGRD_INV5_PART1": {
                         "name": "GRANITES_SOUTH_HET-BKGRD_INV5_PART1",
@@ -1081,6 +808,65 @@
                 },
                 "type": "GLTFObject"
             }
+        ],
+        "Stratigraphic Surfaces": [
+            {
+                "display_name": "OTWAY STRAT SURFACES 13-07-11",
+                "displayed": true,
+                "include": true,
+                "model_url": "FINAL_OTWAY_STRAT_SURFACES_13-07-11.gltf",
+                "popups": {
+                    "STRAT_BASEMENT_SEEBASE_FINAL": {
+                        "name": "STRAT_BASEMENT_SEEBASE_FINAL",
+                        "title": "STRAT_BASEMENT_SEEBASE_FINAL"
+                    },
+                    "STRAT_BATHY-TOPO": {
+                        "name": "STRAT_BATHY-TOPO",
+                        "title": "STRAT_BATHY-TOPO"
+                    },
+                    "STRAT_MOHO": {
+                        "name": "STRAT_MOHO",
+                        "title": "STRAT_MOHO"
+                    },
+                    "STRAT_TOP-CRAYFISH_FROGTECH_FINAL": {
+                        "name": "STRAT_TOP-CRAYFISH_FROGTECH_FINAL",
+                        "title": "STRAT_TOP-CRAYFISH_FROGTECH_FINAL"
+                    },
+                    "STRAT_TOP-EUMERALLA_FROGTECH_FINAL": {
+                        "name": "STRAT_TOP-EUMERALLA_FROGTECH_FINAL",
+                        "title": "STRAT_TOP-EUMERALLA_FROGTECH_FINAL"
+                    },
+                    "STRAT_TOP-PROTEROZOIC_FINAL": {
+                        "name": "STRAT_TOP-PROTEROZOIC_FINAL",
+                        "title": "STRAT_TOP-PROTEROZOIC_FINAL"
+                    },
+                    "STRAT_TOP-SHERBROOK_FROGTECH_FINAL": {
+                        "name": "STRAT_TOP-SHERBROOK_FROGTECH_FINAL",
+                        "title": "STRAT_TOP-SHERBROOK_FROGTECH_FINAL"
+                    },
+                    "STRAT_TOP-WANGERRIP_GSV_FINAL": {
+                        "name": "STRAT_TOP-WANGERRIP_GSV_FINAL",
+                        "title": "STRAT_TOP-WANGERRIP_GSV_FINAL"
+                    },
+                    "STRAT_TORQUAY_TOP-BOONAH_GSV_FINAL": {
+                        "name": "STRAT_TORQUAY_TOP-BOONAH_GSV_FINAL",
+                        "title": "STRAT_TORQUAY_TOP-BOONAH_GSV_FINAL"
+                    },
+                    "STRAT_TORQUAY_TOP-EASTERN_VIEW_GSV_FINAL": {
+                        "name": "STRAT_TORQUAY_TOP-EASTERN_VIEW_GSV_FINAL",
+                        "title": "STRAT_TORQUAY_TOP-EASTERN_VIEW_GSV_FINAL"
+                    },
+                    "STRAT_TORQUAY_TOP-EUMERALLA_GSV": {
+                        "name": "STRAT_TORQUAY_TOP-EUMERALLA_GSV",
+                        "title": "STRAT_TORQUAY_TOP-EUMERALLA_GSV"
+                    },
+                    "STRAT_TORQUAY_TOP-OTWAYGP_GSV_FINAL": {
+                        "name": "STRAT_TORQUAY_TOP-OTWAYGP_GSV_FINAL",
+                        "title": "STRAT_TORQUAY_TOP-OTWAYGP_GSV_FINAL"
+                    }
+                },
+                "type": "GLTFObject"
+            }
         ]
     },
     "properties": {
@@ -1089,9 +875,10 @@
             460034.84375,
             877601.125,
             5528939.0625,
-            6206367.5703125
+            5927839.984375
         ],
-        "name": "Name of model"
+        "init_cam_dist": 1000000.0,
+        "name": "Otway Basin"
     },
     "type": "GeologicalModel",
     "version": 1.0
