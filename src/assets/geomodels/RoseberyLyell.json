@@ -1,8 +1,8 @@
 {
     "groups": {
-        "Mineral Formations": [
+        "Geology": [
             {
-                "display_name": "02 water",
+                "display_name": "Water",
                 "displayed": true,
                 "include": true,
                 "model_url": "02_water.gltf",
@@ -15,7 +15,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "03 Cenozoic basalt",
+                "display_name": "Cenozoic basalt",
                 "displayed": true,
                 "include": true,
                 "model_url": "03_Cenozoic_basalt.gltf",
@@ -28,7 +28,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "04 Cenozoic sediment",
+                "display_name": "Cenozoic sediment",
                 "displayed": true,
                 "include": true,
                 "model_url": "04_Cenozoic_sediment.gltf",
@@ -41,7 +41,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "05 Tasmanian Dolerite",
+                "display_name": "Tasmanian Dolerite",
                 "displayed": true,
                 "include": true,
                 "model_url": "05_Tasmanian_Dolerite.gltf",
@@ -54,7 +54,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "06 Devonian granite",
+                "display_name": "Devonian granite",
                 "displayed": true,
                 "include": true,
                 "model_url": "06_Devonian_granite.gltf",
@@ -67,7 +67,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "06 Devonian granite base",
+                "display_name": "Devonian granite base",
                 "displayed": true,
                 "include": true,
                 "model_url": "06_Devonian_granite_base.gltf",
@@ -80,7 +80,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "07 Parmeener Supergroup",
+                "display_name": "Parmeener Supergroup",
                 "displayed": true,
                 "include": true,
                 "model_url": "07_Parmeener_Supergroup.gltf",
@@ -93,7 +93,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "08 Eldon Group",
+                "display_name": "Eldon Group",
                 "displayed": true,
                 "include": true,
                 "model_url": "08_Eldon_Group.gltf",
@@ -106,7 +106,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "09 Gordon Group",
+                "display_name": "Gordon Group",
                 "displayed": true,
                 "include": true,
                 "model_url": "09_Gordon_Group.gltf",
@@ -119,7 +119,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "09 Moina Sandstone",
+                "display_name": "Moina Sandstone",
                 "displayed": true,
                 "include": true,
                 "model_url": "09_Moina_Sandstone.gltf",
@@ -132,7 +132,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "10 Owen Group",
+                "display_name": "Owen Group",
                 "displayed": true,
                 "include": true,
                 "model_url": "10_Owen_Group.gltf",
@@ -145,7 +145,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "11 Tyndall Group",
+                "display_name": "Tyndall Group",
                 "displayed": true,
                 "include": true,
                 "model_url": "11_Tyndall_Group.gltf",
@@ -158,7 +158,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "12 Que Hellyer Volcanics",
+                "display_name": "Que Hellyer Volcanics",
                 "displayed": true,
                 "include": true,
                 "model_url": "12_Que_Hellyer_Volcanics.gltf",
@@ -171,7 +171,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "12 Western Volcano Sed Seq",
+                "display_name": "Western Volcano Sedimentary sequence",
                 "displayed": true,
                 "include": true,
                 "model_url": "12_Western_Volcano_Sedimentary_sequence.gltf",
@@ -184,7 +184,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "14 andesite",
+                "display_name": "Andesite",
                 "displayed": true,
                 "include": true,
                 "model_url": "14_andesite.gltf",
@@ -197,7 +197,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "17 Cambrian granite mag",
+                "display_name": "Cambrian granite magnetic",
                 "displayed": true,
                 "include": true,
                 "model_url": "17_Cambrian_granite_magnetic.gltf",
@@ -210,7 +210,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "18 Cambrian granite non mag",
+                "display_name": "Cambrian granite non magnetic",
                 "displayed": true,
                 "include": true,
                 "model_url": "18_Cambrian_granite_non_magnetic.gltf",
@@ -223,7 +223,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "19 quartz feldspar porphyry",
+                "display_name": "Quartz feldspar porphyry",
                 "displayed": true,
                 "include": true,
                 "model_url": "19_quartz_feldspar_porphyry.gltf",
@@ -236,7 +236,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "20 Central Volcanic Complex",
+                "display_name": "Central Volcanic Complex",
                 "displayed": true,
                 "include": true,
                 "model_url": "20_Central_Volcanic_Complex.gltf",
@@ -249,7 +249,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "21 Bonds Range Porphyry",
+                "display_name": "Bonds Range Porphyry",
                 "displayed": true,
                 "include": true,
                 "model_url": "21_Bonds_Range_Porphyry.gltf",
@@ -262,7 +262,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "22 Farrell Slate",
+                "display_name": "Farrell Slate",
                 "displayed": true,
                 "include": true,
                 "model_url": "22_Farrell_Slate.gltf",
@@ -275,7 +275,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "23 Eastern Quartz Phyric Seq",
+                "display_name": "Eastern Quartz Phyric Sequence",
                 "displayed": true,
                 "include": true,
                 "model_url": "23_Eastern_Quartz_Phyric_Sequence.gltf",
@@ -288,7 +288,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "24 Sticht Range Formation",
+                "display_name": "Sticht Range Formation",
                 "displayed": true,
                 "include": true,
                 "model_url": "24_Sticht_Range_Formation.gltf",
@@ -301,7 +301,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "25 Luina Group",
+                "display_name": "Luina Group",
                 "displayed": true,
                 "include": true,
                 "model_url": "25_Luina_Group.gltf",
@@ -314,7 +314,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "27 Crimson Creek Formation",
+                "display_name": "Crimson Creek Formation",
                 "displayed": true,
                 "include": true,
                 "model_url": "27_Crimson_Creek_Formation.gltf",
@@ -327,7 +327,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "28 Success Creek Group",
+                "display_name": "Success Creek Group",
                 "displayed": true,
                 "include": true,
                 "model_url": "28_Success_Creek_Group.gltf",
@@ -340,7 +340,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "30 Rocky Cape Group",
+                "display_name": "Rocky Cape Group",
                 "displayed": true,
                 "include": true,
                 "model_url": "30_Rocky_Cape_Group.gltf",
@@ -353,13 +353,18 @@
                 "type": "GLTFObject"
             }
         ],
-        "Geograpic Grids": [
+        "Grid points": [
             {
                 "display_name": "352000mE 5320000mN",
                 "displayed": true,
                 "include": true,
                 "model_url": "352000mE_5320000mN.gltf",
-                "popups": null,
+                "popups": {
+                    "352000ME_5320000MN-0000000000": {
+                        "name": "352000ME 5320000MN",
+                        "title": "352000ME 5320000MN"
+                    }
+                },
                 "type": "GLTFObject"
             },
             {
@@ -367,7 +372,12 @@
                 "displayed": true,
                 "include": true,
                 "model_url": "352000mE_5335000mN.gltf",
-                "popups": null,
+                "popups": {
+                    "352000ME_5335000MN-0000000000": {
+                        "name": "352000ME 5335000MN",
+                        "title": "352000ME 5335000MN"
+                    }
+                },
                 "type": "GLTFObject"
             },
             {
@@ -375,7 +385,12 @@
                 "displayed": true,
                 "include": true,
                 "model_url": "352000mE_5355000mN.gltf",
-                "popups": null,
+                "popups": {
+                    "352000ME_5355000MN-0000000000": {
+                        "name": "352000ME 5355000MN",
+                        "title": "352000ME 5355000MN"
+                    }
+                },
                 "type": "GLTFObject"
             },
             {
@@ -383,7 +398,12 @@
                 "displayed": true,
                 "include": true,
                 "model_url": "352000mE_5375000mN.gltf",
-                "popups": null,
+                "popups": {
+                    "352000ME_5375000MN-0000000000": {
+                        "name": "352000ME 5375000MN",
+                        "title": "352000ME 5375000MN"
+                    }
+                },
                 "type": "GLTFObject"
             },
             {
@@ -391,7 +411,12 @@
                 "displayed": true,
                 "include": true,
                 "model_url": "352000mE_5395000mN.gltf",
-                "popups": null,
+                "popups": {
+                    "352000ME_5395000MN-0000000000": {
+                        "name": "352000ME 5395000MN",
+                        "title": "352000ME 5395000MN"
+                    }
+                },
                 "type": "GLTFObject"
             },
             {
@@ -399,7 +424,12 @@
                 "displayed": true,
                 "include": true,
                 "model_url": "372000mE_5320000mN.gltf",
-                "popups": null,
+                "popups": {
+                    "372000ME_5320000MN-0000000000": {
+                        "name": "372000ME 5320000MN",
+                        "title": "372000ME 5320000MN"
+                    }
+                },
                 "type": "GLTFObject"
             },
             {
@@ -407,7 +437,12 @@
                 "displayed": true,
                 "include": true,
                 "model_url": "372000mE_5335000mN.gltf",
-                "popups": null,
+                "popups": {
+                    "372000ME_5335000MN-0000000000": {
+                        "name": "372000ME 5335000MN",
+                        "title": "372000ME 5335000MN"
+                    }
+                },
                 "type": "GLTFObject"
             },
             {
@@ -415,7 +450,12 @@
                 "displayed": true,
                 "include": true,
                 "model_url": "372000mE_5355000mN.gltf",
-                "popups": null,
+                "popups": {
+                    "372000ME_5355000MN-0000000000": {
+                        "name": "372000ME 5355000MN",
+                        "title": "372000ME 5355000MN"
+                    }
+                },
                 "type": "GLTFObject"
             },
             {
@@ -423,7 +463,12 @@
                 "displayed": true,
                 "include": true,
                 "model_url": "372000mE_5375000mN.gltf",
-                "popups": null,
+                "popups": {
+                    "372000ME_5375000MN-0000000000": {
+                        "name": "372000ME 5375000MN",
+                        "title": "372000ME 5375000MN"
+                    }
+                },
                 "type": "GLTFObject"
             },
             {
@@ -431,7 +476,12 @@
                 "displayed": true,
                 "include": true,
                 "model_url": "372000mE_5395000mN.gltf",
-                "popups": null,
+                "popups": {
+                    "372000ME_5395000MN-0000000000": {
+                        "name": "372000ME 5395000MN",
+                        "title": "372000ME 5395000MN"
+                    }
+                },
                 "type": "GLTFObject"
             },
             {
@@ -439,7 +489,12 @@
                 "displayed": true,
                 "include": true,
                 "model_url": "397000mE_5320000mN.gltf",
-                "popups": null,
+                "popups": {
+                    "397000ME_5320000MN-0000000000": {
+                        "name": "397000ME 5320000MN",
+                        "title": "397000ME 5320000MN"
+                    }
+                },
                 "type": "GLTFObject"
             },
             {
@@ -447,7 +502,12 @@
                 "displayed": true,
                 "include": true,
                 "model_url": "397000mE_5335000mN.gltf",
-                "popups": null,
+                "popups": {
+                    "397000ME_5335000MN-0000000000": {
+                        "name": "397000ME 5335000MN",
+                        "title": "397000ME 5335000MN"
+                    }
+                },
                 "type": "GLTFObject"
             },
             {
@@ -455,7 +515,12 @@
                 "displayed": true,
                 "include": true,
                 "model_url": "397000mE_5355000mN.gltf",
-                "popups": null,
+                "popups": {
+                    "397000ME_5355000MN-0000000000": {
+                        "name": "397000ME 5355000MN",
+                        "title": "397000ME 5355000MN"
+                    }
+                },
                 "type": "GLTFObject"
             },
             {
@@ -463,7 +528,12 @@
                 "displayed": true,
                 "include": true,
                 "model_url": "397000mE_5375000mN.gltf",
-                "popups": null,
+                "popups": {
+                    "397000ME_5375000MN-0000000000": {
+                        "name": "397000ME 5375000MN",
+                        "title": "397000ME 5375000MN"
+                    }
+                },
                 "type": "GLTFObject"
             },
             {
@@ -471,13 +541,186 @@
                 "displayed": true,
                 "include": true,
                 "model_url": "397000mE_5395000mN.gltf",
-                "popups": null,
+                "popups": {
+                    "397000ME_5395000MN-0000000000": {
+                        "name": "397000ME 5395000MN",
+                        "title": "397000ME 5395000MN"
+                    }
+                },
+                "type": "GLTFObject"
+            }
+        ],
+        "Geography": [
+            {
+                "display_name": "Avebury",
+                "displayed": true,
+                "include": true,
+                "model_url": "Avebury.gltf",
+                "popups": {
+                    "AVEBURY-0000000000": {
+                        "name": "AVEBURY",
+                        "title": "AVEBURY"
+                    },
+                    "AVEBURY-0000000001": {
+                        "name": "AVEBURY",
+                        "title": "AVEBURY"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Hellyer",
+                "displayed": true,
+                "include": true,
+                "model_url": "Hellyer.gltf",
+                "popups": {
+                    "HELLYER-0000000000": {
+                        "name": "HELLYER",
+                        "title": "HELLYER"
+                    },
+                    "HELLYER-0000000001": {
+                        "name": "HELLYER",
+                        "title": "HELLYER"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Henty",
+                "displayed": true,
+                "include": true,
+                "model_url": "Henty.gltf",
+                "popups": {
+                    "HENTY-0000000000": {
+                        "name": "SIZE",
+                        "title": "HENTY",
+                        "val": 0.0
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Mt Lindsay",
+                "displayed": true,
+                "include": true,
+                "model_url": "Mt_Lindsay.gltf",
+                "popups": {
+                    "MT_LINDSAY-0000000000": {
+                        "name": "MT LINDSAY",
+                        "title": "MT LINDSAY"
+                    },
+                    "MT_LINDSAY-0000000001": {
+                        "name": "MT LINDSAY",
+                        "title": "MT LINDSAY"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Queenstown",
+                "displayed": true,
+                "include": true,
+                "model_url": "Queenstown.gltf",
+                "popups": {
+                    "QUEENSTOWN-0000000000": {
+                        "name": "QUEENSTOWN",
+                        "title": "QUEENSTOWN"
+                    },
+                    "QUEENSTOWN-0000000001": {
+                        "name": "QUEENSTOWN",
+                        "title": "QUEENSTOWN"
+                    },
+                    "QUEENSTOWN-0000000002": {
+                        "name": "QUEENSTOWN",
+                        "title": "QUEENSTOWN"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Renison",
+                "displayed": true,
+                "include": true,
+                "model_url": "Renison.gltf",
+                "popups": {
+                    "RENISON-0000000000": {
+                        "name": "RENISON",
+                        "title": "RENISON"
+                    },
+                    "RENISON-0000000001": {
+                        "name": "RENISON",
+                        "title": "RENISON"
+                    },
+                    "RENISON-0000000002": {
+                        "name": "RENISON",
+                        "title": "RENISON"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Rosebery",
+                "displayed": true,
+                "include": true,
+                "model_url": "Rosebery.gltf",
+                "popups": {
+                    "ROSEBERY-0000000000": {
+                        "name": "ROSEBERY",
+                        "title": "ROSEBERY"
+                    },
+                    "ROSEBERY-0000000001": {
+                        "name": "ROSEBERY",
+                        "title": "ROSEBERY"
+                    },
+                    "ROSEBERY-0000000002": {
+                        "name": "ROSEBERY",
+                        "title": "ROSEBERY"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Strahan",
+                "displayed": true,
+                "include": true,
+                "model_url": "Strahan.gltf",
+                "popups": {
+                    "STRAHAN-0000000000": {
+                        "name": "STRAHAN",
+                        "title": "STRAHAN"
+                    },
+                    "STRAHAN-0000000001": {
+                        "name": "STRAHAN",
+                        "title": "STRAHAN"
+                    },
+                    "STRAHAN-0000000002": {
+                        "name": "STRAHAN",
+                        "title": "STRAHAN"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Zeehan",
+                "displayed": true,
+                "include": true,
+                "model_url": "Zeehan.gltf",
+                "popups": {
+                    "ZEEHAN-0000000000": {
+                        "name": "ZEEHAN",
+                        "title": "ZEEHAN"
+                    },
+                    "ZEEHAN-0000000001": {
+                        "name": "ZEEHAN",
+                        "title": "ZEEHAN"
+                    }
+                },
                 "type": "GLTFObject"
             }
         ],
         "Faults": [
             {
-                "display_name": "F 000 Federal Bassett fault",
+                "display_name": "Federal Bassett fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_000_Federal_Bassett_fault.gltf",
@@ -490,7 +733,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 001 Rosebery Fault",
+                "display_name": "Rosebery Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_001_Rosebery_Fault.gltf",
@@ -503,7 +746,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 001 Rosebery Fault inferred",
+                "display_name": "Rosebery Fault inferred",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_001_Rosebery_Fault_inferred.gltf",
@@ -516,7 +759,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 002 Mt Black Fault",
+                "display_name": "Mt Black Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_002_Mt_Black_Fault.gltf",
@@ -529,7 +772,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 003 Moxons Fault",
+                "display_name": "Moxons Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_003_Moxons_Fault.gltf",
@@ -542,7 +785,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 004 Marionoak Fault",
+                "display_name": "Marionoak Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_004_Marionoak_Fault.gltf",
@@ -555,7 +798,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 005 Henty Fault 1",
+                "display_name": "Henty Fault 1",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_005_Henty_Fault_1.gltf",
@@ -568,7 +811,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 005 Henty Fault 2",
+                "display_name": "Henty Fault 2",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_005_Henty_Fault_2.gltf",
@@ -581,7 +824,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 005 Henty Fault 3",
+                "display_name": "Henty Fault 3",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_005_Henty_Fault_3.gltf",
@@ -594,7 +837,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 006 South Henty Fault",
+                "display_name": "South Henty Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_006_South_Henty_Fault.gltf",
@@ -607,7 +850,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 007 Mt Strahan Fault",
+                "display_name": "Mt Strahan Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_007_Mt_Strahan_Fault.gltf",
@@ -620,7 +863,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 008",
+                "display_name": "Fault 008",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_008.gltf",
@@ -633,7 +876,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 009",
+                "display_name": "Fault 009",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_009.gltf",
@@ -646,7 +889,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 010 Mt Cripps Fault",
+                "display_name": "Mt Cripps Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_010_Mt_Cripps_Fault.gltf",
@@ -659,7 +902,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 011",
+                "display_name": "Fault 011",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_011.gltf",
@@ -672,7 +915,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 012 Mt Charter Fault",
+                "display_name": "Mt Charter Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_012_Mt_Charter_Fault.gltf",
@@ -685,7 +928,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 013",
+                "display_name": "Fault 013",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_013.gltf",
@@ -698,7 +941,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 014",
+                "display_name": "Fault 014",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_014.gltf",
@@ -711,7 +954,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 015 Anthony River Fault",
+                "display_name": "Anthony River Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_015_Anthony_River_Fault.gltf",
@@ -724,7 +967,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 016",
+                "display_name": "Fault 016",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_016.gltf",
@@ -737,7 +980,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 017",
+                "display_name": "Fault 017",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_017.gltf",
@@ -750,7 +993,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 018 Ewart Fault",
+                "display_name": "Ewart Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_018_Ewart_Fault.gltf",
@@ -763,7 +1006,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 019",
+                "display_name": "Fault 019",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_019.gltf",
@@ -776,7 +1019,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 020",
+                "display_name": "Fault 020",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_020.gltf",
@@ -789,7 +1032,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 021 Engineer Fault",
+                "display_name": "Engineer Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_021_Engineer_Fault.gltf",
@@ -802,7 +1045,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault 01",
+                "display_name": "Ultramafic fault 01",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_01.gltf",
@@ -815,7 +1058,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault 02",
+                "display_name": "Ultramafic fault 02",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_02.gltf",
@@ -828,7 +1071,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault 03",
+                "display_name": "Ultramafic fault 03",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_03.gltf",
@@ -841,7 +1084,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault 04",
+                "display_name": "Ultramafic fault 04",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_04.gltf",
@@ -854,7 +1097,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault 05",
+                "display_name": "Ultramafic fault 05",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_05.gltf",
@@ -867,7 +1110,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault 06",
+                "display_name": "Ultramafic fault 06",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_06.gltf",
@@ -880,7 +1123,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault 07",
+                "display_name": "Ultramafic fault 07",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_07.gltf",
@@ -893,7 +1136,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault 08",
+                "display_name": "Ultramafic fault 08",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_08.gltf",
@@ -906,7 +1149,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault 09",
+                "display_name": "Ultramafic fault 09",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_09.gltf",
@@ -919,7 +1162,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault 10",
+                "display_name": "Ultramafic fault 10",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_10.gltf",
@@ -932,7 +1175,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault 11",
+                "display_name": "Ultramafic fault 11",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_11.gltf",
@@ -945,7 +1188,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 01",
+                "display_name": "Ultramafic fault inferred 01",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_01.gltf",
@@ -958,7 +1201,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 02",
+                "display_name": "Ultramafic fault inferred 02",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_02.gltf",
@@ -971,7 +1214,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 03",
+                "display_name": "Ultramafic fault inferred 03",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_03.gltf",
@@ -984,7 +1227,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 04",
+                "display_name": "Ultramafic fault inferred 04",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_04.gltf",
@@ -997,7 +1240,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 05",
+                "display_name": "Ultramafic fault inferred 05",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_05.gltf",
@@ -1010,7 +1253,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 06",
+                "display_name": "Ultramafic fault inferred 06",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_06.gltf",
@@ -1023,7 +1266,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 07",
+                "display_name": "Ultramafic fault inferred 07",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_07.gltf",
@@ -1036,7 +1279,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 08",
+                "display_name": "Ultramafic fault inferred 08",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_08.gltf",
@@ -1049,7 +1292,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 09",
+                "display_name": "Ultramafic fault inferred 09",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_09.gltf",
@@ -1062,7 +1305,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 10",
+                "display_name": "Ultramafic fault inferred 10",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_10.gltf",
@@ -1075,7 +1318,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 11",
+                "display_name": "Ultramafic fault inferred 11",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_11.gltf",
@@ -1088,7 +1331,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 12",
+                "display_name": "Ultramafic fault inferred 12",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_12.gltf",
@@ -1101,7 +1344,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 13",
+                "display_name": "Ultramafic fault inferred 13",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_13.gltf",
@@ -1114,7 +1357,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 14",
+                "display_name": "Ultramafic fault inferred 14",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_14.gltf",
@@ -1127,7 +1370,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 15",
+                "display_name": "Ultramafic fault inferred 15",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_15.gltf",
@@ -1140,7 +1383,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 16",
+                "display_name": "Ultramafic fault inferred 16",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_16.gltf",
@@ -1153,7 +1396,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 17",
+                "display_name": "Ultramafic fault inferred 17",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_17.gltf",
@@ -1166,7 +1409,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 18",
+                "display_name": "Ultramafic fault inferred 18",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_18.gltf",
@@ -1179,7 +1422,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 19",
+                "display_name": "Ultramafic fault inferred 19",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_19.gltf",
@@ -1192,7 +1435,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 022 ultramafic fault inferred 20",
+                "display_name": "Ultramafic fault inferred 20",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_022_ultramafic_fault_inferred_20.gltf",
@@ -1205,7 +1448,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 023 Firewood Siding Fault 02",
+                "display_name": "Firewood Siding Fault 02",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_023_Firewood_Siding_Fault_02.gltf",
@@ -1218,7 +1461,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 023 Firewood Siding Fault 03",
+                "display_name": "Firewood Siding Fault 03",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_023_Firewood_Siding_Fault_03.gltf",
@@ -1231,7 +1474,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 023 Firewood Siding Fault 04",
+                "display_name": "Firewood Siding Fault 04",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_023_Firewood_Siding_Fault_04.gltf",
@@ -1244,7 +1487,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 023 Firewood Siding Fault 05",
+                "display_name": "Firewood Siding Fault 05",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_023_Firewood_Siding_Fault_05.gltf",
@@ -1257,7 +1500,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 023 Firewood Siding fault 01",
+                "display_name": "Firewood Siding fault 01",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_023_Firewood_Siding_fault_01.gltf",
@@ -1270,7 +1513,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 024",
+                "display_name": "Fault 024",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_024.gltf",
@@ -1283,7 +1526,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 025",
+                "display_name": "Fault 025",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_025.gltf",
@@ -1296,7 +1539,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 026",
+                "display_name": "Fault 026",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_026.gltf",
@@ -1309,7 +1552,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 027 Glen Lyell Fault",
+                "display_name": "Glen Lyell Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_027_Glen_Lyell_Fault.gltf",
@@ -1322,7 +1565,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 028 Great Northern Fault",
+                "display_name": "Great Northern Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_028_Great_Northern_Fault.gltf",
@@ -1335,7 +1578,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 029",
+                "display_name": "Fault 029",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_029.gltf",
@@ -1348,7 +1591,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 030 Great Lyell Fault",
+                "display_name": "Great Lyell Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_030_Great_Lyell_Fault.gltf",
@@ -1361,7 +1604,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 031 King River Fault splay",
+                "display_name": "King River Fault splay",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_031_King_River_Fault_splay.gltf",
@@ -1374,7 +1617,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 032 King River Fault",
+                "display_name": "King River Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_032_King_River_Fault.gltf",
@@ -1387,7 +1630,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 033",
+                "display_name": "Fault 033",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_033.gltf",
@@ -1400,7 +1643,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 034",
+                "display_name": "Fault 034",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_034.gltf",
@@ -1413,7 +1656,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 035",
+                "display_name": "Fault 035",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_035.gltf",
@@ -1426,7 +1669,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 036",
+                "display_name": "Fault 036",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_036.gltf",
@@ -1439,7 +1682,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 037 North Lyell Fault",
+                "display_name": "North Lyell Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_037_North_Lyell_Fault.gltf",
@@ -1452,7 +1695,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 038 East Jukes Fault",
+                "display_name": "East Jukes Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_038_East_Jukes_Fault.gltf",
@@ -1465,7 +1708,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 039 West Jukes Fault",
+                "display_name": "West Jukes Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_039_West_Jukes_Fault.gltf",
@@ -1478,7 +1721,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 040 North Lyell Fault",
+                "display_name": "North Lyell Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_040_North_Lyell_Fault.gltf",
@@ -1491,7 +1734,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 041",
+                "display_name": "Fault 041",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_041.gltf",
@@ -1504,7 +1747,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 042 Teepookana",
+                "display_name": "Teepookana",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_042_Teepookana.gltf",
@@ -1517,7 +1760,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 043 Little Henty Fault",
+                "display_name": "Little Henty Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_043_Little_Henty_Fault.gltf",
@@ -1530,7 +1773,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 044",
+                "display_name": "Fault 044",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_044.gltf",
@@ -1543,7 +1786,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 045",
+                "display_name": "Fault 045",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_045.gltf",
@@ -1556,7 +1799,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 046",
+                "display_name": "Fault 046",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_046.gltf",
@@ -1569,7 +1812,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 047",
+                "display_name": "Fault 047",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_047.gltf",
@@ -1582,7 +1825,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 048 Comstock Fault",
+                "display_name": "Comstock Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_048_Comstock_Fault.gltf",
@@ -1595,7 +1838,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 049 Tenth Legion Thrust",
+                "display_name": "Tenth Legion Thrust",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_049_Tenth_Legion_Thrust.gltf",
@@ -1608,7 +1851,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 050",
+                "display_name": "Fault 050",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_050.gltf",
@@ -1621,7 +1864,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 051",
+                "display_name": "Fault 051",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_051.gltf",
@@ -1634,7 +1877,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 052",
+                "display_name": "Fault 052",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_052.gltf",
@@ -1647,7 +1890,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 053",
+                "display_name": "Fault 053",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_053.gltf",
@@ -1660,7 +1903,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 054",
+                "display_name": "Fault 054",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_054.gltf",
@@ -1673,7 +1916,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 055",
+                "display_name": "Fault 055",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_055.gltf",
@@ -1686,7 +1929,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 056",
+                "display_name": "Fault 056",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_056.gltf",
@@ -1699,7 +1942,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 057",
+                "display_name": "Fault 057",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_057.gltf",
@@ -1712,7 +1955,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 058",
+                "display_name": "Fault 058",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_058.gltf",
@@ -1725,7 +1968,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 059",
+                "display_name": "Fault 059",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_059.gltf",
@@ -1738,7 +1981,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 060",
+                "display_name": "Fault 060",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_060.gltf",
@@ -1751,7 +1994,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 061",
+                "display_name": "Fault 061",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_061.gltf",
@@ -1764,7 +2007,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 062",
+                "display_name": "Fault 062",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_062.gltf",
@@ -1777,7 +2020,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 064",
+                "display_name": "Fault 064",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_064.gltf",
@@ -1790,7 +2033,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 065",
+                "display_name": "Fault 065",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_065.gltf",
@@ -1803,7 +2046,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 066",
+                "display_name": "Fault 066",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_066.gltf",
@@ -1816,7 +2059,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 067",
+                "display_name": "Fault 067",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_067.gltf",
@@ -1829,7 +2072,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 068",
+                "display_name": "Fault 068",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_068.gltf",
@@ -1842,7 +2085,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 069",
+                "display_name": "Fault 069",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_069.gltf",
@@ -1855,7 +2098,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 070",
+                "display_name": "Fault 070",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_070.gltf",
@@ -1868,7 +2111,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 071",
+                "display_name": "Fault 071",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_071.gltf",
@@ -1881,7 +2124,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 072",
+                "display_name": "Fault 072",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_072.gltf",
@@ -1894,7 +2137,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 073",
+                "display_name": "Fault 073",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_073.gltf",
@@ -1907,7 +2150,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 074",
+                "display_name": "Fault 074",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_074.gltf",
@@ -1920,7 +2163,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 075",
+                "display_name": "Fault 075",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_075.gltf",
@@ -1933,7 +2176,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 076",
+                "display_name": "Fault 076",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_076.gltf",
@@ -1946,7 +2189,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 077",
+                "display_name": "Fault 077",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_077.gltf",
@@ -1959,7 +2202,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 078",
+                "display_name": "Fault 078",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_078.gltf",
@@ -1972,7 +2215,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 079",
+                "display_name": "Fault 079",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_079.gltf",
@@ -1985,7 +2228,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 080",
+                "display_name": "Fault 080",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_080.gltf",
@@ -1998,7 +2241,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 081",
+                "display_name": "Fault 081",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_081.gltf",
@@ -2011,7 +2254,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 082",
+                "display_name": "Fault 082",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_082.gltf",
@@ -2024,7 +2267,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 083 Brickfield Fault",
+                "display_name": "Brickfield Fault",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_083_Brickfield_Fault.gltf",
@@ -2037,7 +2280,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 084",
+                "display_name": "Fault 084",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_084.gltf",
@@ -2050,7 +2293,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 085",
+                "display_name": "Fault 085",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_085.gltf",
@@ -2063,7 +2306,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 086",
+                "display_name": "Fault 086",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_086.gltf",
@@ -2076,7 +2319,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 087",
+                "display_name": "Fault 087",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_087.gltf",
@@ -2089,7 +2332,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 088",
+                "display_name": "Fault 088",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_088.gltf",
@@ -2102,7 +2345,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 089",
+                "display_name": "Fault 089",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_089.gltf",
@@ -2115,7 +2358,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 090",
+                "display_name": "Fault 090",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_090.gltf",
@@ -2128,7 +2371,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 091",
+                "display_name": "Fault 091",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_091.gltf",
@@ -2141,7 +2384,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 092",
+                "display_name": "Fault 092",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_092.gltf",
@@ -2154,7 +2397,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 093",
+                "display_name": "Fault 093",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_093.gltf",
@@ -2167,7 +2410,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 094",
+                "display_name": "Fault 094",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_094.gltf",
@@ -2180,7 +2423,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 095",
+                "display_name": "Fault 095",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_095.gltf",
@@ -2193,7 +2436,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 096",
+                "display_name": "Fault 096",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_096.gltf",
@@ -2206,7 +2449,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 097",
+                "display_name": "Fault 097",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_097.gltf",
@@ -2219,7 +2462,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 098",
+                "display_name": "Fault 098",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_098.gltf",
@@ -2232,7 +2475,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 099",
+                "display_name": "Fault 099",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_099.gltf",
@@ -2245,7 +2488,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 100",
+                "display_name": "Fault 100",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_100.gltf",
@@ -2258,7 +2501,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 101",
+                "display_name": "Fault 101",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_101.gltf",
@@ -2271,7 +2514,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 102",
+                "display_name": "Fault 102",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_102.gltf",
@@ -2284,7 +2527,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 103",
+                "display_name": "Fault 103",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_103.gltf",
@@ -2297,7 +2540,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 104",
+                "display_name": "Fault 104",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_104.gltf",
@@ -2310,7 +2553,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 105",
+                "display_name": "Fault 105",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_105.gltf",
@@ -2323,7 +2566,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 106",
+                "display_name": "Fault 106",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_106.gltf",
@@ -2336,7 +2579,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 107",
+                "display_name": "Fault 107",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_107.gltf",
@@ -2349,7 +2592,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 108",
+                "display_name": "Fault 108",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_108.gltf",
@@ -2362,7 +2605,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 109",
+                "display_name": "Fault 109",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_109.gltf",
@@ -2375,7 +2618,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F 110",
+                "display_name": "Fault 110",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_110.gltf",
@@ -2388,86 +2631,7 @@
                 "type": "GLTFObject"
             }
         ],
-        "Geography": [
-            {
-                "display_name": "Avebury",
-                "displayed": true,
-                "include": true,
-                "model_url": "Avebury.gltf",
-                "popups": null,
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "Hellyer",
-                "displayed": true,
-                "include": true,
-                "model_url": "Hellyer.gltf",
-                "popups": null,
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "Henty",
-                "displayed": true,
-                "include": true,
-                "model_url": "Henty.gltf",
-                "popups": null,
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "Mt Lindsay",
-                "displayed": true,
-                "include": true,
-                "model_url": "Mt_Lindsay.gltf",
-                "popups": null,
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "Queenstown",
-                "displayed": true,
-                "include": true,
-                "model_url": "Queenstown.gltf",
-                "popups": null,
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "Renison",
-                "displayed": true,
-                "include": true,
-                "model_url": "Renison.gltf",
-                "popups": null,
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "Rosebery",
-                "displayed": true,
-                "include": true,
-                "model_url": "Rosebery.gltf",
-                "popups": null,
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "Strahan",
-                "displayed": true,
-                "include": true,
-                "model_url": "Strahan.gltf",
-                "popups": null,
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "Zeehan",
-                "displayed": true,
-                "include": true,
-                "model_url": "Zeehan.gltf",
-                "popups": {
-                    "ZEEHAN": {
-                        "name": "Zeehan",
-                        "title": "Zeehan"
-                    }
-                },
-                "type": "GLTFObject"
-            }
-        ],
-        "DEM": [
+        "Digital Elevation Model": [
             {
                 "display_name": "RL DEM100m",
                 "displayed": true,
@@ -2482,16 +2646,16 @@
                 "type": "GLTFObject"
             }
         ],
-        "Grav grids density": [
+        "Grav model grids density": [
             {
                 "display_name": "RL Grav model grids density 1",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "RL_Grav_model_grids_density_1.PNG",
                 "popups": {
                     "RL_Grav_model_grids_density_1": {
-                        "name": "\"VPMG_OBS_GRV\"",
-                        "title": "\"VPMG_OBS_GRV\""
+                        "name": "VPMG_OBS_GRV",
+                        "title": "VPMG_OBS_GRV"
                     }
                 },
                 "position": [
@@ -2503,13 +2667,13 @@
             },
             {
                 "display_name": "RL Grav model grids density 2",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "RL_Grav_model_grids_density_2.PNG",
                 "popups": {
                     "RL_Grav_model_grids_density_2": {
-                        "name": "\"VPMG_OBS_GRV\"",
-                        "title": "\"VPMG_OBS_GRV\""
+                        "name": "VPMG_OBS_GRV",
+                        "title": "VPMG_OBS_GRV"
                     }
                 },
                 "position": [
@@ -2521,13 +2685,13 @@
             },
             {
                 "display_name": "RL Grav model grids density 3",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "RL_Grav_model_grids_density_3.PNG",
                 "popups": {
                     "RL_Grav_model_grids_density_3": {
-                        "name": "\"VPMG_OBS_GRV\"",
-                        "title": "\"VPMG_OBS_GRV\""
+                        "name": "VPMG_OBS_GRV",
+                        "title": "VPMG_OBS_GRV"
                     }
                 },
                 "position": [
@@ -2539,13 +2703,13 @@
             },
             {
                 "display_name": "RL Grav model grids density 4",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "RL_Grav_model_grids_density_4.PNG",
                 "popups": {
                     "RL_Grav_model_grids_density_4": {
-                        "name": "\"VPMG_RESID_GRV\"",
-                        "title": "\"VPMG_RESID_GRV\""
+                        "name": "VPMG_RESID_GRV",
+                        "title": "VPMG_RESID_GRV"
                     }
                 },
                 "position": [
@@ -2557,13 +2721,13 @@
             },
             {
                 "display_name": "RL Grav model grids density 5",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "RL_Grav_model_grids_density_5.PNG",
                 "popups": {
                     "RL_Grav_model_grids_density_5": {
-                        "name": "\"VPMG_OBS_GRV\"",
-                        "title": "\"VPMG_OBS_GRV\""
+                        "name": "VPMG_OBS_GRV",
+                        "title": "VPMG_OBS_GRV"
                     }
                 },
                 "position": [
@@ -2575,13 +2739,13 @@
             },
             {
                 "display_name": "RL Grav model grids density 6",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "RL_Grav_model_grids_density_6.PNG",
                 "popups": {
                     "RL_Grav_model_grids_density_6": {
-                        "name": "\"VPMG_RESID_GRV\"",
-                        "title": "\"VPMG_RESID_GRV\""
+                        "name": "VPMG_RESID_GRV",
+                        "title": "VPMG_RESID_GRV"
                     }
                 },
                 "position": [
@@ -2592,16 +2756,16 @@
                 "type": "ImagePlane"
             }
         ],
-        "Mag grids susc": [
+        "Mag model grids susc": [
             {
                 "display_name": "RL Mag model grids susc 1",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "RL_Mag_model_grids_susc_1.PNG",
                 "popups": {
                     "RL_Mag_model_grids_susc_1": {
-                        "name": "\"VPMG_OBS_MAG\"",
-                        "title": "\"VPMG_OBS_MAG\""
+                        "name": "VPMG_OBS_MAG",
+                        "title": "VPMG_OBS_MAG"
                     }
                 },
                 "position": [
@@ -2613,13 +2777,13 @@
             },
             {
                 "display_name": "RL Mag model grids susc 2",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "RL_Mag_model_grids_susc_2.PNG",
                 "popups": {
                     "RL_Mag_model_grids_susc_2": {
-                        "name": "\"VPMG_OBS_MAG\"",
-                        "title": "\"VPMG_OBS_MAG\""
+                        "name": "VPMG_OBS_MAG",
+                        "title": "VPMG_OBS_MAG"
                     }
                 },
                 "position": [
@@ -2631,13 +2795,13 @@
             },
             {
                 "display_name": "RL Mag model grids susc 3",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "RL_Mag_model_grids_susc_3.PNG",
                 "popups": {
                     "RL_Mag_model_grids_susc_3": {
-                        "name": "\"VPMG_OBS_MAG\"",
-                        "title": "\"VPMG_OBS_MAG\""
+                        "name": "VPMG_OBS_MAG",
+                        "title": "VPMG_OBS_MAG"
                     }
                 },
                 "position": [
@@ -2649,13 +2813,13 @@
             },
             {
                 "display_name": "RL Mag model grids susc 4",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "RL_Mag_model_grids_susc_4.PNG",
                 "popups": {
                     "RL_Mag_model_grids_susc_4": {
-                        "name": "\"VPMG_RESID_MAG\"",
-                        "title": "\"VPMG_RESID_MAG\""
+                        "name": "VPMG_RESID_MAG",
+                        "title": "VPMG_RESID_MAG"
                     }
                 },
                 "position": [
@@ -2667,13 +2831,13 @@
             },
             {
                 "display_name": "RL Mag model grids susc 5",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "RL_Mag_model_grids_susc_5.PNG",
                 "popups": {
                     "RL_Mag_model_grids_susc_5": {
-                        "name": "\"VPMG_OBS_MAG\"",
-                        "title": "\"VPMG_OBS_MAG\""
+                        "name": "VPMG_OBS_MAG",
+                        "title": "VPMG_OBS_MAG"
                     }
                 },
                 "position": [
@@ -2685,13 +2849,13 @@
             },
             {
                 "display_name": "RL Mag model grids susc 6",
-                "displayed": false,
+                "displayed": true,
                 "include": true,
                 "model_url": "RL_Mag_model_grids_susc_6.PNG",
                 "popups": {
                     "RL_Mag_model_grids_susc_6": {
-                        "name": "\"VPMG_RESID_MAG\"",
-                        "title": "\"VPMG_RESID_MAG\""
+                        "name": "VPMG_RESID_MAG",
+                        "title": "VPMG_RESID_MAG"
                     }
                 },
                 "position": [
@@ -2704,14 +2868,14 @@
         ],
         "Geophysics": [
             {
-                "display_name": "Rosebery Lyell geophysics 1",
-                "displayed": false,
+                "display_name": "Geophysics 1",
+                "displayed": true,
                 "include": true,
                 "model_url": "Rosebery_Lyell_geophysics_1.PNG",
                 "popups": {
                     "Rosebery_Lyell_geophysics_1": {
-                        "name": "\"RL_RECLASSIFICATION\"",
-                        "title": "\"RL_RECLASSIFICATION\""
+                        "name": "RL_RECLASSIFICATION",
+                        "title": "RL_RECLASSIFICATION"
                     }
                 },
                 "position": [
@@ -2722,14 +2886,14 @@
                 "type": "ImagePlane"
             },
             {
-                "display_name": "Rosebery Lyell geophysics 2",
-                "displayed": false,
+                "display_name": "Geophysics 2",
+                "displayed": true,
                 "include": true,
                 "model_url": "Rosebery_Lyell_geophysics_2.PNG",
                 "popups": {
                     "Rosebery_Lyell_geophysics_2": {
-                        "name": "\"VPMG_WORKFLOW_SUS_HET_151215_IMPORTED_SUS_PROP\"",
-                        "title": "\"VPMG_WORKFLOW_SUS_HET_151215_IMPORTED_SUS_PROP\""
+                        "name": "VPMG_WORKFLOW_SUS_HET_151215_IMPORTED_SUS_PROP",
+                        "title": "VPMG_WORKFLOW_SUS_HET_151215_IMPORTED_SUS_PROP"
                     }
                 },
                 "position": [
@@ -2740,14 +2904,14 @@
                 "type": "ImagePlane"
             },
             {
-                "display_name": "Rosebery Lyell geophysics 3",
-                "displayed": false,
+                "display_name": "Geophysics 3",
+                "displayed": true,
                 "include": true,
                 "model_url": "Rosebery_Lyell_geophysics_3.PNG",
                 "popups": {
                     "Rosebery_Lyell_geophysics_3": {
-                        "name": "\"VPMG_WORKFLOW_DEN_HET_151215_IMPORTED_DEN_PROP\"",
-                        "title": "\"VPMG_WORKFLOW_DEN_HET_151215_IMPORTED_DEN_PROP\""
+                        "name": "VPMG_WORKFLOW_DEN_HET_151215_IMPORTED_DEN_PROP",
+                        "title": "VPMG_WORKFLOW_DEN_HET_151215_IMPORTED_DEN_PROP"
                     }
                 },
                 "position": [
