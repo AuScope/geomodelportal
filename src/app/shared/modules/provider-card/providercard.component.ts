@@ -21,7 +21,7 @@ export class ProviderCardComponent {
 
     constructor() {
         if (environment.usePrePath) {
-            this.prePath = '/geomodels';
+            this.prePath = '#';
         }
     }
 

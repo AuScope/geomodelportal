@@ -19,7 +19,7 @@ export class ModelCardComponent {
 
     constructor() {
         if (environment.usePrePath) {
-            this.prePath = '/geomodels';
+            this.prePath = '#';
         }
     }
 
