@@ -195,12 +195,31 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             const modelUrlPath = this.route.snapshot.paramMap.get('modelPath');
 
             // Turn on loading spinner
-            this.ngRenderer.setStyle(this.spinnerDiv, 'display', 'inline');
+            this.controlLoadSpinner(true);
 
             // Initialise model by downloading its JSON file
-            this.modelInfoService.getModelInfo(modelUrlPath).then(res => {
-                local.initialiseModel(res[0], res[1]);
-            });
+            this.modelInfoService.getModelInfo(modelUrlPath).then(
+                res => {
+                    local.initialiseModel(res[0], res[1]);
+                },
+                errStr => {
+                    const p1 = this.ngRenderer.createElement('p');
+                    const p2 = this.ngRenderer.createElement('p');
+                    const hText1 = this.ngRenderer.createText('Sorry - ' + errStr);
+                    const hText2 = this.ngRenderer.createText('Return to home page');
+                    const a1 = this.ngRenderer.createElement('a');
+                    this.ngRenderer.appendChild(a1, hText2);
+                    this.ngRenderer.setAttribute(a1, 'href', '/');
+                    this.ngRenderer.setStyle(a1, 'color', 'blue');
+                    this.ngRenderer.appendChild(p1, hText1);
+                    this.ngRenderer.appendChild(p2, a1);
+                    this.ngRenderer.appendChild(this.errorDiv, p1);
+                    this.ngRenderer.appendChild(this.errorDiv, p2);
+                    this.ngRenderer.setStyle(this.errorDiv, 'display', 'inline');
+                    this.controlLoadSpinner(false);
+                    return;
+                }
+             );
 
             // Set up a callback function so this code can be informed when the sidebar controls are changed, so this code
             // can manipulate the model accordingly
@@ -235,6 +254,20 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             this.ngRenderer.setStyle(this.errorDiv, 'display', 'inline');
         }
     }
+
+
+    /**
+      * Turns loading indication (spinner) on or off
+      * @param state if true will turn loading spinner on else will turn it off
+      */
+    private controlLoadSpinner(state: boolean) {
+        if (state) {
+            this.ngRenderer.setStyle(this.spinnerDiv, 'display', 'inline');
+        } else {
+            this.ngRenderer.setStyle(this.spinnerDiv, 'display', 'none');
+        }
+    }
+
 
     /**
      * @return the radius of the virtual sphere used to rotate the model with the mouse, units are pixels
@@ -743,7 +776,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.view.notifyChange(true);
 
         // Everything except the WMS layers are loaded at this point, so turn off loading spinner
-        this.ngRenderer.setStyle(this.spinnerDiv, 'display', 'none');
+        this.controlLoadSpinner(false);
     }
 
     /**

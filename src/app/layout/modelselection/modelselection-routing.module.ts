@@ -4,7 +4,11 @@ import { ModelSelectionComponent } from './modelselection.component';
 
 const routes: Routes = [
     {
-        path: '', component: ModelSelectionComponent
+        path: ':providerPath', component: ModelSelectionComponent
+    },
+    // If no provider selected, then go back to home page
+    {
+        path: '', redirectTo: '/', pathMatch: 'full'
     }
 ];
 

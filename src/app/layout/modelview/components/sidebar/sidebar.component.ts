@@ -129,7 +129,9 @@ export class SidebarComponent  implements OnInit, OnDestroy {
                         }
                     }
                 }
-            }
+            },
+            // Must catch here to prevent error message appearing on console
+            err => { }
         );
     }
 

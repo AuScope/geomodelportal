@@ -14,11 +14,11 @@ const routes: Routes = [
                 loadChildren: './providerselection/providerselection.module#ProviderSelectionModule'
             },
             {
-                path: 'provider/:providerPath',
+                path: 'provider',
                 loadChildren: './modelselection/modelselection.module#ModelSelectionModule'
             },
             {
-                path: 'model/:modelPath',
+                path: 'model',
                 loadChildren: './modelview/modelview.module#ModelViewModule'
             }
         ]

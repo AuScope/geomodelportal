@@ -4,7 +4,11 @@ import { ModelViewComponent } from './modelview.component';
 
 const routes: Routes = [
     {
-        path: '', component: ModelViewComponent
+        path: ':modelPath', component: ModelViewComponent
+    },
+    // If no model selected, then go back to home page
+    {
+        path: '', redirectTo: '/', pathMatch: 'full'
     }
 ];
 
