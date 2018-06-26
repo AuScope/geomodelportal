@@ -2,7 +2,7 @@
     "groups": {
         "Surfaces and structures": [
             {
-                "display_name": "nws greenstone 0",
+                "display_name": "Greenstone 0",
                 "displayed": true,
                 "include": true,
                 "model_url": "nws_greenstone_0.gltf",
@@ -15,7 +15,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "nws greenstone 1",
+                "display_name": "Greenstone 1",
                 "displayed": true,
                 "include": true,
                 "model_url": "nws_greenstone_1.gltf",
@@ -28,7 +28,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "nws structures",
+                "display_name": "Faults",
                 "displayed": true,
                 "include": true,
                 "model_url": "nws_structures.gltf",
