@@ -809,7 +809,7 @@
         ],
         "Gravity": [
             {
-                "3dobject_label": "Bouguer Gravity",
+                "3dobject_label": "BougGrav_0",
                 "display_name": "Bouguer Gravity",
                 "displayed": true,
                 "include": true,
@@ -825,7 +825,7 @@
         ],
         "Magnetism": [
             {
-                "3dobject_label": "Total Magnetic Intensity - RTP",
+                "3dobject_label": "TMI_RTP_0",
                 "display_name": "Total Magnetic Intensity - RTP",
                 "displayed": true,
                 "include": true,
@@ -897,7 +897,7 @@
         ],
         "Surface Geology": [
             {
-                "3dobject_label": "2M Surface Geology",
+                "3dobject_label": "2MsurfaceGeologyZ52_0",
                 "display_name": "2M Surface Geology",
                 "displayed": true,
                 "include": true,
