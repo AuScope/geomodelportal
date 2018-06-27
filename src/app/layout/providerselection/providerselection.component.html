@@ -16,7 +16,7 @@
     <hr>
     <div *ngIf="sources" class="row">
         <div *ngFor="let source of sources" class="col-xl-3 col-lg-6" >
-            <app-provider-card [bgClass]="source.colourClass" [icon]="source.icon" [count]="source.numberModels" [label]="source.name" [providerPath]="source.providerPath"></app-provider-card>
+            <app-provider-card [infoLink]="source.infoUrl" [bgClass]="source.colourClass" [icon]="source.icon" [count]="source.numberModels" [label]="source.name" [providerPath]="source.providerPath"></app-provider-card>
         </div>
     </div>
 </div>

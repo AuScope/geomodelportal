@@ -1,6 +1,6 @@
 {
             "vic": {
-                "name": "Victoria",
+                "name": "Victoria (Earth Resources)",
                 "models": [
                     {
                         "name": "Otway",
@@ -13,10 +13,11 @@
                     }
                 ],
                 "icon": "vic-white-icon.png",
-                "colourClass": "primary"
+                "colourClass": "primary",
+                "infoUrl": "http://earthresources.vic.gov.au/home"
             },
             "wa": {
-                "name": "Western Australia",
+                "name": "Western Australia (DMIRS)",
                 "models": [
                     {
                         "name": "Windimurra",
@@ -29,10 +30,11 @@
                     }
                 ],
                 "icon": "wa-white-icon.png",
-                "colourClass": "warning"
+                "colourClass": "warning",
+                "infoUrl": "http://www.dmp.wa.gov.au/"
             },
             "sa": {
-                "name": "South Australia",
+                "name": "South Australia (Minerals)",
                 "models": [
                     {
                         "name": "North Gawler",
@@ -45,10 +47,11 @@
                     }
                 ],
                 "icon": "sa-white-icon.png",
-                "colourClass": "success"
+                "colourClass": "success",
+                "infoUrl": "http://www.minerals.statedevelopment.sa.gov.au/home"
             },
             "tas": {
-                "name": "Tasmania",
+                "name": "Tasmania (MRT)",
                 "models": [
                     {
                         "name": "Rosebery Lyell",
@@ -61,10 +64,11 @@
                     }
                 ],
                 "icon": "tas-white-icon.png",
-                "colourClass": "secondary"
+                "colourClass": "secondary",
+                "infoUrl": "http://www.mrt.tas.gov.au/portal/home"
             },
             "qld": {
-                "name": "Queensland",
+                "name": "Queensland (DNRME)",
                 "models": [
                     {
                         "name": "Quamby",
@@ -77,10 +81,11 @@
                     }
                 ],
                 "icon": "qld-white-icon.png",
-                "colourClass": "danger"
+                "colourClass": "danger",
+                "infoUrl": "https://www.dnrme.qld.gov.au/"
             },
             "nsw": {
-                "name": "N.S.W.",
+                "name": "N.S.W. (Resources and Geoscience)",
                 "models": [
                     {
                         "name": "Western Tamworth",
@@ -93,13 +98,15 @@
                     }
                 ],
                 "icon": "nsw-white-icon.png",
-                "colourClass": "info"
+                "colourClass": "info",
+                "infoUrl": "https://www.resourcesandgeoscience.nsw.gov.au/"
             },
             "nt": {
-                "name": "Northern Territory",
+                "name": "Northern Territory (DPIR)",
                 "models": [],
                 "icon": "nt-white-icon.png",
-                "colourClass": "dark"
+                "colourClass": "dark",
+                "infoUrl": "https://dpir.nt.gov.au/"
             },
             "ga": {
                 "name": "Geoscience Australia",
@@ -134,6 +141,7 @@
 
                 ],
                 "icon": "aus-white-icon.png",
-                "colourClass": "primary"
+                "colourClass": "primary",
+                "infoUrl": "http://www.ga.gov.au/"
             }
 }

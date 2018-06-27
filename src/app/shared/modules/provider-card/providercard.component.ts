@@ -18,6 +18,7 @@ export class ProviderCardComponent {
     @Input() data: number;
     @Input() providerPath: string;
     @Input() prePath = '';
+    @Input() infoLink = '';
 
     constructor() {
         if (environment.usePrePath) {
@@ -34,5 +35,12 @@ export class ProviderCardComponent {
         if (modelCount > 0) {
             window.location.assign(this.prePath + '/provider/' + this.providerPath);
         }
+    }
+
+    /**
+     * Open up a window to more information about the provider
+     */
+    public openInfoLink() {
+        window.open(this.infoLink);
     }
 }
