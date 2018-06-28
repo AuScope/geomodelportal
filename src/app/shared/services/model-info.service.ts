@@ -170,7 +170,7 @@ export class ModelInfoService {
                         },
                         (err: HttpErrorResponse) => {
                             console.log('Cannot load model JSON file', err);
-                            reject(err);
+                            reject('Cannot load model JSON file');
                         }
                     );
                 });
