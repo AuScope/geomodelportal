@@ -103,7 +103,17 @@
             },
             "nt": {
                 "name": "Northern Territory (DPIR)",
-                "models": [],
+                "models": [
+                    {
+                        "name": "McArthur Basin",
+                        "modelUrlPath": "mcarthur",
+                        "icon": "nt-white-icon.png",
+                        "colourClass": "dark",
+                        "configFile": "McArthurBasin.json",
+                        "modelDir": "McArthurBasin",
+                        "srcUrl": "https://geoscience.nt.gov.au/gemis/ntgsjspui/handle/1/81751"
+                    }
+                ],
                 "icon": "nt-white-icon.png",
                 "colourClass": "dark",
                 "infoUrl": "https://dpir.nt.gov.au/"
