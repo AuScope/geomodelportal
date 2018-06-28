@@ -9,7 +9,11 @@
                 "popups": {
                     "ABINGDON_SURF": {
                         "name": "ABINGDON_SURF",
-                        "title": "ABINGDON_SURF"
+                        "title": "ABINGDON_SURF",
+                        "href": [ {
+                                "URL": "https://d28rz98at9flks.cloudfront.net/69581/Rec2009_029.pdf#page=67",
+                                "label": "More Info"
+                                } ]
                     }
                 },
                 "type": "GLTFObject"
@@ -22,7 +26,11 @@
                 "popups": {
                     "AGWAMIN_SURF": {
                         "name": "AGWAMIN_SURF",
-                        "title": "AGWAMIN_SURF"
+                        "title": "AGWAMIN_SURF",
+                        "href": [ {
+                                "URL": "https://d28rz98at9flks.cloudfront.net/69581/Rec2009_029.pdf#page=68",
+                                "label": "More Info"
+                                } ]
                     }
                 },
                 "type": "GLTFObject"
@@ -35,7 +43,11 @@
                 "popups": {
                     "DRUMMOND_SURF": {
                         "name": "DRUMMOND_SURF",
-                        "title": "DRUMMOND_SURF"
+                        "title": "DRUMMOND_SURF",
+                        "href": [ {
+                                "URL": "https://d28rz98at9flks.cloudfront.net/69581/Rec2009_029.pdf#page=69",
+                                "label": "More Info"
+                                } ]
                     }
                 },
                 "type": "GLTFObject"
@@ -48,7 +60,11 @@
                 "popups": {
                     "ETHERIDGE_2_SURF": {
                         "name": "ETHERIDGE_2_SURF",
-                        "title": "ETHERIDGE_2_SURF"
+                        "title": "ETHERIDGE_2_SURF",
+                        "href": [ {
+                                "URL": "https://d28rz98at9flks.cloudfront.net/69581/Rec2009_029.pdf#page=69",
+                                "label": "More Info"
+                                } ]
                     }
                 },
                 "type": "GLTFObject"
@@ -61,7 +77,11 @@
                 "popups": {
                     "ETHERIDGE_SURF": {
                         "name": "ETHERIDGE_SURF",
-                        "title": "ETHERIDGE_SURF"
+                        "title": "ETHERIDGE_SURF",
+                        "href": [ {
+                                "URL": "https://d28rz98at9flks.cloudfront.net/69581/Rec2009_029.pdf#page=69",
+                                "label": "More Info"
+                                } ]
                     }
                 },
                 "type": "GLTFObject"
@@ -74,7 +94,11 @@
                 "popups": {
                     "MOHO_BASE_SURF": {
                         "name": "MOHO_BASE_SURF",
-                        "title": "MOHO_BASE_SURF"
+                        "title": "MOHO_BASE_SURF",
+                        "href": [ {
+                                "URL": "https://d28rz98at9flks.cloudfront.net/69581/Rec2009_029.pdf#page=66",
+                                "label": "More Info"
+                                } ]
                     }
                 },
                 "type": "GLTFObject"
@@ -87,7 +111,11 @@
                 "popups": {
                     "NUMIL_SURF": {
                         "name": "NUMIL_SURF",
-                        "title": "NUMIL_SURF"
+                        "title": "NUMIL_SURF",
+                        "href": [ {
+                                "URL": "https://d28rz98at9flks.cloudfront.net/69581/Rec2009_029.pdf#page=66",
+                                "label": "More Info"
+                                } ]
                     }
                 },
                 "type": "GLTFObject"
@@ -100,7 +128,11 @@
                 "popups": {
                     "PILGRIM_SURF": {
                         "name": "PILGRIM_SURF",
-                        "title": "PILGRIM_SURF"
+                        "title": "PILGRIM_SURF",
+                        "href": [ {
+                                "URL": "https://d28rz98at9flks.cloudfront.net/69581/Rec2009_029.pdf#page=65",
+                                "label": "More Info"
+                                } ]
                     }
                 },
                 "type": "GLTFObject"
@@ -113,7 +145,11 @@
                 "popups": {
                     "SUTURE_SURF": {
                         "name": "SUTURE_SURF",
-                        "title": "SUTURE_SURF"
+                        "title": "SUTURE_SURF",
+                        "href": [ {
+                                "URL": "https://d28rz98at9flks.cloudfront.net/69581/Rec2009_029.pdf",
+                                "label": "More Info"
+                                } ]
                     }
                 },
                 "type": "GLTFObject"
