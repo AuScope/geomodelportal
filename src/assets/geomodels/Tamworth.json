@@ -2,7 +2,7 @@
     "groups": {
         "DTM": [
             {
-                "display_name": "NEO DTM 1000m Palaeozoic",
+                "display_name": "1000m Palaeozoic",
                 "displayed": true,
                 "include": true,
                 "model_url": "NEO_DTM_1000m_Palaeozoic.gltf",
@@ -17,7 +17,7 @@
         ],
         "Structures and Faults": [
             {
-                "display_name": "NEO TB CA1",
+                "display_name": "CA1",
                 "displayed": true,
                 "include": true,
                 "model_url": "NEO_TB_CA1.gltf",
@@ -30,7 +30,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "NEO TB CA2",
+                "display_name": "CA2",
                 "displayed": true,
                 "include": true,
                 "model_url": "NEO_TB_CA2.gltf",
@@ -43,7 +43,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "NEO TB CA3",
+                "display_name": "CA3",
                 "displayed": true,
                 "include": true,
                 "model_url": "NEO_TB_CA3.gltf",
@@ -56,7 +56,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "NEO TB CA4",
+                "display_name": "CA4",
                 "displayed": true,
                 "include": true,
                 "model_url": "NEO_TB_CA4.gltf",
@@ -69,7 +69,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "NEO TB CA5",
+                "display_name": "CA5",
                 "displayed": true,
                 "include": true,
                 "model_url": "NEO_TB_CA5.gltf",
@@ -82,7 +82,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "NEO TB CAGr5",
+                "display_name": "CAGr5",
                 "displayed": true,
                 "include": true,
                 "model_url": "NEO_TB_CAGr5.gltf",
@@ -95,7 +95,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "NEO TB Carboniferous Devonian z56",
+                "display_name": "Carboniferous Devonian z56",
                 "displayed": true,
                 "include": true,
                 "model_url": "NEO_TB_Carboniferous_Devonian_z56.gltf",
@@ -108,7 +108,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "NEO TB Carboniferous z56",
+                "display_name": "Carboniferous z56",
                 "displayed": true,
                 "include": true,
                 "model_url": "NEO_TB_Carboniferous_z56.gltf",
@@ -121,7 +121,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "NEO TB Devonian z56",
+                "display_name": "Devonian z56",
                 "displayed": true,
                 "include": true,
                 "model_url": "NEO_TB_Devonian_z56.gltf",
@@ -134,7 +134,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "NEO TB Fault Package Far North",
+                "display_name": "Fault Package Far North",
                 "displayed": true,
                 "include": true,
                 "model_url": "NEO_TB_Fault_Package_Far_North.gltf",
@@ -243,7 +243,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "NEO TB Fault Package Major",
+                "display_name": "Fault Package Major",
                 "displayed": true,
                 "include": true,
                 "model_url": "NEO_TB_Fault_Package_Major.gltf",
@@ -260,7 +260,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "NEO TB Fault Package North",
+                "display_name": "Fault Package North",
                 "displayed": true,
                 "include": true,
                 "model_url": "NEO_TB_Fault_Package_North.gltf",
@@ -413,7 +413,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "NEO TB Fault Package Southeast",
+                "display_name": "Fault Package Southeast",
                 "displayed": true,
                 "include": true,
                 "model_url": "NEO_TB_Fault_Package_Southeast.gltf",
@@ -574,7 +574,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "NEO TB Permian Intrusives",
+                "display_name": "Permian Intrusives",
                 "displayed": true,
                 "include": true,
                 "model_url": "NEO_TB_Permian_Intrusives.gltf",
@@ -587,7 +587,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "NEO TB Permian z56",
+                "display_name": "Permian z56",
                 "displayed": true,
                 "include": true,
                 "model_url": "NEO_TB_Permian_z56.gltf",
@@ -610,7 +610,7 @@
             6885822.09375
         ],
         "init_cam_dist": 900000.0,
-        "name": "Western Tamworth Belt"
+        "name": "West Tamworth Belt"
     },
     "type": "GeologicalModel",
     "version": 1.0
