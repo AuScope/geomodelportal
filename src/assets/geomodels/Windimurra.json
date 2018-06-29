@@ -65153,103 +65153,203 @@
                 "popups": {
                     "3D GEOLOGY_1-0000000000": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000001": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000002": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000003": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000004": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000005": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000006": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000007": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000008": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000009": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000010": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000011": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000012": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000013": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000014": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000015": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000016": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000017": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000018": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000019": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000020": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000021": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000022": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000023": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     },
                     "3D GEOLOGY_1-0000000024": {
                         "name": "01_BALDROCKSUPERSUITE",
-                        "title": "3D GEOLOGY"
+                        "title": "3D GEOLOGY",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     }
                 },
                 "type": "GLTFObject"
@@ -99277,7 +99377,11 @@
                 "popups": {
                     "S01_BALDROCKSUPERSUITE": {
                         "name": "S01_BALDROCKSUPERSUITE",
-                        "title": "S01_BALDROCKSUPERSUITE"
+                        "title": "S01_BALDROCKSUPERSUITE",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     }
                 },
                 "type": "GLTFObject"
@@ -99381,7 +99485,11 @@
                 "popups": {
                     "S09_YARRAQUINSEISMICPROVINCE": {
                         "name": "S09_YARRAQUINSEISMICPROVINCE",
-                        "title": "S09_YARRAQUINSEISMICPROVINCE"
+                        "title": "S09_YARRAQUINSEISMICPROVINCE",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=80136",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     }
                 },
                 "type": "GLTFObject"
@@ -99396,7 +99504,11 @@
                 "popups": {
                     "V01_BALDROCKSUPERSUITE": {
                         "name": "V01_BALDROCKSUPERSUITE",
-                        "title": "V01_BALDROCKSUPERSUITE"
+                        "title": "V01_BALDROCKSUPERSUITE",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     }
                 },
                 "type": "GLTFObject"
@@ -99500,7 +99612,11 @@
                 "popups": {
                     "V09_YARRAQUINSEISMICPROVINCE": {
                         "name": "V09_YARRAQUINSEISMICPROVINCE",
-                        "title": "V09_YARRAQUINSEISMICPROVINCE"
+                        "title": "V09_YARRAQUINSEISMICPROVINCE",
+                        "href": [ {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=80136",
+                                "label": "Australian Stratigraphic Units Database"
+                                } ]
                     }
                 },
                 "type": "GLTFObject"
