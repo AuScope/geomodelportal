@@ -44,7 +44,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     private FIXED_HEIGHT = FIXED_HEIGHT;
     public mouseGuideBtnState = false;
 
-    // These are all the help message for the sidebar
+    // These are all the help messages for the sidebar
     public HELP_TEXT = {
         groupVisToggle: { title: 'Toggle Group Visibility',
                               desc: 'Click on this tick box to hide/display groups of model parts in the viewing area.' },
@@ -66,6 +66,8 @@ export class SidebarComponent  implements OnInit, OnDestroy {
                           desc: 'Click on this to hide/display the circle that helps guide the mouse when rotating the model' }
     };
 
+    // These refer to each help popover in the sidebar
+    // NB: If you add a new popover, you must also add a new enum value to WidgetType in 'helpinfo.service'
     @ViewChild('group_tick_popover') public groupTickPopover: NgbPopover = null;
     @ViewChild('group_menu_popover') public groupMenuPopover: NgbPopover = null;
     @ViewChild('part_config_popover') public partConfigPopover: NgbPopover = null;
@@ -74,6 +76,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     @ViewChild('part_trans_popover') public partTransPopover: NgbPopover = null;
     @ViewChild('part_tick_popover') public partTickPopover: NgbPopover = null;
     @ViewChild('reset_view_popover') public resetViewPopover: NgbPopover = null;
+    @ViewChild('mouse_guide_popover') public mouseGuidePopover: NgbPopover = null;
 
 
 
@@ -141,11 +144,12 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * @param seqNum sequnce number
      */
     private showHelpHints(seqNum: number) {
-        // NB: This list must contain all the ViewChild popovers above  & in the correct order
+        // NB: This list must contain all the ViewChild popovers above and in the correct order
         // The order must correspond to the WidgetType enum
-        const popoverList = [ this.groupTickPopover, this.groupMenuPopover, this.partConfigPopover,
+        const popoverList: NgbPopover[] = [ this.groupTickPopover, this.groupMenuPopover, this.partConfigPopover,
                              this.partEyeballPopover, this.partOffsetPopover, this.partTransPopover, this.partTickPopover,
-                             this.resetViewPopover ];
+                             this.resetViewPopover, this.mouseGuidePopover ];
+
         // Open up menu items at first group
         if (seqNum === 0 && this.groupList.length > 0) {
             this.revealFirstMenus(true);
