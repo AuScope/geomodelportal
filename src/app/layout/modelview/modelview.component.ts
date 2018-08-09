@@ -696,13 +696,21 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     if (parts[i].hasOwnProperty('popups')) {
                                         for (const popup_key in parts[i]['popups']) {
                                             if (parts[i]['popups'].hasOwnProperty(popup_key)) {
-                                                // console.log('popup_key = ', popup_key);
+                                                // console.log('popup_key = ', popup_key, popup_key.indexOf('*', popup_key.length - 1));
                                                 if (popup_key + '_0' === intersects[n].object.name) {
                                                     modelViewObj.makePopup(event, parts[i]['popups'][popup_key], intersects[n].point);
                                                     if (parts[i].hasOwnProperty('model_url')) {
                                                         modelViewObj.openSidebarMenu(group, parts[i]['model_url']);
                                                     }
                                                     return;
+                                                } else if (popup_key[0] === '^') {
+                                                    if (intersects[n].object.name.match(popup_key)) {
+                                                        modelViewObj.makePopup(event, parts[i]['popups'][popup_key], intersects[n].point);
+                                                        if (parts[i].hasOwnProperty('model_url')) {
+                                                            modelViewObj.openSidebarMenu(group, parts[i]['model_url']);
+                                                        }
+                                                        return;
+                                                    }
                                                 }
                                             }
                                         }
