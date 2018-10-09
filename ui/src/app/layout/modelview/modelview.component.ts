@@ -482,6 +482,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     // function called if loading successful
                                     function (g_object) {
                                         console.log('loaded: ', local.model_dir + '/' + part.model_url);
+                                        console.log('g_object.scene = ', g_object.scene);
                                         g_object.scene.name = part.model_url;
                                         if (!part.displayed) {
                                             g_object.scene.visible = false;
@@ -510,6 +511,40 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 }
             }
         }
+
+        // Get a list of borehole_ids
+        this.modelInfoService.getBoreHoleIds().then(
+            function(boreholeIdList: any[]) {
+                console.log('GOT BH LIST', boreholeIdList);
+                for (const boreholeId of boreholeIdList) {
+                    // Load up GLTF boreholes
+                    loader.load('./api/getBoreholeGLTF?id=' + boreholeId,
+                        // function called if loading successful
+                        function (g_object) {
+                            console.log('loaded borehole id', boreholeId, g_object.scene);
+                            g_object.scene.name = 'Borehole_' + boreholeId;
+                            local.scene.add(g_object.scene);
+                        },
+                        // function called during loading
+                        function ( xhr ) {
+                            console.log('BOREHOLE GLTF onProgress()', xhr);
+                            if ( xhr.lengthComputable ) {
+                               const percentComplete = xhr.loaded / xhr.total * 100;
+                               console.log( xhr.currentTarget.responseURL, Math.round(percentComplete) + '% downloaded' );
+                            }
+                        },
+                        // function called when loading fails
+                        function ( xhr ) {
+                            console.log('BOREHOLE ', boreholeId, ' GLTF load error!', xhr);
+                        }
+                    );
+                }
+
+            },
+            function(err) {
+                console.log('BOREHOLE ID LIST load error!', err);
+            }
+        );
 
         Promise.all(promiseList).then(
             // function called when all objects are loaded
@@ -685,7 +720,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 // Look at all the intersecting objects to see that if any of them have information for popups
                 if (intersects.length > 0) {
                     for (let n = 0; n < intersects.length; n++) {
-                        // console.log('intersects[n].object.name = ', intersects[n].object.name);
+                        console.log('intersects[n].object.name = ', intersects[n].object.name);
                         if (intersects[n].object.name === '') {
                             continue;
                         }
@@ -696,7 +731,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     if (parts[i].hasOwnProperty('popups')) {
                                         for (const popup_key in parts[i]['popups']) {
                                             if (parts[i]['popups'].hasOwnProperty(popup_key)) {
-                                                // console.log('popup_key = ', popup_key, popup_key.indexOf('*', popup_key.length - 1));
+                                                console.log('popup_key = ', popup_key, popup_key.indexOf('*', popup_key.length - 1));
                                                 if (popup_key + '_0' === intersects[n].object.name) {
                                                     modelViewObj.makePopup(event, parts[i]['popups'][popup_key], intersects[n].point);
                                                     if (parts[i].hasOwnProperty('model_url')) {

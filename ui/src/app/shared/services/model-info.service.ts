@@ -66,6 +66,10 @@ export class ModelInfoService {
     // A promise to fetch model data
     private modelPromise: Promise<any> = null;
 
+    // Used to fetch a list of borehole ids
+    private boreholeIdList = [];
+    private bhPromise: Promise<any> = null;
+
     constructor(private httpService: HttpClient) {
     }
 
@@ -103,6 +107,27 @@ export class ModelInfoService {
             });
         }
         return this.initPromise;
+    }
+
+    /**
+     * Retrieve a list of borehole ids from server
+     */
+    public getBoreHoleIds(): Promise<any> {
+        const local = this;
+        this.bhPromise = new Promise(function(resolve, reject) {
+            local.httpService.get('./api/getBoreholeList').subscribe(
+                data => {
+                    local.boreholeIdList = Array.of(data);
+                    console.log('local.boreholeIds = ', local.boreholeIdList);
+                    resolve(local.boreholeIdList[0]);
+                },
+                (err: HttpErrorResponse) => {
+                    console.log('Cannot load borehole list', err);
+                    reject(err);
+                }
+            );
+        });
+        return this.bhPromise;
     }
 
     /**
