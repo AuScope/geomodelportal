@@ -3,6 +3,9 @@ import { routerTransition } from '../../router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+import { HttpClient } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 
 import { ModelInfoService, ModelPartCallbackType, ModelControlEvent,
          ModelPartStateChange, ModelPartStateChangeType } from '../../shared/services/model-info.service';
@@ -122,7 +125,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
     constructor(private modelInfoService: ModelInfoService, private elRef: ElementRef, private ngRenderer: Renderer2,
                 private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
-                private helpinfoService: HelpinfoService) {
+                private helpinfoService: HelpinfoService, private httpService: HttpClient) {
     }
 
     /**
@@ -720,7 +723,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 // Look at all the intersecting objects to see that if any of them have information for popups
                 if (intersects.length > 0) {
                     for (let n = 0; n < intersects.length; n++) {
-                        console.log('intersects[n].object.name = ', intersects[n].object.name);
+                        // console.log('intersects[n].object.name = ', intersects[n].object.name);
                         if (intersects[n].object.name === '') {
                             continue;
                         }
@@ -731,7 +734,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     if (parts[i].hasOwnProperty('popups')) {
                                         for (const popup_key in parts[i]['popups']) {
                                             if (parts[i]['popups'].hasOwnProperty(popup_key)) {
-                                                console.log('popup_key = ', popup_key, popup_key.indexOf('*', popup_key.length - 1));
+                                                // console.log('popup_key = ', popup_key, popup_key.indexOf('*', popup_key.length - 1));
                                                 if (popup_key + '_0' === intersects[n].object.name) {
                                                     modelViewObj.makePopup(event, parts[i]['popups'][popup_key], intersects[n].point);
                                                     if (parts[i].hasOwnProperty('model_url')) {
@@ -767,6 +770,19 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 }
                             }
                         }
+                        // If got here then, could not find it locally, so must ask server
+                        local.httpService.get('./api/getQuery?id=' + intersects[n].object.name).subscribe(
+                            data => {
+                                const queryResult = data as string [];
+                                console.log('queryResult = ', queryResult);
+                                modelViewObj.makePopup(event, queryResult, intersects[n].point);
+                            },
+                            (err: HttpErrorResponse) => {
+                                console.log('Cannot load borehole list', err);
+                            }
+                        );
+                        // Only looks at the first intersection
+                        return;
                     }
                 }
             });
