@@ -10,9 +10,13 @@ import hashlib
 import pickle
 import urllib
 
+
+
+global WFS
 sys.path.append(os.path.join('C', os.sep, 'Apache24','htdocs', 'lib'))
 print("sys.path =", sys.path)
-from makeBoreholes import yield_boreholes, get_boreholes_bbox, get_config_bh_dict
+from makeBoreholes import get_blob_boreholes, get_boreholes_list, get_json_input_param
+from db.db_tables import QueryDB
 
 g_BLOB_DICT = {}
 g_BOREHOLE_DICT = {}
@@ -26,36 +30,7 @@ MAX_BOREHOLES = 9999
 WFS_TIMEOUT = 6000
 
 
-def get_json_input_param(input_file):
-    ''' Reads the parameters from input JSON file and stores them in global 'Param' object
 
-    :param input_file: filename of input parameter file
-    '''
-    print("Opening: ", input_file)
-    fp = open(input_file, "r")
-    try:
-        param_dict = json.load(fp)
-    except JSONDecodeError as exc:
-        print("ERROR - cannot read JSON file\n", input_file, "\n", exc)
-        fp.close()
-        sys.exit(1)
-    fp.close()
-    if 'BoreholeData' not in param_dict:
-        print('ERROR - Cannot find "BoreholeData" key in input file', input_file);
-        sys.exit(1)
-
-    Param = SimpleNamespace()
-    for field_name in ['BBOX', 'EXTERNAL_LINK', 'MODEL_CRS', 'WFS_URL', 'BOREHOLE_CRS', 'WFS_VERSION', 'NVCL_URL']:
-        if field_name not in param_dict['BoreholeData']:
-            print("ERROR - Cannot find '"+field_name+"' key in input file", input_file);
-            sys.exit(1)
-        setattr(Param, field_name, param_dict['BoreholeData'][field_name])
-
-    if 'west' not in Param.BBOX or 'south' not in Param.BBOX or 'east' not in Param.BBOX or 'north' not in Param.BBOX:
-        print("ERROR - Cannot find 'west', 'south', 'east', 'north' keys in 'BBOX' in input file", input_file)
-        sys.exit(1)
-    print("Closed: ", input_file)
-    return Param
     
 def get_file_hash(input_str):
     h = hashlib.new('md5')
@@ -64,7 +39,9 @@ def get_file_hash(input_str):
 
 
 Param = get_json_input_param(os.path.join('C', os.sep, 'Apache24', 'htdocs', 'input', 'NorthGawlerConvParam.json'))
-    
+
+# I have to override 'WebFeatureService' because a bug in owslib makes 'pickle' unusable 
+# TODO: Fix the bug
 class MyWebFeatureService(WebFeatureService_1_1_0):
     def __new__(self, url, version, xml, parse_remote_metadata=False, timeout=30, username=None, password=None):
         obj=object.__new__(self)
@@ -96,6 +73,8 @@ else:
 print("got WFS=", WFS)
 
 
+
+
 def log_error(environ, msg):
     print(msg, file=environ['wsgi.errors'])
 
@@ -111,7 +90,7 @@ def application(environ, start_response):
     
     if environ['PATH_INFO']=='/api/getBoreholeList':
         # TODO: 'NorthGawler' will be a URL parameter
-        borehole_list = get_boreholes_bbox(WFS, MAX_BOREHOLES, Param)
+        borehole_list = get_boreholes_list(WFS, MAX_BOREHOLES, Param)
         response_list = []
         g_BOREHOLE_DICT = {}
         g_BLOB_DICT = {}        
@@ -124,20 +103,35 @@ def application(environ, start_response):
         start_response(status, response_headers)
         return [bytes(response_str, 'utf-8')]
     
-    elif environ['PATH_INFO']=='/api/getBoreholeQuery':
+    elif environ['PATH_INFO']=='/api/getQuery':
         # Parse id from query string
         bh_id_arr = urllib.parse.parse_qs(environ['QUERY_STRING']).get('id', [])
         if len(bh_id_arr)>0:
-            borehole_dict = g_BOREHOLE_DICT.get(bh_id_arr[0])
-            if borehole_dict != None:
-                borehole_config = get_config_bh_dict(borehole_dict, Param)
-                if borehole_config != None:
-                    borehole_str = json.dumps(borehole_config)
-                    borehole_bytes = bytes(borehole_str, 'utf-8')
-                    response_headers = [('Content-type', 'text/plain'), ('Content-Length', str(len(borehole_bytes))), ('Connection', 'keep-alive')]
-                    start_response(status, response_headers)
-                    return [borehole_bytes]
-        
+            print("Clicked on ", bh_id_arr[0])
+            # Query database
+            # Open up query database
+            qdb = QueryDB()
+            qdb.open_db(create=False, db_name="sqlite:///"+os.path.join(doc_root, "query_data.db"))
+            label, model_name, segment_str, part_str, model_str, user_str = qdb.query(bh_id_arr[0], 'model_name')
+            borehole_dict = {}
+            if segment_str != None:
+                segment_info = json.loads(segment_str)
+                borehole_dict.update(segment_info)
+            if part_str != None:
+                part_info = json.loads(part_str)
+                borehole_dict.update(part_info)
+            if model_str != None:    
+                model_info = json.loads(model_str)
+                borehole_dict.update(model_info)
+            if user_str != None:
+                user_info = json.loads(user_str) 
+                borehole_dict.update(user_info)
+            borehole_str = json.dumps(borehole_dict)
+            borehole_bytes = bytes(borehole_str, 'utf-8')
+            response_headers = [('Content-type', 'text/plain'), ('Content-Length', str(len(borehole_bytes))), ('Connection', 'keep-alive')]
+            start_response(status, response_headers)
+            return [borehole_bytes]
+
     elif environ['PATH_INFO']=='/api/getBoreholeGLTF':
         
         # TEMP borehole_config, blob = get_boreholes(input_file_path) # get_boreholes_fast()
@@ -151,7 +145,7 @@ def application(environ, start_response):
             # Get NVCL borehole using id provided
             borehole_dict = g_BOREHOLE_DICT.get(bh_id_arr[0])
             if borehole_dict != None:
-                blob = yield_boreholes(borehole_dict, Param)
+                blob = get_blob_boreholes(borehole_dict, Param)
                 # Some boreholes do not have the requested metric
                 if blob != None:
                     g_BLOB_DICT[bh_id_arr[0]] = blob
