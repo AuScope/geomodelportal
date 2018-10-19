@@ -1,13 +1,11 @@
 import { Component, OnInit, OnDestroy, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { MatSliderModule, MatSliderChange } from '@angular/material/slider';
-import { HttpErrorResponse } from '@angular/common/http';
-import { Subscription } from 'rxjs/Subscription';
-import { Observable } from 'rxjs/Observable';
+import { MatSliderChange } from '@angular/material/slider';
+import { Subscription ,  Observable } from 'rxjs';
 import { NgbPopover} from '@ng-bootstrap/ng-bootstrap';
 
-import { ModelInfoService, ModelPartStateChangeType, FIXED_HEIGHT } from '../../../../shared/services/model-info.service';
+import { ModelInfoService, ModelPartStateChangeType } from '../../../../shared/services/model-info.service';
 import { SidebarService, MenuStateChangeType, MenuChangeType } from '../../../../shared/services/sidebar.service';
 import { HelpinfoService, WidgetType } from '../../../../shared/services/helpinfo.service';
 
@@ -41,7 +39,6 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     private helpSubscr: Subscription;
     private compSubscr: Subscription;
     private helpObs: Observable<any> = null;
-    private FIXED_HEIGHT = FIXED_HEIGHT;
     public mouseGuideBtnState = false;
 
     // These are all the help messages for the sidebar
@@ -112,7 +109,6 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * and initialises the sidebar with values
      */
     public ngOnInit() {
-        const local = this;
         this.modelPath = this.route.snapshot.paramMap.get('modelPath');
         this.modelInfoService.getModelInfo(this.modelPath).then(
             data => {
@@ -134,7 +130,9 @@ export class SidebarComponent  implements OnInit, OnDestroy {
                 }
             },
             // Must catch here to prevent error message appearing on console
-            err => { }
+            err => {
+                console.log('Cannot read model file', this.modelPath, err);
+            }
         );
     }
 

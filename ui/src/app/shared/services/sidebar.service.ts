@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Observable ,  Subject } from 'rxjs';
 
 // Is a menu item in the sidebar open or closed?
 export enum  MenuStateChangeType { OPENED, CLOSED }

@@ -1,9 +1,7 @@
 import { Component, ViewChild, AfterViewInit, Renderer2, ElementRef, OnDestroy } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs/Subscription';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Subscription ,  Observable ,  Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -123,7 +121,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     // Used to indicate that the model is loading
     private spinnerDiv;
 
-    constructor(private modelInfoService: ModelInfoService, private elRef: ElementRef, private ngRenderer: Renderer2,
+    constructor(private modelInfoService: ModelInfoService, private ngRenderer: Renderer2,
                 private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
                 private helpinfoService: HelpinfoService, private httpService: HttpClient) {
     }
@@ -684,7 +682,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 type: ITOWNS.STRATEGY_DICHOTOMY,
                                 options: {},
                             },
-                        }).then(function(response) {
+                    }).then(function(response) {
                             // Retrieve WMS layer and add it to sidebar
                             const allLayers = local.view.getLayers(layer => layer.id === parts[i].id);
                             if (allLayers.length > 0) {

@@ -6,7 +6,7 @@ import { environment } from './environments/environment';
 
 import 'hammerjs';
 
-// declare var itowns: any;
+// import 'vtk.js';
 
 if (environment.production) {
     enableProdMode();

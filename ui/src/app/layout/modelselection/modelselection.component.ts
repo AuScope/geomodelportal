@@ -3,7 +3,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { routerTransition } from '../../router.animations';
 import { HttpErrorResponse } from '@angular/common/http';
 
-import 'rxjs/add/operator/switchMap';
+
 
 import { ModelInfoService } from '../../shared/services/model-info.service';
 

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Observable ,  Subject } from 'rxjs';
 
 // NB: 1) 'END_TOUR' must always be the last item in the list
 //     2) There is one of these for each help popover in the sidebar
