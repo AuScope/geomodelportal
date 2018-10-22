@@ -3,14 +3,17 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "3dgeomodel-ng4": {
+    "3dgeomodel": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {
+               "path": "extra-webpack.config.js"
+            },
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -50,20 +53,20 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/dev-server:generic",
           "options": {
-            "browserTarget": "3dgeomodel-ng4:build"
+            "browserTarget": "3dgeomodel:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "3dgeomodel-ng4:build:production"
+              "browserTarget": "3dgeomodel:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "3dgeomodel-ng4:build"
+            "browserTarget": "3dgeomodel:build"
           }
         },
         "test": {
@@ -101,7 +104,7 @@
         }
       }
     },
-    "3dgeomodel-ng4-e2e": {
+    "3dgeomodel-e2e": {
       "root": "e2e",
       "sourceRoot": "e2e",
       "projectType": "application",
@@ -110,7 +113,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "3dgeomodel-ng4:serve"
+            "devServerTarget": "3dgeomodel:serve"
           }
         },
         "lint": {
@@ -127,7 +130,7 @@
       }
     }
   },
-  "defaultProject": "3dgeomodel-ng4",
+  "defaultProject": "3dgeomodel",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",

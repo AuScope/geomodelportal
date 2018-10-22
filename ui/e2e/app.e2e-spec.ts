@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('3dgeomodel-ng4 App', () => {
+describe('3dgeomodel App', () => {
   let page: AppPage;
 
   beforeEach(() => {

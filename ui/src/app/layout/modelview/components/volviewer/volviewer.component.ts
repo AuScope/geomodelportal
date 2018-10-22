@@ -1,66 +1,75 @@
-import { Component, OnInit /*, ElementRef, ViewChild */ } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 
-// import 'vtk.js/Sources/favicon';
+import 'vtk.js/Sources/favicon';
 
-// import vtkFullScreenRenderWindow from 'vtk.js/Sources/Rendering/Misc/FullScreenRenderWindow';
-// import vtkHttpDataSetReader from 'vtk.js/Sources/IO/Core/HttpDataSetReader';
-// import vtkImageMapper from 'vtk.js/Sources/Rendering/Core/ImageMapper';
-// import vtkImageSlice from 'vtk.js/Sources/Rendering/Core/ImageSlice';
+// TODO: VTK.JS has no typescript bindings - add your own
+import vtkFullScreenRenderWindow from 'vtk.js/Sources/Rendering/Misc/FullScreenRenderWindow';
+import vtkHttpDataSetReader from 'vtk.js/Sources/IO/Core/HttpDataSetReader';
+import vtkImageMapper from 'vtk.js/Sources/Rendering/Core/ImageMapper';
+import vtkImageSlice from 'vtk.js/Sources/Rendering/Core/ImageSlice';
 
 @Component({
   selector: 'app-volviewer',
   templateUrl: './volviewer.component.html',
   styleUrls: ['./volviewer.component.scss']
 })
-export class VolviewerComponent implements OnInit {
-    /* @ViewChild('volViewerControlDiv') private viewerDivElem: ElementRef;
+export class VolviewerComponent implements OnInit, AfterViewInit {
+    @ViewChild('volViewerControlDiv') viewerDivElem: ElementRef;
     public fullScreen;
     public imageActorI;
     public imageActorJ;
     public imageActorK;
     public renderWindow;
+    public fullScreenRenderWindow;
 
-    updateColorWindow(e) {
+    updateColorWindow(e, imageActorI, imageActorJ, imageActorK, renderWindow) {
       const colorLevel = Number(
         (e ? e.target : document.querySelector('.colorWindow')).value
       );
-      this.imageActorI.getProperty().setColorWindow(colorLevel);
-      this.imageActorJ.getProperty().setColorWindow(colorLevel);
-      this.imageActorK.getProperty().setColorWindow(colorLevel);
-      this.renderWindow.render();
+      imageActorI.getProperty().setColorWindow(colorLevel);
+      imageActorJ.getProperty().setColorWindow(colorLevel);
+      imageActorK.getProperty().setColorWindow(colorLevel);
+      renderWindow.render();
     }
 
-    updateColorLevel(e) {
+    updateColorLevel(e, imageActorI, imageActorJ, imageActorK, renderWindow) {
       const colorLevel = Number(
         (e ? e.target : document.querySelector('.colorLevel')).value
       );
-      this.imageActorI.getProperty().setColorLevel(colorLevel);
-      this.imageActorJ.getProperty().setColorLevel(colorLevel);
-      this.imageActorK.getProperty().setColorLevel(colorLevel);
-      this.renderWindow.render();
-  }*/
+      imageActorI.getProperty().setColorLevel(colorLevel);
+      imageActorJ.getProperty().setColorLevel(colorLevel);
+      imageActorK.getProperty().setColorLevel(colorLevel);
+      renderWindow.render();
+  }
 
   constructor() {
-      /*const fullScreenRenderWindow = vtkFullScreenRenderWindow.newInstance({
+  }
+
+  ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+      const local = this;
+      this.fullScreenRenderWindow = vtkFullScreenRenderWindow.newInstance({
         background: [0, 0, 0],
       });
-      const renderWindow = fullScreenRenderWindow.getRenderWindow();
-      const renderer = fullScreenRenderWindow.getRenderer();
-      fullScreenRenderWindow.addController(this.viewerDivElem.nativeElement);
+      this.renderWindow = this.fullScreenRenderWindow.getRenderWindow();
+      const renderer = this.fullScreenRenderWindow.getRenderer();
+      this.fullScreenRenderWindow.addController(this.viewerDivElem.nativeElement);
 
-      const imageActorI = vtkImageSlice.newInstance();
-      const imageActorJ = vtkImageSlice.newInstance();
-      const imageActorK = vtkImageSlice.newInstance();
+      this.imageActorI = vtkImageSlice.newInstance();
+      this.imageActorJ = vtkImageSlice.newInstance();
+      this.imageActorK = vtkImageSlice.newInstance();
 
-      renderer.addActor(imageActorK);
-      renderer.addActor(imageActorJ);
-      renderer.addActor(imageActorI);
+      renderer.addActor(this.imageActorK);
+      renderer.addActor(this.imageActorJ);
+      renderer.addActor(this.imageActorI);
 
       const reader = vtkHttpDataSetReader.newInstance({
         fetchGzip: true,
       });
       reader
-        .setUrl('data/volume/headsq.vti', { loadData: true })
+        .setUrl('assets', { loadData: true })
         .then(() => {
           const data = reader.getOutputData();
           const dataRange = data
@@ -72,27 +81,27 @@ export class VolviewerComponent implements OnInit {
           const imageMapperK = vtkImageMapper.newInstance();
           imageMapperK.setInputData(data);
           imageMapperK.setKSlice(30);
-          imageActorK.setMapper(imageMapperK);
+          local.imageActorK.setMapper(imageMapperK);
 
           const imageMapperJ = vtkImageMapper.newInstance();
           imageMapperJ.setInputData(data);
           imageMapperJ.setJSlice(30);
-          imageActorJ.setMapper(imageMapperJ);
+          local.imageActorJ.setMapper(imageMapperJ);
 
           const imageMapperI = vtkImageMapper.newInstance();
           imageMapperI.setInputData(data);
           imageMapperI.setISlice(30);
-          imageActorI.setMapper(imageMapperI);
+          local.imageActorI.setMapper(imageMapperI);
 
           renderer.resetCamera();
           renderer.resetCameraClippingRange();
-          renderWindow.render();
+          local.renderWindow.render();
 
           ['.sliceI', '.sliceJ', '.sliceK'].forEach((selector, idx) => {
             const el = document.querySelector(selector);
             el.setAttribute('min', extent[idx * 2 + 0]);
             el.setAttribute('max', extent[idx * 2 + 1]);
-            el.setAttribute('value', '30'); // was 30
+            el.setAttribute('value', '30');
           });
 
           ['.colorLevel', '.colorWindow'].forEach((selector) => {
@@ -103,35 +112,30 @@ export class VolviewerComponent implements OnInit {
           document
             .querySelector('.colorLevel')
             .setAttribute('value', avRange.toString() );
-          this.updateColorLevel(null);
-          this.updateColorWindow(null);
+          local.updateColorLevel(null, local.imageActorI, local.imageActorJ, local.imageActorK, local.renderWindow);
+          local.updateColorWindow(null, local.imageActorI, local.imageActorJ, local.imageActorK, local.renderWindow);
         });
 
-      document.querySelector('.sliceI').addEventListener('input', (e) => {
-        this.imageActorI.getMapper().setISlice(Number(e.target));  // was e.target.value
-        renderWindow.render();
+      document.querySelector('.sliceI').addEventListener('input', (e: Event) => {
+        local.imageActorI.getMapper().setISlice(Number((<HTMLInputElement>e.target).value));
+        local.renderWindow.render();
       });
 
       document.querySelector('.sliceJ').addEventListener('input', (e) => {
-        this.imageActorJ.getMapper().setJSlice(Number(e.target)); // was e.target.value
-        renderWindow.render();
+        local.imageActorJ.getMapper().setJSlice(Number((<HTMLInputElement>e.target).value));
+        local.renderWindow.render();
       });
 
       document.querySelector('.sliceK').addEventListener('input', (e) => {
-        this.imageActorK.getMapper().setKSlice(Number(e.target)); // was e.target.value
-        renderWindow.render();
+        local.imageActorK.getMapper().setKSlice(Number((<HTMLInputElement>e.target).value));
+        local.renderWindow.render();
       });
 
-      document
-        .querySelector('.colorLevel')
-        .addEventListener('input', this.updateColorLevel);
-      document
-        .querySelector('.colorWindow')
-        .addEventListener('input', this.updateColorWindow);*/
-
-   }
-
-  ngOnInit() {
+      document.querySelector('.colorLevel').addEventListener('input', function(e) {
+          local.updateColorLevel(e, local.imageActorI, local.imageActorJ, local.imageActorK, local.renderWindow);
+      });
+      document.querySelector('.colorWindow').addEventListener('input', function(e) {
+          local.updateColorWindow(e, local.imageActorI, local.imageActorJ, local.imageActorK, local.renderWindow);
+      });
   }
-
 }

@@ -1,7 +1,7 @@
 import { Component, ViewChild, AfterViewInit, Renderer2, ElementRef, OnDestroy } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Subscription ,  Observable ,  Subject } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -578,7 +578,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     if (parts[i].type === 'ImagePlane' && parts[i].include) {
                         promiseList.push( new Promise( function( resolve, reject ) {
                         (function(part, grp) {
-                          const texture = textureLoader.load('./assets/geomodels/' + local.model_dir + '/' + part.model_url,
+                            const texture = textureLoader.load('./assets/geomodels/' + local.model_dir + '/' + part.model_url,
                             // Function called when download successful
                             function (textya) {
                                 textya.minFilter = ITOWNS.THREE.LinearFilter;
