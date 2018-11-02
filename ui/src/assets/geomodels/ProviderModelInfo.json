@@ -27,6 +27,15 @@
                         "configFile": "Windimurra.json",
                         "modelDir": "Windimurra",
                         "srcUrl" : "https://dasc.dmp.wa.gov.au/DASC?productAlias=Windimurra3D"
+                    },
+                    {
+                        "name": "Sandstone",
+                        "modelUrlPath": "sandstone",
+                        "icon": "wa-white-icon.png",
+                        "colourClass": "warning",
+                        "configFile": "Sandstone.json",
+                        "modelDir": "Sandstone",
+                        "srcUrl" : "https://dasc.dmp.wa.gov.au/DASC?productAlias=Sandstone3D"
                     }
                 ],
                 "icon": "wa-white-icon.png",

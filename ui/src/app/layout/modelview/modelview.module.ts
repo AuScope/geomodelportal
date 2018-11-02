@@ -10,7 +10,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TimelineComponent, NotificationComponent } from './components';
 import { ModelCardModule } from '../../shared';
 import { HelpComponent } from './components/help/help.component';
-import { VolviewerComponent } from './components/volviewer/volviewer.component';
 
 
 @NgModule({
@@ -28,8 +27,7 @@ import { VolviewerComponent } from './components/volviewer/volviewer.component';
         TimelineComponent,
         NotificationComponent,
         SidebarComponent,
-        HelpComponent,
-        VolviewerComponent
+        HelpComponent
     ]
 })
 export class ModelViewModule {}

@@ -9,6 +9,7 @@ import { ModelInfoService, ModelPartCallbackType, ModelControlEvent,
          ModelPartStateChange, ModelPartStateChangeType } from '../../shared/services/model-info.service';
 import { SidebarService, MenuChangeType, MenuStateChangeType } from '../../shared/services/sidebar.service';
 import { HelpinfoService } from '../../shared/services/helpinfo.service';
+import { VolviewService, DataType } from '../../shared/services/volview.service';
 
 // Include threejs library
 import * as THREE from 'three';
@@ -32,6 +33,8 @@ import GeoModelControls from '../../../assets/GeoModelControls';
 import * as Detector from '../../../../node_modules/three/examples/js/Detector';
 
 const BACKGROUND_COLOUR = new THREE.Color(0xC0C0C0);
+
+
 
 @Component({
     selector: 'app-modelview',
@@ -62,9 +65,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
     // Dictionary of {scene, checkbox, group name} objects used by model controls div, key is model URL
     private sceneArr = {};
-
-    // Camera object
-    private camera;
 
     // Tenderer object
     private renderer;
@@ -121,9 +121,13 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     // Used to indicate that the model is loading
     private spinnerDiv;
 
+    // TEMP: volume object
+    private volObjList: THREE.Object3D[] = [];
+
     constructor(private modelInfoService: ModelInfoService, private ngRenderer: Renderer2,
                 private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
-                private helpinfoService: HelpinfoService, private httpService: HttpClient) {
+                private helpinfoService: HelpinfoService, private httpService: HttpClient,
+                private volViewService: VolviewService) {
     }
 
     /**
@@ -238,12 +242,33 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     local.view.notifyChange(true);
                 // Change the transparency of a part of the model
                 } else if (state.type ===  ModelPartStateChangeType.TRANSPARENCY) {
-                    local.setPartTransparency(local.sceneArr[groupName][partId], <number> state.new_value);
+                    if (local.sceneArr.hasOwnProperty(groupName) && local.sceneArr[groupName].hasOwnProperty(partId)) {
+                        local.setPartTransparency(local.sceneArr[groupName][partId], <number> state.new_value);
+                    } else {
+                        // Volumes
+                        for (const obj of local.volObjList) {
+                            local.setPartTransparency(obj, <number> state.new_value);
+                        }
+                    }
                     local.view.notifyChange(true);
                 // Move a part of the model up or down
                 } else if (state.type === ModelPartStateChangeType.HEIGHT_OFFSET) {
                     const displacement = new THREE.Vector3(0.0, 0.0, <number> state.new_value);
-                    local.movePart(local.sceneArr[groupName][partId], displacement);
+                    if (local.sceneArr.hasOwnProperty(groupName) && local.sceneArr[groupName].hasOwnProperty(partId)) {
+                        local.movePart(local.sceneArr[groupName][partId], displacement);
+                    } else {
+                        // Volumes
+                        for (const obj of local.volObjList) {
+                            // local.volViewService.changeHeight(displacement);
+                            local.movePart(obj, displacement);
+                        }
+                    }
+                    local.view.notifyChange(true);
+                // Move a slice of a volume
+                } else if (state.type === ModelPartStateChangeType.VOLUME_SLICE) {
+                    const newSliceValList: [number, number, number] = [-1.0, -1.0, -1.0];
+                    newSliceValList[state.new_value[0]] = state.new_value[1];
+                    local.volObjList = local.volViewService.makeSlices(newSliceValList, local.volObjList, true);
                     local.view.notifyChange(true);
                 }
             };
@@ -387,6 +412,42 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     }
 
     /**
+     * Initialise the 'VolviewService' instance with parameters from configuration files
+     * Only processes the first volume it finds
+     * @param config data from model's configuration file
+     * @returns true iff a volume was found else false
+     */
+    private initialiseVolume(config): boolean {
+        // Look for the first volume
+        if (config.hasOwnProperty('groups')) {
+            for (const groupName in config.groups) {
+                if (config.groups.hasOwnProperty(groupName)) {
+                    const groupObjs = config.groups[groupName];
+                    for (const groupObj of groupObjs) {
+                        if (groupObj.hasOwnProperty('type') && groupObj['type'] === '3DVolume') {
+                            const volDataObj = groupObj['volumeData'];
+                            if (volDataObj) {
+                                let dt: DataType = DataType.BIT_MASK;
+                                switch (volDataObj['dataType']) {
+                                    case 'BIT_MASK': dt = DataType.BIT_MASK; break;
+                                    case 'INT_16': dt = DataType.INT_16; break;
+                                    case 'INT_8': dt = DataType.FLOAT_16; break;
+                                    case 'FLOAT_32': dt = DataType.FLOAT_32;
+                                }
+                                this.volViewService.setConfig(volDataObj['dataDims'],
+                                    volDataObj['origin'], volDataObj['size'], dt,
+                                    volDataObj['colourLookup'], volDataObj['bitSize']);
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
      * This commences the process of drawing the model
      * @param config model configuration JSON
      * @param modelDir directory where model files are found
@@ -403,18 +464,15 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         if (props.hasOwnProperty('init_cam_dist')) {
             this.initCamDist = props.init_cam_dist;
         }
+        this.initialiseVolume(config);
 
         // Define geographic extent: CRS, min/max X, min/max Y
-        // Model boundary according to the North Gawler Province Metadata PDF using projection: UTM Zone 52 Datum: GDA94 => EPSG:28352
         this.extentObj = new ITOWNS.Extent(props.crs, props.extent[0], props.extent[1], props.extent[2], props.extent[3]);
 
         this.sceneArr = {};
 
         // Scene
         this.scene = new THREE.Scene();
-
-        /*var axesHelper = new THREE.AxisHelper( 5 );
-        scene.add( axesHelper );*/
 
         // Grey background
         this.scene.background = BACKGROUND_COLOUR;
@@ -475,6 +533,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         for (const group in this.config.groups) {
             if (this.config.groups.hasOwnProperty(group)) {
                 const parts = this.config.groups[group];
+                let doneVolume = false;
                 for (let i = 0; i < parts.length; i++) {
                     if (parts[i].type === 'GLTFObject' && parts[i].include) {
                         promiseList.push( new Promise( function( resolve, reject ) {
@@ -483,7 +542,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     // function called if loading successful
                                     function (g_object) {
                                         console.log('loaded: ', local.model_dir + '/' + part.model_url);
-                                        console.log('g_object.scene = ', g_object.scene);
                                         g_object.scene.name = part.model_url;
                                         if (!part.displayed) {
                                             g_object.scene.visible = false;
@@ -493,8 +551,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         resolve(g_object.scene);
                                     },
                                     // function called during loading
-                                    function ( xhr ) {
-                                        // console.log('GLTF/OBJ onProgress()', xhr);
+                                    function ( {} ) {
+                                        // console.log('GLTF onProgress()', xhr);
                                         // if ( xhr.lengthComputable ) {
                                         //    const percentComplete = xhr.loaded / xhr.total * 100;
                                         //    console.log( xhr.currentTarget.responseURL, Math.round(percentComplete) + '% downloaded' );
@@ -502,18 +560,32 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     },
                                     // function called when loading fails
                                     function ( xhr ) {
-                                         console.log('GLTF/OBJ load error!', xhr);
+                                         console.error('GLTF/OBJ load error!', xhr);
                                          reject(null);
                                     }
                                 );
                             })(parts[i], group);
                         }));
+                    // Load volume, currently only one can be loaded
+                    // TODO: Load multiple volumes of the same dimensions
+                    } else if (parts[i].type === '3DVolume' && parts[i].include && !doneVolume) {
+                        local.volObjList = [];
+                        promiseList.push(this.volViewService.makePromise('./assets/geomodels/' + local.model_dir + '/' + parts[i].model_url,
+                                                                             local.scene, local.volObjList,
+                                                                             parts[i].displayed));
+                        doneVolume = true;
                     }
                 }
             }
         }
 
-        // Get a list of borehole_ids
+        // Include helper axes
+        promiseList.push( new Promise( function(resolve) {
+            local.addHelperAxes();
+            resolve(true);
+        }));
+
+        // Get a list of borehole_ids - slow to load so they are done in the background
         this.modelInfoService.getBoreHoleIds().then(
             function(boreholeIdList: any[]) {
                 console.log('GOT BH LIST', boreholeIdList);
@@ -549,7 +621,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
         Promise.all(promiseList).then(
             // function called when all objects are loaded
-            function( sceneObjList ) {
+            function( {} ) {
                 console.log('GLTFs are loaded');
                 // Add image files to scene
                 local.addPlanes();
@@ -578,7 +650,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     if (parts[i].type === 'ImagePlane' && parts[i].include) {
                         promiseList.push( new Promise( function( resolve, reject ) {
                         (function(part, grp) {
-                            const texture = textureLoader.load('./assets/geomodels/' + local.model_dir + '/' + part.model_url,
+                            textureLoader.load('./assets/geomodels/' + local.model_dir + '/' + part.model_url,
                             // Function called when download successful
                             function (textya) {
                                 textya.minFilter = ITOWNS.THREE.LinearFilter;
@@ -603,11 +675,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 resolve(plane);
                             },
                             // Function called when download progresses
-                            function ( xhr ) {
-                                // console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+                            function ( {} ) {
+                                // NB: Threejs does not support the progress loader
                             },
                             // Function called when download errors
-                            function ( xhr ) {
+                            function ( {} ) {
                                 console.error('An error happened loading image plane');
                                 reject(null);
                             }
@@ -621,14 +693,41 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
         Promise.all(promiseList).then(
         // function called when all objects successfully loaded
-        function( sceneObjList ) {
-           // Planes are loaded, now to finalise view
-           local.finaliseView(local.config);
+        function( {} ) {
+            local.finaliseView(local.config);
         },
         // function called when one GLTF object failed to load
         function( error ) {
             console.error( 'Could not load all textures:', error );
         });
+    }
+
+    /**
+     * Optionally insert some arrows to give us some orientation information
+     */
+    private addHelperAxes() {
+        // Insert some arrows to give us some orientation information
+        const x_dir = new THREE.Vector3( 1, 0, 0 );
+        const y_dir = new THREE.Vector3( 0, 1, 0 );
+        const z_dir = new THREE.Vector3( 0, 0, 1 );
+
+        const origin = new THREE.Vector3( );
+        origin.copy(this.extentObj.center().xyz());
+
+        const length = 1500000.0;
+        const hex_x = 0xff0000;
+        const hex_y = 0x00ff00;
+        const hex_z = 0x0000ff;
+
+        const arrowHelper_x = new THREE.ArrowHelper( x_dir, origin, length, hex_x );
+        arrowHelper_x.name = 'arrowHelper_x';
+        this.scene.add( arrowHelper_x );
+        const arrowHelper_y = new THREE.ArrowHelper( y_dir, origin, length, hex_y );
+        arrowHelper_y.name = 'arrowHelper_y';
+        this.scene.add( arrowHelper_y );
+        const arrowHelper_z = new THREE.ArrowHelper( z_dir, origin, length, hex_z );
+        arrowHelper_z.name = 'arrowHelper_z';
+        this.scene.add( arrowHelper_z );
     }
 
     /**
@@ -682,7 +781,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 type: ITOWNS.STRATEGY_DICHOTOMY,
                                 options: {},
                             },
-                    }).then(function(response) {
+                    }).then(function({}) {
                             // Retrieve WMS layer and add it to sidebar
                             const allLayers = local.view.getLayers(layer => layer.id === parts[i].id);
                             if (allLayers.length > 0) {
@@ -783,30 +882,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                         return;
                     }
                 }
-            });
-
-        /*// Insert some arrows to give us some orientation information
-        const x_dir = new THREE.Vector3( 1, 0, 0 );
-        const y_dir = new THREE.Vector3( 0, 1, 0 );
-        const z_dir = new THREE.Vector3( 0, 0, 1 );
-
-        const origin = new THREE.Vector3( );
-        origin.copy(this.extentObj.center().xyz());
-
-        const length = 150000;
-        const hex_x = 0xff0000;
-        const hex_y = 0x00ff00;
-        const hex_z = 0x0000ff;
-
-        const arrowHelper_x = new THREE.ArrowHelper( x_dir, origin, length, hex_x );
-        arrowHelper_x.name = 'arrowHelper_x';
-        this.scene.add( arrowHelper_x );
-        const arrowHelper_y = new THREE.ArrowHelper( y_dir, origin, length, hex_y );
-        arrowHelper_y.name = 'arrowHelper_y';
-        this.scene.add( arrowHelper_y );
-        const arrowHelper_z = new THREE.ArrowHelper( z_dir, origin, length - 50000, hex_z );
-        arrowHelper_z.name = 'arrowHelper_z';
-        this.scene.add( arrowHelper_z );*/
+        });
 
         // 3 axis virtual globe controller
         this.trackBallControls = new GeoModelControls(this.viewerDiv, this.view.camera.camera3D, this.view,
@@ -897,7 +973,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Capture window resize events to re-centre the display of the virtual sphere
      * @param event event object
      */
-    public onResize(event) {
+    public onResize({}) {
         this.updateMouseGuide();
     }
 
@@ -965,20 +1041,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     private resetModelView() {
         this.trackBallControls.resetView();
         this.updateMouseGuide();
-    }
-
-    /**
-     * Render view of model
-     */
-    private render() {
-        this.renderer.render(this.scene, this.view.camera.camera3D);
-    }
-
-    /**
-     * Refresh view of model
-     */
-    private refresh() {
-        this.view.notifyChange(true);
     }
 
     /**

@@ -131,7 +131,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
             },
             // Must catch here to prevent error message appearing on console
             err => {
-                console.log('Cannot read model file', this.modelPath, err);
+                console.error('Cannot read model file', this.modelPath, err);
             }
         );
     }
@@ -370,6 +370,15 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     public toggleSidebar() {
         const dom: any = document.querySelector('body');
         dom.classList.toggle(this.pushRightClass);
+    }
+
+    /**
+     * Changes slice of a volume
+     * @param event material slider change event, contains slider's latest selected value
+     */
+    public changeSlice(event: MatSliderChange, dimIdx: number, groupName: string, partId: string) {
+        this.modelInfoService.setModelPartStateChange(groupName, partId,
+            { type: ModelPartStateChangeType.VOLUME_SLICE, new_value: [dimIdx, event.value] } );
     }
 
     /**

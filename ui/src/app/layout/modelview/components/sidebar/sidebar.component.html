@@ -1,6 +1,6 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
     <h6 class="text-muted">&nbsp;{{sourceOrgName}}</h6>
-    <h2 class="text-muted">{{title}}</h2>
+    <h2 class="text-muted">&nbsp;{{title}}</h2>
     <div id="modelControlsDiv">
         <button type="button" (click)="resetModelView()" class="btn btn-outline-secondary btn-sm"
             ngbPopover="{{HELP_TEXT.resetView.desc}}" popoverTitle="{{HELP_TEXT.resetView.title}}" placement="right" #reset_view_popover="ngbPopover" triggers="manual">
@@ -44,6 +44,15 @@
                                     <mat-slider (change)="changeTransparency($event, groupName, subGroupObj.model_url)" thumbLabel min="0.0" max="1.0" step="0.1" value="1.0"
                                     ngbPopover="{{HELP_TEXT.partTransp.desc}}" popoverTitle="{{HELP_TEXT.partTransp.title}}" placement="bottom" #part_offset_popover="ngbPopover" triggers="manual"></mat-slider>
                                 </span>
+                            </a>
+                            <a *ngIf="subGroupObj.type === '3DVolume'" class="list-group-item">
+                                <span class="span-part-controls">X slice&nbsp;<mat-slider (change)="changeSlice($event, 0, groupName, subGroupObj.model_url)" thumbLabel min="0.0" max="1.0" step="0.01" value="0.0"></mat-slider></span>
+                            </a>
+                            <a *ngIf="subGroupObj.type === '3DVolume'" class="list-group-item">
+                                <span class="span-part-controls">Y slice&nbsp;<mat-slider (change)="changeSlice($event, 1, groupName, subGroupObj.model_url)" thumbLabel min="0.0" max="1.0" step="0.01" value="0.0"></mat-slider></span>
+                            </a>
+                            <a *ngIf="subGroupObj.type === '3DVolume'" class="list-group-item">
+                                <span class="span-part-controls">Z slice&nbsp;<mat-slider (change)="changeSlice($event, 2, groupName, subGroupObj.model_url)" thumbLabel min="0.0" max="1.0" step="0.01" value="0.0"></mat-slider></span>
                             </a>
                         </div>
                     </li>

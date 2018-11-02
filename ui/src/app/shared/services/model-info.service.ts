@@ -15,14 +15,14 @@ export interface ProviderInfo {
 export const FIXED_HEIGHT = -1.0;
 
 // What has changed in the model part's state?
-export enum  ModelPartStateChangeType { DISPLAYED, TRANSPARENCY, HEIGHT_OFFSET }
+export enum  ModelPartStateChangeType { DISPLAYED, TRANSPARENCY, HEIGHT_OFFSET, VOLUME_SLICE }
 
 export enum ModelControlEvent { RESET_VIEW, MOUSE_GUIDE_ON, MOUSE_GUIDE_OFF }
 
 // Vessel for communicating change, note limitation: only one change at a time
 export interface ModelPartStateChange {
     type: ModelPartStateChangeType;
-    new_value: string | number;
+    new_value: string | number | [number, number];
 }
 
 export interface ModelPartStateType {
@@ -99,7 +99,7 @@ export class ModelInfoService {
                         resolve([local.providerModelInfo, local.providerInfoList]);
                     },
                     (err: HttpErrorResponse) => {
-                        console.log('Cannot load provider model JSON file', err);
+                        console.error('Cannot load provider model JSON file', err);
                         reject(err);
                     }
                 );
@@ -145,7 +145,8 @@ export class ModelInfoService {
                     }
                     if (partObj.include) {
                         this.modelPartState[groupName][partObj.model_url] = { displayed: partObj.displayed,
-                                              transparency: 1.0, heightOffset: heightOffset, oldTransparency: 1.0 };
+                                              transparency: 1.0, heightOffset: heightOffset, oldTransparency: 1.0,
+                                              volSlice: [0.0, 0.0, 0.0] };
                     }
                 }
             }
@@ -187,7 +188,7 @@ export class ModelInfoService {
                 this.modelPromise = new Promise(function(resolve, reject) {
                     local.httpService.get('./assets/geomodels/' + model['configFile']).subscribe(
                         data => {
-                            const modelInfo = data as string [];
+                            // const modelInfo = data as string [];
                             local.modelCache[modelKey] = data;
                             local.parse_model(data);
                             resolve([data, model['modelDir'], sourceOrgName]);
@@ -201,7 +202,7 @@ export class ModelInfoService {
             }
             return this.modelPromise;
         }
-        return new Promise(function(resolve, reject) {
+        return new Promise(function({}, reject) {
             console.log('Model not found in config file');
             reject('model not found');
         });
@@ -292,6 +293,10 @@ export class ModelInfoService {
             this.modelPartState[groupName][partId].transparency = stateChange.new_value;
         } else if (stateChange.type === ModelPartStateChangeType.HEIGHT_OFFSET) {
             this.modelPartState[groupName][partId].heightOffset = stateChange.new_value;
+        } else if (stateChange.type === ModelPartStateChangeType.VOLUME_SLICE) {
+            const dim = stateChange.new_value[0];
+            const val = stateChange.new_value[1];
+            this.modelPartState[groupName][partId].volSlice[dim] = val;
         }
         // Inform the listener with a callback
         this.modelPartCallback(groupName, partId, stateChange);
