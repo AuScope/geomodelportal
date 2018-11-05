@@ -165,7 +165,7 @@ export class ModelInfoService {
             return new Promise(resolve => resolve(this.modelCache[modelKey]));
         }
         if (!this.initialised) {
-            const result = await this.initialise();
+            await this.initialise();
         }
         let model;
         let sourceOrgName = '';

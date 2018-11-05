@@ -9,7 +9,7 @@ import { ModelInfoService, ModelPartCallbackType, ModelControlEvent,
          ModelPartStateChange, ModelPartStateChangeType } from '../../shared/services/model-info.service';
 import { SidebarService, MenuChangeType, MenuStateChangeType } from '../../shared/services/sidebar.service';
 import { HelpinfoService } from '../../shared/services/helpinfo.service';
-import { VolviewService, DataType } from '../../shared/services/volview.service';
+import { VolviewService, DataType, VOL_LABEL_PREFIX } from '../../shared/services/volview.service';
 
 // Include threejs library
 import * as THREE from 'three';
@@ -123,6 +123,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
     // TEMP: volume object
     private volObjList: THREE.Object3D[] = [];
+
+    private volLabelLookup = {};
 
     constructor(private modelInfoService: ModelInfoService, private ngRenderer: Renderer2,
                 private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
@@ -268,7 +270,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 } else if (state.type === ModelPartStateChangeType.VOLUME_SLICE) {
                     const newSliceValList: [number, number, number] = [-1.0, -1.0, -1.0];
                     newSliceValList[state.new_value[0]] = state.new_value[1];
-                    local.volObjList = local.volViewService.makeSlices(newSliceValList, local.volObjList, true);
+                    local.volObjList = local.volViewService.makeSlices('', newSliceValList, local.volObjList, true);
                     local.view.notifyChange(true);
                 }
             };
@@ -437,6 +439,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 this.volViewService.setConfig(volDataObj['dataDims'],
                                     volDataObj['origin'], volDataObj['size'], dt,
                                     volDataObj['colourLookup'], volDataObj['bitSize']);
+                                this.volLabelLookup =  volDataObj['labelLookup'];
                                 return true;
                             }
                         }
@@ -570,9 +573,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     // TODO: Load multiple volumes of the same dimensions
                     } else if (parts[i].type === '3DVolume' && parts[i].include && !doneVolume) {
                         local.volObjList = [];
-                        promiseList.push(this.volViewService.makePromise('./assets/geomodels/' + local.model_dir + '/' + parts[i].model_url,
-                                                                             local.scene, local.volObjList,
-                                                                             parts[i].displayed));
+                        const filename = parts[i].model_url.replace('.gz', '');
+                        promiseList.push(this.volViewService.makePromise(filename, './assets/geomodels/' +
+                                                                            local.model_dir + '/' + parts[i].model_url,
+                                                                        local.scene, local.volObjList,
+                                                                        parts[i].displayed));
                         doneVolume = true;
                     }
                 }
@@ -819,10 +824,24 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
                 // Look at all the intersecting objects to see that if any of them have information for popups
                 if (intersects.length > 0) {
-                    for (let n = 0; n < intersects.length; n++) {
-                        // console.log('intersects[n].object.name = ', intersects[n].object.name);
-                        if (intersects[n].object.name === '') {
+                    for (let n = intersects.length - 1; n >= 0; n--) {
+                        const objName = intersects[n].object.name;
+                        const objIntPt = intersects[n].point;
+                        if (objName === '') {
                             continue;
+                        }
+                        if (objName.substring(0, 9) === VOL_LABEL_PREFIX) {
+                            const idx = parseInt(objName[objName.length - 1], 10);
+                            const val = local.volViewService.xyzToProp(idx, objIntPt);
+                            if (val !== -1.0) {
+                                const popObj = {'title': objName, 'val': val };
+                                const valStr = val.toString();
+                                if (local.volLabelLookup.hasOwnProperty(valStr)) {
+                                    popObj['label'] = local.volLabelLookup[valStr];
+                                }
+                                modelViewObj.makePopup(event, popObj, objIntPt);
+                                continue;
+                            }
                         }
                         for (const group in modelViewObj.config.groups) {
                             if (modelViewObj.config.groups.hasOwnProperty(group)) {
@@ -832,15 +851,15 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         for (const popup_key in parts[i]['popups']) {
                                             if (parts[i]['popups'].hasOwnProperty(popup_key)) {
                                                 // console.log('popup_key = ', popup_key, popup_key.indexOf('*', popup_key.length - 1));
-                                                if (popup_key + '_0' === intersects[n].object.name) {
-                                                    modelViewObj.makePopup(event, parts[i]['popups'][popup_key], intersects[n].point);
+                                                if (popup_key + '_0' === objName) {
+                                                    modelViewObj.makePopup(event, parts[i]['popups'][popup_key], objIntPt);
                                                     if (parts[i].hasOwnProperty('model_url')) {
                                                         modelViewObj.openSidebarMenu(group, parts[i]['model_url']);
                                                     }
                                                     return;
                                                 } else if (popup_key[0] === '^') {
-                                                    if (intersects[n].object.name.match(popup_key)) {
-                                                        modelViewObj.makePopup(event, parts[i]['popups'][popup_key], intersects[n].point);
+                                                    if (objName.match(popup_key)) {
+                                                        modelViewObj.makePopup(event, parts[i]['popups'][popup_key], objIntPt);
                                                         if (parts[i].hasOwnProperty('model_url')) {
                                                             modelViewObj.openSidebarMenu(group, parts[i]['model_url']);
                                                         }
@@ -852,14 +871,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     // FIXME: Update config file and this so that we only use 'popups' code above
                                     } else if (parts[i].hasOwnProperty('3dobject_label') &&
                                            parts[i].hasOwnProperty('popup_info') &&
-                                           intersects[n].object.name === parts[i]['3dobject_label'] + '_0') {
-                                        modelViewObj.makePopup(event, parts[i]['popup_info'], intersects[n].point);
+                                           objName === parts[i]['3dobject_label'] + '_0') {
+                                        modelViewObj.makePopup(event, parts[i]['popup_info'], objIntPt);
                                         if (parts[i].hasOwnProperty('model_url')) {
                                             modelViewObj.openSidebarMenu(group, parts[i]['model_url']);
                                         }
                                         return;
                                     } else if (parts[i].hasOwnProperty('3dobject_label') &&
-                                           intersects[n].object.name === parts[i]['3dobject_label'] &&
+                                           objName === parts[i]['3dobject_label'] &&
                                            parts[i].hasOwnProperty('reference')) {
                                         window.open(parts[i]['reference']);
                                         return;
@@ -868,11 +887,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             }
                         }
                         // If got here then, could not find it locally, so must ask server
-                        local.httpService.get('./api/getQuery?id=' + intersects[n].object.name).subscribe(
+                        local.httpService.get('./api/getQuery?id=' + objName).subscribe(
                             data => {
                                 const queryResult = data as string [];
                                 console.log('queryResult = ', queryResult);
-                                modelViewObj.makePopup(event, queryResult, intersects[n].point);
+                                modelViewObj.makePopup(event, queryResult, objIntPt);
                             },
                             (err: HttpErrorResponse) => {
                                 console.log('Cannot load borehole list', err);

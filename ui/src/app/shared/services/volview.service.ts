@@ -12,6 +12,8 @@ import * as THREE from 'three';
 // Different types of data available in a volume file
 export enum DataType {BIT_MASK, INT_16, INT_8, FLOAT_16, FLOAT_32 }
 
+export const VOL_LABEL_PREFIX = 'Volume3D_';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -114,6 +116,11 @@ export class VolviewService {
 
             case DataType.INT_16:
                 // Big endian
+                if (idx * 2 >= this.volDataView.byteLength - 2) {
+                    return this.volDataView.getUint16(this.volDataView.byteLength - 2, false);
+                } else if (idx < 0 ) {
+                    return this.volDataView.getUint16(0, false);
+                }
                 return this.volDataView.getUint16(idx * 2, false);
 
             case DataType.INT_8:
@@ -130,13 +137,14 @@ export class VolviewService {
 
     /**
      * Creates a promise that downloads a volume file an optionally draws the volume on screen
+     * @param volFile filename of volume file
      * @param volUrl URL of the volume file
      * @param scene ThreeJS scene where it will be added
      * @param volObjList list of ThreeJS objects which make up the displayed volume
      * @param displayed if true then the volume should be added to scene and made visible, if false it is only added to the scene
      * @returns a promise
      */
-    makePromise(volUrl: string, scene: THREE.Scene, volObjList: THREE.Object3D[], displayed: boolean): Promise<any> {
+    makePromise(volFile: string, volUrl: string, scene: THREE.Scene, volObjList: THREE.Object3D[], displayed: boolean): Promise<any> {
         const local = this;
         return new Promise( function( resolve, reject ) {
             local.httpService.get(volUrl, { responseType: 'arraybuffer' }).subscribe(
@@ -164,7 +172,7 @@ export class VolviewService {
                             local.float32View = new Float32Array(local.ab);
                         break;
                     }
-                    const objList = local.makeSlices([0.0, 0.0, 0.0], [null, null, null], displayed);
+                    const objList = local.makeSlices(volFile, [0.0, 0.0, 0.0], [null, null, null], displayed);
                     for (const object of objList) {
                         scene.add(object);
                         volObjList.push(object);
@@ -228,7 +236,8 @@ export class VolviewService {
                 y = v;
         }
         if (x > this.X_DIM || y > this.Y_DIM || z > this.Z_DIM) {
-            console.error('E!', dimIdx, u, v, w, this.X_DIM, this.Y_DIM, this.Z_DIM, x, y, z);
+            console.error('COORD ERROR!', 'dimIdx = ', dimIdx, 'u,v,w = ', u, v, w,
+                          'x_dim,y_dim,z_dim = ', this.X_DIM, this.Y_DIM, this.Z_DIM, ' x,y,z = ', x, y, z);
         }
         const val = this.getFromArray(x + y * this.X_DIM + z * this.X_DIM * this.Y_DIM);
 
@@ -324,13 +333,14 @@ export class VolviewService {
 
     /**
      * Moves and optionally creates the three slices (X,Y,Z) within the volume
+     * @param fileName name of volume file, only used when new slice is created
      * @param pctList list of three float values, (0.0..1.0) indicating the position of each slice within the volume.
      * @param objectList list of ThreeJS objects which represent the three slices & wireframe
      * [X-slice, Y-slice, Z-slice, wireframe]
      * If X-slice or Y-slice or Z-slice is null then a new slice is created
      * @param displayed if creating a new slice, will it be visible or not
      */
-    public makeSlices(pctList: [number, number, number], objectList: THREE.Object3D[], displayed: boolean) {
+    public makeSlices(fileName: string, pctList: [number, number, number], objectList: THREE.Object3D[], displayed: boolean) {
         // Make one slice for each dimension
         for (let dimIdx = 0; dimIdx < pctList.length; dimIdx++) {
             let newSlice = false;
@@ -381,6 +391,7 @@ export class VolviewService {
                     const geometry = new THREE.PlaneBufferGeometry(otherVolSzList[0], otherVolSzList[1]);
                     objectList[dimIdx] = new THREE.Mesh( geometry, material );
                     objectList[dimIdx].visible = displayed;
+                    objectList[dimIdx].name = VOL_LABEL_PREFIX + fileName + '_' + dimIdx.toString();
                     const rot = new THREE.Euler(0.0, 0.0, 0.0);
                     switch (dimIdx) {
                         case 0:
@@ -444,4 +455,25 @@ export class VolviewService {
         return objectList;
     }
 
+    /**
+     * Given (X,Y,Z) real world coords and a slice index, it returns the volume's value at that point
+     * @param dimIdx slice index (0 = x-slice, 1 = y-slice, 2 = z-slice)
+     * @param xyz ThreeJS vector of the point on the slice
+     * @returns a numeric value
+     */
+    xyzToProp(dimIdx: number, xyz: THREE.Vector3): number {
+
+        const dx = Math.floor((xyz.x - this.ORIGIN[0]) / this.CUBE_SZ[0] * this.X_DIM); // X
+        const dy = Math.floor((xyz.y - this.ORIGIN[1]) / this.CUBE_SZ[1] * this.Y_DIM); // Y
+        const dz = Math.floor((xyz.z - this.ORIGIN[2]) / this.CUBE_SZ[2] * this.Z_DIM); // Z
+        switch (dimIdx) {
+            case 0:
+                return this.getValueXYZ(dimIdx, dx, dy, dz);
+            case 1:
+                return this.getValueXYZ(dimIdx, dy, dx, dz);
+            case 2:
+                return this.getValueXYZ(dimIdx, dz, dy, dx);
+        }
+        return null;
+    }
 }

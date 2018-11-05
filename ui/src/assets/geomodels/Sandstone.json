@@ -1,19 +1,13 @@
 {
     "groups": {
         "3D Geology": [
-            {
-                "display_name": "Regions",
+        {
+                "display_name": "Lithology",
                 "displayed": true,
                 "include": true,
-                "model_url": "3D_geology_flags.gz",
-                "popups": {
-                    "^3D GEOLOGY-01_Proterozoic_dyke": {
-                        "title": "3D GEOLOGY"
-                    }
-                },
+                "model_url": "3D_geology_Lithology.gz",
                 "volumeData": {
-                    "dataType": "BIT_MASK",
-                    "bitSize": 27,
+                    "dataType": "INT_16",
                     "dataDims": [103, 175, 103],
                     "origin": [696000.0, 6863000.0, -40000.0],
                     "size": [51000.0, 87000.0, 51000.0],
@@ -38,9 +32,89 @@
                                  "19": [0.94902, 0.819608, 0.788235],
                                  "20": [0, 0.521569, 0.54902],
                                  "21": [1, 1, 1]
-                    }
+                    },
+                    "labelLookup": { "1": "20_Mantle",
+                        "2": "19_Lower_crust",
+                        "3": "18_Yarraquin_Seismic_Province",
+                        "4": "17_Murchison_granite", 
+                        "5": "16_Southern_Cross_granite", 
+                        "6": "13_Barrambie_Igneous_Complex",
+                        "7": "11_Unaly_Hill_greenstone",
+                        "8": "14_North_Cook_Well_greenstone",
+                        "9": "12_Gum_Creek_greenstone", 
+                        "10": "10_Basal_mafic",
+                        "11": "09_Tremolite_schist",
+                        "12": "08_Massive_mafic",
+                        "13": "07_Banded_iron_formation",
+                        "14": "06_Mafic_with_BIF",
+                        "15": "05_Ultramafic", 
+                        "16": "04_Metasedimentary",
+                        "17": "15_Foliated_granite",
+                        "18": "03_D2_granite", 
+                        "19": "02_Bald_Rock_Supersuite", 
+                        "20": "01_Proterozoic_dyke",
+                        "21": "Air"
+                     }
                 },
-                "type": "3DVolume"
+                "type": "3DVolume"                
+            },
+            {
+                "display_name": "Regions",
+                "displayed": false,
+                "include": false,
+                "model_url": "3D_geology_flags.gz",
+                "volumeData": {
+                    "dataType": "BIT_MASK",
+                    "bitSize": 27,
+                    "dataDims": [103, 175, 103],
+                    "origin": [696000.0, 6863000.0, -40000.0],
+                    "size": [51000.0, 87000.0, 51000.0],
+                    "colourLookup": { "9": [0.870588, 0.898039, 0.92549],
+                                 "10": [0.67451, 0.701961, 0.305882],
+                                 "8": [0.929412, 0.6, 0.568627],
+                                 "6": [0.945098, 0.298039, 0.321569],
+                                 "11": [0.901961, 0.721569, 0.686275],
+                                 "24": [0.764706, 0.862745, 0.788235],
+                                 "19": [0.764706, 0.862745, 0.788235],
+                                 "21": [0.764706, 0.862745, 0.788235],
+                                 "9": [0.764706, 0.862745, 0.788235],
+                                 "18": [0, 0.392157, 0],
+                                 "22": [0.788235, 0.756863, 0.87451],
+                                 "17": [0.231373, 0.701961, 0.435294],
+                                 "20": [0.164706, 0.533333, 0.780392],
+                                 "16": [0.254902, 0.533333, 0.243137],
+                                 "25": [0.584314, 0.384314, 0.737255],
+                                 "26": [0.839216, 0.803922, 0.768627],
+                                 "12": [0.976471, 0.701961, 0.607843],
+                                 "13": [0.921569, 0.47451, 0.458824],
+                                 "14": [0.94902, 0.819608, 0.788235],
+                                 "23": [0, 0.521569, 0.54902],
+                                 "7": [1, 1, 1]
+                    },
+                    "labelLookup": { "6": "17_Murchison_granite", 
+                        "7": "Air", 
+                        "8": "18_Yarraquin_Seismic_Province", 
+                        "9": "20_Mantle", 
+                        "10": "19_Lower_crust", 
+                        "11": "16_Southern_Cross_granite", 
+                        "12": "15_Foliated_granite", 
+                        "13": "03_D2_granite", 
+                        "14": "02_Bald_Rock_Supersuite", 
+                        "9": "12_Gum_Creek_greenstone", 
+                        "16": "06_Mafic_with_BIF",
+                        "17": "08_Massive_mafic", 
+                        "18": "10_Basal_mafic",
+                        "19": "11_Unaly_Hill_greenstone",
+                        "20": "07_Banded_iron_formation",
+                        "21": "14_North_Cook_Well_greenstone",
+                        "22": "09_Tremolite_schist",
+                        "23": "01_Proterozoic_dyke",
+                        "24": "13_Barrambie_Igneous_Complex",
+                        "25": "05_Ultramafic", 
+                        "26": "04_Metasedimentary"
+                     }
+                },
+                "type": "3DVolume"                
             }
         ]
     },
