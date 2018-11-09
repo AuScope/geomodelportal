@@ -746,7 +746,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     for (let n = intersects.length - 1; n >= 0; n--) {
                         const objName = intersects[n].object.name;
                         const objIntPt = intersects[n].point;
-                        if (objName === '') {
+                        if (!objName) {
                             continue;
                         }
                         // TODO: Remove to a separate lookup service
@@ -763,10 +763,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     if (val !== -1.0) {
                                         const popObj = {'title': objName, 'val': val };
                                         const valStr = val.toString();
-                                        if (local.volLabelArr[group][partId].hasOwnProperty(valStr)) {
+                                        if (local.volLabelArr.hasOwnProperty(group) &&
+                                            local.volLabelArr[group].hasOwnProperty(partId) &&
+                                            local.volLabelArr[group][partId] &&
+                                            local.volLabelArr[group][partId].hasOwnProperty(valStr)) {
                                             popObj['label'] = local.volLabelArr[group][partId][valStr];
                                         }
                                         local.makePopup(event, popObj, objIntPt);
+                                        return;
                                     }
                                 }
                             }
