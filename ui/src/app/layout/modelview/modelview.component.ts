@@ -10,6 +10,7 @@ import { ModelInfoService, ModelPartCallbackType, ModelControlEvent,
 import { SidebarService, MenuChangeType, MenuStateChangeType } from '../../shared/services/sidebar.service';
 import { HelpinfoService } from '../../shared/services/helpinfo.service';
 import { VolView, VolviewService, DataType } from '../../shared/services/volview.service';
+import { SceneObject, PlaneSceneObject, WMSSceneObject, VolSceneObject } from './scene-object';
 
 // Include threejs library
 import * as THREE from 'three';
@@ -34,113 +35,6 @@ import * as Detector from '../../../../node_modules/three/examples/js/Detector';
 
 const BACKGROUND_COLOUR = new THREE.Color(0xC0C0C0);
 
-// GLTF Objects
-class SceneObject {
-    public sceneObj: any;
-    constructor(sceneObj: any) {
-        this.sceneObj = sceneObj;
-    }
-
-    public setVisibility(visibility: boolean) {
-        this.sceneObj.visible = visibility;
-    }
-
-    public setTransparency(transparency: number) {
-        const local = this;
-        this.sceneObj.traverseVisible( function(child) {
-            if (child.type === 'Mesh' && child.hasOwnProperty('material')) {
-                if (child['material'].type === 'MeshStandardMaterial') {
-                    local.setMatTransparency(child['material'], transparency);
-                }
-            }
-        });
-    }
-
-    protected setMatTransparency(material: THREE.Material, transparency: number) {
-        if (transparency >= 0.0 && transparency < 1.0) {
-            material.transparent = true;
-            material.opacity = transparency;
-        } else if (transparency === 1.0) {
-            material.transparent = false;
-            material.opacity = 1.0;
-        }
-    }
-
-    protected setObjDisplacement(obj: THREE.Object3D, displacement: THREE.Vector3) {
-        if (!obj.userData.hasOwnProperty('origPosition')) {
-            obj.userData.origPosition = obj.position.clone();
-        }
-        obj.position.addVectors(obj.userData.origPosition, displacement);
-    }
-
-    public setDisplacement(displacement: THREE.Vector3) {
-        // Move GLTF object
-        let found = false;
-        const local = this;
-        this.sceneObj.traverseVisible( function(child) {
-            if (!found && child.type === 'Object3D') {
-                local.setObjDisplacement(child, displacement);
-                found = true;
-            }
-        });
-    }
-
-    public setVolSlice(dimIdx: number, val: number) {}
-}
-
-// Plane objects
-class PlaneSceneObject extends SceneObject {
-    constructor(sceneObj: any) { super(sceneObj); }
-    public setTransparency(transparency: number) {
-        this.setMatTransparency(this.sceneObj['material'], transparency);
-    }
-    public setDisplacement(displacement: THREE.Vector3) {
-        this.setObjDisplacement(this.sceneObj, displacement);
-    }
-}
-
-// WMS Objects
-class WMSSceneObject extends SceneObject {
-    constructor(sceneObj: any) { super(sceneObj); }
-    public setTransparency(transparency: number) {
-        this.sceneObj.opacity = transparency;
-    }
-    public setDisplacement(displacement: THREE.Vector3) {
-        // FIXME: We don't have displacement for WMS yet
-    }
-}
-
-// 3D Volume Objects
-class VolSceneObject extends SceneObject {
-    constructor(sceneObj: any, volViewService: VolviewService, volView: VolView) {
-        super(sceneObj);
-        this.volViewService = volViewService;
-        this.volView = volView;
-    }
-    public volObjList: THREE.Object3D[] = [];
-    private volViewService: VolviewService;
-    private volView: VolView;
-    public setVisibility(visibility: boolean) {
-        for (const obj of this.volObjList) {
-            obj.visible = visibility;
-        }
-    }
-    public setVolSlice(dimIdx: number, val: number) {
-        const newSliceValList: [number, number, number] = [-1.0, -1.0, -1.0];
-        newSliceValList[dimIdx] = val;
-        this.volObjList = this.volViewService.makeSlices(this.volView, '', '', newSliceValList, this.volObjList, true);
-    }
-    public setTransparency(transparency: number) {
-        for (const obj of this.volObjList) {
-            this.setMatTransparency(obj['material'], transparency);
-        }
-    }
-    public setDisplacement(displacement: THREE.Vector3) {
-        for (const obj of this.volObjList) {
-            this.setObjDisplacement(obj, displacement);
-        }
-    }
-}
 
 @Component({
     selector: 'app-modelview',
