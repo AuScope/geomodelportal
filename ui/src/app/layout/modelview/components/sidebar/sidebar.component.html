@@ -33,7 +33,7 @@
                                ngbPopover="{{HELP_TEXT.partEyeball.desc}}" popoverTitle="{{HELP_TEXT.partEyeball.title}}" placement="left" #part_eyeball_popover="ngbPopover" triggers="manual"></i>
                         </a>
                         <div id="controlsDiv" [style.display]="getDisplayControls(groupName, subGroupObj.model_url)">
-                            <a *ngIf="modelPartState[groupName][subGroupObj.model_url].heightOffset !== FIXED_HEIGHT" class="list-group-item">
+                            <a *ngIf="modelPartState[groupName][subGroupObj.model_url].heightOffset >= 0" class="list-group-item">
                                 <span class="span-part-controls">Height Offset&nbsp;{{modelPartState[groupName][subGroupObj.model_url].heightOffset}}
                                     <mat-slider (change)="changeHeight($event, groupName, subGroupObj.model_url)" thumbLabel min="0" max="50000" step="1000" value="0"
                                     ngbPopover="{{HELP_TEXT.partOffset.desc}}" popoverTitle="{{HELP_TEXT.partOffset.title}}" placement="bottom" #part_trans_popover="ngbPopover" triggers="manual"></mat-slider>

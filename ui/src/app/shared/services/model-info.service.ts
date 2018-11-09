@@ -22,13 +22,7 @@ export enum ModelControlEvent { RESET_VIEW, MOUSE_GUIDE_ON, MOUSE_GUIDE_OFF }
 // Vessel for communicating change, note limitation: only one change at a time
 export interface ModelPartStateChange {
     type: ModelPartStateChangeType;
-    new_value: string | number | [number, number];
-}
-
-export interface ModelPartStateType {
-    displayed: boolean;
-    transparency: number;
-    heightOffset: number;
+    new_value: any;
 }
 
 // Callback function used to get information about a state change in the model
@@ -270,15 +264,6 @@ export class ModelInfoService {
     }
 
     /**
-     * Sets the state of the model part
-     * @param groupName group name of the model part
-     * @param partId part id of the model part
-     */
-    public setModelPartState(groupName: string, partId: string, state: ModelPartStateType) {
-        this.modelPartState[groupName][partId] = state;
-    }
-
-    /**
      * Indicate that something has changed
      * Called from the sidebar when tickbox is toggled
      * @param groupName name of group
@@ -300,14 +285,6 @@ export class ModelInfoService {
         }
         // Inform the listener with a callback
         this.modelPartCallback(groupName, partId, stateChange);
-    }
-
-    /**
-     * Retrieves the state of a model part
-     * @return state of a model part
-     */
-    public getModelPartState(groupName: string, partId: string): ModelPartStateType {
-        return this.modelPartState[groupName][partId];
     }
 
     /**

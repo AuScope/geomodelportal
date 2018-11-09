@@ -3,7 +3,7 @@
         "3D Geology": [
         {
                 "display_name": "Lithology",
-                "displayed": true,
+                "displayed": false,
                 "include": true,
                 "model_url": "3D_geology_Lithology.gz",
                 "volumeData": {
@@ -55,6 +55,36 @@
                         "20": "01_Proterozoic_dyke",
                         "21": "Air"
                      }
+                },
+                "type": "3DVolume"                
+            },
+            {
+                "display_name": "Density",
+                "displayed": true,
+                "include": true,
+                "model_url": "3D_geology_VPmg_density.gz",
+                "volumeData": {
+                    "dataType": "FLOAT_32",
+                    "dataDims": [103, 175, 103],
+                    "origin": [696000.0, 6863000.0, -40000.0],
+                    "size": [51000.0, 87000.0, 51000.0],
+                    "maxVal": 0.19,
+                    "minVal": -0.241651
+                },
+                "type": "3DVolume"                
+            },
+            {
+                "display_name": "Susceptibility",
+                "displayed": false,
+                "include": true,
+                "model_url": "3D_geology_VPmg_susceptibility.gz",
+                "volumeData": {
+                    "dataType": "FLOAT_32",
+                    "dataDims": [103, 175, 103],
+                    "origin": [696000.0, 6863000.0, -40000.0],
+                    "size": [51000.0, 87000.0, 51000.0],
+                    "maxVal": 0.0424554,
+                    "minVal": 0.0
                 },
                 "type": "3DVolume"                
             },

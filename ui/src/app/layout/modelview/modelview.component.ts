@@ -9,7 +9,7 @@ import { ModelInfoService, ModelPartCallbackType, ModelControlEvent,
          ModelPartStateChange, ModelPartStateChangeType } from '../../shared/services/model-info.service';
 import { SidebarService, MenuChangeType, MenuStateChangeType } from '../../shared/services/sidebar.service';
 import { HelpinfoService } from '../../shared/services/helpinfo.service';
-import { VolviewService, DataType, VOL_LABEL_PREFIX } from '../../shared/services/volview.service';
+import { VolView, VolviewService, DataType } from '../../shared/services/volview.service';
 
 // Include threejs library
 import * as THREE from 'three';
@@ -34,7 +34,113 @@ import * as Detector from '../../../../node_modules/three/examples/js/Detector';
 
 const BACKGROUND_COLOUR = new THREE.Color(0xC0C0C0);
 
+// GLTF Objects
+class SceneObject {
+    public sceneObj: any;
+    constructor(sceneObj: any) {
+        this.sceneObj = sceneObj;
+    }
 
+    public setVisibility(visibility: boolean) {
+        this.sceneObj.visible = visibility;
+    }
+
+    public setTransparency(transparency: number) {
+        const local = this;
+        this.sceneObj.traverseVisible( function(child) {
+            if (child.type === 'Mesh' && child.hasOwnProperty('material')) {
+                if (child['material'].type === 'MeshStandardMaterial') {
+                    local.setMatTransparency(child['material'], transparency);
+                }
+            }
+        });
+    }
+
+    protected setMatTransparency(material: THREE.Material, transparency: number) {
+        if (transparency >= 0.0 && transparency < 1.0) {
+            material.transparent = true;
+            material.opacity = transparency;
+        } else if (transparency === 1.0) {
+            material.transparent = false;
+            material.opacity = 1.0;
+        }
+    }
+
+    protected setObjDisplacement(obj: THREE.Object3D, displacement: THREE.Vector3) {
+        if (!obj.userData.hasOwnProperty('origPosition')) {
+            obj.userData.origPosition = obj.position.clone();
+        }
+        obj.position.addVectors(obj.userData.origPosition, displacement);
+    }
+
+    public setDisplacement(displacement: THREE.Vector3) {
+        // Move GLTF object
+        let found = false;
+        const local = this;
+        this.sceneObj.traverseVisible( function(child) {
+            if (!found && child.type === 'Object3D') {
+                local.setObjDisplacement(child, displacement);
+                found = true;
+            }
+        });
+    }
+
+    public setVolSlice(dimIdx: number, val: number) {}
+}
+
+// Plane objects
+class PlaneSceneObject extends SceneObject {
+    constructor(sceneObj: any) { super(sceneObj); }
+    public setTransparency(transparency: number) {
+        this.setMatTransparency(this.sceneObj['material'], transparency);
+    }
+    public setDisplacement(displacement: THREE.Vector3) {
+        this.setObjDisplacement(this.sceneObj, displacement);
+    }
+}
+
+// WMS Objects
+class WMSSceneObject extends SceneObject {
+    constructor(sceneObj: any) { super(sceneObj); }
+    public setTransparency(transparency: number) {
+        this.sceneObj.opacity = transparency;
+    }
+    public setDisplacement(displacement: THREE.Vector3) {
+        // FIXME: We don't have displacement for WMS yet
+    }
+}
+
+// 3D Volume Objects
+class VolSceneObject extends SceneObject {
+    constructor(sceneObj: any, volViewService: VolviewService, volView: VolView) {
+        super(sceneObj);
+        this.volViewService = volViewService;
+        this.volView = volView;
+    }
+    public volObjList: THREE.Object3D[] = [];
+    private volViewService: VolviewService;
+    private volView: VolView;
+    public setVisibility(visibility: boolean) {
+        for (const obj of this.volObjList) {
+            obj.visible = visibility;
+        }
+    }
+    public setVolSlice(dimIdx: number, val: number) {
+        const newSliceValList: [number, number, number] = [-1.0, -1.0, -1.0];
+        newSliceValList[dimIdx] = val;
+        this.volObjList = this.volViewService.makeSlices(this.volView, '', '', newSliceValList, this.volObjList, true);
+    }
+    public setTransparency(transparency: number) {
+        for (const obj of this.volObjList) {
+            this.setMatTransparency(obj['material'], transparency);
+        }
+    }
+    public setDisplacement(displacement: THREE.Vector3) {
+        for (const obj of this.volObjList) {
+            this.setObjDisplacement(obj, displacement);
+        }
+    }
+}
 
 @Component({
     selector: 'app-modelview',
@@ -63,8 +169,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     // Scene object
     private scene;
 
-    // Dictionary of {scene, checkbox, group name} objects used by model controls div, key is model URL
-    private sceneArr = {};
+    // Nested dictionary of 'SceneObject' used by model controls div, partId is model URL
+    private sceneArr: { [groupName: string]: { [partId: string]: SceneObject } };
 
     // Tenderer object
     private renderer;
@@ -121,10 +227,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     // Used to indicate that the model is loading
     private spinnerDiv;
 
-    // TEMP: volume object
-    private volObjList: THREE.Object3D[] = [];
+    // FIXME: To be subsumed into a lookup service in future
+    private volLabelArr: { [groupName: string]: { [partId: string]: {} } } = {};
 
-    private volLabelLookup = {};
+    // Collection of 'VolView' objects, used to keep track of and display volume data
+    private volViewArr: { [groupName: string]: { [partId: string]: VolView } } = {};
 
     constructor(private modelInfoService: ModelInfoService, private ngRenderer: Renderer2,
                 private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
@@ -231,47 +338,37 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             // Set up a callback function so this code can be informed when the sidebar controls are changed, so this code
             // can manipulate the model accordingly
             const callbackFn: ModelPartCallbackType =  function(groupName: string, partId: string, state: ModelPartStateChange) {
-                // Make a part of the model visible or invisible
-                if (state.type === ModelPartStateChangeType.DISPLAYED) {
-                    local.sceneArr[groupName][partId].visible = state.new_value;
-                    // Also turn on/off tile layer visibility if this is a WMS layer
-                    const parts = local.config.groups[groupName];
-                    for (let i = 0; i < parts.length; i++) {
-                        if (parts[i].model_url === partId && parts[i].type === 'WMSLayer') {
+                if (local.sceneArr.hasOwnProperty(groupName) && local.sceneArr[groupName].hasOwnProperty(partId)) {
+                    // Make a part of the model visible or invisible
+                    if (state.type === ModelPartStateChangeType.DISPLAYED) {
+                        local.sceneArr[groupName][partId].setVisibility(state.new_value);
+                        // Also turn on/off itowns tile layer visibility if this is a WMS layer
+                        if (local.sceneArr[groupName][partId] instanceof WMSSceneObject) {
                             local.tileLayer.visible = state.new_value;
                         }
-                    }
-                    local.view.notifyChange(true);
-                // Change the transparency of a part of the model
-                } else if (state.type ===  ModelPartStateChangeType.TRANSPARENCY) {
-                    if (local.sceneArr.hasOwnProperty(groupName) && local.sceneArr[groupName].hasOwnProperty(partId)) {
-                        local.setPartTransparency(local.sceneArr[groupName][partId], <number> state.new_value);
-                    } else {
-                        // Volumes
-                        for (const obj of local.volObjList) {
-                            local.setPartTransparency(obj, <number> state.new_value);
+                        local.view.notifyChange(true);
+
+                    // Change the transparency of a part of the model
+                    } else if (state.type ===  ModelPartStateChangeType.TRANSPARENCY) {
+                        const transparency = <number> state.new_value;
+                        local.sceneArr[groupName][partId].setTransparency(transparency);
+                        // Also adjust itowns tile layer opacity if this is a WMS layer
+                        if (local.sceneArr[groupName][partId] instanceof WMSSceneObject) {
+                            local.tileLayer.opacity = transparency;
                         }
+                        local.view.notifyChange(true);
+
+                    // Move a part of the model up or down
+                    } else if (state.type === ModelPartStateChangeType.HEIGHT_OFFSET) {
+                        const displacement = new THREE.Vector3(0.0, 0.0, <number> state.new_value);
+                        local.sceneArr[groupName][partId].setDisplacement(displacement);
+                        local.view.notifyChange(true);
+
+                    // Move a slice of a volume
+                    } else if (state.type === ModelPartStateChangeType.VOLUME_SLICE) {
+                        local.sceneArr[groupName][partId].setVolSlice(state.new_value[0], state.new_value[1]);
+                        local.view.notifyChange(true);
                     }
-                    local.view.notifyChange(true);
-                // Move a part of the model up or down
-                } else if (state.type === ModelPartStateChangeType.HEIGHT_OFFSET) {
-                    const displacement = new THREE.Vector3(0.0, 0.0, <number> state.new_value);
-                    if (local.sceneArr.hasOwnProperty(groupName) && local.sceneArr[groupName].hasOwnProperty(partId)) {
-                        local.movePart(local.sceneArr[groupName][partId], displacement);
-                    } else {
-                        // Volumes
-                        for (const obj of local.volObjList) {
-                            // local.volViewService.changeHeight(displacement);
-                            local.movePart(obj, displacement);
-                        }
-                    }
-                    local.view.notifyChange(true);
-                // Move a slice of a volume
-                } else if (state.type === ModelPartStateChangeType.VOLUME_SLICE) {
-                    const newSliceValList: [number, number, number] = [-1.0, -1.0, -1.0];
-                    newSliceValList[state.new_value[0]] = state.new_value[1];
-                    local.volObjList = local.volViewService.makeSlices('', newSliceValList, local.volObjList, true);
-                    local.view.notifyChange(true);
                 }
             };
             this.modelInfoService.registerModelPartCallback(callbackFn);
@@ -295,7 +392,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             this.ngRenderer.setStyle(this.spinnerDiv, 'display', 'none');
         }
     }
-
 
     /**
      * @return the radius of the virtual sphere used to rotate the model with the mouse, units are pixels
@@ -333,84 +429,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param sceneObj scene object
      * @param groupName group name
      */
-    private addPart(part, sceneObj: THREE.Object3D, groupName: string) {
+    private addPart(part, sceneObj: SceneObject, groupName: string) {
         if (!this.sceneArr.hasOwnProperty(groupName)) {
             this.sceneArr[groupName] = {};
         }
         this.sceneArr[groupName][part.model_url] = sceneObj;
-    }
-
-    /**
-     * Displaces a part of the model
-     * @param sceneObj the Object3D of the part
-     * @param displacement a Vector3 containing the amount of displacement
-     */
-    private movePart(sceneObj: THREE.Object3D, displacement: THREE.Vector3) {
-        // Move image object, but only if it is Object3D
-        if (sceneObj.isObject3D) {
-            if (sceneObj.type === 'Mesh') {
-                if (!sceneObj.userData.hasOwnProperty('origPosition')) {
-                    sceneObj.userData.origPosition = sceneObj.position.clone();
-                }
-                sceneObj.position.addVectors(sceneObj.userData.origPosition, displacement);
-            } else {
-                // Move GLTF object
-                let found = false;
-                sceneObj.traverseVisible( function(child) {
-                    if (!found && child.type === 'Object3D') {
-                        if (!child.userData.hasOwnProperty('origPosition')) {
-                            child.userData.origPosition = child.position.clone();
-                        }
-                        child.position.addVectors(child.userData.origPosition, displacement);
-                        found = true;
-                    }
-                });
-            }
-        } else {
-            // TODO: Move itowns' WMS layers
-        }
-    }
-
-    /**
-     * Changes the transparency of a part of the model
-     * @param sceneObj the part's Object3D or itowns layer object
-     * @param value amount of transparency, a floating point number between 0.0 and 1.0
-     */
-    private setPartTransparency(sceneObj: any, value: number) {
-        // Plane objects
-        if (sceneObj.isObject3D) {
-            if (sceneObj.type === 'Mesh' && sceneObj.hasOwnProperty('material')
-                                   && sceneObj['material'].type === 'MeshBasicMaterial') {
-                const material: THREE.MeshBasicMaterial = <THREE.MeshBasicMaterial> sceneObj['material'];
-                if (value >= 0.0 && value < 1.0) {
-                    material.transparent = true;
-                    material.opacity = value;
-                } else if (value === 1.0) {
-                    material.transparent = false;
-                    material.opacity = 1.0;
-                }
-            } else {
-                // GLTF objects
-                sceneObj.traverseVisible( function(child) {
-                    if (child.type === 'Mesh' && child.hasOwnProperty('material')) {
-                        if (child['material'].type === 'MeshStandardMaterial') {
-                            const material: THREE.MeshStandardMaterial =  <THREE.MeshStandardMaterial> child['material'];
-                            if (value >= 0.0 && value < 1.0) {
-                                material.transparent = true;
-                                material.opacity = value;
-                            } else if (value === 1.0) {
-                                material.transparent = false;
-                                material.opacity = 1.0;
-                            }
-                        }
-                    }
-                });
-            }
-        // itowns' WMS layers and tile layer
-        } else {
-            sceneObj.opacity = value;
-            this.tileLayer.opacity = value;
-        }
     }
 
     /**
@@ -419,35 +442,41 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param config data from model's configuration file
      * @returns true iff a volume was found else false
      */
-    private initialiseVolume(config): boolean {
-        // Look for the first volume
+    private initialiseVolume(config) {
+        // Look for volumes
         if (config.hasOwnProperty('groups')) {
             for (const groupName in config.groups) {
                 if (config.groups.hasOwnProperty(groupName)) {
                     const groupObjs = config.groups[groupName];
                     for (const groupObj of groupObjs) {
+                        // Look for volumes in config file
                         if (groupObj.hasOwnProperty('type') && groupObj['type'] === '3DVolume') {
                             const volDataObj = groupObj['volumeData'];
-                            if (volDataObj) {
+                            if (volDataObj && groupObj.hasOwnProperty('model_url')) {
                                 let dt: DataType = DataType.BIT_MASK;
                                 switch (volDataObj['dataType']) {
                                     case 'BIT_MASK': dt = DataType.BIT_MASK; break;
                                     case 'INT_16': dt = DataType.INT_16; break;
-                                    case 'INT_8': dt = DataType.FLOAT_16; break;
+                                    case 'INT_8': dt = DataType.INT_8; break;
                                     case 'FLOAT_32': dt = DataType.FLOAT_32;
                                 }
-                                this.volViewService.setConfig(volDataObj['dataDims'],
-                                    volDataObj['origin'], volDataObj['size'], dt,
-                                    volDataObj['colourLookup'], volDataObj['bitSize']);
-                                this.volLabelLookup =  volDataObj['labelLookup'];
-                                return true;
+                                if (!this.volViewArr.hasOwnProperty(groupName)) {
+                                    this.volViewArr[groupName] = {};
+                                }
+                                const partId = groupObj['model_url'];
+                                this.volViewArr[groupName][partId] = this.volViewService.makeVolView(volDataObj, dt);
+
+                                // TODO: Keep this separate, this will become part of a lookup service
+                                if (!this.volLabelArr.hasOwnProperty(groupName)) {
+                                    this.volLabelArr[groupName] = {};
+                                }
+                                this.volLabelArr[groupName][partId] = volDataObj['labelLookup'];
                             }
                         }
                     }
                 }
             }
         }
-        return false;
     }
 
     /**
@@ -536,7 +565,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         for (const group in this.config.groups) {
             if (this.config.groups.hasOwnProperty(group)) {
                 const parts = this.config.groups[group];
-                let doneVolume = false;
                 for (let i = 0; i < parts.length; i++) {
                     if (parts[i].type === 'GLTFObject' && parts[i].include) {
                         promiseList.push( new Promise( function( resolve, reject ) {
@@ -550,7 +578,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                             g_object.scene.visible = false;
                                         }
                                         local.scene.add(g_object.scene);
-                                        local.addPart(part, g_object.scene, grp);
+                                        local.addPart(part, new SceneObject(g_object.scene), grp);
                                         resolve(g_object.scene);
                                     },
                                     // function called during loading
@@ -569,16 +597,16 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 );
                             })(parts[i], group);
                         }));
-                    // Load volume, currently only one can be loaded
-                    // TODO: Load multiple volumes of the same dimensions
-                    } else if (parts[i].type === '3DVolume' && parts[i].include && !doneVolume) {
-                        local.volObjList = [];
-                        const filename = parts[i].model_url.replace('.gz', '');
-                        promiseList.push(this.volViewService.makePromise(filename, './assets/geomodels/' +
-                                                                            local.model_dir + '/' + parts[i].model_url,
-                                                                        local.scene, local.volObjList,
-                                                                        parts[i].displayed));
-                        doneVolume = true;
+                    // Load volume
+                    } else if (parts[i].type === '3DVolume' && parts[i].include) {
+                        const partId  = parts[i].model_url;
+                        const volView = this.volViewArr[group][partId];
+                        const volSceneObj  = new VolSceneObject(null, this.volViewService, volView);
+                        volSceneObj.volObjList = [];
+                        promiseList.push(this.volViewService.makePromise(volView, group, partId,
+                                        './assets/geomodels/' + local.model_dir + '/' + parts[i].model_url,
+                                        local.scene, volSceneObj.volObjList, parts[i].displayed));
+                        this.addPart(parts[i], volSceneObj, group);
                     }
                 }
             }
@@ -676,7 +704,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 plane.name =  part.model_url.substring(0, part.model_url.lastIndexOf('.')) + '_0'; // For displaying popups
                                 plane.visible = part.displayed;
                                 local.scene.add(plane);
-                                local.addPart(part, plane, grp);
+                                local.addPart(part, new PlaneSceneObject(plane), grp);
                                 resolve(plane);
                             },
                             // Function called when download progresses
@@ -790,7 +818,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             // Retrieve WMS layer and add it to sidebar
                             const allLayers = local.view.getLayers(layer => layer.id === parts[i].id);
                             if (allLayers.length > 0) {
-                                local.addPart(parts[i], allLayers[0], group);
+                                local.addPart(parts[i], new WMSSceneObject(allLayers[0]), group);
                             }
                         },
                         function(err) {
@@ -812,15 +840,12 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.ngRenderer.listen(this.viewerDiv, 'dblclick', function(event: any) {
 
                 event.preventDefault();
+                local.mouse.x = (event.offsetX / local.viewerDiv.clientWidth) * 2 - 1;
+                local.mouse.y = -(event.offsetY / local.viewerDiv.clientHeight) * 2 + 1;
 
-                const modelViewObj = local;
+                local.raycaster.setFromCamera(local.mouse, local.view.camera.camera3D);
 
-                modelViewObj.mouse.x = (event.offsetX / local.viewerDiv.clientWidth) * 2 - 1;
-                modelViewObj.mouse.y = -(event.offsetY / local.viewerDiv.clientHeight) * 2 + 1;
-
-                modelViewObj.raycaster.setFromCamera(modelViewObj.mouse, modelViewObj.view.camera.camera3D);
-
-                const intersects  = modelViewObj.raycaster.intersectObjects(modelViewObj.scene.children, true);
+                const intersects  = local.raycaster.intersectObjects(local.scene.children, true);
 
                 // Look at all the intersecting objects to see that if any of them have information for popups
                 if (intersects.length > 0) {
@@ -830,38 +855,47 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                         if (objName === '') {
                             continue;
                         }
-                        if (objName.substring(0, 9) === VOL_LABEL_PREFIX) {
-                            const idx = parseInt(objName[objName.length - 1], 10);
-                            const val = local.volViewService.xyzToProp(idx, objIntPt);
-                            if (val !== -1.0) {
-                                const popObj = {'title': objName, 'val': val };
-                                const valStr = val.toString();
-                                if (local.volLabelLookup.hasOwnProperty(valStr)) {
-                                    popObj['label'] = local.volLabelLookup[valStr];
+                        // TODO: Remove to a separate lookup service
+
+                        // Is this a volume object?
+                        if (local.volViewService.isVolLabel(objName)) {
+                            const labelBits = local.volViewService.parseVolLabel(objName);
+                            const group = labelBits[0];
+                            const partId = labelBits[1];
+                            if (local.volViewArr.hasOwnProperty(group)) {
+                                const vvArr = local.volViewArr[group];
+                                if (vvArr.hasOwnProperty(partId)) {
+                                    const val = local.volViewService.xyzToProp(vvArr[partId], labelBits[2], objIntPt);
+                                    if (val !== -1.0) {
+                                        const popObj = {'title': objName, 'val': val };
+                                        const valStr = val.toString();
+                                        if (local.volLabelArr[group][partId].hasOwnProperty(valStr)) {
+                                            popObj['label'] = local.volLabelArr[group][partId][valStr];
+                                        }
+                                        local.makePopup(event, popObj, objIntPt);
+                                    }
                                 }
-                                modelViewObj.makePopup(event, popObj, objIntPt);
-                                continue;
                             }
                         }
-                        for (const group in modelViewObj.config.groups) {
-                            if (modelViewObj.config.groups.hasOwnProperty(group)) {
-                                const parts = modelViewObj.config.groups[group];
+                        for (const group in local.config.groups) {
+                            if (local.config.groups.hasOwnProperty(group)) {
+                                const parts = local.config.groups[group];
                                 for (let i = 0; i < parts.length; i++) {
                                     if (parts[i].hasOwnProperty('popups')) {
                                         for (const popup_key in parts[i]['popups']) {
                                             if (parts[i]['popups'].hasOwnProperty(popup_key)) {
                                                 // console.log('popup_key = ', popup_key, popup_key.indexOf('*', popup_key.length - 1));
                                                 if (popup_key + '_0' === objName) {
-                                                    modelViewObj.makePopup(event, parts[i]['popups'][popup_key], objIntPt);
+                                                    local.makePopup(event, parts[i]['popups'][popup_key], objIntPt);
                                                     if (parts[i].hasOwnProperty('model_url')) {
-                                                        modelViewObj.openSidebarMenu(group, parts[i]['model_url']);
+                                                        local.openSidebarMenu(group, parts[i]['model_url']);
                                                     }
                                                     return;
                                                 } else if (popup_key[0] === '^') {
                                                     if (objName.match(popup_key)) {
-                                                        modelViewObj.makePopup(event, parts[i]['popups'][popup_key], objIntPt);
+                                                        local.makePopup(event, parts[i]['popups'][popup_key], objIntPt);
                                                         if (parts[i].hasOwnProperty('model_url')) {
-                                                            modelViewObj.openSidebarMenu(group, parts[i]['model_url']);
+                                                            local.openSidebarMenu(group, parts[i]['model_url']);
                                                         }
                                                         return;
                                                     }
@@ -872,9 +906,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     } else if (parts[i].hasOwnProperty('3dobject_label') &&
                                            parts[i].hasOwnProperty('popup_info') &&
                                            objName === parts[i]['3dobject_label'] + '_0') {
-                                        modelViewObj.makePopup(event, parts[i]['popup_info'], objIntPt);
+                                        local.makePopup(event, parts[i]['popup_info'], objIntPt);
                                         if (parts[i].hasOwnProperty('model_url')) {
-                                            modelViewObj.openSidebarMenu(group, parts[i]['model_url']);
+                                            local.openSidebarMenu(group, parts[i]['model_url']);
                                         }
                                         return;
                                     } else if (parts[i].hasOwnProperty('3dobject_label') &&
@@ -891,7 +925,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             data => {
                                 const queryResult = data as string [];
                                 console.log('queryResult = ', queryResult);
-                                modelViewObj.makePopup(event, queryResult, objIntPt);
+                                local.makePopup(event, queryResult, objIntPt);
                             },
                             (err: HttpErrorResponse) => {
                                 console.log('Cannot load borehole list', err);

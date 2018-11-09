@@ -14,73 +14,77 @@ export enum DataType {BIT_MASK, INT_16, INT_8, FLOAT_16, FLOAT_32 }
 
 export const VOL_LABEL_PREFIX = 'Volume3D_';
 
+export class VolView {
+    // These are the X,Y,Z dimensions of the data in the volume
+    X_DIM = 0;
+    Y_DIM = 0;
+    Z_DIM = 0;
+
+    // For volumes which contain a bit mask data type, this is the length of the bit mask
+    BIT_SZ = 0;
+
+    // This is where the volume is placed in 3-D space
+    ORIGIN: [number, number, number] = [0.0, 0.0, 0.0];
+
+    // This is the size of the volume in space (X,Y,Z)
+    CUBE_SZ: [number, number, number] = [0.0, 0.0, 0.0];
+
+    // This is a colour loopkup table for the integer and bit mask volumes
+    colorLookup: { [idx: number]: [number, number, number] } = {};
+
+    // Is true if the DataType is 'BIT_MASK'
+    isBitField = false;
+
+    // Stores the type of data within the volume
+    dataType: DataType = DataType.INT_16;
+
+    // These arrays are used to view the data in different formats, using 'ab'  (below) as source
+    uint32View: Uint32Array;
+    uint8View: Uint8Array;
+    dataView: DataView;
+
+    // Stores the data from within the volume
+    ab: ArrayBuffer;
+
+    // ThreeJS scene object for the wireframe around the volume
+    wireFrObj: THREE.Object3D = null;
+
+    // Min and max values, must be supplied when no colour lookup table is supplied
+    maxVal = 0;
+    minVal = 0;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class VolviewService {
-
-    // These are the X,Y,Z dimensions of the data in the volume
-    private  X_DIM = 0;
-    private  Y_DIM = 0;
-    private  Z_DIM = 0;
-
-    // For volumes which contain a bit mask data type, this is the length of the bit mask
-    private  BIT_SZ = 0;
-
-    // This is where the volume is placed in 3-D space
-    private  ORIGIN = [0.0, 0.0, 0.0];
-
-    // This is the size of the volume in space (X,Y,Z)
-    private  CUBE_SZ = [0.0, 0.0, 0.0];
-
-    // This is a colour loopkup table for the integer and bit mask volumes
-    private colorLookup = {};
-
-    // Is true if the DataType is 'BIT_MASK'
-    private isBitField = false;
-
-    // Stores the type of data within the volume
-    private dataType: DataType = DataType.INT_16;
-
-    // These arrays are used to view the data in different formats, using 'ab'  (below) as source
-    private uint32View: Uint32Array;
-    private uint8View: Uint8Array;
-    private float32View: Float32Array;
-    private volDataView: DataView;
-
-    // Stores the data from within the volume
-    private ab: ArrayBuffer;
-
-    // ThreeJS scene object for the wireframe around the volume
-    private wireFrObj: THREE.Object3D = null;
-
 
     constructor(private httpService: HttpClient) {
     }
 
     /**
      * Setup the parameters for the volume
-     * @param dims dimensions of the data in the volume [X,Y,Z]
-     * @param origin position of the volume in 3D space [X,Y,Z]
-     * @param cubeSz size of the volume in 3D space [X,Y,Z]
+     * @param volDataObj JSON object taken from model config file
      * @param dataType type of data that in within the volume
-     * @param colourLut for volumes that contain integer or bit mask data, this is the colour { key: [R,G,B] }
-     * @param bitSize for bit mask volumes this is the size of the bit mask
      */
-    public setConfig(dims: [number, number, number], origin: [number, number, number], cubeSz: [number, number, number],
-                   dataType: DataType, colourLut: any, bitSize: number) {
+    public makeVolView(volDataObj: {}, dataType: DataType): VolView {
+        const dims = volDataObj['dataDims'];
+        const volView = new VolView();
         if (dataType === DataType.BIT_MASK) {
-            this.isBitField = true;
-            this.BIT_SZ = bitSize;
+            volView.isBitField = true;
+            volView.BIT_SZ = volDataObj['bitSize'];
         }
-        this.X_DIM = dims[0];
-        this.Y_DIM = dims[1];
-        this.Z_DIM = dims[2];
-        this.ORIGIN = origin;
-        this.CUBE_SZ = cubeSz;
-        this.colorLookup = colourLut;
-        this.dataType = dataType;
-        this.wireFrObj = this.makeWireFrame();
+        volView.X_DIM = dims[0];
+        volView.Y_DIM = dims[1];
+        volView.Z_DIM = dims[2];
+        volView.ORIGIN = volDataObj['origin'];
+        volView.CUBE_SZ = volDataObj['size'];
+        volView.colorLookup = volDataObj['colourLookup'];
+        volView.dataType = dataType;
+        volView.maxVal = volDataObj['maxVal'];
+        volView.minVal = volDataObj['minVal'];
+        volView.wireFrObj = this.makeWireFrame(volView);
+        return volView;
     }
 
     /**
@@ -104,34 +108,52 @@ export class VolviewService {
         return (sign  ? -1  : 1) * Math.pow(2, exp - 15) * (1 + (frac / Math.pow(2, 10)));
     }
 
+    private int_to_float32(val) {
+        // tslint:disable-next-line:no-bitwise
+        const sign = (val & 0x80000000) >> 31;
+        // tslint:disable-next-line:no-bitwise
+        const exp = (val & 0x7F800000) >> 23;
+        // tslint:disable-next-line:no-bitwise
+        const frac = val & 0x07FFFFF;
+
+        if (exp === 0) {
+            return (sign  ? -1 : 1) * (frac / Math.pow(2, 23));
+        } else if (exp === 0xFF) {
+            return frac ? NaN : ((sign ? -1 : 1) * Infinity);
+        }
+        return (sign  ? -1  : 1) * Math.pow(2, (exp - 127)) * (1 + (frac / Math.pow(2, 23)));
+    }
+
     /**
      * Given an index into an array, this returns the value from the array, according to the volume's data type
+     * It is assumed that the int and float data is big endian.
      * @param idx integer index into array
      * @returns a value fetched from the array
      */
-    private getFromArray(idx: number): number {
-        switch (this.dataType) {
+    private getFromArray(volView: VolView, idx: number): number {
+        switch (volView.dataType) {
             case DataType.BIT_MASK:
-                return this.uint32View[idx];
+                return volView.uint32View[idx];
 
             case DataType.INT_16:
                 // Big endian
-                if (idx * 2 >= this.volDataView.byteLength - 2) {
-                    return this.volDataView.getUint16(this.volDataView.byteLength - 2, false);
+                if (idx * 2 >= volView.dataView.byteLength - 2) {
+                    return volView.dataView.getUint16(volView.dataView.byteLength - 2, false);
                 } else if (idx < 0 ) {
-                    return this.volDataView.getUint16(0, false);
+                    return volView.dataView.getUint16(0, false);
                 }
-                return this.volDataView.getUint16(idx * 2, false);
+                return volView.dataView.getUint16(idx * 2, false);
 
             case DataType.INT_8:
-                return this.uint8View[idx];
+                return volView.uint8View[idx];
 
             case DataType.FLOAT_16:
-                return this.int_to_float16(this.volDataView.getUint16(idx * 2, true));
+                // Javascript 'DataView' does not have 'getFloat16()'
+                return this.int_to_float16(volView.dataView.getUint16(idx * 2, false));
 
             case DataType.FLOAT_32:
-                return this.float32View[idx];
-
+                // Big endian
+                return volView.dataView.getFloat32(idx * 4, false);
         }
     }
 
@@ -144,7 +166,8 @@ export class VolviewService {
      * @param displayed if true then the volume should be added to scene and made visible, if false it is only added to the scene
      * @returns a promise
      */
-    makePromise(volFile: string, volUrl: string, scene: THREE.Scene, volObjList: THREE.Object3D[], displayed: boolean): Promise<any> {
+    public makePromise(volView: VolView, groupName: string, partId: string, volUrl: string, scene: THREE.Scene,
+                volObjList: THREE.Object3D[], displayed: boolean): Promise<any> {
         const local = this;
         return new Promise( function( resolve, reject ) {
             local.httpService.get(volUrl, { responseType: 'arraybuffer' }).subscribe(
@@ -154,33 +177,31 @@ export class VolviewService {
                     // automatically. In future, this step may not be necessary.
                     const gunzip = new Zlib.Gunzip(new Uint8Array(volResult));
                     const plain = gunzip.decompress();
-                    local.ab = new ArrayBuffer(plain.byteLength);
-                    local.uint8View = new Uint8Array(local.ab);
+                    volView.ab = new ArrayBuffer(plain.byteLength);
+                    volView.uint8View = new Uint8Array(volView.ab);
                     for (let ii = 0; ii < plain.byteLength; ii++) {
-                        local.uint8View[ii] =  plain[ii];
+                        volView.uint8View[ii] =  plain[ii];
                     }
-                    switch (local.dataType) {
+                    switch (volView.dataType) {
                         case DataType.BIT_MASK:
-                            local.uint32View = new Uint32Array(local.ab);
-                        break;
+                            volView.uint32View = new Uint32Array(volView.ab);
+                            break;
                         case DataType.INT_16:
                         case DataType.FLOAT_16:
-                            // Big endian integers need a different technique
-                            local.volDataView = new DataView(local.ab);
-                        break;
                         case DataType.FLOAT_32:
-                            local.float32View = new Float32Array(local.ab);
-                        break;
+                            // Big endian integers & floats need a different technique
+                            volView.dataView = new DataView(volView.ab);
+                            break;
                     }
-                    const objList = local.makeSlices(volFile, [0.0, 0.0, 0.0], [null, null, null], displayed);
+                    const objList = local.makeSlices(volView, groupName, partId, [0.0, 0.0, 0.0], [null, null, null], displayed);
                     for (const object of objList) {
                         scene.add(object);
                         volObjList.push(object);
                     }
 
                     // Add wireframe
-                    scene.add(local.wireFrObj);
-                    volObjList.push(local.wireFrObj);
+                    scene.add(volView.wireFrObj);
+                    volObjList.push(volView.wireFrObj);
 
                     resolve(objList);
                 }, function (err) {
@@ -217,7 +238,7 @@ export class VolviewService {
      * @param u,v,w three coordinates, u is the same dimension as the slice, v,w are the other two dimensions
      * @returns -1 if cannot find value
      */
-    private getValueXYZ(dimIdx, u, v, w: number): number {
+    private getValueXYZ(volView: VolView, dimIdx, u, v, w: number): number {
         let x = 0, y = 0, z = 0;
         switch (dimIdx) {
             case 0:
@@ -235,32 +256,32 @@ export class VolviewService {
                 x = w;
                 y = v;
         }
-        if (x > this.X_DIM || y > this.Y_DIM || z > this.Z_DIM) {
+        if (x > volView.X_DIM || y > volView.Y_DIM || z > volView.Z_DIM) {
             console.error('COORD ERROR!', 'dimIdx = ', dimIdx, 'u,v,w = ', u, v, w,
-                          'x_dim,y_dim,z_dim = ', this.X_DIM, this.Y_DIM, this.Z_DIM, ' x,y,z = ', x, y, z);
+                          'x_dim,y_dim,z_dim = ', volView.X_DIM, volView.Y_DIM, volView.Z_DIM, ' x,y,z = ', x, y, z);
         }
-        const val = this.getFromArray(x + y * this.X_DIM + z * this.X_DIM * this.Y_DIM);
+        const val = this.getFromArray(volView, x + y * volView.X_DIM + z * volView.X_DIM * volView.Y_DIM);
 
-        if (this.isBitField) {
-            const valArr = this.getBitFields(val, this.BIT_SZ);
+        if (volView.isBitField) {
+            const valArr = this.getBitFields(val, volView.BIT_SZ);
             if (valArr.length > 0) {
                 return valArr[valArr.length - 1];
             }
         } else {
             return val;
         }
-        return -1;
+        return null;
     }
 
     /**
      * Makes a wire frame model to hold the volume
      */
-    public makeWireFrame(): THREE.Object3D {
+    public makeWireFrame(volView: VolView): THREE.Object3D {
         const material = new THREE.MeshBasicMaterial({ wireframe: true });
-        const geometry = new THREE.BoxBufferGeometry(this.CUBE_SZ[0], this.CUBE_SZ[1], this.CUBE_SZ[2]);
+        const geometry = new THREE.BoxBufferGeometry(volView.CUBE_SZ[0], volView.CUBE_SZ[1], volView.CUBE_SZ[2]);
         const object = new THREE.Mesh( geometry, material );
         for (let comp = 0; comp < 3; comp++) {
-            object.position.setComponent(comp, this.ORIGIN[comp] + this.CUBE_SZ[comp] / 2.0);
+            object.position.setComponent(comp, volView.ORIGIN[comp] + volView.CUBE_SZ[comp] / 2.0);
         }
         return object;
     }
@@ -271,14 +292,14 @@ export class VolviewService {
      * @param idx integer dimension index, 0 = x dimension, 1 = y dimension, 2 = z dimension
      * @returns data size in the other two dimensions [number, number]
      */
-    private getOtherDimSz(idx: number): number[] {
+    private getOtherDimSz(volView: VolView, idx: number): number[] {
         switch (idx) {
             case 0:
-                return [this.Z_DIM, this.Y_DIM];
+                return [volView.Z_DIM, volView.Y_DIM];
             case 1:
-                return [this.X_DIM, this.Z_DIM];
+                return [volView.X_DIM, volView.Z_DIM];
             case 2:
-                return [this.X_DIM, this.Y_DIM];
+                return [volView.X_DIM, volView.Y_DIM];
         }
         return [];
     }
@@ -288,14 +309,14 @@ export class VolviewService {
      * @param idx integer dimension index, 0 = x dimension, 1 = y dimension, 2 = z dimension
      * @returns the data size of the dimension
      */
-    private getDimSize(idx: number): number {
+    private getDimSize(volView: VolView, idx: number): number {
         switch (idx) {
             case 0:
-                return this.X_DIM;
+                return volView.X_DIM;
             case 1:
-                return this.Y_DIM;
+                return volView.Y_DIM;
             case 2:
-                return this.Z_DIM;
+                return volView.Z_DIM;
         }
         return 0;
     }
@@ -306,14 +327,14 @@ export class VolviewService {
      * @param idx integer dimension index, 0 = x dimension, 1 = y dimension, 2 = z dimension
      * @returns size of 3d volume in the other two dimensions [number, number]
      */
-    private getOtherVolSzs(idx: number): number[] {
+    private getOtherVolSzs(volView: VolView, idx: number): number[] {
         switch (idx) {
             case 0:
-                return [this.CUBE_SZ[1], this.CUBE_SZ[2]];
+                return [volView.CUBE_SZ[1], volView.CUBE_SZ[2]];
             case 1:
-                return [this.CUBE_SZ[0], this.CUBE_SZ[2]];
+                return [volView.CUBE_SZ[0], volView.CUBE_SZ[2]];
             case 2:
-                return [this.CUBE_SZ[1], this.CUBE_SZ[0]];
+                return [volView.CUBE_SZ[1], volView.CUBE_SZ[0]];
         }
         return [];
     }
@@ -321,26 +342,41 @@ export class VolviewService {
     /**
      *
      */
-    public changePosition(sceneObj: THREE.Object3D, displacement: THREE.Vector3) {
+    public changePosition(volView: VolView, sceneObj: THREE.Object3D, displacement: THREE.Vector3) {
         if (!sceneObj.userData.hasOwnProperty('origPosition')) {
             sceneObj.userData.origPosition = sceneObj.position.clone();
         }
         sceneObj.position.addVectors(sceneObj.userData.origPosition, displacement);
-        this.ORIGIN[0] += displacement.x;
-        this.ORIGIN[1] += displacement.y;
-        this.ORIGIN[2] += displacement.z;
+        volView.ORIGIN[0] += displacement.x;
+        volView.ORIGIN[1] += displacement.y;
+        volView.ORIGIN[2] += displacement.z;
+    }
+
+    private makeVolLabel(groupName: string, partId: string, dimIdx: number) {
+        return VOL_LABEL_PREFIX + '|' + groupName + '|' + partId + '|' + dimIdx.toString();
+    }
+
+    public parseVolLabel(volLabel: string): [string, string, number] {
+        const dimIdx = parseInt(volLabel[volLabel.length - 1], 10);  // dimension index
+        const strArr = volLabel.split('|');
+        return [strArr[1], strArr[2], dimIdx];
+    }
+
+    public isVolLabel(volLabel: string): boolean {
+        return (volLabel.substring(0, 9) === VOL_LABEL_PREFIX);
     }
 
     /**
      * Moves and optionally creates the three slices (X,Y,Z) within the volume
-     * @param fileName name of volume file, only used when new slice is created
+     * @param uniqueLabel Name name of volume file, only used when new slice is created
      * @param pctList list of three float values, (0.0..1.0) indicating the position of each slice within the volume.
      * @param objectList list of ThreeJS objects which represent the three slices & wireframe
      * [X-slice, Y-slice, Z-slice, wireframe]
      * If X-slice or Y-slice or Z-slice is null then a new slice is created
      * @param displayed if creating a new slice, will it be visible or not
      */
-    public makeSlices(fileName: string, pctList: [number, number, number], objectList: THREE.Object3D[], displayed: boolean) {
+    public makeSlices(volView: VolView, groupName: string, partId: string, pctList: [number, number, number],
+                       objectList: THREE.Object3D[], displayed: boolean) {
         // Make one slice for each dimension
         for (let dimIdx = 0; dimIdx < pctList.length; dimIdx++) {
             let newSlice = false;
@@ -352,12 +388,12 @@ export class VolviewService {
                     pctList[dimIdx] = 1.0;
                 }
                 // Set up dimensional translations
-                const otherDimSzList = this.getOtherDimSz(dimIdx);
-                const dimSz = this.getDimSize(dimIdx);
-                const otherVolSzList = this.getOtherVolSzs(dimIdx);
+                const otherDimSzList = this.getOtherDimSz(volView, dimIdx);
+                const dimSz = this.getDimSize(volView, dimIdx);
+                const otherVolSzList = this.getOtherVolSzs(volView, dimIdx);
 
                 // Calculate position of slice along its dimension, in 3d space
-                const disp  = Math.floor(pctList[dimIdx] * this.CUBE_SZ[dimIdx]);
+                const disp  = Math.floor(pctList[dimIdx] * volView.CUBE_SZ[dimIdx]);
 
                 // Calculate position of slice within the data volume
                 const idx  = Math.floor(pctList[dimIdx] * dimSz);
@@ -372,11 +408,20 @@ export class VolviewService {
                     for (let d2 = 0; d2 < otherDimSzList[1]; d2++) {
 
                         // create a buffer with color data
-                        const v = this.getValueXYZ(dimIdx, idx, d2, d1);
-                        if (v > 0 && this.colorLookup[v]) {
-                            dataRGB[cntr * 3] = Math.floor(256.0 * this.colorLookup[v][0]);
-                            dataRGB[cntr * 3 + 1] = Math.floor(256.0 * this.colorLookup[v][1]);
-                            dataRGB[cntr * 3 + 2] = Math.floor(256.0 * this.colorLookup[v][2]);
+                        const val = this.getValueXYZ(volView, dimIdx, idx, d2, d1);
+                        if (val !== null) {
+                            if (volView.colorLookup && volView.colorLookup.hasOwnProperty(val)) {
+
+                                dataRGB[cntr * 3] = Math.floor(256.0 * volView.colorLookup[val][0]);
+                                dataRGB[cntr * 3 + 1] = Math.floor(256.0 * volView.colorLookup[val][1]);
+                                dataRGB[cntr * 3 + 2] = Math.floor(256.0 * volView.colorLookup[val][2]);
+                            } else {
+                                // If no colour data then use greyscale
+                                const bwTuple = this.bwLookup(volView, val);
+                                dataRGB[cntr * 3] = Math.floor(255.99 * bwTuple[0]);
+                                dataRGB[cntr * 3 + 1] = Math.floor(255.99 * bwTuple[1]);
+                                dataRGB[cntr * 3 + 2] = Math.floor(255.99 * bwTuple[2]);
+                            }
                         }
                         cntr++;
                     }
@@ -391,7 +436,7 @@ export class VolviewService {
                     const geometry = new THREE.PlaneBufferGeometry(otherVolSzList[0], otherVolSzList[1]);
                     objectList[dimIdx] = new THREE.Mesh( geometry, material );
                     objectList[dimIdx].visible = displayed;
-                    objectList[dimIdx].name = VOL_LABEL_PREFIX + fileName + '_' + dimIdx.toString();
+                    objectList[dimIdx].name = this.makeVolLabel(groupName, partId, dimIdx);
                     const rot = new THREE.Euler(0.0, 0.0, 0.0);
                     switch (dimIdx) {
                         case 0:
@@ -420,9 +465,9 @@ export class VolviewService {
                     // Set up base position of volume
                     for (let comp = 0; comp < 3; comp++) {
                         if (comp !== dimIdx) {
-                            objectList[dimIdx].position.setComponent(comp, this.ORIGIN[comp] + this.CUBE_SZ[comp] / 2.0);
+                            objectList[dimIdx].position.setComponent(comp, volView.ORIGIN[comp] + volView.CUBE_SZ[comp] / 2.0);
                         } else {
-                            objectList[dimIdx].position.setComponent(comp, this.ORIGIN[comp]);
+                            objectList[dimIdx].position.setComponent(comp, volView.ORIGIN[comp]);
                         }
                     }
                     objectList[dimIdx].userData.baseSlicePosition = objectList[dimIdx].position.clone();
@@ -456,23 +501,39 @@ export class VolviewService {
     }
 
     /**
+     * Create a black & white colour table lookup for volumes with no colour data.
+     * @param volView the volume's 'VolView' object
+     * @param val the value to convert to a black & white colour
+     * @returns [R, G, B] numbers
+     */
+    private bwLookup(volView, val): [number, number, number] {
+        let normVal = (val - volView.minVal) / (volView.maxVal - volView.minVal);
+        if (normVal > 1.0) {
+            normVal = 1.0;
+        } else if (normVal < 0.0) {
+            normVal = 0.0;
+        }
+        return [ normVal, normVal, normVal];
+    }
+
+    /**
      * Given (X,Y,Z) real world coords and a slice index, it returns the volume's value at that point
      * @param dimIdx slice index (0 = x-slice, 1 = y-slice, 2 = z-slice)
      * @param xyz ThreeJS vector of the point on the slice
      * @returns a numeric value
      */
-    xyzToProp(dimIdx: number, xyz: THREE.Vector3): number {
+    xyzToProp(volView: VolView, dimIdx: number, xyz: THREE.Vector3): number {
 
-        const dx = Math.floor((xyz.x - this.ORIGIN[0]) / this.CUBE_SZ[0] * this.X_DIM); // X
-        const dy = Math.floor((xyz.y - this.ORIGIN[1]) / this.CUBE_SZ[1] * this.Y_DIM); // Y
-        const dz = Math.floor((xyz.z - this.ORIGIN[2]) / this.CUBE_SZ[2] * this.Z_DIM); // Z
+        const dx = Math.floor((xyz.x - volView.ORIGIN[0]) / volView.CUBE_SZ[0] * volView.X_DIM); // X
+        const dy = Math.floor((xyz.y - volView.ORIGIN[1]) / volView.CUBE_SZ[1] * volView.Y_DIM); // Y
+        const dz = Math.floor((xyz.z - volView.ORIGIN[2]) / volView.CUBE_SZ[2] * volView.Z_DIM); // Z
         switch (dimIdx) {
             case 0:
-                return this.getValueXYZ(dimIdx, dx, dy, dz);
+                return this.getValueXYZ(volView, dimIdx, dx, dy, dz);
             case 1:
-                return this.getValueXYZ(dimIdx, dy, dx, dz);
+                return this.getValueXYZ(volView, dimIdx, dy, dx, dz);
             case 2:
-                return this.getValueXYZ(dimIdx, dz, dy, dx);
+                return this.getValueXYZ(volView, dimIdx, dz, dy, dx);
         }
         return null;
     }
