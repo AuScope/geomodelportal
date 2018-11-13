@@ -103,7 +103,7 @@
                         "colourClass": "info",
                         "configFile": "Tamworth.json",
                         "modelDir": "Tamworth",
-                        "srcUrl" : "https://www.resourcesandenergy.nsw.gov.au/miners-and-explorers/geoscience-information/products-and-data/3d-mapping-data"
+                        "srcUrl" : "https://www.resourcesandgeoscience.nsw.gov.au/miners-and-explorers/geoscience-information/products-and-data/3d-mapping-data"
                     }
                 ],
                 "icon": "nsw-white-icon.png",
