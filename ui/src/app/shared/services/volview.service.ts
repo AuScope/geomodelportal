@@ -248,8 +248,8 @@ export class VolviewService {
                 break;
             case 1:
                 y = u;
-                x = v;
-                z = w;
+                x = w;
+                z = v;
                 break;
             case 2:
                 z = u;
