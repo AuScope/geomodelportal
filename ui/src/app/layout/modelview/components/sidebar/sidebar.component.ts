@@ -227,7 +227,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * @param partId model part's id
      * @param toggle reveal part (true) or hide (false)
      */
-    private revealPart(groupName: string, partId: string, toggle: boolean) {
+    public revealPart(groupName: string, partId: string, toggle: boolean) {
         this.modelInfoService.revealPart(groupName, partId, toggle);
     }
 
@@ -237,7 +237,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * @param groupName model part's group name
      * @param partId model part's id
      */
-    private changeHeight(event: MatSliderChange, groupName: string, partId: string) {
+    public changeHeight(event: MatSliderChange, groupName: string, partId: string) {
         this.modelInfoService.setModelPartStateChange(groupName, partId,
             { type: ModelPartStateChangeType.HEIGHT_OFFSET, new_value: event.value } );
     }
@@ -248,7 +248,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * @param groupName model part's group name
      * @param partId model part's id
      */
-    private changeTransparency(event: MatSliderChange, groupName: string, partId: string) {
+    public changeTransparency(event: MatSliderChange, groupName: string, partId: string) {
         this.modelInfoService.setModelPartStateChange(groupName, partId,
             { type: ModelPartStateChangeType.TRANSPARENCY, new_value: event.value } );
     }
