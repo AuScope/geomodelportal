@@ -34,7 +34,7 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
     this.demoState = 0;
 
     // Animation mixer, used for model movement demonstration
-    const mixer = null;
+    this.mixer = null;
 
     // Mouse movement
     const mousePosition = new THREE.Vector2();

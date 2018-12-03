@@ -85,23 +85,20 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     private model_dir;
 
     // Virtual sphere radius
-    private sphereRadius = 0.0;
+    public sphereRadius = 0.0;
 
     // Virtual sphere centre (X,Y) in screen coords
-    private sphereCentreX = 0.0;
-    private sphereCentreY = 0.0;
+    public sphereCentreX = 0.0;
+    public sphereCentreY = 0.0;
 
     // Keep track of the model demostration
-    private modelDemoSeqNum = -1.0;
+    public modelDemoSeqNum = -1.0;
 
     // Subscribe to help info service to allow model demonstrations
     private helpSubscr: Subscription;
 
-    // Subscribe to model view reset events
-    private modelViewResetSubscr: Subscription;
-
     // Popup box that is created during sidebar help tour
-    private demoPopupMsg = '';
+    public demoPopupMsg = '';
 
     // itowns' tile layer
     private tileLayer = null;
@@ -760,7 +757,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 const vvArr = local.volViewArr[group];
                                 if (vvArr.hasOwnProperty(partId)) {
                                     const val = local.volViewService.xyzToProp(vvArr[partId], labelBits[2], objIntPt);
-                                    if (val !== -1.0) {
+                                    if (val !== null) {
                                         const popObj = {'title': objName, 'val': val };
                                         const valStr = val.toString();
                                         if (local.volLabelArr.hasOwnProperty(group) &&
@@ -850,7 +847,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
         // Wait for signal to reset the view of the model
         const viewResetObs = this.modelInfoService.waitForModelControlEvent();
-        this.modelViewResetSubscr = viewResetObs.subscribe(val => {
+        viewResetObs.subscribe(val => {
             if (val === ModelControlEvent.RESET_VIEW) {
                 this.resetModelView();
             } else {

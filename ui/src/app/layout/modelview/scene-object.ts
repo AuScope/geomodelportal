@@ -87,7 +87,9 @@ export class SceneObject {
      * @param val new slice value (0..1)
      * NB: Currently only used for 3d volumes
      */
-    public setVolSlice(dimIdx: number, val: number) {}
+    public setVolSlice(dimIdx: number, val: number) {
+        throw new Error('Calling abstract method: setVolSlice(' + dimIdx + ',' + val + ') ');
+    }
 }
 
 /**
@@ -141,7 +143,7 @@ export class WMSSceneObject extends SceneObject {
      * @param 3d vector displacement
      */
     public setDisplacement(displacement: THREE.Vector3) {
-        // FIXME: We don't have displacement for WMS yet
+        throw new Error('FIXME: We don\'t have displacement for WMS yet: setVolSlice(' + displacement.toString() + ') ');
     }
 }
 

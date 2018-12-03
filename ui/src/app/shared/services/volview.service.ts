@@ -108,7 +108,7 @@ export class VolviewService {
         return (sign  ? -1  : 1) * Math.pow(2, exp - 15) * (1 + (frac / Math.pow(2, 10)));
     }
 
-    private int_to_float32(val) {
+    public int_to_float32(val) {
         // tslint:disable-next-line:no-bitwise
         const sign = (val & 0x80000000) >> 31;
         // tslint:disable-next-line:no-bitwise
@@ -236,7 +236,7 @@ export class VolviewService {
      * The dimension number indicates which slice is being fetched.
      * @param dimIdx integer dimension index, 0 = x dimension, 1 = y dimension, 2 = z dimension
      * @param u,v,w three coordinates, u is the same dimension as the slice, v,w are the other two dimensions
-     * @returns -1 if cannot find value
+     * @returns null if cannot find value
      */
     private getValueXYZ(volView: VolView, dimIdx, u, v, w: number): number {
         let x = 0, y = 0, z = 0;
@@ -259,6 +259,7 @@ export class VolviewService {
         if (x > volView.X_DIM || y > volView.Y_DIM || z > volView.Z_DIM) {
             console.error('COORD ERROR!', 'dimIdx = ', dimIdx, 'u,v,w = ', u, v, w,
                           'x_dim,y_dim,z_dim = ', volView.X_DIM, volView.Y_DIM, volView.Z_DIM, ' x,y,z = ', x, y, z);
+            throw Error('STOP!');
         }
         const val = this.getFromArray(volView, x + y * volView.X_DIM + z * volView.X_DIM * volView.Y_DIM);
 
@@ -520,7 +521,7 @@ export class VolviewService {
      * Given (X,Y,Z) real world coords and a slice index, it returns the volume's value at that point
      * @param dimIdx slice index (0 = x-slice, 1 = y-slice, 2 = z-slice)
      * @param xyz ThreeJS vector of the point on the slice
-     * @returns a numeric value
+     * @returns a numeric value,or null of no value found
      */
     xyzToProp(volView: VolView, dimIdx: number, xyz: THREE.Vector3): number {
 
