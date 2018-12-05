@@ -198,7 +198,7 @@ export class ModelInfoService {
         }
         return new Promise(function({}, reject) {
             console.log('Model not found in config file');
-            reject('model not found');
+            reject('model not found. There are no models registered with this URL.');
         });
     }
 

@@ -231,53 +231,13 @@ export class VolviewService {
         return retList;
     }
 
-    /**
-     * Fetches a value from within a volume, given three coordinates and a dimension number.
-     * The dimension number indicates which slice is being fetched.
-     * @param dimIdx integer dimension index, 0 = x dimension, 1 = y dimension, 2 = z dimension
-     * @param u,v,w three coordinates, u is the same dimension as the slice, v,w are the other two dimensions
-     * @returns null if cannot find value
-     */
-    private getValueXYZ(volView: VolView, dimIdx, u, v, w: number): number {
-        let x = 0, y = 0, z = 0;
-        switch (dimIdx) {
-            case 0:
-                x = u;
-                z = w;
-                y = v;
-                break;
-            case 1:
-                y = u;
-                x = w;
-                z = v;
-                break;
-            case 2:
-                z = u;
-                x = w;
-                y = v;
-        }
-        if (x > volView.X_DIM || y > volView.Y_DIM || z > volView.Z_DIM) {
-            console.error('COORD ERROR!', 'dimIdx = ', dimIdx, 'u,v,w = ', u, v, w,
-                          'x_dim,y_dim,z_dim = ', volView.X_DIM, volView.Y_DIM, volView.Z_DIM, ' x,y,z = ', x, y, z);
-            throw Error('STOP!');
-        }
-        const val = this.getFromArray(volView, x + y * volView.X_DIM + z * volView.X_DIM * volView.Y_DIM);
-
-        if (volView.isBitField) {
-            const valArr = this.getBitFields(val, volView.BIT_SZ);
-            if (valArr.length > 0) {
-                return valArr[valArr.length - 1];
-            }
-        } else {
-            return val;
-        }
-        return null;
-    }
 
     /**
      * Makes a wire frame model to hold the volume
+     * @param volView volume data
+     * @returns a ThreeJS object
      */
-    public makeWireFrame(volView: VolView): THREE.Object3D {
+    private makeWireFrame(volView: VolView): THREE.Object3D {
         const material = new THREE.MeshBasicMaterial({ wireframe: true });
         const geometry = new THREE.BoxBufferGeometry(volView.CUBE_SZ[0], volView.CUBE_SZ[1], volView.CUBE_SZ[2]);
         const object = new THREE.Mesh( geometry, material );
@@ -287,85 +247,69 @@ export class VolviewService {
         return object;
     }
 
-    /**
-     * Given one dimension, returns the data sizes of other two dimemnsions.
-     * e.g. getOtherDims(1) returns size of x-dimension & y-dimension.
-     * @param idx integer dimension index, 0 = x dimension, 1 = y dimension, 2 = z dimension
-     * @returns data size in the other two dimensions [number, number]
-     */
-    private getOtherDimSz(volView: VolView, idx: number): number[] {
-        switch (idx) {
-            case 0:
-                return [volView.Z_DIM, volView.Y_DIM];
-            case 1:
-                return [volView.X_DIM, volView.Z_DIM];
-            case 2:
-                return [volView.X_DIM, volView.Y_DIM];
-        }
-        return [];
-    }
 
     /**
-     * Returns the data size of the dimension
-     * @param idx integer dimension index, 0 = x dimension, 1 = y dimension, 2 = z dimension
-     * @returns the data size of the dimension
+     * Creates a volume label
+     * @param groupName name of group, string
+     * @param partID part id string
+     * @returns volume label, string
      */
-    private getDimSize(volView: VolView, idx: number): number {
-        switch (idx) {
-            case 0:
-                return volView.X_DIM;
-            case 1:
-                return volView.Y_DIM;
-            case 2:
-                return volView.Z_DIM;
-        }
-        return 0;
+    private makeVolLabel(groupName: string, partId: string) {
+        return VOL_LABEL_PREFIX + '|' + groupName + '|' + partId;
     }
+
 
     /**
-     * Given one dimension, returns the sizes of 3d volume in the other two dimemnsions.
-     * e.g. getOtherVolSzs(1) returns size of 3d volume in x-dimension & y-dimension.
-     * @param idx integer dimension index, 0 = x dimension, 1 = y dimension, 2 = z dimension
-     * @returns size of 3d volume in the other two dimensions [number, number]
+     * Splits volume label into components
+     * @param volLabel volume label, string
+     * @returns [group name string, part id string]
      */
-    private getOtherVolSzs(volView: VolView, idx: number): number[] {
-        switch (idx) {
-            case 0:
-                return [volView.CUBE_SZ[1], volView.CUBE_SZ[2]];
-            case 1:
-                return [volView.CUBE_SZ[0], volView.CUBE_SZ[2]];
-            case 2:
-                return [volView.CUBE_SZ[1], volView.CUBE_SZ[0]];
-        }
-        return [];
-    }
-
-    /**
-     *
-     */
-    public changePosition(volView: VolView, sceneObj: THREE.Object3D, displacement: THREE.Vector3) {
-        if (!sceneObj.userData.hasOwnProperty('origPosition')) {
-            sceneObj.userData.origPosition = sceneObj.position.clone();
-        }
-        sceneObj.position.addVectors(sceneObj.userData.origPosition, displacement);
-        volView.ORIGIN[0] += displacement.x;
-        volView.ORIGIN[1] += displacement.y;
-        volView.ORIGIN[2] += displacement.z;
-    }
-
-    private makeVolLabel(groupName: string, partId: string, dimIdx: number) {
-        return VOL_LABEL_PREFIX + '|' + groupName + '|' + partId + '|' + dimIdx.toString();
-    }
-
-    public parseVolLabel(volLabel: string): [string, string, number] {
-        const dimIdx = parseInt(volLabel[volLabel.length - 1], 10);  // dimension index
+    public parseVolLabel(volLabel: string): [string, string] {
         const strArr = volLabel.split('|');
-        return [strArr[1], strArr[2], dimIdx];
+        return [strArr[1], strArr[2]];
     }
 
+    /**
+     * Returns true if label string refers to a volume label
+     * @returns true if it is a volume label string
+     */
     public isVolLabel(volLabel: string): boolean {
         return (volLabel.substring(0, 9) === VOL_LABEL_PREFIX);
     }
+
+    /**
+     * Places a four byte RGBA tuple into a byte array, given volume data
+     * @param x,y,z X,Y,Z coordinates
+     * @param volView container of volume data
+     * @param dataRGBA output byte array
+     * @param idx index into each RGBA tuple within dataRBGA
+     */
+    private layoutRGBA(x: number, y: number, z: number, volView: VolView, dataRGBA: Uint8Array, idx: number) {
+
+        // Create a buffer with color data
+        let val = this.getFromArray(volView, x + y * volView.X_DIM + z * volView.X_DIM * volView.Y_DIM);
+        if (volView.isBitField) {
+            const valArr = this.getBitFields(val, volView.BIT_SZ);
+            if (valArr.length > 0) {
+                val = valArr[valArr.length - 1];
+            }
+        }
+        if (val !== null) {
+            if (volView.colorLookup && volView.colorLookup.hasOwnProperty(val)) {
+                dataRGBA[idx * 4] = Math.floor(256.0 * volView.colorLookup[val][0]);
+                dataRGBA[idx * 4 + 1] = Math.floor(256.0 * volView.colorLookup[val][1]);
+                dataRGBA[idx * 4 + 2] = Math.floor(256.0 * volView.colorLookup[val][2]);
+                dataRGBA[idx * 4 + 3] = Math.floor(255.0);
+            } else {
+                // If no colour data then use greyscale
+                const bwTuple = this.bwLookup(volView, val);
+                dataRGBA[idx * 4] = Math.floor(255.99 * bwTuple[0]);
+                dataRGBA[idx * 4 + 1] = Math.floor(255.99 * bwTuple[1]);
+                dataRGBA[idx * 4 + 2] = Math.floor(255.99 * bwTuple[2]);
+                dataRGBA[idx * 4 + 3] = Math.floor(255.99 * bwTuple[3]);
+            }
+        }
+}
 
     /**
      * Moves and optionally creates the three slices (X,Y,Z) within the volume
@@ -388,78 +332,135 @@ export class VolviewService {
                 } else if (pctList[dimIdx] > 1.0) {
                     pctList[dimIdx] = 1.0;
                 }
-                // Set up dimensional translations
-                const otherDimSzList = this.getOtherDimSz(volView, dimIdx);
-                const dimSz = this.getDimSize(volView, dimIdx);
-                const otherVolSzList = this.getOtherVolSzs(volView, dimIdx);
+                switch (dimIdx) {
+                    case 0:
+                    {
+                        // Set up a buffer to hold slice
+                        const rgbaBuffer = new ArrayBuffer(4 * volView.Y_DIM * volView.Z_DIM);
+                        // Set up array to view the buffer
+                        const dataRGBA = new Uint8Array(rgbaBuffer);
+                        let cntr = 0;
+                        const x  = Math.floor(pctList[dimIdx] * volView.X_DIM);
+                        // X-slice, loop over Y,Z
+                        for (let y = 0; y < volView.Y_DIM; y++) {
+                            for (let z = 0; z < volView.Z_DIM; z++) {
+                                // Create a buffer with color data
+                                this.layoutRGBA(x, y, z, volView, dataRGBA, cntr);
+                                cntr++;
+                            }
+                        }
+
+                        // Using the 2D data in ArrayBuffer create a texture which is mapped to a material
+                        const texture = new THREE.DataTexture( dataRGBA, volView.Z_DIM, volView.Y_DIM, THREE.RGBAFormat );
+                        texture.needsUpdate = true;
+                        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide, transparent: true });
+                        // If required, create a new plane covered by the material
+                        if (objectList[dimIdx] === null) {
+                            newSlice = true;
+                            const geometry = new THREE.PlaneBufferGeometry(volView.CUBE_SZ[2], volView.CUBE_SZ[1]);
+                            objectList[dimIdx] = new THREE.Mesh( geometry, material );
+                            objectList[dimIdx].visible = displayed;
+                            objectList[dimIdx].name = this.makeVolLabel(groupName, partId);
+                            const rot = new THREE.Euler(0.0, 0.0, 0.0);
+                            rot.y =  - Math.PI / 2.0;
+                            objectList[dimIdx].rotation.copy(rot);
+                        } else {
+                            // If plane already exists, then just change its material, keeping old opacity
+                            const  oldMaterial = (<THREE.MeshBasicMaterial>(<THREE.Mesh> objectList[dimIdx]).material);
+                            material.opacity = oldMaterial.opacity;
+                            material.transparent = oldMaterial.transparent;
+                            (<THREE.Mesh> objectList[dimIdx]).material = material;
+                        }
+                    }
+                        break;
+                    case 1:
+                    {
+                        // Set up a buffer to hold slice
+                        const rgbaBuffer = new ArrayBuffer(4 * volView.X_DIM * volView.Z_DIM);
+                        // Set up array to view the buffer
+                        const dataRGBA = new Uint8Array(rgbaBuffer);
+                        let cntr = 0;
+                        const y  = Math.floor(pctList[dimIdx] * volView.Y_DIM);
+                        // Y-slice, loop over X,Z
+                        for (let x = 0; x < volView.X_DIM; x++) {
+                            for (let z = 0; z < volView.Z_DIM; z++) {
+                                // create a buffer with color data
+                                this.layoutRGBA(x, y, z, volView, dataRGBA, cntr);
+                                cntr++;
+                            }
+                        }
+
+                        // Using the 2D data in ArrayBuffer create a texture which is mapped to a material
+                        const texture = new THREE.DataTexture( dataRGBA, volView.Z_DIM, volView.X_DIM, THREE.RGBAFormat );
+                        texture.needsUpdate = true;
+                        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide, transparent: true });
+                        // If required, create a new plane covered by the material
+                        if (objectList[dimIdx] === null) {
+                            newSlice = true;
+                            const geometry = new THREE.PlaneBufferGeometry(volView.CUBE_SZ[2], volView.CUBE_SZ[0]);
+                            objectList[dimIdx] = new THREE.Mesh( geometry, material );
+                            objectList[dimIdx].visible = displayed;
+                            objectList[dimIdx].name = this.makeVolLabel(groupName, partId);
+                            const rot = new THREE.Euler(0.0, 0.0, 0.0);
+                            rot.x = Math.PI / 2.0;
+                            rot.y = Math.PI;
+                            rot.z = Math.PI / 2.0;
+                            objectList[dimIdx].rotation.copy(rot);
+                        } else {
+                            // If plane already exists, then just change its material, keeping old opacity
+                            const  oldMaterial = (<THREE.MeshBasicMaterial>(<THREE.Mesh> objectList[dimIdx]).material);
+                            material.opacity = oldMaterial.opacity;
+                            material.transparent = oldMaterial.transparent;
+                            (<THREE.Mesh> objectList[dimIdx]).material = material;
+                        }
+                        }
+                        break;
+                    case 2:
+                    {
+                        // Set up a buffer to hold slice
+                        const rgbaBuffer = new ArrayBuffer(4 * volView.X_DIM * volView.Y_DIM);
+                        // Set up array to view the buffer
+                        const dataRGBA = new Uint8Array(rgbaBuffer);
+                        let cntr = 0;
+                        const z  = Math.floor(pctList[dimIdx] * volView.Z_DIM);
+
+                        // Z-slice, loop over X,Y
+                        for (let x = 0; x < volView.X_DIM; x++) {
+                            for (let y = 0; y < volView.Y_DIM; y++) {
+                                // create a buffer with color data
+                                this.layoutRGBA(x, y, z, volView, dataRGBA, cntr);
+                                cntr++;
+                            }
+                        }
+
+                        // Using the 2D data in ArrayBuffer create a texture which is mapped to a material
+                        const texture = new THREE.DataTexture( dataRGBA, volView.Y_DIM, volView.X_DIM, THREE.RGBAFormat );
+                        texture.needsUpdate = true;
+                        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide, transparent: true });
+                        // If required, create a new plane covered by the material
+                        if (objectList[dimIdx] === null) {
+                            newSlice = true;
+                            const geometry = new THREE.PlaneBufferGeometry(volView.CUBE_SZ[1], volView.CUBE_SZ[0]);
+                            objectList[dimIdx] = new THREE.Mesh( geometry, material );
+                            objectList[dimIdx].visible = displayed;
+                            objectList[dimIdx].name = this.makeVolLabel(groupName, partId);
+                            const rot = new THREE.Euler(0.0, 0.0, 0.0);
+                            rot.z = - Math.PI / 2.0;
+                            rot.x =  Math.PI;
+                            objectList[dimIdx].rotation.copy(rot);
+                        } else {
+                            // If plane already exists, then just change its material, keeping old opacity
+                            const  oldMaterial = (<THREE.MeshBasicMaterial>(<THREE.Mesh> objectList[dimIdx]).material);
+                            material.opacity = oldMaterial.opacity;
+                            material.transparent = oldMaterial.transparent;
+                            (<THREE.Mesh> objectList[dimIdx]).material = material;
+                        }
+                    }
+                    break;
+                }
 
                 // Calculate position of slice along its dimension, in 3d space
                 const disp  = Math.floor(pctList[dimIdx] * volView.CUBE_SZ[dimIdx]);
-
-                // Calculate position of slice within the data volume
-                const idx  = Math.floor(pctList[dimIdx] * dimSz);
-
-                // Set up a buffer to hold slice
-                const rgbBuffer = new ArrayBuffer(3 * otherDimSzList[0] * otherDimSzList[1]);
-                // Set up array to view the buffer
-                const dataRGB = new Uint8Array(rgbBuffer);
-                let cntr = 0;
-                // Loop over the other two dimensions, creating a planar slice at the current position
-                for (let d1 = 0; d1 < otherDimSzList[0]; d1++) {
-                    for (let d2 = 0; d2 < otherDimSzList[1]; d2++) {
-
-                        // create a buffer with color data
-                        const val = this.getValueXYZ(volView, dimIdx, idx, d2, d1);
-                        if (val !== null) {
-                            if (volView.colorLookup && volView.colorLookup.hasOwnProperty(val)) {
-
-                                dataRGB[cntr * 3] = Math.floor(256.0 * volView.colorLookup[val][0]);
-                                dataRGB[cntr * 3 + 1] = Math.floor(256.0 * volView.colorLookup[val][1]);
-                                dataRGB[cntr * 3 + 2] = Math.floor(256.0 * volView.colorLookup[val][2]);
-                            } else {
-                                // If no colour data then use greyscale
-                                const bwTuple = this.bwLookup(volView, val);
-                                dataRGB[cntr * 3] = Math.floor(255.99 * bwTuple[0]);
-                                dataRGB[cntr * 3 + 1] = Math.floor(255.99 * bwTuple[1]);
-                                dataRGB[cntr * 3 + 2] = Math.floor(255.99 * bwTuple[2]);
-                            }
-                        }
-                        cntr++;
-                    }
-                }
-                // Using the 2D data in ArrayBuffer create a texture which is mapped to a material
-                const texture = new THREE.DataTexture( dataRGB, otherDimSzList[1], otherDimSzList[0], THREE.RGBFormat );
-                texture.needsUpdate = true;
-                const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
-                // If required, create a new plane covered by the material
-                if (objectList[dimIdx] === null) {
-                    newSlice = true;
-                    const geometry = new THREE.PlaneBufferGeometry(otherVolSzList[0], otherVolSzList[1]);
-                    objectList[dimIdx] = new THREE.Mesh( geometry, material );
-                    objectList[dimIdx].visible = displayed;
-                    objectList[dimIdx].name = this.makeVolLabel(groupName, partId, dimIdx);
-                    const rot = new THREE.Euler(0.0, 0.0, 0.0);
-                    switch (dimIdx) {
-                        case 0:
-                            rot.y = Math.PI / 2.0;
-                            rot.x = Math.PI / 2.0;
-                            break;
-                        case 1:
-                             rot.x = Math.PI / 2.0;
-                             break;
-                        case 2:
-                             rot.z = - Math.PI / 2.0;
-                             rot.x =  Math.PI;
-                             break;
-                    }
-                    objectList[dimIdx].rotation.copy(rot);
-                } else {
-                    // If plane already exists, then just change its material, keeping old opacity
-                    const  oldMaterial = (<THREE.MeshBasicMaterial>(<THREE.Mesh> objectList[dimIdx]).material);
-                    material.opacity = oldMaterial.opacity;
-                    material.transparent = oldMaterial.transparent;
-                    (<THREE.Mesh> objectList[dimIdx]).material = material;
-                }
 
                 // Create a new slice
                 if (newSlice) {
@@ -505,37 +506,32 @@ export class VolviewService {
      * Create a black & white colour table lookup for volumes with no colour data.
      * @param volView the volume's 'VolView' object
      * @param val the value to convert to a black & white colour
-     * @returns [R, G, B] numbers
+     * @returns [R, G, B, A] numbers
      */
-    private bwLookup(volView, val): [number, number, number] {
+    private bwLookup(volView, val): [number, number, number, number] {
+        if (volView.minVal === volView.maxVal) {
+            return [ 0.5, 0.5, 0.5, 1.0 ];
+        }
         let normVal = (val - volView.minVal) / (volView.maxVal - volView.minVal);
         if (normVal > 1.0) {
             normVal = 1.0;
+        // If less than normal, then render as transparent
         } else if (normVal < 0.0) {
-            normVal = 0.0;
+            return [ 0.0, 0.0, 0.0, 0.0 ];
         }
-        return [ normVal, normVal, normVal];
+        return [ normVal, normVal, normVal, 1.0];
     }
 
     /**
      * Given (X,Y,Z) real world coords and a slice index, it returns the volume's value at that point
-     * @param dimIdx slice index (0 = x-slice, 1 = y-slice, 2 = z-slice)
      * @param xyz ThreeJS vector of the point on the slice
-     * @returns a numeric value,or null of no value found
+     * @returns a numeric value, or null of no value found
      */
-    xyzToProp(volView: VolView, dimIdx: number, xyz: THREE.Vector3): number {
+    public xyzToProp(volView: VolView, xyz: THREE.Vector3): number {
 
         const dx = Math.floor((xyz.x - volView.ORIGIN[0]) / volView.CUBE_SZ[0] * volView.X_DIM); // X
         const dy = Math.floor((xyz.y - volView.ORIGIN[1]) / volView.CUBE_SZ[1] * volView.Y_DIM); // Y
         const dz = Math.floor((xyz.z - volView.ORIGIN[2]) / volView.CUBE_SZ[2] * volView.Z_DIM); // Z
-        switch (dimIdx) {
-            case 0:
-                return this.getValueXYZ(volView, dimIdx, dx, dy, dz);
-            case 1:
-                return this.getValueXYZ(volView, dimIdx, dy, dx, dz);
-            case 2:
-                return this.getValueXYZ(volView, dimIdx, dz, dy, dx);
-        }
-        return null;
+        return this.getFromArray(volView, dx + dy * volView.X_DIM + dz * volView.X_DIM * volView.Y_DIM);
     }
 }

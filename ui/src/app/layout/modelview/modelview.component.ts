@@ -510,7 +510,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         }));
 
         // Get a list of borehole_ids - slow to load so they are done in the background
-        this.modelInfoService.getBoreHoleIds().then(
+        /*this.modelInfoService.getBoreHoleIds().then(
             function(boreholeIdList: any[]) {
                 console.log('GOT BH LIST', boreholeIdList);
                 for (const boreholeId of boreholeIdList) {
@@ -541,7 +541,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             function(err) {
                 console.log('BOREHOLE ID LIST load error!', err);
             }
-        );
+        );*/
 
         Promise.all(promiseList).then(
             // function called when all objects are loaded
@@ -737,98 +737,109 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 local.raycaster.setFromCamera(local.mouse, local.view.camera.camera3D);
 
                 const intersects  = local.raycaster.intersectObjects(local.scene.children, true);
-
-                // Look at all the intersecting objects to see that if any of them have information for popups
                 if (intersects.length > 0) {
-                    for (let n = intersects.length - 1; n >= 0; n--) {
-                        const objName = intersects[n].object.name;
-                        const objIntPt = intersects[n].point;
-                        if (!objName) {
-                            continue;
-                        }
-                        // TODO: Remove to a separate lookup service
 
-                        // Is this a volume object?
-                        if (local.volViewService.isVolLabel(objName)) {
-                            const labelBits = local.volViewService.parseVolLabel(objName);
-                            const group = labelBits[0];
-                            const partId = labelBits[1];
-                            if (local.volViewArr.hasOwnProperty(group)) {
-                                const vvArr = local.volViewArr[group];
-                                if (vvArr.hasOwnProperty(partId)) {
-                                    const val = local.volViewService.xyzToProp(vvArr[partId], labelBits[2], objIntPt);
-                                    if (val !== null) {
-                                        const popObj = {'title': objName, 'val': val };
-                                        const valStr = val.toString();
-                                        if (local.volLabelArr.hasOwnProperty(group) &&
-                                            local.volLabelArr[group].hasOwnProperty(partId) &&
-                                            local.volLabelArr[group][partId] &&
-                                            local.volLabelArr[group][partId].hasOwnProperty(valStr)) {
-                                            popObj['label'] = local.volLabelArr[group][partId][valStr];
-                                        }
-                                        local.makePopup(event, popObj, objIntPt);
-                                        return;
+                    // Find closest object that has a name
+                    let min_dist = Number.MAX_VALUE;
+                    let closest = -1;
+                    for (let i = 0; i < intersects.length; i++) {
+                        const camera = local.view.camera.camera3D;
+                        const dist = intersects[i].point.distanceTo(camera.position);
+                        const name = intersects[i].object.name;
+                        if (dist < min_dist  && name) {
+                            min_dist = dist;
+                            closest = i;
+                        }
+                    }
+                    if (closest < 0) {
+                        return;
+                    }
+                    const objName = intersects[closest].object.name;
+                    const objIntPt = intersects[closest].point;
+
+                    // TODO: Remove to a separate lookup service
+
+                    // Is this a volume object?
+                    if (local.volViewService.isVolLabel(objName)) {
+                        const labelBits = local.volViewService.parseVolLabel(objName);
+                        const group = labelBits[0];
+                        const partId = labelBits[1];
+                        if (local.volViewArr.hasOwnProperty(group)) {
+                            const vvArr = local.volViewArr[group];
+                            if (vvArr.hasOwnProperty(partId)) {
+                                const val = local.volViewService.xyzToProp(vvArr[partId], objIntPt);
+                                if (val !== null) {
+                                    const popObj = {'title': objName, 'val': val };
+                                    const valStr = val.toString();
+                                    if (local.volLabelArr.hasOwnProperty(group) &&
+                                        local.volLabelArr[group].hasOwnProperty(partId) &&
+                                        local.volLabelArr[group][partId] &&
+                                        local.volLabelArr[group][partId].hasOwnProperty(valStr)) {
+                                        popObj['label'] = local.volLabelArr[group][partId][valStr];
                                     }
+                                    local.makePopup(event, popObj, objIntPt);
+                                    return;
                                 }
                             }
                         }
-                        for (const group in local.config.groups) {
-                            if (local.config.groups.hasOwnProperty(group)) {
-                                const parts = local.config.groups[group];
-                                for (let i = 0; i < parts.length; i++) {
-                                    if (parts[i].hasOwnProperty('popups')) {
-                                        for (const popup_key in parts[i]['popups']) {
-                                            if (parts[i]['popups'].hasOwnProperty(popup_key)) {
-                                                // console.log('popup_key = ', popup_key, popup_key.indexOf('*', popup_key.length - 1));
-                                                if (popup_key + '_0' === objName) {
+                    }
+
+                    // IS there a popup in the config?
+                    for (const group in local.config.groups) {
+                        if (local.config.groups.hasOwnProperty(group)) {
+                            const parts = local.config.groups[group];
+                            for (let i = 0; i < parts.length; i++) {
+                                if (parts[i].hasOwnProperty('popups')) {
+                                    for (const popup_key in parts[i]['popups']) {
+                                        if (parts[i]['popups'].hasOwnProperty(popup_key)) {
+                                            // console.log('popup_key = ', popup_key, popup_key.indexOf('*', popup_key.length - 1));
+                                            if (popup_key + '_0' === objName) {
+                                                local.makePopup(event, parts[i]['popups'][popup_key], objIntPt);
+                                                if (parts[i].hasOwnProperty('model_url')) {
+                                                    local.openSidebarMenu(group, parts[i]['model_url']);
+                                                }
+                                                return;
+                                            } else if (popup_key[0] === '^') {
+                                                if (objName.match(popup_key)) {
                                                     local.makePopup(event, parts[i]['popups'][popup_key], objIntPt);
                                                     if (parts[i].hasOwnProperty('model_url')) {
                                                         local.openSidebarMenu(group, parts[i]['model_url']);
                                                     }
                                                     return;
-                                                } else if (popup_key[0] === '^') {
-                                                    if (objName.match(popup_key)) {
-                                                        local.makePopup(event, parts[i]['popups'][popup_key], objIntPt);
-                                                        if (parts[i].hasOwnProperty('model_url')) {
-                                                            local.openSidebarMenu(group, parts[i]['model_url']);
-                                                        }
-                                                        return;
-                                                    }
                                                 }
                                             }
                                         }
-                                    // FIXME: Update config file and this so that we only use 'popups' code above
-                                    } else if (parts[i].hasOwnProperty('3dobject_label') &&
-                                           parts[i].hasOwnProperty('popup_info') &&
-                                           objName === parts[i]['3dobject_label'] + '_0') {
-                                        local.makePopup(event, parts[i]['popup_info'], objIntPt);
-                                        if (parts[i].hasOwnProperty('model_url')) {
-                                            local.openSidebarMenu(group, parts[i]['model_url']);
-                                        }
-                                        return;
-                                    } else if (parts[i].hasOwnProperty('3dobject_label') &&
-                                           objName === parts[i]['3dobject_label'] &&
-                                           parts[i].hasOwnProperty('reference')) {
-                                        window.open(parts[i]['reference']);
-                                        return;
                                     }
+                                // FIXME: Update config file and this so that we only use 'popups' code above
+                                } else if (parts[i].hasOwnProperty('3dobject_label') &&
+                                       parts[i].hasOwnProperty('popup_info') &&
+                                       objName === parts[i]['3dobject_label'] + '_0') {
+                                    local.makePopup(event, parts[i]['popup_info'], objIntPt);
+                                    if (parts[i].hasOwnProperty('model_url')) {
+                                        local.openSidebarMenu(group, parts[i]['model_url']);
+                                    }
+                                    return;
+                                } else if (parts[i].hasOwnProperty('3dobject_label') &&
+                                       objName === parts[i]['3dobject_label'] &&
+                                       parts[i].hasOwnProperty('reference')) {
+                                    window.open(parts[i]['reference']);
+                                    return;
                                 }
                             }
                         }
-                        // If got here then, could not find it locally, so must ask server
-                        local.httpService.get('./api/getQuery?id=' + objName).subscribe(
-                            data => {
-                                const queryResult = data as string [];
-                                console.log('queryResult = ', queryResult);
-                                local.makePopup(event, queryResult, objIntPt);
-                            },
-                            (err: HttpErrorResponse) => {
-                                console.log('Cannot load borehole list', err);
-                            }
-                        );
-                        // Only looks at the first intersection
-                        return;
                     }
+
+                    // If got here then, could not find it in config or volumes, so must ask server
+                    local.httpService.get('./api/getQuery?id=' + objName).subscribe(
+                        data => {
+                            const queryResult = data as string [];
+                            console.log('queryResult = ', queryResult);
+                            local.makePopup(event, queryResult, objIntPt);
+                        },
+                        (err: HttpErrorResponse) => {
+                            console.log('Cannot load borehole list', err);
+                        }
+                    );
                 }
         });
 
