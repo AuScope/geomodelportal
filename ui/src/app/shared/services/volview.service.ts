@@ -16,9 +16,7 @@ export const VOL_LABEL_PREFIX = 'Volume3D_';
 
 export class VolView {
     // These are the X,Y,Z dimensions of the data in the volume
-    X_DIM = 0;
-    Y_DIM = 0;
-    Z_DIM = 0;
+    DIM: [number, number, number] = [0.0, 0.0, 0.0];
 
     // For volumes which contain a bit mask data type, this is the length of the bit mask
     BIT_SZ = 0;
@@ -28,6 +26,11 @@ export class VolView {
 
     // This is the size of the volume in space (X,Y,Z)
     CUBE_SZ: [number, number, number] = [0.0, 0.0, 0.0];
+
+    // These are the local X,Y,Z axes (unit length) of the volume, used to set the rotation of volume
+    ROTATION: [ THREE.Vector3, THREE.Vector3, THREE.Vector3 ] = [ new THREE.Vector3(1, 0, 0),
+                                                                  new THREE.Vector3(0, 1, 0),
+                                                                  new THREE.Vector3(0, 0, 1) ];
 
     // This is a colour loopkup table for the integer and bit mask volumes
     colorLookup: { [idx: number]: [number, number, number] } = {};
@@ -74,11 +77,13 @@ export class VolviewService {
             volView.isBitField = true;
             volView.BIT_SZ = volDataObj['bitSize'];
         }
-        volView.X_DIM = dims[0];
-        volView.Y_DIM = dims[1];
-        volView.Z_DIM = dims[2];
         volView.ORIGIN = volDataObj['origin'];
         volView.CUBE_SZ = volDataObj['size'];
+        for (let d = 0; d < 3; d++) {
+            volView.ROTATION[d] = new THREE.Vector3(volDataObj['rotation'][d][0], volDataObj['rotation'][d][1],
+                                                                                  volDataObj['rotation'][d][2] );
+            volView.DIM[d] = dims[d];
+        }
         volView.colorLookup = volDataObj['colourLookup'];
         volView.dataType = dataType;
         volView.maxVal = volDataObj['maxVal'];
@@ -287,7 +292,7 @@ export class VolviewService {
     private layoutRGBA(x: number, y: number, z: number, volView: VolView, dataRGBA: Uint8Array, idx: number) {
 
         // Create a buffer with color data
-        let val = this.getFromArray(volView, x + y * volView.X_DIM + z * volView.X_DIM * volView.Y_DIM);
+        let val = this.getFromArray(volView, x + y * volView.DIM[0] + z * volView.DIM[0] * volView.DIM[1]);
         if (volView.isBitField) {
             const valArr = this.getBitFields(val, volView.BIT_SZ);
             if (valArr.length > 0) {
@@ -332,131 +337,72 @@ export class VolviewService {
                 } else if (pctList[dimIdx] > 1.0) {
                     pctList[dimIdx] = 1.0;
                 }
+                let d1, d2;
+                const rot = new THREE.Euler(0.0, 0.0, 0.0);
                 switch (dimIdx) {
                     case 0:
-                    {
-                        // Set up a buffer to hold slice
-                        const rgbaBuffer = new ArrayBuffer(4 * volView.Y_DIM * volView.Z_DIM);
-                        // Set up array to view the buffer
-                        const dataRGBA = new Uint8Array(rgbaBuffer);
-                        let cntr = 0;
-                        const x  = Math.floor(pctList[dimIdx] * volView.X_DIM);
-                        // X-slice, loop over Y,Z
-                        for (let y = 0; y < volView.Y_DIM; y++) {
-                            for (let z = 0; z < volView.Z_DIM; z++) {
-                                // Create a buffer with color data
-                                this.layoutRGBA(x, y, z, volView, dataRGBA, cntr);
-                                cntr++;
-                            }
-                        }
-
-                        // Using the 2D data in ArrayBuffer create a texture which is mapped to a material
-                        const texture = new THREE.DataTexture( dataRGBA, volView.Z_DIM, volView.Y_DIM, THREE.RGBAFormat );
-                        texture.needsUpdate = true;
-                        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide, transparent: true });
-                        // If required, create a new plane covered by the material
+                        d1 = 1, d2 = 2;
                         if (objectList[dimIdx] === null) {
-                            newSlice = true;
-                            const geometry = new THREE.PlaneBufferGeometry(volView.CUBE_SZ[2], volView.CUBE_SZ[1]);
-                            objectList[dimIdx] = new THREE.Mesh( geometry, material );
-                            objectList[dimIdx].visible = displayed;
-                            objectList[dimIdx].name = this.makeVolLabel(groupName, partId);
-                            const rot = new THREE.Euler(0.0, 0.0, 0.0);
                             rot.y =  - Math.PI / 2.0;
-                            objectList[dimIdx].rotation.copy(rot);
-                        } else {
-                            // If plane already exists, then just change its material, keeping old opacity
-                            const  oldMaterial = (<THREE.MeshBasicMaterial>(<THREE.Mesh> objectList[dimIdx]).material);
-                            material.opacity = oldMaterial.opacity;
-                            material.transparent = oldMaterial.transparent;
-                            (<THREE.Mesh> objectList[dimIdx]).material = material;
                         }
-                    }
                         break;
                     case 1:
-                    {
-                        // Set up a buffer to hold slice
-                        const rgbaBuffer = new ArrayBuffer(4 * volView.X_DIM * volView.Z_DIM);
-                        // Set up array to view the buffer
-                        const dataRGBA = new Uint8Array(rgbaBuffer);
-                        let cntr = 0;
-                        const y  = Math.floor(pctList[dimIdx] * volView.Y_DIM);
-                        // Y-slice, loop over X,Z
-                        for (let x = 0; x < volView.X_DIM; x++) {
-                            for (let z = 0; z < volView.Z_DIM; z++) {
-                                // create a buffer with color data
-                                this.layoutRGBA(x, y, z, volView, dataRGBA, cntr);
-                                cntr++;
-                            }
-                        }
-
-                        // Using the 2D data in ArrayBuffer create a texture which is mapped to a material
-                        const texture = new THREE.DataTexture( dataRGBA, volView.Z_DIM, volView.X_DIM, THREE.RGBAFormat );
-                        texture.needsUpdate = true;
-                        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide, transparent: true });
-                        // If required, create a new plane covered by the material
+                        d1 = 0, d2 = 2;
                         if (objectList[dimIdx] === null) {
-                            newSlice = true;
-                            const geometry = new THREE.PlaneBufferGeometry(volView.CUBE_SZ[2], volView.CUBE_SZ[0]);
-                            objectList[dimIdx] = new THREE.Mesh( geometry, material );
-                            objectList[dimIdx].visible = displayed;
-                            objectList[dimIdx].name = this.makeVolLabel(groupName, partId);
-                            const rot = new THREE.Euler(0.0, 0.0, 0.0);
                             rot.x = Math.PI / 2.0;
                             rot.y = Math.PI;
                             rot.z = Math.PI / 2.0;
-                            objectList[dimIdx].rotation.copy(rot);
-                        } else {
-                            // If plane already exists, then just change its material, keeping old opacity
-                            const  oldMaterial = (<THREE.MeshBasicMaterial>(<THREE.Mesh> objectList[dimIdx]).material);
-                            material.opacity = oldMaterial.opacity;
-                            material.transparent = oldMaterial.transparent;
-                            (<THREE.Mesh> objectList[dimIdx]).material = material;
-                        }
                         }
                         break;
                     case 2:
-                    {
-                        // Set up a buffer to hold slice
-                        const rgbaBuffer = new ArrayBuffer(4 * volView.X_DIM * volView.Y_DIM);
-                        // Set up array to view the buffer
-                        const dataRGBA = new Uint8Array(rgbaBuffer);
-                        let cntr = 0;
-                        const z  = Math.floor(pctList[dimIdx] * volView.Z_DIM);
-
-                        // Z-slice, loop over X,Y
-                        for (let x = 0; x < volView.X_DIM; x++) {
-                            for (let y = 0; y < volView.Y_DIM; y++) {
-                                // create a buffer with color data
-                                this.layoutRGBA(x, y, z, volView, dataRGBA, cntr);
-                                cntr++;
-                            }
-                        }
-
-                        // Using the 2D data in ArrayBuffer create a texture which is mapped to a material
-                        const texture = new THREE.DataTexture( dataRGBA, volView.Y_DIM, volView.X_DIM, THREE.RGBAFormat );
-                        texture.needsUpdate = true;
-                        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide, transparent: true });
-                        // If required, create a new plane covered by the material
+                        d1 = 0, d2 = 1;
                         if (objectList[dimIdx] === null) {
-                            newSlice = true;
-                            const geometry = new THREE.PlaneBufferGeometry(volView.CUBE_SZ[1], volView.CUBE_SZ[0]);
-                            objectList[dimIdx] = new THREE.Mesh( geometry, material );
-                            objectList[dimIdx].visible = displayed;
-                            objectList[dimIdx].name = this.makeVolLabel(groupName, partId);
-                            const rot = new THREE.Euler(0.0, 0.0, 0.0);
                             rot.z = - Math.PI / 2.0;
                             rot.x =  Math.PI;
-                            objectList[dimIdx].rotation.copy(rot);
-                        } else {
-                            // If plane already exists, then just change its material, keeping old opacity
-                            const  oldMaterial = (<THREE.MeshBasicMaterial>(<THREE.Mesh> objectList[dimIdx]).material);
-                            material.opacity = oldMaterial.opacity;
-                            material.transparent = oldMaterial.transparent;
-                            (<THREE.Mesh> objectList[dimIdx]).material = material;
                         }
+                }
+                // Set up a buffer to hold slice
+                const rgbaBuffer = new ArrayBuffer(4 * volView.DIM[d1] * volView.DIM[d2]);
+                // Set up array to view the buffer
+                const dataRGBA = new Uint8Array(rgbaBuffer);
+                let cntr = 0;
+                const l0  = Math.floor(pctList[dimIdx] * volView.DIM[dimIdx]);
+                // Loop over Y,Z or X,Z  or X,Y
+                for (let l1 = 0; l1 < volView.DIM[d1]; l1++) {
+                    for (let l2 = 0; l2 < volView.DIM[d2]; l2++) {
+                        // Create a buffer with color data
+                        switch (dimIdx) {
+                            case 0:
+                                this.layoutRGBA(l0, l1, l2, volView, dataRGBA, cntr);
+                                break;
+                            case 1:
+                                this.layoutRGBA(l1, l0, l2, volView, dataRGBA, cntr);
+                                break;
+                            case 2:
+                                this.layoutRGBA(l1, l2, l0, volView, dataRGBA, cntr);
+                        }
+                        cntr++;
                     }
-                    break;
+                }
+
+                // Using the 2D data in ArrayBuffer create a texture which is mapped to a material
+                const texture = new THREE.DataTexture( dataRGBA, volView.DIM[d2], volView.DIM[d1], THREE.RGBAFormat );
+                texture.needsUpdate = true;
+                const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide, transparent: true });
+                // If required, create a new plane covered by the material
+                if (objectList[dimIdx] === null) {
+                    newSlice = true;
+                    const geometry = new THREE.PlaneBufferGeometry(volView.CUBE_SZ[d2], volView.CUBE_SZ[d1]);
+                    objectList[dimIdx] = new THREE.Mesh( geometry, material );
+                    objectList[dimIdx].visible = displayed;
+                    objectList[dimIdx].name = this.makeVolLabel(groupName, partId);
+                    objectList[dimIdx].rotation.copy(rot);
+                } else {
+                    // If plane already exists, then just change its material, keeping old opacity
+                    const  oldMaterial = (<THREE.MeshBasicMaterial>(<THREE.Mesh> objectList[dimIdx]).material);
+                    material.opacity = oldMaterial.opacity;
+                    material.transparent = oldMaterial.transparent;
+                    (<THREE.Mesh> objectList[dimIdx]).material = material;
                 }
 
                 // Calculate position of slice along its dimension, in 3d space
@@ -529,9 +475,9 @@ export class VolviewService {
      */
     public xyzToProp(volView: VolView, xyz: THREE.Vector3): number {
 
-        const dx = Math.floor((xyz.x - volView.ORIGIN[0]) / volView.CUBE_SZ[0] * volView.X_DIM); // X
-        const dy = Math.floor((xyz.y - volView.ORIGIN[1]) / volView.CUBE_SZ[1] * volView.Y_DIM); // Y
-        const dz = Math.floor((xyz.z - volView.ORIGIN[2]) / volView.CUBE_SZ[2] * volView.Z_DIM); // Z
-        return this.getFromArray(volView, dx + dy * volView.X_DIM + dz * volView.X_DIM * volView.Y_DIM);
+        const dx = Math.floor((xyz.x - volView.ORIGIN[0]) / volView.CUBE_SZ[0] * volView.DIM[0]); // X
+        const dy = Math.floor((xyz.y - volView.ORIGIN[1]) / volView.CUBE_SZ[1] * volView.DIM[1]); // Y
+        const dz = Math.floor((xyz.z - volView.ORIGIN[2]) / volView.CUBE_SZ[2] * volView.DIM[2]); // Z
+        return this.getFromArray(volView, dx + dy * volView.DIM[0] + dz * volView.DIM[0] * volView.DIM[1]);
     }
 }
