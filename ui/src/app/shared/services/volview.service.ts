@@ -14,6 +14,7 @@ export enum DataType {BIT_MASK, INT_16, INT_8, FLOAT_16, FLOAT_32 }
 
 export const VOL_LABEL_PREFIX = 'Volume3D_';
 
+// Volume services
 export class VolView {
     // These are the X,Y,Z dimensions of the data in the volume
     DIM: [number, number, number] = [0.0, 0.0, 0.0];
@@ -28,7 +29,8 @@ export class VolView {
     CUBE_SZ: [number, number, number] = [0.0, 0.0, 0.0];
 
     // These are the local X,Y,Z axes (unit length) of the volume, used to set the rotation of volume
-    ROTATION: [ THREE.Vector3, THREE.Vector3, THREE.Vector3 ] = [ new THREE.Vector3(1, 0, 0),
+    // I am assuming that these are perpendicular
+    ORIENTATION: [ THREE.Vector3, THREE.Vector3, THREE.Vector3 ] = [ new THREE.Vector3(1, 0, 0),
                                                                   new THREE.Vector3(0, 1, 0),
                                                                   new THREE.Vector3(0, 0, 1) ];
 
@@ -80,7 +82,7 @@ export class VolviewService {
         volView.ORIGIN = volDataObj['origin'];
         volView.CUBE_SZ = volDataObj['size'];
         for (let d = 0; d < 3; d++) {
-            volView.ROTATION[d] = new THREE.Vector3(volDataObj['rotation'][d][0], volDataObj['rotation'][d][1],
+            volView.ORIENTATION[d] = new THREE.Vector3(volDataObj['rotation'][d][0], volDataObj['rotation'][d][1],
                                                                                   volDataObj['rotation'][d][2] );
             volView.DIM[d] = dims[d];
         }
@@ -324,9 +326,27 @@ export class VolviewService {
      * [X-slice, Y-slice, Z-slice, wireframe]
      * If X-slice or Y-slice or Z-slice is null then a new slice is created
      * @param displayed if creating a new slice, will it be visible or not
+       NB: This is not complete, it only works for ORIENTATION axes which are parallel or antiparallel to XYZ,
+        and only one axis can be antiparallel.
+       TODO: Make it more general cope with any ORIENTATION
      */
     public makeSlices(volView: VolView, groupName: string, partId: string, pctList: [number, number, number],
                        objectList: THREE.Object3D[], displayed: boolean) {
+
+        // Check for inverted axes
+        const inverted = [false, false, false];
+        let needsInvert = false;
+        for (let vDim = 0; vDim < 3; vDim++) {
+            const u = new THREE.Vector3();
+            u.setComponent(vDim, 1.0);
+            // Is an axis inverted?
+            const uVec = new THREE.Vector3();
+            uVec.setComponent(vDim, 1.0);
+            if (volView.ORIENTATION[vDim].angleTo(uVec) > Math.PI / 2.0) {
+                inverted[vDim] = true;
+                needsInvert = true;
+            }
+        }
         // Make one slice for each dimension
         for (let dimIdx = 0; dimIdx < pctList.length; dimIdx++) {
             let newSlice = false;
@@ -338,28 +358,15 @@ export class VolviewService {
                     pctList[dimIdx] = 1.0;
                 }
                 let d1, d2;
-                const rot = new THREE.Euler(0.0, 0.0, 0.0);
                 switch (dimIdx) {
                     case 0:
                         d1 = 1, d2 = 2;
-                        if (objectList[dimIdx] === null) {
-                            rot.y =  - Math.PI / 2.0;
-                        }
                         break;
                     case 1:
                         d1 = 0, d2 = 2;
-                        if (objectList[dimIdx] === null) {
-                            rot.x = Math.PI / 2.0;
-                            rot.y = Math.PI;
-                            rot.z = Math.PI / 2.0;
-                        }
                         break;
                     case 2:
                         d1 = 0, d2 = 1;
-                        if (objectList[dimIdx] === null) {
-                            rot.z = - Math.PI / 2.0;
-                            rot.x =  Math.PI;
-                        }
                 }
                 // Set up a buffer to hold slice
                 const rgbaBuffer = new ArrayBuffer(4 * volView.DIM[d1] * volView.DIM[d2]);
@@ -393,10 +400,63 @@ export class VolviewService {
                 if (objectList[dimIdx] === null) {
                     newSlice = true;
                     const geometry = new THREE.PlaneBufferGeometry(volView.CUBE_SZ[d2], volView.CUBE_SZ[d1]);
-                    objectList[dimIdx] = new THREE.Mesh( geometry, material );
+                    // Assumes orientation vectors are perpendicular
+                    geometry.lookAt(volView.ORIENTATION[dimIdx]);
+                    switch (dimIdx) {
+                        case 0:
+                            geometry.rotateY(Math.PI);
+                            break;
+                        case 1:
+                            geometry.rotateY(- Math.PI / 2.0);
+                            break;
+                        case 2:
+                            geometry.rotateZ( - Math.PI  / 2.0);
+                            geometry.rotateX(Math.PI);
+                            break;
+                    }
+                    if (needsInvert) {
+                        if (!inverted[dimIdx]) {
+                            switch (dimIdx) {
+                                case 0:
+                                    if (inverted[1]) {
+                                        geometry.rotateZ(Math.PI);
+                                    } else if (inverted[2]) {
+                                        geometry.rotateY(Math.PI);
+                                    }
+                                    break;
+                                case 1:
+                                    if (inverted[0]) {
+                                        geometry.rotateZ(Math.PI);
+                                    } else if (inverted[2]) {
+                                        geometry.rotateX(Math.PI);
+                                    }
+                                    break;
+                                case 2:
+                                    if (inverted[1]) {
+                                        geometry.rotateX(Math.PI);
+                                    } else if (inverted[0]) {
+                                        geometry.rotateY(Math.PI);
+                                    }
+                                    break;
+                            }
+                        } else {
+                            switch (dimIdx) {
+                                case 0:
+                                    geometry.rotateY(Math.PI);
+                                    break;
+                                case 1:
+                                    geometry.rotateZ(Math.PI);
+                                    break;
+                                case 2:
+                                    geometry.rotateX(Math.PI);
+                                    break;
+                            }
+                        }
+                    }
+                    objectList[dimIdx] = new THREE.Mesh(geometry, material);
                     objectList[dimIdx].visible = displayed;
                     objectList[dimIdx].name = this.makeVolLabel(groupName, partId);
-                    objectList[dimIdx].rotation.copy(rot);
+
                 } else {
                     // If plane already exists, then just change its material, keeping old opacity
                     const  oldMaterial = (<THREE.MeshBasicMaterial>(<THREE.Mesh> objectList[dimIdx]).material);
@@ -406,7 +466,12 @@ export class VolviewService {
                 }
 
                 // Calculate position of slice along its dimension, in 3d space
-                const disp  = Math.floor(pctList[dimIdx] * volView.CUBE_SZ[dimIdx]);
+                // If the volume is upside down, then slice moves in the opposite direction
+                let offset = pctList[dimIdx];
+                if (inverted[dimIdx]) {
+                    offset = 1.0 - offset;
+                }
+                const disp  = Math.floor(offset * volView.CUBE_SZ[dimIdx]);
 
                 // Create a new slice
                 if (newSlice) {
