@@ -60,7 +60,7 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
     rObject.position.set(rotCentre.x, rotCentre.y, rotCentre.z);
 
     // Move camera to look at model at a nice angle
-    rObject.rotateY(0.8);
+    rObject.rotateY(Math.PI / 4.0);
 
     // Set mouse state for drag and rotate
     this.state = STATE.NONE;
@@ -193,8 +193,8 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
         // Keep track of this movement so we can move the virtual sphere with the model
         scope.cameraOffset.x += deltaMousePosition.x;
         scope.cameraOffset.y += deltaMousePosition.y;
-        // Tell everyone that the model has moved
-        scope.modelMoveCallback();
+        // Tell everyone that the model has changed position
+        scope.modelMoveCallback(true, false);
     };
 
     /**
@@ -302,6 +302,9 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
 
         // Update view
         viewObject.notifyChange(true);
+
+        // Tell caller that camera angle has changed
+        scope.modelMoveCallback(false, true);
     };
 
     /**
@@ -403,6 +406,10 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
 
         // Update view
         viewObject.notifyChange(true);
+    };
+
+    this.getCameraPosition = function getCameraPosition() {
+        return rObject.rotation;
     };
 
 

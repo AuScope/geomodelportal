@@ -4,12 +4,11 @@ import { Observable ,  Subject } from 'rxjs';
 // NB: 1) 'END_TOUR' must always be the last item in the list
 //     2) There is one of these for each help popover in the sidebar
 export enum WidgetType { GROUP_TICKBOX, GROUP_TOGGLE, PART_TICKBOX, PART_CONFIG,
-                          PART_OFFSET, PART_VISIBILITY, PART_EYEBALL, RESET_VIEW, MOUSE_GUIDE, END_TOUR }
+                          PART_OFFSET, PART_VISIBILITY, PART_EYEBALL, RESET_VIEW, MOUSE_GUIDE, COMPASS_ROSE, END_TOUR }
 
 @Injectable()
 export class HelpinfoService {
 
-  private seqNum = 0;
   private popoverSubObj = new Subject<any>();
   private modelSubObj = new Subject<any>();
   private widgetList: WidgetType[] = [];

@@ -40,6 +40,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     private compSubscr: Subscription;
     private helpObs: Observable<any> = null;
     public mouseGuideBtnState = false;
+    public compassRoseBtnState = true;
 
     // These are all the help messages for the sidebar
     public HELP_TEXT = {
@@ -60,7 +61,9 @@ export class SidebarComponent  implements OnInit, OnDestroy {
         resetView: { title: 'Reset Model View',
                          desc: 'Click on this button to reset the view of the model back to its original state.' },
         mouseGuide: { title: 'Turn on/off mouse guide',
-                          desc: 'Click on this to hide/display the circle that helps guide the mouse when rotating the model' }
+                          desc: 'Click on this to hide/display the circle that helps guide the mouse when rotating the model' },
+        compassRose: { title: 'Toggle the compass rose visibility',
+                          desc: 'Click on this to hide/display the compass rose' }
     };
 
     // These refer to each help popover in the sidebar
@@ -74,6 +77,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     @ViewChild('part_tick_popover') public partTickPopover: NgbPopover = null;
     @ViewChild('reset_view_popover') public resetViewPopover: NgbPopover = null;
     @ViewChild('mouse_guide_popover') public mouseGuidePopover: NgbPopover = null;
+    @ViewChild('compass_rose_popover') public compassRosePopover: NgbPopover = null;
 
 
 
@@ -146,7 +150,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
         // The order must correspond to the WidgetType enum
         const popoverList: NgbPopover[] = [ this.groupTickPopover, this.groupMenuPopover, this.partConfigPopover,
                              this.partEyeballPopover, this.partOffsetPopover, this.partTransPopover, this.partTickPopover,
-                             this.resetViewPopover, this.mouseGuidePopover ];
+                             this.resetViewPopover, this.mouseGuidePopover, this.compassRosePopover ];
 
         // Open up menu items at first group
         if (seqNum === 0 && this.groupList.length > 0) {
@@ -179,8 +183,29 @@ export class SidebarComponent  implements OnInit, OnDestroy {
       */
     private revealFirstMenus(open: boolean) {
         if (this.groupList.length > 0) {
-            // Find first menu item and first descendants
-            const firstGroupName = this.groupList[0];
+
+            // Find included first groupName menu item and first partId descendants
+            let firstGroupName: string = null;
+            let firstPartId: string = null;
+            let done = false;
+            for (const groupName of this.groupList) {
+                const partObjList = this.modelInfo['groups'][groupName];
+                for (const partObj of partObjList) {
+                    if (partObj.include) {
+                        firstGroupName = groupName;
+                        firstPartId = partObj.model_url;
+                        done = true;
+                        break;
+                    }
+                }
+                if (done) {
+                    break;
+                }
+            }
+            if (!done) {
+                return;
+            }
+
             // Control panel used by demo will not open, unless it is ticked (displayed), so must enable it
             if (open && !this.getGroupTickBoxState(firstGroupName)) {
                 for (const partId in this.modelPartState[firstGroupName]) {
@@ -189,11 +214,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
                     }
                 }
             }
-            // Get partId of first part in first group
-            let firstPartId: string = null;
-            if (this.modelInfo['groups'][firstGroupName].length > 0) {
-                firstPartId = this.modelInfo['groups'][firstGroupName][0].model_url;
-            }
+
             // Open first menu and first descendants
             if (open) {
                 this.showMenu = firstGroupName;
@@ -341,6 +362,14 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     public toggleMouseGuide() {
         this.mouseGuideBtnState = !this.mouseGuideBtnState;
         this.modelInfoService.displayMouseGuide(this.mouseGuideBtnState);
+    }
+
+    /**
+     * Toggles the state of the compass rose (displayed/hidden)
+     */
+    public toggleCompassRose() {
+        this.compassRoseBtnState = !this.compassRoseBtnState;
+        this.modelInfoService.displayCompassRose(this.compassRoseBtnState);
     }
 
     /**

@@ -17,7 +17,7 @@ export const FIXED_HEIGHT = -1.0;
 // What has changed in the model part's state?
 export enum  ModelPartStateChangeType { DISPLAYED, TRANSPARENCY, HEIGHT_OFFSET, VOLUME_SLICE }
 
-export enum ModelControlEvent { RESET_VIEW, MOUSE_GUIDE_ON, MOUSE_GUIDE_OFF }
+export enum ModelControlEvent { RESET_VIEW, MOUSE_GUIDE_ON, MOUSE_GUIDE_OFF, COMPASS_ROSE_ON, COMPASS_ROSE_OFF }
 
 // Vessel for communicating change, note limitation: only one change at a time
 export interface ModelPartStateChange {
@@ -62,6 +62,9 @@ export class ModelInfoService {
     // Used to fetch a list of borehole ids
     private boreholeIdList = [];
     private bhPromise: Promise<any> = null;
+
+    // Used to inform of a camera position change
+    private cameraPosSub = new Subject<[number, number, number, string]>();
 
     constructor(private httpService: HttpClient) {
     }
@@ -328,5 +331,30 @@ export class ModelInfoService {
         } else {
             this.modelControlEventSub.next(ModelControlEvent.MOUSE_GUIDE_OFF);
         }
+    }
+
+    /**
+     *
+     */
+    public displayCompassRose(state: boolean) {
+        if (state) {
+            this.modelControlEventSub.next(ModelControlEvent.COMPASS_ROSE_ON);
+        } else {
+            this.modelControlEventSub.next(ModelControlEvent.COMPASS_ROSE_OFF);
+        }
+    }
+
+    /**
+     *
+     */
+    public waitForCameraPosChange(): Observable<[number, number, number, string]> {
+        return this.cameraPosSub.asObservable();
+    }
+
+    /**
+     *
+     */
+    public newCameraPos(pos: [number, number, number, string]) {
+        this.cameraPosSub.next(pos);
     }
 }

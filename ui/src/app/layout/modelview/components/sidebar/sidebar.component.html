@@ -1,6 +1,4 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
-    <h6 class="text-muted">&nbsp;{{sourceOrgName}}</h6>
-    <h2 class="text-muted">&nbsp;{{title}}</h2>
     <div id="modelControlsDiv">
         <button type="button" (click)="resetModelView()" class="btn btn-outline-secondary btn-sm"
             ngbPopover="{{HELP_TEXT.resetView.desc}}" popoverTitle="{{HELP_TEXT.resetView.title}}" placement="right" #reset_view_popover="ngbPopover" triggers="manual">
@@ -8,7 +6,12 @@
         <button type="button" (click)="toggleMouseGuide()" class="btn btn-outline-secondary btn-sm" [style.color]="mouseGuideBtnState?'white':'#868e96'"
             ngbPopover="{{HELP_TEXT.mouseGuide.desc}}" popoverTitle="{{HELP_TEXT.mouseGuide.title}}" placement="bottom" #mouse_guide_popover="ngbPopover" triggers="manual">
             <i class="fa fa-circle-thin" aria-hidden="true"></i>&nbsp;Mouse Guide</button>
+        <button type="button" (click)="toggleCompassRose()" class="btn btn-outline-secondary btn-sm" [style.color]="compassRoseBtnState?'white':'#868e96'"
+        ngbPopover="{{HELP_TEXT.compassRose.desc}}" popoverTitle="{{HELP_TEXT.compassRose.title}}" placement="bottom" #compass_rose_popover="ngbPopover" triggers="manual">
+        <i class="fa fa-arrows-alt" aria-hidden="true"></i>&nbsp;Compass Rose</button>
     </div>
+    <h6 class="text-muted">&nbsp;{{sourceOrgName}}</h6>
+    <h2 class="text-muted">&nbsp;{{title}}</h2>
     <div *ngIf="groupList.length > 0" class="list-group">
         <div *ngFor="let groupName of groupList" class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass(groupName)">

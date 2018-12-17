@@ -10,6 +10,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TimelineComponent, NotificationComponent } from './components';
 import { ModelCardModule } from '../../shared';
 import { HelpComponent } from './components/help/help.component';
+import { OverviewComponent } from './components/overview/overview.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { HelpComponent } from './components/help/help.component';
         TimelineComponent,
         NotificationComponent,
         SidebarComponent,
-        HelpComponent
+        HelpComponent,
+        OverviewComponent
     ]
 })
 export class ModelViewModule {}

@@ -305,13 +305,32 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     }
 
     /**
-      * Updates our version of the centre point of the model
-      * used to realign the mouse guide
-      */
-    private updateMouseGuide() {
-        const sphereCentre = this.getVirtualSphereCentre();
-        this.sphereCentreX = sphereCentre[0];
-        this.sphereCentreY = sphereCentre[1];
+     * Returns the camera position as a set of Euler angles
+     * @returns the camera position as a set of Euler angles. If the controller
+     * is not initialised, then returns Euler angles of zero.
+     */
+    private getCameraPosition(): THREE.Euler {
+        if (this.trackBallControls) {
+            return this.trackBallControls.getCameraPosition();
+        }
+        return new THREE.Euler();
+    }
+
+    /**
+     * Updates our version of the centre point of the model.
+     * Used to realign the mouse guide and inform the overview window
+     * @param isMove is true when camera has moved position, is false when view angle has changed
+     */
+    private cameraPosChange(isMove: boolean, isRotate: boolean) {
+        if (isMove) {
+            const sphereCentre = this.getVirtualSphereCentre();
+            this.sphereCentreX = sphereCentre[0];
+            this.sphereCentreY = sphereCentre[1];
+        }
+        if (isRotate) {
+            const newPos = this.getCameraPosition();
+            this.modelInfoService.newCameraPos([newPos.x, newPos.y, newPos.z, newPos.order]);
+        }
     }
 
     /**
@@ -845,7 +864,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
         // 3 axis virtual globe controller
         this.trackBallControls = new GeoModelControls(this.viewerDiv, this.view.camera.camera3D, this.view,
-                                           this.extentObj.center().xyz(), this.initCamDist, this.updateMouseGuide.bind(this));
+                                           this.extentObj.center().xyz(), this.initCamDist, this.cameraPosChange.bind(this));
         this.scene.add(this.trackBallControls.getObject());
         this.sphereRadius = this.getVirtualSphereRadius();
         const sphereCentre = this.getVirtualSphereCentre();
@@ -859,10 +878,16 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         // Wait for signal to reset the view of the model
         const viewResetObs = this.modelInfoService.waitForModelControlEvent();
         viewResetObs.subscribe(val => {
-            if (val === ModelControlEvent.RESET_VIEW) {
-                this.resetModelView();
-            } else {
-                this.isMouseGuideOn = (val === ModelControlEvent.MOUSE_GUIDE_ON);
+            switch (val) {
+                case ModelControlEvent.RESET_VIEW:
+                    this.resetModelView();
+                    break;
+                case ModelControlEvent.MOUSE_GUIDE_ON:
+                    this.isMouseGuideOn = true;
+                    break;
+                case ModelControlEvent.MOUSE_GUIDE_OFF:
+                    this.isMouseGuideOn = false;
+                    break;
             }
         });
         this.view.notifyChange(true);
@@ -933,7 +958,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param event event object
      */
     public onResize({}) {
-        this.updateMouseGuide();
+        this.cameraPosChange(true, false);
     }
 
     /**
@@ -999,7 +1024,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      */
     private resetModelView() {
         this.trackBallControls.resetView();
-        this.updateMouseGuide();
+        this.cameraPosChange(true, true);
     }
 
     /**
