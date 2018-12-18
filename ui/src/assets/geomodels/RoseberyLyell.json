@@ -199,7 +199,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "Western Volcano Sedimentary seq",
+                "display_name": "Western Volcano Sedimentary sequence",
                 "displayed": true,
                 "include": true,
                 "model_url": "12_Western_Volcano_Sedimentary_sequence.gltf",
@@ -251,7 +251,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "Quartz feldspar porphyry",
+                "display_name": "Quartz Feldspar Porphyry",
                 "displayed": true,
                 "include": true,
                 "model_url": "19_quartz_feldspar_porphyry.gltf",
@@ -425,8 +425,8 @@
                 "model_url": "352000mE_5320000mN.gltf",
                 "popups": {
                     "352000ME_5320000MN-0000000000": {
-                        "name": "352000ME 5320000MN",
-                        "title": "352000ME 5320000MN"
+                        "name": "",
+                        "title": "352000mE 5320000mN"
                     }
                 },
                 "type": "GLTFObject"
@@ -438,8 +438,8 @@
                 "model_url": "352000mE_5335000mN.gltf",
                 "popups": {
                     "352000ME_5335000MN-0000000000": {
-                        "name": "352000ME 5335000MN",
-                        "title": "352000ME 5335000MN"
+                        "name": "",
+                        "title": "352000mE 5335000mN"
                     }
                 },
                 "type": "GLTFObject"
@@ -451,8 +451,8 @@
                 "model_url": "352000mE_5355000mN.gltf",
                 "popups": {
                     "352000ME_5355000MN-0000000000": {
-                        "name": "352000ME 5355000MN",
-                        "title": "352000ME 5355000MN"
+                        "name": "",
+                        "title": "352000mE 5355000mN"
                     }
                 },
                 "type": "GLTFObject"
@@ -464,8 +464,8 @@
                 "model_url": "352000mE_5375000mN.gltf",
                 "popups": {
                     "352000ME_5375000MN-0000000000": {
-                        "name": "352000ME 5375000MN",
-                        "title": "352000ME 5375000MN"
+                        "name": "",
+                        "title": "352000mE 5375000mN"
                     }
                 },
                 "type": "GLTFObject"
@@ -477,8 +477,8 @@
                 "model_url": "352000mE_5395000mN.gltf",
                 "popups": {
                     "352000ME_5395000MN-0000000000": {
-                        "name": "352000ME 5395000MN",
-                        "title": "352000ME 5395000MN"
+                        "name": "",
+                        "title": "352000mE 5395000mN"
                     }
                 },
                 "type": "GLTFObject"
@@ -490,8 +490,8 @@
                 "model_url": "372000mE_5320000mN.gltf",
                 "popups": {
                     "372000ME_5320000MN-0000000000": {
-                        "name": "372000ME 5320000MN",
-                        "title": "372000ME 5320000MN"
+                        "name": "",
+                        "title": "372000mE 5320000mN"
                     }
                 },
                 "type": "GLTFObject"
@@ -503,8 +503,8 @@
                 "model_url": "372000mE_5335000mN.gltf",
                 "popups": {
                     "372000ME_5335000MN-0000000000": {
-                        "name": "372000ME 5335000MN",
-                        "title": "372000ME 5335000MN"
+                        "name": "",
+                        "title": "372000mE 5335000mN"
                     }
                 },
                 "type": "GLTFObject"
@@ -516,8 +516,8 @@
                 "model_url": "372000mE_5355000mN.gltf",
                 "popups": {
                     "372000ME_5355000MN-0000000000": {
-                        "name": "372000ME 5355000MN",
-                        "title": "372000ME 5355000MN"
+                        "name": "",
+                        "title": "372000mE 5355000mN"
                     }
                 },
                 "type": "GLTFObject"
@@ -529,8 +529,8 @@
                 "model_url": "372000mE_5375000mN.gltf",
                 "popups": {
                     "372000ME_5375000MN-0000000000": {
-                        "name": "372000ME 5375000MN",
-                        "title": "372000ME 5375000MN"
+                        "name": "",
+                        "title": "372000mE 5375000mN"
                     }
                 },
                 "type": "GLTFObject"
@@ -542,8 +542,8 @@
                 "model_url": "372000mE_5395000mN.gltf",
                 "popups": {
                     "372000ME_5395000MN-0000000000": {
-                        "name": "372000ME 5395000MN",
-                        "title": "372000ME 5395000MN"
+                        "name": "",
+                        "title": "372000mE 5395000mN"
                     }
                 },
                 "type": "GLTFObject"
@@ -555,8 +555,8 @@
                 "model_url": "397000mE_5320000mN.gltf",
                 "popups": {
                     "397000ME_5320000MN-0000000000": {
-                        "name": "397000ME 5320000MN",
-                        "title": "397000ME 5320000MN"
+                        "name": "",
+                        "title": "397000mE 5320000mN"
                     }
                 },
                 "type": "GLTFObject"
@@ -568,8 +568,8 @@
                 "model_url": "397000mE_5335000mN.gltf",
                 "popups": {
                     "397000ME_5335000MN-0000000000": {
-                        "name": "397000ME 5335000MN",
-                        "title": "397000ME 5335000MN"
+                        "name": "",
+                        "title": "397000mE 5335000mN"
                     }
                 },
                 "type": "GLTFObject"
@@ -581,8 +581,8 @@
                 "model_url": "397000mE_5355000mN.gltf",
                 "popups": {
                     "397000ME_5355000MN-0000000000": {
-                        "name": "397000ME 5355000MN",
-                        "title": "397000ME 5355000MN"
+                        "name": "",
+                        "title": "397000mE 5355000mN"
                     }
                 },
                 "type": "GLTFObject"
@@ -594,8 +594,8 @@
                 "model_url": "397000mE_5375000mN.gltf",
                 "popups": {
                     "397000ME_5375000MN-0000000000": {
-                        "name": "397000ME 5375000MN",
-                        "title": "397000ME 5375000MN"
+                        "name": "",
+                        "title": "397000mE 5375000mN"
                     }
                 },
                 "type": "GLTFObject"
@@ -607,8 +607,8 @@
                 "model_url": "397000mE_5395000mN.gltf",
                 "popups": {
                     "397000ME_5395000MN-0000000000": {
-                        "name": "397000ME 5395000MN",
-                        "title": "397000ME 5395000MN"
+                        "name": "",
+                        "title": "397000mE 5395000mN"
                     }
                 },
                 "type": "GLTFObject"
@@ -624,10 +624,6 @@
                     "AVEBURY-0000000000": {
                         "name": "AVEBURY",
                         "title": "AVEBURY"
-                    },
-                    "AVEBURY-0000000001": {
-                        "name": "AVEBURY",
-                        "title": "AVEBURY"
                     }
                 },
                 "type": "GLTFObject"
@@ -641,10 +637,6 @@
                     "HELLYER-0000000000": {
                         "name": "HELLYER",
                         "title": "HELLYER"
-                    },
-                    "HELLYER-0000000001": {
-                        "name": "HELLYER",
-                        "title": "HELLYER"
                     }
                 },
                 "type": "GLTFObject"
@@ -656,9 +648,8 @@
                 "model_url": "Henty.gltf",
                 "popups": {
                     "HENTY-0000000000": {
-                        "name": "SIZE",
-                        "title": "HENTY",
-                        "val": 0.0
+                        "name": "HENTY",
+                        "title": "HENTY"
                     }
                 },
                 "type": "GLTFObject"
@@ -670,10 +661,6 @@
                 "model_url": "Mt_Lindsay.gltf",
                 "popups": {
                     "MT_LINDSAY-0000000000": {
-                        "name": "MT LINDSAY",
-                        "title": "MT LINDSAY"
-                    },
-                    "MT_LINDSAY-0000000001": {
                         "name": "MT LINDSAY",
                         "title": "MT LINDSAY"
                     }
@@ -689,14 +676,6 @@
                     "QUEENSTOWN-0000000000": {
                         "name": "QUEENSTOWN",
                         "title": "QUEENSTOWN"
-                    },
-                    "QUEENSTOWN-0000000001": {
-                        "name": "QUEENSTOWN",
-                        "title": "QUEENSTOWN"
-                    },
-                    "QUEENSTOWN-0000000002": {
-                        "name": "QUEENSTOWN",
-                        "title": "QUEENSTOWN"
                     }
                 },
                 "type": "GLTFObject"
@@ -708,14 +687,6 @@
                 "model_url": "Renison.gltf",
                 "popups": {
                     "RENISON-0000000000": {
-                        "name": "RENISON",
-                        "title": "RENISON"
-                    },
-                    "RENISON-0000000001": {
-                        "name": "RENISON",
-                        "title": "RENISON"
-                    },
-                    "RENISON-0000000002": {
                         "name": "RENISON",
                         "title": "RENISON"
                     }
@@ -731,14 +702,6 @@
                     "ROSEBERY-0000000000": {
                         "name": "ROSEBERY",
                         "title": "ROSEBERY"
-                    },
-                    "ROSEBERY-0000000001": {
-                        "name": "ROSEBERY",
-                        "title": "ROSEBERY"
-                    },
-                    "ROSEBERY-0000000002": {
-                        "name": "ROSEBERY",
-                        "title": "ROSEBERY"
                     }
                 },
                 "type": "GLTFObject"
@@ -752,14 +715,6 @@
                     "STRAHAN-0000000000": {
                         "name": "STRAHAN",
                         "title": "STRAHAN"
-                    },
-                    "STRAHAN-0000000001": {
-                        "name": "STRAHAN",
-                        "title": "STRAHAN"
-                    },
-                    "STRAHAN-0000000002": {
-                        "name": "STRAHAN",
-                        "title": "STRAHAN"
                     }
                 },
                 "type": "GLTFObject"
@@ -771,10 +726,6 @@
                 "model_url": "Zeehan.gltf",
                 "popups": {
                     "ZEEHAN-0000000000": {
-                        "name": "ZEEHAN",
-                        "title": "ZEEHAN"
-                    },
-                    "ZEEHAN-0000000001": {
                         "name": "ZEEHAN",
                         "title": "ZEEHAN"
                     }
@@ -2708,16 +2659,16 @@
                     }
                 },
                 "type": "GLTFObject"
-            }
+            },
         ],
         "Grav model grids density": [
             {
-                "display_name": "RL Grav model grids density 1",
+                "display_name": "RL GRAV MODEL GRIDS DENSITY 1",
                 "displayed": true,
                 "include": true,
-                "model_url": "RL_Grav_model_grids_density_1.PNG",
+                "model_url": "RL_Grav_model_grids_density_B_Forward@@.PNG",
                 "popups": {
-                    "RL_Grav_model_grids_density_1": {
+                    "RL_Grav_model_grids_density_B_Forward@@": {
                         "name": "VPMG_OBS_GRV",
                         "title": "VPMG_OBS_GRV"
                     }
@@ -2730,48 +2681,12 @@
                 "type": "ImagePlane"
             },
             {
-                "display_name": "RL Grav model grids density 2",
+                "display_name": "RL GRAV MODEL GRIDS DENSITY 2",
                 "displayed": true,
                 "include": true,
-                "model_url": "RL_Grav_model_grids_density_2.PNG",
+                "model_url": "RL_Grav_model_grids_density_C_Residual_homogeneous@@.PNG",
                 "popups": {
-                    "RL_Grav_model_grids_density_2": {
-                        "name": "VPMG_OBS_GRV",
-                        "title": "VPMG_OBS_GRV"
-                    }
-                },
-                "position": [
-                    352050.0,
-                    5320050.0,
-                    500.0
-                ],
-                "type": "ImagePlane"
-            },
-            {
-                "display_name": "RL Grav model grids density 3",
-                "displayed": true,
-                "include": true,
-                "model_url": "RL_Grav_model_grids_density_3.PNG",
-                "popups": {
-                    "RL_Grav_model_grids_density_3": {
-                        "name": "VPMG_OBS_GRV",
-                        "title": "VPMG_OBS_GRV"
-                    }
-                },
-                "position": [
-                    352050.0,
-                    5320050.0,
-                    500.0
-                ],
-                "type": "ImagePlane"
-            },
-            {
-                "display_name": "RL Grav model grids density 4",
-                "displayed": true,
-                "include": true,
-                "model_url": "RL_Grav_model_grids_density_4.PNG",
-                "popups": {
-                    "RL_Grav_model_grids_density_4": {
+                    "RL_Grav_model_grids_density_C_Residual_homogeneous@@": {
                         "name": "VPMG_RESID_GRV",
                         "title": "VPMG_RESID_GRV"
                     }
@@ -2784,12 +2699,12 @@
                 "type": "ImagePlane"
             },
             {
-                "display_name": "RL Grav model grids density 5",
+                "display_name": "RL GRAV MODEL GRIDS DENSITY 3",
                 "displayed": true,
                 "include": true,
-                "model_url": "RL_Grav_model_grids_density_5.PNG",
+                "model_url": "RL_Grav_model_grids_density_A_Observed@@.PNG",
                 "popups": {
-                    "RL_Grav_model_grids_density_5": {
+                    "RL_Grav_model_grids_density_A_Observed@@": {
                         "name": "VPMG_OBS_GRV",
                         "title": "VPMG_OBS_GRV"
                     }
@@ -2802,12 +2717,48 @@
                 "type": "ImagePlane"
             },
             {
-                "display_name": "RL Grav model grids density 6",
+                "display_name": "RL GRAV MODEL GRIDS DENSITY 4",
                 "displayed": true,
                 "include": true,
-                "model_url": "RL_Grav_model_grids_density_6.PNG",
+                "model_url": "RL_Grav_model_grids_density_D_Heterogeneous@@.PNG",
                 "popups": {
-                    "RL_Grav_model_grids_density_6": {
+                    "RL_Grav_model_grids_density_D_Heterogeneous@@": {
+                        "name": "VPMG_OBS_GRV",
+                        "title": "VPMG_OBS_GRV"
+                    }
+                },
+                "position": [
+                    352050.0,
+                    5320050.0,
+                    500.0
+                ],
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "RL GRAV MODEL GRIDS DENSITY 5",
+                "displayed": true,
+                "include": true,
+                "model_url": "RL_Grav_model_grids_density_C_Homogeneous@@.PNG",
+                "popups": {
+                    "RL_Grav_model_grids_density_C_Homogeneous@@": {
+                        "name": "VPMG_OBS_GRV",
+                        "title": "VPMG_OBS_GRV"
+                    }
+                },
+                "position": [
+                    352050.0,
+                    5320050.0,
+                    500.0
+                ],
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "RL GRAV MODEL GRIDS DENSITY 6",
+                "displayed": true,
+                "include": true,
+                "model_url": "RL_Grav_model_grids_density_D_Residual_Heterogeneous@@.PNG",
+                "popups": {
+                    "RL_Grav_model_grids_density_D_Residual_Heterogeneous@@": {
                         "name": "VPMG_RESID_GRV",
                         "title": "VPMG_RESID_GRV"
                     }
@@ -2822,12 +2773,12 @@
         ],
         "Mag model grids susc": [
             {
-                "display_name": "RL Mag model grids susc 1",
+                "display_name": "RL MAG MODEL GRIDS SUSC 1",
                 "displayed": true,
                 "include": true,
-                "model_url": "RL_Mag_model_grids_susc_1.PNG",
+                "model_url": "RL_Mag_model_grids_susc_B_Forward@@.PNG",
                 "popups": {
-                    "RL_Mag_model_grids_susc_1": {
+                    "RL_Mag_model_grids_susc_B_Forward@@": {
                         "name": "VPMG_OBS_MAG",
                         "title": "VPMG_OBS_MAG"
                     }
@@ -2840,48 +2791,12 @@
                 "type": "ImagePlane"
             },
             {
-                "display_name": "RL Mag model grids susc 2",
+                "display_name": "RL MAG MODEL GRIDS SUSC 2",
                 "displayed": true,
                 "include": true,
-                "model_url": "RL_Mag_model_grids_susc_2.PNG",
+                "model_url": "RL_Mag_model_grids_susc_C_Residual_Homogeneous@@.PNG",
                 "popups": {
-                    "RL_Mag_model_grids_susc_2": {
-                        "name": "VPMG_OBS_MAG",
-                        "title": "VPMG_OBS_MAG"
-                    }
-                },
-                "position": [
-                    352050.0,
-                    5320050.0,
-                    500.0
-                ],
-                "type": "ImagePlane"
-            },
-            {
-                "display_name": "RL Mag model grids susc 3",
-                "displayed": true,
-                "include": true,
-                "model_url": "RL_Mag_model_grids_susc_3.PNG",
-                "popups": {
-                    "RL_Mag_model_grids_susc_3": {
-                        "name": "VPMG_OBS_MAG",
-                        "title": "VPMG_OBS_MAG"
-                    }
-                },
-                "position": [
-                    352050.0,
-                    5320050.0,
-                    500.0
-                ],
-                "type": "ImagePlane"
-            },
-            {
-                "display_name": "RL Mag model grids susc 4",
-                "displayed": true,
-                "include": true,
-                "model_url": "RL_Mag_model_grids_susc_4.PNG",
-                "popups": {
-                    "RL_Mag_model_grids_susc_4": {
+                    "RL_Mag_model_grids_susc_C_Residual_Homogeneous@@": {
                         "name": "VPMG_RESID_MAG",
                         "title": "VPMG_RESID_MAG"
                     }
@@ -2894,12 +2809,12 @@
                 "type": "ImagePlane"
             },
             {
-                "display_name": "RL Mag model grids susc 5",
+                "display_name": "RL MAG MODEL GRIDS SUSC 3",
                 "displayed": true,
                 "include": true,
-                "model_url": "RL_Mag_model_grids_susc_5.PNG",
+                "model_url": "RL_Mag_model_grids_susc_A_Observed@@.PNG",
                 "popups": {
-                    "RL_Mag_model_grids_susc_5": {
+                    "RL_Mag_model_grids_susc_A_Observed@@": {
                         "name": "VPMG_OBS_MAG",
                         "title": "VPMG_OBS_MAG"
                     }
@@ -2912,12 +2827,48 @@
                 "type": "ImagePlane"
             },
             {
-                "display_name": "RL Mag model grids susc 6",
+                "display_name": "RL MAG MODEL GRIDS SUSC 4",
                 "displayed": true,
                 "include": true,
-                "model_url": "RL_Mag_model_grids_susc_6.PNG",
+                "model_url": "RL_Mag_model_grids_susc_D_heterogeneous@@.PNG",
                 "popups": {
-                    "RL_Mag_model_grids_susc_6": {
+                    "RL_Mag_model_grids_susc_D_heterogeneous@@": {
+                        "name": "VPMG_OBS_MAG",
+                        "title": "VPMG_OBS_MAG"
+                    }
+                },
+                "position": [
+                    352050.0,
+                    5320050.0,
+                    500.0
+                ],
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "RL MAG MODEL GRIDS SUSC 5",
+                "displayed": true,
+                "include": true,
+                "model_url": "RL_Mag_model_grids_susc_C_Homogeneous@@.PNG",
+                "popups": {
+                    "RL_Mag_model_grids_susc_C_Homogeneous@@": {
+                        "name": "VPMG_OBS_MAG",
+                        "title": "VPMG_OBS_MAG"
+                    }
+                },
+                "position": [
+                    352050.0,
+                    5320050.0,
+                    500.0
+                ],
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "RL MAG MODEL GRIDS SUSC 6",
+                "displayed": true,
+                "include": true,
+                "model_url": "RL_Mag_model_grids_susc_E_Residual_heterogeneous@@.PNG",
+                "popups": {
+                    "RL_Mag_model_grids_susc_E_Residual_heterogeneous@@": {
                         "name": "VPMG_RESID_MAG",
                         "title": "VPMG_RESID_MAG"
                     }
@@ -2928,62 +2879,366 @@
                     500.0
                 ],
                 "type": "ImagePlane"
-            }
-        ],
-        "Geophysics": [
-            {
-                "display_name": "Geophysics 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Rosebery_Lyell_geophysics_1.PNG",
-                "popups": {
-                    "Rosebery_Lyell_geophysics_1": {
-                        "name": "RL_RECLASSIFICATION",
-                        "title": "RL_RECLASSIFICATION"
-                    }
-                },
-                "position": [
-                    352000.0,
-                    5320000.0,
-                    1550.0
-                ],
-                "type": "ImagePlane"
             },
             {
-                "display_name": "Geophysics 2",
-                "displayed": true,
+                "display_name": "ROSEBERY_LYELL_GEOPHYSICS 1",
+                "displayed": false,
                 "include": true,
-                "model_url": "Rosebery_Lyell_geophysics_2.PNG",
-                "popups": {
-                    "Rosebery_Lyell_geophysics_2": {
-                        "name": "VPMG_WORKFLOW_SUS_HET_151215_IMPORTED_SUS_PROP",
-                        "title": "VPMG_WORKFLOW_SUS_HET_151215_IMPORTED_SUS_PROP"
-                    }
-                },
-                "position": [
-                    352000.0,
-                    5320000.0,
-                    1550.0
-                ],
-                "type": "ImagePlane"
+                "model_url": "Rosebery_Lyell_geophysics_Vpmg_workflow_den_prop@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "dataDims": [
+                        241,
+                        376,
+                        116
+                    ],
+                    "dataType": "FLOAT_32",
+                    "maxVal": 0.3100000023841858,
+                    "minVal": -1.6399999856948853,
+                    "origin": [
+                        352000.0,
+                        5320000.0,
+                        1550.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        47800.829875518684,
+                        74800.53191489354,
+                        11400.862068965516
+                    ]
+                }
             },
             {
-                "display_name": "Geophysics 3",
-                "displayed": true,
+                "display_name": "ROSEBERY_LYELL_GEOPHYSICS 2",
+                "displayed": false,
                 "include": true,
-                "model_url": "Rosebery_Lyell_geophysics_3.PNG",
-                "popups": {
-                    "Rosebery_Lyell_geophysics_3": {
-                        "name": "VPMG_WORKFLOW_DEN_HET_151215_IMPORTED_DEN_PROP",
-                        "title": "VPMG_WORKFLOW_DEN_HET_151215_IMPORTED_DEN_PROP"
-                    }
-                },
-                "position": [
-                    352000.0,
-                    5320000.0,
-                    1550.0
-                ],
-                "type": "ImagePlane"
+                "model_url": "Rosebery_Lyell_geophysics_Vpmg_workflow_sus_prop@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "dataDims": [
+                        241,
+                        376,
+                        116
+                    ],
+                    "dataType": "FLOAT_32",
+                    "maxVal": 0.25,
+                    "minVal": 0.0,
+                    "origin": [
+                        352000.0,
+                        5320000.0,
+                        1550.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        47800.829875518684,
+                        74800.53191489354,
+                        11400.862068965516
+                    ]
+                }
+            },
+            {
+                "display_name": "ROSEBERY_LYELL_GEOPHYSICS 3",
+                "displayed": false,
+                "include": true,
+                "model_url": "Rosebery_Lyell_geophysics_lithologies@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "colourLookup": {
+                        "1": [
+                            0.529412,
+                            0.803922,
+                            0.921569,
+                            1.0
+                        ],
+                        "2": [
+                            0.0,
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "3": [
+                            1.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "4": [
+                            0.909804,
+                            0.803922,
+                            0.529412,
+                            1.0
+                        ],
+                        "5": [
+                            1.0,
+                            0.831373,
+                            0.0,
+                            1.0
+                        ],
+                        "6": [
+                            0.929412,
+                            0.509804,
+                            0.929412,
+                            1.0
+                        ],
+                        "7": [
+                            0.392157,
+                            0.588235,
+                            0.929412,
+                            1.0
+                        ],
+                        "8": [
+                            0.686275,
+                            0.764706,
+                            0.866667,
+                            1.0
+                        ],
+                        "9": [
+                            0.992157,
+                            0.854902,
+                            0.827451,
+                            1.0
+                        ],
+                        "10": [
+                            0.976471,
+                            0.501961,
+                            0.447059,
+                            1.0
+                        ],
+                        "11": [
+                            0.231373,
+                            0.701961,
+                            0.435294,
+                            1.0
+                        ],
+                        "12": [
+                            0.847059,
+                            0.721569,
+                            0.803922,
+                            1.0
+                        ],
+                        "13": [
+                            0.631373,
+                            0.784314,
+                            0.584314,
+                            1.0
+                        ],
+                        "14": [
+                            0.913725,
+                            0.407843,
+                            0.94902,
+                            1.0
+                        ],
+                        "15": [
+                            0.87451,
+                            0.682353,
+                            0.94902,
+                            1.0
+                        ],
+                        "16": [
+                            0.956863,
+                            0.862745,
+                            0.698039,
+                            1.0
+                        ],
+                        "17": [
+                            0.737255,
+                            0.219608,
+                            0.392157,
+                            1.0
+                        ],
+                        "18": [
+                            0.803922,
+                            0.356863,
+                            0.356863,
+                            1.0
+                        ],
+                        "19": [
+                            0.784314,
+                            0.87451,
+                            0.756863,
+                            1.0
+                        ],
+                        "20": [
+                            0.192157,
+                            0.803922,
+                            0.192157,
+                            1.0
+                        ],
+                        "21": [
+                            0.811765,
+                            0.909804,
+                            0.784314,
+                            1.0
+                        ],
+                        "22": [
+                            0.4,
+                            0.803922,
+                            0.658824,
+                            1.0
+                        ],
+                        "23": [
+                            0.639216,
+                            0.756863,
+                            0.627451,
+                            1.0
+                        ],
+                        "24": [
+                            0.592157,
+                            0.984314,
+                            0.592157,
+                            1.0
+                        ],
+                        "25": [
+                            0.0,
+                            0.819608,
+                            0.819608,
+                            1.0
+                        ],
+                        "26": [
+                            0.631373,
+                            1.0,
+                            0.313726,
+                            1.0
+                        ],
+                        "27": [
+                            0.741176,
+                            0.756863,
+                            0.329412,
+                            1.0
+                        ],
+                        "28": [
+                            0.8,
+                            0.819608,
+                            0.666667,
+                            1.0
+                        ],
+                        "29": [
+                            0.831373,
+                            0.866667,
+                            0.886275,
+                            1.0
+                        ],
+                        "30": [
+                            0.827451,
+                            0.705882,
+                            0.54902,
+                            1.0
+                        ],
+                        "31": [
+                            0.847059,
+                            0.807843,
+                            0.756863,
+                            1.0
+                        ],
+                        "32": [
+                            0.827451,
+                            0.827451,
+                            0.827451,
+                            1.0
+                        ]
+                    },
+                    "dataDims": [
+                        241,
+                        376,
+                        116
+                    ],
+                    "dataType": "INT_16",
+                    "labelLookup": {
+                        "1": "01_above_topography",
+                        "2": "02_water",
+                        "3": "03_Cenozoic_basalt",
+                        "4": "04_Cenozoic_sediment",
+                        "5": "05_Tasmanian_dolerite",
+                        "6": "06_Devonian_granites",
+                        "7": "07_Parmeener_Supergroup",
+                        "8": "08_Eldon_Group",
+                        "9": "09_Gordon_Group",
+                        "10": "10_Owen_Group",
+                        "11": "11_Tyndall_Group",
+                        "12": "12_Que_Hellyer_Volcanics",
+                        "13": "13_western_volcano_sedimentary_sequence",
+                        "14": "14_andesite_lower_density",
+                        "15": "15_andesite_higher_density",
+                        "16": "16_Henty_Fault_Wedge_sequence",
+                        "17": "17_Cambrian_granite_magnetic",
+                        "18": "18_Cambrian_granite_non_magnetic",
+                        "19": "19_quartz_feldspar_porphyry",
+                        "20": "20_Central_Volcanic_Complex",
+                        "21": "21_Bonds_Range_Porphyry",
+                        "22": "22_Farrell_Slate",
+                        "23": "23_Eastern_Quartz_Phyric_Sequence",
+                        "24": "24_Sticht_Range_Formation",
+                        "25": "25_Luina_Group",
+                        "26": "26_mafic_ultramafic_complexes",
+                        "27": "27_Crimson_Creek_Formation",
+                        "28": "28_Success_Creek_Group",
+                        "29": "29_Oonah_Formation",
+                        "30": "30_Rocky_Cape_Group",
+                        "31": "31_Tyennan_Group_and_correlates",
+                        "32": "32_Basement_undifferentiated"
+                    },
+                    "maxVal": 32.0,
+                    "minVal": 1.0,
+                    "origin": [
+                        352000.0,
+                        5320000.0,
+                        1550.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        47800.829875518684,
+                        74800.53191489354,
+                        11400.862068965516
+                    ]
+                }
             }
         ]
     },

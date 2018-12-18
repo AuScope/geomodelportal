@@ -1,160 +1,871 @@
 {
     "groups": {
         "3D Geology": [
-        {
+            {
                 "display_name": "Lithology",
                 "displayed": false,
-                "include": true,
-                "model_url": "3D_geology_Lithology.gz",
+                "include":true,
+                "model_url": "3D_geology_Lithology@@.gz",
+                "type": "3DVolume",
                 "volumeData": {
-                    "dataType": "INT_16",
-                    "dataDims": [103, 175, 103],
-                    "origin": [696000.0, 6863000.0, -40000.0],
-                    "size": [51000.0, 87000.0, 51000.0],
-                    "colourLookup": { "1": [0.870588, 0.898039, 0.92549],
-                                 "2": [0.67451, 0.701961, 0.305882],
-                                 "3": [0.929412, 0.6, 0.568627],
-                                 "4": [0.945098, 0.298039, 0.321569],
-                                 "5": [0.901961, 0.721569, 0.686275],
-                                 "6": [0.764706, 0.862745, 0.788235],
-                                 "7": [0.764706, 0.862745, 0.788235],
-                                 "8": [0.764706, 0.862745, 0.788235],
-                                 "9": [0.764706, 0.862745, 0.788235],
-                                 "10": [0, 0.392157, 0],
-                                 "11": [0.788235, 0.756863, 0.87451],
-                                 "12": [0.231373, 0.701961, 0.435294],
-                                 "13": [0.164706, 0.533333, 0.780392],
-                                 "14": [0.254902, 0.533333, 0.243137],
-                                 "15": [0.584314, 0.384314, 0.737255],
-                                 "16": [0.839216, 0.803922, 0.768627],
-                                 "17": [0.976471, 0.701961, 0.607843],
-                                 "18": [0.921569, 0.47451, 0.458824],
-                                 "19": [0.94902, 0.819608, 0.788235],
-                                 "20": [0, 0.521569, 0.54902],
-                                 "21": [1, 1, 1]
+                    "colourLookup": { "1": [0.870588, 0.898039, 0.92549, 1.0],
+                                 "2": [0.67451, 0.701961, 0.305882, 1.0],
+                                 "3": [0.929412, 0.6, 0.568627, 1.0],
+                                 "4": [0.945098, 0.298039, 0.321569, 1.0],
+                                 "5": [0.901961, 0.721569, 0.686275, 1.0],
+                                 "6": [0.764706, 0.862745, 0.788235, 1.0],
+                                 "7": [0.764706, 0.862745, 0.788235, 1.0],
+                                 "8": [0.764706, 0.862745,0.788235, 1.0],
+                                 "9": [0.764706, 0.862745, 0.788235, 1.0],
+                                 "10": [0.0, 0.392157, 0.0, 1.0],
+                                 "11": [0.788235, 0.756863, 0.87451, 1.0],
+                                 "12": [0.231373, 0.701961, 0.435294, 1.0],
+                                 "13": [0.164706, 0.533333, 0.780392, 1.0],
+                                 "14": [0.254902, 0.533333, 0.243137, 1.0],
+                                 "15": [0.584314, 0.384314, 0.737255, 1.0],
+                                 "16": [0.839216, 0.803922, 0.768627, 1.0],
+                                 "17": [0.976471, 0.701961, 0.607843, 1.0],
+                                 "18": [0.921569, 0.47451, 0.458824, 1.0],
+                                 "19": [0.94902, 0.819608, 0.788235, 1.0],
+                                 "20": [0.0, 0.521569, 0.54902, 1.0],
+                                 "21": [1.0, 1.0, 1.0, 1.0]
                     },
-                    "labelLookup": { "1": "20_Mantle",
+                    "dataDims": [
+                        103,
+                        175,
+                        103
+                    ],
+                    "dataType": "INT_16",
+                    "labelLookup": {
+                        "1": "20_Mantle",
                         "2": "19_Lower_crust",
                         "3": "18_Yarraquin_Seismic_Province",
-                        "4": "17_Murchison_granite", 
-                        "5": "16_Southern_Cross_granite", 
+                        "4": "17_Murchison_granite",
+                        "5": "16_Southern_Cross_granite",
                         "6": "13_Barrambie_Igneous_Complex",
                         "7": "11_Unaly_Hill_greenstone",
                         "8": "14_North_Cook_Well_greenstone",
-                        "9": "12_Gum_Creek_greenstone", 
+                        "9": "12_Gum_Creek_greenstone",
                         "10": "10_Basal_mafic",
                         "11": "09_Tremolite_schist",
                         "12": "08_Massive_mafic",
                         "13": "07_Banded_iron_formation",
                         "14": "06_Mafic_with_BIF",
-                        "15": "05_Ultramafic", 
+                        "15": "05_Ultramafic",
                         "16": "04_Metasedimentary",
                         "17": "15_Foliated_granite",
-                        "18": "03_D2_granite", 
-                        "19": "02_Bald_Rock_Supersuite", 
+                        "18": "03_D2_granite",
+                        "19": "02_Bald_Rock_Suoersuite",
                         "20": "01_Proterozoic_dyke",
                         "21": "Air"
-                     }
-                },
-                "type": "3DVolume"                
+                    },
+                    "maxVal": 21.0,
+                    "minVal": 1.0,
+                    "origin": [
+                        696000.0,
+                        6863000.0,
+                        -40000.0
+                    ],
+                    "size": [
+                        50504.85436893208,
+                        86502.85714285728,
+                        50504.854368932036
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            1.0
+                        ]
+                    ]
+                }
             },
             {
                 "display_name": "Density",
-                "displayed": true,
-                "include": true,
-                "model_url": "3D_geology_VPmg_density.gz",
+                "displayed": false,
+                "include":true,
+                "model_url": "3D_geology_VPmg_density@@.gz",
+                "type": "3DVolume",
                 "volumeData": {
+                    "dataDims": [
+                        103,
+                        175,
+                        103
+                    ],
                     "dataType": "FLOAT_32",
-                    "dataDims": [103, 175, 103],
-                    "origin": [696000.0, 6863000.0, -40000.0],
-                    "size": [51000.0, 87000.0, 51000.0],
-                    "maxVal": 0.19,
-                    "minVal": -0.241651
-                },
-                "type": "3DVolume"                
+                    "maxVal": 0.1899999976158142,
+                    "minVal": -0.5878999829292297,
+                    "origin": [
+                        696000.0,
+                        6863000.0,
+                        -40000.0
+                    ],
+                    "size": [
+                        50504.85436893208,
+                        86502.85714285728,
+                        50504.854368932036
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            1.0
+                        ]                       
+                    ]
+                }
             },
             {
                 "display_name": "Susceptibility",
                 "displayed": false,
-                "include": true,
-                "model_url": "3D_geology_VPmg_susceptibility.gz",
+                "include":true,
+                "model_url": "3D_geology_VPmg_susceptibility@@.gz",
+                "type": "3DVolume",
                 "volumeData": {
+                    "dataDims": [
+                        103,
+                        175,
+                        103
+                    ],
                     "dataType": "FLOAT_32",
-                    "dataDims": [103, 175, 103],
-                    "origin": [696000.0, 6863000.0, -40000.0],
-                    "size": [51000.0, 87000.0, 51000.0],
-                    "maxVal": 0.0424554,
-                    "minVal": 0.0
+                    "maxVal": 0.7250000238418579,
+                    "minVal": 0.0,
+                    "origin": [
+                        696000.0,
+                        6863000.0,
+                        -40000.0
+                    ],
+                    "size": [
+                        50504.85436893208,
+                        86502.85714285728,
+                        50504.854368932036
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            1.0
+                        ]
+                    ]
+                }
+            }
+        ],
+        "Seismic": [
+            {
+                "display_name": "10GA YU2",
+                "displayed":false,
+                "include":true,
+                "model_url": "10GA_YU2.gltf",
+                "popups": {
+                    "null": {
+                        "name": "CDP",
+                        "title": "10GA YU2",
+                        "val": 10808.0
+                    }
                 },
-                "type": "3DVolume"                
+                "type": "GLTFObject"
+            }
+        ],
+        "Faults": [
+            {
+                "display_name": "F1 Youanmi Shear Zone",
+                "displayed":false,
+                "include":true,
+                "model_url": "F1_Youanmi_Shear_Zone.gltf",
+                "popups": {
+                    "F1_YOUANMI_SHEAR_ZONE": {
+                        "name": "F1_YOUANMI_SHEAR_ZONE",
+                        "title": "F1_YOUANMI_SHEAR_ZONE"
+                    }
+                },
+                "type": "GLTFObject"
             },
             {
-                "display_name": "Regions",
-                "displayed": false,
-                "include": false,
-                "model_url": "3D_geology_flags.gz",
-                "volumeData": {
-                    "dataType": "BIT_MASK",
-                    "bitSize": 27,
-                    "dataDims": [103, 175, 103],
-                    "origin": [696000.0, 6863000.0, -40000.0],
-                    "size": [51000.0, 87000.0, 51000.0],
-                    "colourLookup": { "9": [0.870588, 0.898039, 0.92549],
-                                 "10": [0.67451, 0.701961, 0.305882],
-                                 "8": [0.929412, 0.6, 0.568627],
-                                 "6": [0.945098, 0.298039, 0.321569],
-                                 "11": [0.901961, 0.721569, 0.686275],
-                                 "24": [0.764706, 0.862745, 0.788235],
-                                 "19": [0.764706, 0.862745, 0.788235],
-                                 "21": [0.764706, 0.862745, 0.788235],
-                                 "9": [0.764706, 0.862745, 0.788235],
-                                 "18": [0, 0.392157, 0],
-                                 "22": [0.788235, 0.756863, 0.87451],
-                                 "17": [0.231373, 0.701961, 0.435294],
-                                 "20": [0.164706, 0.533333, 0.780392],
-                                 "16": [0.254902, 0.533333, 0.243137],
-                                 "25": [0.584314, 0.384314, 0.737255],
-                                 "26": [0.839216, 0.803922, 0.768627],
-                                 "12": [0.976471, 0.701961, 0.607843],
-                                 "13": [0.921569, 0.47451, 0.458824],
-                                 "14": [0.94902, 0.819608, 0.788235],
-                                 "23": [0, 0.521569, 0.54902],
-                                 "7": [1, 1, 1]
-                    },
-                    "labelLookup": { "6": "17_Murchison_granite", 
-                        "7": "Air", 
-                        "8": "18_Yarraquin_Seismic_Province", 
-                        "9": "20_Mantle", 
-                        "10": "19_Lower_crust", 
-                        "11": "16_Southern_Cross_granite", 
-                        "12": "15_Foliated_granite", 
-                        "13": "03_D2_granite", 
-                        "14": "02_Bald_Rock_Supersuite", 
-                        "9": "12_Gum_Creek_greenstone", 
-                        "16": "06_Mafic_with_BIF",
-                        "17": "08_Massive_mafic", 
-                        "18": "10_Basal_mafic",
-                        "19": "11_Unaly_Hill_greenstone",
-                        "20": "07_Banded_iron_formation",
-                        "21": "14_North_Cook_Well_greenstone",
-                        "22": "09_Tremolite_schist",
-                        "23": "01_Proterozoic_dyke",
-                        "24": "13_Barrambie_Igneous_Complex",
-                        "25": "05_Ultramafic", 
-                        "26": "04_Metasedimentary"
-                     }
+                "display_name": "F2 Edale Shear Zone",
+                "displayed":false,
+                "include":true,
+                "model_url": "F2_Edale_Shear_Zone.gltf",
+                "popups": {
+                    "F2_EDALE_SHEAR_ZONE": {
+                        "name": "F2_EDALE_SHEAR_ZONE",
+                        "title": "F2_EDALE_SHEAR_ZONE"
+                    }
                 },
-                "type": "3DVolume"                
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F3 Granite fault",
+                "displayed":false,
+                "include":true,
+                "model_url": "F3_Granite_fault.gltf",
+                "popups": {
+                    "F3_GRANITE_FAULT": {
+                        "name": "F3_GRANITE_FAULT",
+                        "title": "F3_GRANITE_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F4 Granite fault",
+                "displayed":false,
+                "include":true,
+                "model_url": "F4_Granite_fault.gltf",
+                "popups": {
+                    "F4_GRANITE_FAULT": {
+                        "name": "F4_GRANITE_FAULT",
+                        "title": "F4_GRANITE_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F5 Greenstone fault",
+                "displayed":false,
+                "include":true,
+                "model_url": "F5_Greenstone_fault.gltf",
+                "popups": {
+                    "F5_GREENSTONE_FAULT": {
+                        "name": "F5_GREENSTONE_FAULT",
+                        "title": "F5_GREENSTONE_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F6 Greenstone fault",
+                "displayed":false,
+                "include":true,
+                "model_url": "F6_Greenstone_fault.gltf",
+                "popups": {
+                    "F6_GREENSTONE_FAULT": {
+                        "name": "F6_GREENSTONE_FAULT",
+                        "title": "F6_GREENSTONE_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F7 Greenstone fault",
+                "displayed":false,
+                "include":true,
+                "model_url": "F7_Greenstone_fault.gltf",
+                "popups": {
+                    "F7_GREENSTONE_FAULT": {
+                        "name": "F7_GREENSTONE_FAULT",
+                        "title": "F7_GREENSTONE_FAULT"
+                    }
+                },
+                "type": "GLTFObject"
+            }
+        ],
+        "Stratigraphy" : [
+            {
+                "display_name": "S01 Protoerozoic dyke",
+                "displayed":false,
+                "include":true,
+                "model_url": "S01_Protoerozoic_dyke.gltf",
+                "popups": {
+                    "S01_PROTOEROZOIC_DYKE": {
+                        "name": "S01_PROTOEROZOIC_DYKE",
+                        "title": "S01_PROTOEROZOIC_DYKE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "S02 Bald Rock Supersuite",
+                "displayed":false,
+                "include":true,
+                "model_url": "S02_Bald_Rock_Supersuite.gltf",
+                "popups": {
+                    "S02_BALD_ROCK_SUPERSUITE": {
+                        "name": "S02_BALD_ROCK_SUPERSUITE",
+                        "title": "S02_BALD_ROCK_SUPERSUITE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "S03 D2 granite",
+                "displayed":false,
+                "include":true,
+                "model_url": "S03_D2_granite.gltf",
+                "popups": {
+                    "S03_D2_GRANITE": {
+                        "name": "S03_D2_GRANITE",
+                        "title": "S03_D2_GRANITE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "S04 Metasedimentary",
+                "displayed":false,
+                "include":true,
+                "model_url": "S04_Metasedimentary.gltf",
+                "popups": {
+                    "S04_METASEDIMENTARY": {
+                        "name": "S04_METASEDIMENTARY",
+                        "title": "S04_METASEDIMENTARY"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "S05 Ultramafic",
+                "displayed":false,
+                "include":true,
+                "model_url": "S05_Ultramafic.gltf",
+                "popups": {
+                    "S05_ULTRAMAFIC": {
+                        "name": "S05_ULTRAMAFIC",
+                        "title": "S05_ULTRAMAFIC"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "S06 Mafic with BIF",
+                "displayed":false,
+                "include":true,
+                "model_url": "S06_Mafic_with_BIF.gltf",
+                "popups": {
+                    "S06_MAFIC_WITH_BIF": {
+                        "name": "S06_MAFIC_WITH_BIF",
+                        "title": "S06_MAFIC_WITH_BIF"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "S07 Banded iron formation",
+                "displayed":false,
+                "include":true,
+                "model_url": "S07_Banded_iron_formation.gltf",
+                "popups": {
+                    "S07_BANDED_IRON_FORMATION": {
+                        "name": "S07_BANDED_IRON_FORMATION",
+                        "title": "S07_BANDED_IRON_FORMATION"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "S08 Massive mafic",
+                "displayed":false,
+                "include":true,
+                "model_url": "S08_Massive_mafic.gltf",
+                "popups": {
+                    "S08_MASSIVE_MAFIC": {
+                        "name": "S08_MASSIVE_MAFIC",
+                        "title": "S08_MASSIVE_MAFIC"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "S09 Tremolite schist",
+                "displayed":false,
+                "include":true,
+                "model_url": "S09_Tremolite_schist.gltf",
+                "popups": {
+                    "S09_TREMOLITE_SCHIST": {
+                        "name": "S09_TREMOLITE_SCHIST",
+                        "title": "S09_TREMOLITE_SCHIST"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "S10 Base of greenstone",
+                "displayed":false,
+                "include":true,
+                "model_url": "S10_Base_of_greenstone.gltf",
+                "popups": {
+                    "S10_BASE_OF_GREENSTONE": {
+                        "name": "S10_BASE_OF_GREENSTONE",
+                        "title": "S10_BASE_OF_GREENSTONE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "S11 Unaly Hill greenstone",
+                "displayed":false,
+                "include":true,
+                "model_url": "S11_Unaly_Hill_greenstone.gltf",
+                "popups": {
+                    "S11_UNALY_HILL_GREENSTONE": {
+                        "name": "S11_UNALY_HILL_GREENSTONE",
+                        "title": "S11_UNALY_HILL_GREENSTONE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "S12 Gum Creek greenstone",
+                "displayed":false,
+                "include":true,
+                "model_url": "S12_Gum_Creek_greenstone.gltf",
+                "popups": {
+                    "S12_GUM_CREEK_GREENSTONE": {
+                        "name": "S12_GUM_CREEK_GREENSTONE",
+                        "title": "S12_GUM_CREEK_GREENSTONE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "S13 Barrambie Igneous Complex",
+                "displayed":false,
+                "include":true,
+                "model_url": "S13_Barrambie_Igneous_Complex.gltf",
+                "popups": {
+                    "S13_BARRAMBIE_IGNEOUS_COMPLEX": {
+                        "name": "S13_BARRAMBIE_IGNEOUS_COMPLEX",
+                        "title": "S13_BARRAMBIE_IGNEOUS_COMPLEX"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "S14 North Cook Well greenstone",
+                "displayed":false,
+                "include":true,
+                "model_url": "S14_North_Cook_Well_greenstone.gltf",
+                "popups": {
+                    "S14_NORTH_COOK_WELL_GREENSTONE": {
+                        "name": "S14_NORTH_COOK_WELL_GREENSTONE",
+                        "title": "S14_NORTH_COOK_WELL_GREENSTONE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "S17 Murchison granite",
+                "displayed":false,
+                "include":true,
+                "model_url": "S17_Murchison_granite.gltf",
+                "popups": {
+                    "S17_MURCHISON_GRANITE": {
+                        "name": "S17_MURCHISON_GRANITE",
+                        "title": "S17_MURCHISON_GRANITE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "S18 Yarraquin Seismic Province",
+                "displayed":false,
+                "include":true,
+                "model_url": "S18_Yarraquin_Seismic_Province.gltf",
+                "popups": {
+                    "S18_YARRAQUIN_SEISMIC_PROVINCE": {
+                        "name": "S18_YARRAQUIN_SEISMIC_PROVINCE",
+                        "title": "S18_YARRAQUIN_SEISMIC_PROVINCE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "S19 Lower crust",
+                "displayed":false,
+                "include":true,
+                "model_url": "S19_Lower_crust.gltf",
+                "popups": {
+                    "S19_LOWER_CRUST": {
+                        "name": "S19_LOWER_CRUST",
+                        "title": "S19_LOWER_CRUST"
+                    }
+                },
+                "type": "GLTFObject"
+            }
+        ],
+        "Bouger Anomaly": [
+            {
+                "display_name": "SANDSTONE GRAV BOUG GRID 1",
+                "displayed":false,
+                "include":true,
+                "model_url": "Sandstone_grav_boug_grid_grav@@.PNG",
+                "popups": {
+                    "Sandstone_grav_boug_grid_grav@@": {
+                        "name": "GRAV",
+                        "title": "GRAV"
+                    }
+                },
+                "position": [
+                    696080.0,
+                    6863120.0,
+                    0.0
+                ],
+                "type": "ImagePlane"
+            }
+        ],
+        "Magnetics": [
+            {
+                "display_name": "SANDSTONE TMI GRID 1",
+                "displayed":false,
+                "include":true,
+                "model_url": "Sandstone_TMI_grid_mag@@.PNG",
+                "popups": {
+                    "Sandstone_TMI_grid_mag@@": {
+                        "name": "MAG",
+                        "title": "MAG"
+                    }
+                },
+                "position": [
+                    696041.599609375,
+                    6863044.6015625,
+                    400.0
+                ],
+                "type": "ImagePlane"
+            }
+        ],
+        "Topography": [
+            {
+                "display_name": "Sandstone SRTM elevation",
+                "displayed":false,
+                "include":true,
+                "model_url": "Sandstone_SRTM_elevation.gltf",
+                "popups": {
+                    "SANDSTONE_SRTM_ELEVATION": {
+                        "name": "SANDSTONE_SRTM_ELEVATION",
+                        "title": "SANDSTONE_SRTM_ELEVATION"
+                    }
+                },
+                "type": "GLTFObject"
+            }
+        ],
+        "Stratigraphic Surfaces": [
+            {
+                "display_name": "V01 Proterozoic dyke",
+                "displayed":false,
+                "include":true,
+                "model_url": "V01_Proterozoic_dyke.gltf",
+                "popups": {
+                    "V01_PROTEROZOIC_DYKE": {
+                        "name": "V01_PROTEROZOIC_DYKE",
+                        "title": "V01_PROTEROZOIC_DYKE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V02 Bald Rock Supersuite",
+                "displayed":false,
+                "include":true,
+                "model_url": "V02_Bald_Rock_Supersuite.gltf",
+                "popups": {
+                    "V02_BALD_ROCK_SUPERSUITE": {
+                        "name": "V02_BALD_ROCK_SUPERSUITE",
+                        "title": "V02_BALD_ROCK_SUPERSUITE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V03 D2 granite",
+                "displayed":false,
+                "include":true,
+                "model_url": "V03_D2_granite.gltf",
+                "popups": {
+                    "V03_D2_GRANITE": {
+                        "name": "V03_D2_GRANITE",
+                        "title": "V03_D2_GRANITE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V04 Metasedimentary",
+                "displayed":false,
+                "include":true,
+                "model_url": "V04_Metasedimentary.gltf",
+                "popups": {
+                    "V04_METASEDIMENTARY": {
+                        "name": "V04_METASEDIMENTARY",
+                        "title": "V04_METASEDIMENTARY"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V05 Ultramafic",
+                "displayed":false,
+                "include":true,
+                "model_url": "V05_Ultramafic.gltf",
+                "popups": {
+                    "V05_ULTRAMAFIC": {
+                        "name": "V05_ULTRAMAFIC",
+                        "title": "V05_ULTRAMAFIC"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V06 Mafic with BIF",
+                "displayed":false,
+                "include":true,
+                "model_url": "V06_Mafic_with_BIF.gltf",
+                "popups": {
+                    "V06_MAFIC_WITH_BIF": {
+                        "name": "V06_MAFIC_WITH_BIF",
+                        "title": "V06_MAFIC_WITH_BIF"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V07 Banded iron formation",
+                "displayed":false,
+                "include":true,
+                "model_url": "V07_Banded_iron_formation.gltf",
+                "popups": {
+                    "V07_BANDED_IRON_FORMATION": {
+                        "name": "V07_BANDED_IRON_FORMATION",
+                        "title": "V07_BANDED_IRON_FORMATION"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V08 Massive mafic",
+                "displayed":false,
+                "include":true,
+                "model_url": "V08_Massive_mafic.gltf",
+                "popups": {
+                    "V08_MASSIVE_MAFIC": {
+                        "name": "V08_MASSIVE_MAFIC",
+                        "title": "V08_MASSIVE_MAFIC"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V09 Tremolite schist",
+                "displayed":false,
+                "include":true,
+                "model_url": "V09_Tremolite_schist.gltf",
+                "popups": {
+                    "V09_TREMOLITE_SCHIST": {
+                        "name": "V09_TREMOLITE_SCHIST",
+                        "title": "V09_TREMOLITE_SCHIST"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V10 Basal mafic",
+                "displayed":false,
+                "include":true,
+                "model_url": "V10_Basal_mafic.gltf",
+                "popups": {
+                    "V10_BASAL_MAFIC": {
+                        "name": "V10_BASAL_MAFIC",
+                        "title": "V10_BASAL_MAFIC"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V11 Unaly Hill greenstone",
+                "displayed":false,
+                "include":true,
+                "model_url": "V11_Unaly_Hill_greenstone.gltf",
+                "popups": {
+                    "V11_UNALY_HILL_GREENSTONE": {
+                        "name": "V11_UNALY_HILL_GREENSTONE",
+                        "title": "V11_UNALY_HILL_GREENSTONE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V12 Gum Creek greenstone",
+                "displayed":false,
+                "include":true,
+                "model_url": "V12_Gum_Creek_greenstone.gltf",
+                "popups": {
+                    "V12_GUM_CREEK_GREENSTONE": {
+                        "name": "V12_GUM_CREEK_GREENSTONE",
+                        "title": "V12_GUM_CREEK_GREENSTONE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V13 Barrambie Igneous Complex",
+                "displayed":false,
+                "include":true,
+                "model_url": "V13_Barrambie_Igneous_Complex.gltf",
+                "popups": {
+                    "V13_BARRAMBIE_IGNEOUS_COMPLEX": {
+                        "name": "V13_BARRAMBIE_IGNEOUS_COMPLEX",
+                        "title": "V13_BARRAMBIE_IGNEOUS_COMPLEX"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V14 North Cook Well greenstone",
+                "displayed":false,
+                "include":true,
+                "model_url": "V14_North_Cook_Well_greenstone.gltf",
+                "popups": {
+                    "V14_NORTH_COOK_WELL_GREENSTONE": {
+                        "name": "V14_NORTH_COOK_WELL_GREENSTONE",
+                        "title": "V14_NORTH_COOK_WELL_GREENSTONE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V15 Foliated granite",
+                "displayed":false,
+                "include":true,
+                "model_url": "V15_Foliated_granite.gltf",
+                "popups": {
+                    "V15_FOLIATED_GRANITE": {
+                        "name": "V15_FOLIATED_GRANITE",
+                        "title": "V15_FOLIATED_GRANITE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V16 Southern Cross granite",
+                "displayed":false,
+                "include":true,
+                "model_url": "V16_Southern_Cross_granite.gltf",
+                "popups": {
+                    "V16_SOUTHERN_CROSS_GRANITE": {
+                        "name": "V16_SOUTHERN_CROSS_GRANITE",
+                        "title": "V16_SOUTHERN_CROSS_GRANITE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V17 Murchison granite",
+                "displayed":false,
+                "include":true,
+                "model_url": "V17_Murchison_granite.gltf",
+                "popups": {
+                    "V17_MURCHISON_GRANITE": {
+                        "name": "V17_MURCHISON_GRANITE",
+                        "title": "V17_MURCHISON_GRANITE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V18 Yarraquin Seismic Province",
+                "displayed":false,
+                "include":true,
+                "model_url": "V18_Yarraquin_Seismic_Province.gltf",
+                "popups": {
+                    "V18_YARRAQUIN_SEISMIC_PROVINCE": {
+                        "name": "V18_YARRAQUIN_SEISMIC_PROVINCE",
+                        "title": "V18_YARRAQUIN_SEISMIC_PROVINCE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V19 Lower crust",
+                "displayed":false,
+                "include":true,
+                "model_url": "V19_Lower_crust.gltf",
+                "popups": {
+                    "V19_LOWER_CRUST": {
+                        "name": "V19_LOWER_CRUST",
+                        "title": "V19_LOWER_CRUST"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "V20 Mantle",
+                "displayed":false,
+                "include":true,
+                "model_url": "V20_Mantle.gltf",
+                "popups": {
+                    "V20_MANTLE": {
+                        "name": "V20_MANTLE",
+                        "title": "V20_MANTLE"
+                    }
+                },
+                "type": "GLTFObject"
+            }
+        ],
+        "Inversion Results": [
+            {
+                "display_name": "VPMG GRAVITY",
+                "displayed":false,
+                "include":true,
+                "model_url": "VPmg_gravity_inversion_results.gltf",
+                "popups": {
+                    "null": {
+                        "name": "CALCULATED",
+                        "title": "VPMG GRAVITY INVERSION RESULTS",
+                        "val": -46.50699996948242
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "VPMG MAGNETIC",
+                "displayed":false,
+                "include":true,
+                "model_url": "VPmg_magnetic_inversion_results.gltf",
+                "popups": {
+                    "null": {
+                        "name": "CALCULATED",
+                        "title": "VPMG MAGNETIC INVERSION RESULTS",
+                        "val": 214.60499572753906
+                    }
+                },
+                "type": "GLTFObject"
             }
         ]
     },
     "properties": {
         "crs": "EPSG:3857",
         "extent": [
-            696000.0,
-            746504.8543689321,
+            695916.876953125,
+            747101.2578125,
             6863000.0,
-            6949502.857142857
+            6950504.53125
         ],
         "init_cam_dist": 500000.0,
         "name": "Sandstone"

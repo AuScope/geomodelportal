@@ -515,7 +515,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         // }));
 
         // Get a list of borehole_ids - slow to load so they are done in the background
-        /*this.modelInfoService.getBoreHoleIds().then(
+        this.modelInfoService.getBoreHoleIds().then(
             function(boreholeIdList: any[]) {
                 console.log('GOT BH LIST', boreholeIdList);
                 for (const boreholeId of boreholeIdList) {
@@ -546,7 +546,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             function(err) {
                 console.log('BOREHOLE ID LIST load error!', err);
             }
-        );*/
+        );
 
         Promise.all(promiseList).then(
             // function called when all objects are loaded
@@ -751,7 +751,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                         const camera = local.view.camera.camera3D;
                         const dist = intersects[i].point.distanceTo(camera.position);
                         const name = intersects[i].object.name;
-                        if (dist < min_dist  && name) {
+                        if (dist < min_dist && name) {
                             min_dist = dist;
                             closest = i;
                         }
@@ -839,7 +839,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                         data => {
                             const queryResult = data as string [];
                             console.log('queryResult = ', queryResult);
-                            local.makePopup(event, queryResult, objIntPt);
+                            if  (queryResult.hasOwnProperty('title')) {
+                                local.makePopup(event, queryResult, objIntPt);
+                            }
                         },
                         (err: HttpErrorResponse) => {
                             console.log('Cannot load borehole list', err);
