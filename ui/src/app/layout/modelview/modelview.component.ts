@@ -284,24 +284,19 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         }
     }
 
-    /**
-     * @return the radius of the virtual sphere used to rotate the model with the mouse, units are pixels
-     */
-    private getVirtualSphereRadius(): number {
-        if (this.trackBallControls) {
-            return this.trackBallControls.getVirtualSphereRadius();
-        }
-        return 0.0;
-    }
 
     /**
-     * @return the [X,Y] screen coordinates (in pixels) of the virtual sphere used to rotate the model with the mouse
+     * Retrieves the current dimensions of the virtual sphere
+     * @return {x: centreX, y: centreY, r: radius } (centreX, centreY) are the screen coordinates and radius
+     * (in pixels) of the virtual sphere used to rotate the model with the mouse
      */
-    private getVirtualSphereCentre(): [number, number] {
+    private getVirtualSphere(): {x: number, y: number, r: number} {
         if (this.trackBallControls) {
-            return this.trackBallControls.getVirtualSphereCentre();
+            const centre = this.trackBallControls.getVirtualSphereCentre();
+            const radius = this.trackBallControls.getVirtualSphereRadius();
+            return {x: centre[0], y: centre[1], r: radius};
         }
-        return [0.0, 0.0];
+        return {x: 0.0, y: 0.0, r: 0.0};
     }
 
     /**
@@ -317,20 +312,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     }
 
     /**
-     * Updates our version of the centre point of the model.
-     * Used to realign the mouse guide and inform the overview window
-     * @param isMove is true when camera has moved position, is false when view angle has changed
+     * Updates our version of the camera position
      */
-    private cameraPosChange(isMove: boolean, isRotate: boolean) {
-        if (isMove) {
-            const sphereCentre = this.getVirtualSphereCentre();
-            this.sphereCentreX = sphereCentre[0];
-            this.sphereCentreY = sphereCentre[1];
-        }
-        if (isRotate) {
-            const newPos = this.getCameraPosition();
-            this.modelInfoService.newCameraPos([newPos.x, newPos.y, newPos.z, newPos.order]);
-        }
+    private cameraPosChange() {
+        const newPos = this.getCameraPosition();
+        this.modelInfoService.newCameraPos([newPos.x, newPos.y, newPos.z, newPos.order]);
     }
 
     /**
@@ -522,11 +508,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             }
         }
 
-        // Include helper axes
-        promiseList.push( new Promise( function(resolve) {
-            local.addHelperAxes();
-            resolve(true);
-        }));
+        // // Include helper axes
+        // promiseList.push( new Promise( function(resolve) {
+        //     local.addHelperAxes();
+        //     resolve(true);
+        // }));
 
         // Get a list of borehole_ids - slow to load so they are done in the background
         /*this.modelInfoService.getBoreHoleIds().then(
@@ -863,13 +849,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         });
 
         // 3 axis virtual globe controller
-        this.trackBallControls = new GeoModelControls(this.viewerDiv, this.view.camera.camera3D, this.view,
+        this.trackBallControls = new GeoModelControls(this.scene, this.viewerDiv, this.view.camera.camera3D, this.view,
                                            this.extentObj.center().xyz(), this.initCamDist, this.cameraPosChange.bind(this));
         this.scene.add(this.trackBallControls.getObject());
-        this.sphereRadius = this.getVirtualSphereRadius();
-        const sphereCentre = this.getVirtualSphereCentre();
-        this.sphereCentreX = sphereCentre[0];
-        this.sphereCentreY = sphereCentre[1];
+        this.onResize(null);
 
         // Wait for the signal to start model demonstration
         const helpObs = this.helpinfoService.waitForModelDemo();
@@ -958,7 +941,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param event event object
      */
     public onResize({}) {
-        this.cameraPosChange(true, false);
+        const vsObj = this.getVirtualSphere();
+        this.sphereCentreX = vsObj.x;
+        this.sphereCentreY = vsObj.y;
+        this.sphereRadius = vsObj.r;
     }
 
     /**
@@ -1024,7 +1010,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      */
     private resetModelView() {
         this.trackBallControls.resetView();
-        this.cameraPosChange(true, true);
+        this.cameraPosChange();
     }
 
     /**

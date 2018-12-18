@@ -14,8 +14,11 @@ const mouseButtons = {
     RIGHTCLICK: THREE.MOUSE.RIGHT,
 };
 
+const CROSSHAIR_NAME = 'crosshair';
+
 /**
 * Three axis virtual globe controller
+* @param scene the scene on which the graphics is built
 * @param viewerDiv div where the graphics will be displayed
 * @param camera camera object for viewing
 * @param view view object
@@ -23,12 +26,13 @@ const mouseButtons = {
 * @param cameraDist distance from camera to centre of model (metres)
 * @param mouseEventCallback function to be called upon mouse events format: function()
 */
-function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelMoveCallback) {
+function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist, cameraMoveCallback) {
     const scope = this;
     this.domElement = view.mainLoop.gfxEngine.renderer.domElement;
     this.rotCentre = rotCentre;
     this.viewerDiv = viewerDiv;
-    this.modelMoveCallback = modelMoveCallback;
+    this.cameraMoveCallback = cameraMoveCallback;
+    this.scene = scene;
 
     // State of the model movement demonstration
     this.demoState = 0;
@@ -41,13 +45,13 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
     const lastMousePosition = new THREE.Vector2();
     const deltaMousePosition = new THREE.Vector2(0, 0);
 
-    // Keeps track of camera's movement due to mouse drag
-    // This helps us move the virtual sphere around the page
-    this.cameraOffset = new THREE.Vector3();
-
     // Rotational object, used to rotate the camera around the model
     const rObject = new THREE.Object3D();
     rObject.add(camera);
+
+    // Initialise cross hairs used when in mouse drag mode
+    let crosshairH = null;
+    let crosshairV = null;
 
     // Set camera position relative to model centre
     camera.position.set(0.0, 0.0, cameraDist);
@@ -70,7 +74,31 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
 
     // Update rObject's local matrix and store the value of the camera, rObject and offset for a future reset operation
     rObject.updateMatrix();
-    this.resetState = { rObj: rObject.clone(), camera: this.camera.clone(), offset: this.cameraOffset.clone() };
+    this.resetState = { rObj: rObject.clone(), camera: this.camera.clone() };
+
+    /**
+     * Creates a pair of cross hairs, used when the model is dragged across the screen
+     */
+    this.createCrossHairs = function() {
+        if (!crosshairH && !crosshairV) {
+            const material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
+            const geometryH = new THREE.Geometry();
+            const geometryV = new THREE.Geometry();
+            geometryH.vertices.push(new THREE.Vector3(-1000, 0, 0));
+            geometryH.vertices.push(new THREE.Vector3(1000, 0, 0));
+            geometryV.vertices.push(new THREE.Vector3(0, -1000, 0));
+            geometryV.vertices.push(new THREE.Vector3(0, 1000, 0));
+            crosshairH = new THREE.Line( geometryH, material );
+            crosshairH.name = CROSSHAIR_NAME;
+            crosshairH.position.setZ(camera.position.z / 2.0);
+            rObject.add(crosshairH);
+            crosshairV = new THREE.Line( geometryV, material );
+            crosshairV.position.setZ(camera.position.z / 2.0);
+            crosshairV.name = CROSSHAIR_NAME;
+            rObject.add(crosshairV);
+        }
+    };
+
 
     /**
      * Called when we need to update our record of the mouse position and delta
@@ -118,6 +146,41 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
      */
     this.onMouseUp = function onMouseUp(event) {
         event.preventDefault();
+        if (scope.state === STATE.DRAG) {
+            // Remove cross hairs
+            if (crosshairH) {
+                rObject.remove(crosshairH);
+                crosshairH = null;
+            }
+            if (crosshairV) {
+                rObject.remove(crosshairV);
+                crosshairV = null;
+            }
+            // Centre of screen in normalized device coordinates (-1 <= x,y <= 1)
+            const centre = new THREE.Vector2();
+            centre.set(0, 0);
+
+            // Update the picking ray with the camera and centre screen position
+            const raycaster = new THREE.Raycaster();
+            raycaster.setFromCamera(centre, scope.camera);
+
+            // Calculate objects intersecting the picking ray
+            const intersects = raycaster.intersectObjects(scope.scene.children, true);
+            if (intersects.length > 0) {
+                // Pick closest object
+                const point = intersects[0].point;
+                // Move the rotational centre to that point
+                rObject.position.copy(point);
+                rObject.updateMatrix();
+                // Tell everyone that the camera has changed position
+                scope.cameraMoveCallback();
+            }
+            // Now that rotational centre is moved, must move the camera position back
+            // because camera's global position = rObject.position + camera.position
+            scope.camera.position.setX(scope.resetState.camera.position.x);
+            scope.camera.position.setY(scope.resetState.camera.position.y);
+            viewObject.notifyChange(true);
+        }
         scope.state = STATE.NONE;
         scope.updateMouseCursorType();
     };
@@ -161,6 +224,7 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
       */
     this.initiateDrag = function initiateDrag() {
         scope.state = STATE.DRAG;
+        scope.createCrossHairs();
     };
 
     /*
@@ -188,13 +252,18 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
     this.handleDragMovement = function handleDragMovement() {
         const MOVEMENT_FACTOR = 0.0006;
         // Move the camera
-        scope.camera.position.x -= deltaMousePosition.y * MOVEMENT_FACTOR * scope.camera.position.length();
-        scope.camera.position.y -= deltaMousePosition.x * MOVEMENT_FACTOR * scope.camera.position.length();
-        // Keep track of this movement so we can move the virtual sphere with the model
-        scope.cameraOffset.x += deltaMousePosition.x;
-        scope.cameraOffset.y += deltaMousePosition.y;
-        // Tell everyone that the model has changed position
-        scope.modelMoveCallback(true, false);
+        const x_mvt = deltaMousePosition.y * MOVEMENT_FACTOR * scope.camera.position.length();
+        const y_mvt = deltaMousePosition.x * MOVEMENT_FACTOR * scope.camera.position.length();
+        scope.camera.position.x -= x_mvt;
+        scope.camera.position.y -= y_mvt;
+
+        // Move cross hairs in sync with camera
+        crosshairH.position.x -= x_mvt;
+        crosshairV.position.x -= x_mvt;
+        crosshairH.position.y -= y_mvt;
+        crosshairV.position.y -= y_mvt;
+
+        viewObject.notifyChange(true);
     };
 
     /**
@@ -202,7 +271,7 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
      * @return the radius of the virtual sphere in pixels
      */
     this.getVirtualSphereRadius = function getVirtualSphereRadius() {
-        return scope.domElement.clientHeight / 3.0;
+        return Math.min(scope.domElement.clientHeight, scope.domElement.clientWidth) / 3.0;
     };
 
     /**
@@ -210,8 +279,8 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
      * @return returns the centre point in screen coordinates as [x,y], units are pixels
      */
      this.getVirtualSphereCentre = function getVirtualSphereCentre() {
-         return [ scope.domElement.clientWidth / 2.0 + scope.cameraOffset.x,
-                 scope.domElement.clientHeight / 2.0 + scope.cameraOffset.y];
+         return [ scope.domElement.clientWidth / 2.0,
+                 scope.domElement.clientHeight / 2.0];
      };
 
     /**
@@ -230,8 +299,8 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
         const myLastMousePosition = new THREE.Vector2(0, 0);
         myLastMousePosition.copy(mousePosition).sub(deltaMousePosition);
         // The centre of the virtual sphere is centre of screen +/- offset due to mouse movement
-        const centreOffsetX = scope.domElement.clientWidth / 2.0 + scope.cameraOffset.x;
-        const centreOffsetY = scope.domElement.clientHeight / 2.0 + scope.cameraOffset.y;
+        const centreOffsetX = scope.domElement.clientWidth / 2.0;
+        const centreOffsetY = scope.domElement.clientHeight / 2.0;
         // Mouse position in normal XY coords
         const mp = new THREE.Vector2(mousePosition.x - centreOffsetX, centreOffsetY - mousePosition.y);
         // Last mouse position in normal XY coords
@@ -304,7 +373,7 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
         viewObject.notifyChange(true);
 
         // Tell caller that camera angle has changed
-        scope.modelMoveCallback(false, true);
+        scope.cameraMoveCallback();
     };
 
     /**
@@ -350,7 +419,7 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
     /**
      * Stops the demo loop
      */
-    this.stopDemoLoop = function stopDemoLoop(e) {
+    this.stopDemoLoop = function stopDemoLoop() {
         runningDemo = false;
     };
 
@@ -402,7 +471,6 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
         rObject.matrix.copy(this.resetState.rObj.matrix);
         rObject.rotation.setFromRotationMatrix(rObject.matrix);
         scope.camera.position.copy(this.resetState.camera.position);
-        scope.cameraOffset.copy(this.resetState.offset);
 
         // Update view
         viewObject.notifyChange(true);
@@ -422,7 +490,8 @@ function GeoModelControls(viewerDiv, camera, view, rotCentre, cameraDist, modelM
     this.viewerDiv.addEventListener('mouseup', this.onMouseUp, false);
     this.viewerDiv.addEventListener('mousedown', this.onMouseDown, false);
     this.viewerDiv.addEventListener('wheel', this.onMouseWheel, false);
-
+    // Stops the right hand click menu item popping up in the viewing area
+    this.viewerDiv.addEventListener('contextmenu', event => event.preventDefault());
 }
 
 export default GeoModelControls;
