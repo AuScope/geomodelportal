@@ -199,7 +199,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "Western Volcano Sedimentary sequence",
+                "display_name": "Western Volcano Sedimentary seq",
                 "displayed": true,
                 "include": true,
                 "model_url": "12_Western_Volcano_Sedimentary_sequence.gltf",
@@ -2649,7 +2649,7 @@
         "Digital Elevation Model": [
             {
                 "display_name": "RL DEM100m",
-                "displayed": true,
+                "displayed": false,
                 "include": true,
                 "model_url": "RL_DEM100m.gltf",
                 "popups": {
@@ -2659,12 +2659,12 @@
                     }
                 },
                 "type": "GLTFObject"
-            },
+            }
         ],
         "Grav model grids density": [
             {
                 "display_name": "RL GRAV MODEL GRIDS DENSITY 1",
-                "displayed": true,
+                "displayed":false,
                 "include": true,
                 "model_url": "RL_Grav_model_grids_density_B_Forward@@.PNG",
                 "popups": {
@@ -2682,7 +2682,7 @@
             },
             {
                 "display_name": "RL GRAV MODEL GRIDS DENSITY 2",
-                "displayed": true,
+                "displayed":false,
                 "include": true,
                 "model_url": "RL_Grav_model_grids_density_C_Residual_homogeneous@@.PNG",
                 "popups": {
@@ -2700,7 +2700,7 @@
             },
             {
                 "display_name": "RL GRAV MODEL GRIDS DENSITY 3",
-                "displayed": true,
+                "displayed":false,
                 "include": true,
                 "model_url": "RL_Grav_model_grids_density_A_Observed@@.PNG",
                 "popups": {
@@ -2718,7 +2718,7 @@
             },
             {
                 "display_name": "RL GRAV MODEL GRIDS DENSITY 4",
-                "displayed": true,
+                "displayed":false,
                 "include": true,
                 "model_url": "RL_Grav_model_grids_density_D_Heterogeneous@@.PNG",
                 "popups": {
@@ -2736,7 +2736,7 @@
             },
             {
                 "display_name": "RL GRAV MODEL GRIDS DENSITY 5",
-                "displayed": true,
+                "displayed":false,
                 "include": true,
                 "model_url": "RL_Grav_model_grids_density_C_Homogeneous@@.PNG",
                 "popups": {
@@ -2754,7 +2754,7 @@
             },
             {
                 "display_name": "RL GRAV MODEL GRIDS DENSITY 6",
-                "displayed": true,
+                "displayed":false,
                 "include": true,
                 "model_url": "RL_Grav_model_grids_density_D_Residual_Heterogeneous@@.PNG",
                 "popups": {
@@ -2774,7 +2774,7 @@
         "Mag model grids susc": [
             {
                 "display_name": "RL MAG MODEL GRIDS SUSC 1",
-                "displayed": true,
+                "displayed":false,
                 "include": true,
                 "model_url": "RL_Mag_model_grids_susc_B_Forward@@.PNG",
                 "popups": {
@@ -2792,7 +2792,7 @@
             },
             {
                 "display_name": "RL MAG MODEL GRIDS SUSC 2",
-                "displayed": true,
+                "displayed":false,
                 "include": true,
                 "model_url": "RL_Mag_model_grids_susc_C_Residual_Homogeneous@@.PNG",
                 "popups": {
@@ -2810,7 +2810,7 @@
             },
             {
                 "display_name": "RL MAG MODEL GRIDS SUSC 3",
-                "displayed": true,
+                "displayed":false,
                 "include": true,
                 "model_url": "RL_Mag_model_grids_susc_A_Observed@@.PNG",
                 "popups": {
@@ -2828,7 +2828,7 @@
             },
             {
                 "display_name": "RL MAG MODEL GRIDS SUSC 4",
-                "displayed": true,
+                "displayed":false,
                 "include": true,
                 "model_url": "RL_Mag_model_grids_susc_D_heterogeneous@@.PNG",
                 "popups": {
@@ -2846,7 +2846,7 @@
             },
             {
                 "display_name": "RL MAG MODEL GRIDS SUSC 5",
-                "displayed": true,
+                "displayed":false,
                 "include": true,
                 "model_url": "RL_Mag_model_grids_susc_C_Homogeneous@@.PNG",
                 "popups": {
@@ -2864,7 +2864,7 @@
             },
             {
                 "display_name": "RL MAG MODEL GRIDS SUSC 6",
-                "displayed": true,
+                "displayed":false,
                 "include": true,
                 "model_url": "RL_Mag_model_grids_susc_E_Residual_heterogeneous@@.PNG",
                 "popups": {
@@ -2879,7 +2879,9 @@
                     500.0
                 ],
                 "type": "ImagePlane"
-            },
+            }
+        ],
+        "Geophysics": [
             {
                 "display_name": "ROSEBERY_LYELL_GEOPHYSICS 1",
                 "displayed": false,
@@ -2898,7 +2900,7 @@
                     "origin": [
                         352000.0,
                         5320000.0,
-                        1550.0
+                        -9550.0
                     ],
                     "rotation": [
                         [
@@ -2942,7 +2944,7 @@
                     "origin": [
                         352000.0,
                         5320000.0,
-                        1550.0
+                        -9550.0
                     ],
                     "rotation": [
                         [
@@ -3214,7 +3216,7 @@
                     "origin": [
                         352000.0,
                         5320000.0,
-                        1550.0
+                        -9550.0
                     ],
                     "rotation": [
                         [
