@@ -12,14 +12,17 @@ import { HelpinfoService } from '../../shared/services/helpinfo.service';
 import { VolView, VolviewService, DataType } from '../../shared/services/volview.service';
 import { SceneObject, PlaneSceneObject, WMSSceneObject, VolSceneObject } from './scene-object';
 
-// Include threejs library
+// Include ThreeJS library
 import * as THREE from 'three';
 
-// GLTFLoader is not part of threejs' set of package exports, so we need this wrapper function
+// GLTFLoader is not part of ThreeJS' set of package exports, so we need this wrapper function
 // FIXME: Needs typescript bindings
 import * as GLTFLoader from '../../../../node_modules/three-gltf2-loader/lib/main';
 
 // Import itowns library
+// Note: In ThreeJS, buffer geometry ids are created by incrementing a counter which is local to the library.
+// So when creating objects to be added to the scene, we must always use ITOWNS' version of ThreeJS.
+// If we do not do this, there will be an overlap in ids and objects are not reliably rendered to screen.
 // FIXME: Needs typescript bindings
 import * as ITOWNS from '../../../../node_modules/itowns/dist/itowns';
 
@@ -444,9 +447,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Loads and draws the GLTF objects
      */
     private add3DObjects() {
-        // Note: In threeJS, buffer geometry ids are created by incrementing a counter.
-        // So we are forced to use ITOWNS' version of THREE to ensure that there is no overlap in ids
-        // and all objects are reliably rendered to screen
         const manager = new ITOWNS.THREE.LoadingManager();
 
         // This adds the 'GLTFLoader' object to 'THREE'
@@ -493,20 +493,12 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 );
                             })(parts[i], group);
                         }));
-                    // Load volume
-                    } else if (parts[i].type === '3DVolume' && parts[i].include) {
-                        const partId  = parts[i].model_url;
-                        const volView = this.volViewArr[group][partId];
-                        const volSceneObj  = new VolSceneObject(null, this.volViewService, volView);
-                        volSceneObj.volObjList = [];
-                        promiseList.push(this.volViewService.makePromise(volView, group, partId,
-                                        './assets/geomodels/' + local.model_dir + '/' + parts[i].model_url,
-                                        local.scene, volSceneObj.volObjList, parts[i].displayed));
-                        this.addPart(parts[i], volSceneObj, group);
                     }
                 }
             }
         }
+
+
 
         // // Include helper axes
         // promiseList.push( new Promise( function(resolve) {
@@ -557,7 +549,44 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             },
             // function called when one or more objects fail
             function( error ) {
-                console.error( 'Could not load all textures:', error );
+                console.error( 'Could not load all GLTFs:', error );
+            });
+    }
+
+    /**
+     * Adds volumes to scene (X,Y,Z slicing)
+     */
+    private addVolumes() {
+        const promiseList = [];
+        const local = this;
+        for (const group in local.config.groups) {
+            if (local.config.groups.hasOwnProperty(group)) {
+                const parts = local.config.groups[group];
+                for (let i = 0; i < parts.length; i++) {
+                    // Load volume
+                    if (parts[i].type === '3DVolume' && parts[i].include) {
+                        const partId  = parts[i].model_url;
+                        const volView = local.volViewArr[group][partId];
+                        const volSceneObj  = new VolSceneObject(null, local.volViewService, volView);
+                        volSceneObj.volObjList = [];
+                        promiseList.push(local.volViewService.makePromise(volView, group, partId,
+                                        './assets/geomodels/' + local.model_dir + '/' + parts[i].model_url,
+                                        local.scene, volSceneObj.volObjList, parts[i].displayed));
+                        this.addPart(parts[i], volSceneObj, group);
+                    }
+                }
+            }
+        }
+        Promise.all(promiseList).then(
+            // function called when all objects are loaded
+            function( {} ) {
+                console.log('Volumes are loaded');
+                // Finish creating scene
+                local.finaliseView(local.config);
+            },
+            // function called when one or more objects fail
+            function( error ) {
+                console.error( 'Could not load all volumes:', error );
             });
     }
 
@@ -565,16 +594,13 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * This draws the planar parts of the model e.g. PNG files
      */
     private addPlanes() {
-        // Note: In threeJS, buffer geometry ids are created by incrementing a counter.
-        // So we are forced to use ITOWNS' version of THREE to ensure that there is no overlap in ids
-        // and all object are reliably rendered to screen
         const manager = new ITOWNS.THREE.LoadingManager();
         const local = this;
         const textureLoader = new ITOWNS.THREE.TextureLoader(manager);
         const promiseList = [];
-        for (const group in this.config.groups) {
-            if (this.config.groups.hasOwnProperty(group)) {
-                const parts = this.config.groups[group];
+        for (const group in local.config.groups) {
+            if (local.config.groups.hasOwnProperty(group)) {
+                const parts = local.config.groups[group];
                 for (let i = 0; i < parts.length; i++) {
                     if (parts[i].type === 'ImagePlane' && parts[i].include) {
                         promiseList.push( new Promise( function( resolve, reject ) {
@@ -623,7 +649,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         Promise.all(promiseList).then(
         // function called when all objects successfully loaded
         function( {} ) {
-            local.finaliseView(local.config);
+            console.log('Planes finished');
+            local.addVolumes();
         },
         // function called when one GLTF object failed to load
         function( error ) {
@@ -660,41 +687,21 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     }
 
     /**
-     * The final stage of drawing the model on screen. This is where WMS layers and XYZ axes are drawn,
-     * and popup boxes are initialiseModel
-     * @param config model configuration JSON
-     *
-     * NOTA BENE: The view objects must be added AFTER all the objects that are added to the scene directly.
-     * Itowns code assumes that only its view objects have been added to the scene, and gets confused when there are
-     * other objects in the scene.
+     * Adds WMS layers to scene
+     * @returns true if any layers were added
      */
-    private finaliseView(config) {
-        const props = config.properties;
+    private addWMSLayers(): boolean {
         const local = this;
-
-        // Create an instance of PlanarView
-        this.view = new ITOWNS.PlanarView(this.viewerDiv, this.extentObj, {renderer: this.renderer, scene3D: this.scene});
-
-        // Change defaults to allow the camera to get very close and very far away without exceeding boundaries of field of view
-        this.view.camera.camera3D.near = 0.01;
-        this.view.camera.camera3D.far = 200 * Math.max(this.extentObj.dimensions().x, this.extentObj.dimensions().y);
-        this.view.camera.camera3D.updateProjectionMatrix();
-        this.view.camera.camera3D.updateMatrixWorld(true);
-
-        // Disable ugly tile skirts
-        const layers = this.view.getLayers();
-        this.tileLayer = layers[0];
-        this.tileLayer.disableSkirt = true;
-
+        const props = local.config.properties;
         // Add WMS layers
         let doneOne = false;
-        for (const group in config.groups) {
-            if (this.config.groups.hasOwnProperty(group)) {
-                const parts = config.groups[group];
+        for (const group in local.config.groups) {
+            if (local.config.groups.hasOwnProperty(group)) {
+                const parts = local.config.groups[group];
                 for (let i = 0; i < parts.length; i++) {
                     if (parts[i].type === 'WMSLayer' && parts[i].include) {
                         doneOne = true;
-                        this.view.addLayer({
+                        local.view.addLayer({
                             url: parts[i].model_url,
                             networkOptions: { crossOrigin: 'anonymous' },
                             type: 'color',
@@ -724,6 +731,37 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 }
             }
         }
+        return doneOne;
+    }
+
+    /**
+     * The final stage of drawing the model on screen. This is where WMS layers and XYZ axes are drawn,
+     * and popup boxes are initialiseModel
+     * @param config model configuration JSON
+     *
+     * NOTA BENE: The view objects must be added AFTER all the objects that are added to the scene directly.
+     * Itowns code assumes that only its view objects have been added to the scene, and gets confused when there are
+     * other objects in the scene.
+     */
+    private finaliseView(config) {
+        const local = this;
+
+        // Create an instance of PlanarView
+        this.view = new ITOWNS.PlanarView(this.viewerDiv, this.extentObj, {renderer: this.renderer, scene3D: this.scene});
+
+        // Change defaults to allow the camera to get very close and very far away without exceeding boundaries of field of view
+        this.view.camera.camera3D.near = 0.01;
+        this.view.camera.camera3D.far = 200 * Math.max(this.extentObj.dimensions().x, this.extentObj.dimensions().y);
+        this.view.camera.camera3D.updateProjectionMatrix();
+        this.view.camera.camera3D.updateMatrixWorld(true);
+
+        // Disable ugly tile skirts
+        const layers = this.view.getLayers();
+        this.tileLayer = layers[0];
+        this.tileLayer.disableSkirt = true;
+
+        // Add WMS layers
+        const doneOne = this.addWMSLayers();
 
         // If there are no WMS layers then disable the tile layer
         // otherwise it appears as an annoying dark blue square

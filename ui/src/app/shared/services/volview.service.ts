@@ -8,6 +8,13 @@ import { Zlib } from '../../../../node_modules/zlibjs/bin/gunzip.min.js';
 // Include threejs library
 import * as THREE from 'three';
 
+// Import itowns library
+// Note: In ThreeJS, buffer geometry ids are created by incrementing a counter which is local to the library.
+// So when creating objects to be added to the scene, we must always use ITOWNS' version of ThreeJS.
+// If we do not do this, there will be an overlap in ids and objects are not reliably rendered to screen.
+// FIXME: Needs typescript bindings
+import * as ITOWNS from '../../../../node_modules/itowns/dist/itowns';
+
 
 // Different types of data available in a volume file
 export enum DataType {BIT_MASK, INT_16, INT_8, FLOAT_16, FLOAT_32 }
@@ -115,6 +122,11 @@ export class VolviewService {
         return (sign  ? -1  : 1) * Math.pow(2, exp - 15) * (1 + (frac / Math.pow(2, 10)));
     }
 
+    /**
+     * Converts an integer to a 32-bit floating
+     * @param val integer to be converted to float
+     * @returns floating point number
+     */
     public int_to_float32(val) {
         // tslint:disable-next-line:no-bitwise
         const sign = (val & 0x80000000) >> 31;
@@ -245,9 +257,9 @@ export class VolviewService {
      * @returns a ThreeJS object
      */
     private makeWireFrame(volView: VolView): THREE.Object3D {
-        const material = new THREE.MeshBasicMaterial({ wireframe: true });
-        const geometry = new THREE.BoxBufferGeometry(volView.CUBE_SZ[0], volView.CUBE_SZ[1], volView.CUBE_SZ[2]);
-        const object = new THREE.Mesh( geometry, material );
+        const material = new ITOWNS.THREE.MeshBasicMaterial({ wireframe: true });
+        const geometry = new ITOWNS.THREE.BoxBufferGeometry(volView.CUBE_SZ[0], volView.CUBE_SZ[1], volView.CUBE_SZ[2]);
+        const object = new ITOWNS.THREE.Mesh( geometry, material );
         for (let comp = 0; comp < 3; comp++) {
             object.position.setComponent(comp, volView.ORIGIN[comp] + volView.CUBE_SZ[comp] / 2.0);
         }
@@ -393,13 +405,13 @@ export class VolviewService {
                 }
 
                 // Using the 2D data in ArrayBuffer create a texture which is mapped to a material
-                const texture = new THREE.DataTexture( dataRGBA, volView.DIM[d2], volView.DIM[d1], THREE.RGBAFormat );
+                const texture = new ITOWNS.THREE.DataTexture( dataRGBA, volView.DIM[d2], volView.DIM[d1], ITOWNS.THREE.RGBAFormat );
                 texture.needsUpdate = true;
-                const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide, transparent: true });
+                const material = new ITOWNS.THREE.MeshBasicMaterial({ map: texture, side: ITOWNS.THREE.DoubleSide, transparent: true });
                 // If required, create a new plane covered by the material
                 if (objectList[dimIdx] === null) {
                     newSlice = true;
-                    const geometry = new THREE.PlaneBufferGeometry(volView.CUBE_SZ[d2], volView.CUBE_SZ[d1]);
+                    const geometry = new ITOWNS.THREE.PlaneBufferGeometry(volView.CUBE_SZ[d2], volView.CUBE_SZ[d1]);
                     // Assumes orientation vectors are perpendicular
                     geometry.lookAt(volView.ORIENTATION[dimIdx]);
                     switch (dimIdx) {
@@ -453,16 +465,16 @@ export class VolviewService {
                             }
                         }
                     }
-                    objectList[dimIdx] = new THREE.Mesh(geometry, material);
+                    objectList[dimIdx] = new ITOWNS.THREE.Mesh(geometry, material);
                     objectList[dimIdx].visible = displayed;
                     objectList[dimIdx].name = this.makeVolLabel(groupName, partId);
 
                 } else {
                     // If plane already exists, then just change its material, keeping old opacity
-                    const  oldMaterial = (<THREE.MeshBasicMaterial>(<THREE.Mesh> objectList[dimIdx]).material);
+                    const  oldMaterial = (<ITOWNS.THREE.MeshBasicMaterial>(<ITOWNS.THREE.Mesh> objectList[dimIdx]).material);
                     material.opacity = oldMaterial.opacity;
                     material.transparent = oldMaterial.transparent;
-                    (<THREE.Mesh> objectList[dimIdx]).material = material;
+                    (<ITOWNS.THREE.Mesh> objectList[dimIdx]).material = material;
                 }
 
                 // Calculate position of slice along its dimension, in 3d space
