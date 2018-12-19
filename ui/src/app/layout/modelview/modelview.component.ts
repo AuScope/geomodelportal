@@ -87,9 +87,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     // Virtual sphere radius
     public sphereRadius = 0.0;
 
-    // Virtual sphere centre (X,Y) in screen coords
-    public sphereCentreX = 0.0;
-    public sphereCentreY = 0.0;
+    // Screen centre (X,Y) in screen coords
+    public centreX = 0.0;
+    public centreY = 0.0;
 
     // Keep track of the model demostration
     public modelDemoSeqNum = -1.0;
@@ -515,7 +515,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         // }));
 
         // Get a list of borehole_ids - slow to load so they are done in the background
-        this.modelInfoService.getBoreHoleIds().then(
+        /*this.modelInfoService.getBoreHoleIds().then(
             function(boreholeIdList: any[]) {
                 console.log('GOT BH LIST', boreholeIdList);
                 for (const boreholeId of boreholeIdList) {
@@ -546,7 +546,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             function(err) {
                 console.log('BOREHOLE ID LIST load error!', err);
             }
-        );
+        );*/
 
         Promise.all(promiseList).then(
             // function called when all objects are loaded
@@ -944,8 +944,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      */
     public onResize({}) {
         const vsObj = this.getVirtualSphere();
-        this.sphereCentreX = vsObj.x;
-        this.sphereCentreY = vsObj.y;
+        this.centreX = vsObj.x;
+        this.centreY = vsObj.y;
         this.sphereRadius = vsObj.r;
     }
 

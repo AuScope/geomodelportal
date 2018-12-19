@@ -14,8 +14,6 @@ const mouseButtons = {
     RIGHTCLICK: THREE.MOUSE.RIGHT,
 };
 
-const CROSSHAIR_NAME = 'crosshair';
-
 /**
 * Three axis virtual globe controller
 * @param scene the scene on which the graphics is built
@@ -49,10 +47,6 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
     const rObject = new THREE.Object3D();
     rObject.add(camera);
 
-    // Initialise cross hairs used when in mouse drag mode
-    let crosshairH = null;
-    let crosshairV = null;
-
     // Set camera position relative to model centre
     camera.position.set(0.0, 0.0, cameraDist);
     this.camera = camera;
@@ -76,29 +70,6 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
     rObject.updateMatrix();
     this.resetState = { rObj: rObject.clone(), camera: this.camera.clone() };
 
-    /**
-     * Creates a pair of cross hairs, used when the model is dragged across the screen
-     */
-    this.createCrossHairs = function() {
-        if (!crosshairH && !crosshairV) {
-            const material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
-            const geometryH = new THREE.Geometry();
-            const geometryV = new THREE.Geometry();
-            geometryH.vertices.push(new THREE.Vector3(-1000, 0, 0));
-            geometryH.vertices.push(new THREE.Vector3(1000, 0, 0));
-            geometryV.vertices.push(new THREE.Vector3(0, -1000, 0));
-            geometryV.vertices.push(new THREE.Vector3(0, 1000, 0));
-            crosshairH = new THREE.Line( geometryH, material );
-            crosshairH.name = CROSSHAIR_NAME;
-            crosshairH.position.setZ(camera.position.z / 2.0);
-            rObject.add(crosshairH);
-            crosshairV = new THREE.Line( geometryV, material );
-            crosshairV.position.setZ(camera.position.z / 2.0);
-            crosshairV.name = CROSSHAIR_NAME;
-            rObject.add(crosshairV);
-        }
-    };
-
 
     /**
      * Called when we need to update our record of the mouse position and delta
@@ -109,6 +80,7 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
         deltaMousePosition.copy(mousePosition).sub(lastMousePosition);
         lastMousePosition.copy(mousePosition);
     };
+
 
     /**
       * Called when mouse pointer is moved
@@ -123,6 +95,7 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
             viewObject.notifyChange(true);
         }
     };
+
 
     /**
      * Called when mouse wheel is rotated
@@ -140,6 +113,7 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
         viewObject.notifyChange(true);
     };
 
+
     /**
      * Updates state when a mouse button is released
      * @param event mouse event
@@ -147,15 +121,7 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
     this.onMouseUp = function onMouseUp(event) {
         event.preventDefault();
         if (scope.state === STATE.DRAG) {
-            // Remove cross hairs
-            if (crosshairH) {
-                rObject.remove(crosshairH);
-                crosshairH = null;
-            }
-            if (crosshairV) {
-                rObject.remove(crosshairV);
-                crosshairV = null;
-            }
+
             // Centre of screen in normalized device coordinates (-1 <= x,y <= 1)
             const centre = new THREE.Vector2();
             centre.set(0, 0);
@@ -185,6 +151,7 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
         scope.updateMouseCursorType();
     };
 
+
     /**
      * Initiates rotation or drag when any mouse button is pressed down
      * @param event mouse event
@@ -202,6 +169,7 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
         scope.updateMouseCursorType();
     };
 
+
     /**
       * Releases event listeners
       */
@@ -212,6 +180,7 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
         scope.viewerDiv.removeEventListener('wheel', scope.onMouseWheel, false);
     };
 
+
     /**
       * Initiates rotation state
       */
@@ -219,13 +188,14 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
         scope.state = STATE.ROTATE;
     };
 
+
     /**
       * Initiates drag state
       */
     this.initiateDrag = function initiateDrag() {
         scope.state = STATE.DRAG;
-        scope.createCrossHairs();
     };
+
 
     /*
     * Updates the view and camera if needed
@@ -246,6 +216,7 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
         }
     };
 
+
     /**
     * Moves the camera in its XY plane according to the mouse movements
     */
@@ -256,15 +227,9 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
         const y_mvt = deltaMousePosition.x * MOVEMENT_FACTOR * scope.camera.position.length();
         scope.camera.position.x -= x_mvt;
         scope.camera.position.y -= y_mvt;
-
-        // Move cross hairs in sync with camera
-        crosshairH.position.x -= x_mvt;
-        crosshairV.position.x -= x_mvt;
-        crosshairH.position.y -= y_mvt;
-        crosshairV.position.y -= y_mvt;
-
         viewObject.notifyChange(true);
     };
+
 
     /**
      * Returns the radius of the virtual sphere used by the controller
@@ -273,6 +238,7 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
     this.getVirtualSphereRadius = function getVirtualSphereRadius() {
         return Math.min(scope.domElement.clientHeight, scope.domElement.clientWidth) / 3.0;
     };
+
 
     /**
      * Returns the centre point of the virtual sphere used by the controller
@@ -283,6 +249,7 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
                  scope.domElement.clientHeight / 2.0];
      };
 
+
     /**
      * Returns true iff currently running the model demonstration
      * @return returns true iff currently running the model demonstration
@@ -290,6 +257,7 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
     this.isRunningDemo = function isRunningDemo() {
         return runningDemo;
     };
+
 
     /**
     * Rotates the camera about the centre of the model
@@ -305,7 +273,7 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
         const mp = new THREE.Vector2(mousePosition.x - centreOffsetX, centreOffsetY - mousePosition.y);
         // Last mouse position in normal XY coords
         const lmp = new THREE.Vector2(myLastMousePosition.x - centreOffsetX, centreOffsetY - myLastMousePosition.y);
-        const r = this.getVirtualSphereRadius(); // Size of virtual globe
+        const r = scope.getVirtualSphereRadius(); // Size of virtual globe
         let rotAxisLocal;  // Rotational axis in virtual sphere coords
         let rDelta = 0.0; // Rotational angle
         let rotAxis; // Rotational axis in camera coords
@@ -376,11 +344,12 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
         scope.cameraMoveCallback();
     };
 
+
     /**
     * Update the cursor image according to the control state
     */
     this.updateMouseCursorType = function updateMouseCursorType() {
-        switch (this.state) {
+        switch (scope.state) {
             case STATE.NONE:
                 scope.domElement.style.cursor = 'auto';
                 break;
@@ -395,12 +364,14 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
         }
     };
 
+
     /**
     * This function is called externally to add camera to the scene
     */
     this.getObject = function getObject() {
         return rObject;
     };
+
 
     /**
      * @return direction that camera is facing (THREE.Vector3)
@@ -422,6 +393,7 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
     this.stopDemoLoop = function stopDemoLoop() {
         runningDemo = false;
     };
+
 
     /**
      * Use threejs animation to perform model rotation demonstration
@@ -453,29 +425,34 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
 
         // Create an animation sequence from the keyframe track
         const clip = new THREE.AnimationClip( 'Action', 10.0, [ quaternionKF ] );
-        this.mixer = new THREE.AnimationMixer(rObject);
-        this.mixer.addEventListener('finished', this.stopDemoLoop);
-        const action = this.mixer.clipAction(clip);
+        scope.mixer = new THREE.AnimationMixer(rObject);
+        scope.mixer.addEventListener('finished', scope.stopDemoLoop);
+        const action = scope.mixer.clipAction(clip);
         action.setLoop(THREE.LoopOnce, 1);
         action.play();
         runningDemo = true;
         viewObject.notifyChange(true);
     };
 
+
     /**
      * Sets the camera back to its initial position
      */
     this.resetView = function resetView() {
         // Restore rObject, camera position and offset
-        rObject.position.copy(this.resetState.rObj.position);
-        rObject.matrix.copy(this.resetState.rObj.matrix);
+        rObject.position.copy(scope.resetState.rObj.position);
+        rObject.matrix.copy(scope.resetState.rObj.matrix);
         rObject.rotation.setFromRotationMatrix(rObject.matrix);
-        scope.camera.position.copy(this.resetState.camera.position);
+        scope.camera.position.copy(scope.resetState.camera.position);
 
         // Update view
         viewObject.notifyChange(true);
     };
 
+
+    /**
+     * Returns the camera position as a set of Euler angles
+     */
     this.getCameraPosition = function getCameraPosition() {
         return rObject.rotation;
     };

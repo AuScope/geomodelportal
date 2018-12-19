@@ -3,34 +3,38 @@
         <div (window:resize)="onResize($event)" [style.opacity]="isRunningModelDemo()? 0.5 : 1.0" id="viewerDiv" #viewerDiv></div>
         <div *ngIf="isRunningModelDemo()||isMouseGuideOn" id="mouseGuideDiv" #mouseGuideDiv>
             <svg>
+                <g style="stroke: #606060; stroke-width: 1px;">
+                    <line [attr.x1] = "centreX-30" [attr.y1] = "centreY" [attr.x2] = "centreX+30" [attr.y2] = "centreY" />
+                    <line [attr.x1] = "centreX" [attr.y1] = "centreY-30" [attr.x2] = "centreX" [attr.y2] = "centreY+30"/>
+                </g>
                 <circle [style.height]="2.0*sphereRadius" [style.width]="2.0*sphereRadius" [attr.r]="sphereRadius"
-                              style="fill:none; stroke-width: 0.5px; stroke: #606060;" [attr.cx]="sphereCentreX" [attr.cy]="sphereCentreY"></circle>
+                              style="fill:none; stroke-width: 0.5px; stroke: #606060;" [attr.cx]="centreX" [attr.cy]="centreY"></circle>
                 <g *ngIf="modelDemoSeqNum == 0" style="stroke: rgb(255,0,0); stroke-width: 2;">
-                    <line [attr.x1]="-100+sphereCentreX" [attr.y1]="0+sphereCentreY" [attr.x2]="100+sphereCentreX" [attr.y2]="0+sphereCentreY" />
-                    <line [attr.x1]="-90+sphereCentreX" [attr.y1]="-10+sphereCentreY" [attr.x2]="-100+sphereCentreX" [attr.y2]="0+sphereCentreY" />
-                    <line [attr.x1]="-100+sphereCentreX" [attr.y1]="0+sphereCentreY" [attr.x2]="-90+sphereCentreX" [attr.y2]="10+sphereCentreY" />
-                    <line [attr.x1]="90+sphereCentreX" [attr.y1]="-10+sphereCentreY" [attr.x2]="100+sphereCentreX" [attr.y2]="0+sphereCentreY" />
-                    <line [attr.x1]="100+sphereCentreX" [attr.y1]="0+sphereCentreY" [attr.x2]="90+sphereCentreX" [attr.y2]="10+sphereCentreY" />
+                    <line [attr.x1]="-100+centreX" [attr.y1]="0+centreY" [attr.x2]="100+centreX" [attr.y2]="0+centreY" />
+                    <line [attr.x1]="-90+centreX" [attr.y1]="-10+centreY" [attr.x2]="-100+centreX" [attr.y2]="0+centreY" />
+                    <line [attr.x1]="-100+centreX" [attr.y1]="0+centreY" [attr.x2]="-90+centreX" [attr.y2]="10+centreY" />
+                    <line [attr.x1]="90+centreX" [attr.y1]="-10+centreY" [attr.x2]="100+centreX" [attr.y2]="0+centreY" />
+                    <line [attr.x1]="100+centreX" [attr.y1]="0+centreY" [attr.x2]="90+centreX" [attr.y2]="10+centreY" />
                 </g>
                 <g *ngIf="modelDemoSeqNum == 1" style="stroke: rgb(255,0,0); stroke-width: 2;">
-                    <line [attr.x1]="0+sphereCentreX" [attr.y1]="-100+sphereCentreY" [attr.x2]="0+sphereCentreX" [attr.y2]="100+sphereCentreY" />
-                    <line [attr.x1]="-10+sphereCentreX" [attr.y1]="-90+sphereCentreY" [attr.x2]="0+sphereCentreX" [attr.y2]="-100+sphereCentreY" />
-                    <line [attr.x1]="0+sphereCentreX" [attr.y1]="-100+sphereCentreY" [attr.x2]="10+sphereCentreX" [attr.y2]="-90+sphereCentreY" />
-                    <line [attr.x1]="-10+sphereCentreX" [attr.y1]="90+sphereCentreY" [attr.x2]="0+sphereCentreX" [attr.y2]="100+sphereCentreY" />
-                    <line [attr.x1]="0+sphereCentreX" [attr.y1]="100+sphereCentreY" [attr.x2]="10+sphereCentreX" [attr.y2]="90+sphereCentreY" />
+                    <line [attr.x1]="0+centreX" [attr.y1]="-100+centreY" [attr.x2]="0+centreX" [attr.y2]="100+centreY" />
+                    <line [attr.x1]="-10+centreX" [attr.y1]="-90+centreY" [attr.x2]="0+centreX" [attr.y2]="-100+centreY" />
+                    <line [attr.x1]="0+centreX" [attr.y1]="-100+centreY" [attr.x2]="10+centreX" [attr.y2]="-90+centreY" />
+                    <line [attr.x1]="-10+centreX" [attr.y1]="90+centreY" [attr.x2]="0+centreX" [attr.y2]="100+centreY" />
+                    <line [attr.x1]="0+centreX" [attr.y1]="100+centreY" [attr.x2]="10+centreX" [attr.y2]="90+centreY" />
                 </g>
                 <g *ngIf="modelDemoSeqNum == 2" style="stroke: rgb(255,0,0); stroke-width: 2;">
-                    <line [attr.x1]="0+sphereCentreX - sphereRadius - 50" [attr.y1]="-100+sphereCentreY" [attr.x2]="0+sphereCentreX - sphereRadius - 50" [attr.y2]="100+sphereCentreY" />
-                    <line [attr.x1]="-10+sphereCentreX - sphereRadius - 50" [attr.y1]="-90+sphereCentreY" [attr.x2]="0+sphereCentreX - sphereRadius - 50" [attr.y2]="-100+sphereCentreY" />
-                    <line [attr.x1]="0+sphereCentreX - sphereRadius - 50" [attr.y1]="-100+sphereCentreY" [attr.x2]="10+sphereCentreX - sphereRadius - 50" [attr.y2]="-90+sphereCentreY" />
-                    <line [attr.x1]="-10+sphereCentreX - sphereRadius - 50" [attr.y1]="90+sphereCentreY" [attr.x2]="0+sphereCentreX - sphereRadius - 50" [attr.y2]="100+sphereCentreY" />
-                    <line [attr.x1]="0+sphereCentreX - sphereRadius - 50" [attr.y1]="100+sphereCentreY" [attr.x2]="10+sphereCentreX - sphereRadius - 50" [attr.y2]="90+sphereCentreY" />
+                    <line [attr.x1]="0+centreX - sphereRadius - 50" [attr.y1]="-100+centreY" [attr.x2]="0+centreX - sphereRadius - 50" [attr.y2]="100+centreY" />
+                    <line [attr.x1]="-10+centreX - sphereRadius - 50" [attr.y1]="-90+centreY" [attr.x2]="0+centreX - sphereRadius - 50" [attr.y2]="-100+centreY" />
+                    <line [attr.x1]="0+centreX - sphereRadius - 50" [attr.y1]="-100+centreY" [attr.x2]="10+centreX - sphereRadius - 50" [attr.y2]="-90+centreY" />
+                    <line [attr.x1]="-10+centreX - sphereRadius - 50" [attr.y1]="90+centreY" [attr.x2]="0+centreX - sphereRadius - 50" [attr.y2]="100+centreY" />
+                    <line [attr.x1]="0+centreX - sphereRadius - 50" [attr.y1]="100+centreY" [attr.x2]="10+centreX - sphereRadius - 50" [attr.y2]="90+centreY" />
 
-                    <line [attr.x1]="0+sphereCentreX + sphereRadius + 50" [attr.y1]="-100+sphereCentreY" [attr.x2]="0+sphereCentreX + sphereRadius + 50" [attr.y2]="100+sphereCentreY" />
-                    <line [attr.x1]="-10+sphereCentreX + sphereRadius + 50" [attr.y1]="-90+sphereCentreY" [attr.x2]="0+sphereCentreX + sphereRadius + 50" [attr.y2]="-100+sphereCentreY" />
-                    <line [attr.x1]="0+sphereCentreX + sphereRadius + 50" [attr.y1]="-100+sphereCentreY" [attr.x2]="10+sphereCentreX + sphereRadius + 50" [attr.y2]="-90+sphereCentreY" />
-                    <line [attr.x1]="-10+sphereCentreX + sphereRadius + 50" [attr.y1]="90+sphereCentreY" [attr.x2]="0+sphereCentreX + sphereRadius + 50" [attr.y2]="100+sphereCentreY" />
-                    <line [attr.x1]="0+sphereCentreX + sphereRadius + 50" [attr.y1]="100+sphereCentreY" [attr.x2]="10+sphereCentreX + sphereRadius + 50" [attr.y2]="90+sphereCentreY" />
+                    <line [attr.x1]="0+centreX + sphereRadius + 50" [attr.y1]="-100+centreY" [attr.x2]="0+centreX + sphereRadius + 50" [attr.y2]="100+centreY" />
+                    <line [attr.x1]="-10+centreX + sphereRadius + 50" [attr.y1]="-90+centreY" [attr.x2]="0+centreX + sphereRadius + 50" [attr.y2]="-100+centreY" />
+                    <line [attr.x1]="0+centreX + sphereRadius + 50" [attr.y1]="-100+centreY" [attr.x2]="10+centreX + sphereRadius + 50" [attr.y2]="-90+centreY" />
+                    <line [attr.x1]="-10+centreX + sphereRadius + 50" [attr.y1]="90+centreY" [attr.x2]="0+centreX + sphereRadius + 50" [attr.y2]="100+centreY" />
+                    <line [attr.x1]="0+centreX + sphereRadius + 50" [attr.y1]="100+centreY" [attr.x2]="10+centreX + sphereRadius + 50" [attr.y2]="90+centreY" />
                 </g>
             </svg>
         </div>
