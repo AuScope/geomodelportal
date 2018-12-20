@@ -1,6 +1,6 @@
 {
     "groups": {
-        "3D Geology": [
+        "3D Slice Views": [
             {
                 "display_name": "Lithology",
                 "displayed": false,
@@ -197,7 +197,7 @@
         ],
         "Faults": [
             {
-                "display_name": "F1 Youanmi Shear Zone",
+                "display_name": "Youanmi Shear Zone",
                 "displayed":false,
                 "include":true,
                 "model_url": "F1_Youanmi_Shear_Zone.gltf",
@@ -210,7 +210,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "F2 Edale Shear Zone",
+                "display_name": "Edale Shear Zone",
                 "displayed":false,
                 "include":true,
                 "model_url": "F2_Edale_Shear_Zone.gltf",
@@ -288,9 +288,9 @@
                 "type": "GLTFObject"
             }
         ],
-        "Stratigraphy" : [
+        "Stratigraphic Surfaces" : [
             {
-                "display_name": "S01 Protoerozoic dyke",
+                "display_name": "Protoerozoic dyke",
                 "displayed":false,
                 "include":true,
                 "model_url": "S01_Protoerozoic_dyke.gltf",
@@ -303,7 +303,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "S02 Bald Rock Supersuite",
+                "display_name": "Bald Rock Supersuite",
                 "displayed":false,
                 "include":true,
                 "model_url": "S02_Bald_Rock_Supersuite.gltf",
@@ -316,7 +316,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "S03 D2 granite",
+                "display_name": "D2 granite",
                 "displayed":false,
                 "include":true,
                 "model_url": "S03_D2_granite.gltf",
@@ -329,7 +329,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "S04 Metasedimentary",
+                "display_name": "Metasedimentary",
                 "displayed":false,
                 "include":true,
                 "model_url": "S04_Metasedimentary.gltf",
@@ -342,7 +342,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "S05 Ultramafic",
+                "display_name": "Ultramafic",
                 "displayed":false,
                 "include":true,
                 "model_url": "S05_Ultramafic.gltf",
@@ -355,7 +355,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "S06 Mafic with BIF",
+                "display_name": "Mafic with BIF",
                 "displayed":false,
                 "include":true,
                 "model_url": "S06_Mafic_with_BIF.gltf",
@@ -368,7 +368,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "S07 Banded iron formation",
+                "display_name": "Banded iron formation",
                 "displayed":false,
                 "include":true,
                 "model_url": "S07_Banded_iron_formation.gltf",
@@ -381,7 +381,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "S08 Massive mafic",
+                "display_name": "Massive mafic",
                 "displayed":false,
                 "include":true,
                 "model_url": "S08_Massive_mafic.gltf",
@@ -394,7 +394,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "S09 Tremolite schist",
+                "display_name": "Tremolite schist",
                 "displayed":false,
                 "include":true,
                 "model_url": "S09_Tremolite_schist.gltf",
@@ -407,7 +407,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "S10 Base of greenstone",
+                "display_name": "Base of greenstone",
                 "displayed":false,
                 "include":true,
                 "model_url": "S10_Base_of_greenstone.gltf",
@@ -420,7 +420,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "S11 Unaly Hill greenstone",
+                "display_name": "Unaly Hill greenstone",
                 "displayed":false,
                 "include":true,
                 "model_url": "S11_Unaly_Hill_greenstone.gltf",
@@ -433,7 +433,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "S12 Gum Creek greenstone",
+                "display_name": "Gum Creek greenstone",
                 "displayed":false,
                 "include":true,
                 "model_url": "S12_Gum_Creek_greenstone.gltf",
@@ -446,7 +446,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "S13 Barrambie Igneous Complex",
+                "display_name": "Barrambie Igneous Complex",
                 "displayed":false,
                 "include":true,
                 "model_url": "S13_Barrambie_Igneous_Complex.gltf",
@@ -459,7 +459,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "S14 North Cook Well greenstone",
+                "display_name": "North Cook Well greenstone",
                 "displayed":false,
                 "include":true,
                 "model_url": "S14_North_Cook_Well_greenstone.gltf",
@@ -472,7 +472,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "S17 Murchison granite",
+                "display_name": "Murchison granite",
                 "displayed":false,
                 "include":true,
                 "model_url": "S17_Murchison_granite.gltf",
@@ -485,7 +485,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "S18 Yarraquin Seismic Province",
+                "display_name": "Yarraquin Seismic Province",
                 "displayed":false,
                 "include":true,
                 "model_url": "S18_Yarraquin_Seismic_Province.gltf",
@@ -498,7 +498,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "S19 Lower crust",
+                "display_name": "Lower crust",
                 "displayed":false,
                 "include":true,
                 "model_url": "S19_Lower_crust.gltf",
@@ -566,10 +566,10 @@
                 "type": "GLTFObject"
             }
         ],
-        "Stratigraphic Surfaces": [
+        "Stratigraphic Block Volumes": [
             {
-                "display_name": "V01 Proterozoic dyke",
-                "displayed":false,
+                "display_name": "Proterozoic dyke",
+                "displayed": true,
                 "include":true,
                 "model_url": "V01_Proterozoic_dyke.gltf",
                 "popups": {
@@ -581,8 +581,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V02 Bald Rock Supersuite",
-                "displayed":false,
+                "display_name": "Bald Rock Supersuite",
+                "displayed": true,
                 "include":true,
                 "model_url": "V02_Bald_Rock_Supersuite.gltf",
                 "popups": {
@@ -594,8 +594,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V03 D2 granite",
-                "displayed":false,
+                "display_name": "D2 granite",
+                "displayed": true,
                 "include":true,
                 "model_url": "V03_D2_granite.gltf",
                 "popups": {
@@ -607,8 +607,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V04 Metasedimentary",
-                "displayed":false,
+                "display_name": "Metasedimentary",
+                "displayed": true,
                 "include":true,
                 "model_url": "V04_Metasedimentary.gltf",
                 "popups": {
@@ -620,8 +620,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V05 Ultramafic",
-                "displayed":false,
+                "display_name": "Ultramafic",
+                "displayed": true,
                 "include":true,
                 "model_url": "V05_Ultramafic.gltf",
                 "popups": {
@@ -633,8 +633,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V06 Mafic with BIF",
-                "displayed":false,
+                "display_name": "Mafic with BIF",
+                "displayed": true,
                 "include":true,
                 "model_url": "V06_Mafic_with_BIF.gltf",
                 "popups": {
@@ -646,8 +646,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V07 Banded iron formation",
-                "displayed":false,
+                "display_name": "Banded iron formation",
+                "displayed": true,
                 "include":true,
                 "model_url": "V07_Banded_iron_formation.gltf",
                 "popups": {
@@ -659,8 +659,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V08 Massive mafic",
-                "displayed":false,
+                "display_name": "Massive mafic",
+                "displayed": true,
                 "include":true,
                 "model_url": "V08_Massive_mafic.gltf",
                 "popups": {
@@ -672,8 +672,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V09 Tremolite schist",
-                "displayed":false,
+                "display_name": "Tremolite schist",
+                "displayed": true,
                 "include":true,
                 "model_url": "V09_Tremolite_schist.gltf",
                 "popups": {
@@ -685,8 +685,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V10 Basal mafic",
-                "displayed":false,
+                "display_name": "Basal mafic",
+                "displayed": true,
                 "include":true,
                 "model_url": "V10_Basal_mafic.gltf",
                 "popups": {
@@ -698,8 +698,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V11 Unaly Hill greenstone",
-                "displayed":false,
+                "display_name": "Unaly Hill greenstone",
+                "displayed": true,
                 "include":true,
                 "model_url": "V11_Unaly_Hill_greenstone.gltf",
                 "popups": {
@@ -711,8 +711,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V12 Gum Creek greenstone",
-                "displayed":false,
+                "display_name": "Gum Creek greenstone",
+                "displayed": true,
                 "include":true,
                 "model_url": "V12_Gum_Creek_greenstone.gltf",
                 "popups": {
@@ -724,8 +724,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V13 Barrambie Igneous Complex",
-                "displayed":false,
+                "display_name": "Barrambie Igneous Complex",
+                "displayed": true,
                 "include":true,
                 "model_url": "V13_Barrambie_Igneous_Complex.gltf",
                 "popups": {
@@ -737,8 +737,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V14 North Cook Well greenstone",
-                "displayed":false,
+                "display_name": "North Cook Well greenstone",
+                "displayed": true,
                 "include":true,
                 "model_url": "V14_North_Cook_Well_greenstone.gltf",
                 "popups": {
@@ -750,8 +750,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V15 Foliated granite",
-                "displayed":false,
+                "display_name": "Foliated granite",
+                "displayed": true,
                 "include":true,
                 "model_url": "V15_Foliated_granite.gltf",
                 "popups": {
@@ -763,8 +763,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V16 Southern Cross granite",
-                "displayed":false,
+                "display_name": "Southern Cross granite",
+                "displayed": true,
                 "include":true,
                 "model_url": "V16_Southern_Cross_granite.gltf",
                 "popups": {
@@ -776,8 +776,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V17 Murchison granite",
-                "displayed":false,
+                "display_name": "Murchison granite",
+                "displayed": true,
                 "include":true,
                 "model_url": "V17_Murchison_granite.gltf",
                 "popups": {
@@ -789,8 +789,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V18 Yarraquin Seismic Province",
-                "displayed":false,
+                "display_name": "Yarraquin Seismic Province",
+                "displayed": true,
                 "include":true,
                 "model_url": "V18_Yarraquin_Seismic_Province.gltf",
                 "popups": {
@@ -802,8 +802,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V19 Lower crust",
-                "displayed":false,
+                "display_name": "Lower crust",
+                "displayed": true,
                 "include":true,
                 "model_url": "V19_Lower_crust.gltf",
                 "popups": {
@@ -815,8 +815,8 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "V20 Mantle",
-                "displayed":false,
+                "display_name": "Mantle",
+                "displayed": true,
                 "include":true,
                 "model_url": "V20_Mantle.gltf",
                 "popups": {
