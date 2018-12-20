@@ -219,6 +219,7 @@ export class VolviewService {
                     }
 
                     // Add wireframe
+                    volView.wireFrObj.visible = displayed;
                     scene.add(volView.wireFrObj);
                     volObjList.push(volView.wireFrObj);
 
