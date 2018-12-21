@@ -65581,7 +65581,7 @@
         ]
     },
     "properties": {
-        "crs": "EPSG:3857",
+        "crs": "EPSG:28350",
         "extent": [
             553000.1589355469,
             706999.0625,
@@ -65589,7 +65589,8 @@
             6951999.53125
         ],
         "init_cam_dist": 500000.0,
-        "name": "Windimurra"
+        "name": "Windimurra",
+        "proj4_defn": "+proj=utm +zone=50 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
     },
     "type": "GeologicalModel",
     "version": 1.0

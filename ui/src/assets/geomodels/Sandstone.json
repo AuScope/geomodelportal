@@ -860,7 +860,7 @@
         ]
     },
     "properties": {
-        "crs": "EPSG:3857",
+        "crs": "EPSG:28350",
         "extent": [
             695916.876953125,
             747101.2578125,
@@ -868,7 +868,8 @@
             6950504.53125
         ],
         "init_cam_dist": 500000.0,
-        "name": "Sandstone"
+        "name": "Sandstone",
+        "proj4_defn": "+proj=utm +zone=50 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
     },
     "type": "GeologicalModel",
     "version": 1.0

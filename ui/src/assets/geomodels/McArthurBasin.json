@@ -20320,7 +20320,7 @@
         ]
     },
     "properties": {
-        "crs": "EPSG:3857",
+        "crs": "EPSG:28353",
         "extent": [
             22051.000000000004,
             645082.6799999999,
@@ -20328,7 +20328,8 @@
             8621120.0
         ],
         "init_cam_dist": 1500000.0,
-        "name": "McArthur Basin"
+        "name": "McArthur Basin",
+        "proj4_defn": "+proj=utm +zone=53 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
     },
     "type": "GeologicalModel",
     "version": 1.0
