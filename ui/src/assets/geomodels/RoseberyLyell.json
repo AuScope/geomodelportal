@@ -1,6 +1,6 @@
 {
     "groups": {
-        "Geology": [
+        "Stratigraphic Surfaces": [
             {
                 "display_name": "Water",
                 "displayed": true,
@@ -2881,9 +2881,9 @@
                 "type": "ImagePlane"
             }
         ],
-        "Geophysics": [
+        "Geophysics 3D Slice Views": [
             {
-                "display_name": "ROSEBERY_LYELL_GEOPHYSICS 1",
+                "display_name": "Vpmg Density",
                 "displayed": false,
                 "include": true,
                 "model_url": "Rosebery_Lyell_geophysics_Vpmg_workflow_den_prop@@.gz",
@@ -2927,7 +2927,7 @@
                 }
             },
             {
-                "display_name": "ROSEBERY_LYELL_GEOPHYSICS 2",
+                "display_name": "Vpmg Susceptibility",
                 "displayed": false,
                 "include": true,
                 "model_url": "Rosebery_Lyell_geophysics_Vpmg_workflow_sus_prop@@.gz",
@@ -2971,7 +2971,7 @@
                 }
             },
             {
-                "display_name": "ROSEBERY_LYELL_GEOPHYSICS 3",
+                "display_name": "Lithology",
                 "displayed": false,
                 "include": true,
                 "model_url": "Rosebery_Lyell_geophysics_lithologies@@.gz",
