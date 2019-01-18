@@ -87,6 +87,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     // Directory where model files are kept
     private model_dir;
 
+    // Current model's name as part if its URL
+    private model_url_path;
+
     // Virtual sphere radius
     public sphereRadius = 0.0;
 
@@ -200,13 +203,13 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
         // Detect if webGL is available and inform viewer if cannot proceed
         if (Detector.webgl) {
-            const modelUrlPath = this.route.snapshot.paramMap.get('modelPath');
+            this.model_url_path = this.route.snapshot.paramMap.get('modelPath');
 
             // Turn on loading spinner
             this.controlLoadSpinner(true);
 
             // Initialise model by downloading its JSON file
-            this.modelInfoService.getModelInfo(modelUrlPath).then(
+            this.modelInfoService.getModelInfo(this.model_url_path).then(
                 res => {
                     local.initialiseModel(res[0], res[1]);
                 },
@@ -499,10 +502,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         }
 
         // Get a list of borehole_ids - slow to load so they are done in the background
-        const modelName = 'NorthGawler';
+        // NB: Use the same url for 'api' as the model
+        const modelName = this.model_url_path;
         this.modelInfoService.getBoreHoleIds(modelName).then(
             function(boreholeIdList: any[]) {
-                console.log('GOT BH LIST', boreholeIdList);
                 for (const boreholeId of boreholeIdList) {
                     const params = { 'service': '3DPS',
                                     'version': '1.0',
@@ -514,17 +517,17 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     loader.load('./api/' + modelName + '?' + local.modelInfoService.buildURL(params),
                         // function called if loading successful
                         function (g_object) {
-                            console.log('loaded borehole id', boreholeId, g_object.scene);
+                            console.log('loaded borehole id', boreholeId);
                             g_object.scene.name = 'Borehole_' + boreholeId;
                             local.scene.add(g_object.scene);
                         },
                         // function called during loading
-                        function ( xhr ) {
-                            console.log('BOREHOLE GLTF onProgress()', xhr);
+                        function ( {} ) {
+                            /*console.log('BOREHOLE GLTF onProgress()', xhr);
                             if ( xhr.lengthComputable ) {
                                const percentComplete = xhr.loaded / xhr.total * 100;
                                console.log( xhr.currentTarget.responseURL, Math.round(percentComplete) + '% downloaded' );
-                            }
+                           }*/
                         },
                         // function called when loading fails
                         function ( xhr ) {
@@ -852,7 +855,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                         'layers': 'boreholes',
                         'objectId': objName
                     };
-                    const modelName = 'NorthGawler';
+                    const modelName = local.model_url_path;
                     local.httpService.get('./api/' + modelName + '?' + local.modelInfoService.buildURL(params)).subscribe(
                         data => {
                             const dataResult = data as string [];

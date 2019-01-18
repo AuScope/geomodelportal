@@ -15,9 +15,6 @@ import glob
 # A rough implementation of a subset of the 3DPS standard V1.0 (http://docs.opengeospatial.org/is/15-001r4/15-001r4.html)
 # and WFS v2.0 standard (http://www.opengeospatial.org/standards/wfs)
 #
-# The intention is to demonstrate the website's compatibility with someone else's (possibly future) implementation of a 3DPS and WFS server,
-# rather than implement a WFS or 3DPS server.
-#
 # Currently this is used to display boreholes in the geomodels website.
 # In future, it will be expanded to other objects 
 #
@@ -79,8 +76,28 @@ class MyWebFeatureService(WebFeatureService_1_1_0):
         
     def __getnewargs__(self):
         return ('','',None)
-        
-        
+
+
+''' Reads a JSON file and returns the contents
+' @param file_name: file name of JSON file
+'''
+def read_json_file(file_name):
+    try:
+        fp = open(file_name, "r")
+    except Exception as e:
+        print("Cannot open JSON file %s %s", file_name, e)
+        return {}
+    try:
+        json_dict = json.load(fp)
+    except JSONDecodeError as e:
+        json_dict = {}
+        print("Cannot read JSON file %s %s", file_name, e)
+        fp.close()
+        return {}
+    fp.close()
+    return json_dict
+
+
 '''
 ' INITIALISATION - Executed upon startup only.
 ' Loads all the WFS services and pickles them for future use
@@ -89,31 +106,42 @@ INPUT_DIR = os.path.join('C', os.sep, 'Apache24', 'htdocs', 'input')
 if not os.path.exists(INPUT_DIR):
     print("ERROR - input dir ", INPUT_DIR, " does not exist") 
     sys.exit(1)
-    
-for input_file in glob.glob(os.path.join(INPUT_DIR, '*ConvParam.json')):
-    print("getting param file", input_file)
-    model_name = os.path.basename(input_file[:-14])
-    g_PARAM[model_name] = get_json_input_param(os.path.join(INPUT_DIR, input_file))
-    print("opening WFS")
-    print("os.getcwd()=", os.getcwd())
-    CACHE_DIR = os.path.join('C', os.sep, 'Apache24', 'htdocs', 'cache', 'wfs')
-    if not os.path.exists(CACHE_DIR):
-        print("ERROR - cache dir ", CACHE_DIR, " does not exist") 
-        sys.exit(1)
-    cache_file = os.path.join(CACHE_DIR, get_file_hash(g_PARAM[model_name].WFS_URL+g_PARAM[model_name].WFS_VERSION))
-    if os.path.exists(cache_file):
-        print("Loading pickle file for", g_PARAM[model_name].WFS_URL)
-        fp = open(cache_file, 'rb')
-        g_WFS_DICT[model_name] = pickle.load(fp)
-        fp.close()
-    else:
-        # Cache file does not exist, create WFS service and dump to file
-        WFS = MyWebFeatureService(g_PARAM[model_name].WFS_URL, version=g_PARAM[model_name].WFS_VERSION, xml=None, timeout=WFS_TIMEOUT)
-        print("Creating pickle file for", g_PARAM[model_name].WFS_URL)
-        fp = open(cache_file, 'wb')
-        pickle.dump(g_WFS_DICT[model_name], fp)
-        fp.close()
-    print("got WFS=", g_WFS_DICT[model_name])
+
+# Get all the model names and details from 'ProviderModelInfo.json' 
+config_file = os.path.join(INPUT_DIR, 'ProviderModelInfo.json')
+if not os.path.exists(config_file):
+    print("ERROR - config file does not exist", config_file)
+    sys.exit(1)
+conf_dict = read_json_file(config_file)
+# For each provider
+for prov_name, model_dict in conf_dict.items():
+    model_list = model_dict['models']
+    # For each model within a provider
+    for model_obj in model_list:
+        model_name = model_obj['modelUrlPath']
+        file_prefix = model_obj['configFile'][:-5]
+        # Open up model's conversion input parameter file
+        input_file = os.path.join(INPUT_DIR,  file_prefix + 'ConvParam.json')
+        if not os.path.exists(input_file):
+            continue
+        g_PARAM[model_name] = get_json_input_param(os.path.join(INPUT_DIR, input_file))
+        CACHE_DIR = os.path.join('C', os.sep, 'Apache24', 'htdocs', 'cache', 'wfs')
+        if not os.path.exists(CACHE_DIR):
+            print("ERROR - cache dir ", CACHE_DIR, " does not exist") 
+            sys.exit(1)
+        # Load cache file of WFS service
+        cache_file = os.path.join(CACHE_DIR, get_file_hash(g_PARAM[model_name].WFS_URL+g_PARAM[model_name].WFS_VERSION))
+        if os.path.exists(cache_file):
+            fp = open(cache_file, 'rb')
+            g_WFS_DICT[model_name] = pickle.load(fp)
+            fp.close()
+        else:
+            # Cache file does not exist, create WFS service and dump to file
+            WFS = MyWebFeatureService(g_PARAM[model_name].WFS_URL, version=g_PARAM[model_name].WFS_VERSION, xml=None, timeout=WFS_TIMEOUT)
+            print("Creating pickle file for", g_PARAM[model_name].WFS_URL)
+            fp = open(cache_file, 'wb')
+            pickle.dump(g_WFS_DICT[model_name], fp)
+            fp.close()
 
 
 
@@ -298,7 +326,6 @@ def make_getfeatinfobyid_response(start_response, url_kvp, model_name, environ):
     elif layer_names != LAYER_NAME:
         return make_json_exception_response(start_response, get_val('version', url_kvp), 'InvalidParameterValue', 'incorrect layers, try "'+ LAYER_NAME + '"')
 
-    print('obj_id=', obj_id)
     if obj_id != '':
         # Query database
         # Open up query database
@@ -349,12 +376,9 @@ def make_getresourcebyid_response(start_response, url_kvp, model_name):
         
     # Parse resourceId from query string
     res_id = get_val('resourceid', url_kvp)
-    print('res_id = ', res_id)
     if res_id == '':
         return make_json_exception_response(start_response, get_val('version', url_kvp), 'MissingParameterValue', 'missing resourceId parameter')
-    print('g_BOREHOLE_DICT = ', g_BOREHOLE_DICT)
     borehole_dict = g_BOREHOLE_DICT.get(res_id, None)
-    print('borehole_dict = ', borehole_dict)
     if borehole_dict != None:
         borehole_id = borehole_dict['nvcl_id']
         blob = get_blob_boreholes(borehole_dict, g_PARAM[model_name])
@@ -423,19 +447,17 @@ def make_getpropvalue_response(start_response, url_kvp, model_name, environ):
     # Concatenate response
     response_list = []
     g_BOREHOLE_DICT = {}
-    print('g_WFS_DICT[model_name], g_PARAM[model_name] = ', g_WFS_DICT[model_name], g_PARAM[model_name])
+    if model_name not in g_WFS_DICT or model_name not in g_PARAM:
+        return make_str_response(start_response, ' ')
     borehole_list = get_boreholes_list(g_WFS_DICT[model_name], MAX_BOREHOLES, g_PARAM[model_name])
-    print('borehole_list = ', borehole_list)
     for borehole_dict in borehole_list:
         borehole_id = borehole_dict['nvcl_id']
         response_list.append({ 'borehole:id': borehole_id })
         g_BOREHOLE_DICT[borehole_id] = borehole_dict
-    print('g_BOREHOLE_DICT = ', g_BOREHOLE_DICT)
     response_str = json.dumps({ 'type': 'ValueCollection', 'totalValues': len(response_list), 'values': response_list })
     response_bytes = bytes(response_str, 'utf-8')
     response_headers = [('Content-type', 'application/json'), ('Content-Length', str(len(response_bytes))), ('Connection', 'keep-alive')]
     start_response('200 OK', response_headers)
-    print("sending: ", response_str)
     return [response_bytes]
 
 '''
@@ -443,25 +465,20 @@ def make_getpropvalue_response(start_response, url_kvp, model_name, environ):
 '''
 def application(environ, start_response):
     global g_BLOB_DICT
-    print("ENVIRON=", repr(environ))
     doc_root = os.path.normcase(environ['DOCUMENT_ROOT'])
     sys.path.append(os.path.join(doc_root, 'lib'))
     path_bits = environ['PATH_INFO'].split('/')
-    print('path_bits = ', path_bits)
     # Expecting a path '/api/<model_name>?service=<service_name>&param1=val1'
     if len(path_bits) == 3 and path_bits[:2] == ['','api']:
         model_name = path_bits[2]
-        print('model_name = ', model_name)
         url_params = urllib.parse.parse_qs(environ['QUERY_STRING'])
         # Convert all the URL parameter names to lower case with merging
         url_kvp = {}
         for key, val in url_params.items():
             url_kvp.setdefault(key.lower(), [])
             url_kvp[key.lower()] += val
-        print('url_kvp = ', repr(url_kvp))
         service_name = get_val('service', url_kvp)
         request = get_val('request', url_kvp)
-        print('service = ', service_name, 'request = ', request)
         
         # Roughly trying to conform to 3DPS standard
         if service_name.lower() == '3dps':
@@ -545,5 +562,4 @@ def application(environ, start_response):
         print('bad URL')
 
     # Catch-all sends empty response
-    print('return()')
     return make_str_response(start_response, ' ')
