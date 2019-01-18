@@ -105,17 +105,34 @@ export class ModelInfoService {
         return this.initPromise;
     }
 
+    public buildURL(params): string {
+        return Object.keys(params).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k])).join('&');
+    }
+
     /**
      * Retrieve a list of borehole ids from server
      */
-    public getBoreHoleIds(): Promise<any> {
+    public getBoreHoleIds(modelName): Promise<any> {
         const local = this;
+        const BH_ID = 'borehole:id';
         this.bhPromise = new Promise(function(resolve, reject) {
-            local.httpService.get('./api/getBoreholeList').subscribe(
+            const params = { 'service': 'WFS',
+                'version': '2.0',
+                'request': 'GetPropertyValue',
+                'exceptions': 'application/json',
+                'outputFormat': 'application/json',
+                'typeName': 'boreholes',
+                'valueReference': BH_ID
+            };
+            local.httpService.get('./api/' + modelName + '?' + local.buildURL(params)).subscribe(
                 data => {
-                    local.boreholeIdList = Array.of(data);
+                    const dataResult = data as any;
+                    const valList = dataResult['values'];
+                    for (const idval of valList) {
+                        local.boreholeIdList.push(idval[BH_ID])
+                    }
                     console.log('local.boreholeIds = ', local.boreholeIdList);
-                    resolve(local.boreholeIdList[0]);
+                    resolve(local.boreholeIdList);
                 },
                 (err: HttpErrorResponse) => {
                     console.log('Cannot load borehole list', err);

@@ -498,21 +498,20 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             }
         }
 
-
-
-        // // Include helper axes
-        // promiseList.push( new Promise( function(resolve) {
-        //     local.addHelperAxes();
-        //     resolve(true);
-        // }));
-
         // Get a list of borehole_ids - slow to load so they are done in the background
-        /*this.modelInfoService.getBoreHoleIds().then(
+        const modelName = 'NorthGawler';
+        this.modelInfoService.getBoreHoleIds(modelName).then(
             function(boreholeIdList: any[]) {
                 console.log('GOT BH LIST', boreholeIdList);
                 for (const boreholeId of boreholeIdList) {
+                    const params = { 'service': '3DPS',
+                                    'version': '1.0',
+                                    'request': 'GetResourceById',
+                                    'outputFormat': 'model/gltf+json;charset=UTF-8',
+                                    'resourceId' : boreholeId
+                    };
                     // Load up GLTF boreholes
-                    loader.load('./api/getBoreholeGLTF?id=' + boreholeId,
+                    loader.load('./api/' + modelName + '?' + local.modelInfoService.buildURL(params),
                         // function called if loading successful
                         function (g_object) {
                             console.log('loaded borehole id', boreholeId, g_object.scene);
@@ -538,7 +537,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             function(err) {
                 console.log('BOREHOLE ID LIST load error!', err);
             }
-        );*/
+        );
 
         Promise.all(promiseList).then(
             // function called when all objects are loaded
@@ -582,7 +581,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             function( {} ) {
                 console.log('Volumes are loaded');
                 // Finish creating scene
-                local.finaliseView(local.config);
+                local.finaliseView();
             },
             // function called when one or more objects fail
             function( error ) {
@@ -658,33 +657,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         });
     }
 
-    /**
-     * Optionally insert some arrows to give us some orientation information
-     */
-    private addHelperAxes() {
-        // Insert some arrows to give us some orientation information
-        const x_dir = new THREE.Vector3( 1, 0, 0 );
-        const y_dir = new THREE.Vector3( 0, 1, 0 );
-        const z_dir = new THREE.Vector3( 0, 0, 1 );
-
-        const origin = new THREE.Vector3( );
-        origin.copy(this.extentObj.center().xyz());
-
-        const length = 1500000.0;
-        const hex_x = 0xff0000;
-        const hex_y = 0x00ff00;
-        const hex_z = 0x0000ff;
-
-        const arrowHelper_x = new THREE.ArrowHelper( x_dir, origin, length, hex_x );
-        arrowHelper_x.name = 'arrowHelper_x';
-        this.scene.add( arrowHelper_x );
-        const arrowHelper_y = new THREE.ArrowHelper( y_dir, origin, length, hex_y );
-        arrowHelper_y.name = 'arrowHelper_y';
-        this.scene.add( arrowHelper_y );
-        const arrowHelper_z = new THREE.ArrowHelper( z_dir, origin, length, hex_z );
-        arrowHelper_z.name = 'arrowHelper_z';
-        this.scene.add( arrowHelper_z );
-    }
 
     /**
      * Adds WMS layers to scene
@@ -743,7 +715,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Itowns code assumes that only its view objects have been added to the scene, and gets confused when there are
      * other objects in the scene.
      */
-    private finaliseView(config) {
+    private finaliseView() {
         const local = this;
 
         // Create an instance of PlanarView
@@ -873,10 +845,23 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     }
 
                     // If got here then, could not find it in config or volumes, so must ask server
-                    local.httpService.get('./api/getQuery?id=' + objName).subscribe(
+                    const params = { 'service': '3DPS',
+                        'version': '1.0',
+                        'request': 'GetFeatureInfoByObjectId',
+                        'format': 'application/json',
+                        'layers': 'boreholes',
+                        'objectId': objName
+                    };
+                    const modelName = 'NorthGawler';
+                    local.httpService.get('./api/' + modelName + '?' + local.modelInfoService.buildURL(params)).subscribe(
                         data => {
-                            const queryResult = data as string [];
-                            console.log('queryResult = ', queryResult);
+                            const dataResult = data as string [];
+                            console.log('dataResult = ', dataResult);
+                            const attrList = dataResult['featureInfos'][0]['featureAttributeList'];
+                            let queryResult = {};
+                            for (const keyval of attrList) {
+                                queryResult[keyval['name']] = keyval['value'];
+                            }
                             if  (queryResult.hasOwnProperty('title')) {
                                 local.makePopup(event, queryResult, objIntPt);
                             }
