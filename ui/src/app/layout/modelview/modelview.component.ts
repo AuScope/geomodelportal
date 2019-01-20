@@ -326,12 +326,12 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     }
 
     /**
-     * Adds a model part to the scene array for future reference
+     * Adds a SceneObject (representing a model part) to the scene array
      * @param part
      * @param sceneObj scene object
      * @param groupName group name
      */
-    private addPart(part, sceneObj: SceneObject, groupName: string) {
+    private addSceneObj(part, sceneObj: SceneObject, groupName: string) {
         if (!this.sceneArr.hasOwnProperty(groupName)) {
             this.sceneArr[groupName] = {};
         }
@@ -476,8 +476,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         if (!part.displayed) {
                                             g_object.scene.visible = false;
                                         }
+                                        // Adds GLTFObject to scene
                                         local.scene.add(g_object.scene);
-                                        local.addPart(part, new SceneObject(g_object.scene), grp);
+                                        // Adds it to the scene array to keep track of it
+                                        local.addSceneObj(part, new SceneObject(g_object.scene), grp);
                                         resolve(g_object.scene);
                                     },
                                     // function called during loading
@@ -517,9 +519,12 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     loader.load('./api/' + modelName + '?' + local.modelInfoService.buildURL(params),
                         // function called if loading successful
                         function (g_object) {
+                            const groupName = 'Boreholes';
                             console.log('loaded borehole id', boreholeId);
                             g_object.scene.name = 'Borehole_' + boreholeId;
                             local.scene.add(g_object.scene);
+                            local.addSceneObj({ 'display_name': boreholeId, 'displayed': true, 'model_url': boreholeId }, new SceneObject(g_object.scene), groupName);
+                            local.sidebarSrvRequest(groupName, boreholeId, MenuStateChangeType.NEW_PART);
                         },
                         // function called during loading
                         function ( {} ) {
@@ -574,7 +579,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                         promiseList.push(local.volViewService.makePromise(volView, group, partId,
                                         './assets/geomodels/' + local.model_dir + '/' + parts[i].model_url,
                                         local.scene, volSceneObj.volObjList, parts[i].displayed));
-                        this.addPart(parts[i], volSceneObj, group);
+                        this.addSceneObj(parts[i], volSceneObj, group);
                     }
                 }
             }
@@ -628,7 +633,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 plane.name =  part.model_url.substring(0, part.model_url.lastIndexOf('.')) + '_0'; // For displaying popups
                                 plane.visible = part.displayed;
                                 local.scene.add(plane);
-                                local.addPart(part, new PlaneSceneObject(plane), grp);
+                                local.addSceneObj(part, new PlaneSceneObject(plane), grp);
                                 resolve(plane);
                             },
                             // Function called when download progresses
@@ -693,10 +698,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 options: {},
                             },
                     }).then(function({}) {
-                            // Retrieve WMS layer and add it to sidebar
+                            // Retrieve WMS layer and add it to scene array
                             const allLayers = local.view.getLayers(layer => layer.id === parts[i].id);
                             if (allLayers.length > 0) {
-                                local.addPart(parts[i], new WMSSceneObject(allLayers[0]), group);
+                                local.addSceneObj(parts[i], new WMSSceneObject(allLayers[0]), group);
                             }
                         },
                         function(err) {
@@ -814,14 +819,16 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                             if (popup_key + '_0' === objName) {
                                                 local.makePopup(event, parts[i]['popups'][popup_key], objIntPt);
                                                 if (parts[i].hasOwnProperty('model_url')) {
-                                                    local.openSidebarMenu(group, parts[i]['model_url']);
+                                                    // Open up sidebar menu to reveal relevant part
+                                                    local.sidebarSrvRequest(group, parts[i]['model_url'], MenuStateChangeType.OPENED);
                                                 }
                                                 return;
                                             } else if (popup_key[0] === '^') {
                                                 if (objName.match(popup_key)) {
                                                     local.makePopup(event, parts[i]['popups'][popup_key], objIntPt);
                                                     if (parts[i].hasOwnProperty('model_url')) {
-                                                        local.openSidebarMenu(group, parts[i]['model_url']);
+                                                        // Open up sidebar menu to reveal relevant part
+                                                        local.sidebarSrvRequest(group, parts[i]['model_url'], MenuStateChangeType.OPENED);
                                                     }
                                                     return;
                                                 }
@@ -834,7 +841,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                        objName === parts[i]['3dobject_label'] + '_0') {
                                     local.makePopup(event, parts[i]['popup_info'], objIntPt);
                                     if (parts[i].hasOwnProperty('model_url')) {
-                                        local.openSidebarMenu(group, parts[i]['model_url']);
+                                        // Open up sidebar menu to reveal relevant part
+                                        local.sidebarSrvRequest(group, parts[i]['model_url'], MenuStateChangeType.OPENED);
                                     }
                                     return;
                                 } else if (parts[i].hasOwnProperty('3dobject_label') &&
@@ -1027,9 +1035,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Opens up a menu item in the sidebar
      * @param groupName name of menu item's group
      * @param subGroupName name of menu item's subgroup
+     * @
      */
-    private openSidebarMenu(groupName: string, subGroup: string) {
-        const menuChange: MenuChangeType = { group: groupName, subGroup: subGroup, state: MenuStateChangeType.OPENED };
+    private sidebarSrvRequest(groupName: string, subGroup: string, state: MenuStateChangeType) {
+        const menuChange: MenuChangeType = { group: groupName, subGroup: subGroup, state: state };
         this.sidebarService.changeMenuState(menuChange);
     }
 

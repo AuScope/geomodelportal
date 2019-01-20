@@ -21,7 +21,7 @@
                     [checked] ="getGroupTickBoxState(groupName)" class="vis-toggle" type="checkbox"/>
             </a>
             <li class="nested" [class.expand]="showMenu === groupName">
-                <ul *ngFor="let subGroupObj of modelInfo['groups'][groupName]" class="submenu ul-part-name">
+                <ul *ngFor="let subGroupObj of modelConfig['groups'][groupName]" class="submenu ul-part-name">
                     <li *ngIf="subGroupObj.include && modelPartState[groupName][subGroupObj.model_url]">
                         <a class="a-part-name list-group-item">
                             <span>{{subGroupObj.display_name}}</span>

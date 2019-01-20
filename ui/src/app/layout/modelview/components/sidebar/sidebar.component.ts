@@ -10,13 +10,13 @@ import { SidebarService, MenuStateChangeType, MenuChangeType } from '../../../..
 import { HelpinfoService, WidgetType } from '../../../../shared/services/helpinfo.service';
 
 
+// Used to control visibility of parts in the menu
 const DISPLAY_CTRL_ON = 'block';
 const DISPLAY_CTRL_OFF = 'none';
 
-
-
 /**
  * Class used to display a sidebar with a menu tree, used to interact with the model
+ * Sidebar has groups. Within each group there are parts.
  */
 @Component({
     selector: 'app-sidebar',
@@ -29,17 +29,40 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     private showMenu = '';
     private pushRightClass: 'push-right';
 
+    // Name of model
     public title = '';
+
+    // Name organisation where model comes from
     public sourceOrgName = '';
-    private modelInfo = {};
+
+    // Information taken from model configuration input file
+    private modelConfig = {};
+
+    // Part of the URL which specifies the model name
     private modelPath = '';
+
+    // List of group names in sidebar
     public groupList: Array<string> = [];
+
+    // State of each part, whether it is displayed or not (copied from model info service)
     private modelPartState = {};
+
+    // Used to toggle the display of menu items for the parts within the groups
     private displayControls = {};
+
+    // Subscribe to the help info service
     private helpSubscr: Subscription;
+
+    // Subscribe to the sidebar service so that menu items can be revealed by double clicking in the viewing area
     private compSubscr: Subscription;
+
+    // Menu items use this to trigger the display of help information
     private helpObs: Observable<any> = null;
+
+    // State of the mouse guide toggle button
     public mouseGuideBtnState = false;
+
+    // State of the compass rose toggle button
     public compassRoseBtnState = true;
 
     // These are all the help messages for the sidebar
@@ -98,7 +121,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
             }
         });
         // Subscribe to component messages
-        this.compSubscr = this.sideBarService.getMenuChanges().subscribe(changes => { this.revealMenuItem(changes); });
+        this.compSubscr = this.sideBarService.getMenuChanges().subscribe(changes => { this.changeMenuItem(changes); });
 
         // Subscribe to help hint triggers
         // When trigger occurs, a sidebar component will display its help information
@@ -116,10 +139,10 @@ export class SidebarComponent  implements OnInit, OnDestroy {
         this.modelPath = this.route.snapshot.paramMap.get('modelPath');
         this.modelInfoService.getModelInfo(this.modelPath).then(
             data => {
-                this.modelInfo = data[0] as string [];
+                this.modelConfig = data[0] as string [];
                 this.sourceOrgName = data[2];
-                this.title = this.modelInfo['properties'].name;
-                this.groupList = Object.keys(this.modelInfo['groups']);
+                this.title = this.modelConfig['properties'].name;
+                this.groupList = Object.keys(this.modelConfig['groups']);
                 this.modelPartState = this.modelInfoService.getModelPartStateObj();
                 this.displayControls = {};
                 for (const groupName in this.modelPartState) {
@@ -132,6 +155,8 @@ export class SidebarComponent  implements OnInit, OnDestroy {
                         }
                     }
                 }
+                // Introduce boreholes to sidebar
+                this.addGroup('Boreholes');
             },
             // Must catch here to prevent error message appearing on console
             err => {
@@ -189,7 +214,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
             let firstPartId: string = null;
             let done = false;
             for (const groupName of this.groupList) {
-                const partObjList = this.modelInfo['groups'][groupName];
+                const partObjList = this.modelConfig['groups'][groupName];
                 for (const partObj of partObjList) {
                     if (partObj.include) {
                         firstGroupName = groupName;
@@ -232,14 +257,48 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     }
 
     /**
-     * Opens up a particular menu item
-     * @param changes
+     * Used by external services to open up a particular menu item or add a new menu item
+     * @param changes what type of change is desired
      */
-    private revealMenuItem(changes: MenuChangeType) {
+    private changeMenuItem(changes: MenuChangeType) {
+        // Open up a menu items
         if (changes.state === MenuStateChangeType.OPENED) {
             this.showMenu = changes.group;
             this.toggleControls(changes.group, changes.subGroup);
+        // Add a new menu item
+        } else if (changes.state == MenuStateChangeType.NEW_PART) {
+            this.addPart(changes.group, changes.subGroup);
         }
+    }
+
+    /**
+     * Adds a group (that does not from the model config) to the sidebar
+     * @param groupName model part's group name
+     */
+    private addGroup(groupName: string) {
+        this.displayControls[groupName] = {};
+        this.groupList.push(groupName);
+        this.modelInfoService.addGroup(groupName);
+        this.modelConfig['groups'][groupName] = [];
+    }
+
+    /**
+     * Adds a part (that does not from the model config) to the sidebar
+     * @param groupName model part's group name
+     * @param partId model part's id
+     */
+    private addPart(groupName: string, partId: string) {
+        // Tells model info service that there is a new part
+        this.modelInfoService.addPart(groupName, partId, true, 0.0);
+        // Update our record of the model part state objects
+        this.modelPartState = this.modelInfoService.getModelPartStateObj();
+        // This model part will be displayed
+        this.displayControls[groupName][partId] = DISPLAY_CTRL_ON;
+        // Update our copy of the model config file
+        this.modelConfig['groups'][groupName].push({ "display_name": partId,
+                                                       "displayed": true,
+                                                       "include": true,
+                                                       "model_url": partId });
     }
 
     /**

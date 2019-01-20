@@ -150,7 +150,7 @@ export class ModelInfoService {
     private parse_model(modelInfo) {
         for (const groupName in modelInfo.groups) {
             if (modelInfo.groups.hasOwnProperty(groupName)) {
-                this.modelPartState[groupName] = {};
+                this.addGroup(groupName);
                 for (const partObj of modelInfo.groups[groupName]) {
                     // FIXME: Currently cannot change height of WMS layers
                     let heightOffset = 0.0;
@@ -158,14 +158,34 @@ export class ModelInfoService {
                         heightOffset = FIXED_HEIGHT;
                     }
                     if (partObj.include) {
-                        this.modelPartState[groupName][partObj.model_url] = { displayed: partObj.displayed,
-                                              transparency: 1.0, heightOffset: heightOffset, oldTransparency: 1.0,
-                                              volSlice: [0.0, 0.0, 0.0] };
+                        this.addPart(groupName, partObj.model_url, partObj.displayed, heightOffset);
                     }
                 }
             }
         }
     }
+
+
+    /**
+     * Add a group to the model state
+     * @param groupName name of group to be added
+     */
+    public addGroup(groupName: string) {
+        this.modelPartState[groupName] = {};
+    }
+
+
+    /**
+     * Add a model part to model state
+     * @param groupName name of group to which the part belongs
+     * @param partId id of model part
+     */
+    public addPart(groupName: string, partId: string, displayed: boolean, heightOffset: number) {
+        this.modelPartState[groupName][partId] = { displayed: displayed,
+                              transparency: 1.0, heightOffset: heightOffset, oldTransparency: 1.0,
+                              volSlice: [0.0, 0.0, 0.0] };
+    }
+
 
     /**
      * Retrieves all the model information by retrieving the model file from network
