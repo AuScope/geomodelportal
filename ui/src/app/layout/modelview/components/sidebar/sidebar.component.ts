@@ -155,8 +155,6 @@ export class SidebarComponent  implements OnInit, OnDestroy {
                         }
                     }
                 }
-                // Introduce boreholes to sidebar
-                this.addGroup('Boreholes');
             },
             // Must catch here to prevent error message appearing on console
             err => {
@@ -265,8 +263,11 @@ export class SidebarComponent  implements OnInit, OnDestroy {
         if (changes.state === MenuStateChangeType.OPENED) {
             this.showMenu = changes.group;
             this.toggleControls(changes.group, changes.subGroup);
-        // Add a new menu item
+        // Add a new menu item and a group if necessary
         } else if (changes.state == MenuStateChangeType.NEW_PART) {
+            if (this.groupList.indexOf(changes.group) === -1) {
+                this.addGroup(changes.group);
+            }
             this.addPart(changes.group, changes.subGroup);
         }
     }
