@@ -115,11 +115,32 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
 
 
     /**
+     * Move the rotational centre to a point
+     * @param point Vector3 world coordinate to set the centre rotate point
+     */
+    this.setRotatePoint = function setRotatePoint(point: THREE.Vector3) {
+        const diff = new THREE.Vector3();
+        diff.subVectors(point, rObject.position);
+        rObject.position.copy(point);
+        rObject.updateMatrix();
+        // Tell everyone that the camera has changed position
+        scope.cameraMoveCallback();
+
+        // Now that rotational centre is moved, must move the camera position back
+        // because camera's global position = rObject.position + camera.position
+        scope.camera.position.setX(scope.resetState.camera.position.x);
+        scope.camera.position.setY(scope.resetState.camera.position.y);
+    };
+
+
+    /**
      * Updates state when a mouse button is released
      * @param event mouse event
      */
     this.onMouseUp = function onMouseUp(event) {
         event.preventDefault();
+        // Try to rotate the object around a point on the model, by casting a ray to centre of screen
+        // If no part of the model is in centre of screen, then rotate around a point in space
         if (scope.state === STATE.DRAG) {
 
             // Centre of screen in normalized device coordinates (-1 <= x,y <= 1)
@@ -136,15 +157,25 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
                 // Pick closest object
                 const point = intersects[0].point;
                 // Move the rotational centre to that point
-                rObject.position.copy(point);
-                rObject.updateMatrix();
-                // Tell everyone that the camera has changed position
-                scope.cameraMoveCallback();
+                scope.setRotatePoint(point);
+            } else {
+                // If no objects intersect, then pick a point in space
+                // Get old camera position in world coords
+                const startW = scope.resetState['cameraMouseDownWorldPos'];
+                // Get current camera position in world coords
+                const endW = new THREE.Vector3();
+                scope.camera.getWorldPosition(endW);
+                // Subtract old camera pos from new camera pos
+                const diffW = new THREE.Vector3();
+                diffW.subVectors(endW, startW);
+                // Get current position of rotation point in world coords
+                const rObjW = new THREE.Vector3();
+                rObject.getWorldPosition(rObjW);
+                // Add the camera movement
+                rObjW.add(diffW);
+                // Set new rotation point
+                scope.setRotatePoint(rObjW);
             }
-            // Now that rotational centre is moved, must move the camera position back
-            // because camera's global position = rObject.position + camera.position
-            scope.camera.position.setX(scope.resetState.camera.position.x);
-            scope.camera.position.setY(scope.resetState.camera.position.y);
             viewObject.notifyChange(true);
         }
         scope.state = STATE.NONE;
@@ -159,6 +190,10 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
     this.onMouseDown = function onMouseDown(event) {
         event.preventDefault();
         scope.updateMousePositionAndDelta(event);
+        // Store the current camera position in world coords to help move model rotational centre
+        const camWorldPos = new THREE.Vector3();
+        scope.camera.getWorldPosition(camWorldPos);
+        scope.resetState['cameraMouseDownWorldPos'] = camWorldPos;
 
         // Left click does rotation, right click does drag
         if (event.button === mouseButtons.LEFTCLICK) {
