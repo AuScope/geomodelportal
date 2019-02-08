@@ -294,7 +294,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
         // Open up a menu items
         if (changes.state === MenuStateChangeType.OPENED) {
             this.showMenu = changes.group;
-            this.toggleControls(changes.group, changes.subGroup);
+            this.toggleControls(changes.group, changes.subGroup, true);
         // Add a new menu item and a group if necessary
         } else if (changes.state === MenuStateChangeType.NEW_PART) {
             if (this.groupList.indexOf(changes.group) === -1) {
@@ -384,8 +384,8 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * @param groupName model part's group name
      * @param partId model part's id
      */
-    public toggleControls(groupName: string, partId: string) {
-        if (this.displayControls[groupName][partId] === DISPLAY_CTRL_ON) {
+    public toggleControls(groupName: string, partId: string, alwaysOn = false) {
+        if (!alwaysOn && this.displayControls[groupName][partId] === DISPLAY_CTRL_ON) {
             this.displayControls[groupName][partId] = DISPLAY_CTRL_OFF;
         } else if (this.modelPartState[groupName][partId].displayed) {
             this.displayControls[groupName][partId] = DISPLAY_CTRL_ON;
