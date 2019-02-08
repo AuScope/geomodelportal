@@ -31,6 +31,9 @@
                             <i class="fa fa-lg fa-cog part-controls" [ngClass]="{'fa-disabled': !modelPartState[groupName][subGroupObj.model_url].displayed}"
                                (click)="toggleControls(groupName, subGroupObj.model_url)"
                                ngbPopover="{{HELP_TEXT.partConfigToggle.desc}}" popoverTitle="{{HELP_TEXT.partConfigToggle.title}}" placement="right" #part_config_popover="ngbPopover" triggers="manual"></i>
+                            <i *ngIf="subGroupObj.type === 'GLTFObject'" class="fa fa-lg fa-compress"
+                              (click)="zoomToPart(groupName, subGroupObj.model_url)" ngbPopover="{{HELP_TEXT.partZoom.desc}}"
+                              popoverTitle="{{HELP_TEXT.partZoom.title}}" placement="left" #part_zoom_popover="ngbPopover" triggers="manual"></i>
                             <i class="fa fa-lg fa-eye" [ngClass]="{'fa-disabled': !modelPartState[groupName][subGroupObj.model_url].displayed}"
                                (mouseenter)="revealPart(groupName, subGroupObj.model_url, true)" (mouseleave)="revealPart(groupName, subGroupObj.model_url, false)"
                                ngbPopover="{{HELP_TEXT.partEyeball.desc}}" popoverTitle="{{HELP_TEXT.partEyeball.title}}" placement="left" #part_eyeball_popover="ngbPopover" triggers="manual"></i>

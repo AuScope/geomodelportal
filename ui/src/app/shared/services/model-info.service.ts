@@ -17,7 +17,14 @@ export const FIXED_HEIGHT = -1.0;
 // What has changed in the model part's state?
 export enum  ModelPartStateChangeType { DISPLAYED, TRANSPARENCY, HEIGHT_OFFSET, VOLUME_SLICE }
 
-export enum ModelControlEvent { RESET_VIEW, MOUSE_GUIDE_ON, MOUSE_GUIDE_OFF, COMPASS_ROSE_ON, COMPASS_ROSE_OFF }
+export enum  ModelControlEventEnum { RESET_VIEW, MOUSE_GUIDE, COMPASS_ROSE, MOVE_VIEW }
+
+// Used for communicating model control events from user interface to modelview
+export interface ModelControlEvent {
+    type: ModelControlEventEnum;
+    new_value: any;
+}
+
 
 // Vessel for communicating change, note limitation: only one change at a time
 export interface ModelPartStateChange {
@@ -129,7 +136,7 @@ export class ModelInfoService {
                     const dataResult = data as any;
                     const valList = dataResult['values'];
                     for (const idval of valList) {
-                        local.boreholeIdList.push(idval[BH_ID])
+                        local.boreholeIdList.push(idval[BH_ID]);
                     }
                     console.log('local.boreholeIds = ', local.boreholeIdList);
                     resolve(local.boreholeIdList);
@@ -147,7 +154,7 @@ export class ModelInfoService {
      * Initialise state of model
      * @param modelInfo model information used to initialise state of model
      */
-    private parse_model(modelInfo) {
+    private parseModel(modelInfo) {
         for (const groupName in modelInfo.groups) {
             if (modelInfo.groups.hasOwnProperty(groupName)) {
                 this.addGroup(groupName);
@@ -224,7 +231,7 @@ export class ModelInfoService {
                         data => {
                             // const modelInfo = data as string [];
                             local.modelCache[modelKey] = data;
-                            local.parse_model(data);
+                            local.parseModel(data);
                             resolve([data, model['modelDir'], sourceOrgName]);
                         },
                         (err: HttpErrorResponse) => {
@@ -303,6 +310,18 @@ export class ModelInfoService {
         }
     }
 
+
+    /**
+     * Zoom the view into a certain part of the model.
+     * Called from the sidebar when user wants a closer look.
+     * @param groupName name of group
+     * @param partId model part identifier
+     */
+    public zoomToPart(groupName: string, partId: string) {
+        this.modelControlEventSub.next({ type: ModelControlEventEnum.MOVE_VIEW, new_value: [groupName, partId]});
+    }
+
+
     /**
      * Indicate that something has changed
      * Called from the sidebar when tickbox is toggled
@@ -347,7 +366,7 @@ export class ModelInfoService {
      * Resets the view of the model back to the starting point
      */
     public resetModelView() {
-        this.modelControlEventSub.next(ModelControlEvent.RESET_VIEW);
+        this.modelControlEventSub.next({ type: ModelControlEventEnum.RESET_VIEW, new_value: null});
     }
 
     /**
@@ -363,33 +382,29 @@ export class ModelInfoService {
      * @param state boolean value indicating whether it must be turned on or off
      */
     public displayMouseGuide(state: boolean) {
-        if (state) {
-            this.modelControlEventSub.next(ModelControlEvent.MOUSE_GUIDE_ON);
-        } else {
-            this.modelControlEventSub.next(ModelControlEvent.MOUSE_GUIDE_OFF);
-        }
+        this.modelControlEventSub.next({ type: ModelControlEventEnum.MOUSE_GUIDE, new_value: state});
     }
 
     /**
-     *
+     * Turns the visibility of the compass rose on/off
+     * @param state true will display the compass rose, false will hide it
      */
     public displayCompassRose(state: boolean) {
-        if (state) {
-            this.modelControlEventSub.next(ModelControlEvent.COMPASS_ROSE_ON);
-        } else {
-            this.modelControlEventSub.next(ModelControlEvent.COMPASS_ROSE_OFF);
-        }
+        this.modelControlEventSub.next({ type: ModelControlEventEnum.COMPASS_ROSE, new_value: state});
     }
 
     /**
-     *
+     * Caller waits for the camera view angle to change
+     * @returns an observable containing information about the change in the form of an Euler angle:
+     *      [ x-angle, y-angle, z-angle, angle application order]
      */
     public waitForCameraPosChange(): Observable<[number, number, number, string]> {
         return this.cameraPosSub.asObservable();
     }
 
     /**
-     *
+     * Call this to register a change in camera position
+     * @param pos Euler angle: [ x-angle, y-angle, z-angle, angle application order]
      */
     public newCameraPos(pos: [number, number, number, string]) {
         this.cameraPosSub.next(pos);

@@ -21,16 +21,17 @@ const mouseButtons = {
 * @param camera camera object for viewing
 * @param view view object
 * @param rotCentre centre of rotation (THREE.Vector3)
-* @param cameraDist distance from camera to centre of model (metres)
+* @param initCameraDist initial distance from camera to centre of model (metres)
 * @param mouseEventCallback function to be called upon mouse events format: function()
 */
-function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist, cameraMoveCallback) {
+function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, initCameraDist, cameraMoveCallback) {
     const scope = this;
     this.domElement = view.mainLoop.gfxEngine.renderer.domElement;
     this.rotCentre = rotCentre;
     this.viewerDiv = viewerDiv;
     this.cameraMoveCallback = cameraMoveCallback;
     this.scene = scene;
+    this.initCameraDist = initCameraDist;
 
     // State of the model movement demonstration
     this.demoState = 0;
@@ -48,7 +49,7 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
     rObject.add(camera);
 
     // Set camera position relative to model centre
-    camera.position.set(0.0, 0.0, cameraDist);
+    camera.position.set(0.0, 0.0, initCameraDist);
     this.camera = camera;
     this.rotateSpeed = 1.5;
     const viewObject = view;
@@ -130,6 +131,18 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
         // because camera's global position = rObject.position + camera.position
         scope.camera.position.setX(scope.resetState.camera.position.x);
         scope.camera.position.setY(scope.resetState.camera.position.y);
+
+        viewObject.notifyChange(true);
+    };
+
+    /**
+     * Adjusts camera distance
+     * @param newDist new distance value
+     */
+    this.adjustCamDist = function adjustCamDist(newDist: number) {
+        camera.position.setZ(newDist);
+        // Update view
+        viewObject.notifyChange(true);
     };
 
 
@@ -176,7 +189,6 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, cameraDist,
                 // Set new rotation point
                 scope.setRotatePoint(rObjW);
             }
-            viewObject.notifyChange(true);
         }
         scope.state = STATE.NONE;
         scope.updateMouseCursorType();

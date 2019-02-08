@@ -44,10 +44,11 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     // List of group names in sidebar
     public groupList: Array<string> = [];
 
-    // State of each part, whether it is displayed or not (copied from model info service)
+    // State of each part, whether it is displayed or not
+    // (initally copied from model info service, then any changes are relayed back to model info service)
     private modelPartState = {};
 
-    // Used to toggle the display of menu items for the parts within the groups
+    // Used to toggle the display of menu items (e.g. Height, Transparency) for the parts within the groups
     private displayControls = {};
 
     // Subscribe to the help info service
@@ -73,6 +74,8 @@ export class SidebarComponent  implements OnInit, OnDestroy {
                                desc: 'Click on this to open/close view of parts within a group menu.' },
         partConfigToggle: { title: 'Model Part Controls',
                                 desc: 'Click here to open/close the control panel for this model part.' },
+        partZoom: { title: 'Zoom to view a part',
+                          desc: 'Click here to zoom in and view a model part.' },
         partEyeball: { title: 'Reveal a Model Part',
                            desc: 'To reveal this model part in the viewing area, move your mouse over the eyeball icon.' },
         partOffset: { title: 'Adjust Height Offset',
@@ -94,6 +97,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     @ViewChild('group_tick_popover') public groupTickPopover: NgbPopover = null;
     @ViewChild('group_menu_popover') public groupMenuPopover: NgbPopover = null;
     @ViewChild('part_config_popover') public partConfigPopover: NgbPopover = null;
+    @ViewChild('part_zoom_popover') public partZoomPopover: NgbPopover = null;
     @ViewChild('part_eyeball_popover') public partEyeballPopover: NgbPopover = null;
     @ViewChild('part_offset_popover') public partOffsetPopover: NgbPopover = null;
     @ViewChild('part_trans_popover') public partTransPopover: NgbPopover = null;
@@ -172,8 +176,8 @@ export class SidebarComponent  implements OnInit, OnDestroy {
         // NB: This list must contain all the ViewChild popovers above and in the correct order
         // The order must correspond to the WidgetType enum
         const popoverList: NgbPopover[] = [ this.groupTickPopover, this.groupMenuPopover, this.partConfigPopover,
-                             this.partEyeballPopover, this.partOffsetPopover, this.partTransPopover, this.partTickPopover,
-                             this.resetViewPopover, this.mouseGuidePopover, this.compassRosePopover ];
+                             this.partZoomPopover, this.partEyeballPopover, this.partOffsetPopover, this.partTransPopover,
+                             this.partTickPopover, this.resetViewPopover, this.mouseGuidePopover, this.compassRosePopover ];
 
         // Open up menu items at first group
         if (seqNum === 0 && this.groupList.length > 0) {
@@ -255,6 +259,34 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     }
 
     /**
+     * Make everything invisible but one part
+     * @param groupName model part's group name
+     * @param partId model part's id
+     */
+    private makeInvisibleBarOne(groupName: string, partId: string) {
+        if (this.groupList.length > 0) {
+            for (const gName of this.groupList) {
+                // If not target group, then make invisible
+                if (groupName !== gName && this.getGroupTickBoxState(gName)) {
+                    for (const pId in this.modelPartState[gName]) {
+                        if (this.modelPartState[gName].hasOwnProperty(pId)) {
+                            this.checkBoxClick(gName, pId, false);
+                        }
+                    }
+                // If target group, then make invisible, except target partId
+                } else {
+                    for (const pId in this.modelPartState[gName]) {
+                        if (this.modelPartState[gName].hasOwnProperty(pId)) {
+                            const state = (partId === pId);
+                            this.checkBoxClick(gName, pId, state);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /**
      * Used by external services to open up a particular menu item or add a new menu item
      * @param changes what type of change is desired
      */
@@ -264,7 +296,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
             this.showMenu = changes.group;
             this.toggleControls(changes.group, changes.subGroup);
         // Add a new menu item and a group if necessary
-        } else if (changes.state == MenuStateChangeType.NEW_PART) {
+        } else if (changes.state === MenuStateChangeType.NEW_PART) {
             if (this.groupList.indexOf(changes.group) === -1) {
                 this.addGroup(changes.group);
             }
@@ -296,10 +328,11 @@ export class SidebarComponent  implements OnInit, OnDestroy {
         // This model part will be displayed
         this.displayControls[groupName][partId] = DISPLAY_CTRL_ON;
         // Update our copy of the model config file
-        this.modelConfig['groups'][groupName].push({ "display_name": partId,
-                                                       "displayed": true,
-                                                       "include": true,
-                                                       "model_url": partId });
+        this.modelConfig['groups'][groupName].push({ 'display_name': partId,
+                                                       'displayed': true,
+                                                       'include': true,
+                                                       'model_url': partId,
+                                                       'type': 'GLTFObject' });
     }
 
     /**
@@ -310,6 +343,17 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      */
     public revealPart(groupName: string, partId: string, toggle: boolean) {
         this.modelInfoService.revealPart(groupName, partId, toggle);
+    }
+
+
+    /**
+     * Zooms in to view a part of the model, and makes all other parts invisible
+     * @param groupName model part's group name
+     * @param partId model part's id
+     */
+    public zoomToPart(groupName: string, partId: string) {
+        this.modelInfoService.zoomToPart(groupName, partId);
+        this.makeInvisibleBarOne(groupName, partId);
     }
 
     /**

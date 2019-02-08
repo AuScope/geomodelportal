@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
-import { ModelInfoService, ModelControlEvent } from '../../../../shared/services/model-info.service';
+import { ModelInfoService, ModelControlEventEnum } from '../../../../shared/services/model-info.service';
 
 // Include threejs library
 import * as THREE from 'three';
@@ -139,16 +139,14 @@ export class OverviewComponent implements AfterViewInit {
         // Wait for signal to reveal/hide the compass rose
         const compassStateObs = this.modelInfoService.waitForModelControlEvent();
         compassStateObs.subscribe(val => {
-            if (val === ModelControlEvent.COMPASS_ROSE_ON) {
-                this.compassRoseActive = true;
-            } else if (val === ModelControlEvent.COMPASS_ROSE_OFF) {
-                this.compassRoseActive = false;
+            if (val.type === ModelControlEventEnum.COMPASS_ROSE) {
+                this.compassRoseActive = val.new_value;
             }
         });
         // Wait for signal that the main view was reset
         const viewResetObs = this.modelInfoService.waitForModelControlEvent();
         viewResetObs.subscribe(val => {
-            if (val === ModelControlEvent.RESET_VIEW) {
+            if (val.type === ModelControlEventEnum.RESET_VIEW) {
                 local.startRot = false;
                 local.prevAngle = null;
                 local.prevQuat = {};

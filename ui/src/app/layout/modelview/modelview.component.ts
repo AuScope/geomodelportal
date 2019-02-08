@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 
-import { ModelInfoService, ModelPartCallbackType, ModelControlEvent,
+import { ModelInfoService, ModelPartCallbackType, ModelControlEventEnum,
          ModelPartStateChange, ModelPartStateChangeType } from '../../shared/services/model-info.service';
 import { SidebarService, MenuChangeType, MenuStateChangeType } from '../../shared/services/sidebar.service';
 import { HelpinfoService } from '../../shared/services/helpinfo.service';
@@ -523,8 +523,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             console.log('loaded borehole id', boreholeId);
                             g_object.scene.name = 'Borehole_' + boreholeId;
                             local.scene.add(g_object.scene);
-                            local.addSceneObj({ 'display_name': boreholeId, 'displayed': true, 'model_url': boreholeId },
-                                                new SceneObject(g_object.scene), groupName);
+                            local.addSceneObj({ 'display_name': boreholeId, 'displayed': true, 'model_url': boreholeId,
+                                                      'type': 'GLTFObject' }, new SceneObject(g_object.scene), groupName);
                             local.sidebarSrvRequest(groupName, boreholeId, MenuStateChangeType.NEW_PART);
                         },
                         // function called during loading
@@ -871,15 +871,15 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         // Wait for signal to reset the view of the model
         const viewResetObs = this.modelInfoService.waitForModelControlEvent();
         viewResetObs.subscribe(val => {
-            switch (val) {
-                case ModelControlEvent.RESET_VIEW:
+            switch (val.type) {
+                case ModelControlEventEnum.RESET_VIEW:
                     this.resetModelView();
                     break;
-                case ModelControlEvent.MOUSE_GUIDE_ON:
-                    this.isMouseGuideOn = true;
+                case ModelControlEventEnum.MOUSE_GUIDE:
+                    this.isMouseGuideOn = val.new_value;
                     break;
-                case ModelControlEvent.MOUSE_GUIDE_OFF:
-                    this.isMouseGuideOn = false;
+                case ModelControlEventEnum.MOVE_VIEW:
+                    this.moveViewToModelPart(val.new_value[0], val.new_value[1]);
                     break;
             }
         });
@@ -1008,8 +1008,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     /**
      * Opens up a menu item in the sidebar
      * @param groupName name of menu item's group
-     * @param subGroupName name of menu item's subgroup
-     * @
+     * @param subGroup name of menu item's subgroup
      */
     private sidebarSrvRequest(groupName: string, subGroup: string, state: MenuStateChangeType) {
         const menuChange: MenuChangeType = { group: groupName, subGroup: subGroup, state: state };
@@ -1022,6 +1021,61 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     private resetModelView() {
         this.trackBallControls.resetView();
         this.cameraPosChange();
+    }
+
+    /**
+     * Moves view to model part
+     * @param groupName name of menu item's group
+     * @param subGroup name of menu item's subgroup
+     */
+    private moveViewToModelPart(groupName: string, subGroup: string) {
+        const scope = this;
+        if (this.sceneArr.hasOwnProperty(groupName) && this.sceneArr[groupName].hasOwnProperty(subGroup)) {
+            const sceneObj = this.sceneArr[groupName][subGroup].sceneObj;
+            let maxR = -1.0;
+            let maxObj = null;
+            const sumCentre = new THREE.Vector3();
+            let numCentre = 0;
+            const maxCentre = new THREE.Vector3(-Number.MAX_SAFE_INTEGER, -Number.MAX_SAFE_INTEGER, -Number.MAX_SAFE_INTEGER);
+            const minCentre = new THREE.Vector3(Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER);
+            sceneObj.traverse(function(obj) {
+                                                  // Survey geometry of object, getting mean centre and dimensions
+                                                  if (obj.geometry && obj.geometry.boundingSphere) {
+                                                      const centre = new THREE.Vector3(obj.geometry.boundingSphere.center.x,
+                                                      obj.geometry.boundingSphere.center.y, obj.geometry.boundingSphere.center.z);
+                                                      sumCentre.add(centre);
+                                                      maxCentre.max(centre);
+                                                      minCentre.min(centre);
+                                                      numCentre += 1;
+                                                      if (obj.geometry.boundingSphere.radius > maxR) {
+                                                          maxR = obj.geometry.boundingSphere.radius;
+                                                          maxObj = obj;
+                                                      }
+                                                  }
+                                               });
+                                               // Set rotation point to centre of object
+                                               if (numCentre > 0) {
+                                                   const point = new THREE.Vector3(sumCentre.x / numCentre, sumCentre.y / numCentre,
+                                                       sumCentre.z / numCentre);
+                                                   scope.trackBallControls.setRotatePoint(point);
+                                               }
+                                               // Adjust camera distance to the size of the object
+                                               if (maxObj !== null) {
+                                                   const diffCentre = new THREE.Vector3(maxCentre.x - minCentre.x,
+                                                       maxCentre.y - minCentre.y, maxCentre.z - minCentre.z);
+                                                   const centreRadius = diffCentre.length();
+                                                   const maxRadius = Math.max(centreRadius, maxObj.geometry.boundingSphere.radius);
+                                                   // Roughly set the distance according to the size of the object
+                                                   let newDist = maxRadius * 3.0;
+                                                   if (maxRadius < 50000) {
+                                                       newDist = maxRadius * 2.5;
+                                                   } else if (maxObj.geometry.boundingSphere.radius > 150000) {
+                                                       newDist = maxRadius * 4.0;
+                                                   }
+                                                   scope.trackBallControls.adjustCamDist(newDist);
+                                                   scope.cameraPosChange();
+                                               }
+        }
     }
 
     /**
