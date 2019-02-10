@@ -234,7 +234,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
             }
 
             // Control panel used by demo will not open, unless it is ticked (displayed), so must enable it
-            if (open && !this.getGroupTickBoxState(firstGroupName)) {
+            if (open && !this.getGroupTickBoxChecked(firstGroupName)) {
                 for (const partId in this.modelPartState[firstGroupName]) {
                     if (this.modelPartState[firstGroupName].hasOwnProperty(partId)) {
                         this.checkBoxClick(firstGroupName, partId, true);
@@ -267,7 +267,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
         if (this.groupList.length > 0) {
             for (const gName of this.groupList) {
                 // If not target group, then make invisible
-                if (groupName !== gName && this.getGroupTickBoxState(gName)) {
+                if (groupName !== gName && this.getGroupTickBoxChecked(gName)) {
                     for (const pId in this.modelPartState[gName]) {
                         if (this.modelPartState[gName].hasOwnProperty(pId)) {
                             this.checkBoxClick(gName, pId, false);
@@ -383,6 +383,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * only if the part is displayed in viewing area
      * @param groupName model part's group name
      * @param partId model part's id
+     * @param alwaysOn (optional) if true, then the menu is not toggled, but stays open
      */
     public toggleControls(groupName: string, partId: string, alwaysOn = false) {
         if (!alwaysOn && this.displayControls[groupName][partId] === DISPLAY_CTRL_ON) {
@@ -436,21 +437,41 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     }
 
     /**
-     * Retrieves the state of the visibility checkboxes within a group
+     * Returns the 'checked' state of all the visibility checkboxes within a group
      * @param groupName group name of parts whose checkboxes we want the state of
-     * @return true/false state of checkboxes. Returns true iff all checkboxes are ticked
+     * @return Returns true iff all checkboxes are ticked
      */
-    public getGroupTickBoxState(groupName: string) {
-        let state = true;
+    public getGroupTickBoxChecked(groupName: string) {
         for (const partId in this.modelPartState[groupName]) {
             if (this.modelPartState[groupName].hasOwnProperty(partId)) {
                 if (!this.modelPartState[groupName][partId].displayed) {
-                    state = false;
-                    break;
+                    return false;
                 }
             }
         }
-        return state;
+        return true;
+    }
+
+    /**
+     * Returns the 'indeterminate' state of the visibility checkboxes within a group
+     * @param groupName group name of parts whose checkboxes we want the state of
+     * @return Returns true iff there are some checkboxes ticked and some are not
+     */
+    public  getGroupTickBoxIndet(groupName: string) {
+        let onState = false, offState = false;
+        for (const partId in this.modelPartState[groupName]) {
+            if (this.modelPartState[groupName].hasOwnProperty(partId)) {
+                if (!this.modelPartState[groupName][partId].displayed) {
+                    offState = true;
+                } else {
+                    onState = true;
+                }
+                if (onState && offState) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     /**

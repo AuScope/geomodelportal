@@ -16,9 +16,9 @@
         <div *ngFor="let groupName of groupList" class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass(groupName)">
                 <span><i class="fa fa-plus" ngbPopover="{{HELP_TEXT.groupMenuToggle.desc}}" popoverTitle="{{HELP_TEXT.groupMenuToggle.title}}" placement="right" #group_menu_popover="ngbPopover" triggers="manual"></i>&nbsp;{{groupName}}</span>
-                <input (click)="groupCheckBoxClick($event, groupName, !getGroupTickBoxState(groupName))"
+                <input (click)="groupCheckBoxClick($event, groupName, !getGroupTickBoxChecked(groupName))"
                     ngbPopover="{{HELP_TEXT.groupVisToggle.desc}}" popoverTitle="{{HELP_TEXT.groupVisToggle.title}}" placement="bottom" #group_tick_popover="ngbPopover" triggers="manual"
-                    [checked] ="getGroupTickBoxState(groupName)" class="vis-toggle" type="checkbox"/>
+                    [checked] ="getGroupTickBoxChecked(groupName)" [indeterminate] = "getGroupTickBoxIndet(groupName)" class="vis-toggle" type="checkbox"/>
             </a>
             <li class="nested" [class.expand]="showMenu === groupName">
                 <ul *ngFor="let subGroupObj of modelConfig['groups'][groupName]" class="submenu ul-part-name">
