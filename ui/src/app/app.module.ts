@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { ModelInfoService } from './shared/services/model-info.service';
 import { SidebarService } from './shared/services/sidebar.service';
 import { HelpinfoService } from './shared/services/helpinfo.service';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
