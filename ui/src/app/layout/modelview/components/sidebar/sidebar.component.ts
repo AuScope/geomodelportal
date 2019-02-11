@@ -428,12 +428,41 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * @param state desired checkbox state
      */
     public groupCheckBoxClick(event: any, groupName: string, state: boolean) {
-        event.stopPropagation();
+        if (event) {
+            event.stopPropagation();
+        }
         for (const partId in this.modelPartState[groupName]) {
             if (this.modelPartState[groupName].hasOwnProperty(partId)) {
                 this.checkBoxClick(groupName, partId, state);
             }
         }
+    }
+
+
+    /**
+     * Called when the "ALL" checkbox is clicked on
+     * @param state desired state of checkbox
+     */
+    public allCheckBoxClick(state: boolean) {
+        if (this.groupList.length > 0) {
+            for (const gName of this.groupList) {
+                this.groupCheckBoxClick(null, gName, state);
+            }
+        }
+    }
+
+    /**
+     * Returns true if all group checkboxes are ticked
+     */
+    public getAllTickBoxChecked() {
+        if (this.groupList.length > 0) {
+            for (const gName of this.groupList) {
+                if (!this.getGroupTickBoxChecked(gName)) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     /**
