@@ -10,6 +10,8 @@ import hashlib
 import pickle
 import urllib
 import glob
+import platform
+import logging
 
 #
 # A rough implementation of a subset of the 3DPS standard V1.0 (http://docs.opengeospatial.org/is/15-001r4/15-001r4.html)
@@ -27,9 +29,15 @@ import glob
 # To get borehole object after scene is loaded:
 # http://localhost:4200/api/NorthGawler?service=3DPS&version=1.0&request=GetResourceById&resourceId=228563&outputFormat=model%2Fgltf%2Bjson%3Bcharset%3DUTF-8
 
-# Include local modules
 # NB: Implementation dependent path - will need to edit for each installation.
-sys.path.append(os.path.join('C', os.sep, 'Apache24','htdocs', 'lib'))
+if platform.system() == 'Windows':
+    DOC_HOME = os.path.join('C', os.sep, 'Apache24', 'htdocs')
+else:
+    DOC_HOME = os.path.join('/var','www','html','api')
+
+# Include local modules
+if platform.system() == 'Windows':
+    sys.path.append(os.path.join(DOC_HOME, 'lib'))
 
 from makeBoreholes import get_blob_boreholes, get_boreholes_list, get_json_input_param
 from db.db_tables import QueryDB
@@ -85,13 +93,13 @@ def read_json_file(file_name):
     try:
         fp = open(file_name, "r")
     except Exception as e:
-        print("Cannot open JSON file %s %s", file_name, e)
+        logging.error("Cannot open JSON file %s %s", file_name, e)
         return {}
     try:
         json_dict = json.load(fp)
     except JSONDecodeError as e:
         json_dict = {}
-        print("Cannot read JSON file %s %s", file_name, e)
+        loggging.error("Cannot read JSON file %s %s", file_name, e)
         fp.close()
         return {}
     fp.close()
@@ -102,15 +110,20 @@ def read_json_file(file_name):
 ' INITIALISATION - Executed upon startup only.
 ' Loads all the WFS services and pickles them for future use
 '''
-INPUT_DIR = os.path.join('C', os.sep, 'Apache24', 'htdocs', 'input')
+
+INPUT_DIR = os.path.join(DOC_HOME, 'input')
+CACHE_DIR = os.path.join(DOC_HOME, 'cache', 'wfs')
 if not os.path.exists(INPUT_DIR):
-    print("ERROR - input dir ", INPUT_DIR, " does not exist") 
+    logging.error("input dir %s does not exist", INPUT_DIR) 
+    sys.exit(1)
+if not os.path.exists(CACHE_DIR):
+    logging.error("cache dir %s does not exist", CACHE_DIR) 
     sys.exit(1)
 
 # Get all the model names and details from 'ProviderModelInfo.json' 
 config_file = os.path.join(INPUT_DIR, 'ProviderModelInfo.json')
 if not os.path.exists(config_file):
-    print("ERROR - config file does not exist", config_file)
+    logging.error("config file does not exist %s", config_file)
     sys.exit(1)
 conf_dict = read_json_file(config_file)
 # For each provider
@@ -125,10 +138,6 @@ for prov_name, model_dict in conf_dict.items():
         if not os.path.exists(input_file):
             continue
         g_PARAM[model_name] = get_json_input_param(os.path.join(INPUT_DIR, input_file))
-        CACHE_DIR = os.path.join('C', os.sep, 'Apache24', 'htdocs', 'cache', 'wfs')
-        if not os.path.exists(CACHE_DIR):
-            print("ERROR - cache dir ", CACHE_DIR, " does not exist") 
-            sys.exit(1)
         # Load cache file of WFS service
         cache_file = os.path.join(CACHE_DIR, get_file_hash(g_PARAM[model_name].WFS_URL+g_PARAM[model_name].WFS_VERSION))
         if os.path.exists(cache_file):
@@ -137,8 +146,8 @@ for prov_name, model_dict in conf_dict.items():
             fp.close()
         else:
             # Cache file does not exist, create WFS service and dump to file
-            WFS = MyWebFeatureService(g_PARAM[model_name].WFS_URL, version=g_PARAM[model_name].WFS_VERSION, xml=None, timeout=WFS_TIMEOUT)
-            print("Creating pickle file for", g_PARAM[model_name].WFS_URL)
+            g_WFS_DICT[model_name] = MyWebFeatureService(g_PARAM[model_name].WFS_URL, version=g_PARAM[model_name].WFS_VERSION, xml=None, timeout=WFS_TIMEOUT)
+            logging.info("Creating pickle file for %s", g_PARAM[model_name].WFS_URL)
             fp = open(cache_file, 'wb')
             pickle.dump(g_WFS_DICT[model_name], fp)
             fp.close()
@@ -306,7 +315,7 @@ def make_getcap_response(start_response, model_name):
 '''
 def make_getfeatinfobyid_response(start_response, url_kvp, model_name, environ):
     borehole_bytes = b' '
-    print('url_kvp =', url_kvp)
+    logging.debug('url_kvp = %s', repr(url_kvp))
     # Parse id from query string
     obj_id = get_val('objectid', url_kvp)
     if obj_id == '':
@@ -331,6 +340,7 @@ def make_getfeatinfobyid_response(start_response, url_kvp, model_name, environ):
         # Open up query database
         qdb = QueryDB()
         qdb.open_db(create=False, db_name="sqlite:///"+os.path.join(environ['DOCUMENT_ROOT'], "query_data.db"))
+        logging.info('querying db: %s %s', obj_id, model_name)
         label, out_model_name, segment_str, part_str, model_str, user_str = qdb.query(obj_id, model_name)
         resp_dict = { 'type': 'FeatureInfoList', 'totalFeatureInfo': 1, 'featureInfos': [ { 'type': 'FeatureInfo', 'objectId': obj_id, 'featureId': obj_id, 'featureAttributeList': [] } ] }
         query_dict = {}
@@ -365,7 +375,7 @@ def make_getfeatinfobyid_response(start_response, url_kvp, model_name, environ):
 def make_getresourcebyid_response(start_response, url_kvp, model_name):
     global g_BOREHOLE_DICT, g_BLOB_DICT, g_PARAM
     # This sends back the first part of the GLTF object - the GLTF file for the resource id specified
-    print('make_getresourcebyid_response(model_name = ', model_name, ')')
+    logging.debug('make_getresourcebyid_response(model_name = %s)', model_name)
     
     # Parse outputFormat from query string
     output_format = get_val('outputformat', url_kvp)
@@ -384,7 +394,7 @@ def make_getresourcebyid_response(start_response, url_kvp, model_name):
         blob = get_blob_boreholes(borehole_dict, g_PARAM[model_name])
         # Some boreholes do not have the requested metric
         if blob != None:
-            print('got blob', blob)
+            logging.debug('got blob %s', str(blob))
             g_BLOB_DICT.setdefault(model_name, {})
             g_BLOB_DICT[model_name][borehole_id] = blob
             # There are 2 files in the blob, a GLTF file and a .bin file
@@ -396,17 +406,20 @@ def make_getresourcebyid_response(start_response, url_kvp, model_name):
                     bcd_bytes = b''
                     for b in bcd.contents:
                         bcd_bytes += b
-                    # Convert to json
-                    gltf_json = json.loads(bcd_bytes)
-                    # This modifies the URL of the .bin file associated with the GLTF file. 
-                    # Inserting model name and borehole id as a parameter so we can tell the .bin files apart
-                    gltf_json["buffers"][0]["uri"] = model_name + '/' + gltf_json["buffers"][0]["uri"] + "?id=" + borehole_id
-                    # Convert back to bytes and send
-                    gltf_str = json.dumps(gltf_json)
-                    gltf_bytes = bytes(gltf_str, 'utf=8')
-                    response_headers = [('Content-type', 'model/gltf+json;charset=UTF-8'), ('Content-Length', str(len(gltf_bytes))), ('Connection', 'keep-alive')]
-                    start_response('200 OK', response_headers)
-                    return [gltf_bytes]
+                    try:
+                        # Convert to json
+                        gltf_json = json.loads(str(bcd_bytes))
+                        # This modifies the URL of the .bin file associated with the GLTF file. 
+                        # Inserting model name and borehole id as a parameter so we can tell the .bin files apart
+                        gltf_json["buffers"][0]["uri"] = model_name + '/' + gltf_json["buffers"][0]["uri"] + "?id=" + borehole_id
+                        # Convert back to bytes and send
+                        gltf_str = json.dumps(gltf_json)
+                        gltf_bytes = bytes(gltf_str, 'utf=8')
+                        response_headers = [('Content-type', 'model/gltf+json;charset=UTF-8'), ('Content-Length', str(len(gltf_bytes))), ('Connection', 'keep-alive')]
+                        start_response('200 OK', response_headers)
+                        return [gltf_bytes]
+                    except JSONDecodeError:
+                        pass
                 
                 blob = blob.contents.next
 
@@ -468,9 +481,12 @@ def application(environ, start_response):
     doc_root = os.path.normcase(environ['DOCUMENT_ROOT'])
     sys.path.append(os.path.join(doc_root, 'lib'))
     path_bits = environ['PATH_INFO'].split('/')
+    logging.debug('path_bits= %s', repr(path_bits))
     # Expecting a path '/api/<model_name>?service=<service_name>&param1=val1'
-    if len(path_bits) == 3 and path_bits[:2] == ['','api']:
-        model_name = path_bits[2]
+    # or '/<model_name>?service=<service_name>&param1=val1'
+    if len(path_bits) == 3 and path_bits[:2] == ['','api'] or len(path_bits) == 2 and path_bits[:1] == ['']:
+        model_name = path_bits[-1]
+        logging.debug('model_name= %s', model_name)
         url_params = urllib.parse.parse_qs(environ['QUERY_STRING'])
         # Convert all the URL parameter names to lower case with merging
         url_kvp = {}
@@ -554,12 +570,12 @@ def application(environ, start_response):
                             
                         blob = blob.contents.next
                 else:
-                    print("Cannot locate blob in dict")
+                    logging.error("Cannot locate blob in dict")
             else:
-                print("Cannot locate id in blobfile.bin url")
+                logging.error("Cannot locate id in blobfile.bin url")
             
     else:
-        print('bad URL')
+        logging.debug('Bad URL')
 
     # Catch-all sends empty response
     return make_str_response(start_response, ' ')
