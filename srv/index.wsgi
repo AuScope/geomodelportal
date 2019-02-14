@@ -13,7 +13,7 @@ import glob
 import platform
 import logging
 
-DEBUG_LVL = logging.DEBUG # logging.CRITICAL
+DEBUG_LVL = logging.CRITICAL
 ''' Initialise debug level to minimal debugging
 '''
 
