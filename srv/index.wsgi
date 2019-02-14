@@ -13,6 +13,29 @@ import glob
 import platform
 import logging
 
+DEBUG_LVL = logging.DEBUG # logging.CRITICAL
+''' Initialise debug level to minimal debugging
+'''
+
+# Set up debugging
+logger = logging.getLogger(__name__)
+
+if not logger.hasHandlers():
+    # Create logging console handler
+    handler = logging.StreamHandler(sys.stdout)
+
+    # Create logging formatter
+    formatter = logging.Formatter('%(name)s -- %(levelname)s - %(message)s')
+
+    # Add formatter to ch
+    handler.setFormatter(formatter)
+
+    # Add handler to logger and set level
+    logger.addHandler(handler)
+
+logger.setLevel(DEBUG_LVL)
+
+
 #
 # A rough implementation of a subset of the 3DPS standard V1.0 (http://docs.opengeospatial.org/is/15-001r4/15-001r4.html)
 # and WFS v2.0 standard (http://www.opengeospatial.org/standards/wfs)
@@ -93,13 +116,13 @@ def read_json_file(file_name):
     try:
         fp = open(file_name, "r")
     except Exception as e:
-        logging.error("Cannot open JSON file %s %s", file_name, e)
+        logger.error("Cannot open JSON file %s %s", file_name, str(e))
         return {}
     try:
         json_dict = json.load(fp)
     except JSONDecodeError as e:
         json_dict = {}
-        loggging.error("Cannot read JSON file %s %s", file_name, e)
+        loggging.error("Cannot read JSON file %s %s", file_name, str(e))
         fp.close()
         return {}
     fp.close()
@@ -114,16 +137,16 @@ def read_json_file(file_name):
 INPUT_DIR = os.path.join(DOC_HOME, 'input')
 CACHE_DIR = os.path.join(DOC_HOME, 'cache', 'wfs')
 if not os.path.exists(INPUT_DIR):
-    logging.error("input dir %s does not exist", INPUT_DIR) 
+    logger.error("input dir %s does not exist", INPUT_DIR) 
     sys.exit(1)
 if not os.path.exists(CACHE_DIR):
-    logging.error("cache dir %s does not exist", CACHE_DIR) 
+    logger.error("cache dir %s does not exist", CACHE_DIR) 
     sys.exit(1)
 
 # Get all the model names and details from 'ProviderModelInfo.json' 
 config_file = os.path.join(INPUT_DIR, 'ProviderModelInfo.json')
 if not os.path.exists(config_file):
-    logging.error("config file does not exist %s", config_file)
+    logger.error("config file does not exist %s", config_file)
     sys.exit(1)
 conf_dict = read_json_file(config_file)
 # For each provider
@@ -147,7 +170,7 @@ for prov_name, model_dict in conf_dict.items():
         else:
             # Cache file does not exist, create WFS service and dump to file
             g_WFS_DICT[model_name] = MyWebFeatureService(g_PARAM[model_name].WFS_URL, version=g_PARAM[model_name].WFS_VERSION, xml=None, timeout=WFS_TIMEOUT)
-            logging.info("Creating pickle file for %s", g_PARAM[model_name].WFS_URL)
+            logger.info("Creating pickle file for %s", g_PARAM[model_name].WFS_URL)
             fp = open(cache_file, 'wb')
             pickle.dump(g_WFS_DICT[model_name], fp)
             fp.close()
@@ -315,7 +338,7 @@ def make_getcap_response(start_response, model_name):
 '''
 def make_getfeatinfobyid_response(start_response, url_kvp, model_name, environ):
     borehole_bytes = b' '
-    logging.debug('url_kvp = %s', repr(url_kvp))
+    logger.debug('make_getfeatinfobyid_response() url_kvp = %s', repr(url_kvp))
     # Parse id from query string
     obj_id = get_val('objectid', url_kvp)
     if obj_id == '':
@@ -340,7 +363,7 @@ def make_getfeatinfobyid_response(start_response, url_kvp, model_name, environ):
         # Open up query database
         qdb = QueryDB()
         qdb.open_db(create=False, db_name="sqlite:///"+os.path.join(environ['DOCUMENT_ROOT'], "query_data.db"))
-        logging.info('querying db: %s %s', obj_id, model_name)
+        logger.info('querying db: %s %s', obj_id, model_name)
         label, out_model_name, segment_str, part_str, model_str, user_str = qdb.query(obj_id, model_name)
         resp_dict = { 'type': 'FeatureInfoList', 'totalFeatureInfo': 1, 'featureInfos': [ { 'type': 'FeatureInfo', 'objectId': obj_id, 'featureId': obj_id, 'featureAttributeList': [] } ] }
         query_dict = {}
@@ -375,10 +398,11 @@ def make_getfeatinfobyid_response(start_response, url_kvp, model_name, environ):
 def make_getresourcebyid_response(start_response, url_kvp, model_name):
     global g_BOREHOLE_DICT, g_BLOB_DICT, g_PARAM
     # This sends back the first part of the GLTF object - the GLTF file for the resource id specified
-    logging.debug('make_getresourcebyid_response(model_name = %s)', model_name)
+    logger.debug('make_getresourcebyid_response(model_name = %s)', model_name)
     
     # Parse outputFormat from query string
     output_format = get_val('outputformat', url_kvp)
+    logger.debug('output_format = %s', output_format)
     if output_format == '':
         return make_json_exception_response(start_response, get_val('version', url_kvp), 'MissingParameterValue', 'missing outputFormat parameter')
     if output_format != 'model/gltf+json;charset=UTF-8':
@@ -386,19 +410,24 @@ def make_getresourcebyid_response(start_response, url_kvp, model_name):
         
     # Parse resourceId from query string
     res_id = get_val('resourceid', url_kvp)
+    logger.debug('resourceid = %s', res_id)
     if res_id == '':
         return make_json_exception_response(start_response, get_val('version', url_kvp), 'MissingParameterValue', 'missing resourceId parameter')
+    logger.debug('g_BOREHOLE_DICT = %s', repr(g_BOREHOLE_DICT))
     borehole_dict = g_BOREHOLE_DICT.get(res_id, None)
     if borehole_dict != None:
         borehole_id = borehole_dict['nvcl_id']
         blob = get_blob_boreholes(borehole_dict, g_PARAM[model_name])
         # Some boreholes do not have the requested metric
         if blob != None:
-            logging.debug('got blob %s', str(blob))
+            logger.debug('got blob %s', str(blob))
             g_BLOB_DICT.setdefault(model_name, {})
             g_BLOB_DICT[model_name][borehole_id] = blob
             # There are 2 files in the blob, a GLTF file and a .bin file
             for i in range(2):
+                logger.debug('blob.contents.name.data = %s', repr(blob.contents.name.data))
+                logger.debug('blob.contents.size = %s', repr(blob.contents.size))
+                logger.debug('blob.contents.data = %s', repr(blob.contents.data))
                 # Look for the GLTF file
                 if len(blob.contents.name.data) == 0:
                     # Convert to byte array
@@ -406,22 +435,34 @@ def make_getresourcebyid_response(start_response, url_kvp, model_name):
                     bcd_bytes = b''
                     for b in bcd.contents:
                         bcd_bytes += b
+                    bcd_str = bcd_bytes.decode('utf-8','ignore')
+                    logger.debug('bcd_str = %s', bcd_str)
                     try:
                         # Convert to json
-                        gltf_json = json.loads(str(bcd_bytes))
-                        # This modifies the URL of the .bin file associated with the GLTF file. 
-                        # Inserting model name and borehole id as a parameter so we can tell the .bin files apart
-                        gltf_json["buffers"][0]["uri"] = model_name + '/' + gltf_json["buffers"][0]["uri"] + "?id=" + borehole_id
-                        # Convert back to bytes and send
-                        gltf_str = json.dumps(gltf_json)
-                        gltf_bytes = bytes(gltf_str, 'utf=8')
-                        response_headers = [('Content-type', 'model/gltf+json;charset=UTF-8'), ('Content-Length', str(len(gltf_bytes))), ('Connection', 'keep-alive')]
-                        start_response('200 OK', response_headers)
-                        return [gltf_bytes]
-                    except JSONDecodeError:
-                        pass
+                        gltf_json = json.loads(bcd_str)
+                        logger.debug('gltf_json = %s', gltf_json)
+                    except JSONDecodeError as e:
+                        logger.debug('JSONDecodeError loads(): %s', str(e))
+                    else:
+                        try:
+                            # This modifies the URL of the .bin file associated with the GLTF file. 
+                            # Inserting model name and borehole id as a parameter so we can tell the .bin files apart
+                            gltf_json["buffers"][0]["uri"] = model_name + '/' + gltf_json["buffers"][0]["uri"] + "?id=" + borehole_id
+                            # Convert back to bytes and send
+                            gltf_str = json.dumps(gltf_json)
+                            gltf_bytes = bytes(gltf_str, 'utf=8')
+                            response_headers = [('Content-type', 'model/gltf+json;charset=UTF-8'), ('Content-Length', str(len(gltf_bytes))), ('Connection', 'keep-alive')]
+                            start_response('200 OK', response_headers)
+                            return [gltf_bytes]
+                        except JSONDecodeError as e:
+                            logger.debug('JSONDecodeError dumps(): %s', str(e))
                 
                 blob = blob.contents.next
+            logger.debug('GLTF not found in blob')
+        else:
+            logger.debug('Empty GLTF blob')
+    else:
+        logger.debug('Resource not found in borehole dict')
 
     return make_str_response(start_response, ' ')
 
@@ -481,12 +522,12 @@ def application(environ, start_response):
     doc_root = os.path.normcase(environ['DOCUMENT_ROOT'])
     sys.path.append(os.path.join(doc_root, 'lib'))
     path_bits = environ['PATH_INFO'].split('/')
-    logging.debug('path_bits= %s', repr(path_bits))
+    logger.debug('path_bits= %s', repr(path_bits))
     # Expecting a path '/api/<model_name>?service=<service_name>&param1=val1'
     # or '/<model_name>?service=<service_name>&param1=val1'
     if len(path_bits) == 3 and path_bits[:2] == ['','api'] or len(path_bits) == 2 and path_bits[:1] == ['']:
         model_name = path_bits[-1]
-        logging.debug('model_name= %s', model_name)
+        logger.debug('model_name= %s', model_name)
         url_params = urllib.parse.parse_qs(environ['QUERY_STRING'])
         # Convert all the URL parameter names to lower case with merging
         url_kvp = {}
@@ -495,6 +536,9 @@ def application(environ, start_response):
             url_kvp[key.lower()] += val
         service_name = get_val('service', url_kvp)
         request = get_val('request', url_kvp)
+        
+        logger.debug('service_name = %s', repr(service_name))
+        logger.debug('request = %s', repr(request))
         
         # Roughly trying to conform to 3DPS standard
         if service_name.lower() == '3dps':
@@ -530,6 +574,7 @@ def application(environ, start_response):
         elif service_name.lower() == 'wfs':
             # Check for version 2.0
             version = get_val('version', url_kvp)
+            logger.debug('version = %s', version)
             if version == '':
                 return make_json_exception_response(start_response, 'Unknown', 'MissingParameterValue', 'Missing version parameter')
             elif version != '2.0':
@@ -538,6 +583,8 @@ def application(environ, start_response):
             # GetFeature
             if request.lower() == 'getpropertyvalue':
                 return make_getpropvalue_response(start_response, url_kvp, model_name, environ)
+            else:
+                return make_json_exception_response(start_response, get_val('version', url_kvp), 'OperationNotSupported', 'Unknown request name')
             
         elif service_name != '':
             return make_json_exception_response(start_response, get_val('version', url_kvp), 'OperationNotSupported', 'Unknown service name')
@@ -550,6 +597,7 @@ def application(environ, start_response):
     # Format /api/<model_name>/$blobfile.bin?id=12345
     elif len(path_bits) == 4 and path_bits[:2] == ['','api'] and path_bits[3] == GLTF_REQ_NAME:
         model_name = path_bits[2]
+        logger.debug("2: model_name = %s", model_name)
         if model_name in g_BLOB_DICT:
             # Get the GLTF binary file associated with each GLTF file
             bh_id_arr = urllib.parse.parse_qs(environ['QUERY_STRING']).get('id', [])
@@ -570,12 +618,12 @@ def application(environ, start_response):
                             
                         blob = blob.contents.next
                 else:
-                    logging.error("Cannot locate blob in dict")
+                    logger.error("Cannot locate blob in dict")
             else:
-                logging.error("Cannot locate id in blobfile.bin url")
+                logger.error("Cannot locate id in blobfile.bin url")
             
     else:
-        logging.debug('Bad URL')
+        logger.debug('Bad URL')
 
     # Catch-all sends empty response
     return make_str_response(start_response, ' ')
