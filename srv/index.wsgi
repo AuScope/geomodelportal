@@ -13,7 +13,7 @@ import glob
 import platform
 import logging
 
-DEBUG_LVL = logging.CRITICAL
+DEBUG_LVL = logging.ERROR
 ''' Initialise debug level to minimal debugging
 '''
 
@@ -170,7 +170,7 @@ for prov_name, model_dict in conf_dict.items():
         else:
             # Cache file does not exist, create WFS service and dump to file
             g_WFS_DICT[model_name] = MyWebFeatureService(g_PARAM[model_name].WFS_URL, version=g_PARAM[model_name].WFS_VERSION, xml=None, timeout=WFS_TIMEOUT)
-            logger.info("Creating pickle file for %s", g_PARAM[model_name].WFS_URL)
+            logger.debug("Creating pickle file for %s", g_PARAM[model_name].WFS_URL)
             fp = open(cache_file, 'wb')
             pickle.dump(g_WFS_DICT[model_name], fp)
             fp.close()
@@ -362,27 +362,36 @@ def make_getfeatinfobyid_response(start_response, url_kvp, model_name, environ):
         # Query database
         # Open up query database
         qdb = QueryDB()
-        qdb.open_db(create=False, db_name="sqlite:///"+os.path.join(environ['DOCUMENT_ROOT'], "query_data.db"))
-        logger.info('querying db: %s %s', obj_id, model_name)
-        label, out_model_name, segment_str, part_str, model_str, user_str = qdb.query(obj_id, model_name)
-        resp_dict = { 'type': 'FeatureInfoList', 'totalFeatureInfo': 1, 'featureInfos': [ { 'type': 'FeatureInfo', 'objectId': obj_id, 'featureId': obj_id, 'featureAttributeList': [] } ] }
-        query_dict = {}
-        if segment_str != None:
-            segment_info = json.loads(segment_str)
-            query_dict.update(segment_info)
-        if part_str != None:
-            part_info = json.loads(part_str)
-            query_dict.update(part_info)
-        if model_str != None:    
-            model_info = json.loads(model_str)
-            query_dict.update(model_info)
-        if user_str != None:
-            user_info = json.loads(user_str) 
-            query_dict.update(user_info)
-        for key, val in query_dict.items():
-            resp_dict['featureInfos'][0]['featureAttributeList'].append({ 'type': 'FeatureAttribute', 'name': key, 'value': val })
-        resp_str = json.dumps(resp_dict)
-        resp_bytes = bytes(resp_str, 'utf-8')
+        ok, err_msg = qdb.open_db(create=False, db_name=os.path.join(environ['DOCUMENT_ROOT'], "query_data.db"))
+        if not ok:
+            logger.error('Could not open query db: %s', err_msg)
+            return make_str_response(start_response, ' ')
+        logger.debug('querying db: %s %s', obj_id, model_name)
+        ok, result = qdb.query(obj_id, model_name)
+        if ok:
+            label, out_model_name, segment_str, part_str, model_str, user_str = result
+            resp_dict = { 'type': 'FeatureInfoList', 'totalFeatureInfo': 1, 'featureInfos': [ { 'type': 'FeatureInfo', 'objectId': obj_id, 'featureId': obj_id, 'featureAttributeList': [] } ] }
+            query_dict = {}
+            if segment_str != None:
+                segment_info = json.loads(segment_str)
+                query_dict.update(segment_info)
+            if part_str != None:
+                part_info = json.loads(part_str)
+                query_dict.update(part_info)
+            if model_str != None:    
+                model_info = json.loads(model_str)
+                query_dict.update(model_info)
+            if user_str != None:
+                user_info = json.loads(user_str) 
+                query_dict.update(user_info)
+            for key, val in query_dict.items():
+                resp_dict['featureInfos'][0]['featureAttributeList'].append({ 'type': 'FeatureAttribute', 'name': key, 'value': val })
+            resp_str = json.dumps(resp_dict)
+            resp_bytes = bytes(resp_str, 'utf-8')
+        else:
+            logger.error('Could not query db: %s', str(result))
+            return make_str_response(start_response, ' ')
+            
     response_headers = [('Content-type', 'application/json'), ('Content-Length', str(len(resp_bytes))), ('Connection', 'keep-alive')]
     start_response('200 OK', response_headers)
     return [resp_bytes]
