@@ -9,11 +9,8 @@
       "projectType": "application",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "customWebpackConfig": {
-               "path": "extra-webpack.config.js"
-            },
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -42,7 +39,7 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
+              "buildOptimizer": false,
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -53,7 +50,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-builders/dev-server:generic",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "3dgeomodel:build"
           },
