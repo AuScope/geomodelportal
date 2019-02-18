@@ -122,7 +122,7 @@ def read_json_file(file_name):
         json_dict = json.load(fp)
     except JSONDecodeError as e:
         json_dict = {}
-        loggging.error("Cannot read JSON file %s %s", file_name, str(e))
+        logging.error("Cannot read JSON file %s %s", file_name, str(e))
         fp.close()
         return {}
     fp.close()
@@ -445,11 +445,11 @@ def make_getresourcebyid_response(start_response, url_kvp, model_name):
                     for b in bcd.contents:
                         bcd_bytes += b
                     bcd_str = bcd_bytes.decode('utf-8','ignore')
-                    logger.debug('bcd_str = %s', bcd_str)
+                    logger.debug('bcd_str = %s', bcd_str[:80])
                     try:
                         # Convert to json
                         gltf_json = json.loads(bcd_str)
-                        logger.debug('gltf_json = %s', gltf_json)
+                        logger.debug('gltf_json = %s', str(gltf_json)[:80])
                     except JSONDecodeError as e:
                         logger.debug('JSONDecodeError loads(): %s', str(e))
                     else:
@@ -459,7 +459,7 @@ def make_getresourcebyid_response(start_response, url_kvp, model_name):
                             gltf_json["buffers"][0]["uri"] = model_name + '/' + gltf_json["buffers"][0]["uri"] + "?id=" + borehole_id
                             # Convert back to bytes and send
                             gltf_str = json.dumps(gltf_json)
-                            gltf_bytes = bytes(gltf_str, 'utf=8')
+                            gltf_bytes = bytes(gltf_str, 'utf-8')
                             response_headers = [('Content-type', 'model/gltf+json;charset=UTF-8'), ('Content-Length', str(len(gltf_bytes))), ('Connection', 'keep-alive')]
                             start_response('200 OK', response_headers)
                             return [gltf_bytes]
@@ -473,7 +473,7 @@ def make_getresourcebyid_response(start_response, url_kvp, model_name):
     else:
         logger.debug('Resource not found in borehole dict')
 
-    return make_str_response(start_response, ' ')
+    return make_str_response(start_response, '{}')
 
     
 '''
@@ -534,7 +534,7 @@ def application(environ, start_response):
     logger.debug('path_bits= %s', repr(path_bits))
     # Expecting a path '/api/<model_name>?service=<service_name>&param1=val1'
     # or '/<model_name>?service=<service_name>&param1=val1'
-    if len(path_bits) == 3 and path_bits[:2] == ['','api'] or len(path_bits) == 2 and path_bits[:1] == ['']:
+    if len(path_bits) == 3 and path_bits[:2] == ['','api'] or len(path_bits) == 2 and path_bits[0] == '':
         model_name = path_bits[-1]
         logger.debug('model_name= %s', model_name)
         url_params = urllib.parse.parse_qs(environ['QUERY_STRING'])
@@ -603,9 +603,11 @@ def application(environ, start_response):
 
                 
     # This sends back the second part of the GLTF object - the .bin file
-    # Format /api/<model_name>/$blobfile.bin?id=12345
-    elif len(path_bits) == 4 and path_bits[:2] == ['','api'] and path_bits[3] == GLTF_REQ_NAME:
-        model_name = path_bits[2]
+    # Format '/api/<model_name>/$blobfile.bin?id=12345'
+    # or '/<model_name>/$blobfile.bin?id=12345'
+    elif ((len(path_bits) == 4 and path_bits[:2] == ['','api']) or \
+          (len(path_bits) == 3 and path_bits[0] == '')) and path_bits[-1] == GLTF_REQ_NAME:
+        model_name = path_bits[-2]
         logger.debug("2: model_name = %s", model_name)
         if model_name in g_BLOB_DICT:
             # Get the GLTF binary file associated with each GLTF file
