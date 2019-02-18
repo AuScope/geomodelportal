@@ -314,10 +314,6 @@ export class OverviewComponent implements AfterViewInit {
           mesh = local.makeAxisLabel('S', font, 0x00ff00, 'south-label');
           mesh.position.set(0, AXES_LENGTH * 1.2, 0);
           local.setUpLabel(southAxis, mesh, 'south-label');
-
-          // mesh = local.makeAxisLabel('Up', font, 0xffff00, 'up-label');
-          // mesh.position.set(0, (AXES_LENGTH / 2.0)  * 1.2, 0);
-          // local.setUpLabel(upAxis, mesh, 'up-label');
           local.render();
         });
     }
