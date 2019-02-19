@@ -16,8 +16,7 @@ import { SceneObject, PlaneSceneObject, WMSSceneObject, VolSceneObject } from '.
 import * as THREE from 'three';
 
 // GLTFLoader is not part of ThreeJS' set of package exports, so we need this wrapper function
-// FIXME: Needs typescript bindings
-import * as GLTFLoader from '../../../../node_modules/three-gltf2-loader/lib/main';
+import GLTFLoader from 'three-gltf-loader';
 
 // Import itowns library
 // Note: In ThreeJS, buffer geometry ids are created by incrementing a counter which is local to the library.
@@ -30,11 +29,7 @@ import * as ITOWNS from '../../../../node_modules/itowns/dist/itowns';
 const proj4 = ITOWNS.proj4;
 
 // Three axis virtual globe controller
-// FIXME: Convert to typescript
 import GeoModelControls from '../../../assets/GeoModelControls';
-
-// Detects if WebGL is available in the browser
-import * as Detector from '../../../../node_modules/three/examples/js/Detector';
 
 const BACKGROUND_COLOUR = new THREE.Color(0xC0C0C0);
 
@@ -85,10 +80,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     private config;
 
     // Directory where model files are kept
-    private model_dir;
+    private modelDir;
 
     // Current model's name as part if its URL
-    private model_url_path;
+    private modelUrlPath;
 
     // Virtual sphere radius
     public sphereRadius = 0.0;
@@ -134,6 +129,49 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
                 private helpinfoService: HelpinfoService, private httpService: HttpClient,
                 private volViewService: VolviewService) {
+        THREE.Cache.enabled = true;
+    }
+
+    /**
+     * Detects WebGL
+     * Adapted from: Detector.js in ThreeJS examples
+     * @return true if WebGL is supported
+     */
+    private hasWebGL() {
+        try {
+            const canvas = document.createElement('canvas');
+            return !! ( (<any>window).WebGLRenderingContext &&
+                        ( canvas.getContext( 'webgl' ) || canvas.getContext( 'experimental-webgl' ) ) );
+        } catch ( e ) {
+            return false;
+        }
+    }
+
+    /**
+     * Creates a WebGL error message
+     * Adapted from: Detector.js in ThreeJS examples
+     * @return HTML Element
+     */
+    private getWebGLErrorMessage() {
+        const p1 = this.ngRenderer.createElement('p');
+        if (!this.hasWebGL()) {
+            const textStr = (<any>window).WebGLRenderingContext ? [
+                'Your graphics card does not seem to support WebGL',
+                'Find out how to get it '
+            ].join( '\n' ) : [
+                'Your browser does not seem to support WebGL',
+                'Find out how to get it '
+            ].join( '\n' );
+            const hText = this.ngRenderer.createText(textStr);
+            this.ngRenderer.appendChild(p1, hText);
+            const oLink = this.ngRenderer.createElement('a');
+            this.ngRenderer.setAttribute(oLink, 'href', 'http://get.webgl.org/'); // Attributes are HTML entities
+            this.ngRenderer.setProperty(oLink, 'innerHTML', 'here.'); // Properties are DOM entities
+            this.ngRenderer.setAttribute(oLink, 'target', '_blank');
+            this.ngRenderer.setStyle(oLink, 'color', 'yellow');
+            this.ngRenderer.appendChild(p1, oLink);
+        }
+        return p1;
     }
 
     /**
@@ -202,14 +240,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         }
 
         // Detect if webGL is available and inform viewer if cannot proceed
-        if (Detector.webgl) {
-            this.model_url_path = this.route.snapshot.paramMap.get('modelPath');
+        if (this.hasWebGL()) {
+            this.modelUrlPath = this.route.snapshot.paramMap.get('modelPath');
 
             // Turn on loading spinner
             this.controlLoadSpinner(true);
 
             // Initialise model by downloading its JSON file
-            this.modelInfoService.getModelInfo(this.model_url_path).then(
+            this.modelInfoService.getModelInfo(this.modelUrlPath).then(
                 res => {
                     local.initialiseModel(res[0], res[1]);
                 },
@@ -221,7 +259,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     const a1 = this.ngRenderer.createElement('a');
                     this.ngRenderer.appendChild(a1, hText2);
                     this.ngRenderer.setAttribute(a1, 'href', '/');
-                    this.ngRenderer.setStyle(a1, 'color', 'blue');
+                    this.ngRenderer.setStyle(a1, 'color', 'yellow');
                     this.ngRenderer.appendChild(p1, hText1);
                     this.ngRenderer.appendChild(p2, a1);
                     this.ngRenderer.appendChild(this.errorDiv, p1);
@@ -270,8 +308,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             };
             this.modelInfoService.registerModelPartCallback(callbackFn);
         } else {
-            // Sorry, your browser does not have WebGL
-            const warning = Detector.getWebGLErrorMessage();
+            // Sorry, your browser or grpahics card does not have WebGL
+            const warning = this.getWebGLErrorMessage();
             this.ngRenderer.appendChild(this.errorDiv, warning);
             this.ngRenderer.setStyle(this.errorDiv, 'display', 'inline');
         }
@@ -389,7 +427,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     private initialiseModel(config, modelDir: string) {
         const props = config.properties;
         this.config = config;
-        this.model_dir = modelDir;
+        this.modelDir = modelDir;
         if (props.proj4_defn) {
             proj4.defs(props.crs, props.proj4_defn);
         }
@@ -450,13 +488,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Loads and draws the GLTF objects
      */
     private add3DObjects() {
-        const manager = new ITOWNS.THREE.LoadingManager();
-
-        // This adds the 'GLTFLoader' object to 'THREE'
-        GLTFLoader(ITOWNS.THREE);
-
-        // Create our new GLTFLoader object
-        const loader = new ITOWNS.THREE['GLTFLoader'](manager);
+        const loader = new GLTFLoader();
         const promiseList = [];
         const local = this;
 
@@ -468,22 +500,22 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     if (parts[i].type === 'GLTFObject' && parts[i].include) {
                         promiseList.push( new Promise( function( resolve, reject ) {
                             (function(part, grp) {
-                                loader.load('./assets/geomodels/' + local.model_dir + '/' + part.model_url,
+                                loader.load('./assets/geomodels/' + local.modelDir + '/' + part.model_url,
                                     // function called if loading successful
-                                    function (g_object) {
-                                        console.log('loaded: ', local.model_dir + '/' + part.model_url);
-                                        g_object.scene.name = part.model_url;
+                                    function (gObject) {
+                                        console.log('loaded: ', local.modelDir + '/' + part.model_url);
+                                        gObject.scene.name = part.model_url;
                                         if (!part.displayed) {
-                                            g_object.scene.visible = false;
+                                            gObject.scene.visible = false;
                                         }
                                         // Adds GLTFObject to scene
-                                        local.scene.add(g_object.scene);
+                                        local.scene.add(gObject.scene);
                                         // Adds it to the scene array to keep track of it
-                                        local.addSceneObj(part, new SceneObject(g_object.scene), grp);
-                                        resolve(g_object.scene);
+                                        local.addSceneObj(part, new SceneObject(gObject.scene), grp);
+                                        resolve(gObject.scene);
                                     },
                                     // function called during loading
-                                    function ( {} ) {
+                                    function ({}) {
                                         // console.log('GLTF onProgress()', xhr);
                                         // if ( xhr.lengthComputable ) {
                                         //    const percentComplete = xhr.loaded / xhr.total * 100;
@@ -491,8 +523,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         // }
                                     },
                                     // function called when loading fails
-                                    function ( xhr ) {
-                                         console.error('GLTF/OBJ load error!', xhr);
+                                    function (error) {
+                                         console.error('GLTF/OBJ load error!', error);
                                          reject(null);
                                     }
                                 );
@@ -505,7 +537,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
         // Get a list of borehole_ids - slow to load so they are done in the background
         // NB: Use the same model name in the URL for 'api' as for the model viewing URL
-        const modelName = this.model_url_path;
+        const modelName = this.modelUrlPath;
         this.modelInfoService.getBoreHoleIds(modelName).then(
             function(boreholeIdList: any[]) {
                 for (const boreholeId of boreholeIdList) {
@@ -517,46 +549,44 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     };
                     // Load up GLTF boreholes
                     loader.load('./api/' + modelName + '?' + local.modelInfoService.buildURL(params),
-                        // function called if loading successful
-                        function (g_object) {
-                            const groupName = 'Boreholes';
-                            console.log('loaded borehole id', boreholeId);
-                            g_object.scene.name = 'Borehole_' + boreholeId;
-                            local.scene.add(g_object.scene);
-                            local.addSceneObj({ 'display_name': boreholeId, 'displayed': true, 'model_url': boreholeId,
-                                                      'type': 'GLTFObject' }, new SceneObject(g_object.scene), groupName);
-                            local.sidebarSrvRequest(groupName, boreholeId, MenuStateChangeType.NEW_PART);
-                        },
-                        // function called during loading
-                        function ( {} ) {
-                            /*console.log('BOREHOLE GLTF onProgress()', xhr);
-                            if ( xhr.lengthComputable ) {
-                               const percentComplete = xhr.loaded / xhr.total * 100;
-                               console.log( xhr.currentTarget.responseURL, Math.round(percentComplete) + '% downloaded' );
-                           }*/
-                        },
-                        // function called when loading fails
-                        function ( xhr ) {
-                            console.log('BOREHOLE ', boreholeId, ' GLTF load error!', xhr);
-                        }
-                    );
+                            // function called if loading successful
+                            function (gObject) {
+                                const groupName = 'Boreholes';
+                                gObject.scene.name = 'Borehole_' + boreholeId;
+                                local.scene.add(gObject.scene);
+                                local.addSceneObj({ 'display_name': boreholeId, 'displayed': true, 'model_url': boreholeId,
+                                                          'type': 'GLTFObject' }, new SceneObject(gObject.scene), groupName);
+                                local.sidebarSrvRequest(groupName, boreholeId, MenuStateChangeType.NEW_PART);
+                            },
+                            // function called during loading
+                            function ({}) {
+                                /*console.log('BOREHOLE GLTF onProgress()', xhr);
+                                if ( xhr.lengthComputable ) {
+                                   const percentComplete = xhr.loaded / xhr.total * 100;
+                                   console.log( xhr.currentTarget.responseURL, Math.round(percentComplete) + '% downloaded' );
+                               }*/
+                            },
+                            // function called when loading fails
+                            function (error) {
+                                console.log('BOREHOLE ', boreholeId, ' GLTF load error!', error);
+                            }
+                        );
+                    } // for loop
+                },
+                function(err) {
+                    console.log('BOREHOLE ID LIST load error!', err);
                 }
-
-            },
-            function(err) {
-                console.log('BOREHOLE ID LIST load error!', err);
-            }
         );
 
         Promise.all(promiseList).then(
             // function called when all objects are loaded
-            function( {} ) {
+            function({}) {
                 console.log('GLTFs are loaded');
                 // Add image files to scene
                 local.addPlanes();
             },
             // function called when one or more objects fail
-            function( error ) {
+            function(error) {
                 console.error( 'Could not load all GLTFs:', error );
             });
     }
@@ -578,7 +608,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                         const volSceneObj  = new VolSceneObject(null, local.volViewService, volView);
                         volSceneObj.volObjList = [];
                         promiseList.push(local.volViewService.makePromise(volView, group, partId,
-                                        './assets/geomodels/' + local.model_dir + '/' + parts[i].model_url,
+                                        './assets/geomodels/' + local.modelDir + '/' + parts[i].model_url,
                                         local.scene, volSceneObj.volObjList, parts[i].displayed));
                         this.addSceneObj(parts[i], volSceneObj, group);
                     }
@@ -587,13 +617,13 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         }
         Promise.all(promiseList).then(
             // function called when all objects are loaded
-            function( {} ) {
+            function({}) {
                 console.log('Volumes are loaded');
                 // Finish creating scene
                 local.finaliseView();
             },
             // function called when one or more objects fail
-            function( error ) {
+            function(error) {
                 console.error( 'Could not load all volumes:', error );
             });
     }
@@ -613,14 +643,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     if (parts[i].type === 'ImagePlane' && parts[i].include) {
                         promiseList.push( new Promise( function( resolve, reject ) {
                         (function(part, grp) {
-                            textureLoader.load('./assets/geomodels/' + local.model_dir + '/' + part.model_url,
+                            textureLoader.load('./assets/geomodels/' + local.modelDir + '/' + part.model_url,
                             // Function called when download successful
                             function (textya) {
                                 textya.minFilter = ITOWNS.THREE.LinearFilter;
-                                const material = new ITOWNS.THREE.MeshBasicMaterial( {
+                                const material = new ITOWNS.THREE.MeshBasicMaterial({
                                     map: textya,
                                    side: THREE.DoubleSide
-                                } );
+                                });
                                 const geometry = new ITOWNS.THREE.PlaneGeometry(local.extentObj.dimensions().x,
                                                                                 local.extentObj.dimensions().y);
                                 const plane = new ITOWNS.THREE.Mesh(geometry, material);
@@ -638,11 +668,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 resolve(plane);
                             },
                             // Function called when download progresses
-                            function ( {} ) {
+                            function ({}) {
                                 // NB: Threejs does not support the progress loader
                             },
                             // Function called when download errors
-                            function ( {} ) {
+                            function ({}) {
                                 console.error('An error happened loading image plane');
                                 reject(null);
                             }
@@ -656,12 +686,12 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
         Promise.all(promiseList).then(
         // function called when all objects successfully loaded
-        function( {} ) {
+        function({}) {
             console.log('Planes finished');
             local.addVolumes();
         },
         // function called when one GLTF object failed to load
-        function( error ) {
+        function(error) {
             console.error( 'Could not load all textures:', error );
         });
     }
@@ -836,11 +866,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             'layers': 'boreholes',
                             'objectId': objName
                         };
-                        const modelName = local.model_url_path;
+                        const modelName = local.modelUrlPath;
                         local.httpService.get('./api/' + modelName + '?' + local.modelInfoService.buildURL(params)).subscribe(
                             data => {
                                 const dataResult = data as string [];
-                                console.log('dataResult = ', dataResult);
                                 const attrList = dataResult['featureInfos'][0]['featureAttributeList'];
                                 const queryResult = {};
                                 for (const keyval of attrList) {
