@@ -52,15 +52,10 @@ logger.setLevel(DEBUG_LVL)
 # To get borehole object after scene is loaded:
 # http://localhost:4200/api/NorthGawler?service=3DPS&version=1.0&request=GetResourceById&resourceId=228563&outputFormat=model%2Fgltf%2Bjson%3Bcharset%3DUTF-8
 
-# NB: Implementation dependent path - will need to edit for each installation.
-if platform.system() == 'Windows':
-    DOC_HOME = os.path.join('C', os.sep, 'Apache24', 'htdocs')
-else:
-    DOC_HOME = os.path.join('/var','www','html','api')
-
-# Include local modules
-if platform.system() == 'Windows':
-    sys.path.append(os.path.join(DOC_HOME, 'lib'))
+# Include local code in python path
+LOCAL_DIR = os.path.dirname(__file__)
+WSGI_DIR = os.path.join(LOCAL_DIR, os.pardir, os.pardir, 'wsgi')
+sys.path.append(os.path.join(WSGI_DIR, 'lib'))
 
 from makeBoreholes import get_blob_boreholes, get_boreholes_list, get_json_input_param
 from db.db_tables import QueryDB
@@ -133,9 +128,8 @@ def read_json_file(file_name):
 ' INITIALISATION - Executed upon startup only.
 ' Loads all the WFS services and pickles them for future use
 '''
-
-INPUT_DIR = os.path.join(DOC_HOME, 'input')
-CACHE_DIR = os.path.join(DOC_HOME, 'cache', 'wfs')
+INPUT_DIR = os.path.join(WSGI_DIR, 'input')
+CACHE_DIR = os.path.join(WSGI_DIR, 'cache', 'wfs')
 if not os.path.exists(INPUT_DIR):
     logger.error("input dir %s does not exist", INPUT_DIR) 
     sys.exit(1)
@@ -362,9 +356,10 @@ def make_getfeatinfobyid_response(start_response, url_kvp, model_name, environ):
         # Query database
         # Open up query database
         qdb = QueryDB()
-        ok, err_msg = qdb.open_db(create=False, db_name=os.path.join(environ['DOCUMENT_ROOT'], "query_data.db"))
+        db_path = os.path.join(WSGI_DIR, 'query_data.db')
+        ok, err_msg = qdb.open_db(create=False, db_name=db_path)
         if not ok:
-            logger.error('Could not open query db: %s', err_msg)
+            logger.error('Could not open query db %s: %s', db_path, err_msg)
             return make_str_response(start_response, ' ')
         logger.debug('querying db: %s %s', obj_id, model_name)
         ok, result = qdb.query(obj_id, model_name)
