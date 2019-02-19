@@ -529,7 +529,7 @@ def application(environ, start_response):
     logger.debug('path_bits= %s', repr(path_bits))
     # Expecting a path '/api/<model_name>?service=<service_name>&param1=val1'
     # or '/<model_name>?service=<service_name>&param1=val1'
-    if len(path_bits) == 3 and path_bits[:2] == ['','api'] or len(path_bits) == 2 and path_bits[0] == '':
+    if len(path_bits) == 3 and path_bits[:2] == ['','api']:
         model_name = path_bits[-1]
         logger.debug('model_name= %s', model_name)
         url_params = urllib.parse.parse_qs(environ['QUERY_STRING'])
@@ -600,8 +600,7 @@ def application(environ, start_response):
     # This sends back the second part of the GLTF object - the .bin file
     # Format '/api/<model_name>/$blobfile.bin?id=12345'
     # or '/<model_name>/$blobfile.bin?id=12345'
-    elif ((len(path_bits) == 4 and path_bits[:2] == ['','api']) or \
-          (len(path_bits) == 3 and path_bits[0] == '')) and path_bits[-1] == GLTF_REQ_NAME:
+    elif len(path_bits) == 4 and path_bits[:2] == ['','api'] and path_bits[-1] == GLTF_REQ_NAME:
         model_name = path_bits[-2]
         logger.debug("2: model_name = %s", model_name)
         if model_name in g_BLOB_DICT:
