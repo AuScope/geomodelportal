@@ -18,8 +18,9 @@ export class ModelCardComponent {
     @Input() modelInfoLink = '';
 
     constructor() {
+        // If this website sits in a subdirectory of web server's 'document root' directory
         if (environment.usePrePath) {
-            this.prePath = '#';
+            this.prePath = environment.prePath;
         }
     }
 

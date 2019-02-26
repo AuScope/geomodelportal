@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { ModelInfoService } from '../../shared/services/model-info.service';
-import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
     selector: 'app-providerselection',
@@ -17,9 +16,6 @@ export class ProviderSelectionComponent {
     public sources: any;
 
     constructor(private modelInfoService: ModelInfoService) {
-        // FIXME: At the moment this information is all hard-coded; this is temporary.
-        // Eventually I would like this information to be retrieved from the server
-        //
         this.sliders.push(
             {
                 imagePath: 'assets/images/Windimurra.PNG',

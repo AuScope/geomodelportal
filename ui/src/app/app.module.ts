@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { ModelInfoService } from './shared/services/model-info.service';
 import { SidebarService } from './shared/services/sidebar.service';
 import { HelpinfoService } from './shared/services/helpinfo.service';
+import {APP_BASE_HREF} from '@angular/common';
+import { environment } from '../environments/environment';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -35,8 +37,15 @@ export function createTranslateLoader(http: HttpClient) {
     providers: [
         ModelInfoService,
         SidebarService,
-        HelpinfoService // ,
-        // [{provide: LocationStrategy, useClass: HashLocationStrategy}]
+        HelpinfoService,
+        // Used when the website is installed in a subdirectory of web server's 'document root'
+        // It lets the Angular router know that the base directory of website is a subdirectory of 'document root'
+        {provide: APP_BASE_HREF, useFactory: () => {
+            if (environment.usePrePath) {
+                return environment.prePath;
+            }
+            return '';
+        }}
     ],
     declarations: [AppComponent],
     bootstrap: [AppComponent]
