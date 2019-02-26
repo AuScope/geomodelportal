@@ -95,20 +95,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "Carboniferous Devonian z56",
-                "displayed": true,
-                "include": true,
-                "model_url": "NEO_TB_Carboniferous_Devonian_z56.gltf",
-                "popups": {
-                    "NEO_TB_CARBONIFEROUS_DEVONIAN_Z56": {
-                        "name": "NEO_TB_CARBONIFEROUS_DEVONIAN_Z56",
-                        "title": "NEO_TB_CARBONIFEROUS_DEVONIAN_Z56"
-                    }
-                },
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "Carboniferous z56",
+                "display_name": "Carboniferous",
                 "displayed": true,
                 "include": true,
                 "model_url": "NEO_TB_Carboniferous_z56.gltf",
@@ -121,7 +108,20 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "Devonian z56",
+                "display_name": "Carboniferous Devonian",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_Carboniferous_Devonian_z56.gltf",
+                "popups": {
+                    "NEO_TB_CARBONIFEROUS_DEVONIAN_Z56": {
+                        "name": "NEO_TB_CARBONIFEROUS_DEVONIAN_Z56",
+                        "title": "NEO_TB_CARBONIFEROUS_DEVONIAN_Z56"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Devonian",
                 "displayed": true,
                 "include": true,
                 "model_url": "NEO_TB_Devonian_z56.gltf",
@@ -574,6 +574,19 @@
                 "type": "GLTFObject"
             },
             {
+                "display_name": "Permian",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_Permian_z56.gltf",
+                "popups": {
+                    "NEO_TB_PERMIAN_Z56": {
+                        "name": "NEO_TB_PERMIAN_Z56",
+                        "title": "NEO_TB_PERMIAN_Z56"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
                 "display_name": "Permian Intrusives",
                 "displayed": true,
                 "include": true,
@@ -585,24 +598,11 @@
                     }
                 },
                 "type": "GLTFObject"
-            },
-            {
-                "display_name": "Permian z56",
-                "displayed": true,
-                "include": true,
-                "model_url": "NEO_TB_Permian_z56.gltf",
-                "popups": {
-                    "NEO_TB_PERMIAN_Z56": {
-                        "name": "NEO_TB_PERMIAN_Z56",
-                        "title": "NEO_TB_PERMIAN_Z56"
-                    }
-                },
-                "type": "GLTFObject"
             }
         ]
     },
     "properties": {
-        "crs": "EPSG:3857",
+        "crs": "EPSG:28356",
         "extent": [
             215459.5078125,
             561074.0,
@@ -610,7 +610,8 @@
             6885822.09375
         ],
         "init_cam_dist": 900000.0,
-        "name": "West Tamworth Belt"
+        "name": "West Tamworth Belt",
+        "proj4_defn": "+proj=utm +zone=56 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
     },
     "type": "GeologicalModel",
     "version": 1.0

@@ -8,12 +8,14 @@
                 "model_url": "abingdon_surf.gltf",
                 "popups": {
                     "ABINGDON_SURF": {
-                        "name": "ABINGDON_SURF",
-                        "title": "ABINGDON_SURF",
-                        "href": [ {
+                        "href": [
+                            {
                                 "URL": "https://d28rz98at9flks.cloudfront.net/69581/Rec2009_029.pdf#page=67",
                                 "label": "PDF Report"
-                                } ]
+                            }
+                        ],
+                        "name": "ABINGDON_SURF",
+                        "title": "ABINGDON_SURF"
                     }
                 },
                 "type": "GLTFObject"
@@ -25,12 +27,14 @@
                 "model_url": "agwamin_surf.gltf",
                 "popups": {
                     "AGWAMIN_SURF": {
-                        "name": "AGWAMIN_SURF",
-                        "title": "AGWAMIN_SURF",
-                        "href": [ {
+                        "href": [
+                            {
                                 "URL": "https://d28rz98at9flks.cloudfront.net/69581/Rec2009_029.pdf#page=68",
                                 "label": "PDF Report"
-                                } ]
+                            }
+                        ],
+                        "name": "AGWAMIN_SURF",
+                        "title": "AGWAMIN_SURF"
                     }
                 },
                 "type": "GLTFObject"
@@ -42,12 +46,14 @@
                 "model_url": "drummond_surf.gltf",
                 "popups": {
                     "DRUMMOND_SURF": {
-                        "name": "DRUMMOND_SURF",
-                        "title": "DRUMMOND_SURF",
-                        "href": [ {
+                        "href": [
+                            {
                                 "URL": "https://d28rz98at9flks.cloudfront.net/69581/Rec2009_029.pdf#page=69",
                                 "label": "PDF Report"
-                                } ]
+                            }
+                        ],
+                        "name": "DRUMMOND_SURF",
+                        "title": "DRUMMOND_SURF"
                     }
                 },
                 "type": "GLTFObject"
@@ -59,12 +65,14 @@
                 "model_url": "etheridge_2_surf.gltf",
                 "popups": {
                     "ETHERIDGE_2_SURF": {
-                        "name": "ETHERIDGE_2_SURF",
-                        "title": "ETHERIDGE_2_SURF",
-                        "href": [ {
+                        "href": [
+                            {
                                 "URL": "https://d28rz98at9flks.cloudfront.net/69581/Rec2009_029.pdf#page=69",
                                 "label": "PDF Report"
-                                } ]
+                            }
+                        ],
+                        "name": "ETHERIDGE_2_SURF",
+                        "title": "ETHERIDGE_2_SURF"
                     }
                 },
                 "type": "GLTFObject"
@@ -76,12 +84,14 @@
                 "model_url": "etheridge_surf.gltf",
                 "popups": {
                     "ETHERIDGE_SURF": {
-                        "name": "ETHERIDGE_SURF",
-                        "title": "ETHERIDGE_SURF",
-                        "href": [ {
+                        "href": [
+                            {
                                 "URL": "https://d28rz98at9flks.cloudfront.net/69581/Rec2009_029.pdf#page=69",
                                 "label": "PDF Report"
-                                } ]
+                            }
+                        ],
+                        "name": "ETHERIDGE_SURF",
+                        "title": "ETHERIDGE_SURF"
                     }
                 },
                 "type": "GLTFObject"
@@ -93,12 +103,14 @@
                 "model_url": "moho_base_surf.gltf",
                 "popups": {
                     "MOHO_BASE_SURF": {
-                        "name": "MOHO_BASE_SURF",
-                        "title": "MOHO_BASE_SURF",
-                        "href": [ {
+                        "href": [
+                            {
                                 "URL": "https://d28rz98at9flks.cloudfront.net/69581/Rec2009_029.pdf#page=66",
                                 "label": "PDF Report"
-                                } ]
+                            }
+                        ],
+                        "name": "MOHO_BASE_SURF",
+                        "title": "MOHO_BASE_SURF"
                     }
                 },
                 "type": "GLTFObject"
@@ -110,12 +122,14 @@
                 "model_url": "numil_surf.gltf",
                 "popups": {
                     "NUMIL_SURF": {
-                        "name": "NUMIL_SURF",
-                        "title": "NUMIL_SURF",
-                        "href": [ {
+                        "href": [
+                            {
                                 "URL": "https://d28rz98at9flks.cloudfront.net/69581/Rec2009_029.pdf#page=66",
                                 "label": "PDF Report"
-                                } ]
+                            }
+                        ],
+                        "name": "NUMIL_SURF",
+                        "title": "NUMIL_SURF"
                     }
                 },
                 "type": "GLTFObject"
@@ -127,12 +141,14 @@
                 "model_url": "pilgrim_surf.gltf",
                 "popups": {
                     "PILGRIM_SURF": {
-                        "name": "PILGRIM_SURF",
-                        "title": "PILGRIM_SURF",
-                        "href": [ {
+                        "href": [
+                            {
                                 "URL": "https://d28rz98at9flks.cloudfront.net/69581/Rec2009_029.pdf#page=65",
                                 "label": "PDF Report"
-                                } ]
+                            }
+                        ],
+                        "name": "PILGRIM_SURF",
+                        "title": "PILGRIM_SURF"
                     }
                 },
                 "type": "GLTFObject"
@@ -144,12 +160,14 @@
                 "model_url": "suture_surf.gltf",
                 "popups": {
                     "SUTURE_SURF": {
-                        "name": "SUTURE_SURF",
-                        "title": "SUTURE_SURF",
-                        "href": [ {
+                        "href": [
+                            {
                                 "URL": "https://d28rz98at9flks.cloudfront.net/69581/Rec2009_029.pdf",
                                 "label": "PDF Report"
-                                } ]
+                            }
+                        ],
+                        "name": "SUTURE_SURF",
+                        "title": "SUTURE_SURF"
                     }
                 },
                 "type": "GLTFObject"
@@ -157,7 +175,7 @@
         ]
     },
     "properties": {
-        "crs": "EPSG:3857",
+        "crs": "EPSG:28354",
         "extent": [
             20593.96875,
             819451.5625,
@@ -165,7 +183,8 @@
             8120445.0
         ],
         "init_cam_dist": 2000000.0,
-        "name": "North Queensland"
+        "name": "North Queensland",
+        "proj4_defn": "+proj=utm +zone=54 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
     },
     "type": "GeologicalModel",
     "version": 1.0

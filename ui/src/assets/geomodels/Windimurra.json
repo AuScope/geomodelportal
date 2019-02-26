@@ -1,5 +1,317 @@
 {
     "groups": {
+        "3D Box Volumes": [
+            {
+                "display_name": "Bald Rock Supersuite",
+                "displayed": true,
+                "include": true,
+                "model_url": "V01_BaldRockSupersuite.gltf",
+                "popups": {
+                    "V01_BALDROCKSUPERSUITE": {
+                        "href": [
+                            {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "label": "Australian Stratigraphic Units Database"
+                            }
+                        ],
+                        "name": "V01_BALDROCKSUPERSUITE",
+                        "title": "V01_BALDROCKSUPERSUITE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "KantieMV Roof Zone",
+                "displayed": true,
+                "include": true,
+                "model_url": "V02_KantieMV_RoofZone.gltf",
+                "popups": {
+                    "V02_KANTIEMV_ROOFZONE": {
+                        "name": "V02_KANTIEMV_ROOFZONE",
+                        "title": "V02_KANTIEMV_ROOFZONE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Litho Mantle",
+                "displayed": true,
+                "include": true,
+                "model_url": "V10_LithoMantle.gltf",
+                "popups": {
+                    "V10_LITHOMANTLE": {
+                        "name": "V10_LITHOMANTLE",
+                        "title": "V10_LITHOMANTLE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Lower Zone East",
+                "displayed": true,
+                "include": true,
+                "model_url": "V06_LowerZoneEast.gltf",
+                "popups": {
+                    "V06_LOWERZONEEAST": {
+                        "name": "V06_LOWERZONEEAST",
+                        "title": "V06_LOWERZONEEAST"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Lower Zone West",
+                "displayed": true,
+                "include": true,
+                "model_url": "V04_LowerZoneWest.gltf",
+                "popups": {
+                    "V04_LOWERZONEWEST": {
+                        "name": "V04_LOWERZONEWEST",
+                        "title": "V04_LOWERZONEWEST"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Metagranites Basement",
+                "displayed": true,
+                "include": true,
+                "model_url": "V08_Metagranites_Basement.gltf",
+                "popups": {
+                    "V08_METAGRANITES_BASEMENT": {
+                        "name": "V08_METAGRANITES_BASEMENT",
+                        "title": "V08_METAGRANITES_BASEMENT"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Ultramafic Zone",
+                "displayed": true,
+                "include": true,
+                "model_url": "V07_UltramaficZone.gltf",
+                "popups": {
+                    "V07_ULTRAMAFICZONE": {
+                        "name": "V07_ULTRAMAFICZONE",
+                        "title": "V07_ULTRAMAFICZONE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Upper Middle Zone East",
+                "displayed": true,
+                "include": true,
+                "model_url": "V05_UpperMiddleZoneEast.gltf",
+                "popups": {
+                    "V05_UPPERMIDDLEZONEEAST": {
+                        "name": "V05_UPPERMIDDLEZONEEAST",
+                        "title": "V05_UPPERMIDDLEZONEEAST"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Upper Middle Zone West",
+                "displayed": true,
+                "include": true,
+                "model_url": "V03_UpperMiddleZoneWest.gltf",
+                "popups": {
+                    "V03_UPPERMIDDLEZONEWEST": {
+                        "name": "V03_UPPERMIDDLEZONEWEST",
+                        "title": "V03_UPPERMIDDLEZONEWEST"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Yarraquin Seismic Province",
+                "displayed": true,
+                "include": true,
+                "model_url": "V09_YarraquinSeismicProvince.gltf",
+                "popups": {
+                    "V09_YARRAQUINSEISMICPROVINCE": {
+                        "href": [
+                            {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=80136",
+                                "label": "Australian Stratigraphic Units Database"
+                            }
+                        ],
+                        "name": "V09_YARRAQUINSEISMICPROVINCE",
+                        "title": "V09_YARRAQUINSEISMICPROVINCE"
+                    }
+                },
+                "type": "GLTFObject"
+            }
+        ],
+        "3D Slice Lithology": [
+            {
+                "display_name": "Lithology",
+                "displayed": false,
+                "include": true,
+                "model_url": "3D_geology_Lithology@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "colourLookup": {
+                        "1": [
+                            0.968627,
+                            0.505882,
+                            0.705882,
+                            1.0
+                        ],
+                        "2": [
+                            0.968627,
+                            0.85098,
+                            0.52549,
+                            1.0
+                        ],
+                        "3": [
+                            0.807843,
+                            0.92549,
+                            0.921569,
+                            1.0
+                        ],
+                        "4": [
+                            0.415686,
+                            0.780392,
+                            0.756863,
+                            1.0
+                        ],
+                        "5": [
+                            0.807843,
+                            0.92549,
+                            0.917647,
+                            1.0
+                        ],
+                        "6": [
+                            0.415686,
+                            0.780392,
+                            0.756863,
+                            1.0
+                        ],
+                        "7": [
+                            0.623529,
+                            0.588235,
+                            0.988235,
+                            1.0
+                        ],
+                        "8": [
+                            0.960784,
+                            0.423529,
+                            0.654902,
+                            1.0
+                        ],
+                        "9": [
+                            0.501961,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "10": [
+                            0.25098,
+                            0.878431,
+                            0.815686,
+                            1.0
+                        ],
+                        "11": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ]
+                    },
+                    "dataDims": [
+                        299,
+                        400,
+                        120
+                    ],
+                    "dataType": "INT_16",
+                    "labelLookup": {
+                        "1": "01_BaldRockSupersuite",
+                        "2": "02_KantieMV_RoofZone",
+                        "3": "03_UpperMiddleZoneWest",
+                        "4": "04_LowerZoneWest",
+                        "5": "05_UpperMiddleZoneEast",
+                        "6": "06_LowerZoneEast",
+                        "7": "07_UltramaficZone",
+                        "8": "08_Metagranites_Basement",
+                        "9": "09_YarraquinSeismicProvince",
+                        "10": "10_LithoMantle",
+                        "11": "Air"
+                    },
+                    "maxVal": 11.0,
+                    "minVal": 1.0,
+                    "origin": [
+                        555000.0,
+                        6750000.0,
+                        -50000.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            1.0
+                        ]
+                    ],
+                    "size": [
+                        148501.67224080267,
+                        199001.25,
+                        59004.166666666664
+                    ]
+                }
+            }
+        ],
+        "Faults": [
+            {
+                "display_name": "Challa Shear Zone",
+                "displayed": true,
+                "include": true,
+                "model_url": "F01_ChallaShearZone.gltf",
+                "popups": {
+                    "F01_CHALLASHEARZONE": {
+                        "name": "F01_CHALLASHEARZONE",
+                        "title": "F01_CHALLASHEARZONE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Windi East Shear Zone",
+                "displayed": true,
+                "include": true,
+                "model_url": "F03_WindiEastShearZone.gltf",
+                "popups": {
+                    "F03_WINDIEASTSHEARZONE": {
+                        "name": "F03_WINDIEASTSHEARZONE",
+                        "title": "F03_WINDIEASTSHEARZONE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Yarloo Shear Zone",
+                "displayed": true,
+                "include": true,
+                "model_url": "F02_YarlooShearZone.gltf",
+                "popups": {
+                    "F02_YARLOOSHEARZONE": {
+                        "name": "F02_YARLOOSHEARZONE",
+                        "title": "F02_YARLOOSHEARZONE"
+                    }
+                },
+                "type": "GLTFObject"
+            }
+        ],
         "Seismic Reflection Surveys": [
             {
                 "display_name": "10GA YU1",
@@ -65144,194 +65456,28 @@
                 "type": "GLTFObject"
             }
         ],
-        "3D Slice Lithology": [
-            {
-                "display_name": "Lithology",
-                "displayed": false,
-                "include": true,
-                "model_url": "3D_geology_Lithology@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "colourLookup": {
-                        "1": [
-                            0.968627,
-                            0.505882,
-                            0.705882,
-                            1.0
-                        ],
-                        "2": [
-                            0.968627,
-                            0.85098,
-                            0.52549,
-                            1.0
-                        ],
-                        "3": [
-                            0.807843,
-                            0.92549,
-                            0.921569,
-                            1.0
-                        ],
-                        "4": [
-                            0.415686,
-                            0.780392,
-                            0.756863,
-                            1.0
-                        ],
-                        "5": [
-                            0.807843,
-                            0.92549,
-                            0.917647,
-                            1.0
-                        ],
-                        "6": [
-                            0.415686,
-                            0.780392,
-                            0.756863,
-                            1.0
-                        ],
-                        "7": [
-                            0.623529,
-                            0.588235,
-                            0.988235,
-                            1.0
-                        ],
-                        "8": [
-                            0.960784,
-                            0.423529,
-                            0.654902,
-                            1.0
-                        ],
-                        "9": [
-                            0.501961,
-                            0.0,
-                            0.0,
-                            1.0
-                        ],
-                        "10": [
-                            0.25098,
-                            0.878431,
-                            0.815686,
-                            1.0
-                        ],
-                        "11": [
-                            0.0,
-                            0.0,
-                            0.0,
-                            1.0
-                        ]
-                    },
-                    "dataDims": [
-                        299,
-                        400,
-                        120
-                    ],
-                    "dataType": "INT_16",
-                    "labelLookup": {
-                        "1": "01_BaldRockSupersuite",
-                        "2": "02_KantieMV_RoofZone",
-                        "3": "03_UpperMiddleZoneWest",
-                        "4": "04_LowerZoneWest",
-                        "5": "05_UpperMiddleZoneEast",
-                        "6": "06_LowerZoneEast",
-                        "7": "07_UltramaficZone",
-                        "8": "08_Metagranites_Basement",
-                        "9": "09_YarraquinSeismicProvince",
-                        "10": "10_LithoMantle",
-                        "11": "Air"
-                    },
-                    "maxVal": 11.0,
-                    "minVal": 1.0,
-                    "origin": [
-                        555000.0,
-                        6750000.0,
-                        -50000.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            0.0,
-                            1.0
-                        ]
-                    ],
-                    "size": [
-                        148501.67224080267,
-                        199001.25,
-                        59004.166666666664
-                    ]
-                }
-            }
-        ],
-        "Faults": [
-            {
-                "display_name": "ChallaShearZone",
-                "displayed": true,
-                "include": true,
-                "model_url": "F01_ChallaShearZone.gltf",
-                "popups": {
-                    "F01_CHALLASHEARZONE": {
-                        "name": "F01_CHALLASHEARZONE",
-                        "title": "F01_CHALLASHEARZONE"
-                    }
-                },
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "YarlooShearZone",
-                "displayed": true,
-                "include": true,
-                "model_url": "F02_YarlooShearZone.gltf",
-                "popups": {
-                    "F02_YARLOOSHEARZONE": {
-                        "name": "F02_YARLOOSHEARZONE",
-                        "title": "F02_YARLOOSHEARZONE"
-                    }
-                },
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "WindiEastShearZone",
-                "displayed": true,
-                "include": true,
-                "model_url": "F03_WindiEastShearZone.gltf",
-                "popups": {
-                    "F03_WINDIEASTSHEARZONE": {
-                        "name": "F03_WINDIEASTSHEARZONE",
-                        "title": "F03_WINDIEASTSHEARZONE"
-                    }
-                },
-                "type": "GLTFObject"
-            }
-        ],
         "Stratigraphic Surfaces": [
             {
-                "display_name": "BaldRockSupersuite",
+                "display_name": "Bald Rock Supersuite",
                 "displayed": true,
                 "include": true,
                 "model_url": "S01_BaldRockSupersuite.gltf",
                 "popups": {
                     "S01_BALDROCKSUPERSUITE": {
-                        "name": "S01_BALDROCKSUPERSUITE",
-                        "title": "S01_BALDROCKSUPERSUITE",
-                        "href": [ {
+                        "href": [
+                            {
                                 "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
                                 "label": "Australian Stratigraphic Units Database"
-                                } ]
+                            }
+                        ],
+                        "name": "S01_BALDROCKSUPERSUITE",
+                        "title": "S01_BALDROCKSUPERSUITE"
                     }
                 },
                 "type": "GLTFObject"
             },
             {
-                "display_name": "KantieMV RoofZone",
+                "display_name": "KantieMV Roof Zone",
                 "displayed": true,
                 "include": true,
                 "model_url": "S02_KantieMV_RoofZone.gltf",
@@ -65344,46 +65490,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "UpperMiddleZonesWest",
-                "displayed": true,
-                "include": true,
-                "model_url": "S03_UpperMiddleZonesWest.gltf",
-                "popups": {
-                    "S03_UPPERMIDDLEZONESWEST": {
-                        "name": "S03_UPPERMIDDLEZONESWEST",
-                        "title": "S03_UPPERMIDDLEZONESWEST"
-                    }
-                },
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "ShephardsDiscordantZone",
-                "displayed": true,
-                "include": true,
-                "model_url": "S04_ShephardsDiscordantZone.gltf",
-                "popups": {
-                    "S04_SHEPHARDSDISCORDANTZONE": {
-                        "name": "S04_SHEPHARDSDISCORDANTZONE",
-                        "title": "S04_SHEPHARDSDISCORDANTZONE"
-                    }
-                },
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "UpperMiddleZonesEast",
-                "displayed": true,
-                "include": true,
-                "model_url": "S05_UpperMiddleZonesEast.gltf",
-                "popups": {
-                    "S05_UPPERMIDDLEZONESEAST": {
-                        "name": "S05_UPPERMIDDLEZONESEAST",
-                        "title": "S05_UPPERMIDDLEZONESEAST"
-                    }
-                },
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "LowerZoneEast",
+                "display_name": "Lower Zone East",
                 "displayed": true,
                 "include": true,
                 "model_url": "S06_LowerZoneEast.gltf",
@@ -65391,19 +65498,6 @@
                     "S06_LOWERZONEEAST": {
                         "name": "S06_LOWERZONEEAST",
                         "title": "S06_LOWERZONEEAST"
-                    }
-                },
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "UltramaficZone",
-                "displayed": true,
-                "include": true,
-                "model_url": "S07_UltramaficZone.gltf",
-                "popups": {
-                    "S07_ULTRAMAFICZONE": {
-                        "name": "S07_ULTRAMAFICZONE",
-                        "title": "S07_ULTRAMAFICZONE"
                     }
                 },
                 "type": "GLTFObject"
@@ -65422,158 +65516,72 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "YarraquinSeismicProvince",
+                "display_name": "Shephards Discordant Zone",
+                "displayed": true,
+                "include": true,
+                "model_url": "S04_ShephardsDiscordantZone.gltf",
+                "popups": {
+                    "S04_SHEPHARDSDISCORDANTZONE": {
+                        "name": "S04_SHEPHARDSDISCORDANTZONE",
+                        "title": "S04_SHEPHARDSDISCORDANTZONE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Ultramafic Zone",
+                "displayed": true,
+                "include": true,
+                "model_url": "S07_UltramaficZone.gltf",
+                "popups": {
+                    "S07_ULTRAMAFICZONE": {
+                        "name": "S07_ULTRAMAFICZONE",
+                        "title": "S07_ULTRAMAFICZONE"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Upper Middle Zones East",
+                "displayed": true,
+                "include": true,
+                "model_url": "S05_UpperMiddleZonesEast.gltf",
+                "popups": {
+                    "S05_UPPERMIDDLEZONESEAST": {
+                        "name": "S05_UPPERMIDDLEZONESEAST",
+                        "title": "S05_UPPERMIDDLEZONESEAST"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Upper Middle Zones West",
+                "displayed": true,
+                "include": true,
+                "model_url": "S03_UpperMiddleZonesWest.gltf",
+                "popups": {
+                    "S03_UPPERMIDDLEZONESWEST": {
+                        "name": "S03_UPPERMIDDLEZONESWEST",
+                        "title": "S03_UPPERMIDDLEZONESWEST"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Yarraquin Seismic Province",
                 "displayed": true,
                 "include": true,
                 "model_url": "S09_YarraquinSeismicProvince.gltf",
                 "popups": {
                     "S09_YARRAQUINSEISMICPROVINCE": {
+                        "href": [
+                            {
+                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=80136",
+                                "label": "Australian Stratigraphic Units Database"
+                            }
+                        ],
                         "name": "S09_YARRAQUINSEISMICPROVINCE",
-                        "title": "S09_YARRAQUINSEISMICPROVINCE",
-                        "href": [ {
-                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=80136",
-                                "label": "Australian Stratigraphic Units Database"
-                                } ]
-                    }
-                },
-                "type": "GLTFObject"
-            }
-        ],
-        "3D Box Volumes": [
-            {
-                "display_name": "BaldRockSupersuite",
-                "displayed": true,
-                "include": true,
-                "model_url": "V01_BaldRockSupersuite.gltf",
-                "popups": {
-                    "V01_BALDROCKSUPERSUITE": {
-                        "name": "V01_BALDROCKSUPERSUITE",
-                        "title": "V01_BALDROCKSUPERSUITE",
-                        "href": [ {
-                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
-                                "label": "Australian Stratigraphic Units Database"
-                                } ]
-                    }
-                },
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "KantieMV RoofZone",
-                "displayed": true,
-                "include": true,
-                "model_url": "V02_KantieMV_RoofZone.gltf",
-                "popups": {
-                    "V02_KANTIEMV_ROOFZONE": {
-                        "name": "V02_KANTIEMV_ROOFZONE",
-                        "title": "V02_KANTIEMV_ROOFZONE"
-                    }
-                },
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "UpperMiddleZoneWest",
-                "displayed": true,
-                "include": true,
-                "model_url": "V03_UpperMiddleZoneWest.gltf",
-                "popups": {
-                    "V03_UPPERMIDDLEZONEWEST": {
-                        "name": "V03_UPPERMIDDLEZONEWEST",
-                        "title": "V03_UPPERMIDDLEZONEWEST"
-                    }
-                },
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "LowerZoneWest",
-                "displayed": true,
-                "include": true,
-                "model_url": "V04_LowerZoneWest.gltf",
-                "popups": {
-                    "V04_LOWERZONEWEST": {
-                        "name": "V04_LOWERZONEWEST",
-                        "title": "V04_LOWERZONEWEST"
-                    }
-                },
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "UpperMiddleZoneEast",
-                "displayed": true,
-                "include": true,
-                "model_url": "V05_UpperMiddleZoneEast.gltf",
-                "popups": {
-                    "V05_UPPERMIDDLEZONEEAST": {
-                        "name": "V05_UPPERMIDDLEZONEEAST",
-                        "title": "V05_UPPERMIDDLEZONEEAST"
-                    }
-                },
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "LowerZoneEast",
-                "displayed": true,
-                "include": true,
-                "model_url": "V06_LowerZoneEast.gltf",
-                "popups": {
-                    "V06_LOWERZONEEAST": {
-                        "name": "V06_LOWERZONEEAST",
-                        "title": "V06_LOWERZONEEAST"
-                    }
-                },
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "UltramaficZone",
-                "displayed": true,
-                "include": true,
-                "model_url": "V07_UltramaficZone.gltf",
-                "popups": {
-                    "V07_ULTRAMAFICZONE": {
-                        "name": "V07_ULTRAMAFICZONE",
-                        "title": "V07_ULTRAMAFICZONE"
-                    }
-                },
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "Metagranites Basement",
-                "displayed": true,
-                "include": true,
-                "model_url": "V08_Metagranites_Basement.gltf",
-                "popups": {
-                    "V08_METAGRANITES_BASEMENT": {
-                        "name": "V08_METAGRANITES_BASEMENT",
-                        "title": "V08_METAGRANITES_BASEMENT"
-                    }
-                },
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "YarraquinSeismicProvince",
-                "displayed": true,
-                "include": true,
-                "model_url": "V09_YarraquinSeismicProvince.gltf",
-                "popups": {
-                    "V09_YARRAQUINSEISMICPROVINCE": {
-                        "name": "V09_YARRAQUINSEISMICPROVINCE",
-                        "title": "V09_YARRAQUINSEISMICPROVINCE",
-                        "href": [ {
-                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=80136",
-                                "label": "Australian Stratigraphic Units Database"
-                                } ]
-                    }
-                },
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "LithoMantle",
-                "displayed": true,
-                "include": true,
-                "model_url": "V10_LithoMantle.gltf",
-                "popups": {
-                    "V10_LITHOMANTLE": {
-                        "name": "V10_LITHOMANTLE",
-                        "title": "V10_LITHOMANTLE"
+                        "title": "S09_YARRAQUINSEISMICPROVINCE"
                     }
                 },
                 "type": "GLTFObject"

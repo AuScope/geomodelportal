@@ -2,14 +2,103 @@
     "groups": {
         "Surfaces and structures": [
             {
+                "display_name": "Faults",
+                "displayed": true,
+                "include": true,
+                "model_url": "nws_structures.gltf",
+                "popups": {
+                    "NWS_STRUCTURES-FLT_CELIA_NWS": {
+                        "name": "NWS_STRUCTURES-FLT_CELIA_NWS",
+                        "title": "NWS_STRUCTURES-FLT_CELIA_NWS"
+                    },
+                    "NWS_STRUCTURES-FLT_EMU_NWS": {
+                        "name": "NWS_STRUCTURES-FLT_EMU_NWS",
+                        "title": "NWS_STRUCTURES-FLT_EMU_NWS"
+                    },
+                    "NWS_STRUCTURES-FLT_ERAWALLA_NWS": {
+                        "name": "NWS_STRUCTURES-FLT_ERAWALLA_NWS",
+                        "title": "NWS_STRUCTURES-FLT_ERAWALLA_NWS"
+                    },
+                    "NWS_STRUCTURES-FLT_HOOTANUI_NWS": {
+                        "name": "NWS_STRUCTURES-FLT_HOOTANUI_NWS",
+                        "title": "NWS_STRUCTURES-FLT_HOOTANUI_NWS"
+                    },
+                    "NWS_STRUCTURES-FLT_IDA_NWS": {
+                        "name": "NWS_STRUCTURES-FLT_IDA_NWS",
+                        "title": "NWS_STRUCTURES-FLT_IDA_NWS"
+                    },
+                    "NWS_STRUCTURES-FLT_KILKENNY_NWS_0": {
+                        "name": "NWS_STRUCTURES-FLT_KILKENNY_NWS_0",
+                        "title": "NWS_STRUCTURES-FLT_KILKENNY_NWS_0"
+                    },
+                    "NWS_STRUCTURES-FLT_KUNANALLING_NWS_0": {
+                        "name": "NWS_STRUCTURES-FLT_KUNANALLING_NWS_0",
+                        "title": "NWS_STRUCTURES-FLT_KUNANALLING_NWS_0"
+                    },
+                    "NWS_STRUCTURES-FLT_LASH1_SURF": {
+                        "name": "NWS_STRUCTURES-FLT_LASH1_SURF",
+                        "title": "NWS_STRUCTURES-FLT_LASH1_SURF"
+                    },
+                    "NWS_STRUCTURES-FLT_LASH2_SURF": {
+                        "name": "NWS_STRUCTURES-FLT_LASH2_SURF",
+                        "title": "NWS_STRUCTURES-FLT_LASH2_SURF"
+                    },
+                    "NWS_STRUCTURES-FLT_LASH3_REGIONAL_SURF": {
+                        "name": "NWS_STRUCTURES-FLT_LASH3_REGIONAL_SURF",
+                        "title": "NWS_STRUCTURES-FLT_LASH3_REGIONAL_SURF"
+                    },
+                    "NWS_STRUCTURES-FLT_LASH4_SURF": {
+                        "name": "NWS_STRUCTURES-FLT_LASH4_SURF",
+                        "title": "NWS_STRUCTURES-FLT_LASH4_SURF"
+                    },
+                    "NWS_STRUCTURES-FLT_LASH5_SURF": {
+                        "name": "NWS_STRUCTURES-FLT_LASH5_SURF",
+                        "title": "NWS_STRUCTURES-FLT_LASH5_SURF"
+                    },
+                    "NWS_STRUCTURES-FLT_LASH6_SURF": {
+                        "name": "NWS_STRUCTURES-FLT_LASH6_SURF",
+                        "title": "NWS_STRUCTURES-FLT_LASH6_SURF"
+                    },
+                    "NWS_STRUCTURES-FLT_LAVERTON_NWS_0": {
+                        "name": "NWS_STRUCTURES-FLT_LAVERTON_NWS_0",
+                        "title": "NWS_STRUCTURES-FLT_LAVERTON_NWS_0"
+                    },
+                    "NWS_STRUCTURES-FLT_MTMCCLURE_NWS_0": {
+                        "name": "NWS_STRUCTURES-FLT_MTMCCLURE_NWS_0",
+                        "title": "NWS_STRUCTURES-FLT_MTMCCLURE_NWS_0"
+                    },
+                    "NWS_STRUCTURES-FLT_OCKERBURRY_NWS_0": {
+                        "name": "NWS_STRUCTURES-FLT_OCKERBURRY_NWS_0",
+                        "title": "NWS_STRUCTURES-FLT_OCKERBURRY_NWS_0"
+                    },
+                    "NWS_STRUCTURES-FLT_PERSEVERANCE_NWS_0": {
+                        "name": "NWS_STRUCTURES-FLT_PERSEVERANCE_NWS_0",
+                        "title": "NWS_STRUCTURES-FLT_PERSEVERANCE_NWS_0"
+                    },
+                    "NWS_STRUCTURES-FLT_TURNBACK_NWS_0": {
+                        "name": "NWS_STRUCTURES-FLT_TURNBACK_NWS_0",
+                        "title": "NWS_STRUCTURES-FLT_TURNBACK_NWS_0"
+                    },
+                    "NWS_STRUCTURES-FLT_WAROONGA_NWS_0": {
+                        "name": "NWS_STRUCTURES-FLT_WAROONGA_NWS_0",
+                        "title": "NWS_STRUCTURES-FLT_WAROONGA_NWS_0"
+                    },
+                    "NWS_STRUCTURES-FLT_YAMANA_NWS_0": {
+                        "name": "NWS_STRUCTURES-FLT_YAMANA_NWS_0",
+                        "title": "NWS_STRUCTURES-FLT_YAMANA_NWS_0"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
                 "display_name": "Greenstone 0",
                 "displayed": true,
                 "include": true,
                 "model_url": "nws_greenstone_0.gltf",
                 "popups": {
                     "NWS_GREENSTONE-GREENSTONE_BASE_KAL_PART_OF_REGIONAL_SURF": {
-                        "name": "GREENSTONE_BASE_KAL_PART_OF_REGIONAL_SURF",
-                        "title": "GREENSTONE_BASE_KAL_PART_OF_REGIONAL_SURF"
+                        "name": "NWS_GREENSTONE-GREENSTONE_BASE_KAL_PART_OF_REGIONAL_SURF",
+                        "title": "NWS_GREENSTONE-GREENSTONE_BASE_KAL_PART_OF_REGIONAL_SURF"
                     }
                 },
                 "type": "GLTFObject"
@@ -21,97 +110,8 @@
                 "model_url": "nws_greenstone_1.gltf",
                 "popups": {
                     "NWS_GREENSTONE-GREENSTONE_BASE_NWS": {
-                        "name": "GREENSTONE_BASE_NWS",
-                        "title": "GREENSTONE_BASE_NWS"
-                    }
-                },
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "Faults",
-                "displayed": true,
-                "include": true,
-                "model_url": "nws_structures.gltf",
-                "popups": {
-                    "NWS_STRUCTURES-FLT_CELIA_NWS": {
-                        "name": "FLT_CELIA_NWS",
-                        "title": "FLT_CELIA_NWS"
-                    },
-                    "NWS_STRUCTURES-FLT_EMU_NWS": {
-                        "name": "FLT_EMU_NWS",
-                        "title": "FLT_EMU_NWS"
-                    },
-                    "NWS_STRUCTURES-FLT_ERAWALLA_NWS": {
-                        "name": "FLT_ERAWALLA_NWS",
-                        "title": "FLT_ERAWALLA_NWS"
-                    },
-                    "NWS_STRUCTURES-FLT_HOOTANUI_NWS": {
-                        "name": "FLT_HOOTANUI_NWS",
-                        "title": "FLT_HOOTANUI_NWS"
-                    },
-                    "NWS_STRUCTURES-FLT_IDA_NWS": {
-                        "name": "FLT_IDA_NWS",
-                        "title": "FLT_IDA_NWS"
-                    },
-                    "NWS_STRUCTURES-FLT_KILKENNY_NWS_0": {
-                        "name": "FLT_KILKENNY_NWS_0",
-                        "title": "FLT_KILKENNY_NWS_0"
-                    },
-                    "NWS_STRUCTURES-FLT_KUNANALLING_NWS_0": {
-                        "name": "FLT_KUNANALLING_NWS_0",
-                        "title": "FLT_KUNANALLING_NWS_0"
-                    },
-                    "NWS_STRUCTURES-FLT_LASH1_SURF": {
-                        "name": "FLT_LASH1_SURF",
-                        "title": "FLT_LASH1_SURF"
-                    },
-                    "NWS_STRUCTURES-FLT_LASH2_SURF": {
-                        "name": "FLT_LASH2_SURF",
-                        "title": "FLT_LASH2_SURF"
-                    },
-                    "NWS_STRUCTURES-FLT_LASH3_REGIONAL_SURF": {
-                        "name": "FLT_LASH3_REGIONAL_SURF",
-                        "title": "FLT_LASH3_REGIONAL_SURF"
-                    },
-                    "NWS_STRUCTURES-FLT_LASH4_SURF": {
-                        "name": "FLT_LASH4_SURF",
-                        "title": "FLT_LASH4_SURF"
-                    },
-                    "NWS_STRUCTURES-FLT_LASH5_SURF": {
-                        "name": "FLT_LASH5_SURF",
-                        "title": "FLT_LASH5_SURF"
-                    },
-                    "NWS_STRUCTURES-FLT_LASH6_SURF": {
-                        "name": "FLT_LASH6_SURF",
-                        "title": "FLT_LASH6_SURF"
-                    },
-                    "NWS_STRUCTURES-FLT_LAVERTON_NWS_0": {
-                        "name": "FLT_LAVERTON_NWS_0",
-                        "title": "FLT_LAVERTON_NWS_0"
-                    },
-                    "NWS_STRUCTURES-FLT_MTMCCLURE_NWS_0": {
-                        "name": "FLT_MTMCCLURE_NWS_0",
-                        "title": "FLT_MTMCCLURE_NWS_0"
-                    },
-                    "NWS_STRUCTURES-FLT_OCKERBURRY_NWS_0": {
-                        "name": "FLT_OCKERBURRY_NWS_0",
-                        "title": "FLT_OCKERBURRY_NWS_0"
-                    },
-                    "NWS_STRUCTURES-FLT_PERSEVERANCE_NWS_0": {
-                        "name": "FLT_PERSEVERANCE_NWS_0",
-                        "title": "FLT_PERSEVERANCE_NWS_0"
-                    },
-                    "NWS_STRUCTURES-FLT_TURNBACK_NWS_0": {
-                        "name": "FLT_TURNBACK_NWS_0",
-                        "title": "FLT_TURNBACK_NWS_0"
-                    },
-                    "NWS_STRUCTURES-FLT_WAROONGA_NWS_0": {
-                        "name": "FLT_WAROONGA_NWS_0",
-                        "title": "FLT_WAROONGA_NWS_0"
-                    },
-                    "NWS_STRUCTURES-FLT_YAMANA_NWS_0": {
-                        "name": "FLT_YAMANA_NWS_0",
-                        "title": "FLT_YAMANA_NWS_0"
+                        "name": "NWS_GREENSTONE-GREENSTONE_BASE_NWS",
+                        "title": "NWS_GREENSTONE-GREENSTONE_BASE_NWS"
                     }
                 },
                 "type": "GLTFObject"
@@ -119,7 +119,7 @@
         ]
     },
     "properties": {
-        "crs": "EPSG:3857",
+        "crs": "EPSG:28350",
         "extent": [
             181085.296875,
             729995.0625,
@@ -127,7 +127,8 @@
             7203018.0
         ],
         "init_cam_dist": 1000000.0,
-        "name": "Yilgarn"
+        "name": "Yilgarn NWS",
+        "proj4_defn": "+proj=utm +zone=50 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
     },
     "type": "GeologicalModel",
     "version": 1.0
