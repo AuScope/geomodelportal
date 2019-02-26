@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { environment } from '../../../../environments/environment';
 
 /**
  * Header component
@@ -12,6 +13,9 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HeaderComponent {
     pushRightClass = 'push-right';
+
+    // Used to go back to main page via "Home" icon
+    homePath = '/';
 
     constructor(private translate: TranslateService, public router: Router) {
 
@@ -29,6 +33,11 @@ export class HeaderComponent {
                 this.toggleSidebar();
             }
         });
+
+        // If website installed in a subdirectory of web server's 'document root', include the subdir in home path
+        if (environment.usePrePath) {
+            this.homePath = environment.prePath;
+        }
     }
 
     /**
