@@ -12,6 +12,7 @@ import urllib
 import glob
 import platform
 import logging
+from diskcache import Cache
 
 DEBUG_LVL = logging.ERROR
 ''' Initialise debug level to minimal debugging
@@ -57,14 +58,12 @@ LOCAL_DIR = os.path.dirname(__file__)
 WSGI_DIR = os.path.join(LOCAL_DIR, os.pardir, os.pardir, 'wsgi')
 sys.path.append(os.path.join(WSGI_DIR, 'lib'))
 
+# Directory where conversion parameter files are stored, one for each model
+INPUT_DIR = os.path.join(WSGI_DIR, 'input')
+CACHE_DIR = os.path.join(WSGI_DIR, 'cache')
+
 from makeBoreholes import get_blob_boreholes, get_boreholes_list, get_json_input_param
 from db.db_tables import QueryDB
-
-
-# Define global vars
-g_BLOB_DICT = {}
-g_WFS_DICT = {}
-g_BOREHOLE_DICT = {}
 
 
 # Maximum number of boreholes processed
@@ -73,22 +72,96 @@ MAX_BOREHOLES = 9999
 # Timeout for querying WFS services (seconds)
 WFS_TIMEOUT = 6000
 
-# This holds borehole parameters, taken from config file
-g_PARAM = {}
-    
-    
+# Name of our layer
 LAYER_NAME = 'boreholes'
+
+# NAme of the binary file holding GLTF data
 GLTF_REQ_NAME = '$blobfile.bin'
 
+# Stores the models' conversion parameters, key: model name
+g_PARAM_DICT = {}
+
+# Stores owslib WebFeatureService objects, key: model name
+g_WFS_DICT = {}
+
+
 '''
-' Given a filename string returns a hash string
-' @param input_str
-' @returns hash string
+' Call upon network services to create dictionary and a list of boreholes for a model
+' @param model_name name of model, string
+' @returns borehole_dict, response_list
 '''
-def get_file_hash(input_str):
-    h = hashlib.new('md5')
-    h.update(bytes(input_str, 'utf-8'))
-    return h.hexdigest()
+def create_borehole_dict_list(model_name):
+    # Concatenate response
+    response_list = []
+    if model_name not in g_WFS_DICT or model_name not in g_PARAM_DICT:
+        logger.warning("model_name %s not in g_WFS_DICT or g_PARAM_DICT", model_name)
+        return {}, []
+    borehole_list = get_boreholes_list(g_WFS_DICT[model_name], MAX_BOREHOLES, g_PARAM_DICT[model_name])
+    result_dict = {}
+    for borehole_dict in borehole_list:
+        borehole_id = borehole_dict['nvcl_id']
+        response_list.append({ 'borehole:id': borehole_id })
+        result_dict[borehole_id] = borehole_dict
+    return result_dict, response_list
+
+
+'''
+' Fetches borehole dictionary and response list from cache or creates them if necessary
+' @param model_name name of model, string
+' @returns borehole_dict, response_list
+'''
+def get_cached_dict_list(model_name):
+    try:
+        with Cache(CACHE_DIR) as cache:
+            bhd_key = 'bh_dict|' + model_name
+            bhl_key = 'bh_list|' + model_name
+            bh_dict = cache.get(bhd_key)
+            bh_list = cache.get(bhl_key)
+            if bh_dict == None or bh_list == None:
+                bh_dict, bh_list = create_borehole_dict_list(model_name)
+                cache.add(bhd_key, bh_dict)
+                cache.add(bhl_key, bh_list)
+            return bh_dict, bh_list
+    except Exception as e:
+        logger.error("Cannot get cached dict list: %s", str(e))
+        return (None, 0)
+
+
+'''
+' Cache a GLTF blob and its size
+' @param model_name name of model, string
+' @param resource id
+' @param blob, binary string
+' @param size of blob
+' @returns True if blob was added to cache, false if it wasn't added (usually because it is already in there)
+'''
+def cache_blob(model_name, id, blob, blob_sz):
+    try:
+        with Cache(CACHE_DIR) as cache:
+            blob_key = 'blob|' + model_name + '|' + id
+            return cache.add(blob_key, (blob, blob_sz))
+
+    except Exception as e:
+        logger.error("Cannot cache blob %s", str(e))
+        return (None, 0)
+            
+
+'''
+' Get blob from cache
+' @param model_name name of model, string
+' @param resource id
+' @returns a GLTF blob (binary string) and its size
+'''
+def get_cached_blob(model_name, id):
+    try:
+        with Cache(CACHE_DIR) as cache:
+            blob_key = 'blob|' + model_name + '|' + id
+            blob, blob_sz = cache.get(blob_key, (None, 0))
+            return blob, blob_sz
+
+    except Exception as e:
+        logger.error("Cannot get cached blob %s", str(e))
+        return (None, 0)
     
 
 '''
@@ -124,51 +197,39 @@ def read_json_file(file_name):
     return json_dict
 
 
-'''
-' INITIALISATION - Executed upon startup only.
-' Loads all the WFS services and pickles them for future use
-'''
-INPUT_DIR = os.path.join(WSGI_DIR, 'input')
-CACHE_DIR = os.path.join(WSGI_DIR, 'cache', 'wfs')
-if not os.path.exists(INPUT_DIR):
-    logger.error("input dir %s does not exist", INPUT_DIR) 
-    sys.exit(1)
-if not os.path.exists(CACHE_DIR):
-    logger.error("cache dir %s does not exist", CACHE_DIR) 
-    sys.exit(1)
 
-# Get all the model names and details from 'ProviderModelInfo.json' 
-config_file = os.path.join(INPUT_DIR, 'ProviderModelInfo.json')
-if not os.path.exists(config_file):
-    logger.error("config file does not exist %s", config_file)
-    sys.exit(1)
-conf_dict = read_json_file(config_file)
-# For each provider
-for prov_name, model_dict in conf_dict.items():
-    model_list = model_dict['models']
-    # For each model within a provider
-    for model_obj in model_list:
-        model_name = model_obj['modelUrlPath']
-        file_prefix = model_obj['configFile'][:-5]
-        # Open up model's conversion input parameter file
-        input_file = os.path.join(INPUT_DIR,  file_prefix + 'ConvParam.json')
-        if not os.path.exists(input_file):
-            continue
-        g_PARAM[model_name] = get_json_input_param(os.path.join(INPUT_DIR, input_file))
-        # Load cache file of WFS service
-        cache_file = os.path.join(CACHE_DIR, get_file_hash(g_PARAM[model_name].WFS_URL+g_PARAM[model_name].WFS_VERSION))
-        if os.path.exists(cache_file):
-            fp = open(cache_file, 'rb')
-            g_WFS_DICT[model_name] = pickle.load(fp)
-            fp.close()
-        else:
-            # Cache file does not exist, create WFS service and dump to file
-            g_WFS_DICT[model_name] = MyWebFeatureService(g_PARAM[model_name].WFS_URL, version=g_PARAM[model_name].WFS_VERSION, xml=None, timeout=WFS_TIMEOUT)
-            logger.debug("Creating pickle file for %s", g_PARAM[model_name].WFS_URL)
-            fp = open(cache_file, 'wb')
-            pickle.dump(g_WFS_DICT[model_name], fp)
-            fp.close()
+'''
+' Creates dictionaries to store model parameters and WFS services
+' @returns parameter dict, WFS dict; both keyed on model name string
+'''
+def get_cached_parameters():
+    if not os.path.exists(INPUT_DIR):
+        logger.error("input dir %s does not exist", INPUT_DIR) 
+        sys.exit(1)
 
+    # Get all the model names and details from 'ProviderModelInfo.json' 
+    config_file = os.path.join(INPUT_DIR, 'ProviderModelInfo.json')
+    if not os.path.exists(config_file):
+        logger.error("config file does not exist %s", config_file)
+        sys.exit(1)
+    conf_dict = read_json_file(config_file)
+    # For each provider
+    param_dict = {}
+    wfs_dict = {}
+    for prov_name, model_dict in conf_dict.items():
+        model_list = model_dict['models']
+        # For each model within a provider
+        for model_obj in model_list:
+            model_name = model_obj['modelUrlPath']
+            file_prefix = model_obj['configFile'][:-5]
+            # Open up model's conversion input parameter file
+            input_file = os.path.join(INPUT_DIR,  file_prefix + 'ConvParam.json')
+            if not os.path.exists(input_file):
+                continue
+            # Create params and WFS service
+            param_dict[model_name] = get_json_input_param(os.path.join(INPUT_DIR, input_file))
+            wfs_dict[model_name] = MyWebFeatureService(param_dict[model_name].WFS_URL, version=param_dict[model_name].WFS_VERSION, xml=None, timeout=WFS_TIMEOUT)
+    return param_dict, wfs_dict
 
 
 '''
@@ -219,7 +280,7 @@ def get_val(key, arr_dict, none_val=''):
 ' @returns byte array HTTP response
 '''
 def make_getcap_response(start_response, model_name):
-    global g_PARAM
+    global g_PARAM_DICT
     response = """<?xml version="1.0" encoding="UTF-8"?>
 <Capabilities xmlns="http://www.opengis.net/3dps/1.0/core"
  xmlns:core="http://www.opengis.net/3dps/1.0/core"
@@ -314,7 +375,7 @@ def make_getcap_response(start_response, model_name):
     response += """       <Layer>
       <ows:Identifier>{0}</ows:Identifier>
       <AvailableCRS>{1}</AvailableCRS>
-    </Layer>""".format(LAYER_NAME, g_PARAM[model_name].MODEL_CRS)
+    </Layer>""".format(LAYER_NAME, g_PARAM_DICT[model_name].MODEL_CRS)
     
     response += "</Contents>\n</Capabilities>"
   
@@ -355,10 +416,10 @@ def make_getfeatinfobyid_response(start_response, url_kvp, model_name, environ):
     if obj_id != '':
         # Query database
         # Open up query database
-        qdb = QueryDB()
         db_path = os.path.join(WSGI_DIR, 'query_data.db')
-        ok, err_msg = qdb.open_db(create=False, db_name=db_path)
-        if not ok:
+        qdb = QueryDB(create=False, db_name=db_path)
+        err_msg = qdb.get_error()
+        if err_msg != '':
             logger.error('Could not open query db %s: %s', db_path, err_msg)
             return make_str_response(start_response, ' ')
         logger.debug('querying db: %s %s', obj_id, model_name)
@@ -400,7 +461,8 @@ def make_getfeatinfobyid_response(start_response, url_kvp, model_name, environ):
 ' @returns byte array HTTP response
 '''
 def make_getresourcebyid_response(start_response, url_kvp, model_name):
-    global g_BOREHOLE_DICT, g_BLOB_DICT, g_PARAM
+    global g_PARAM_DICT
+
     # This sends back the first part of the GLTF object - the GLTF file for the resource id specified
     logger.debug('make_getresourcebyid_response(model_name = %s)', model_name)
     
@@ -417,16 +479,20 @@ def make_getresourcebyid_response(start_response, url_kvp, model_name):
     logger.debug('resourceid = %s', res_id)
     if res_id == '':
         return make_json_exception_response(start_response, get_val('version', url_kvp), 'MissingParameterValue', 'missing resourceId parameter')
-    logger.debug('g_BOREHOLE_DICT = %s', repr(g_BOREHOLE_DICT))
-    borehole_dict = g_BOREHOLE_DICT.get(res_id, None)
+
+    # Get borehole dictionary for this model
+    model_bh_dict, model_bh_list = get_cached_dict_list(model_name)
+    logger.debug('model_bh_dict = %s', repr(model_bh_dict))
+    borehole_dict = model_bh_dict.get(res_id, None)
     if borehole_dict != None:
         borehole_id = borehole_dict['nvcl_id']
-        blob = get_blob_boreholes(borehole_dict, g_PARAM[model_name])
+
+        # Get blob from cache
+        blob = get_blob_boreholes(borehole_dict, g_PARAM_DICT[model_name])
         # Some boreholes do not have the requested metric
         if blob != None:
             logger.debug('got blob %s', str(blob))
-            g_BLOB_DICT.setdefault(model_name, {})
-            g_BLOB_DICT[model_name][borehole_id] = blob
+            gltf_bytes = b''
             # There are 2 files in the blob, a GLTF file and a .bin file
             for i in range(2):
                 logger.debug('blob.contents.name.data = %s', repr(blob.contents.name.data))
@@ -450,19 +516,32 @@ def make_getresourcebyid_response(start_response, url_kvp, model_name):
                     else:
                         try:
                             # This modifies the URL of the .bin file associated with the GLTF file. 
-                            # Inserting model name and borehole id as a parameter so we can tell the .bin files apart
-                            gltf_json["buffers"][0]["uri"] = model_name + '/' + gltf_json["buffers"][0]["uri"] + "?id=" + borehole_id
+                            # Inserting model name and resource id as a parameter so we can tell the .bin files apart
+                            gltf_json["buffers"][0]["uri"] = model_name + '/' + gltf_json["buffers"][0]["uri"] + "?id=" + res_id
                             # Convert back to bytes and send
                             gltf_str = json.dumps(gltf_json)
                             gltf_bytes = bytes(gltf_str, 'utf-8')
-                            response_headers = [('Content-type', 'model/gltf+json;charset=UTF-8'), ('Content-Length', str(len(gltf_bytes))), ('Connection', 'keep-alive')]
-                            start_response('200 OK', response_headers)
-                            return [gltf_bytes]
                         except JSONDecodeError as e:
                             logger.debug('JSONDecodeError dumps(): %s', str(e))
+
+                # Binary file (.bin)
+                elif blob.contents.name.data == b'bin':
+                    response_headers = [('Content-type', 'application/octet-stream'), ('Content-Length', str(blob.contents.size)), ('Connection', 'keep-alive')]
+                    start_response('200 OK', response_headers)
+                    # Convert to byte array 
+                    bcd = ctypes.cast(blob.contents.data, ctypes.POINTER(blob.contents.size * ctypes.c_char))
+                    bcd_bytes = b''
+                    for b in bcd.contents:
+                        bcd_bytes += b
+                    cache_blob(model_name, res_id, bcd_bytes, blob.contents.size)
                 
                 blob = blob.contents.next
-            logger.debug('GLTF not found in blob')
+            if gltf_bytes == b'':
+                logger.debug('GLTF not found in blob')
+            else:
+                response_headers = [('Content-type', 'model/gltf+json;charset=UTF-8'), ('Content-Length', str(len(gltf_bytes))), ('Connection', 'keep-alive')]
+                start_response('200 OK', response_headers)
+                return [gltf_bytes]
         else:
             logger.debug('Empty GLTF blob')
     else:
@@ -479,7 +558,6 @@ def make_getresourcebyid_response(start_response, url_kvp, model_name):
 ' https://demo.geo-solutions.it/geoserver/wfs?version=2.0&request=GetPropertyValue&outputFormat=json&exceptions=application/json&typeName=test:Linea_costa&valueReference=id
 '''
 def make_getpropvalue_response(start_response, url_kvp, model_name, environ):
-    global g_BOREHOLE_DICT, g_PARAM, g_WFS_DICT
     
     # Parse outputFormat from query string
     output_format = get_val('outputformat', url_kvp)
@@ -502,27 +580,36 @@ def make_getpropvalue_response(start_response, url_kvp, model_name, environ):
     elif value_ref != 'borehole:id':
         return make_json_exception_response(start_response, get_val('version', url_kvp), 'OperationProcessingFailed', 'incorrect valueReference, try "borehole:id"')
 
-    # Concatenate response
-    response_list = []
-    g_BOREHOLE_DICT = {}
-    if model_name not in g_WFS_DICT or model_name not in g_PARAM:
-        return make_str_response(start_response, ' ')
-    borehole_list = get_boreholes_list(g_WFS_DICT[model_name], MAX_BOREHOLES, g_PARAM[model_name])
-    for borehole_dict in borehole_list:
-        borehole_id = borehole_dict['nvcl_id']
-        response_list.append({ 'borehole:id': borehole_id })
-        g_BOREHOLE_DICT[borehole_id] = borehole_dict
+    # Fetch list of borehole ids
+    model_bh_dict, response_list = get_cached_dict_list(model_name)
     response_str = json.dumps({ 'type': 'ValueCollection', 'totalValues': len(response_list), 'values': response_list })
     response_bytes = bytes(response_str, 'utf-8')
     response_headers = [('Content-type', 'application/json'), ('Content-Length', str(len(response_bytes))), ('Connection', 'keep-alive')]
     start_response('200 OK', response_headers)
     return [response_bytes]
 
+
+'''
+' INITIALISATION - Executed upon startup only.
+' Loads all the model parameters and WFS services from cache or creates them
+'''
+param_cache_key = 'model_parameters'
+wfs_cache_key = 'wfs_dict'
+try:
+    with Cache(CACHE_DIR) as cache:
+        g_PARAM_DICT = cache.get(param_cache_key)
+        g_WFS_DICT = cache.get(wfs_cache_key)
+        if g_PARAM_DICT == None or g_WFS_DICT == None:
+            g_PARAM_DICT, g_WFS_DICT = get_cached_parameters()
+            cache.add(param_cache_key, g_PARAM_DICT)
+            cache.add(wfs_cache_key, g_WFS_DICT)
+except Exception as e:
+    logger.error("Cannot fetch parameters & wfs from cache: %s", str(e))
+
 '''
 ' MAIN - This is called whenever an HTTP request arrives
 '''
 def application(environ, start_response):
-    global g_BLOB_DICT
     doc_root = os.path.normcase(environ['DOCUMENT_ROOT'])
     sys.path.append(os.path.join(doc_root, 'lib'))
     path_bits = environ['PATH_INFO'].split('/')
@@ -603,29 +690,20 @@ def application(environ, start_response):
     elif ((len(path_bits) == 4 and path_bits[:2] == ['','api']) or (len(path_bits) == 3 and path_bits[0] == '')) and path_bits[-1] == GLTF_REQ_NAME:
         model_name = path_bits[-2]
         logger.debug("2: model_name = %s", model_name)
-        if model_name in g_BLOB_DICT:
-            # Get the GLTF binary file associated with each GLTF file
-            bh_id_arr = urllib.parse.parse_qs(environ['QUERY_STRING']).get('id', [])
-            if len(bh_id_arr)>0:
-                blob = g_BLOB_DICT[model_name].get(bh_id_arr[0])
-                if blob != None:
-                    for i in range(2):
-                        # Binary file (.bin)
-                        if blob.contents.name.data == b'bin':
-                            response_headers = [('Content-type', 'application/octet-stream'), ('Content-Length', str(blob.contents.size)), ('Connection', 'keep-alive')]
-                            start_response('200 OK', response_headers)
-                            # Convert to byte array 
-                            bcd = ctypes.cast(blob.contents.data, ctypes.POINTER(blob.contents.size * ctypes.c_char))
-                            bcd_bytes = b''
-                            for b in bcd.contents:
-                                bcd_bytes += b
-                            return [bcd_bytes]
-                            
-                        blob = blob.contents.next
-                else:
-                    logger.error("Cannot locate blob in dict")
+
+        # Get the GLTF binary file associated with each GLTF file
+        res_id_arr = urllib.parse.parse_qs(environ['QUERY_STRING']).get('id', [])
+        if len(res_id_arr)>0:
+            # Get blob from cache
+            blob, blob_sz = get_cached_blob(model_name, res_id_arr[0])
+            if blob != None:
+                response_headers = [('Content-type', 'application/octet-stream'), ('Content-Length', str(blob_sz)), ('Connection', 'keep-alive')]
+                start_response('200 OK', response_headers)
+                return [blob]
             else:
-                logger.error("Cannot locate id in blobfile.bin url")
+                logger.warning("Cannot locate blob in cache")
+        else:
+            logger.warning("Cannot locate id in borehole_dict")
             
     else:
         logger.debug('Bad URL')
