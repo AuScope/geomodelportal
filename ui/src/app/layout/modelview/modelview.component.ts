@@ -551,7 +551,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     loader.load('./api/' + modelName + '?' + local.modelInfoService.buildURL(params),
                             // function called if loading successful
                             function (gObject) {
-                                const groupName = 'Boreholes';
+                                const groupName = 'NVCL Boreholes';
                                 gObject.scene.name = 'Borehole_' + boreholeId;
                                 local.scene.add(gObject.scene);
                                 local.addSceneObj({ 'display_name': boreholeId, 'displayed': true, 'model_url': boreholeId,
@@ -842,8 +842,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     } else if (parts[i].hasOwnProperty('popups')) {
                                         for (const popup_key in parts[i]['popups']) {
                                             if (parts[i]['popups'].hasOwnProperty(popup_key)) {
-                                                // console.log('popup_key = ', popup_key, popup_key.indexOf('*', popup_key.length - 1));
-                                                if (popup_key + '_0' === objName) {
+                                                // console.log('popup_key = ', popup_key, ' objName = ', objName );
+                                                if (popup_key === objName) {
                                                     local.makePopup(event, parts[i]['popups'][popup_key], objIntPt);
                                                     if (parts[i].hasOwnProperty('model_url')) {
                                                         // Open up sidebar menu to reveal relevant part
