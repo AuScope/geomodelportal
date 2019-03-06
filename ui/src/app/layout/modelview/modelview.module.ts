@@ -7,7 +7,6 @@ import { MatSliderModule} from '@angular/material/slider';
 import { ModelViewRoutingModule } from './modelview-routing.module';
 import { ModelViewComponent } from './modelview.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { TimelineComponent, NotificationComponent } from './components';
 import { ModelCardModule } from '../../shared';
 import { HelpComponent } from './components/help/help.component';
 import { OverviewComponent } from './components/overview/overview.component';
@@ -25,8 +24,6 @@ import { OverviewComponent } from './components/overview/overview.component';
     ],
     declarations: [
         ModelViewComponent,
-        TimelineComponent,
-        NotificationComponent,
         SidebarComponent,
         HelpComponent,
         OverviewComponent

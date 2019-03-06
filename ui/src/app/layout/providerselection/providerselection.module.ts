@@ -4,10 +4,6 @@ import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ProviderSelectionRoutingModule } from './providerselection-routing.module';
 import { ProviderSelectionComponent } from './providerselection.component';
-import {
-    TimelineComponent,
-    NotificationComponent
-} from './components';
 import { ProviderCardModule } from '../../shared';
 
 @NgModule({
@@ -19,9 +15,7 @@ import { ProviderCardModule } from '../../shared';
         ProviderCardModule
     ],
     declarations: [
-        ProviderSelectionComponent,
-        TimelineComponent,
-        NotificationComponent
+        ProviderSelectionComponent
     ]
 })
 export class ProviderSelectionModule {}
