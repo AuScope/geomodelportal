@@ -1,7 +1,7 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
     <div id="modelControlsDiv">
         <button type="button" (click)="resetModelView()" class="btn btn-outline-secondary btn-sm"
-            ngbPopover="{{HELP_TEXT.resetView.desc}}" popoverTitle="{{HELP_TEXT.resetView.title}}" placement="right" #reset_view_popover="ngbPopover" triggers="manual">
+            ngbPopover="{{HELP_TEXT.resetView.desc}}" popoverTitle="{{HELP_TEXT.resetView.title}}" placement="right" #reset_view_popover="ngbPopover" triggers="manual" container="body">
             <i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Reset View</button>
         <button type="button" (click)="toggleMouseGuide()" class="btn btn-outline-secondary btn-sm" [style.color]="mouseGuideBtnState?'white':'#868e96'"
             ngbPopover="{{HELP_TEXT.mouseGuide.desc}}" popoverTitle="{{HELP_TEXT.mouseGuide.title}}" placement="bottom" #mouse_guide_popover="ngbPopover" triggers="manual">
@@ -28,10 +28,10 @@
                             <span>{{subGroupObj.display_name}}</span>
                             <input (click)="checkBoxClick(groupName, subGroupObj.model_url, !modelPartState[groupName][subGroupObj.model_url].displayed)"
                                    [checked]="modelPartState[groupName][subGroupObj.model_url].displayed" class="vis-toggle" type="checkbox"
-                                   ngbPopover="{{HELP_TEXT.partTick.desc}}" popoverTitle="{{HELP_TEXT.partTick.title}}" placement="right" #part_tick_popover="ngbPopover" triggers="manual"/>
+                                   ngbPopover="{{HELP_TEXT.partTick.desc}}" popoverTitle="{{HELP_TEXT.partTick.title}}" placement="bottom" #part_tick_popover="ngbPopover" triggers="manual"/>
                             <i class="fa fa-lg fa-cog part-controls" [ngClass]="{'fa-disabled': !modelPartState[groupName][subGroupObj.model_url].displayed}"
                                (click)="toggleControls(groupName, subGroupObj.model_url)"
-                               ngbPopover="{{HELP_TEXT.partConfigToggle.desc}}" popoverTitle="{{HELP_TEXT.partConfigToggle.title}}" placement="right" #part_config_popover="ngbPopover" triggers="manual"></i>
+                               ngbPopover="{{HELP_TEXT.partConfigToggle.desc}}" popoverTitle="{{HELP_TEXT.partConfigToggle.title}}" placement="bottom" #part_config_popover="ngbPopover" triggers="manual"></i>
                             <i *ngIf="subGroupObj.type === 'GLTFObject'" class="fa fa-lg fa-compress"
                               (click)="zoomToPart(groupName, subGroupObj.model_url)" ngbPopover="{{HELP_TEXT.partZoom.desc}}"
                               popoverTitle="{{HELP_TEXT.partZoom.title}}" placement="left" #part_zoom_popover="ngbPopover" triggers="manual"></i>
