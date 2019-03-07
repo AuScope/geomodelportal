@@ -1,7 +1,10 @@
 .help-buttons {
     font-size: 12px;
     margin-top: 5px;
+    color: #EEEEEE;
+    border-color: #EEEEEE;
 }
+
 .row {
     padding-bottom: 4px;
 }
@@ -20,16 +23,17 @@
 }
 
 
-    #help > p {
-        margin: 0.5rem 0;
-    }
+#help > p {
+    margin: 0.5rem 0;
+}
 
-    #help > ul {
-        padding: 0 1rem;
-    }
+#help > ul {
+    padding: 0 1rem;
+}
 
-    @media (max-width: 600px) {
-        #help {
-            display: none;
-        }
+
+@media (max-width: 600px) {
+    #help {
+        display: none;
     }
+}
