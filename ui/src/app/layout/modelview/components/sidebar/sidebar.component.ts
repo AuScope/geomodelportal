@@ -74,10 +74,10 @@ export class SidebarComponent  implements OnInit, OnDestroy {
                                desc: 'Click on this to open/close view of parts within a group menu.' },
         partConfigToggle: { title: 'Model Part Controls',
                                 desc: 'Click here to open/close the control panel for this model part.' },
-        partZoom: { title: 'Zoom to view a part',
+        partZoom: { title: 'Zoom to View a Model Part',
                           desc: 'Click here to zoom in and view a model part.' },
-        partEyeball: { title: 'Reveal a Model Part',
-                           desc: 'To reveal this model part in the viewing area, move your mouse over the eyeball icon.' },
+        partEyeball: { title: 'Reveal a Hidden Model Part',
+                           desc: 'To reveal a hidden model part in the viewing area, move your mouse over its eyeball icon.' },
         partOffset: { title: 'Adjust Height Offset',
                           desc: 'To adjust this model part\'s height, move this slider by clicking or dragging.' },
         partTransp: { title: 'Adjust Transparency',
@@ -86,9 +86,9 @@ export class SidebarComponent  implements OnInit, OnDestroy {
                         desc: 'Click on this tick box to hide/display this model part in the viewing area.' },
         resetView: { title: 'Reset Model View',
                          desc: 'Click on this button to reset the view of the model back to its original state.' },
-        mouseGuide: { title: 'Turn on/off mouse guide',
+        mouseGuide: { title: 'Turn on/off Mouse Guide',
                           desc: 'Click on this to hide/display the circle that helps guide the mouse when rotating the model' },
-        compassRose: { title: 'Toggle the compass rose visibility',
+        compassRose: { title: 'Toggle the Compass Rose Visibility',
                           desc: 'Click on this to hide/display the compass rose' }
     };
 
@@ -218,7 +218,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
             for (const groupName of this.groupList) {
                 const partObjList = this.modelConfig['groups'][groupName];
                 for (const partObj of partObjList) {
-                    if (partObj.include) {
+                    if (partObj.include && partObj.type === 'GLTFObject') {
                         firstGroupName = groupName;
                         firstPartId = partObj.model_url;
                         done = true;
