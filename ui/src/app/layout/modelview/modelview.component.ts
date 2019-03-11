@@ -15,8 +15,9 @@ import { SceneObject, PlaneSceneObject, WMSSceneObject, VolSceneObject } from '.
 // Include ThreeJS library
 import * as THREE from 'three';
 
-// GLTFLoader is not part of ThreeJS' set of package exports, so we need this wrapper function
-import GLTFLoader from 'three-gltf-loader';
+// GLTFLoader is not part of ThreeJS' set of package exports
+// FIXME: 'three-gltf-loader' (which has nice typescript bindings) won't work because it cannot use ITOWNS' version of THREE (see below)
+import * as GLTFLoader from '../../../../node_modules/three-gltf2-loader/lib/main';
 
 // Import itowns library
 // Note: In ThreeJS, buffer geometry ids are created by incrementing a counter which is local to the library.
@@ -488,7 +489,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Loads and draws the GLTF objects
      */
     private add3DObjects() {
-        const loader = new GLTFLoader();
+        const manager = new ITOWNS.THREE.LoadingManager();
+
+        // This adds the 'GLTFLoader' object to itowns' THREE
+        GLTFLoader(ITOWNS.THREE);
+
+        // Create our new GLTFLoader object
+        const loader = new ITOWNS.THREE['GLTFLoader'](manager);
+
         const promiseList = [];
         const local = this;
 
