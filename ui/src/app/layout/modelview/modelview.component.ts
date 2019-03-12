@@ -810,6 +810,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
                         // TODO: Remove to a separate lookup service
 
+
                         // Is this a volume object?
                         if (local.volViewService.isVolLabel(objName)) {
                             const labelBits = local.volViewService.parseVolLabel(objName);
@@ -851,7 +852,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         for (const popup_key in parts[i]['popups']) {
                                             if (parts[i]['popups'].hasOwnProperty(popup_key)) {
                                                 // console.log('popup_key = ', popup_key, ' objName = ', objName );
-                                                if (popup_key === objName) {
+                                                if (popup_key === objName || popup_key + '_0' === objName ) {
                                                     local.makePopup(event, parts[i]['popups'][popup_key], objIntPt);
                                                     if (parts[i].hasOwnProperty('model_url')) {
                                                         // Open up sidebar menu to reveal relevant part
