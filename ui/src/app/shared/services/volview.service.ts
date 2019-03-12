@@ -147,33 +147,38 @@ export class VolviewService {
      * Given an index into an array, this returns the value from the array, according to the volume's data type
      * It is assumed that the int and float data is big endian.
      * @param idx integer index into array
-     * @returns a value fetched from the array
+     * @returns a value fetched from the array or null upon error
      */
-    private getFromArray(volView: VolView, idx: number): number {
-        switch (volView.dataType) {
-            case DataType.BIT_MASK:
-                return volView.uint32View[idx];
+    private getFromArray(volView: VolView, idx: number): number | null {
+        try {
+            switch (volView.dataType) {
+                case DataType.BIT_MASK:
+                    return volView.uint32View[idx];
 
-            case DataType.INT_16:
-                // Big endian
-                if (idx * 2 >= volView.dataView.byteLength - 2) {
-                    return volView.dataView.getUint16(volView.dataView.byteLength - 2, false);
-                } else if (idx < 0 ) {
-                    return volView.dataView.getUint16(0, false);
-                }
-                return volView.dataView.getUint16(idx * 2, false);
+                case DataType.INT_16:
+                    // Big endian
+                    if (idx * 2 >= volView.dataView.byteLength - 2) {
+                        return volView.dataView.getUint16(volView.dataView.byteLength - 2, false);
+                    } else if (idx < 0 ) {
+                        return volView.dataView.getUint16(0, false);
+                    }
+                    return volView.dataView.getUint16(idx * 2, false);
 
-            case DataType.INT_8:
-                return volView.uint8View[idx];
+                case DataType.INT_8:
+                    return volView.uint8View[idx];
 
-            case DataType.FLOAT_16:
-                // Javascript 'DataView' does not have 'getFloat16()'
-                return this.int_to_float16(volView.dataView.getUint16(idx * 2, false));
+                case DataType.FLOAT_16:
+                    // Javascript 'DataView' does not have 'getFloat16()'
+                    return this.int_to_float16(volView.dataView.getUint16(idx * 2, false));
 
-            case DataType.FLOAT_32:
-                // Big endian
-                return volView.dataView.getFloat32(idx * 4, false);
+                case DataType.FLOAT_32:
+                    // Big endian
+                    return volView.dataView.getFloat32(idx * 4, false);
+            }
+        } catch (err) {
+            // console.log(err);
         }
+        return null;
     }
 
     /**
@@ -308,13 +313,14 @@ export class VolviewService {
 
         // Create a buffer with color data
         let val = this.getFromArray(volView, x + y * volView.DIM[0] + z * volView.DIM[0] * volView.DIM[1]);
-        if (volView.isBitField) {
-            const valArr = this.getBitFields(val, volView.BIT_SZ);
-            if (valArr.length > 0) {
+        if (val !== null) {
+            if (volView.isBitField) {
+                const valArr = this.getBitFields(val, volView.BIT_SZ);
+                if (valArr.length === 0) {
+                    return;
+                }
                 val = valArr[valArr.length - 1];
             }
-        }
-        if (val !== null) {
             if (volView.colorLookup && volView.colorLookup.hasOwnProperty(val)) {
                 dataRGBA[idx * 4] = Math.floor(256.0 * volView.colorLookup[val][0]);
                 dataRGBA[idx * 4 + 1] = Math.floor(256.0 * volView.colorLookup[val][1]);
@@ -329,7 +335,7 @@ export class VolviewService {
                 dataRGBA[idx * 4 + 3] = Math.floor(255.99 * bwTuple[3]);
             }
         }
-}
+    }
 
     /**
      * Moves and optionally creates the three slices (X,Y,Z) within the volume
@@ -551,7 +557,7 @@ export class VolviewService {
      * @param xyz ThreeJS vector of the point on the slice
      * @returns a numeric value, or null of no value found
      */
-    public xyzToProp(volView: VolView, xyz: THREE.Vector3): number {
+    public xyzToProp(volView: VolView, xyz: THREE.Vector3): number  | null {
 
         const dx = Math.floor((xyz.x - volView.ORIGIN[0]) / volView.CUBE_SZ[0] * volView.DIM[0]); // X
         const dy = Math.floor((xyz.y - volView.ORIGIN[1]) / volView.CUBE_SZ[1] * volView.DIM[1]); // Y
