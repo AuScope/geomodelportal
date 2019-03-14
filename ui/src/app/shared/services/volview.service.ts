@@ -267,7 +267,8 @@ export class VolviewService {
         const geometry = new ITOWNS.THREE.BoxBufferGeometry(volView.CUBE_SZ[0], volView.CUBE_SZ[1], volView.CUBE_SZ[2]);
         const object = new ITOWNS.THREE.Mesh( geometry, material );
         for (let comp = 0; comp < 3; comp++) {
-            object.position.setComponent(comp, volView.ORIGIN[comp] + volView.CUBE_SZ[comp] / 2.0);
+            object.position.setComponent(comp, volView.ORIGIN[comp]
+               + volView.ORIENTATION[comp].getComponent(comp) * volView.CUBE_SZ[comp] / 2.0);
         }
         return object;
     }
@@ -339,7 +340,9 @@ export class VolviewService {
 
     /**
      * Moves and optionally creates the three slices (X,Y,Z) within the volume
-     * @param uniqueLabel Name name of volume file, only used when new slice is created
+     * @param volView the volume's 'VolView' object
+     * @param groupName name of volumes' group, string
+     * @param partId volume's part id, string
      * @param pctList list of three float values, (0.0..1.0) indicating the position of each slice within the volume.
      * @param objectList list of ThreeJS objects which represent the three slices & wireframe
      * [X-slice, Y-slice, Z-slice, wireframe]
@@ -494,12 +497,18 @@ export class VolviewService {
 
                 // Create a new slice
                 if (newSlice) {
-                    // Set up base position of volume
+                    // Set up base position of each slice, using centre point of slice as reference point for positioning,
+                    // orientation determines direction relative to origin
                     for (let comp = 0; comp < 3; comp++) {
                         if (comp !== dimIdx) {
-                            objectList[dimIdx].position.setComponent(comp, volView.ORIGIN[comp] + volView.CUBE_SZ[comp] / 2.0);
+                            objectList[dimIdx].position.setComponent(comp, volView.ORIGIN[comp] +
+                              volView.ORIENTATION[comp].getComponent(comp) * volView.CUBE_SZ[comp] / 2.0);
                         } else {
-                            objectList[dimIdx].position.setComponent(comp, volView.ORIGIN[comp]);
+                            let invOrientOffset = 0.0;
+                            if (volView.ORIENTATION[comp].getComponent(comp) < 0.0) {
+                                invOrientOffset = volView.CUBE_SZ[comp];
+                            }
+                            objectList[dimIdx].position.setComponent(comp, volView.ORIGIN[comp] - invOrientOffset);
                         }
                     }
                     objectList[dimIdx].userData.baseSlicePosition = objectList[dimIdx].position.clone();
