@@ -1,0 +1,638 @@
+{
+    "groups": {
+        "Interpreted Objects": [
+            {
+                "display_name": "Bessie Creek-Corcoran Grp",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_BessieCreek-Corcoran_Grp_072016.gltf",
+                "popups": {
+                    "S_TOP_BESSIECREEK-CORCORAN_GRP_072016": {
+                        "name": "S_TOP_BESSIECREEK-CORCORAN_GRP_072016",
+                        "title": "S_TOP_BESSIECREEK-CORCORAN_GRP_072016"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Faults Network",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_FaultsNetwork_072016.gltf",
+                "popups": {
+                    "SKUA_MODEL_FAULT_F100_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F100_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F100_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F144_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F144_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F144_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F145_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F145_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F145_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F154_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F154_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F154_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F155_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F155_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F155_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F166_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F166_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F166_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F167_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F167_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F167_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F169_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F169_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F169_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F187_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F187_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F187_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F188_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F188_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F188_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F189_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F189_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F189_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F190_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F190_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F190_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F192_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F192_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F192_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F193_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F193_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F193_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F194_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F194_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F194_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F195_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F195_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F195_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F196_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F196_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F196_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F197_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F197_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F197_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F198_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F198_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F198_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F199_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F199_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F199_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F202_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F202_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F202_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F204_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F204_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F204_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F205_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F205_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F205_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F216_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F216_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F216_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F218_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F218_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F218_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F220_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F220_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F220_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F221_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F221_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F221_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F222_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F222_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F222_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F223_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F223_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F223_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F224_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F224_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F224_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F225_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F225_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F225_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F226_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F226_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F226_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F232_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F232_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F232_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F237_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F237_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F237_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F239_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F239_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F239_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F247_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F247_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F247_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F248_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F248_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F248_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F260_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F260_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F260_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F261_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F261_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F261_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F266_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F266_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F266_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F268_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F268_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F268_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F270_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F270_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F270_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F271_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F271_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F271_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F273_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F273_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F273_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F277_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F277_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F277_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F280_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F280_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F280_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F29D_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F29D_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F29D_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F32_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F32_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F32_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F33_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F33_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F33_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F36_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F36_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F36_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F37_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F37_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F37_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F56_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F56_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F56_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F57B_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F57B_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F57B_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F57_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F57_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F57_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F58_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F58_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F58_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F59_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F59_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F59_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F60B_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F60B_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F60B_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F62_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F62_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F62_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F64_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F64_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F64_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F66_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F66_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F66_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F67B_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F67B_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F67B_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F67_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F67_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F67_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F72_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F72_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F72_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F74C2_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F74C2_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F74C2_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F74C_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F74C_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F74C_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F75_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F75_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F75_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F79_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F79_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F79_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F80_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F80_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F80_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F83_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F83_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F83_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F90_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F90_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F90_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F92_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F92_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F92_TS_072016"
+                    },
+                    "SKUA_MODEL_FAULT_F93_TS_072016": {
+                        "name": "SKUA_MODEL_FAULT_F93_TS_072016",
+                        "title": "SKUA_MODEL_FAULT_F93_TS_072016"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Roper Group",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Base_Roper_Group_072016.gltf",
+                "popups": {
+                    "S_BASE_ROPER_GROUP_072016": {
+                        "name": "S_BASE_ROPER_GROUP_072016",
+                        "title": "S_BASE_ROPER_GROUP_072016"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Topography 2017",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Topograpgy_2017.gltf",
+                "popups": {
+                    "S_TOPOGRAPHY_2017": {
+                        "name": "S_TOPOGRAPHY_2017",
+                        "title": "S_TOPOGRAPHY_2017"
+                    }
+                },
+                "type": "GLTFObject"
+            }
+        ],
+        "3D Volume Slice": [
+           {
+                "display_name": "Seismic bedding plane dip",
+                "displayed": false,
+                "include": true,
+                "model_url": "DIP_DATA_VOXET_Dip@@.vo.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "dataDims": [
+                        50,
+                        50,
+                        50
+                    ],
+                    "dataType": "FLOAT_32",
+                    "maxVal": 70.0,
+                    "minVal": 0.0,
+                    "origin": [
+                        270217.0,
+                        7923111.8125,
+                        -15583.5
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            1.0
+                        ]
+                    ],
+                    "size": [
+                        374865.67999999993,
+                        608478.2642400004,
+                        15750.0
+                    ]
+                }
+            }
+        ],
+        "Surfaces": [
+            {
+                "display_name": "Arnold-Crawford-Mainoru Fm AB",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_Arnold-Crawford-Mainoru_Fm_AB.gltf",
+                "popups": {
+                    "S_TOP_ARNOLD-CRAWFORD-MAINORU_FM_AB": {
+                        "name": "S_TOP_ARNOLD-CRAWFORD-MAINORU_FM_AB",
+                        "title": "S_TOP_ARNOLD-CRAWFORD-MAINORU_FM_AB"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Arnold-Crawford-Mainoru Fm CDV1",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_Arnold-Crawford-Mainoru_Fm_CDV1.gltf",
+                "popups": {
+                    "S_TOP_ARNOLD-CRAWFORD-MAINORU_FM_CDV1": {
+                        "name": "S_TOP_ARNOLD-CRAWFORD-MAINORU_FM_CDV1",
+                        "title": "S_TOP_ARNOLD-CRAWFORD-MAINORU_FM_CDV1"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Arnold-Crawford-Mainoru Fm CDV2",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_Arnold-Crawford-Mainoru_Fm_CDV2.gltf",
+                "popups": {
+                    "S_TOP_ARNOLD-CRAWFORD-MAINORU_FM_CDV2": {
+                        "name": "S_TOP_ARNOLD-CRAWFORD-MAINORU_FM_CDV2",
+                        "title": "S_TOP_ARNOLD-CRAWFORD-MAINORU_FM_CDV2"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Bessie Ck-Corcoran Fm AB",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_BessieCk-Corcoran_Fm_AB.gltf",
+                "popups": {
+                    "S_TOP_BESSIECK-CORCORAN_FM_AB": {
+                        "name": "S_TOP_BESSIECK-CORCORAN_FM_AB",
+                        "title": "S_TOP_BESSIECK-CORCORAN_FM_AB"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Bessie Ck-Corcoran Fm CDV1",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_BessieCk-Corcoran_Fm_CDV1.gltf",
+                "popups": {
+                    "S_TOP_BESSIECK-CORCORAN_FM_CDV1": {
+                        "name": "S_TOP_BESSIECK-CORCORAN_FM_CDV1",
+                        "title": "S_TOP_BESSIECK-CORCORAN_FM_CDV1"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Bessie Ck-Corcoran Fm CDV2",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_BessieCk-Corcoran_Fm_CDV2.gltf",
+                "popups": {
+                    "S_TOP_BESSIECK-CORCORAN_FM_CDV2": {
+                        "name": "S_TOP_BESSIECK-CORCORAN_FM_CDV2",
+                        "title": "S_TOP_BESSIECK-CORCORAN_FM_CDV2"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Hodgson-Jalboi Fm AB",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_Hodgson-Jalboi_Fm_AB.gltf",
+                "popups": {
+                    "S_TOP_HODGSON-JALBOI_FM_AB": {
+                        "name": "S_TOP_HODGSON-JALBOI_FM_AB",
+                        "title": "S_TOP_HODGSON-JALBOI_FM_AB"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Hodgson-Jalboi Fm CDV1",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_Hodgson-Jalboi_Fm_CDV1.gltf",
+                "popups": {
+                    "S_TOP_HODGSON-JALBOI_FM_CDV1": {
+                        "name": "S_TOP_HODGSON-JALBOI_FM_CDV1",
+                        "title": "S_TOP_HODGSON-JALBOI_FM_CDV1"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Hodgson-Jalboi Fm CDV2",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_Hodgson-Jalboi_Fm_CDV2.gltf",
+                "popups": {
+                    "S_TOP_HODGSON-JALBOI_FM_CDV2": {
+                        "name": "S_TOP_HODGSON-JALBOI_FM_CDV2",
+                        "title": "S_TOP_HODGSON-JALBOI_FM_CDV2"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Limen-Phelps Fm AB",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_Limen-Phelps_Fm_AB.gltf",
+                "popups": {
+                    "S_TOP_LIMEN-PHELPS_FM_AB": {
+                        "name": "S_TOP_LIMEN-PHELPS_FM_AB",
+                        "title": "S_TOP_LIMEN-PHELPS_FM_AB"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Limen-Phelps Fm CDV1",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_Limen-Phelps_Fm_CDV1.gltf",
+                "popups": {
+                    "S_TOP_LIMEN-PHELPS_FM_CDV1": {
+                        "name": "S_TOP_LIMEN-PHELPS_FM_CDV1",
+                        "title": "S_TOP_LIMEN-PHELPS_FM_CDV1"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Limen-Phelps Fm CDV2",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_Limen-Phelps_Fm_CDV2.gltf",
+                "popups": {
+                    "S_TOP_LIMEN-PHELPS_FM_CDV2": {
+                        "name": "S_TOP_LIMEN-PHELPS_FM_CDV2",
+                        "title": "S_TOP_LIMEN-PHELPS_FM_CDV2"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Moroak-Velkerri Fm AB",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_Moroak-Velkerri_Fm_AB.gltf",
+                "popups": {
+                    "S_TOP_MOROAK-VELKERRI_FM_AB": {
+                        "name": "S_TOP_MOROAK-VELKERRI_FM_AB",
+                        "title": "S_TOP_MOROAK-VELKERRI_FM_AB"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Moroak-Velkerri Fm CDV1",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_Moroak-Velkerri_Fm_CDV1.gltf",
+                "popups": {
+                    "S_TOP_MOROAK-VELKERRI_FM_CDV1": {
+                        "name": "S_TOP_MOROAK-VELKERRI_FM_CDV1",
+                        "title": "S_TOP_MOROAK-VELKERRI_FM_CDV1"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Moroak-Velkerri Fm CDV2",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_Moroak-Velkerri_Fm_CDV2.gltf",
+                "popups": {
+                    "S_TOP_MOROAK-VELKERRI_FM_CDV2": {
+                        "name": "S_TOP_MOROAK-VELKERRI_FM_CDV2",
+                        "title": "S_TOP_MOROAK-VELKERRI_FM_CDV2"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Nathan AB",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_Nathan_AB.gltf",
+                "popups": {
+                    "S_TOP_NATHAN_AB": {
+                        "name": "S_TOP_NATHAN_AB",
+                        "title": "S_TOP_NATHAN_AB"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Nathan CDV1",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_Nathan_CDV1.gltf",
+                "popups": {
+                    "S_TOP_NATHAN_CDV1": {
+                        "name": "S_TOP_NATHAN_CDV1",
+                        "title": "S_TOP_NATHAN_CDV1"
+                    }
+                },
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Nathan CDV2",
+                "displayed": true,
+                "include": true,
+                "model_url": "S_Top_Nathan_CDV2.gltf",
+                "popups": {
+                    "S_TOP_NATHAN_CDV2": {
+                        "name": "S_TOP_NATHAN_CDV2",
+                        "title": "S_TOP_NATHAN_CDV2"
+                    }
+                },
+                "type": "GLTFObject"
+            }
+        ]
+    },
+    "properties": {
+        "crs": "EPSG:28353",
+        "extent": [
+            -73052.4375,
+            753128.71875,
+            7894675.5,
+            8706096.375
+        ],
+        "init_cam_dist": 1500000.0,
+        "name": "McArthur Basin",
+        "proj4_defn": "+proj=utm +zone=53 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    },
+    "type": "GeologicalModel",
+    "version": 1.0
+}
