@@ -23,7 +23,8 @@
                 <!-- Group Visibility Checkbox -->
                 <input (click)="groupCheckBoxClick($event, groupName, !getGroupTickBoxChecked(groupName))"
                     ngbPopover="{{HELP_TEXT.groupVisToggle.desc}}" popoverTitle="{{HELP_TEXT.groupVisToggle.title}}" placement="bottom" #group_tick_popover="ngbPopover" triggers="manual"
-                    [checked] ="getGroupTickBoxChecked(groupName)" [indeterminate] = "getGroupTickBoxIndet(groupName)" class="vis-toggle" type="checkbox"/>
+                    [checked] ="getGroupTickBoxChecked(groupName)" [indeterminate] = "getGroupTickBoxIndet(groupName)" class="vis-toggle" type="checkbox"
+                    title="{{HELP_TEXT.groupVisToggle.title}}"/>
             </a>
             <li class="nested" [class.expand]="showMenu === groupName">
                 <ul *ngFor="let subGroupObj of modelConfig['groups'][groupName]" class="submenu ul-part-name">
@@ -33,14 +34,15 @@
 
                             <!-- Model Part Visibility Checkbox -->
                             <input (click)="checkBoxClick(groupName, subGroupObj.model_url, !modelPartState[groupName][subGroupObj.model_url].displayed)"
-                                   [checked]="modelPartState[groupName][subGroupObj.model_url].displayed" class="vis-toggle" type="checkbox"/>
+                                   [checked]="modelPartState[groupName][subGroupObj.model_url].displayed" class="vis-toggle" type="checkbox"
+                                   title="{{HELP_TEXT.partTick.title}}"/>
                               <div class='part-tick-popup' *ngIf="subGroupObj.type === 'GLTFObject'" ngbPopover="{{HELP_TEXT.partTick.desc}}"
                                   popoverTitle="{{HELP_TEXT.partTick.title}}" placement="bottom" #part_tick_popover="ngbPopover" triggers="manual">
                               </div>
 
                             <!-- Open Control Panel -->
                             <i class="fa fa-lg fa-cog part-controls" [ngClass]="{'fa-disabled': !modelPartState[groupName][subGroupObj.model_url].displayed}"
-                               (click)="toggleControls(groupName, subGroupObj.model_url)">
+                               (click)="toggleControls(groupName, subGroupObj.model_url)" title="{{HELP_TEXT.partConfigToggle.title}}">
                                <div *ngIf="subGroupObj.type === 'GLTFObject'" ngbPopover="{{HELP_TEXT.partConfigToggle.desc}}"
                                  popoverTitle="{{HELP_TEXT.partConfigToggle.title}}" placement="bottom" #part_config_popover="ngbPopover" triggers="manual">
                                </div>
@@ -49,12 +51,13 @@
                             <!-- Zoom to Model Part -->
                             <i *ngIf="subGroupObj.type === 'GLTFObject'" class="fa fa-lg fa-compress" (click)="zoomToPart(groupName, subGroupObj.model_url)"
                                 ngbPopover="{{HELP_TEXT.partZoom.desc}}"  popoverTitle="{{HELP_TEXT.partZoom.title}}" placement="left" #part_zoom_popover="ngbPopover"
-                                triggers="manual">
+                                triggers="manual" title="{{HELP_TEXT.partZoom.title}}">
                            </i>
 
                             <!-- Model Part Reveal -->
                             <i class="fa fa-lg fa-eye" [ngClass]="{'fa-disabled': !modelPartState[groupName][subGroupObj.model_url].displayed}"
-                               (mouseenter)="revealPart(groupName, subGroupObj.model_url, true)" (mouseleave)="revealPart(groupName, subGroupObj.model_url, false)">
+                               (mouseenter)="revealPart(groupName, subGroupObj.model_url, true)" (mouseleave)="revealPart(groupName, subGroupObj.model_url, false)"
+                               title="{{HELP_TEXT.partEyeball.title}}">
                               <div *ngIf="subGroupObj.type === 'GLTFObject'"
                                 ngbPopover="{{HELP_TEXT.partEyeball.desc}}" popoverTitle="{{HELP_TEXT.partEyeball.title}}" placement="left" #part_eyeball_popover="ngbPopover" triggers="manual">
                               </div>
@@ -65,7 +68,7 @@
                         <div id="controlsDiv" [style.display]="getDisplayControls(groupName, subGroupObj.model_url)">
 
                             <!-- Height Controls -->
-                            <a *ngIf="modelPartState[groupName][subGroupObj.model_url].heightOffset >= 0" class="list-group-item">
+                            <a *ngIf="modelPartState[groupName][subGroupObj.model_url].heightOffset >= 0" class="list-group-item" title="{{HELP_TEXT.partOffset.title}}">
                                 <span class="span-part-controls">Height Offset&nbsp;{{modelPartState[groupName][subGroupObj.model_url].heightOffset}}
                                     <mat-slider (change)="changeHeight($event, groupName, subGroupObj.model_url)" thumbLabel min="0" max="50000" step="1000" value="0">
                                     </mat-slider>
@@ -76,7 +79,7 @@
                             </a>
 
                             <!-- Transparency Controls -->
-                            <a class="list-group-item">
+                            <a class="list-group-item" title="{{HELP_TEXT.partTransp.title}}">
                                 <span class="span-part-controls">Transparency&nbsp;{{modelPartState[groupName][subGroupObj.model_url].transparency.toFixed(1)}}
                                   <mat-slider (change)="changeTransparency($event, groupName, subGroupObj.model_url)" thumbLabel min="0.0" max="1.0" step="0.1" value="1.0">
                                   </mat-slider>

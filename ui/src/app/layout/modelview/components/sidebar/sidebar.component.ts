@@ -72,7 +72,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
                               desc: 'Click on this tick box to hide/display groups of model parts in the viewing area.' },
         groupMenuToggle: { title: 'Group Menu Toggle',
                                desc: 'Click on this to open/close view of parts within a group menu.' },
-        partConfigToggle: { title: 'Model Part Controls',
+        partConfigToggle: { title: 'Open/Close Model Part Controls',
                                 desc: 'Click here to open/close the control panel for this model part.' },
         partZoom: { title: 'Zoom to View a Model Part',
                           desc: 'Click here to zoom in and view a model part.' },
