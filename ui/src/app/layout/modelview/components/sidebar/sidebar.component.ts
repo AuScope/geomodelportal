@@ -482,6 +482,26 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     }
 
     /**
+     * Returns true if one or more tickboxes are checked within a given group
+     * @param groupName group name
+     * @return Returns true if one of more tickboxes are checked within a group
+     */
+    public isSomeTickboxChecked(groupName: string) {
+        let count = 0;
+        for (const partId in this.modelPartState[groupName]) {
+            if (this.modelPartState[groupName].hasOwnProperty(partId)) {
+                if (this.modelPartState[groupName][partId].displayed) {
+                    count++;
+                    if (count > 1) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
      * Returns the 'indeterminate' state of the visibility checkboxes within a group
      * @param groupName group name of parts whose checkboxes we want the state of
      * @return Returns true iff there are some checkboxes ticked and some are not

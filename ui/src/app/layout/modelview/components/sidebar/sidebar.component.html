@@ -55,7 +55,7 @@
                            </i>
 
                             <!-- Model Part Reveal -->
-                            <i class="fa fa-lg fa-eye" [ngClass]="{'fa-disabled': !modelPartState[groupName][subGroupObj.model_url].displayed}"
+                            <i class="fa fa-lg fa-eye" [ngClass]="{'fa-disabled': !isSomeTickboxChecked(groupName) || !modelPartState[groupName][subGroupObj.model_url].displayed }"
                                (mouseenter)="revealPart(groupName, subGroupObj.model_url, true)" (mouseleave)="revealPart(groupName, subGroupObj.model_url, false)"
                                title="{{HELP_TEXT.partEyeball.title}}">
                               <div *ngIf="subGroupObj.type === 'GLTFObject'"
