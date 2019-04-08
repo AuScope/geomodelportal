@@ -1,7 +1,9 @@
-$topnav-background-color: #222;
+@import "../../globals";
+
 :host {
     .navbar {
         background-color: $topnav-background-color;
+        height: $header-height;
         .navbar-brand {
             color: #fff;
         }
@@ -45,4 +47,24 @@ $topnav-background-color: #222;
     width: 33px;
     height: 33px;
     border: none;
+}
+
+@media screen and (max-width: $small-screen-width) {
+    .navbar-brand, .navbar-nav {
+        font-size: 0.75rem;
+    }
+    .navbar-nav {
+        margin-left: 0 !important;
+    }
+    .nav-item {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    #org-logo {
+        width: 20px;
+        height: 20px;
+    }
+    .navbar-toggler {
+        padding: 4px;
+    }
 }

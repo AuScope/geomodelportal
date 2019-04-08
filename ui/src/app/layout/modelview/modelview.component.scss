@@ -1,3 +1,5 @@
+@import "../globals";
+
     a, div {
         font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         font-weight: 400;
@@ -14,11 +16,24 @@
         width: 200px;
         height: 300px;
     }
+
+    /* Allow space for sidebar */
     #viewerDiv {
         margin : auto auto;
-        height: 100%;
+        height: calc(100vh - #{$header-height});  // The #{} allows it to avoid being preprocessed by sass and getting an 'incompatible units' error
+        min-height: calc(100vh - #{$header-height});
         padding: 0;
-        min-height: 100vh;
+        width: calc(100vw - #{$sidebar-width});
+        min-width: calc(100vw - #{$sidebar-width});
+    }
+
+    /* No sidebar for small screens, so maximise width */
+    @media screen and (max-width: 992px) {
+      #viewerDiv {
+          margin : 0;
+          width: 100vw;
+          min-width: 100vw;
+      }
     }
 
     #mouseGuideDiv {
@@ -90,7 +105,7 @@
         font-weight: 400;
         position: fixed;
         z-index: 2000;
-        top: 60px;
+        top: $header-height;
         right: 0;
         padding: 0.1rem 0.5rem;
         background: #1a1a1a;

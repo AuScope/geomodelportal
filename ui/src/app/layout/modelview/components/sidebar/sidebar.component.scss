@@ -1,19 +1,20 @@
-$topnav-background-color: #222;
+@import "../../../globals";
+
 .sidebar {
     border-radius: 0;
     position: fixed;
     z-index: 1000;
-    top: 56px;
-    left: 340px;
-    width: 340px;
-    margin-left: -340px;
+    top: $header-height;
+    left: $sidebar-width;
+    width: $sidebar-width;
+    margin-left: calc(-1.0 * #{$sidebar-width}); // The #{} allows it to avoid being preprocessed by sass and getting an 'incompatible units' error
     border: none;
     border-radius: 0;
     overflow-y: auto;
     background-color: $topnav-background-color;
     bottom: 0;
     overflow-x: hidden;
-    padding-bottom: 40px;
+    /* padding-bottom: 40px; */
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -138,7 +139,7 @@ i.fa.fa-lg.fa-eye, i.fa.fa-lg.fa-compress {
         left: 0px;
     }
 }
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
     .header-fields {
         display: none;
     }
