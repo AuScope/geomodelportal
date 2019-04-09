@@ -820,8 +820,12 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 const vvArr = local.volViewArr[group];
                                 if (vvArr.hasOwnProperty(partId)) {
                                     const val = local.volViewService.xyzToProp(vvArr[partId], objIntPt);
+                                    let title = objName;
                                     if (val !== null) {
-                                        const popObj = {'title': objName, 'val': val };
+                                        if (objName.indexOf('|') > -1) {
+                                            title = objName.split('|')[1];
+                                        }
+                                        const popObj = {'title': title, 'val': val };
                                         const valStr = val.toString();
                                         if (local.volLabelArr.hasOwnProperty(group) &&
                                             local.volLabelArr[group].hasOwnProperty(partId) &&
