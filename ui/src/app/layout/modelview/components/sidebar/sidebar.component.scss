@@ -123,8 +123,9 @@
             li {
                 a {
                     color: #fff;
-                    padding: 10px;
+                    padding: 0 10px 0 10px;
                     display: block;
+                    height: 3rem;
                 }
             }
         }
@@ -188,7 +189,8 @@ i.fa.fa-lg.fa-eye, i.fa.fa-lg.fa-compress {
 }
 
 .a-part-name {
-    padding: 0px !important;
+    padding: 0 !important;
+    height: 1.25rem !important;
 }
 
 .popover-header {
