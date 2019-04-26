@@ -146,10 +146,14 @@ export class VolviewService {
     /**
      * Given an index into an array, this returns the value from the array, according to the volume's data type
      * It is assumed that the int and float data is big endian.
-     * @param idx integer index into array
+     * @param volView VolView object, contains information about the volume
+     * @param idx positive integer index into array
      * @returns a value fetched from the array or null upon error
      */
     private getFromArray(volView: VolView, idx: number): number | null {
+        if (idx < 0) {
+          return null;
+        }
         try {
             switch (volView.dataType) {
                 case DataType.BIT_MASK:
@@ -183,7 +187,9 @@ export class VolviewService {
 
     /**
      * Creates a promise that downloads a volume file an optionally draws the volume on screen
-     * @param volFile filename of volume file
+     * @param volView VolView object, contains information about the volume
+     * @param groupName Name of volume's groups
+     * @param partId Volume's part id
      * @param volUrl URL of the volume file
      * @param scene ThreeJS scene where it will be added
      * @param volObjList list of ThreeJS objects which make up the displayed volume
@@ -297,6 +303,7 @@ export class VolviewService {
 
     /**
      * Returns true if label string refers to a volume label
+     * @param volLabel volume label to look for
      * @returns true if it is a volume label string
      */
     public isVolLabel(volLabel: string): boolean {
@@ -305,7 +312,7 @@ export class VolviewService {
 
     /**
      * Places a four byte RGBA tuple into a byte array, given volume data
-     * @param x,y,z X,Y,Z coordinates
+     * @param x,y,z X,Y,Z coordinates, assumed to be positive
      * @param volView container of volume data
      * @param dataRGBA output byte array
      * @param idx index into each RGBA tuple within dataRBGA
@@ -563,14 +570,15 @@ export class VolviewService {
 
     /**
      * Given (X,Y,Z) real world coords and a slice index, it returns the volume's value at that point
-     * @param xyz ThreeJS vector of the point on the slice
+     * @param volView VolView object, contains information about the volume
+     * @param xyz ThreeJS vector of the point on the slice, if orientation is negative, then values will be negative
      * @returns a numeric value, or null of no value found
      */
     public xyzToProp(volView: VolView, xyz: THREE.Vector3): number  | null {
-
-        const dx = Math.floor((xyz.x - volView.ORIGIN[0]) / volView.CUBE_SZ[0] * volView.DIM[0]); // X
-        const dy = Math.floor((xyz.y - volView.ORIGIN[1]) / volView.CUBE_SZ[1] * volView.DIM[1]); // Y
-        const dz = Math.floor((xyz.z - volView.ORIGIN[2]) / volView.CUBE_SZ[2] * volView.DIM[2]); // Z
+        // Convert from model coordinates to 3D data cube coordinates
+        const dx = Math.floor((xyz.x - volView.ORIGIN[0]) / (volView.ORIENTATION[0].getComponent(0) * volView.CUBE_SZ[0]) * volView.DIM[0]);
+        const dy = Math.floor((xyz.y - volView.ORIGIN[1]) / (volView.ORIENTATION[1].getComponent(1) * volView.CUBE_SZ[1]) * volView.DIM[1]);
+        const dz = Math.floor((xyz.z - volView.ORIGIN[2]) / (volView.ORIENTATION[2].getComponent(2) * volView.CUBE_SZ[2]) * volView.DIM[2]);
         return this.getFromArray(volView, dx + dy * volView.DIM[0] + dz * volView.DIM[0] * volView.DIM[1]);
     }
 }
