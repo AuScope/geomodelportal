@@ -30,7 +30,7 @@ import * as ITOWNS from '../../../../node_modules/itowns/dist/itowns';
 const proj4 = ITOWNS.proj4;
 
 // Three axis virtual globe controller
-import GeoModelControls from '../../../assets/GeoModelControls';
+import ThreeDVirtSphereCtrls from '../../../assets/ThreeDVirtSphereCtrls';
 
 const BACKGROUND_COLOUR = new THREE.Color(0xC0C0C0);
 
@@ -533,7 +533,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     // function called when loading fails
                                     function (error) {
                                          console.error('GLTF/OBJ load error!', error);
-                                         reject(null);
+                                         // reject(null);
+                                         resolve(null);
                                     }
                                 );
                             })(parts[i], group);
@@ -901,7 +902,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         });
 
         // 3 axis virtual globe controller
-        this.trackBallControls = new GeoModelControls(this.scene, this.viewerDiv, this.view.camera.camera3D, this.view,
+        this.trackBallControls = new ThreeDVirtSphereCtrls(this.scene, this.viewerDiv, this.view.camera.camera3D, this.view,
                                            this.extentObj.center().xyz(), this.initCamDist, this.cameraPosChange.bind(this));
         this.scene.add(this.trackBallControls.getObject());
         this.onResize(null);

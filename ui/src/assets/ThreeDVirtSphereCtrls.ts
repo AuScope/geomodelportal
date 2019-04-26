@@ -41,7 +41,7 @@ const VIRT_SPHERE_RADIUS = 0.33333;
 * @param initCameraDist initial distance from camera to centre of model (metres)
 * @param mouseEventCallback function to be called upon mouse events format: function()
 */
-function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, initCameraDist, cameraMoveCallback) {
+function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCameraDist, cameraMoveCallback) {
     const scope = this;
     this.domElement = view.mainLoop.gfxEngine.renderer.domElement;
     this.rotCentre = rotCentre;
@@ -71,7 +71,7 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, initCameraD
     const viewObject = view;
 
     // Set position of rotational object relative to world centre
-    rObject.name = 'GeoModelControls';
+    rObject.name = 'ThreeDVirtSphereCtrls';
     rObject.position.set(rotCentre.x, rotCentre.y, rotCentre.z);
 
     // Move camera to look at model at a nice 45 degree angle
@@ -551,4 +551,4 @@ function GeoModelControls(scene, viewerDiv, camera, view, rotCentre, initCameraD
     this.viewerDiv.addEventListener('contextmenu', event => event.preventDefault());
 }
 
-export default GeoModelControls;
+export default ThreeDVirtSphereCtrls;
