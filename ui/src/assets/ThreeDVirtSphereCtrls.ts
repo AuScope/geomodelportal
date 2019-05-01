@@ -74,8 +74,9 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
     rObject.name = 'ThreeDVirtSphereCtrls';
     rObject.position.set(rotCentre.x, rotCentre.y, rotCentre.z);
 
-    // Move camera to look at model at a nice 45 degree angle
-    rObject.rotateY(Math.PI / 4.0);
+    // Move camera to look at model at a nice 45 degree angle to the Y-axis, facing north
+    rObject.rotateZ( - Math.PI / 2.0);
+    rObject.rotateY( Math.PI / 4.0);
 
     // Set mouse state for drag and rotate
     this.state = STATE.NONE;
@@ -496,8 +497,15 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
                 runningDemo = false;
                 return;
         }
-        const qInitial = new THREE.Quaternion().setFromAxisAngle( axis, 0 );
-        const qFinal = new THREE.Quaternion().setFromAxisAngle( axis, Math.PI / 4.0 );
+        // Initial rotation = current rObject rotation
+        const qInitial = new THREE.Quaternion().copy(rObject.quaternion);
+
+        // Final rotation = current rObject rotation + 45 degree rotation along axis
+        const qFinal = new THREE.Quaternion().copy(rObject.quaternion);
+        const rotFinal = new THREE.Quaternion().setFromAxisAngle( axis, Math.PI / 4.0 );
+        qFinal.multiply(rotFinal);
+
+        // Quaternion keyframe track: rotate from initial to final, then back to initial again
         const quaternionKF = new THREE.QuaternionKeyframeTrack( '.quaternion', [ 0.0, 1.0, 2.0],
                                 [ qInitial.x, qInitial.y, qInitial.z, qInitial.w,
                                   qFinal.x, qFinal.y, qFinal.z, qFinal.w,

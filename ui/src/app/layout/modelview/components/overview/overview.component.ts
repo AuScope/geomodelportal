@@ -7,7 +7,7 @@ import * as THREE from 'three';
 // Constants used to display the compass rose
 const BACKGROUND_COLOUR = 0xC0C0C0;
 const AXES_LENGTH = 500;
-const INIT_CAMERA_POS = new THREE.Vector3(7000, 0, 7000);
+const INIT_CAMERA_POS = new THREE.Vector3(0, -7000, 7000); // Facing north at 45 degree angle to y-axis, same as model's camera
 const ARROWHEAD_WIDTH = AXES_LENGTH / 7;
 const ARROWHEAD_LEN = AXES_LENGTH / 5;
 const FIELD_OF_VIEW = 8;
