@@ -1,7 +1,13 @@
+//
+// This service is used to retrieve information about the model from the config files, borehole web services,
+// and to read/write the model parts' state
+//
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Observable ,  Subject } from 'rxjs';
+
 
 export interface ProviderInfo {
     name: string;
