@@ -275,7 +275,7 @@ def get_val(key, arr_dict, none_val=''):
 
 
 '''
-' Create and initialise the 'GetCapabilities' response
+' Create and initialise the 3DPS 'GetCapabilities' response
 ' @param start_response callback function for initialising HTTP response
 ' @returns byte array HTTP response
 '''
@@ -455,7 +455,7 @@ def make_getfeatinfobyid_response(start_response, url_kvp, model_name, environ):
 
     
 '''
-' Create and initialise the 'GetResourceById' response
+' Create and initialise the 3DPS 'GetResourceById' response
 ' @param start_response callback function for initialising HTTP response
 ' @param url_kvp key-value pair dictionary of URL parameters, format: 'key': ['val1', 'val2' ...]
 ' @returns byte array HTTP response
