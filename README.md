@@ -19,7 +19,7 @@ It is broadly based on these:
 ### How to initiate
 **Note** that this project requires npm >=6.4.1.
 
-In order to start the project use:
+In order to get started:
 ```bash
 $ git clone https://github.com/AuScope/geomodelportal
 $ cd geomodelportal/ui
@@ -44,20 +44,20 @@ the '_new' from the filename (e.g. becomes  'McArthurBasin.json')
 NB: For information on the JSON files, see [README.md](ui/src/assets/geomodels/README.md)
 
 ### Adding borehole service
-The borehole service requires an Apache server with Python WSGI 'mod_wsgi' enabled. [mod_wsgi](https://modwsgi.readthedocs.io/en/develop/) Python should be setup as described in [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/README.md)
+The borehole service requires an [Apache](https://httpd.apache.org/) server with Python WSGI [mod_wsgi](https://modwsgi.readthedocs.io/en/develop/) enabled.  Python should be setup as described in [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/README.md)
 
 A borehole database file can be produced by running the "makeBoreholes.py" conversion script. See [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/lib/README.md)
 
-The 'index.wsgi' script (found in 'srv' directory) should be copied to 'api' directory so that it is served as 'http://website/api'
+The 'index.wsgi' script (found in 'srv' directory) should be copied to 'api' directory so that it is served as _http://website/api_
 
-There are some files to be copied into a 'wsgi' directory, and make sure that they can be accessed by Python WSGI:
+There are some files to be copied into a 'wsgi' directory, and make sure that they can be accessed by Python:
 
  * the 'input' directory from https://github.com/AuScope/geomodel-2-3dweb/scripts/input, (you can exclude README.md)
  * 'query_db.dat' (this is the borehole database)
  * the 'lib' directory from https://github.com/AuScope/geomodel-2-3dweb/lib
  * also make a 'cache/wfs' directory in 'wsgi'
 
-### Start dev server
+### Start a local dev server
 ```bash
 # Run `npm start` to start the dev server.
 # Navigate to `http://localhost:4200`. It should automatically reload if you change any 
@@ -65,7 +65,7 @@ There are some files to be copied into a 'wsgi' directory, and make sure that th
 $ npm start
 ```
 
-### Build
+### Build for production server
 ```bash
 # As currently set up, the prod build will output the production website files to `dist` directory
 $ ng build --prod
