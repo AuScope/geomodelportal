@@ -30,8 +30,8 @@ $ npm install
 ### Adding Model files
 The conversion process (See <https://github.com/AuScope/geomodel-2-3dweb>) produces graphics 
 files and a model config file.
-Each model has its graphics (*.gltf *.png *.gz) files in a subdirectory under ui/src/assets/geomodels
-directory (e.g. for 'EastGawler' model it would be 'ui/src/assets/geomodels/EastGawler/*.gltf')
+Each model has its graphics (\*.gltf \*.png \*.gz) files in a subdirectory under ui/src/assets/geomodels
+directory (e.g. for 'EastGawler' model it would be 'ui/src/assets/geomodels/EastGawler/\*.gltf')
 Each model also has a model config file (e.g. 'ui/src/assets/geomodels/EastGawler.json')
 
 To add models to the website, for each model:
