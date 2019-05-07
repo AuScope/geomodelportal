@@ -7,13 +7,13 @@ This project is a website that is designed to display geological models and thei
 
 It is broadly based on these:
 
-1. Start Angular's free template for Bootstrap 4 and Angular 5, (https://github.com/start-angular/SB-Admin-BS4-Angular-5) but ported to Angular 7. This provides a basic Angular+Bootstrap website framework.
+1. Start Angular's template for Bootstrap 4 and Angular 5, (https://github.com/start-angular/SB-Admin-BS4-Angular-5) but ported to Angular 7. This provides a basic Angular+Bootstrap website framework.
 
 2. [ThreeJS](https://threejs.org/) provides 3d.
 
 3. [itowns](http://www.itowns-project.org/) provides geospatial support.
 
-4. <https://github.com/AuScope/geomodel-2-3dweb> converts GOCAD models into graphics files.
+4. <https://github.com/AuScope/geomodel-2-3dweb> converts GOCAD models into graphics files, and helps provide a borehole service.
 
 
 ### How to initiate
@@ -41,7 +41,21 @@ named after the model.
 the '_new' from the filename (e.g. becomes  'McArthurBasin.json')
 3. Edit the 'ui/src/assets/geomodels/ProviderModelInfo.json' file, adding a new entry for each new model.
 
-NB: For information on the JSON files: [README.md](ui/src/assets/geomodels/README.md)
+NB: For information on the JSON files, see [README.md](ui/src/assets/geomodels/README.md)
+
+### Adding borehole service
+The borehole service requires an Apache server with Python WSGI 'mod_wsgi' enabled. [mod_wsgi](https://modwsgi.readthedocs.io/en/develop/) Python should be setup as described in [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/README.md)
+
+A borehole database file can be produced by running the "makeBoreholes.py" conversion script. See [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/lib/README.md)
+
+The 'index.wsgi' script (found in 'srv' directory) should be copied to 'api' directory so that it is served as 'http://website/api'
+
+There are some files to be copied into a 'wsgi' directory, and make sure that they can be accessed by Python WSGI:
+
+ * the 'input' directory from https://github.com/AuScope/geomodel-2-3dweb/scripts/input, (you can exclude README.md)
+ * 'query_db.dat' (this is the borehole database)
+ * the 'lib' directory from https://github.com/AuScope/geomodel-2-3dweb/lib
+ * also make a 'cache/wfs' directory in 'wsgi'
 
 ### Start dev server
 ```bash
