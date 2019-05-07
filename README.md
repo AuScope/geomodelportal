@@ -1,3 +1,5 @@
+# Geological Models Portal
+
 
 ### Purpose
 
@@ -50,12 +52,17 @@ A borehole database file can be produced by running the "makeBoreholes.py" conve
 
 The 'index.wsgi' script (found in 'srv' directory) should be copied to 'api' directory so that it is served as _http://website/api_
 
-There are some files to be copied into a 'wsgi' directory, and make sure that they can be accessed by Python:
+Also required is a 'wsgi' directory, populate it in this way:
 
- * the 'input' directory from https://github.com/AuScope/geomodel-2-3dweb/scripts/input, (you can exclude README.md)
- * 'query_db.dat' (this is the borehole database)
- * the 'lib' directory from https://github.com/AuScope/geomodel-2-3dweb/lib
+ * copy the 'input' directory from https://github.com/AuScope/geomodel-2-3dweb/scripts/input, (you can exclude README.md)
+ * copy 'query_db.dat' (this is the borehole database)
+ * copy the 'lib' directory from https://github.com/AuScope/geomodel-2-3dweb/lib
  * also make a 'cache/wfs' directory in 'wsgi'
+ 
+Afterwards, the 'wsgi' directory will have four entries: _cache_ _input_ _lib_ _query_db.dat_
+
+Make sure that the files in 'wsgi' can be accessed by Python.
+ 
 
 ### Start a local dev server
 ```bash
