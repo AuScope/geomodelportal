@@ -17,34 +17,42 @@ It is broadly based on these:
 
 
 ### How to initiate
-**Note** that this project requires npm >=6.4.1**.
+**Note** that this project requires npm >=6.4.1.
 
 In order to start the project use:
 ```bash
 $ git clone https://github.com/AuScope/geomodelportal
-$ cd geomodelportal
-
-#    *** Model files ***
-# The conversion process (See <https://github.com/AuScope/geomodel-2-3dweb>) produces graphics 
-# files and a model config file.
-# Each model has its graphics (*.gltf *.png *.gz) files in a subdirectory under ui/src/assets/geomodels
-# directory (e.g. for 'EastGawler' model it would be 'ui/src/assets/geomodels/EastGawler/*.gltf')
-# Each model also has a model config file (e.g. 'ui/src/assets/geomodels/EastGawler.json')
-#
-# To add models to the website, for each model:
-# 1. Copy the GLTF/PNG/GZ files to a directory under 'ui/src/assets/geomodels'. The directory should be
-# named after the model.
-# 2. Copy the model config file (e.g. 'McArthurBasin_new.json') to 'ui/src/asset/geomodels', remove
-# the '_new' from the filename (e.g. becomes  'McArthurBasin.json')
-# 3. Edit the 'ui/src/assets/geomodels/ProviderModelInfo.json' file, adding a new entry for each new model.
-
+$ cd geomodelportal/ui
 # To install the project's dependencies
 $ npm install
+```
 
+### Adding Model files
+The conversion process (See <https://github.com/AuScope/geomodel-2-3dweb>) produces graphics 
+files and a model config file.
+Each model has its graphics (*.gltf *.png *.gz) files in a subdirectory under ui/src/assets/geomodels
+directory (e.g. for 'EastGawler' model it would be 'ui/src/assets/geomodels/EastGawler/*.gltf')
+Each model also has a model config file (e.g. 'ui/src/assets/geomodels/EastGawler.json')
+
+To add models to the website, for each model:
+1. Copy the GLTF/PNG/GZ files to a directory under 'ui/src/assets/geomodels'. The directory should be
+named after the model.
+2. Copy the model config file (e.g. 'McArthurBasin_new.json') to 'ui/src/asset/geomodels', remove
+the '_new' from the filename (e.g. becomes  'McArthurBasin.json')
+3. Edit the 'ui/src/assets/geomodels/ProviderModelInfo.json' file, adding a new entry for each new model.
+
+NB: For information on the JSON files: [README.md](ui/src/assets/geomodels/README.md)
+
+### Start dev server
+```bash
 # Run `npm start` to start the dev server.
-# Navigate to `http://localhost:4200/geomodels`. It should automatically reload if you change any of the source files.
+# Navigate to `http://localhost:4200`. It should automatically reload if you change any 
+# of the source files.
 $ npm start
+```
 
+### Build
+```bash
 # As currently set up, the prod build will output the production website files to `dist` directory
 $ ng build --prod
 ```
