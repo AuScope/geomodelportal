@@ -160,8 +160,6 @@ export class VolviewService {
                     // Big endian
                     if (idx * 2 >= volView.dataView.byteLength - 2) {
                         return volView.dataView.getUint16(volView.dataView.byteLength - 2, false);
-                    } else if (idx < 0 ) {
-                        return volView.dataView.getUint16(0, false);
                     }
                     return volView.dataView.getUint16(idx * 2, false);
 
