@@ -5,9 +5,6 @@ import { HttpClient } from '@angular/common/http';
 // but for the moment this is required.
 import { Zlib } from '../../../../node_modules/zlibjs/bin/gunzip.min.js';
 
-// Include threejs library
-import * as THREE from 'three';
-
 // Import itowns library
 // Note: In ThreeJS, buffer geometry ids are created by incrementing a counter which is local to the library.
 // So when creating objects to be added to the scene, we must always use ITOWNS' version of ThreeJS.
@@ -37,9 +34,9 @@ export class VolView {
 
     // These are the local X,Y,Z axes (unit length) of the volume, used to set the rotation of volume
     // I am assuming that these are perpendicular
-    ORIENTATION: [ THREE.Vector3, THREE.Vector3, THREE.Vector3 ] = [ new THREE.Vector3(1, 0, 0),
-                                                                  new THREE.Vector3(0, 1, 0),
-                                                                  new THREE.Vector3(0, 0, 1) ];
+    ORIENTATION: [ ITOWNS.THREE.Vector3, ITOWNS.THREE.Vector3, ITOWNS.THREE.Vector3 ] = [ new ITOWNS.THREE.Vector3(1, 0, 0),
+                                                                  new ITOWNS.THREE.Vector3(0, 1, 0),
+                                                                  new ITOWNS.THREE.Vector3(0, 0, 1) ];
 
     // This is a colour loopkup table for the integer and bit mask volumes
     colorLookup: { [idx: number]: [number, number, number] } = {};
@@ -59,7 +56,7 @@ export class VolView {
     ab: ArrayBuffer;
 
     // ThreeJS scene object for the wireframe around the volume
-    wireFrObj: THREE.Object3D = null;
+    wireFrObj: ITOWNS.THREE.Object3D = null;
 
     // Min and max values, must be supplied when no colour lookup table is supplied
     maxVal = 0;
@@ -89,7 +86,7 @@ export class VolviewService {
         volView.ORIGIN = volDataObj['origin'];
         volView.CUBE_SZ = volDataObj['size'];
         for (let d = 0; d < 3; d++) {
-            volView.ORIENTATION[d] = new THREE.Vector3(volDataObj['rotation'][d][0], volDataObj['rotation'][d][1],
+            volView.ORIENTATION[d] = new ITOWNS.THREE.Vector3(volDataObj['rotation'][d][0], volDataObj['rotation'][d][1],
                                                                                   volDataObj['rotation'][d][2] );
             volView.DIM[d] = dims[d];
         }
@@ -196,8 +193,8 @@ export class VolviewService {
      * @param displayed if true then the volume should be added to scene and made visible, if false it is only added to the scene
      * @returns a promise
      */
-    public makePromise(volView: VolView, groupName: string, partId: string, volUrl: string, scene: THREE.Scene,
-                volObjList: THREE.Object3D[], displayed: boolean): Promise<any> {
+    public makePromise(volView: VolView, groupName: string, partId: string, volUrl: string, scene: ITOWNS.THREE.Scene,
+                volObjList: ITOWNS.THREE.Object3D[], displayed: boolean): Promise<any> {
         const local = this;
         return new Promise( function( resolve, reject ) {
             local.httpService.get(volUrl, { responseType: 'arraybuffer' }).subscribe(
@@ -268,7 +265,7 @@ export class VolviewService {
      * @param volView volume data
      * @returns a ThreeJS object
      */
-    private makeWireFrame(volView: VolView): THREE.Object3D {
+    private makeWireFrame(volView: VolView): ITOWNS.THREE.Object3D {
         const material = new ITOWNS.THREE.MeshBasicMaterial({ wireframe: true });
         const geometry = new ITOWNS.THREE.BoxBufferGeometry(volView.CUBE_SZ[0], volView.CUBE_SZ[1], volView.CUBE_SZ[2]);
         const object = new ITOWNS.THREE.Mesh( geometry, material );
@@ -360,16 +357,16 @@ export class VolviewService {
        TODO: Make it more general cope with any ORIENTATION
      */
     public makeSlices(volView: VolView, groupName: string, partId: string, pctList: [number, number, number],
-                       objectList: THREE.Object3D[], displayed: boolean) {
+                       objectList: ITOWNS.THREE.Object3D[], displayed: boolean) {
 
         // Check for inverted axes
         const inverted = [false, false, false];
         let needsInvert = false;
         for (let vDim = 0; vDim < 3; vDim++) {
-            const u = new THREE.Vector3();
+            const u = new ITOWNS.THREE.Vector3();
             u.setComponent(vDim, 1.0);
             // Is an axis inverted?
-            const uVec = new THREE.Vector3();
+            const uVec = new ITOWNS.THREE.Vector3();
             uVec.setComponent(vDim, 1.0);
             if (volView.ORIENTATION[vDim].angleTo(uVec) > Math.PI / 2.0) {
                 inverted[vDim] = true;
@@ -521,19 +518,19 @@ export class VolviewService {
                     objectList[dimIdx].userData.baseSlicePosition = objectList[dimIdx].position.clone();
 
                     // Add in initial displacement
-                    const sliceDisp = new THREE.Vector3(0.0, 0.0, 0.0);
+                    const sliceDisp = new ITOWNS.THREE.Vector3(0.0, 0.0, 0.0);
                     sliceDisp.setComponent(dimIdx, disp);
                     objectList[dimIdx].userData.sliceDisplacement = sliceDisp;
                     objectList[dimIdx].position.add(sliceDisp);
                 }
 
                 // Fetch base position
-                const basePosition: THREE.Vector3 = objectList[dimIdx].userData.baseSlicePosition.clone();
+                const basePosition: ITOWNS.THREE.Vector3 = objectList[dimIdx].userData.baseSlicePosition.clone();
                 // Fetch old slice displacement
                 const oldDisp = objectList[dimIdx].userData.sliceDisplacement;
-                const currentPosition: THREE.Vector3 = objectList[dimIdx].position.clone();
+                const currentPosition: ITOWNS.THREE.Vector3 = objectList[dimIdx].position.clone();
                 // Calculate new slice displacement
-                const newDisp = new THREE.Vector3(0.0, 0.0, 0.0);
+                const newDisp = new ITOWNS.THREE.Vector3(0.0, 0.0, 0.0);
                 newDisp.setComponent(dimIdx, disp);
 
                 // Adjust position of slice
@@ -574,7 +571,7 @@ export class VolviewService {
      * @param xyz ThreeJS vector of the point on the slice, if orientation is negative, then values will be negative
      * @returns a numeric value, or null of no value found
      */
-    public xyzToProp(volView: VolView, xyz: THREE.Vector3): number  | null {
+    public xyzToProp(volView: VolView, xyz: ITOWNS.THREE.Vector3): number  | null {
         // Convert from model coordinates to 3D data cube coordinates
         const dx = Math.floor((xyz.x - volView.ORIGIN[0]) / (volView.ORIENTATION[0].getComponent(0) * volView.CUBE_SZ[0]) * volView.DIM[0]);
         const dy = Math.floor((xyz.y - volView.ORIGIN[1]) / (volView.ORIENTATION[1].getComponent(1) * volView.CUBE_SZ[1]) * volView.DIM[1]);

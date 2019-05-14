@@ -12,8 +12,6 @@ import { HelpinfoService } from '../../shared/services/helpinfo.service';
 import { VolView, VolviewService, DataType } from '../../shared/services/volview.service';
 import { SceneObject, PlaneSceneObject, WMSSceneObject, VolSceneObject } from './scene-object';
 
-// Include ThreeJS library
-import * as THREE from 'three';
 
 // Import itowns library
 // Note: In ThreeJS, buffer geometry ids are created by incrementing a counter which is local to the library.
@@ -22,8 +20,18 @@ import * as THREE from 'three';
 // FIXME: Needs typescript bindings
 import * as ITOWNS from '../../../../node_modules/itowns/dist/itowns';
 
-// GLTFLoader must be taken from itowns to avoid conflict as outlined above
-import GLTFLoader from '../../../../node_modules/itowns/lib/ThreeExtended/loaders/GLTFLoader';
+
+// GLTFLoader is not fully part of ThreeJS'. It is separate.
+// We must use a GLTFLoader that is in ITOWNS' namespace, to avoid the problem described above.
+// This older library works well because the namespace is an input parameter
+// FIXME: Avoid dependency on this library
+import * as GLTFLoader from '../../../../node_modules/three-gltf2-loader/lib/main';
+
+// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+// import GLTFLoader from '../../../../node_modules/itowns/lib/ThreeExtended/loaders/GLTFLoader';
+
+
+
 
 // If you want to use your own CRS instead of the ITOWNS' default one then you must use ITOWNS' version of proj4
 const proj4 = ITOWNS.proj4;
@@ -31,7 +39,7 @@ const proj4 = ITOWNS.proj4;
 // Three axis virtual globe controller
 import ThreeDVirtSphereCtrls from '../../../assets/ThreeDVirtSphereCtrls';
 
-const BACKGROUND_COLOUR = new THREE.Color(0xC0C0C0);
+const BACKGROUND_COLOUR = new ITOWNS.THREE.Color(0xC0C0C0);
 
 
 @Component({
@@ -71,7 +79,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     private raycaster;
 
     // Mouse object
-    private mouse = new THREE.Vector2();
+    private mouse = new ITOWNS.THREE.Vector2();
 
     // Configuration object
     private config;
@@ -126,7 +134,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
                 private helpinfoService: HelpinfoService, private httpService: HttpClient,
                 private volViewService: VolviewService) {
-        THREE.Cache.enabled = true;
+        ITOWNS.THREE.Cache.enabled = true;
     }
 
     /**
@@ -292,7 +300,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
                     // Move a part of the model up or down
                     } else if (state.type === ModelPartStateChangeType.HEIGHT_OFFSET) {
-                        const displacement = new THREE.Vector3(0.0, 0.0, <number> state.new_value);
+                        const displacement = new ITOWNS.THREE.Vector3(0.0, 0.0, <number> state.new_value);
                         local.sceneArr[groupName][partId].setDisplacement(displacement);
                         local.view.notifyChange(true);
 
@@ -345,11 +353,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @returns the camera position as a set of Euler angles. If the controller
      * is not initialised, then returns Euler angles of zero.
      */
-    private getCameraPosition(): THREE.Euler {
+    private getCameraPosition(): ITOWNS.THREE.Euler {
         if (this.trackBallControls) {
             return this.trackBallControls.getCameraPosition();
         }
-        return new THREE.Euler();
+        return new ITOWNS.THREE.Euler();
     }
 
     /**
@@ -441,13 +449,13 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.sceneArr = {};
 
         // Scene
-        this.scene = new THREE.Scene();
+        this.scene = new ITOWNS.THREE.Scene();
 
         // Grey background
         this.scene.background = BACKGROUND_COLOUR;
 
         // Ambient light
-        const ambient = new THREE.AmbientLight(0x404040);
+        const ambient = new ITOWNS.THREE.AmbientLight(0x404040);
         ambient.name = 'Ambient Light';
         this.scene.add(ambient);
 
@@ -470,7 +478,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             ];
         let num = 1;
         for (const plPos of plPosArray) {
-            const pointlight = new THREE.PointLight(pointLightColour, pointLightIntensity);
+            const pointlight = new ITOWNS.THREE.PointLight(pointLightColour, pointLightIntensity);
             pointlight.position.set(plPos[0], plPos[1], plPos[2]);
             pointlight.name = 'Point Light ' + num.toString();
             this.scene.add(pointlight);
@@ -490,7 +498,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param heightOffset height in pixals that the label floats above the object
      * @returns Sprite object which can be added to the object that it labels
      */
-    private makeLabel(labelStr: string, size: number, heightOffset: number): THREE.Object3D {
+    private makeLabel(labelStr: string, size: number, heightOffset: number): ITOWNS.THREE.Object3D {
         // Create bitmap image
         const bitmap = document.createElement('canvas');
         // NB: 'height' and 'width' must be multiples of 2 for WebGL to render them efficiently
@@ -502,17 +510,17 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         ctx.fillText(labelStr, 512, 256, 512);
 
         // Make a texture from bitmap
-        const texture = new THREE.Texture(bitmap);
+        const texture = new ITOWNS.THREE.Texture(bitmap);
         texture.needsUpdate = true;
 
         // Make sprite material from texture
-        const spriteMaterial = new THREE.SpriteMaterial( { map: texture, color: 0xffffff } );
-        const sprite = new THREE.Sprite( spriteMaterial );
+        const spriteMaterial = new ITOWNS.THREE.SpriteMaterial( { map: texture, color: 0xffffff } );
+        const sprite = new ITOWNS.THREE.Sprite( spriteMaterial );
         // Position label to sit just above object
         sprite.position.x = 0;
         sprite.position.y = 0;
         sprite.position.z = heightOffset;
-        sprite.lookAt(new THREE.Vector3());
+        sprite.lookAt(new ITOWNS.THREE.Vector3());
         sprite.scale.set(size, size, 1);
         return sprite;
     }
@@ -525,11 +533,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param size scale up size of label
      * @param heightOffset height in pixals that the label floats above the object
      */
-    private makeGLTFLabel(sceneObj: THREE.Object3D, labelStr: string, size: number, heightOffset: number) {
+    private makeGLTFLabel(sceneObj: ITOWNS.THREE.Object3D, labelStr: string, size: number, heightOffset: number) {
         const local = this;
-        const meshObj = <THREE.Mesh> sceneObj.getObjectByProperty('type', 'Mesh');
+        const meshObj = <ITOWNS.THREE.Mesh> sceneObj.getObjectByProperty('type', 'Mesh');
         if (meshObj) {
-            const bufferGeoObj = <THREE.BufferGeometry> meshObj.geometry;
+            const bufferGeoObj = <ITOWNS.THREE.BufferGeometry> meshObj.geometry;
             const arrayObj  =  bufferGeoObj.attributes.position.array;
             if (arrayObj) {
                 const spriteObj = local.makeLabel(labelStr, size, heightOffset);
@@ -546,7 +554,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      */
     private add3DObjects() {
         const manager = new ITOWNS.THREE.LoadingManager();
-        const loader = new GLTFLoader(manager);
+
+        // This adds the 'GLTFLoader' object to itowns' THREE
+        GLTFLoader(ITOWNS.THREE);
+
+        // Create our new GLTFLoader object
+        const loader = new ITOWNS.THREE['GLTFLoader'](manager);
+
+        // const loader = new GLTFLoader(manager);
         const promiseList = [];
         const local = this;
 
@@ -715,7 +730,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 textya.minFilter = ITOWNS.THREE.LinearFilter;
                                 const material = new ITOWNS.THREE.MeshBasicMaterial({
                                     map: textya,
-                                   side: THREE.DoubleSide
+                                   side: ITOWNS.THREE.DoubleSide
                                 });
                                 const geometry = new ITOWNS.THREE.PlaneGeometry(local.extentObj.dimensions().x,
                                                                                 local.extentObj.dimensions().y);
@@ -724,7 +739,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 if (part.hasOwnProperty('position')) {
                                     z_offset = part.position[2];
                                 }
-                                const position = new THREE.Vector3(local.extentObj.center().x(),
+                                const position = new ITOWNS.THREE.Vector3(local.extentObj.center().x(),
                                                                       local.extentObj.center().y(), z_offset);
                                 plane.position.copy(position);
                                 plane.name =  part.model_url.substring(0, part.model_url.lastIndexOf('.')) + '_0'; // For displaying popups
@@ -847,7 +862,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         }
 
         // The Raycaster is used to find which part of the model was clicked on, then create a popup box
-        this.raycaster = new THREE.Raycaster();
+        this.raycaster = new ITOWNS.THREE.Raycaster();
         this.ngRenderer.listen(this.viewerDiv, 'dblclick', function(event: any) {
 
                 event.preventDefault();
@@ -1063,7 +1078,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param popupInfo JSON object of the information to be displayed in the popup box
      * @param point point clicked on in XYZ coordinates (format is {x: XX, y: XX, z: ZZ})
      */
-    public makePopup(event, popupInfo, point: THREE.Vector3) {
+    public makePopup(event, popupInfo, point: ITOWNS.THREE.Vector3) {
         const local = this;
         // Position it and let it be seen
         this.ngRenderer.setStyle(this.popupBoxDiv, 'top', event.clientY);
@@ -1134,14 +1149,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             const sceneObj = this.sceneArr[groupName][subGroup].sceneObj;
             let maxR = -1.0;
             let maxObj = null;
-            const sumCentre = new THREE.Vector3();
+            const sumCentre = new ITOWNS.THREE.Vector3();
             let numCentre = 0;
-            const maxCentre = new THREE.Vector3(-Number.MAX_SAFE_INTEGER, -Number.MAX_SAFE_INTEGER, -Number.MAX_SAFE_INTEGER);
-            const minCentre = new THREE.Vector3(Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER);
+            const maxCentre = new ITOWNS.THREE.Vector3(-Number.MAX_SAFE_INTEGER, -Number.MAX_SAFE_INTEGER, -Number.MAX_SAFE_INTEGER);
+            const minCentre = new ITOWNS.THREE.Vector3(Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER);
             sceneObj.traverse(function(obj) {
                                                   // Survey geometry of object, getting mean centre and dimensions
                                                   if (obj.geometry && obj.geometry.boundingSphere) {
-                                                      const centre = new THREE.Vector3(obj.geometry.boundingSphere.center.x,
+                                                      const centre = new ITOWNS.THREE.Vector3(obj.geometry.boundingSphere.center.x,
                                                       obj.geometry.boundingSphere.center.y, obj.geometry.boundingSphere.center.z);
                                                       sumCentre.add(centre);
                                                       maxCentre.max(centre);
@@ -1155,13 +1170,13 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                                });
                                                // Set rotation point to centre of object
                                                if (numCentre > 0) {
-                                                   const point = new THREE.Vector3(sumCentre.x / numCentre, sumCentre.y / numCentre,
+                                                   const point = new ITOWNS.THREE.Vector3(sumCentre.x / numCentre, sumCentre.y / numCentre,
                                                        sumCentre.z / numCentre);
                                                    scope.trackBallControls.setRotatePoint(point);
                                                }
                                                // Adjust camera distance to the size of the object
                                                if (maxObj !== null) {
-                                                   const diffCentre = new THREE.Vector3(maxCentre.x - minCentre.x,
+                                                   const diffCentre = new ITOWNS.THREE.Vector3(maxCentre.x - minCentre.x,
                                                        maxCentre.y - minCentre.y, maxCentre.z - minCentre.z);
                                                    const centreRadius = diffCentre.length();
                                                    const maxRadius = Math.max(centreRadius, maxObj.geometry.boundingSphere.radius);

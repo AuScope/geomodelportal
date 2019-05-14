@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as ITOWNS from '../../../../node_modules/itowns/dist/itowns';
 
 import { VolView, VolviewService } from '../../shared/services/volview.service';
 
@@ -45,7 +45,7 @@ export class SceneObject {
       * @param material ThreeJS material object
       * @param transparency number (0..1)
       */
-    protected setMatTransparency(material: THREE.Material, transparency: number) {
+    protected setMatTransparency(material: ITOWNS.THREE.Material, transparency: number) {
         if (transparency >= 0.0 && transparency < 1.0) {
             material.transparent = true;
             material.opacity = transparency;
@@ -60,7 +60,7 @@ export class SceneObject {
      * @param obj ThreeJS object
      * @param displacement ThreeJS 3d displacement vector
      */
-    protected setObjDisplacement(obj: THREE.Object3D, displacement: THREE.Vector3) {
+    protected setObjDisplacement(obj: ITOWNS.THREE.Object3D, displacement: ITOWNS.THREE.Vector3) {
         if (!obj.userData.hasOwnProperty('origPosition')) {
             obj.userData.origPosition = obj.position.clone();
         }
@@ -71,7 +71,7 @@ export class SceneObject {
      * Sets displacement of scene object
      * @param 3d vector displacement
      */
-    public setDisplacement(displacement: THREE.Vector3) {
+    public setDisplacement(displacement: ITOWNS.THREE.Vector3) {
         // Move GLTF object
         let found = false;
         const local = this;
@@ -116,7 +116,7 @@ export class PlaneSceneObject extends SceneObject {
      * Sets displacement of scene object
      * @param 3d vector displacement
      */
-    public setDisplacement(displacement: THREE.Vector3) {
+    public setDisplacement(displacement: ITOWNS.THREE.Vector3) {
         this.setObjDisplacement(this.sceneObj, displacement);
     }
 }
@@ -144,7 +144,7 @@ export class WMSSceneObject extends SceneObject {
      * Sets displacement of scene object
      * @param 3d vector displacement
      */
-    public setDisplacement(displacement: THREE.Vector3) {
+    public setDisplacement(displacement: ITOWNS.THREE.Vector3) {
         throw new Error('FIXME: We don\'t have displacement for WMS yet: setVolSlice(' + displacement.toString() + ') ');
     }
 }
@@ -165,7 +165,7 @@ export class VolSceneObject extends SceneObject {
         this.volViewService = volViewService;
         this.volView = volView;
     }
-    public volObjList: THREE.Object3D[] = [];
+    public volObjList: ITOWNS.THREE.Object3D[] = [];
     private volViewService: VolviewService;
     private volView: VolView;
 
@@ -204,7 +204,7 @@ export class VolSceneObject extends SceneObject {
      * Sets displacement of scene object
      * @param 3d vector displacement
      */
-    public setDisplacement(displacement: THREE.Vector3) {
+    public setDisplacement(displacement: ITOWNS.THREE.Vector3) {
         for (const obj of this.volObjList) {
             this.setObjDisplacement(obj, displacement);
         }
