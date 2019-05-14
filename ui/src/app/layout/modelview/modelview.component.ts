@@ -15,16 +15,15 @@ import { SceneObject, PlaneSceneObject, WMSSceneObject, VolSceneObject } from '.
 // Include ThreeJS library
 import * as THREE from 'three';
 
-// GLTFLoader is not part of ThreeJS' set of package exports
-// FIXME: 'three-gltf-loader' (which has nice typescript bindings) won't work because it cannot use ITOWNS' version of THREE (see below)
-import * as GLTFLoader from '../../../../node_modules/three-gltf2-loader/lib/main';
-
 // Import itowns library
 // Note: In ThreeJS, buffer geometry ids are created by incrementing a counter which is local to the library.
 // So when creating objects to be added to the scene, we must always use ITOWNS' version of ThreeJS.
 // If we do not do this, there will be an overlap in ids and objects are not reliably rendered to screen.
 // FIXME: Needs typescript bindings
 import * as ITOWNS from '../../../../node_modules/itowns/dist/itowns';
+
+// GLTFLoader must be taken from itowns to avoid conflict as outlined above
+import GLTFLoader from '../../../../node_modules/itowns/lib/ThreeExtended/loaders/GLTFLoader';
 
 // If you want to use your own CRS instead of the ITOWNS' default one then you must use ITOWNS' version of proj4
 const proj4 = ITOWNS.proj4;
@@ -64,9 +63,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
     // Nested dictionary of 'SceneObject' used by model controls div, partId is model URL
     private sceneArr: { [groupName: string]: { [partId: string]: SceneObject } };
-
-    // Tenderer object
-    private renderer;
 
     // Track ball controls object
     private trackBallControls = null;
@@ -460,17 +456,17 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         const pointLightXYOffset = 20000;
         const pointLightColour = 0x404040;
         const pointLightIntensity = 1.0;
-        const plPosArray = [[ this.extentObj.west() - pointLightXYOffset, this.extentObj.south() - pointLightXYOffset, pointLightZDist ],
-                            [ this.extentObj.west() - pointLightXYOffset, this.extentObj.south() - pointLightXYOffset, -pointLightZDist],
+        const plPosArray = [[ this.extentObj.west - pointLightXYOffset, this.extentObj.south - pointLightXYOffset, pointLightZDist ],
+                            [ this.extentObj.west - pointLightXYOffset, this.extentObj.south - pointLightXYOffset, -pointLightZDist],
 
-                            [ this.extentObj.west() - pointLightXYOffset, this.extentObj.north() + pointLightXYOffset, pointLightZDist],
-                            [ this.extentObj.west() - pointLightXYOffset, this.extentObj.north() + pointLightXYOffset, -pointLightZDist],
+                            [ this.extentObj.west - pointLightXYOffset, this.extentObj.north + pointLightXYOffset, pointLightZDist],
+                            [ this.extentObj.west - pointLightXYOffset, this.extentObj.north + pointLightXYOffset, -pointLightZDist],
 
-                            [this.extentObj.east() + pointLightXYOffset, this.extentObj.north() + pointLightXYOffset, pointLightZDist ],
-                            [this.extentObj.east() + pointLightXYOffset, this.extentObj.north() + pointLightXYOffset, -pointLightZDist],
+                            [this.extentObj.east + pointLightXYOffset, this.extentObj.north + pointLightXYOffset, pointLightZDist ],
+                            [this.extentObj.east + pointLightXYOffset, this.extentObj.north + pointLightXYOffset, -pointLightZDist],
 
-                            [this.extentObj.east() + pointLightXYOffset, this.extentObj.south() - pointLightXYOffset, pointLightZDist ],
-                            [this.extentObj.east() + pointLightXYOffset, this.extentObj.south() - pointLightXYOffset, -pointLightZDist ]
+                            [this.extentObj.east + pointLightXYOffset, this.extentObj.south - pointLightXYOffset, pointLightZDist ],
+                            [this.extentObj.east + pointLightXYOffset, this.extentObj.south - pointLightXYOffset, -pointLightZDist ]
                             ];
         let num = 1;
         for (const plPos of plPosArray) {
@@ -485,18 +481,72 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.add3DObjects();
     }
 
+
+    /**
+     * Makes a text label for a part of the model, this floats just above the model part
+     * and moves around when the model part moves. Becuase it is a 'Sprite' it always faces the camera.
+     * @param labelStr string label
+     * @param size scale up size of label
+     * @param heightOffset height in pixals that the label floats above the object
+     * @returns Sprite object which can be added to the object that it labels
+     */
+    private makeLabel(labelStr: string, size: number, heightOffset: number): THREE.Object3D {
+        // Create bitmap image
+        const bitmap = document.createElement('canvas');
+        // NB: 'height' and 'width' must be multiples of 2 for WebGL to render them efficiently
+        bitmap.width = 1024;
+        bitmap.height = 512;
+        const ctx = bitmap.getContext('2d');
+        ctx.font = '100px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText(labelStr, 512, 256, 512);
+
+        // Make a texture from bitmap
+        const texture = new THREE.Texture(bitmap);
+        texture.needsUpdate = true;
+
+        // Make sprite material from texture
+        const spriteMaterial = new THREE.SpriteMaterial( { map: texture, color: 0xffffff } );
+        const sprite = new THREE.Sprite( spriteMaterial );
+        // Position label to sit just above object
+        sprite.position.x = 0;
+        sprite.position.y = 0;
+        sprite.position.z = heightOffset;
+        sprite.lookAt(new THREE.Vector3());
+        sprite.scale.set(size, size, 1);
+        return sprite;
+    }
+
+
+    /**
+     * Makes a label for a GLTF object, that sits in the scene just above the GLTF object
+     * @param sceneObj  GLTF object that must be labelled
+     * @param labelStr  text label string
+     * @param size scale up size of label
+     * @param heightOffset height in pixals that the label floats above the object
+     */
+    private makeGLTFLabel(sceneObj: THREE.Object3D, labelStr: string, size: number, heightOffset: number) {
+        const local = this;
+        const meshObj = <THREE.Mesh> sceneObj.getObjectByProperty('type', 'Mesh');
+        if (meshObj) {
+            const bufferGeoObj = <THREE.BufferGeometry> meshObj.geometry;
+            const arrayObj  =  bufferGeoObj.attributes.position.array;
+            if (arrayObj) {
+                const spriteObj = local.makeLabel(labelStr, size, heightOffset);
+                spriteObj.position.x += arrayObj[0];
+                spriteObj.position.y += arrayObj[1];
+                spriteObj.position.z += arrayObj[2];
+                sceneObj.add(spriteObj);
+            }
+        }
+    }
+
     /**
      * Loads and draws the GLTF objects
      */
     private add3DObjects() {
         const manager = new ITOWNS.THREE.LoadingManager();
-
-        // This adds the 'GLTFLoader' object to itowns' THREE
-        GLTFLoader(ITOWNS.THREE);
-
-        // Create our new GLTFLoader object
-        const loader = new ITOWNS.THREE['GLTFLoader'](manager);
-
+        const loader = new GLTFLoader(manager);
         const promiseList = [];
         const local = this;
 
@@ -518,6 +568,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         }
                                         // Adds GLTFObject to scene
                                         local.scene.add(gObject.scene);
+                                        // Makes a label for the object
+                                        if (part.hasOwnProperty('is_labelled') && part['is_labelled'] === true) {
+                                            local.makeGLTFLabel(gObject.scene, part.display_name, 10000, 1000);
+                                        }
                                         // Adds it to the scene array to keep track of it
                                         local.addSceneObj(part, new SceneObject(gObject.scene), grp);
                                         resolve(gObject.scene);
@@ -562,7 +616,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             function (gObject) {
                                 const groupName = 'NVCL Boreholes';
                                 gObject.scene.name = 'Borehole_' + boreholeId;
+                                // Add borehole to scene
                                 local.scene.add(gObject.scene);
+                                // Add floating label
+                                local.makeGLTFLabel(gObject.scene, boreholeId, 200, 20);
                                 local.addSceneObj({ 'display_name': boreholeId, 'displayed': true, 'model_url': boreholeId,
                                                           'type': 'GLTFObject' }, new SceneObject(gObject.scene), groupName);
                                 local.sidebarSrvRequest(groupName, boreholeId, MenuStateChangeType.NEW_PART);
@@ -767,7 +824,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         const local = this;
 
         // Create an instance of PlanarView
-        this.view = new ITOWNS.PlanarView(this.viewerDiv, this.extentObj, {renderer: this.renderer, scene3D: this.scene});
+        this.view = new ITOWNS.PlanarView(this.viewerDiv, this.extentObj, {scene3D: this.scene});
 
         // Change defaults to allow the camera to get very close and very far away without exceeding boundaries of field of view
         this.view.camera.camera3D.near = 0.01;

@@ -1,3 +1,5 @@
+import * as THREE from 'three';
+
 import { VolView, VolviewService } from '../../shared/services/volview.service';
 
 /**

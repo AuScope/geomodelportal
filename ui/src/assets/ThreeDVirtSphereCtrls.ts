@@ -67,7 +67,7 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
     // Set camera position relative to model centre
     camera.position.set(0.0, 0.0, initCameraDist);
     this.camera = camera;
-
+    this.camera.lookAt(new THREE.Vector3());
     const viewObject = view;
 
     // Set position of rotational object relative to world centre
