@@ -1,5 +1,6 @@
-# Geological Models Portal
+# Geological Models Portal  
 
+ [![Language Grade][lgtm]][lgtm-url]
 
 ### Purpose
 
@@ -77,3 +78,7 @@ $ npm start
 # As currently set up, the prod build will output the production website files to `dist` directory
 $ ng build --prod
 ```
+
+[lgtm]: https://img.shields.io/lgtm/grade/javascript/github/AuScope/geomodelportal.svg
+[lgtm-url]: https://lgtm.com/projects/g/AuScope/geomodelportal/
+
