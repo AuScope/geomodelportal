@@ -1,6 +1,5 @@
 # Geological Models Portal  
 
- [![Language Grade][lgtm]][lgtm-url]
 
 ### Purpose
 
@@ -79,6 +78,4 @@ $ npm start
 $ ng build --prod
 ```
 
-[lgtm]: https://img.shields.io/lgtm/grade/javascript/github/AuScope/geomodelportal.svg
-[lgtm-url]: https://lgtm.com/projects/g/AuScope/geomodelportal/
 
