@@ -4,62 +4,33 @@ export function routerTransition() {
     return slideToTop();
 }
 
+function slide(enterTransforms: [string, string], leaveTransforms: [string, string]) {
+  return trigger('routerTransition', [
+      state('void', style({})),
+      state('*', style({})),
+      transition(':enter', [
+          style({ transform: enterTransforms[0] }),
+          animate('0.5s ease-in-out', style({ transform: enterTransforms[1] }))
+      ]),
+      transition(':leave', [
+          style({ transform: leaveTransforms[0] }),
+          animate('0.5s ease-in-out', style({ transform: leaveTransforms[1] }))
+      ])
+  ]);
+}
+
 export function slideToRight() {
-    return trigger('routerTransition', [
-        state('void', style({})),
-        state('*', style({})),
-        transition(':enter', [
-            style({ transform: 'translateX(-100%)' }),
-            animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
-        ]),
-        transition(':leave', [
-            style({ transform: 'translateX(0%)' }),
-            animate('0.5s ease-in-out', style({ transform: 'translateX(100%)' }))
-        ])
-    ]);
+    return slide(['translateX(-100%)', 'translateX(0%)'], ['translateX(0%)', 'translateX(100%)']);
 }
 
 export function slideToLeft() {
-    return trigger('routerTransition', [
-        state('void', style({})),
-        state('*', style({})),
-        transition(':enter', [
-            style({ transform: 'translateX(100%)' }),
-            animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
-        ]),
-        transition(':leave', [
-            style({ transform: 'translateX(0%)' }),
-            animate('0.5s ease-in-out', style({ transform: 'translateX(-100%)' }))
-        ])
-    ]);
+    return slide(['translateX(100%)', 'translateX(0%)'], ['translateX(0%)', 'translateX(-100%)']);
 }
 
 export function slideToBottom() {
-    return trigger('routerTransition', [
-        state('void', style({})),
-        state('*', style({})),
-        transition(':enter', [
-            style({ transform: 'translateY(-100%)' }),
-            animate('0.5s ease-in-out', style({ transform: 'translateY(0%)' }))
-        ]),
-        transition(':leave', [
-            style({ transform: 'translateY(0%)' }),
-            animate('0.5s ease-in-out', style({ transform: 'translateY(100%)' }))
-        ])
-    ]);
+    return slide(['translateY(-100%)', 'translateY(0%)'], ['translateY(0%)', 'translateY(100%)']);
 }
 
 export function slideToTop() {
-    return trigger('routerTransition', [
-        state('void', style({})),
-        state('*', style({})),
-        transition(':enter', [
-            style({ transform: 'translateY(100%)' }),
-            animate('0.5s ease-in-out', style({ transform: 'translateY(0%)' }))
-        ]),
-        transition(':leave', [
-            style({ transform: 'translateY(0%)' }),
-            animate('0.5s ease-in-out', style({ transform: 'translateY(-100%)' }))
-        ])
-    ]);
+    return slide(['translateY(100%)' , 'translateY(0%)'], ['translateY(0%)', 'translateY(-100%)']);
 }

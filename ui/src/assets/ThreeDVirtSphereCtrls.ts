@@ -357,7 +357,7 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
 
         const r = scope.getVirtualSphereRadius(); // Size of virtual sphere
         let rotAxisLocal;  // Rotational axis in virtual sphere coords
-        let rDelta = 0.0; // Rotational angle
+        let rDelta; // Rotational angle
         let rotAxis; // Rotational axis in camera coords
 
         // Exit if no change

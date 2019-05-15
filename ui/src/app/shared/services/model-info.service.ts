@@ -249,7 +249,7 @@ export class ModelInfoService {
             }
             return this.modelPromise;
         }
-        return new Promise(function({}, reject) {
+        return new Promise(function(resolve, reject) {
             console.log('Model not found in config file');
             reject('model not found. There are no models registered with this URL.');
         });

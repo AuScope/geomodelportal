@@ -41,9 +41,9 @@
         <div *ngIf="isRunningModelDemo()" id="demoPopup"><p>{{demoPopupMsg}}</p></div>
         <div id="helpButton">
             <a style="color: white" (click)="isHelpCollapsed = !isHelpCollapsed">
-                <i class="fa fa-question-circle"></i>
+                <i class="fa fa-question-circle" aria-hidden="true"></i>
                 &nbsp;Help&nbsp;
-                <i class="fa" [ngClass]="isHelpCollapsed? 'fa-angle-up':'fa-angle-down'"></i>
+                <i class="fa" [ngClass]="isHelpCollapsed? 'fa-angle-up':'fa-angle-down'" aria-hidden="true"></i>
             </a>
         </div>
         <div id="helpCollapse" [ngbCollapse]="isHelpCollapsed">
@@ -51,6 +51,6 @@
         </div>
         <div id="popupBoxDiv" #popupBoxDiv><div id="popupExitDiv">X</div></div>
         <div id="errorDiv" #errorDiv></div>
-        <div id="spinnerDiv" #spinnerDiv><i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw"></i></div>
+        <div id="spinnerDiv" #spinnerDiv><i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw" aria-hidden="true"></i></div>
         <app-overview></app-overview>
 </div>

@@ -535,9 +535,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      */
     private makeGLTFLabel(sceneObj: ITOWNS.THREE.Object3D, labelStr: string, size: number, heightOffset: number) {
         const local = this;
-        const meshObj = <ITOWNS.THREE.Mesh> sceneObj.getObjectByProperty('type', 'Mesh');
+        const meshObj = sceneObj.getObjectByProperty('type', 'Mesh');
         if (meshObj) {
-            const bufferGeoObj = <ITOWNS.THREE.BufferGeometry> meshObj.geometry;
+            const bufferGeoObj = meshObj.geometry;
             const arrayObj  =  bufferGeoObj.attributes.position.array;
             if (arrayObj) {
                 const spriteObj = local.makeLabel(labelStr, size, heightOffset);
@@ -592,7 +592,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         resolve(gObject.scene);
                                     },
                                     // function called during loading
-                                    function ({}) {
+                                    function () {
                                         // console.log('GLTF onProgress()', xhr);
                                         // if ( xhr.lengthComputable ) {
                                         //    const percentComplete = xhr.loaded / xhr.total * 100;
@@ -640,7 +640,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 local.sidebarSrvRequest(groupName, boreholeId, MenuStateChangeType.NEW_PART);
                             },
                             // function called during loading
-                            function ({}) {
+                            function () {
                                 /*console.log('BOREHOLE GLTF onProgress()', xhr);
                                 if ( xhr.lengthComputable ) {
                                    const percentComplete = xhr.loaded / xhr.total * 100;
@@ -661,7 +661,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
         Promise.all(promiseList).then(
             // function called when all objects are loaded
-            function({}) {
+            function() {
                 console.log('GLTFs are loaded');
                 // Add image files to scene
                 local.addPlanes();
@@ -698,7 +698,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         }
         Promise.all(promiseList).then(
             // function called when all objects are loaded
-            function({}) {
+            function() {
                 console.log('Volumes are loaded');
                 // Finish creating scene
                 local.finaliseView();
@@ -749,11 +749,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 resolve(plane);
                             },
                             // Function called when download progresses
-                            function ({}) {
+                            function () {
                                 // NB: Threejs does not support the progress loader
                             },
                             // Function called when download errors
-                            function ({}) {
+                            function () {
                                 console.error('An error happened loading image plane');
                                 reject(null);
                             }
@@ -767,7 +767,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
         Promise.all(promiseList).then(
         // function called when all objects successfully loaded
-        function({}) {
+        function() {
             console.log('Planes finished');
             local.addVolumes();
         },
@@ -809,7 +809,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 type: ITOWNS.STRATEGY_DICHOTOMY,
                                 options: {},
                             },
-                    }).then(function({}) {
+                    }).then(function() {
                             // Retrieve WMS layer and add it to scene array
                             const allLayers = local.view.getLayers(layer => layer.id === parts[i].id);
                             if (allLayers.length > 0) {
@@ -977,7 +977,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.trackBallControls = new ThreeDVirtSphereCtrls(this.scene, this.viewerDiv, this.view.camera.camera3D, this.view,
                                            this.extentObj.center().xyz(), this.initCamDist, this.cameraPosChange.bind(this));
         this.scene.add(this.trackBallControls.getObject());
-        this.onResize(null);
+        this.onResize();
 
         // Wait for the signal to start model demonstration
         const helpObs = this.helpinfoService.waitForModelDemo();
@@ -1065,7 +1065,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Capture window resize events to re-centre the display of the virtual sphere
      * @param event event object
      */
-    public onResize({}) {
+    public onResize() {
         const vsObj = this.getVirtualSphere();
         this.centreX = vsObj.x;
         this.centreY = vsObj.y;

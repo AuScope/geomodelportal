@@ -384,13 +384,16 @@ export class VolviewService {
                 let d1, d2;
                 switch (dimIdx) {
                     case 0:
-                        d1 = 1, d2 = 2;
+                        d1 = 1;
+                        d2 = 2;
                         break;
                     case 1:
-                        d1 = 0, d2 = 2;
+                        d1 = 0;
+                        d2 = 2;
                         break;
                     case 2:
-                        d1 = 0, d2 = 1;
+                        d1 = 0;
+                        d2 = 1;
                 }
                 // Set up a buffer to hold slice
                 const rgbaBuffer = new ArrayBuffer(4 * volView.DIM[d1] * volView.DIM[d2]);
@@ -483,10 +486,10 @@ export class VolviewService {
 
                 } else {
                     // If plane already exists, then just change its material, keeping old opacity
-                    const  oldMaterial = (<ITOWNS.THREE.MeshBasicMaterial>(<ITOWNS.THREE.Mesh> objectList[dimIdx]).material);
+                    const  oldMaterial = objectList[dimIdx].material;
                     material.opacity = oldMaterial.opacity;
                     material.transparent = oldMaterial.transparent;
-                    (<ITOWNS.THREE.Mesh> objectList[dimIdx]).material = material;
+                    objectList[dimIdx].material = material;
                 }
 
                 // Calculate position of slice along its dimension, in 3d space
