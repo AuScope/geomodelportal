@@ -507,7 +507,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         const ctx = bitmap.getContext('2d');
         ctx.font = '100px Arial';
         ctx.textAlign = 'center';
-        ctx.fillText(labelStr, 512, 256, 512);
+        ctx.fillText(labelStr, 512, 256, 1024);
 
         // Make a texture from bitmap
         const texture = new ITOWNS.THREE.Texture(bitmap);

@@ -13,6 +13,7 @@ const ARROWHEAD_LEN = AXES_LENGTH / 5;
 const FIELD_OF_VIEW = 8;
 const NEAR_CLIPPING_PLANE = 1;
 const FAR_CLIPPING_PLANE = 110000;
+const TEXT_SIZE = 400;
 
 /* This component controls and displays the compass rose. To do this it creates a
    separate scene from the main view's scene. Each time the camera angle in the main view
@@ -121,18 +122,6 @@ export class OverviewComponent implements AfterViewInit {
                 local.axesObj.updateMatrix();
                 local.axesObj.updateMatrixWorld(true);
                 local.prevAngle.copy(rotEul);
-                // Rotate the 'N', 'S', 'E', 'W' labels
-                for (const name of ['north-label', 'south-label', 'east-label', 'west-label']) {
-                    const labelObj = local.scene.getObjectByName(name);
-                    if (labelObj) {
-                        const aq = new THREE.Quaternion();
-                        aq.copy(local.axesObj.quaternion);
-                        const q = new THREE.Quaternion();
-                        q.copy(labelObj.parent.quaternion);
-                        aq.multiply(q);
-                        local.orientLabel(aq, labelObj, name);
-                    }
-                }
                 local.render();
             }
         });
@@ -154,19 +143,6 @@ export class OverviewComponent implements AfterViewInit {
                 local.axesObj.quaternion.copy(local.initAxesQuat);
                 local.axesObj.updateMatrix();
                 local.axesObj.updateMatrixWorld(true);
-                // Make labels face camera
-                for (const name of ['north-label', 'south-label', 'east-label', 'west-label']) {
-                    const labelObj = local.scene.getObjectByName(name);
-                    if (labelObj) {
-                        const aq = new THREE.Quaternion();
-                        aq.copy(local.axesObj.quaternion);
-                        const q = new THREE.Quaternion();
-                        q.copy(labelObj.parent.quaternion);
-                        aq.multiply(q);
-                        // Make letters face camera
-                        local.orientLabel(aq, labelObj, name);
-                    }
-                }
             }
             local.render();
         });
@@ -177,96 +153,6 @@ export class OverviewComponent implements AfterViewInit {
      */
     private get canvas(): HTMLCanvasElement {
         return this.canvasRef.nativeElement;
-    }
-
-
-    /*
-     * This rotates the label to face the camera
-     * @param aq quaternion of label
-     * @param labelObj THREE.Object3D of the label
-     * @param internal name of labelObj
-     */
-    private orientLabel(aq: THREE.Quaternion, labelObj: THREE.Object3D, name: string) {
-        // Invert the label's quaternion
-        aq.inverse();
-        const camPos = INIT_CAMERA_POS.clone();
-        // Calculate the vector which points at the camera, relative to the label's orientation.
-        // This vector is calculated by applying the label's inverted quaternion to
-        // the camera's global vector.
-        camPos.applyQuaternion(aq);
-        labelObj.lookAt(camPos);
-        labelObj.updateMatrixWorld(true);
-        labelObj.updateMatrix();
-        // << Orient letters up >>
-        // An up facing vector in camera's coordinate system
-        const cameraUp = new THREE.Vector3(0, 1, 0);
-        // Convert to world coords
-        this.camera.localToWorld(cameraUp);
-        // Subtract camera's position, so we have camera's up vector in world coords
-        cameraUp.sub(INIT_CAMERA_POS);
-        // Get position of label in world coords
-        const labelObjPos = new THREE.Vector3();
-        labelObj.getWorldPosition(labelObjPos);
-        // Add camera's up to the label's position
-        // Now we know which way up the label needs to be rotated to
-        labelObjPos.add(cameraUp);
-        // Convert this to local coords
-        labelObj.worldToLocal(labelObjPos);
-        // Calculate the angle
-        const angle = labelObjPos.angleTo(new THREE.Vector3(0, 1, 0));
-        const qup = new THREE.Quaternion();
-        // Trying to avoid the wobble that occurs around 180 degrees
-        // If not almost 180 degrees, calculate quaternion to orient letter upwards
-        if (angle < Math.PI * 0.95) {
-            qup.setFromUnitVectors(new THREE.Vector3(0, 1, 0), labelObjPos);
-            this.prevQuat[name] = qup;
-        // If too close to 180 degrees use previous quaternion
-        } else if (this.prevQuat[name]) {
-            qup.copy(this.prevQuat[name]);
-        // If no previous one, then use an approximation
-        } else {
-            qup.setFromUnitVectors(new THREE.Vector3(0.09987492178, 0.995, 0), labelObjPos);
-        }
-        labelObj.quaternion.multiply(qup);
-        labelObj.updateMatrix();
-    }
-
-
-    /*
-     * Creates a 3D label
-     * @param label label string
-     * @param font font object
-     * @param colour colour, hex number
-     * @param name, internal label for this label
-     * @returns a THREE.Mesh object, which is a label
-     */
-    private makeAxisLabel(label, font, colour, name): THREE.Mesh {
-        const textGeometry = new THREE.TextGeometry( label, {
-          font: font,
-          size: 80,
-          height: 20,
-          curveSegments: 12,
-          bevelEnabled: false
-        });
-        const textMaterial = new THREE.MeshLambertMaterial({ color: colour });
-        const mesh = new THREE.Mesh(textGeometry, textMaterial);
-        mesh.name = name;
-        return mesh;
-    }
-
-
-    /*
-     * Set up the compass rose axis labels
-     * @param axisObj compass rose axis object
-     * @param labelObj compass rose label
-     * @param name the internal name for label
-     */
-    private setUpLabel(axisObj: THREE.Object3D, labelObj: THREE.Object3D, name: string) {
-        axisObj.add(labelObj);
-        const q = new THREE.Quaternion();
-        q.copy(axisObj.quaternion);
-        // Make letters face camera
-        this.orientLabel(q, labelObj, name);
     }
 
 
@@ -295,29 +181,43 @@ export class OverviewComponent implements AfterViewInit {
         this.axesObj.add(upAxis);
         this.initAxesQuat.copy(this.axesObj.quaternion);
         this.scene.add(local.axesObj);
-
-        const loader = new THREE.FontLoader();
-        loader.load('assets/fonts/helvetiker_regular.typeface.json', function(font) {
-
-          let mesh = local.makeAxisLabel('E', font, 0x00ff00, 'east-label');
-          mesh.position.set(0, AXES_LENGTH * 1.2, 0);
-          local.setUpLabel(eastAxis, mesh, 'east-label');
-
-          mesh = local.makeAxisLabel('W', font, 0x00ff00, 'west-label');
-          mesh.position.set(0, AXES_LENGTH * 1.2, 0);
-          local.setUpLabel(westAxis, mesh, 'west-label');
-
-          mesh = local.makeAxisLabel('N', font, 0xff0000, 'north-label');
-          mesh.position.set(0, AXES_LENGTH * 1.2, 0);
-          local.setUpLabel(northAxis, mesh, 'north-label');
-
-          mesh = local.makeAxisLabel('S', font, 0x00ff00, 'south-label');
-          mesh.position.set(0, AXES_LENGTH * 1.2, 0);
-          local.setUpLabel(southAxis, mesh, 'south-label');
-          local.render();
-        });
+        // Introduce 'N', 'S', 'E','W' floating letters above axes
+        this.axesObj.add(local.makeAxisLabel('E', new THREE.Vector3(AXES_LENGTH, 0, 50)));
+        this.axesObj.add(local.makeAxisLabel('W', new THREE.Vector3(-AXES_LENGTH, 0, 50)));
+        this.axesObj.add(local.makeAxisLabel('N', new THREE.Vector3(0, AXES_LENGTH, 50)));
+        this.axesObj.add(local.makeAxisLabel('S', new THREE.Vector3(0, -AXES_LENGTH, 50)));
     }
 
+    /*
+     * Creates a floating label which always faces the camera
+     * @param labelStr label string
+     * @param offsetPosition position of label relative to the centre of compass rose
+     * @returns a THREE.Sprite object, which is a floating label
+     */
+    private makeAxisLabel(labelStr: string, offsetPosition: THREE.Vector3): THREE.Object3D {
+        // Create bitmap image
+        const bitmap = document.createElement('canvas');
+        // NB: 'height' and 'width' must be multiples of 2 for WebGL to render them efficiently
+        bitmap.width = 512;
+        bitmap.height = 256;
+        const ctx = bitmap.getContext('2d');
+        ctx.font = '96px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText(labelStr, 256, 128, 512);
+
+        // Make a texture from bitmap
+        const texture = new THREE.Texture(bitmap);
+        texture.needsUpdate = true;
+
+        // Make sprite material from texture
+        const spriteMaterial = new THREE.SpriteMaterial( { map: texture, color: 0x00ff00 } );
+        const sprite = new THREE.Sprite( spriteMaterial );
+        // Position label to sit just above object
+        sprite.position.copy(offsetPosition);
+        sprite.lookAt(new THREE.Vector3());
+        sprite.scale.set(TEXT_SIZE, TEXT_SIZE, 1);
+        return sprite;
+    }
 
     /*
      * @returns the aspect ratio of the canvas as a float
