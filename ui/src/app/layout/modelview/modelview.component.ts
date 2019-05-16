@@ -585,7 +585,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         local.scene.add(gObject.scene);
                                         // Makes a label for the object
                                         if (part.hasOwnProperty('is_labelled') && part['is_labelled'] === true) {
-                                            local.makeGLTFLabel(gObject.scene, part.display_name, 10000, 1000);
+                                            local.makeGLTFLabel(gObject.scene, part.display_name, 3000, 300);
                                         }
                                         // Adds it to the scene array to keep track of it
                                         local.addSceneObj(part, new SceneObject(gObject.scene), grp);
