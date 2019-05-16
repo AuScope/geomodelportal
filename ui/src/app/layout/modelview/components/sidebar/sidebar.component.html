@@ -31,7 +31,7 @@
                     <ul *ngFor="let subGroupObj of modelConfig['groups'][groupName]" class="submenu ul-part-name">
                         <li *ngIf="subGroupObj.include && modelPartState[groupName][subGroupObj.model_url]">
                             <a class="a-part-name list-group-item">
-                                <span>{{subGroupObj.display_name}}</span>
+                                <span>{{subGroupObj.display_name.substring(0,29)}}</span>
 
                                 <!-- Model Part Visibility Checkbox -->
                                 <input (click)="checkBoxClick(groupName, subGroupObj.model_url, !modelPartState[groupName][subGroupObj.model_url].displayed)"

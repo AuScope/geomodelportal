@@ -268,7 +268,7 @@
         "Magnetism": [
             {
                 "3dobject_label": "TMI_RTP_TMI_RTP_prop@@_0",
-                "display_name": "Total Magnetic Intensity - RTP",
+                "display_name": "Total Magnetic Intensity RTP",
                 "displayed": true,
                 "include": true,
                 "model_url": "TMI_RTP_TMI_RTP_prop@@.PNG",
