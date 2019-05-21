@@ -91,15 +91,8 @@
                                 </a>
 
                                 <!-- 3D Slice Controls -->
-                                <a *ngIf="subGroupObj.type === '3DVolume'" class="list-group-item">
-                                    <span class="span-part-controls">X slice&nbsp;<mat-slider (change)="changeSlice($event, 0, groupName, subGroupObj.model_url)" thumbLabel min="0.0" max="1.0" step="0.01" value="0.0"></mat-slider></span>
-                                </a>
-                                <a *ngIf="subGroupObj.type === '3DVolume'" class="list-group-item">
-                                    <span class="span-part-controls">Y slice&nbsp;<mat-slider (change)="changeSlice($event, 1, groupName, subGroupObj.model_url)" thumbLabel min="0.0" max="1.0" step="0.01" value="0.0"></mat-slider></span>
-                                </a>
-                                <a *ngIf="subGroupObj.type === '3DVolume'" class="list-group-item">
-                                    <span class="span-part-controls">Z slice&nbsp;<mat-slider (change)="changeSlice($event, 2, groupName, subGroupObj.model_url)" thumbLabel min="0.0" max="1.0" step="0.01" value="0.0"></mat-slider></span>
-                                </a>
+                                <app-volumecontrols *ngIf="subGroupObj.type === '3DVolume'" [dimIdx]="dimIdx" [groupName]="groupName" [partId]="subGroupObj.model_url" [modelPath]="modelPath" [modelInfoService]="modelInfoService"></app-volumecontrols>
+
                             </div>
                         </li>
                     </ul>

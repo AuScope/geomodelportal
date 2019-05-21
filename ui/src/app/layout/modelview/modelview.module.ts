@@ -10,6 +10,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ModelCardModule } from '../../shared';
 import { HelpComponent } from './components/help/help.component';
 import { OverviewComponent } from './components/overview/overview.component';
+import { VolumecontrolsComponent } from './components/sidebar/components/volumecontrols/volumecontrols.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { OverviewComponent } from './components/overview/overview.component';
         ModelViewComponent,
         SidebarComponent,
         HelpComponent,
-        OverviewComponent
+        OverviewComponent,
+        VolumecontrolsComponent
     ]
 })
 export class ModelViewModule {}

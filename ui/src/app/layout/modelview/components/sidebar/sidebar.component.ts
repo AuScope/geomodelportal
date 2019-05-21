@@ -576,15 +576,6 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     }
 
     /**
-     * Changes slice of a volume
-     * @param event material slider change event, contains slider's latest selected value
-     */
-    public changeSlice(event: MatSliderChange, dimIdx: number, groupName: string, partId: string) {
-        this.modelInfoService.setModelPartStateChange(groupName, partId,
-            { type: ModelPartStateChangeType.VOLUME_SLICE, new_value: [dimIdx, event.value] } );
-    }
-
-    /**
      * Toggles layout from right-to-left <-> left-to-right
      */
     public rltAndLtr() {
