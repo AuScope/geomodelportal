@@ -3,6 +3,19 @@ import * as ITOWNS from '../../../../node_modules/itowns/dist/itowns';
 import { VolView, VolviewService } from '../../shared/services/volview.service';
 
 /**
+ * Adds a SceneObject (representing a model part) to the scene array
+ * @param part
+ * @param sceneObj scene object
+ * @param groupName group name
+ */
+export function addSceneObj(sceneArr, part, sceneObj: SceneObject, groupName: string) {
+    if (!sceneArr.hasOwnProperty(groupName)) {
+        sceneArr[groupName] = {};
+    }
+    sceneArr[groupName][part.model_url] = sceneObj;
+}
+
+/**
  * This class is used to manipulate graphical objects in a scene
  * The 'SceneObject' class is used to manipulate GLTF Objects
  */

@@ -146,3 +146,17 @@
         opacity: 1.0;
         display: inline;
     }
+
+    #drop_zone {
+        position: absolute;
+        top: 2%;
+        left: 2%;
+        border: 5px solid blue;
+        width:  96%;
+        height: 96%;
+        color: blue;
+        p {
+          margin-top: 23%;
+          text-align: center;
+        }
+    }

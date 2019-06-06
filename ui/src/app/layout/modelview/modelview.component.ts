@@ -10,7 +10,9 @@ import { ModelInfoService, ModelPartCallbackType, ModelControlEventEnum,
 import { SidebarService, MenuChangeType, MenuStateChangeType } from '../../shared/services/sidebar.service';
 import { HelpinfoService } from '../../shared/services/helpinfo.service';
 import { VolView, VolviewService, DataType } from '../../shared/services/volview.service';
-import { SceneObject, PlaneSceneObject, WMSSceneObject, VolSceneObject } from './scene-object';
+import { SceneObject, PlaneSceneObject, WMSSceneObject, VolSceneObject, addSceneObj } from './scene-object';
+import { FileImportFactory } from './components/fileimport/fileimportfactory';
+import { hasWebGL, detectIE, getWebGLErrorMessage } from './helpers';
 
 
 // Import itowns library
@@ -130,84 +132,34 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     // Collection of 'VolView' objects, used to keep track of and display volume data
     private volViewArr: { [groupName: string]: { [partId: string]: VolView } } = {};
 
+    // Shared gltfLoader object
+    private gltfLoader;
+
+    // Used to create 'FileImport' object to import files into scene
+    private fileImportFactory;
+    private fileImport;
+
+    // File drop is enabled
+    public enableFileDrop = false;
+
+    // Is mouse dragging a file into scene?
+    private isDragging = false;
+    private dragTimer;
+
     constructor(private modelInfoService: ModelInfoService, private ngRenderer: Renderer2,
                 private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
                 private helpinfoService: HelpinfoService, private httpService: HttpClient,
                 private volViewService: VolviewService) {
         ITOWNS.THREE.Cache.enabled = true;
-    }
+        const manager = new ITOWNS.THREE.LoadingManager();
 
-    /**
-     * Detects WebGL
-     * Adapted from: Detector.js in ThreeJS examples
-     * @return true if WebGL is supported
-     */
-    private hasWebGL() {
-        try {
-            const canvas = document.createElement('canvas');
-            return !! ( (<any>window).WebGLRenderingContext &&
-                        ( canvas.getContext( 'webgl' ) || canvas.getContext( 'experimental-webgl' ) ) );
-        } catch ( e ) {
-            return false;
-        }
-    }
+        // This adds the 'GLTFLoader' object to itowns' THREE
+        GLTFLoader(ITOWNS.THREE);
 
-    /**
-     * Creates a WebGL error message
-     * Adapted from: Detector.js in ThreeJS examples
-     * @return HTML Element
-     */
-    private getWebGLErrorMessage() {
-        const p1 = this.ngRenderer.createElement('p');
-        if (!this.hasWebGL()) {
-            const textStr = (<any>window).WebGLRenderingContext ? [
-                'Your graphics card does not seem to support WebGL',
-                'Find out how to get it '
-            ].join( '\n' ) : [
-                'Your browser does not seem to support WebGL',
-                'Find out how to get it '
-            ].join( '\n' );
-            const hText = this.ngRenderer.createText(textStr);
-            this.ngRenderer.appendChild(p1, hText);
-            const oLink = this.ngRenderer.createElement('a');
-            this.ngRenderer.setAttribute(oLink, 'href', 'http://get.webgl.org/'); // Attributes are HTML entities
-            this.ngRenderer.setProperty(oLink, 'innerHTML', 'here.'); // Properties are DOM entities
-            this.ngRenderer.setAttribute(oLink, 'target', '_blank');
-            this.ngRenderer.setStyle(oLink, 'color', 'yellow');
-            this.ngRenderer.appendChild(p1, oLink);
-        }
-        return p1;
-    }
+        // Create our new GLTFLoader object
+        this.gltfLoader = new ITOWNS.THREE['GLTFLoader'](manager);
 
-    /**
-     * Detects IE
-     * @return version of IE or false, if browser is not Internet Explorer
-     */
-    private detectIE() {
-        const ua = window.navigator.userAgent;
-        // Test values; Uncomment to check result …
-        // IE 10
-        // ua = 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)';
-        // IE 11
-        // ua = 'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko';
-        // IE 12 / Spartan
-        // ua = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
-        // 'Chrome/39.0.2171.71 Safari/537.36 Edge/12.0';
-        // Edge (IE 12+)
-        // ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
-        // 'Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586';
-        const msie = ua.indexOf('MSIE ');
-        if (msie > 0) {
-            // IE 10 or older => return version number
-            return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
-        }
-        const trident = ua.indexOf('Trident/');
-        if (trident > 0) {
-            // IE 11 => return version number
-            const rv = ua.indexOf('rv:');
-            return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
-        }
-        return false;
+
     }
 
     /**
@@ -231,7 +183,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         const local = this;
 
         // If the browser is Internet Explorer then produce a fatal warning message
-        if (this.detectIE()) {
+        if (detectIE()) {
             const p1 = this.ngRenderer.createElement('p');
             const p2 = this.ngRenderer.createElement('p');
             const hText1 = this.ngRenderer.createText('Sorry - your Internet Explorer browser is not supported.  ');
@@ -245,7 +197,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         }
 
         // Detect if webGL is available and inform viewer if cannot proceed
-        if (this.hasWebGL()) {
+        if (hasWebGL()) {
             this.modelUrlPath = this.route.snapshot.paramMap.get('modelPath');
 
             // Turn on loading spinner
@@ -313,8 +265,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             };
             this.modelInfoService.registerModelPartCallback(callbackFn);
         } else {
-            // Sorry, your browser or grpahics card does not have WebGL
-            const warning = this.getWebGLErrorMessage();
+            // Sorry, your browser or graphics card does not have WebGL
+            const warning = getWebGLErrorMessage(this.ngRenderer);
             this.ngRenderer.appendChild(this.errorDiv, warning);
             this.ngRenderer.setStyle(this.errorDiv, 'display', 'inline');
         }
@@ -366,19 +318,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     private cameraPosChange() {
         const newPos = this.getCameraPosition();
         this.modelInfoService.newCameraPos([newPos.x, newPos.y, newPos.z, newPos.order]);
-    }
-
-    /**
-     * Adds a SceneObject (representing a model part) to the scene array
-     * @param part
-     * @param sceneObj scene object
-     * @param groupName group name
-     */
-    private addSceneObj(part, sceneObj: SceneObject, groupName: string) {
-        if (!this.sceneArr.hasOwnProperty(groupName)) {
-            this.sceneArr[groupName] = {};
-        }
-        this.sceneArr[groupName][part.model_url] = sceneObj;
     }
 
     /**
@@ -553,13 +492,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Loads and draws the GLTF objects
      */
     private add3DObjects() {
-        const manager = new ITOWNS.THREE.LoadingManager();
-
-        // This adds the 'GLTFLoader' object to itowns' THREE
-        GLTFLoader(ITOWNS.THREE);
-
-        // Create our new GLTFLoader object
-        const loader = new ITOWNS.THREE['GLTFLoader'](manager);
 
         // const loader = new GLTFLoader(manager);
         const promiseList = [];
@@ -573,7 +505,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     if (parts[i].type === 'GLTFObject' && parts[i].include) {
                         promiseList.push( new Promise( function( resolve, reject ) {
                             (function(part, grp) {
-                                loader.load('./assets/geomodels/' + local.modelDir + '/' + part.model_url,
+                                local.gltfLoader.load('./assets/geomodels/' + local.modelDir + '/' + part.model_url,
                                     // function called if loading successful
                                     function (gObject) {
                                         console.log('loaded: ', local.modelDir + '/' + part.model_url);
@@ -588,7 +520,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                             local.makeGLTFLabel(gObject.scene, part.display_name, 3000, 300);
                                         }
                                         // Adds it to the scene array to keep track of it
-                                        local.addSceneObj(part, new SceneObject(gObject.scene), grp);
+                                        addSceneObj(local.sceneArr, part, new SceneObject(gObject.scene), grp);
                                         resolve(gObject.scene);
                                     },
                                     // function called during loading
@@ -626,7 +558,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     'resourceId' : boreholeId
                     };
                     // Load up GLTF boreholes
-                    loader.load('./api/' + modelName + '?' + local.modelInfoService.buildURL(params),
+                    local.gltfLoader.load('./api/' + modelName + '?' + local.modelInfoService.buildURL(params),
                             // function called if loading successful
                             function (gObject) {
                                 const groupName = 'NVCL Boreholes';
@@ -635,7 +567,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 local.scene.add(gObject.scene);
                                 // Add floating label
                                 local.makeGLTFLabel(gObject.scene, boreholeId, 200, 20);
-                                local.addSceneObj({ 'display_name': boreholeId, 'displayed': true, 'model_url': boreholeId,
+                                addSceneObj(local.sceneArr, { 'display_name': boreholeId, 'displayed': true, 'model_url': boreholeId,
                                                           'type': 'GLTFObject' }, new SceneObject(gObject.scene), groupName);
                                 local.sidebarSrvRequest(groupName, boreholeId, MenuStateChangeType.NEW_PART);
                             },
@@ -649,13 +581,13 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             },
                             // function called when loading fails
                             function (error) {
-                                console.log('BOREHOLE ', boreholeId, ' GLTF load error!', error);
+                                console.error('BOREHOLE ', boreholeId, ' GLTF load error!', error);
                             }
                         );
                     } // for loop
                 },
                 function(err) {
-                    console.log('BOREHOLE ID LIST load error!', err);
+                    console.error('BOREHOLE ID LIST load error!', err);
                 }
         );
 
@@ -691,7 +623,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                         promiseList.push(local.volViewService.makePromise(volView, group, partId,
                                         './assets/geomodels/' + local.modelDir + '/' + parts[i].model_url,
                                         local.scene, volSceneObj.volObjList, parts[i].displayed));
-                        this.addSceneObj(parts[i], volSceneObj, group);
+                        addSceneObj(this.sceneArr, parts[i], volSceneObj, group);
                     }
                 }
             }
@@ -745,7 +677,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 plane.name =  part.model_url.substring(0, part.model_url.lastIndexOf('.')) + '_0'; // For displaying popups
                                 plane.visible = part.displayed;
                                 local.scene.add(plane);
-                                local.addSceneObj(part, new PlaneSceneObject(plane), grp);
+                                addSceneObj(local.sceneArr, part, new PlaneSceneObject(plane), grp);
                                 resolve(plane);
                             },
                             // Function called when download progresses
@@ -813,7 +745,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             // Retrieve WMS layer and add it to scene array
                             const allLayers = local.view.getLayers(layer => layer.id === parts[i].id);
                             if (allLayers.length > 0) {
-                                local.addSceneObj(parts[i], new WMSSceneObject(allLayers[0]), group);
+                                addSceneObj(local.sceneArr, parts[i], new WMSSceneObject(allLayers[0]), group);
                             }
                         },
                         function(err) {
@@ -913,7 +845,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             }
                         }
 
-                        // IS there a popup or reference URL in the config?
+                        // Is there a popup or reference URL in the config?
                         for (const group in local.config.groups) {
                             if (local.config.groups.hasOwnProperty(group)) {
                                 const parts = local.config.groups[group];
@@ -966,7 +898,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 }
                             },
                             (err: HttpErrorResponse) => {
-                                console.log('Cannot load borehole list', err);
+                                console.error('Cannot load borehole list', err);
                             }
                         );
                     }
@@ -999,6 +931,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             }
         });
         this.view.notifyChange(true);
+
+        this.fileImportFactory = new FileImportFactory(this.sidebarService, this.modelInfoService, this.httpService);
+
+        this.fileImport = this.fileImportFactory.createFileImport(this.scene, this.gltfLoader, this.modelUrlPath, this.sceneArr);
 
         // Everything except the WMS layers are loaded at this point, so turn off loading spinner
         this.controlLoadSpinner(false);
@@ -1191,6 +1127,54 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                                    scope.cameraPosChange();
                                                }
         }
+    }
+
+    /**
+     * Checks that the user is dragging a file into scene
+     */
+    private checkDragging() {
+        if (!this.isDragging) {
+            this.enableFileDrop = false;
+            clearInterval(this.dragTimer);
+            this.dragTimer = null;
+        }
+        this.isDragging = false;
+    }
+
+    /**
+     * When dragging a file to be converted to glTF into the scene
+     * prevent default behavior (stop file being opened)
+     * and enable on screen instructions
+     * @param ev event object
+     */
+    public dragEnterHandler(ev) {
+        ev.preventDefault();
+        this.enableFileDrop = true;
+    }
+
+    /**
+     * When dragging a file to be converted to glTF,
+     * prevent default behavior (stop file being opened)
+     * @param ev event object
+     */
+    public preventDefault(ev) {
+        // Prevent default behaviour (stop file being opened)
+        ev.preventDefault();
+        this.isDragging = true;
+        if (!this.dragTimer) {
+            this.dragTimer = setInterval(this.checkDragging.bind(this), 1000);
+        }
+    }
+
+    /**
+     * When a GOCAD file is droppped into the square, it is converted, then loaded into the scene
+     * @param ev event object
+     **/
+    public dropHandler(ev) {
+        // Prevent default behaviour (stop file being opened)
+        ev.preventDefault();
+        this.fileImport.doTryConvert(ev);
+        this.enableFileDrop = false;
     }
 
     /**

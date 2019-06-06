@@ -1,6 +1,9 @@
 <div [@routerTransition]>
         <app-sidebar></app-sidebar>
-        <div (window:resize)="onResize($event)" [style.opacity]="isRunningModelDemo()? 0.5 : 1.0" id="viewerDiv" #viewerDiv></div>
+        <div (window:resize)="onResize($event)"
+              (dragenter)="dragEnterHandler($event);"
+              [style.opacity]="isRunningModelDemo() || enableFileDrop? 0.5 : 1.0"
+              id="viewerDiv" #viewerDiv></div>
         <div *ngIf="isRunningModelDemo()||isMouseGuideOn" id="mouseGuideDiv" #mouseGuideDiv>
             <svg>
                 <g style="stroke: #606060; stroke-width: 1px;">
@@ -52,5 +55,9 @@
         <div id="popupBoxDiv" #popupBoxDiv><div id="popupExitDiv">X</div></div>
         <div id="errorDiv" #errorDiv></div>
         <div id="spinnerDiv" #spinnerDiv><i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw" aria-hidden="true"></i></div>
+        <div id="drop_zone" (drop)="dropHandler($event)" (dragover)="preventDefault($event)"
+                                       [ngStyle]="{'visibility':enableFileDrop ? 'visible' : 'hidden'}">
+            <p>Drag a GOCAD .TS (TSURF) file into the blue box to display it.</p>
+        </div>
         <app-overview></app-overview>
 </div>
