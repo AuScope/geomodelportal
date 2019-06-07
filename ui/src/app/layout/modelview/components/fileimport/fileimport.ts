@@ -81,7 +81,7 @@ export class FileImport {
      * Reads and parses file
      * @param data file's data
      */
-    private readAndConvert(data): any {
+    private readAndConvert(data, fileName: string): any {
         const local = this;
         try {
             // Convert to string
@@ -95,15 +95,15 @@ export class FileImport {
             local.gltfLoader.parse(uint, './api/',
                 function(gObject) {
                     if (gObject) {
-                        const objectId = 'drag_and_drop' + local.fileCount.toString();
+                        const fileNameId = local.fileCount.toString() + '_' + fileName.substring(0, 24);
                         local.fileCount++;
-                        gObject.scene.name = objectId + '_0';
+                        gObject.scene.name = fileNameId;
                         // Add object to scene
                         local.scene.add(gObject.scene);
-                        addSceneObj(local.sceneArr, { 'display_name': objectId, 'displayed': true,
-                                                      'model_url': objectId, 'type': 'GLTFObject' },
+                        addSceneObj(local.sceneArr, { 'display_name': fileNameId, 'displayed': true,
+                                                      'model_url': fileNameId, 'type': 'GLTFObject' },
                                   new SceneObject(gObject.scene), IMPORT_GROUP_NAME);
-                        const menuChange: MenuChangeType = { group: IMPORT_GROUP_NAME, subGroup: objectId,
+                        const menuChange: MenuChangeType = { group: IMPORT_GROUP_NAME, subGroup: fileNameId,
                                                              state: MenuStateChangeType.NEW_PART };
                         local.sidebarService.changeMenuState(menuChange);
                     }
@@ -112,9 +112,9 @@ export class FileImport {
                     console.error('An error occurred parsing the GLTF file: ', err);
                 }
             );
-        } catch ( e ) {
+        } catch (err) {
           // For SyntaxError or TypeError, return a generic failure message.
-          console.error('Error while parsing GLTF: ', e);
+          console.error('Error while parsing GLTF: ', err);
         }
         return ['', ''];
     }
@@ -137,7 +137,7 @@ export class FileImport {
                         reader.onload = function (evt) {
                             local.convertToGLTF(reader.result).then(
                                 function(data) {
-                                    local.readAndConvert(data);
+                                    local.readAndConvert(data, file.name);
                                 },
                                 function(err) {
                                     console.error('An error occurred converting the GLTF file: ', err);
@@ -172,7 +172,8 @@ export class FileImport {
 
     /**
      * Generates a random hex string
-     * len - must be an even number
+     * @param len length of hex string, must be an even number
+     * @returns hex string
      */
     private generateId(len: number) {
         const arr = new Uint8Array(len / 2);
