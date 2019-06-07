@@ -12,7 +12,7 @@ import { HelpinfoService } from '../../shared/services/helpinfo.service';
 import { VolView, VolviewService, DataType } from '../../shared/services/volview.service';
 import { SceneObject, PlaneSceneObject, WMSSceneObject, VolSceneObject, addSceneObj } from './scene-object';
 import { FileImportFactory } from './components/fileimport/fileimportfactory';
-import { hasWebGL, detectIE, getWebGLErrorMessage } from './helpers';
+import { hasWebGL, detectIE, getWebGLErrorMessage, createErrorBox, createMissingIEMsgBox, makePopup } from './helpers';
 
 
 // Import itowns library
@@ -184,15 +184,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
         // If the browser is Internet Explorer then produce a fatal warning message
         if (detectIE()) {
-            const p1 = this.ngRenderer.createElement('p');
-            const p2 = this.ngRenderer.createElement('p');
-            const hText1 = this.ngRenderer.createText('Sorry - your Internet Explorer browser is not supported.  ');
-            const hText2 = this.ngRenderer.createText('Please install Firefox, Chrome or Microsoft Edge');
-            this.ngRenderer.appendChild(p1, hText1);
-            this.ngRenderer.appendChild(p2, hText2);
-            this.ngRenderer.appendChild(this.errorDiv, p1);
-            this.ngRenderer.appendChild(this.errorDiv, p2);
-            this.ngRenderer.setStyle(this.errorDiv, 'display', 'inline');
+            createMissingIEMsgBox(this.ngRenderer, this.errorDiv);
             return;
         }
 
@@ -209,21 +201,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     local.initialiseModel(res[0], res[1]);
                 },
                 errStr => {
-                    const p1 = this.ngRenderer.createElement('p');
-                    const p2 = this.ngRenderer.createElement('p');
-                    const hText1 = this.ngRenderer.createText('Sorry - ' + errStr);
-                    const hText2 = this.ngRenderer.createText('Return to home page');
-                    const a1 = this.ngRenderer.createElement('a');
-                    this.ngRenderer.appendChild(a1, hText2);
-                    this.ngRenderer.setAttribute(a1, 'href', '/');
-                    this.ngRenderer.setStyle(a1, 'color', 'yellow');
-                    this.ngRenderer.appendChild(p1, hText1);
-                    this.ngRenderer.appendChild(p2, a1);
-                    this.ngRenderer.appendChild(this.errorDiv, p1);
-                    this.ngRenderer.appendChild(this.errorDiv, p2);
-                    this.ngRenderer.setStyle(this.errorDiv, 'display', 'inline');
+                    createErrorBox(local.ngRenderer, local.errorDiv, errStr);
                     this.controlLoadSpinner(false);
-                    return;
                 }
              );
 
@@ -812,6 +791,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     if (closest < intersects.length) {
                         const objName = intersects[closest].object.name;
                         const objIntPt = intersects[closest].point;
+                        const point: [number, number, number] = [ objIntPt.x, objIntPt.y, objIntPt.z];
 
                         // TODO: Remove to a separate lookup service
 
@@ -838,7 +818,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                             local.volLabelArr[group][partId].hasOwnProperty(valStr)) {
                                             popObj['label'] = local.volLabelArr[group][partId][valStr];
                                         }
-                                        local.makePopup(event, popObj, objIntPt);
+                                        makePopup(local.ngRenderer, local.popupBoxDiv, event, popObj, point);
                                         return;
                                     }
                                 }
@@ -862,7 +842,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                             if (parts[i]['popups'].hasOwnProperty(popup_key)) {
                                                 // console.log('popup_key = ', popup_key, ' objName = ', objName );
                                                 if (popup_key === objName || popup_key + '_0' === objName ) {
-                                                    local.makePopup(event, parts[i]['popups'][popup_key], objIntPt);
+                                                    makePopup(local.ngRenderer, local.popupBoxDiv, event,
+                                                              parts[i]['popups'][popup_key], point);
                                                     if (parts[i].hasOwnProperty('model_url')) {
                                                         // Open up sidebar menu to reveal relevant part
                                                         local.sidebarSrvRequest(group, parts[i]['model_url'], MenuStateChangeType.OPENED);
@@ -894,7 +875,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     queryResult[keyval['name']] = keyval['value'];
                                 }
                                 if  (queryResult.hasOwnProperty('title')) {
-                                    local.makePopup(event, queryResult, objIntPt);
+                                    makePopup(local.ngRenderer, local.popupBoxDiv, event, queryResult, point);
                                 }
                             },
                             (err: HttpErrorResponse) => {
@@ -980,22 +961,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         return false;
     }
 
-    /**
-     * Adds a text line to the popup information window
-     * @param key key value
-     * @param val value
-     */
-    private addTextLineToPopup(key: string, val: string) {
-        const liElem = this.ngRenderer.createElement('li');
-        const spElem = this.ngRenderer.createElement('span');
-        const keyText = this.ngRenderer.createText(key + ': ');
-        const valText = this.ngRenderer.createText(val);
-        this.ngRenderer.appendChild(spElem, keyText);
-        this.ngRenderer.appendChild(liElem, spElem);
-        this.ngRenderer.appendChild(liElem, valText);
-        this.ngRenderer.addClass(liElem, 'popupClass');
-        this.ngRenderer.appendChild(this.popupBoxDiv, liElem);
-    }
 
     /**
      * Capture window resize events to re-centre the display of the virtual sphere
@@ -1008,53 +973,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.sphereRadius = vsObj.r;
     }
 
-    /**
-     * Make a popup box appear on the screen near where the user has queried the model
-     * @param event click event
-     * @param popupInfo JSON object of the information to be displayed in the popup box
-     * @param point point clicked on in XYZ coordinates (format is {x: XX, y: XX, z: ZZ})
-     */
-    public makePopup(event, popupInfo, point: ITOWNS.THREE.Vector3) {
-        const local = this;
-        // Position it and let it be seen
-        this.ngRenderer.setStyle(this.popupBoxDiv, 'top', event.clientY);
-        this.ngRenderer.setStyle(this.popupBoxDiv, 'left', event.clientX);
-        this.ngRenderer.setStyle(this.popupBoxDiv, 'display', 'inline');
-        // Empty its contents using DOM operations (Renderer2 does not currently support proper element querying)
-        while (this.popupBoxDiv.hasChildNodes()) {
-            this.popupBoxDiv.removeChild(this.popupBoxDiv.lastChild);
-        }
 
-        // Make 'X' for exit button in corner of popup window
-        const exitDiv = this.ngRenderer.createElement('div');
-        this.ngRenderer.setAttribute(exitDiv, 'id', 'popupExitDiv');  // Attributes are HTML entities
-        this.ngRenderer.addClass(exitDiv, 'popupClass');
-        this.ngRenderer.setProperty(exitDiv, 'innerHTML', 'X'); // Properties are DOM entities
-        this.ngRenderer.setProperty(exitDiv, 'onclick', function() { local.ngRenderer.setStyle(local.popupBoxDiv, 'display', 'none'); });
-        this.ngRenderer.appendChild(this.popupBoxDiv, exitDiv);
-        // Make popup title
-        const hText = this.ngRenderer.createText(popupInfo['title']);
-        this.ngRenderer.appendChild(this.popupBoxDiv, hText);
-        // Add in XYZ coordinates
-        this.addTextLineToPopup('X,Y,Z (m)', point.x.toFixed(0) + ', ' + point.y.toFixed(0) + ', ' + point.z.toFixed(0));
-        // Add in popup information
-        for (const key in popupInfo) {
-             if (key !== 'href' && key !== 'title') {
-                 this.addTextLineToPopup(key, popupInfo[key]);
-            // Make URLs
-            } else if (key === 'href') {
-                for (let hIdx = 0; hIdx < popupInfo['href'].length; hIdx++) {
-                    const liElem = this.ngRenderer.createElement('li');
-                    const oLink = this.ngRenderer.createElement('a');
-                    this.ngRenderer.setAttribute(oLink, 'href', popupInfo['href'][hIdx]['URL']); // Attributes are HTML entities
-                    this.ngRenderer.setProperty(oLink, 'innerHTML', popupInfo['href'][hIdx]['label']); // Properties are DOM entities
-                    this.ngRenderer.setAttribute(oLink, 'target', '_blank');
-                    this.ngRenderer.appendChild(liElem, oLink);
-                    this.ngRenderer.appendChild(this.popupBoxDiv, liElem);
-                }
-            }
-        }
-    }
 
     /**
      * Opens up a menu item in the sidebar

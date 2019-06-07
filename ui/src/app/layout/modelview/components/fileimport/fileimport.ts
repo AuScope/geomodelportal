@@ -8,6 +8,9 @@ import { SceneObject, addSceneObj } from '../../scene-object';
 
 import * as ITOWNS from '../../../../../../node_modules/itowns/dist/itowns';
 
+// Group name in sidebar for imported filtes
+const IMPORT_GROUP_NAME = 'Imported Files';
+
 // This class is responsible for loading a file into the ModelView THreeJS scene
 export class FileImport {
 
@@ -28,6 +31,8 @@ export class FileImport {
 
     // Count of number of files imported
     private fileCount = 0;
+
+
 
     /**
      * constructor takes parameters taken from ModelView component
@@ -55,7 +60,8 @@ export class FileImport {
      **/
     private convertToGLTF(fileStr: string | ArrayBuffer): Promise<any> {
         const local = this;
-        const URL =  './api/' + this.modelUrlPath + '?' + local.modelInfoService.buildURL({'service': 'CONVERT'});
+        const URL =  './api/' + this.modelUrlPath + '?' + local.modelInfoService.buildURL({'service': 'CONVERT',
+                                                                                            'id': this.generateId(16)});
         this.gltfPromise = new Promise(function(resolve, reject) {
             local.httpService.post(URL, fileStr).subscribe(
                 data => {
@@ -95,10 +101,9 @@ export class FileImport {
                         // Add object to scene
                         local.scene.add(gObject.scene);
                         addSceneObj(local.sceneArr, { 'display_name': objectId, 'displayed': true,
-                                                      'model_url': objectId,
-                                                  'type': 'GLTFObject' }, new SceneObject(gObject.scene),
-                                                  'Imports');
-                        const menuChange: MenuChangeType = { group: 'Imports', subGroup: objectId,
+                                                      'model_url': objectId, 'type': 'GLTFObject' },
+                                  new SceneObject(gObject.scene), IMPORT_GROUP_NAME);
+                        const menuChange: MenuChangeType = { group: IMPORT_GROUP_NAME, subGroup: objectId,
                                                              state: MenuStateChangeType.NEW_PART };
                         local.sidebarService.changeMenuState(menuChange);
                     }
@@ -113,6 +118,7 @@ export class FileImport {
         }
         return ['', ''];
     }
+
 
     /**
      * Fetches file from browser and starts the conversion to GLTF process
@@ -153,5 +159,25 @@ export class FileImport {
        }
     }
 
+
+    /**
+     * Converts a single byte to a hex string
+     * @param byte a uint8 byte
+     * @returns hex string
+     */
+    private byteToHex(byte: number): string {
+        return ('0' + byte.toString(16)).slice(-2);
+    }
+
+
+    /**
+     * Generates a random hex string
+     * len - must be an even number
+     */
+    private generateId(len: number) {
+        const arr = new Uint8Array(len / 2);
+        window.crypto.getRandomValues(arr);
+        return Array.from(arr, this.byteToHex).join('');
+    }
 
 }
