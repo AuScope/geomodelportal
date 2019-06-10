@@ -9,8 +9,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ModelInfoService } from './shared/services/model-info.service';
-import { SidebarService } from './shared/services/sidebar.service';
-import { HelpinfoService } from './shared/services/helpinfo.service';
+import { SidebarService } from './layout/modelview/services/sidebar.service';
+import { HelpinfoService } from './layout/modelview/services/helpinfo.service';
 import {APP_BASE_HREF} from '@angular/common';
 import { environment } from '../environments/environment';
 

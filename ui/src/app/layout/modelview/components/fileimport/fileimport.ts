@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 
 import { ModelInfoService } from '../../../../shared/services/model-info.service';
-import { SidebarService, MenuChangeType, MenuStateChangeType } from '../../../../shared/services/sidebar.service';
+import { SidebarService, MenuChangeType, MenuStateChangeType } from '../../services/sidebar.service';
 import { SceneObject, addSceneObj } from '../../scene-object';
 
 
@@ -106,6 +106,8 @@ export class FileImport {
                         const menuChange: MenuChangeType = { group: IMPORT_GROUP_NAME, subGroup: fileNameId,
                                                              state: MenuStateChangeType.NEW_PART };
                         local.sidebarService.changeMenuState(menuChange);
+                        // menuChange = { group: IMPORT_GROUP_NAME, subGroup: fileNameId, state: MenuStateChangeType.OPENED };
+                        // this.sidebarService.changeMenuState(menuChange);
                     }
                 },
                 function(err) {

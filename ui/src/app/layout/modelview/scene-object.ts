@@ -1,6 +1,6 @@
 import * as ITOWNS from '../../../../node_modules/itowns/dist/itowns';
 
-import { VolView, VolviewService } from '../../shared/services/volview.service';
+import { VolView, VolviewService } from './services/volview.service';
 
 /**
  * Adds a SceneObject (representing a model part) to the scene array

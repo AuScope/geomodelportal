@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HelpinfoService, WidgetType } from '../../../../shared/services/helpinfo.service';
+import { HelpinfoService, WidgetType } from '../../services/helpinfo.service';
 
 
 const SIDEBAR_INIT_MSG = 'Sidebar controls tour';

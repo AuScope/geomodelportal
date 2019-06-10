@@ -7,9 +7,9 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 import { ModelInfoService, ModelPartCallbackType, ModelControlEventEnum,
          ModelPartStateChange, ModelPartStateChangeType } from '../../shared/services/model-info.service';
-import { SidebarService, MenuChangeType, MenuStateChangeType } from '../../shared/services/sidebar.service';
-import { HelpinfoService } from '../../shared/services/helpinfo.service';
-import { VolView, VolviewService, DataType } from '../../shared/services/volview.service';
+import { SidebarService, MenuChangeType, MenuStateChangeType } from './services/sidebar.service';
+import { HelpinfoService } from './services/helpinfo.service';
+import { VolView, VolviewService, DataType } from './services/volview.service';
 import { SceneObject, PlaneSceneObject, WMSSceneObject, VolSceneObject, addSceneObj } from './scene-object';
 import { FileImportFactory } from './components/fileimport/fileimportfactory';
 import { hasWebGL, detectIE, getWebGLErrorMessage, createErrorBox, createMissingIEMsgBox, makePopup } from './helpers';

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { ModelInfoService } from '../../../../shared/services/model-info.service';
-import { SidebarService } from '../../../../shared/services/sidebar.service';
+import { SidebarService } from '../../services/sidebar.service';
 import { FileImport } from './fileimport';
 import * as ITOWNS from '../../../../../../node_modules/itowns/dist/itowns';
 

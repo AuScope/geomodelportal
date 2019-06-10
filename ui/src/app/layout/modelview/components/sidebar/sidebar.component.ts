@@ -6,8 +6,8 @@ import { Subscription ,  Observable } from 'rxjs';
 import { NgbPopover} from '@ng-bootstrap/ng-bootstrap';
 
 import { ModelInfoService, ModelPartStateChangeType } from '../../../../shared/services/model-info.service';
-import { SidebarService, MenuStateChangeType, MenuChangeType } from '../../../../shared/services/sidebar.service';
-import { HelpinfoService, WidgetType } from '../../../../shared/services/helpinfo.service';
+import { SidebarService, MenuStateChangeType, MenuChangeType } from '../../services/sidebar.service';
+import { HelpinfoService, WidgetType } from '../../services/helpinfo.service';
 
 
 // Used to control visibility of parts in the menu

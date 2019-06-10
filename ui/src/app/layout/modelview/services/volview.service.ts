@@ -3,14 +3,14 @@ import { HttpClient } from '@angular/common/http';
 
 // Most web servers & browsers will compress & decompress files if set up correctly,
 // but for the moment this is required.
-import { Zlib } from '../../../../node_modules/zlibjs/bin/gunzip.min.js';
+import { Zlib } from '../../../../../node_modules/zlibjs/bin/gunzip.min.js';
 
 // Import itowns library
 // Note: In ThreeJS, buffer geometry ids are created by incrementing a counter which is local to the library.
 // So when creating objects to be added to the scene, we must always use ITOWNS' version of ThreeJS.
 // If we do not do this, there will be an overlap in ids and objects are not reliably rendered to screen.
 // FIXME: Needs typescript bindings
-import * as ITOWNS from '../../../../node_modules/itowns/dist/itowns';
+import * as ITOWNS from '../../../../../node_modules/itowns/dist/itowns';
 
 
 // Different types of data available in a volume file
