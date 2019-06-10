@@ -12,7 +12,7 @@ import { HelpinfoService } from './services/helpinfo.service';
 import { VolView, VolviewService, DataType } from './services/volview.service';
 import { SceneObject, PlaneSceneObject, WMSSceneObject, VolSceneObject, addSceneObj } from './scene-object';
 import { FileImportFactory } from './components/fileimport/fileimportfactory';
-import { hasWebGL, detectIE, getWebGLErrorMessage, createErrorBox, createMissingIEMsgBox, makePopup } from './helpers';
+import { hasWebGL, detectIE, getWebGLErrorMessage, createErrorBox, createMissingIEMsgBox, makePopup } from './html-helpers';
 
 
 // Import itowns library
