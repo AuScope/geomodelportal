@@ -4,7 +4,7 @@ export function routerTransition() {
     return slideToTop();
 }
 
-function slide(enterTransforms: [string, string], leaveTransforms: [string, string]) {
+export function slide(enterTransforms: [string, string], leaveTransforms: [string, string]) {
   return trigger('routerTransition', [
       state('void', style({})),
       state('*', style({})),

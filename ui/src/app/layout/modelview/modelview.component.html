@@ -1,6 +1,6 @@
 <div [@routerTransition]>
         <app-sidebar></app-sidebar>
-        <div (window:resize)="onResize($event)"
+        <div (window:resize)="onResize()"
               (dragenter)="dragEnterHandler($event);"
               [style.opacity]="isRunningModelDemo() || enableFileDrop? 0.5 : 1.0"
               id="viewerDiv" #viewerDiv></div>
