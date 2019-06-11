@@ -53,7 +53,7 @@ NB: For information on the JSON files, see [README.md](ui/src/assets/geomodels/R
 ### Adding borehole service
 The borehole service requires an [Apache](https://httpd.apache.org/) server with Python WSGI [mod_wsgi](https://modwsgi.readthedocs.io/en/develop/) enabled.  Python should be setup as described in [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/README.md)
 
-A borehole database file can be produced by running the "makeBoreholes.py" conversion script. See [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/lib/README.md)
+A borehole database file can be produced by running the "makeBoreholes.py" conversion script. See [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/scripts/README.md)
 
 The 'index.wsgi' script (found in 'srv' directory) should be copied to 'api' directory so that it is served as _http://website/api_
 
