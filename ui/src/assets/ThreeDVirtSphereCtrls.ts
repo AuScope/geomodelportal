@@ -266,7 +266,7 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
     /*
     * Updates the view and camera if needed
     */
-    this.update = function update(dt, updateLoopRestarted) {
+    this.update = function update(_dt, _updateLoopRestarted) {
         if (scope.state === STATE.DRAG) {
             scope.handleDragMovement();
         }
@@ -539,10 +539,102 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
 
 
     /**
+     * Updates the view of the scene after something has been changed
+     */
+    this.updateView = function updateView() {
+        // Update view
+        viewObject.notifyChange(true);
+    };
+
+
+    /**
      * Returns the camera position as a set of Euler angles
      */
     this.getCameraPosition = function getCameraPosition() {
         return rObject.rotation;
+    };
+
+    /**
+     * Moves the camera to look at an object in the scene
+     * @param sceneObj object (Object3D) to be looked at
+     */
+    this.moveViewToObj = function moveViewToSceneObj(sceneObj) {
+        let maxR = -1.0;
+        let maxObj = null;
+        const sumCentre = new THREE.Vector3();
+        let numCentre = 0;
+        const maxCentre = new THREE.Vector3(-Number.MAX_SAFE_INTEGER, -Number.MAX_SAFE_INTEGER, -Number.MAX_SAFE_INTEGER);
+        const minCentre = new THREE.Vector3(Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER);
+        sceneObj.traverse(function(obj) {
+            // Survey geometry of object, getting mean centre and dimensions from bounding sphere
+            if (obj.geometry && obj.geometry.boundingSphere) {
+                const centre = new THREE.Vector3(obj.geometry.boundingSphere.center.x,
+                obj.geometry.boundingSphere.center.y, obj.geometry.boundingSphere.center.z);
+                sumCentre.add(centre);
+                maxCentre.max(centre);
+                minCentre.min(centre);
+                numCentre += 1;
+                if (obj.geometry.boundingSphere.radius > maxR) {
+                    maxR = obj.geometry.boundingSphere.radius;
+                    maxObj = obj;
+                }
+            }
+         });
+         // If not successful look for vertex coords in geometry attributes
+         if (numCentre === 0) {
+             sceneObj.traverse(function(obj) {
+                 let x, y, z;
+                 // Survey geometry of object, getting mean centre and max & min dimensions
+                 if (obj.geometry && obj.geometry.attributes && obj.geometry.attributes.position) {
+                     obj.geometry.attributes.position.array.forEach(function(elem, idx, _arr) {
+                         switch (idx % 3) {
+                             case 0:
+                                 x = elem;
+                                 break;
+                             case 1:
+                                 y = elem;
+                                 break;
+                             case 2:
+                                 z = elem;
+                                 const centre = new THREE.Vector3(x, y, z);
+                                 sumCentre.add(centre);
+                                 maxCentre.max(centre);
+                                 minCentre.min(centre);
+                                 numCentre += 1;
+                         }
+                     });
+                     if (numCentre > 0) {
+                         maxObj = obj;
+                         // done = true;
+                     }
+                 }
+              });
+
+         }
+
+         // Set rotation point to centre of object
+         if (numCentre > 0 && maxObj !== null) {
+             const point = new THREE.Vector3(sumCentre.x / numCentre, sumCentre.y / numCentre,
+                 sumCentre.z / numCentre);
+             this.setRotatePoint(point);
+
+             // Adjust camera distance to the size of the object
+             const diffCentre = new THREE.Vector3();
+             diffCentre.subVectors(maxCentre, minCentre);
+             const centreRadius = diffCentre.length();
+             const maxRadius = Math.max(centreRadius, maxR);
+
+             // Roughly set the distance according to the size of the object
+             let newDist = maxRadius * 3.0;
+             if (maxRadius < 50000) {
+                 newDist = maxRadius * 2.5;
+             } else if (maxRadius > 150000) {
+                 newDist = maxRadius * 5.0;
+             }
+             this.adjustCamDist(newDist);
+             return true;
+         }
+         return false;
     };
 
 
