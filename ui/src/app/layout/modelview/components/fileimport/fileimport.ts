@@ -32,7 +32,8 @@ export class FileImport {
     // Count of number of files imported
     private fileCount = 0;
 
-
+    // Scene's view controller i.e. ThreeDVirtSphereCtrls
+    private viewController;
 
     /**
      * constructor takes parameters taken from ModelView component
@@ -40,17 +41,19 @@ export class FileImport {
      * @param gltfLoader GLTFLoader object
      * @param modelURLPath name of model
      * @param sceneArr array of SceneObj
+     * @param viewController scene's ThreeDVirtSphereCtrls object
      * @param sidebarService sidebar service
      * @param modelInfoService model info service
      * @param httpService http service
      */
-    constructor(scene: ITOWNS.THREE.Scene, gltfLoader, modelUrlPath: string, sceneArr,
+    constructor(scene: ITOWNS.THREE.Scene, gltfLoader, modelUrlPath: string, sceneArr, viewController,
       private sidebarService: SidebarService, private modelInfoService: ModelInfoService,
                   private httpService: HttpClient)  {
         this.gltfLoader = gltfLoader;
         this.modelUrlPath = modelUrlPath;
         this.scene = scene;
         this.sceneArr = sceneArr;
+        this.viewController = viewController;
     }
 
 
@@ -103,11 +106,27 @@ export class FileImport {
                         addSceneObj(local.sceneArr, { 'display_name': fileNameId, 'displayed': true,
                                                       'model_url': fileNameId, 'type': 'GLTFObject' },
                                   new SceneObject(gObject.scene), IMPORT_GROUP_NAME);
-                        const menuChange: MenuChangeType = { group: IMPORT_GROUP_NAME, subGroup: fileNameId,
+                        local.viewController.updateView();
+
+                        // Add new entry to sidebar
+                        let menuChange: MenuChangeType = { group: IMPORT_GROUP_NAME, subGroup: fileNameId,
                                                              state: MenuStateChangeType.NEW_PART };
                         local.sidebarService.changeMenuState(menuChange);
-                        // menuChange = { group: IMPORT_GROUP_NAME, subGroup: fileNameId, state: MenuStateChangeType.OPENED };
-                        // this.sidebarService.changeMenuState(menuChange);
+
+                        // Open new entry in sidebar
+                        menuChange = { group: IMPORT_GROUP_NAME, subGroup: fileNameId, state: MenuStateChangeType.OPENED };
+                        local.sidebarService.changeMenuState(menuChange);
+
+                        // Make everything invisible except this model part
+                        menuChange = { group: IMPORT_GROUP_NAME, subGroup: fileNameId, state: MenuStateChangeType.ALL_BAR_ONE };
+                        local.sidebarService.changeMenuState(menuChange);
+
+                        // Move to view new object in scene
+                        const sceneObj = local.sceneArr[IMPORT_GROUP_NAME][fileNameId].sceneObj;
+                        if (local.viewController.moveViewToObj(sceneObj)) {
+                            const newPos = local.viewController.getCameraPosition();
+                            local.modelInfoService.newCameraPos([newPos.x, newPos.y, newPos.z, newPos.order]);
+                        }
                     }
                 },
                 function(err) {
@@ -136,7 +155,7 @@ export class FileImport {
                     const file = ev.dataTransfer.items[i].getAsFile();
                     if (file) {
                         const reader = new FileReader();
-                        reader.onload = function (evt) {
+                        reader.onload = function (_evt) {
                             local.convertToGLTF(reader.result).then(
                                 function(data) {
                                     local.readAndConvert(data, file.name);

@@ -301,6 +301,9 @@ export class SidebarComponent  implements OnInit, OnDestroy {
                 this.addGroup(changes.group);
             }
             this.addPart(changes.group, changes.subGroup);
+        // Make everything invisible except one part
+        } else if (changes.state === MenuStateChangeType.ALL_BAR_ONE) {
+            this.makeInvisibleBarOne(changes.group, changes.subGroup);
         }
     }
 

@@ -206,7 +206,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 }
              );
 
-            // Set up a callback function so this code can be informed when the sidebar controls are changed, so this code
+            // Create and register a callback function so this code can be informed when the sidebar controls are changed, so this code
             // can manipulate the model accordingly
             const callbackFn: ModelPartCallbackType =  function(groupName: string, partId: string, state: ModelPartStateChange) {
                 if (local.sceneArr.hasOwnProperty(groupName) && local.sceneArr[groupName].hasOwnProperty(partId)) {
@@ -482,7 +482,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 const parts = this.config.groups[group];
                 for (let i = 0; i < parts.length; i++) {
                     if (parts[i].type === 'GLTFObject' && parts[i].include) {
-                        promiseList.push( new Promise( function( resolve, reject ) {
+                        promiseList.push( new Promise( function( resolve, _reject ) {
                             (function(part, grp) {
                                 local.gltfLoader.load('./assets/geomodels/' + local.modelDir + '/' + part.model_url,
                                     // function called if loading successful
@@ -913,9 +913,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         });
         this.view.notifyChange(true);
 
+        // Set up drag and drop file display mechanism
         this.fileImportFactory = new FileImportFactory(this.sidebarService, this.modelInfoService, this.httpService);
-
-        this.fileImport = this.fileImportFactory.createFileImport(this.scene, this.gltfLoader, this.modelUrlPath, this.sceneArr);
+        this.fileImport = this.fileImportFactory.createFileImport(this.scene, this.gltfLoader, this.modelUrlPath,
+                                                                             this.sceneArr, this.trackBallControls);
 
         // Everything except the WMS layers are loaded at this point, so turn off loading spinner
         this.controlLoadSpinner(false);
@@ -999,52 +1000,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param subGroup name of menu item's subgroup
      */
     private moveViewToModelPart(groupName: string, subGroup: string) {
-        const scope = this;
         if (this.sceneArr.hasOwnProperty(groupName) && this.sceneArr[groupName].hasOwnProperty(subGroup)) {
             const sceneObj = this.sceneArr[groupName][subGroup].sceneObj;
-            let maxR = -1.0;
-            let maxObj = null;
-            const sumCentre = new ITOWNS.THREE.Vector3();
-            let numCentre = 0;
-            const maxCentre = new ITOWNS.THREE.Vector3(-Number.MAX_SAFE_INTEGER, -Number.MAX_SAFE_INTEGER, -Number.MAX_SAFE_INTEGER);
-            const minCentre = new ITOWNS.THREE.Vector3(Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER);
-            sceneObj.traverse(function(obj) {
-                                                  // Survey geometry of object, getting mean centre and dimensions
-                                                  if (obj.geometry && obj.geometry.boundingSphere) {
-                                                      const centre = new ITOWNS.THREE.Vector3(obj.geometry.boundingSphere.center.x,
-                                                      obj.geometry.boundingSphere.center.y, obj.geometry.boundingSphere.center.z);
-                                                      sumCentre.add(centre);
-                                                      maxCentre.max(centre);
-                                                      minCentre.min(centre);
-                                                      numCentre += 1;
-                                                      if (obj.geometry.boundingSphere.radius > maxR) {
-                                                          maxR = obj.geometry.boundingSphere.radius;
-                                                          maxObj = obj;
-                                                      }
-                                                  }
-                                               });
-                                               // Set rotation point to centre of object
-                                               if (numCentre > 0) {
-                                                   const point = new ITOWNS.THREE.Vector3(sumCentre.x / numCentre, sumCentre.y / numCentre,
-                                                       sumCentre.z / numCentre);
-                                                   scope.trackBallControls.setRotatePoint(point);
-                                               }
-                                               // Adjust camera distance to the size of the object
-                                               if (maxObj !== null) {
-                                                   const diffCentre = new ITOWNS.THREE.Vector3(maxCentre.x - minCentre.x,
-                                                       maxCentre.y - minCentre.y, maxCentre.z - minCentre.z);
-                                                   const centreRadius = diffCentre.length();
-                                                   const maxRadius = Math.max(centreRadius, maxObj.geometry.boundingSphere.radius);
-                                                   // Roughly set the distance according to the size of the object
-                                                   let newDist = maxRadius * 3.0;
-                                                   if (maxRadius < 50000) {
-                                                       newDist = maxRadius * 2.5;
-                                                   } else if (maxObj.geometry.boundingSphere.radius > 150000) {
-                                                       newDist = maxRadius * 4.0;
-                                                   }
-                                                   scope.trackBallControls.adjustCamDist(newDist);
-                                                   scope.cameraPosChange();
-                                               }
+            if (this.trackBallControls.moveViewToObj(sceneObj)) {
+                this.cameraPosChange();
+            }
         }
     }
 

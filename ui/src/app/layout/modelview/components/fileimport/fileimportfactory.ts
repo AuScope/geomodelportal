@@ -24,9 +24,10 @@ export class FileImportFactory {
      * @param gltfLoader GLTFLoader object
      * @param modelURLPath name of model
      * @param sceneArr array of SceneObj
+     * @param viewController scene's ThreeDVirtSphereCtrls object
      */
-    createFileImport(scene: ITOWNS.THREE.Scene, gltfLoader, modelUrlPath: string, sceneArr) {
-        return new FileImport(scene, gltfLoader, modelUrlPath, sceneArr,
+    createFileImport(scene: ITOWNS.THREE.Scene, gltfLoader, modelUrlPath: string, sceneArr, viewController) {
+        return new FileImport(scene, gltfLoader, modelUrlPath, sceneArr, viewController,
           this.sidebarService, this.modelInfoService, this.httpService);
     }
 
