@@ -55,18 +55,11 @@ The borehole service requires an [Apache](https://httpd.apache.org/) server with
 
 A borehole database file can be produced by running the "makeBoreholes.py" conversion script. See [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/scripts/README.md)
 
-The 'index.wsgi' script (found in 'srv' directory) should be copied to 'api' directory so that it is served as _http://website/api_
+The borehole service is served from the 'api' directory as _http://website/api_.
 
-Also required is a 'wsgi' directory, populate it in this way:
+Use the [build_api_dir.sh](https://github.com/AuScope/geomodel-2-3dweb/blob/master/scripts/build_api_dir.sh) script to make the 'api' directory.
 
- * copy the 'input' directory from https://github.com/AuScope/geomodel-2-3dweb/scripts/input, (you can exclude README.md)
- * copy 'query_db.dat' (this is the borehole database)
- * copy the 'lib' directory from https://github.com/AuScope/geomodel-2-3dweb/lib
- * also make a 'cache/wfs' directory in 'wsgi'
- 
-Afterwards, the 'wsgi' directory will have four entries: _cache_ _input_ _lib_ _query_db.dat_
-
-Make sure that the files in 'wsgi' can be accessed by Python.
+Make sure that the files in 'api' can be accessed by Python.
  
 
 ### Start a local dev server
