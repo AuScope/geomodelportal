@@ -57,7 +57,7 @@ A borehole database file can be produced by running the "makeBoreholes.py" conve
 
 The borehole service is served from the 'api' directory as _http://website/api_.
 
-Use the [build_api_dir.sh](https://github.com/AuScope/geomodel-2-3dweb/blob/master/scripts/build_api_dir.sh) script to make the 'api' directory.
+Use the [build_api_dir.sh](https://github.com/AuScope/geomodel-2-3dweb/blob/master/scripts/build_api_dir.sh) script to make the 'api' directory. See [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/scripts/README.md)
 
 Make sure that the files in 'api' can be accessed by Python.
  
