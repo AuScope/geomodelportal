@@ -20,7 +20,7 @@ It is broadly based on these:
 
 3. [itowns](http://www.itowns-project.org/) provides geospatial support.
 
-4. <https://github.com/AuScope/geomodel-2-3dweb> converts GOCAD models into graphics files, and helps provide a borehole service.
+4. <https://github.com/AuScope/geomodel-2-3dweb> contains code to convert GOCAD models into graphics files from the command line, and a web service that provides borehole information and allows drag and drop GOCAD file conversion.
 
 
 ### How to initiate
@@ -50,12 +50,12 @@ the '_new' from the filename (e.g. becomes  'McArthurBasin.json')
 
 NB: For information on the JSON files, see [README.md](ui/src/assets/geomodels/README.md)
 
-### Adding borehole service
-The borehole service requires an [Apache](https://httpd.apache.org/) server with Python WSGI [mod_wsgi](https://modwsgi.readthedocs.io/en/develop/) enabled.  Python should be setup as described in [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/README.md)
+### Adding borehole and file conversion web service
+The web service requires an [Apache](https://httpd.apache.org/) server with Python WSGI [mod_wsgi](https://modwsgi.readthedocs.io/en/develop/) enabled.  Python should be setup as described in [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/README.md)
 
 A borehole database file can be produced by running the "makeBoreholes.py" conversion script. See [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/scripts/README.md)
 
-The borehole service is served from the 'api' directory as _http://website/api_.
+The web service is served from the 'api' directory as _http://website/api_.
 
 Use the [build_api_dir.sh](https://github.com/AuScope/geomodel-2-3dweb/blob/master/scripts/build_api_dir.sh) script to make the 'api' directory. See [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/scripts/README.md)
 
