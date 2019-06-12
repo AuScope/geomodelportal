@@ -20,11 +20,11 @@ It is broadly based on these:
 
 3. [itowns](http://www.itowns-project.org/) provides geospatial support.
 
-4. <https://github.com/AuScope/geomodel-2-3dweb> contains code to convert GOCAD models into graphics files from the command line, and a web service that provides borehole information and allows drag and drop GOCAD file conversion.
+4. <https://github.com/AuScope/geomodel-2-3dweb> contains code to convert GOCAD models into graphics files from the command line, and a web service that provides borehole information and performs on the fly GOCAD TSURF conversion to GLTF.
 
 
 ### How to initiate
-**Note** that this project requires npm >=6.4.1.
+**Note** that this project requires npm >=6.9
 
 In order to get started:
 ```bash
@@ -50,7 +50,7 @@ the '_new' from the filename (e.g. becomes  'McArthurBasin.json')
 
 NB: For information on the JSON files, see [README.md](ui/src/assets/geomodels/README.md)
 
-### Adding borehole and file conversion web service
+### Adding borehole info and file conversion web service
 The web service requires an [Apache](https://httpd.apache.org/) server with Python WSGI [mod_wsgi](https://modwsgi.readthedocs.io/en/develop/) enabled.  Python should be setup as described in [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/README.md)
 
 A borehole database file can be produced by running the "makeBoreholes.py" conversion script. See [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/scripts/README.md)
