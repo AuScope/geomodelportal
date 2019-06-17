@@ -20,14 +20,14 @@ import { hasWebGL, detectIE, getWebGLErrorMessage, createErrorBox, createMissing
 // So when creating objects to be added to the scene, we must always use ITOWNS' version of ThreeJS.
 // If we do not do this, there will be an overlap in ids and objects are not reliably rendered to screen.
 // FIXME: Needs typescript bindings
-import * as ITOWNS from '../../../../node_modules/itowns/dist/itowns';
+import * as ITOWNS from 'itowns/dist/itowns';
 
 
 // GLTFLoader is not fully part of ThreeJS'. It is separate.
 // We must use a GLTFLoader that is in ITOWNS' namespace, to avoid the problem described above.
 // This older library works well because the namespace is an input parameter
 // FIXME: Avoid dependency on this library
-import * as GLTFLoader from '../../../../node_modules/three-gltf2-loader/lib/main';
+import * as GLTFLoader from 'three-gltf2-loader/lib/main';
 
 // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 // import GLTFLoader from '../../../../node_modules/itowns/lib/ThreeExtended/loaders/GLTFLoader';
