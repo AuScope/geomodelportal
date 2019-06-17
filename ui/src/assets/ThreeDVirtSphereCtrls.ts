@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { MAIN_LOOP_EVENTS } from '../../node_modules/itowns/lib/Core/MainLoop';
+import { MAIN_LOOP_EVENTS } from 'itowns/lib/Core/MainLoop';
 
 // control state
 const STATE = {

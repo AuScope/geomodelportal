@@ -6,7 +6,7 @@ import { SidebarService, MenuChangeType, MenuStateChangeType } from '../../servi
 import { SceneObject, addSceneObj } from '../../scene-object';
 
 
-import * as ITOWNS from '../../../../../../node_modules/itowns/dist/itowns';
+import * as ITOWNS from 'itowns/dist/itowns';
 
 // Group name in sidebar for imported filtes
 const IMPORT_GROUP_NAME = 'Imported Files';

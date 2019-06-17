@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { ModelInfoService } from '../../../../shared/services/model-info.service';
 import { SidebarService } from '../../services/sidebar.service';
 import { FileImport } from './fileimport';
-import * as ITOWNS from '../../../../../../node_modules/itowns/dist/itowns';
+import * as ITOWNS from 'itowns/dist/itowns';
 
 @Injectable()
 export class FileImportFactory {

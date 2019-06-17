@@ -1,4 +1,4 @@
-import * as ITOWNS from '../../../../node_modules/itowns/dist/itowns';
+import * as ITOWNS from 'itowns/dist/itowns';
 
 import { VolView, VolviewService } from './services/volview.service';
 
