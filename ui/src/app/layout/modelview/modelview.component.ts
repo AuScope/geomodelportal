@@ -19,21 +19,13 @@ import { hasWebGL, detectIE, getWebGLErrorMessage, createErrorBox, createMissing
 // Note: In ThreeJS, buffer geometry ids are created by incrementing a counter which is local to the library.
 // So when creating objects to be added to the scene, we must always use ITOWNS' version of ThreeJS.
 // If we do not do this, there will be an overlap in ids and objects are not reliably rendered to screen.
-// FIXME: Needs typescript bindings
 import * as ITOWNS from 'itowns/dist/itowns';
-
 
 // GLTFLoader is not fully part of ThreeJS'. It is separate.
 // We must use a GLTFLoader that is in ITOWNS' namespace, to avoid the problem described above.
 // This older library works well because the namespace is an input parameter
-// FIXME: Avoid dependency on this library
+// FIXME: Wean ourselves off this library
 import * as GLTFLoader from 'three-gltf2-loader/lib/main';
-
-// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-// import GLTFLoader from '../../../../node_modules/itowns/lib/ThreeExtended/loaders/GLTFLoader';
-
-
-
 
 // If you want to use your own CRS instead of the ITOWNS' default one then you must use ITOWNS' version of proj4
 const proj4 = ITOWNS.proj4;
@@ -453,9 +445,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      */
     private makeGLTFLabel(sceneObj: ITOWNS.THREE.Object3D, labelStr: string, size: number, heightOffset: number) {
         const local = this;
-        const meshObj = sceneObj.getObjectByProperty('type', 'Mesh');
+        const meshObj = <ITOWNS.THREE.Mesh>sceneObj.getObjectByProperty('type', 'Mesh');
         if (meshObj) {
-            const bufferGeoObj = meshObj.geometry;
+            const bufferGeoObj = <ITOWNS.THREE.BufferGeometry>meshObj.geometry;
             const arrayObj  =  bufferGeoObj.attributes.position.array;
             if (arrayObj) {
                 const spriteObj = local.makeLabel(labelStr, size, heightOffset);

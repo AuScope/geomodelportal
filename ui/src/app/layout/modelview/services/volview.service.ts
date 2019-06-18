@@ -355,7 +355,7 @@ export class VolviewService {
        TODO: Make it more general cope with any ORIENTATION
      */
     public makeSlices(volView: VolView, groupName: string, partId: string, pctList: [number, number, number],
-                       objectList: ITOWNS.THREE.Object3D[], displayed: boolean) {
+                       objectList: ITOWNS.THREE.Mesh[], displayed: boolean): ITOWNS.THREE.Mesh[] {
 
         // Check for inverted axes
         const inverted = [false, false, false];
@@ -487,8 +487,8 @@ export class VolviewService {
                 } else {
                     // If plane already exists, then just change its material, keeping old opacity
                     const  oldMaterial = objectList[dimIdx].material;
-                    material.opacity = oldMaterial.opacity;
-                    material.transparent = oldMaterial.transparent;
+                    material.opacity = (<ITOWNS.THREE.Material>oldMaterial).opacity;
+                    material.transparent = (<ITOWNS.THREE.Material>oldMaterial).transparent;
                     objectList[dimIdx].material = material;
                 }
 

@@ -178,7 +178,7 @@ export class VolSceneObject extends SceneObject {
         this.volViewService = volViewService;
         this.volView = volView;
     }
-    public volObjList: ITOWNS.THREE.Object3D[] = [];
+    public volObjList: ITOWNS.THREE.Mesh[] = [];
     private volViewService: VolviewService;
     private volView: VolView;
 
@@ -209,7 +209,7 @@ export class VolSceneObject extends SceneObject {
      */
     public setTransparency(transparency: number) {
         for (const obj of this.volObjList) {
-            this.setMatTransparency(obj['material'], transparency);
+            this.setMatTransparency((<ITOWNS.THREE.Material>obj.material), transparency);
         }
     }
 
