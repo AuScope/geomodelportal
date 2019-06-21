@@ -202,35 +202,46 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             // can manipulate the model accordingly
             const callbackFn: ModelPartCallbackType =  function(groupName: string, partId: string, state: ModelPartStateChange) {
                 if (local.sceneArr.hasOwnProperty(groupName) && local.sceneArr[groupName].hasOwnProperty(partId)) {
-                    // Make a part of the model visible or invisible
-                    if (state.type === ModelPartStateChangeType.DISPLAYED) {
-                        local.sceneArr[groupName][partId].setVisibility(state.new_value);
-                        // Also turn on/off itowns tile layer visibility if this is a WMS layer
-                        if (local.sceneArr[groupName][partId] instanceof WMSSceneObject) {
-                            local.tileLayer.visible = state.new_value;
-                        }
-                        local.view.notifyChange(true);
+                    switch (state.type) {
+                        // Make a part of the model visible or invisible
+                        case ModelPartStateChangeType.DISPLAYED:
+                            local.sceneArr[groupName][partId].setVisibility(state.new_value);
+                            // Also turn on/off itowns tile layer visibility if this is a WMS layer
+                            if (local.sceneArr[groupName][partId] instanceof WMSSceneObject) {
+                                local.tileLayer.visible = state.new_value;
+                            }
+                            local.view.notifyChange(true);
+                            break;
 
-                    // Change the transparency of a part of the model
-                    } else if (state.type ===  ModelPartStateChangeType.TRANSPARENCY) {
-                        const transparency = <number> state.new_value;
-                        local.sceneArr[groupName][partId].setTransparency(transparency);
-                        // Also adjust itowns tile layer opacity if this is a WMS layer
-                        if (local.sceneArr[groupName][partId] instanceof WMSSceneObject) {
-                            local.tileLayer.opacity = transparency;
-                        }
-                        local.view.notifyChange(true);
+                        // Change the transparency of a part of the model
+                        case  ModelPartStateChangeType.TRANSPARENCY:
+                            const transparency = <number> state.new_value;
+                            local.sceneArr[groupName][partId].setTransparency(transparency);
+                            // Also adjust itowns tile layer opacity if this is a WMS layer
+                            if (local.sceneArr[groupName][partId] instanceof WMSSceneObject) {
+                                local.tileLayer.opacity = transparency;
+                            }
+                            local.view.notifyChange(true);
+                            break;
 
-                    // Move a part of the model up or down
-                    } else if (state.type === ModelPartStateChangeType.HEIGHT_OFFSET) {
-                        const displacement = new ITOWNS.THREE.Vector3(0.0, 0.0, <number> state.new_value);
-                        local.sceneArr[groupName][partId].setDisplacement(displacement);
-                        local.view.notifyChange(true);
+                        // Move a part of the model up or down
+                        case ModelPartStateChangeType.HEIGHT_OFFSET:
+                            const displacement = new ITOWNS.THREE.Vector3(0.0, 0.0, <number> state.new_value);
+                            local.sceneArr[groupName][partId].setDisplacement(displacement);
+                            local.view.notifyChange(true);
+                            break;
 
-                    // Move a slice of a volume
-                    } else if (state.type === ModelPartStateChangeType.VOLUME_SLICE) {
-                        local.sceneArr[groupName][partId].setVolSlice(state.new_value[0], state.new_value[1]);
-                        local.view.notifyChange(true);
+                        // Move a slice of a volume
+                        case ModelPartStateChangeType.VOLUME_SLICE:
+                            local.sceneArr[groupName][partId].setVolSlice(state.new_value[0], state.new_value[1]);
+                            local.view.notifyChange(true);
+                            break;
+
+                        // Rescale object in z-direction
+                        case ModelPartStateChangeType.RESCALE:
+                            local.sceneArr[groupName][partId].setScale(2, state.new_value);
+                            local.view.notifyChange(true);
+                            break;
                     }
                 }
             };

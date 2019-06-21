@@ -82,6 +82,8 @@ export class SidebarComponent  implements OnInit, OnDestroy {
                           desc: 'To adjust this model part\'s height, move this slider by clicking or dragging.' },
         partTransp: { title: 'Adjust Transparency',
                           desc: 'To adjust this model part\'s transparency, move this slider by clicking or dragging.' },
+        partHeightScale: { title: 'Adjust Height Scale',
+                            desc: 'To exaggerate the height, move this slider by clicking or dragging.'},
         partTick: { title: 'Toggle Part Visibility',
                         desc: 'Click on this tick box to hide/display this model part in the viewing area.' },
         resetView: { title: 'Reset Model View',
@@ -101,6 +103,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     @ViewChild('part_eyeball_popover') public partEyeballPopover: NgbPopover = null;
     @ViewChild('part_offset_popover') public partOffsetPopover: NgbPopover = null;
     @ViewChild('part_trans_popover') public partTransPopover: NgbPopover = null;
+    @ViewChild('part_scale_popover') public partScalePopover: NgbPopover = null;
     @ViewChild('part_tick_popover') public partTickPopover: NgbPopover = null;
     @ViewChild('reset_view_popover') public resetViewPopover: NgbPopover = null;
     @ViewChild('mouse_guide_popover') public mouseGuidePopover: NgbPopover = null;
@@ -175,9 +178,9 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     private showHelpHints(seqNum: number) {
         // NB: This list must contain all the ViewChild popovers above and in the correct order
         // The order must correspond to the WidgetType enum
-        const popoverList: NgbPopover[] = [ this.groupTickPopover, this.groupMenuPopover, this.partConfigPopover,
-                             this.partZoomPopover, this.partEyeballPopover, this.partOffsetPopover, this.partTransPopover,
-                             this.partTickPopover, this.resetViewPopover, this.mouseGuidePopover, this.compassRosePopover ];
+        const popoverList: NgbPopover[] = [ this.groupMenuPopover, this.groupTickPopover, this.partTickPopover,
+          this.partConfigPopover, this.partEyeballPopover, this.partZoomPopover, this.partTransPopover, this.partOffsetPopover,
+          this.partScalePopover,  this.resetViewPopover, this.mouseGuidePopover, this.compassRosePopover ];
 
         // Open up menu items at first group
         if (seqNum === 0 && this.groupList.length > 0) {
@@ -365,9 +368,21 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * @param groupName model part's group name
      * @param partId model part's id
      */
-    public changeHeight(event: MatSliderChange, groupName: string, partId: string) {
+    public changeHeightOffset(event: MatSliderChange, groupName: string, partId: string) {
         this.modelInfoService.setModelPartStateChange(groupName, partId,
             { type: ModelPartStateChangeType.HEIGHT_OFFSET, new_value: event.value } );
+    }
+
+
+    /**
+     * Changes height scale of a particular part of the model
+     * @param event material slider change event, contains slider's latest selected value
+     * @param groupName model part's group name
+     * @param partId model part's id
+     */
+    public changeHeightScale(event: MatSliderChange, groupName: string, partId: string) {
+        this.modelInfoService.setModelPartStateChange(groupName, partId,
+            { type: ModelPartStateChangeType.RESCALE, new_value: event.value } );
     }
 
     /**

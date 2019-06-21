@@ -21,7 +21,7 @@ export interface ProviderInfo {
 export const FIXED_HEIGHT = -1.0;
 
 // What has changed in the model part's state?
-export enum  ModelPartStateChangeType { DISPLAYED, TRANSPARENCY, HEIGHT_OFFSET, VOLUME_SLICE }
+export enum  ModelPartStateChangeType { DISPLAYED, TRANSPARENCY, HEIGHT_OFFSET, VOLUME_SLICE, RESCALE }
 
 export enum  ModelControlEventEnum { RESET_VIEW, MOUSE_GUIDE, COMPASS_ROSE, MOVE_VIEW }
 
@@ -196,7 +196,7 @@ export class ModelInfoService {
     public addPart(groupName: string, partId: string, displayed: boolean, heightOffset: number) {
         this.modelPartState[groupName][partId] = { displayed: displayed,
                               transparency: 1.0, heightOffset: heightOffset, oldTransparency: 1.0,
-                              volSlice: [0.0, 0.0, 0.0] };
+                              volSlice: [0.0, 0.0, 0.0], heightScale: 1.0 };
     }
 
 
@@ -330,7 +330,7 @@ export class ModelInfoService {
 
     /**
      * Indicate that something has changed
-     * Called from the sidebar when tickbox is toggled
+     * Called from the sidebar when tickbox is toggled, for example
      * @param groupName name of group
      * @param partId model part identifier
      * @param stateChange object used to specify what has changed
@@ -347,6 +347,8 @@ export class ModelInfoService {
             const dim = stateChange.new_value[0];
             const val = stateChange.new_value[1];
             this.modelPartState[groupName][partId].volSlice[dim] = val;
+        } else if (stateChange.type === ModelPartStateChangeType.RESCALE) {
+            this.modelPartState[groupName][partId].heightScale = stateChange.new_value;
         }
         // Inform the listener with a callback
         this.modelPartCallback(groupName, partId, stateChange);

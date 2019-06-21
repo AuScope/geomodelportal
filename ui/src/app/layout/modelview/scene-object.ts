@@ -105,6 +105,37 @@ export class SceneObject {
     public setVolSlice(dimIdx: number, val: number) {
         throw new Error('Calling abstract method: setVolSlice(' + dimIdx + ',' + val + ') ');
     }
+
+    /**
+     * Sets scale of scene object in a particular dimension
+     * @param dimIdx index integer; 0 is X-direction. 1 is y-direction, 2 is z-direction
+     * @param scale scaling factor, float; 1.0 is unscaled
+     */
+    public setScale(dimIdx: number, scale: number) {
+        // Move GLTF object
+        let found = false;
+        const local = this;
+        this.sceneObj.traverseVisible( function(child) {
+            if (!found && child.type === 'Object3D') {
+                local.setObjScale(child, dimIdx, scale);
+                found = true;
+            }
+        });
+    }
+
+    /**
+     * Sets scale of a particular object in a particular dimension
+     * @param obj ThreeJS object
+     * @param dimIdx index integer; 0 is X-direction. 1 is y-direction, 2 is z-direction
+     * @param scale scaling factor, float; 1.0 is unscaled
+     */
+    protected setObjScale(obj: ITOWNS.THREE.Object3D, dimIdx: number, scale: number) {
+      // Rescale GLTF Object
+      if (!obj.userData.hasOwnProperty('origScale')) {
+          obj.userData.origScale = obj.scale.clone();
+      }
+      obj.scale.setComponent(dimIdx, scale);
+    }
 }
 
 /**
