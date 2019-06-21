@@ -28,9 +28,10 @@ export class VolumecontrolsComponent implements OnInit {
    * Changes slice of a volume
    * @param event material slider change event, contains slider's latest selected value
    */
-  public changeSlice(event: MatSliderChange, dimIdx: number, groupName: string, partId: string) {
-      this.modelInfoService.setModelPartStateChange(groupName, partId,
-          { type: ModelPartStateChangeType.VOLUME_SLICE, new_value: [dimIdx, event.value] } );
+  public changeSlices(event: MatSliderChange, dimIdx: number, groupName: string) {
+      this.modelInfoService.setModelGroupStateChange(groupName,
+              { type: ModelPartStateChangeType.VOLUME_SLICE, new_value: [dimIdx, event.value] } );
+      this.sliderVal[dimIdx] = event.value;
   }
 
 

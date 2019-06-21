@@ -28,8 +28,11 @@
             </a>
             <ul>
                 <li class="nested" [class.expand]="showMenu === groupName">
-                    <ul *ngFor="let subGroupObj of modelConfig['groups'][groupName]" class="submenu ul-part-name">
+                    <ul *ngFor="let subGroupObj of modelConfig['groups'][groupName]; first as isFirst" class="submenu ul-part-name">
                         <li *ngIf="subGroupObj.include && modelPartState[groupName][subGroupObj.model_url]">
+                            <!-- 3D Slice Controls -->
+                            <app-volumecontrols *ngIf="isFirst && subGroupObj.type === '3DVolume'" [dimIdx]="dimIdx" [groupName]="groupName" [partId]="subGroupObj.model_url" [modelPath]="modelPath" [modelInfoService]="modelInfoService"></app-volumecontrols>
+
                             <a class="a-part-name list-group-item">
                                 <span>{{subGroupObj.display_name.substring(0,29)}}</span>
 
@@ -69,7 +72,7 @@
                             <div id="controlsDiv" [style.display]="getDisplayControls(groupName, subGroupObj.model_url)">
 
                                 <!-- Height Offset Controls -->
-                                <a *ngIf="modelPartState[groupName][subGroupObj.model_url].heightOffset >= 0" class="list-group-item" title="{{HELP_TEXT.partOffset.title}}">
+                                <a *ngIf="modelPartState[groupName][subGroupObj.model_url].heightOffset >= 0 && subGroupObj.type !== '3DVolume'" class="list-group-item" title="{{HELP_TEXT.partOffset.title}}">
                                     <span class="span-part-controls">Height Offset&nbsp;{{modelPartState[groupName][subGroupObj.model_url].heightOffset}}
                                         <mat-slider (change)="changeHeightOffset($event, groupName, subGroupObj.model_url)" thumbLabel min="0" max="50000" step="1000" value="0">
                                         </mat-slider>
@@ -101,10 +104,8 @@
                                     </span>
                                 </a>
 
-                                <!-- 3D Slice Controls -->
-                                <app-volumecontrols *ngIf="subGroupObj.type === '3DVolume'" [dimIdx]="dimIdx" [groupName]="groupName" [partId]="subGroupObj.model_url" [modelPath]="modelPath" [modelInfoService]="modelInfoService"></app-volumecontrols>
-
                             </div>
+
                         </li>
                     </ul>
                 </li>

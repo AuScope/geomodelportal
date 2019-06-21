@@ -329,6 +329,21 @@ export class ModelInfoService {
 
 
     /**
+     * Indicate that something has changed for all parts within a group
+     * Called from the sidebar when tickbox is toggled, for example
+     * @param groupName name of group
+     * @param stateChange object used to specify what has changed
+     */
+    public setModelGroupStateChange(groupName: string, stateChange: ModelPartStateChange) {
+        for (const part in this.modelPartState[groupName]) {
+            if (this.modelPartState[groupName].hasOwnProperty(part)) {
+                this.setModelPartStateChange(groupName, part, stateChange);
+            }
+        }
+    }
+
+
+    /**
      * Indicate that something has changed
      * Called from the sidebar when tickbox is toggled, for example
      * @param groupName name of group

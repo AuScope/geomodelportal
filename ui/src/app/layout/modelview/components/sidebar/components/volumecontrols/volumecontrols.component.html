@@ -1,13 +1,10 @@
 <!-- 3D Slice Controls -->
 <a class="list-group-item">
-  <span class="span-part-controls">ALL slices <mat-slider (change)="changeAllSlices($event, groupName, partId)" thumbLabel min="0.0" max="1.0" step="0.01" [value]="0.0"></mat-slider></span>
+    <span class="span-part-controls">X slice <mat-slider (change)="changeSlices($event, 0, groupName)" thumbLabel min="0.0" max="1.0" step="0.01" [value]="sliderVal[0]"></mat-slider></span>
 </a>
 <a class="list-group-item">
-    <span class="span-part-controls">X slice <mat-slider (change)="changeSlice($event, 0, groupName, partId)" thumbLabel min="0.0" max="1.0" step="0.01" [value]="sliderVal[0]"></mat-slider></span>
+    <span class="span-part-controls">Y slice <mat-slider (change)="changeSlices($event, 1, groupName)" thumbLabel min="0.0" max="1.0" step="0.01" [value]="sliderVal[1]"></mat-slider></span>
 </a>
 <a class="list-group-item">
-    <span class="span-part-controls">Y slice <mat-slider (change)="changeSlice($event, 1, groupName, partId)" thumbLabel min="0.0" max="1.0" step="0.01" [value]="sliderVal[1]"></mat-slider></span>
-</a>
-<a class="list-group-item">
-    <span class="span-part-controls">Z slice <mat-slider (change)="changeSlice($event, 2, groupName, partId)" thumbLabel min="0.0" max="1.0" step="0.01" [value]="sliderVal[2]"></mat-slider></span>
+    <span class="span-part-controls">Z slice <mat-slider (change)="changeSlices($event, 2, groupName)" thumbLabel min="0.0" max="1.0" step="0.01" [value]="sliderVal[2]"></mat-slider></span>
 </a>
