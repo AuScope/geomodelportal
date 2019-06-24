@@ -2,7 +2,7 @@
 
 .main-container {
     margin-top: $header-height;
-    margin-left: $sidebar-width;
+    margin-left: 0;
     max-height: calc(100vh - #{$header-height});
     position: relative;
     overflow: hidden;

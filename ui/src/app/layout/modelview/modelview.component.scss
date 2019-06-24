@@ -19,7 +19,7 @@
 
     /* Allow space for sidebar */
     #viewerDiv {
-        margin : auto auto;
+        margin-left: $sidebar-width;
         height: calc(100vh - #{$header-height});  // The #{} allows it to avoid being preprocessed by sass and getting an 'incompatible units' error
         min-height: calc(100vh - #{$header-height});
         padding: 0;
