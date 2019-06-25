@@ -3,3 +3,22 @@ ngb-carousel img {
     width: 100%;
     height: 300px;
 }
+
+hr {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+h2 {
+    margin-bottom: 0rem;
+}
+
+img.d-block {
+    max-height: calc(0.35 * calc(100vh - 102px));
+
+}
+
+div.container-fluid div.row  {
+    max-height: calc(0.65 * calc(100vh - 102px));
+    overflow-y: auto
+}

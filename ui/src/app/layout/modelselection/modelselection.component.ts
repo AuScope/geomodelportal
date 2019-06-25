@@ -9,6 +9,7 @@ import { ModelInfoService } from '../../shared/services/model-info.service';
 @Component({
     selector: 'app-modelselection',
     templateUrl: './modelselection.component.html',
+    styleUrls: ['./modelselection.component.scss'],
     animations: [routerTransition()]
 })
 export class ModelSelectionComponent implements OnInit {
