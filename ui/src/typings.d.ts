@@ -34,13 +34,19 @@ declare module 'itowns/dist/itowns' {
         constructor(crs: string, v0?: number|number[]|Coordinates|Object, v1?: number|Coordinates, v2?: number, v3?: number);
     }
     class PlanarView {
-        constructor(viewerDiv, extent: Extent, params);
+        constructor(viewerDiv: HTMLElement, extent: Extent, params: any);
+    }
+    class WMSSource {
+        constructor(source: any);
+    }
+    class ColorLayer {
+        constructor(id: string, config: any);
     }
     namespace proj4 {
         // Re-export definitions from 'proj4'
         export import defs = _Proj4.defs;
     }
-    const STRATEGY_DICHOTOMY;
+    const STRATEGY_DICHOTOMY: number;
     namespace THREE {
         // Re-export definitions from 'three'
         export import Scene = _THREE.Scene;
@@ -74,6 +80,13 @@ declare module 'itowns/dist/itowns' {
 
 declare module 'itowns/lib/Core/MainLoop' {
     export namespace MAIN_LOOP_EVENTS {
-        const AFTER_CAMERA_UPDATE;
+        const AFTER_CAMERA_UPDATE: string;
+        const AFTER_LAYER_UPDATE: string;
+        const AFTER_RENDER: string;
+        const BEFORE_CAMERA_UPDATE: string;
+        const BEFORE_LAYER_UPDATE: string;
+        const BEFORE_RENDER: string;
+        const UPDATE_END: string;
+        const UPDATE_START: string;
     }
 }

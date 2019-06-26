@@ -1421,7 +1421,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "North Lyell Fault",
+                "display_name": "North Lyell Fault 1",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_037_North_Lyell_Fault.gltf",
@@ -1434,7 +1434,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "North Lyell Fault",
+                "display_name": "North Lyell Fault 2",
                 "displayed": true,
                 "include": true,
                 "model_url": "F_040_North_Lyell_Fault.gltf",
@@ -1933,7 +1933,6 @@
                 "display_name": "Avebury",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "Avebury.gltf",
                 "popups": {
                     "AVEBURY-0000000000": {
@@ -1945,13 +1944,16 @@
                         "title": "AVEBURY"
                     }
                 },
+                "styling": {
+                    "is_labelled": true,
+                    "scale": 2.0
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "Hellyer",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "Hellyer.gltf",
                 "popups": {
                     "HELLYER-0000000000": {
@@ -1963,13 +1965,16 @@
                         "title": "HELLYER"
                     }
                 },
+                "styling": {
+                    "is_labelled": true,
+                    "scale": 2.0
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "Henty",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "Henty.gltf",
                 "popups": {
                     "HENTY-0000000000": {
@@ -1978,13 +1983,16 @@
                         "val": 0.0
                     }
                 },
+                "styling": {
+                    "is_labelled": true,
+                    "scale": 2.0
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "Mt Lindsay",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "Mt_Lindsay.gltf",
                 "popups": {
                     "MT_LINDSAY-0000000000": {
@@ -1996,13 +2004,16 @@
                         "title": "MT LINDSAY"
                     }
                 },
+                "styling": {
+                    "is_labelled": true,
+                    "scale": 2.0
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "Queenstown",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "Queenstown.gltf",
                 "popups": {
                     "QUEENSTOWN-0000000000": {
@@ -2018,13 +2029,16 @@
                         "title": "QUEENSTOWN"
                     }
                 },
+                "styling": {
+                    "is_labelled": true,
+                    "scale": 2.0
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "Renison",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "Renison.gltf",
                 "popups": {
                     "RENISON-0000000000": {
@@ -2040,13 +2054,16 @@
                         "title": "RENISON"
                     }
                 },
+                "styling": {
+                    "is_labelled": true,
+                    "scale": 2.0
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "Rosebery",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "Rosebery.gltf",
                 "popups": {
                     "ROSEBERY-0000000000": {
@@ -2062,13 +2079,16 @@
                         "title": "ROSEBERY"
                     }
                 },
+                "styling": {
+                    "is_labelled": true,
+                    "scale": 2.0
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "Strahan",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "Strahan.gltf",
                 "popups": {
                     "STRAHAN-0000000000": {
@@ -2084,13 +2104,16 @@
                         "title": "STRAHAN"
                     }
                 },
+                "styling": {
+                    "is_labelled": true,
+                    "scale": 2.0
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "Zeehan",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "Zeehan.gltf",
                 "popups": {
                     "ZEEHAN-0000000000": {
@@ -2101,6 +2124,10 @@
                         "name": "",
                         "title": "ZEEHAN"
                     }
+                },
+                "styling": {
+                    "is_labelled": true,
+                    "scale": 2.0
                 },
                 "type": "GLTFObject"
             }
@@ -2582,7 +2609,6 @@
                 "display_name": "352000mE 5320000mN",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "352000mE_5320000mN.gltf",
                 "popups": {
                     "352000ME_5320000MN-0000000000": {
@@ -2590,13 +2616,15 @@
                         "title": "352000ME 5320000MN"
                     }
                 },
+                "styling": {
+                    "is_labelled": true
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "352000mE 5335000mN",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "352000mE_5335000mN.gltf",
                 "popups": {
                     "352000ME_5335000MN-0000000000": {
@@ -2604,13 +2632,15 @@
                         "title": "352000ME 5335000MN"
                     }
                 },
+                "styling": {
+                    "is_labelled": true
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "352000mE 5355000mN",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "352000mE_5355000mN.gltf",
                 "popups": {
                     "352000ME_5355000MN-0000000000": {
@@ -2618,13 +2648,15 @@
                         "title": "352000ME 5355000MN"
                     }
                 },
+                "styling": {
+                    "is_labelled": true
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "352000mE 5375000mN",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "352000mE_5375000mN.gltf",
                 "popups": {
                     "352000ME_5375000MN-0000000000": {
@@ -2632,13 +2664,15 @@
                         "title": "352000ME 5375000MN"
                     }
                 },
+                "styling": {
+                    "is_labelled": true
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "352000mE 5395000mN",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "352000mE_5395000mN.gltf",
                 "popups": {
                     "352000ME_5395000MN-0000000000": {
@@ -2646,13 +2680,15 @@
                         "title": "352000ME 5395000MN"
                     }
                 },
+                "styling": {
+                    "is_labelled": true
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "372000mE 5320000mN",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "372000mE_5320000mN.gltf",
                 "popups": {
                     "372000ME_5320000MN-0000000000": {
@@ -2660,13 +2696,15 @@
                         "title": "372000ME 5320000MN"
                     }
                 },
+                "styling": {
+                    "is_labelled": true
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "372000mE 5335000mN",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "372000mE_5335000mN.gltf",
                 "popups": {
                     "372000ME_5335000MN-0000000000": {
@@ -2674,13 +2712,15 @@
                         "title": "372000ME 5335000MN"
                     }
                 },
+                "styling": {
+                    "is_labelled": true
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "372000mE 5355000mN",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "372000mE_5355000mN.gltf",
                 "popups": {
                     "372000ME_5355000MN-0000000000": {
@@ -2688,13 +2728,15 @@
                         "title": "372000ME 5355000MN"
                     }
                 },
+                "styling": {
+                    "is_labelled": true
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "372000mE 5375000mN",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "372000mE_5375000mN.gltf",
                 "popups": {
                     "372000ME_5375000MN-0000000000": {
@@ -2702,13 +2744,15 @@
                         "title": "372000ME 5375000MN"
                     }
                 },
+                "styling": {
+                    "is_labelled": true
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "372000mE 5395000mN",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "372000mE_5395000mN.gltf",
                 "popups": {
                     "372000ME_5395000MN-0000000000": {
@@ -2716,13 +2760,15 @@
                         "title": "372000ME 5395000MN"
                     }
                 },
+                "styling": {
+                    "is_labelled": true
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "397000mE 5320000mN",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "397000mE_5320000mN.gltf",
                 "popups": {
                     "397000ME_5320000MN-0000000000": {
@@ -2730,13 +2776,15 @@
                         "title": "397000ME 5320000MN"
                     }
                 },
+                "styling": {
+                    "is_labelled": true
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "397000mE 5335000mN",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "397000mE_5335000mN.gltf",
                 "popups": {
                     "397000ME_5335000MN-0000000000": {
@@ -2744,13 +2792,15 @@
                         "title": "397000ME 5335000MN"
                     }
                 },
+                "styling": {
+                    "is_labelled": true
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "397000mE 5355000mN",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "397000mE_5355000mN.gltf",
                 "popups": {
                     "397000ME_5355000MN-0000000000": {
@@ -2758,13 +2808,15 @@
                         "title": "397000ME 5355000MN"
                     }
                 },
+                "styling": {
+                    "is_labelled": true
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "397000mE 5375000mN",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "397000mE_5375000mN.gltf",
                 "popups": {
                     "397000ME_5375000MN-0000000000": {
@@ -2772,19 +2824,24 @@
                         "title": "397000ME 5375000MN"
                     }
                 },
+                "styling": {
+                    "is_labelled": true
+                },
                 "type": "GLTFObject"
             },
             {
                 "display_name": "397000mE 5395000mN",
                 "displayed": true,
                 "include": true,
-                "is_labelled": true,
                 "model_url": "397000mE_5395000mN.gltf",
                 "popups": {
                     "397000ME_5395000MN-0000000000": {
                         "name": "",
                         "title": "397000ME 5395000MN"
                     }
+                },
+                "styling": {
+                    "is_labelled": true
                 },
                 "type": "GLTFObject"
             }

@@ -413,7 +413,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
     /**
      * Makes a text label for a part of the model, this floats just above the model part
-     * and moves around when the model part moves. Becuase it is a 'Sprite' it always faces the camera.
+     * and moves around when the model part moves. Because it is a 'Sprite' it always faces the camera.
      * @param labelStr string label
      * @param size scale up size of label
      * @param heightOffset height in pixals that the label floats above the object
@@ -495,12 +495,25 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         if (!part.displayed) {
                                             gObject.scene.visible = false;
                                         }
+
+                                        // Object styling
+                                        if (part.hasOwnProperty('styling')) {
+
+                                            // Scales the object
+                                            let sc = 1.0;
+                                            if (part['styling'].hasOwnProperty('scale')) {
+                                                sc = part['styling']['scale'];
+                                                gObject.scene.scale.setComponent(2, sc);
+                                            }
+                                            // Makes a label for the object
+                                            if (part['styling'].hasOwnProperty('is_labelled') && part['styling']['is_labelled'] === true) {
+                                                local.makeGLTFLabel(gObject.scene, part.display_name, sc * 3000, 300);
+                                            }
+                                        }
+
                                         // Adds GLTFObject to scene
                                         local.scene.add(gObject.scene);
-                                        // Makes a label for the object
-                                        if (part.hasOwnProperty('is_labelled') && part['is_labelled'] === true) {
-                                            local.makeGLTFLabel(gObject.scene, part.display_name, 3000, 300);
-                                        }
+
                                         // Adds it to the scene array to keep track of it
                                         addSceneObj(local.sceneArr, part, new SceneObject(gObject.scene), grp);
                                         resolve(gObject.scene);
@@ -516,7 +529,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     // function called when loading fails
                                     function (error) {
                                          console.error('GLTF/OBJ load error!', error);
-                                         // reject(null);
+                                         // Accept errors
                                          resolve(null);
                                     }
                                 );
@@ -707,6 +720,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 for (let i = 0; i < parts.length; i++) {
                     if (parts[i].type === 'WMSLayer' && parts[i].include) {
                         doneOne = true;
+                        // TODO: Needs update
                         local.view.addLayer({
                             url: parts[i].model_url,
                             networkOptions: { crossOrigin: 'anonymous' },
@@ -728,6 +742,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             const allLayers = local.view.getLayers(layer => layer.id === parts[i].id);
                             if (allLayers.length > 0) {
                                 addSceneObj(local.sceneArr, parts[i], new WMSSceneObject(allLayers[0]), group);
+                            } else {
+                                console.error('Cannot find loaded WMS layer', parts[i].name);
                             }
                         },
                         function(err) {
