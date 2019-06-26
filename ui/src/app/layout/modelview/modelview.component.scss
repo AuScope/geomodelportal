@@ -11,8 +11,8 @@
     #demoPopup {
         position: absolute;
         color: #FF0000;
-        top:200px;
-        left:200px;
+        top: 50px;
+        left: calc(#{$sidebar-width} + 200px);
         width: 200px;
         height: 300px;
     }
@@ -29,11 +29,21 @@
 
     /* No sidebar for small screens, so maximise width */
     @media screen and (max-width: 992px) {
-      #viewerDiv {
-          margin : 0;
-          width: 100vw;
-          min-width: 100vw;
-      }
+        #viewerDiv {
+            margin : 0;
+            width: 100vw;
+            min-width: 100vw;
+        }
+        #demoPopup {
+            left: 200px !important;
+        }
+        #mouseGuideDiv {
+            margin: auto !important;
+        }
+        #drop_zone {
+            left: 2% !important;
+            width: 96% !important;
+        }
     }
 
     #mouseGuideDiv {
@@ -41,7 +51,7 @@
         top: 0;
         left: 0;
         z-index: 500;
-        margin : auto auto;
+        margin: auto auto auto $sidebar-width;
         height: 100%;
         padding: 0;
         min-height: 100vh;
@@ -150,9 +160,9 @@
     #drop_zone {
         position: absolute;
         top: 2%;
-        left: 2%;
+        left: calc(#{$sidebar-width} + 1%);
         border: 5px solid blue;
-        width:  96%;
+        width:  calc(98% - #{$sidebar-width});
         height: 96%;
         color: blue;
         p {
