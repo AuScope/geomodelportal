@@ -213,9 +213,7 @@ i.fa.fa-lg.fa-eye, i.fa.fa-lg.fa-compress {
 }
 
 .fa-disabled {
-    opacity: 0.6;
-    /* cursor: not-allowed;*/
-    color: lightgrey;
+    color: rgba(211,211,211,0.6);
     pointer-events: none;
 }
 
