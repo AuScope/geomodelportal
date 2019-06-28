@@ -39,7 +39,7 @@ export class VolView {
                                                                   new ITOWNS.THREE.Vector3(0, 0, 1) ];
 
     // This is a colour loopkup table for the integer and bit mask volumes
-    colorLookup: { [idx: number]: [number, number, number] } = {};
+    colourLookup: { [idx: number]: [number, number, number, number] } = {};
 
     // Is true if the DataType is 'BIT_MASK'
     isBitField = false;
@@ -90,7 +90,7 @@ export class VolviewService {
                                                                                   volDataObj['rotation'][d][2] );
             volView.DIM[d] = dims[d];
         }
-        volView.colorLookup = volDataObj['colourLookup'];
+        volView.colourLookup = volDataObj['colourLookup'];
         volView.dataType = dataType;
         volView.maxVal = volDataObj['maxVal'];
         volView.minVal = volDataObj['minVal'];
@@ -324,11 +324,11 @@ export class VolviewService {
                 }
                 val = valArr[valArr.length - 1];
             }
-            if (volView.colorLookup && volView.colorLookup.hasOwnProperty(val)) {
-                dataRGBA[idx * 4] = Math.floor(256.0 * volView.colorLookup[val][0]);
-                dataRGBA[idx * 4 + 1] = Math.floor(256.0 * volView.colorLookup[val][1]);
-                dataRGBA[idx * 4 + 2] = Math.floor(256.0 * volView.colorLookup[val][2]);
-                dataRGBA[idx * 4 + 3] = Math.floor(255.0);
+            if (volView.colourLookup && volView.colourLookup.hasOwnProperty(val)) {
+                dataRGBA[idx * 4] = Math.floor(256.0 * volView.colourLookup[val][0]);
+                dataRGBA[idx * 4 + 1] = Math.floor(256.0 * volView.colourLookup[val][1]);
+                dataRGBA[idx * 4 + 2] = Math.floor(256.0 * volView.colourLookup[val][2]);
+                dataRGBA[idx * 4 + 3] = Math.floor(255.0 * volView.colourLookup[val][3]);
             } else {
                 // If no colour data then use greyscale
                 const bwTuple = this.bwLookup(volView, val);
