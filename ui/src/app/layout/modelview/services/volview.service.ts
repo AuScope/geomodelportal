@@ -14,7 +14,7 @@ import * as ITOWNS from 'itowns/dist/itowns';
 
 
 // Different types of data available in a volume file
-export enum DataType {BIT_MASK, INT_16, INT_8, FLOAT_16, FLOAT_32 }
+export enum DataType {BIT_MASK, INT_16, INT_8, FLOAT_16, FLOAT_32, RGBA }
 
 export const VOL_LABEL_PREFIX = 'Volume3D_';
 
@@ -147,7 +147,7 @@ export class VolviewService {
      * @param idx positive integer index into array
      * @returns a value fetched from the array or null upon error
      */
-    private getFromArray(volView: VolView, idx: number): number | null {
+    private getFromArray(volView: VolView, idx: number): number | [number, number, number, number] | null {
         if (idx < 0) {
           return null;
         }
@@ -173,6 +173,11 @@ export class VolviewService {
                 case DataType.FLOAT_32:
                     // Big endian
                     return volView.dataView.getFloat32(idx * 4, false);
+
+                case DataType.RGBA:
+                    // 4 byte RGBA
+                    return [volView.dataView.getUint8(idx), volView.dataView.getUint8(idx + 1),
+                        volView.dataView.getUint8(idx + 2), volView.dataView.getUint8(idx + 3)];
             }
         } catch (err) {
             // console.log(err);
@@ -216,6 +221,9 @@ export class VolviewService {
                         case DataType.FLOAT_32:
                             // Big endian integers & floats need a different technique
                             volView.dataView = new DataView(volView.ab);
+                            break;
+                        case DataType.RGBA:
+                            // Already in uint8
                             break;
                     }
                     const objList = local.makeSlices(volView, groupName, partId, [0.0, 0.0, 0.0], [null, null, null], displayed);
@@ -318,17 +326,26 @@ export class VolviewService {
         let val = this.getFromArray(volView, x + y * volView.DIM[0] + z * volView.DIM[0] * volView.DIM[1]);
         if (val !== null) {
             if (volView.isBitField) {
-                const valArr = this.getBitFields(val, volView.BIT_SZ);
+                const valArr = this.getBitFields(<number>val, volView.BIT_SZ);
                 if (valArr.length === 0) {
                     return;
                 }
                 val = valArr[valArr.length - 1];
             }
-            if (volView.colourLookup && volView.colourLookup.hasOwnProperty(val)) {
-                dataRGBA[idx * 4] = Math.floor(256.0 * volView.colourLookup[val][0]);
-                dataRGBA[idx * 4 + 1] = Math.floor(256.0 * volView.colourLookup[val][1]);
-                dataRGBA[idx * 4 + 2] = Math.floor(256.0 * volView.colourLookup[val][2]);
-                dataRGBA[idx * 4 + 3] = Math.floor(255.0 * volView.colourLookup[val][3]);
+            // If the volume contains RGBA
+            if (volView.dataType === DataType.RGBA) {
+                dataRGBA[idx * 4] = val[0];
+                dataRGBA[idx * 4 + 1] = val[1];
+                dataRGBA[idx * 4 + 2] = val[2];
+                dataRGBA[idx * 4 + 3] = val[3];
+
+            // If there is a colour map
+            } else if (volView.colourLookup && volView.colourLookup.hasOwnProperty(<number>val)) {
+                dataRGBA[idx * 4] = Math.floor(256.0 * volView.colourLookup[<number>val][0]);
+                dataRGBA[idx * 4 + 1] = Math.floor(256.0 * volView.colourLookup[<number>val][1]);
+                dataRGBA[idx * 4 + 2] = Math.floor(256.0 * volView.colourLookup[<number>val][2]);
+                dataRGBA[idx * 4 + 3] = Math.floor(255.0 * volView.colourLookup[<number>val][3]);
+
             } else {
                 // If no colour data then use greyscale
                 const bwTuple = this.bwLookup(volView, val);
@@ -381,7 +398,7 @@ export class VolviewService {
                 } else if (pctList[dimIdx] > 1.0) {
                     pctList[dimIdx] = 1.0;
                 }
-                let d1, d2;
+                let d1: number, d2: number;
                 switch (dimIdx) {
                     case 0:
                         d1 = 1;
@@ -572,7 +589,7 @@ export class VolviewService {
      * @param xyz ThreeJS vector of the point on the slice, if orientation is negative, then values will be negative
      * @returns a numeric value, or null of no value found
      */
-    public xyzToProp(volView: VolView, xyz: ITOWNS.THREE.Vector3): number  | null {
+    public xyzToProp(volView: VolView, xyz: ITOWNS.THREE.Vector3): number | [number, number, number, number] | null {
         // Convert from model coordinates to 3D data cube coordinates
         const dx = Math.floor((xyz.x - volView.ORIGIN[0]) / (volView.ORIENTATION[0].getComponent(0) * volView.CUBE_SZ[0]) * volView.DIM[0]);
         const dy = Math.floor((xyz.y - volView.ORIGIN[1]) / (volView.ORIENTATION[1].getComponent(1) * volView.CUBE_SZ[1]) * volView.DIM[1]);

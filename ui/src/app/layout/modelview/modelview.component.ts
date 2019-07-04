@@ -319,11 +319,12 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                         if (groupObj.hasOwnProperty('type') && groupObj['type'] === '3DVolume') {
                             const volDataObj = groupObj['volumeData'];
                             if (volDataObj && groupObj.hasOwnProperty('model_url')) {
-                                let dt: DataType = DataType.BIT_MASK;
+                                let dt: DataType = DataType.FLOAT_32;
                                 switch (volDataObj['dataType']) {
                                     case 'BIT_MASK': dt = DataType.BIT_MASK; break;
                                     case 'INT_16': dt = DataType.INT_16; break;
                                     case 'INT_8': dt = DataType.INT_8; break;
+                                    case 'RGBA': dt = DataType.RGBA; break;
                                     case 'FLOAT_32': dt = DataType.FLOAT_32;
                                 }
                                 if (!this.volViewArr.hasOwnProperty(groupName)) {
