@@ -206,41 +206,33 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                         // Make a part of the model visible or invisible
                         case ModelPartStateChangeType.DISPLAYED:
                             local.sceneArr[groupName][partId].setVisibility(state.new_value);
-                            // Also turn on/off itowns tile layer visibility if this is a WMS layer
-                            if (local.sceneArr[groupName][partId] instanceof WMSSceneObject) {
-                                local.tileLayer.visible = state.new_value;
-                            }
-                            local.view.notifyChange(true);
+                            local.view.notifyChange(undefined, true);
                             break;
 
                         // Change the transparency of a part of the model
                         case  ModelPartStateChangeType.TRANSPARENCY:
                             const transparency = <number> state.new_value;
                             local.sceneArr[groupName][partId].setTransparency(transparency);
-                            // Also adjust itowns tile layer opacity if this is a WMS layer
-                            if (local.sceneArr[groupName][partId] instanceof WMSSceneObject) {
-                                local.tileLayer.opacity = transparency;
-                            }
-                            local.view.notifyChange(true);
+                            local.view.notifyChange(undefined, true);
                             break;
 
                         // Move a part of the model up or down
                         case ModelPartStateChangeType.HEIGHT_OFFSET:
                             const displacement = new ITOWNS.THREE.Vector3(0.0, 0.0, <number> state.new_value);
                             local.sceneArr[groupName][partId].setDisplacement(displacement);
-                            local.view.notifyChange(true);
+                            local.view.notifyChange(undefined, true);
                             break;
 
                         // Move a slice of a volume
                         case ModelPartStateChangeType.VOLUME_SLICE:
                             local.sceneArr[groupName][partId].setVolSlice(state.new_value[0], state.new_value[1]);
-                            local.view.notifyChange(true);
+                            local.view.notifyChange(undefined, true);
                             break;
 
                         // Rescale object in z-direction
                         case ModelPartStateChangeType.RESCALE:
                             local.sceneArr[groupName][partId].setScale(2, state.new_value);
-                            local.view.notifyChange(true);
+                            local.view.notifyChange(undefined, true);
                             break;
                     }
                 }
@@ -667,8 +659,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 if (part.hasOwnProperty('position')) {
                                     z_offset = part.position[2];
                                 }
-                                const position = new ITOWNS.THREE.Vector3(local.extentObj.center().x(),
-                                                                      local.extentObj.center().y(), z_offset);
+                                const position = new ITOWNS.THREE.Vector3(local.extentObj.center().x,
+                                                                      local.extentObj.center().y, z_offset);
                                 plane.position.copy(position);
                                 plane.name =  part.model_url.substring(0, part.model_url.lastIndexOf('.')) + '_0'; // For displaying popups
                                 plane.visible = part.displayed;
@@ -708,53 +700,84 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
     /**
      * Adds WMS layers to scene
-     * @returns true if any layers were added
      */
-    private addWMSLayers(): boolean {
+    private addWMSLayers() {
         const local = this;
         const props = local.config.properties;
-        // Add WMS layers
-        let doneOne = false;
+        const promiseList = [];
         for (const group in local.config.groups) {
             if (local.config.groups.hasOwnProperty(group)) {
                 const parts = local.config.groups[group];
                 for (let i = 0; i < parts.length; i++) {
                     if (parts[i].type === 'WMSLayer' && parts[i].include) {
-                        doneOne = true;
-                        // TODO: Needs update
-                        local.view.addLayer({
-                            url: parts[i].model_url,
-                            networkOptions: { crossOrigin: 'anonymous' },
-                            type: 'color',
-                            protocol: 'wms',
-                            version: parts[i].version,
-                            id: parts[i].id,
-                            name: parts[i].name,
-                            projection: props.crs,
-                            options: {
-                                mimetype: 'image/png',
-                            },
-                            updateStrategy: {
-                                type: ITOWNS.STRATEGY_DICHOTOMY,
-                                options: {},
-                            },
-                    }).then(function() {
-                            // Retrieve WMS layer and add it to scene array
-                            const allLayers = local.view.getLayers(layer => layer.id === parts[i].id);
-                            if (allLayers.length > 0) {
-                                addSceneObj(local.sceneArr, parts[i], new WMSSceneObject(allLayers[0]), group);
-                            } else {
-                                console.error('Cannot find loaded WMS layer', parts[i].name);
-                            }
-                        },
-                        function(err) {
-                            console.error('Cannot load WMS layer', err);
-                        });
+                        promiseList.push( new Promise(function(resolve, reject) {
+                            (function(part, grp) {
+                                local.addWMSLayer(part.model_url, part.name, part.version);
+                                resolve([part, grp]);
+                            })(parts[i], group);
+                        }));
                     }
                 }
             }
         }
-        return doneOne;
+        Promise.all(promiseList).then(
+            // function called when all objects successfully loaded
+            function(pg) {
+                const part = pg[0][0];
+                const group = pg[0][1];
+                // Retrieve WMS layer and add its parent to scene array
+                // Adding parent controls visibility and transparency of base layer at same time
+                // Assumes only one layer visible at a time.
+                const layer = local.view.getLayerById(part.name);
+                if (layer) {
+                    const parentLayer = local.view.getParentLayer(layer);
+                    if (parentLayer) {
+                        addSceneObj(local.sceneArr, part, new WMSSceneObject(parentLayer), group);
+                    }
+                } else {
+                    console.error('Cannot find loaded WMS layer', part.name);
+                }
+            },
+            // function called when one GLTF object failed to load
+            function(error) {
+                console.error('Cannot load WMS layer', error);
+            }
+        );
+    }
+
+    /**
+     * Add a WMS layer
+     * @param url URL for the WMS layer (string)
+     * @param name name of WMS layer (string)
+     * @param version version (string)
+     * NB: itowns only supports a limited number of WMS CRS, but converts to local CRS on the fly
+     */
+    private addWMSLayer(url: string, name: string, version: string) {
+        const local = this;
+
+        // Create the source
+        const wmsSource = new ITOWNS.WMSSource({
+            name: name,
+            url: 'api/tas?service=WMS&STYLES=default&wmsurl=' + url,
+            version: version,
+            projection: 'EPSG:3857',
+            format: 'image/png',
+            extent: local.extentObj,
+            transparent: 'true'
+        });
+
+        // Create the layer
+        const colorlayer = new ITOWNS.ColorLayer(name, {
+            updateStrategy: {
+                type: ITOWNS.STRATEGY_DICHOTOMY,
+                options: {},
+            },
+            source: wmsSource,
+            transparent: true
+        });
+
+        // Add the layer
+        local.view.addLayer(colorlayer);
     }
 
     /**
@@ -770,27 +793,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         const local = this;
 
         // Create an instance of PlanarView
-        this.view = new ITOWNS.PlanarView(this.viewerDiv, this.extentObj, {scene3D: this.scene});
+        this.view = new ITOWNS.PlanarView(this.viewerDiv, this.extentObj, {scene3D: this.scene, maxSubdivisionLevel: 2.0,
+                                                                           disableSkirt: true});
 
         // Change defaults to allow the camera to get very close and very far away without exceeding boundaries of field of view
         this.view.camera.camera3D.near = 0.01;
         this.view.camera.camera3D.far = 200 * Math.max(this.extentObj.dimensions().x, this.extentObj.dimensions().y);
         this.view.camera.camera3D.updateProjectionMatrix();
         this.view.camera.camera3D.updateMatrixWorld(true);
-
-        // Disable ugly tile skirts
-        const layers = this.view.getLayers();
-        this.tileLayer = layers[0];
-        this.tileLayer.disableSkirt = true;
-
-        // Add WMS layers
-        const doneOne = this.addWMSLayers();
-
-        // If there are no WMS layers then disable the tile layer
-        // otherwise it appears as an annoying dark blue square
-        if (!doneOne) {
-            this.tileLayer.visible = false;
-        }
 
         // The Raycaster is used to find which part of the model was clicked on, then create a popup box
         this.raycaster = new ITOWNS.THREE.Raycaster();
@@ -802,7 +812,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
                 local.raycaster.setFromCamera(local.mouse, local.view.camera.camera3D);
 
-                const intersects  = local.raycaster.intersectObjects(local.scene.children, true);
+                const intersects = local.raycaster.intersectObjects(local.scene.children, true);
                 let closest;
                 if (intersects.length > 0) {
 
@@ -908,9 +918,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
         // 3 axis virtual globe controller
         this.trackBallControls = new ThreeDVirtSphereCtrls(this.scene, this.viewerDiv, this.view.camera.camera3D, this.view,
-                                           this.extentObj.center().xyz(), this.initCamDist, this.cameraPosChange.bind(this));
-        this.scene.add(this.trackBallControls.getObject());
+                                        this.extentObj.center().toVector3(), this.initCamDist, this.cameraPosChange.bind(this));
         this.onResize();
+
+        // Load all the WMS layers
+        this.addWMSLayers();
 
         // Wait for the signal to start model demonstration
         const helpObs = this.helpinfoService.waitForModelDemo();
@@ -931,13 +943,12 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     break;
             }
         });
-        this.view.notifyChange(true);
+        this.view.notifyChange(this.view.camera.camera3D, true);
 
         // Set up drag and drop file display mechanism
         this.fileImportFactory = new FileImportFactory(this.sidebarService, this.modelInfoService, this.httpService);
         this.fileImport = this.fileImportFactory.createFileImport(this.scene, this.gltfLoader, this.modelUrlPath,
                                                                              this.sceneArr, this.trackBallControls);
-
         // Everything except the WMS layers are loaded at this point, so turn off loading spinner
         this.controlLoadSpinner(false);
     }

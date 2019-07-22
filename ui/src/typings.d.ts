@@ -45,7 +45,19 @@ declare module 'itowns/dist/itowns' {
     namespace proj4 {
         // Re-export definitions from 'proj4'
         export import defs = _Proj4.defs;
+        export import Converter = _Proj4.Converter;
+        export import TemplateCoordinates = _Proj4.TemplateCoordinates
     }
+    export function proj4(fromProjection: string, toProjection?: string): proj4.Converter;
+    export function proj4<T extends proj4.TemplateCoordinates>(
+    toProjection: string,
+    coordinates: T): T;
+    export function proj4<T extends proj4.TemplateCoordinates>(
+    fromProjection: string,
+    toProjection: string,
+    coordinates: T): T;
+
+
     const STRATEGY_DICHOTOMY: number;
     namespace THREE {
         // Re-export definitions from 'three'

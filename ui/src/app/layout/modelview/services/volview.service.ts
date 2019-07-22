@@ -9,7 +9,6 @@ import { Zlib } from 'zlibjs/bin/gunzip.min.js';
 // Note: In ThreeJS, buffer geometry ids are created by incrementing a counter which is local to the library.
 // So when creating objects to be added to the scene, we must always use ITOWNS' version of ThreeJS.
 // If we do not do this, there will be an overlap in ids and objects are not reliably rendered to screen.
-// FIXME: Needs typescript bindings
 import * as ITOWNS from 'itowns/dist/itowns';
 
 
