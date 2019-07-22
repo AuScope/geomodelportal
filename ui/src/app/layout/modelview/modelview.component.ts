@@ -138,6 +138,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     private isDragging = false;
     private dragTimer;
 
+    // Model's coordinate reference system
+    public crs = 'blah';
+
     constructor(private modelInfoService: ModelInfoService, private ngRenderer: Renderer2,
                 private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
                 private helpinfoService: HelpinfoService, private httpService: HttpClient,
@@ -350,6 +353,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         if (props.proj4_defn) {
             proj4.defs(props.crs, props.proj4_defn);
         }
+        this.crs = props.crs;
 
         // If defined in config file, set the initial distance from model to camera
         if (props.hasOwnProperty('init_cam_dist')) {
@@ -467,8 +471,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Loads and draws the GLTF objects
      */
     private add3DObjects() {
-
-        // const loader = new GLTFLoader(manager);
         const promiseList = [];
         const local = this;
 
@@ -533,6 +535,26 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             }
         }
 
+        Promise.all(promiseList).then(
+            // function called when all objects are loaded
+            function() {
+                console.log('GLTFs are loaded');
+                // Add image files to scene
+                local.addPlanes();
+            },
+            // function called when one or more objects fail
+            function(error) {
+                console.error( 'Could not load all GLTFs:', error );
+            });
+    }
+
+
+    /**
+     * Loads all the boreholes in the background
+     */
+    private addBoreholes() {
+        const local = this;
+
         // Get a list of borehole_ids - slow to load so they are done in the background
         // NB: Use the same model name in the URL for 'api' as for the model viewing URL
         const modelName = this.modelUrlPath;
@@ -547,49 +569,37 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     };
                     // Load up GLTF boreholes
                     local.gltfLoader.load('./api/' + modelName + '?' + local.modelInfoService.buildURL(params),
-                            // function called if loading successful
-                            function (gObject) {
-                                const groupName = 'NVCL Boreholes';
-                                gObject.scene.name = 'Borehole_' + boreholeId;
-                                // Add borehole to scene
-                                local.scene.add(gObject.scene);
-                                // Add floating label
-                                local.makeGLTFLabel(gObject.scene, boreholeId, 200, 20);
-                                addSceneObj(local.sceneArr, { 'display_name': boreholeId, 'displayed': true, 'model_url': boreholeId,
-                                                          'type': 'GLTFObject' }, new SceneObject(gObject.scene), groupName);
-                                local.sidebarSrvRequest(groupName, boreholeId, MenuStateChangeType.NEW_PART);
-                            },
-                            // function called during loading
-                            function () {
-                                /*console.log('BOREHOLE GLTF onProgress()', xhr);
-                                if ( xhr.lengthComputable ) {
-                                   const percentComplete = xhr.loaded / xhr.total * 100;
-                                   console.log( xhr.currentTarget.responseURL, Math.round(percentComplete) + '% downloaded' );
-                               }*/
-                            },
-                            // function called when loading fails
-                            function (error) {
-                                console.error('BOREHOLE ', boreholeId, ' GLTF load error!', error);
-                            }
-                        );
-                    } // for loop
-                },
-                function(err) {
-                    console.error('BOREHOLE ID LIST load error!', err);
-                }
-        );
-
-        Promise.all(promiseList).then(
-            // function called when all objects are loaded
-            function() {
-                console.log('GLTFs are loaded');
-                // Add image files to scene
-                local.addPlanes();
+                        // function called if loading successful
+                        function (gObject) {
+                            const groupName = 'NVCL Boreholes';
+                            gObject.scene.name = 'Borehole_' + boreholeId;
+                            // Add borehole to scene
+                            local.scene.add(gObject.scene);
+                            // Add floating label
+                            local.makeGLTFLabel(gObject.scene, boreholeId, 200, 20);
+                            addSceneObj(local.sceneArr, { 'display_name': boreholeId, 'displayed': true, 'model_url': boreholeId,
+                                                        'type': 'GLTFObject' }, new SceneObject(gObject.scene), groupName);
+                            local.sidebarSrvRequest(groupName, boreholeId, MenuStateChangeType.NEW_PART);
+                        },
+                        // function called during loading
+                        function () {
+                            /*console.log('BOREHOLE GLTF onProgress()', xhr);
+                            if ( xhr.lengthComputable ) {
+                                const percentComplete = xhr.loaded / xhr.total * 100;
+                                console.log( xhr.currentTarget.responseURL, Math.round(percentComplete) + '% downloaded' );
+                            }*/
+                        },
+                        // function called when loading fails
+                        function (error) {
+                            console.error('BOREHOLE ', boreholeId, ' GLTF load error!', error);
+                        }
+                    );
+                } // for loop
             },
-            // function called when one or more objects fail
-            function(error) {
-                console.error( 'Could not load all GLTFs:', error );
-            });
+            function(err) {
+                console.error('BOREHOLE ID LIST load error!', err);
+            }
+        );
     }
 
     /**
@@ -621,7 +631,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             function() {
                 console.log('Volumes are loaded');
                 // Finish creating scene
-                local.finaliseView();
+                local.createView();
             },
             // function called when one or more objects fail
             function(error) {
@@ -700,6 +710,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
     /**
      * Adds WMS layers to scene
+     * NB: Currently only adds one layer
      */
     private addWMSLayers() {
         const local = this;
@@ -716,33 +727,44 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 resolve([part, grp]);
                             })(parts[i], group);
                         }));
+                        // For the moment only load first one
+                        break;
                     }
                 }
             }
         }
-        Promise.all(promiseList).then(
-            // function called when all objects successfully loaded
-            function(pg) {
-                const part = pg[0][0];
-                const group = pg[0][1];
-                // Retrieve WMS layer and add its parent to scene array
-                // Adding parent controls visibility and transparency of base layer at same time
-                // Assumes only one layer visible at a time.
-                const layer = local.view.getLayerById(part.name);
-                if (layer) {
-                    const parentLayer = local.view.getParentLayer(layer);
-                    if (parentLayer) {
-                        addSceneObj(local.sceneArr, part, new WMSSceneObject(parentLayer), group);
+        if (promiseList.length > 0) {
+            Promise.all(promiseList).then(
+                // function called when all objects successfully loaded
+                function(pg) {
+                    // Only process the first WMS layer
+                    const part = pg[0][0];
+                    const group = pg[0][1];
+                    // Retrieve WMS layer and add its parent to scene array
+                    // Adding parent controls visibility and transparency of base layer at same time
+                    // Assumes one layer visible at a time.
+                    const layer = local.view.getLayerById(part.name);
+                    if (layer) {
+                        const parentLayer = local.view.getParentLayer(layer);
+                        if (parentLayer) {
+                            addSceneObj(local.sceneArr, part, new WMSSceneObject(parentLayer), group);
+                        }
+                    } else {
+                        console.error('Cannot find loaded WMS layer', part.name);
                     }
-                } else {
-                    console.error('Cannot find loaded WMS layer', part.name);
+                    local.finaliseScene();
+                },
+                // function called when one GLTF object failed to load
+                function(error) {
+                    console.error('Cannot load WMS layer', error);
                 }
-            },
-            // function called when one GLTF object failed to load
-            function(error) {
-                console.error('Cannot load WMS layer', error);
-            }
-        );
+            );
+        } else {
+            // When there is no WMS layer, only a blue base layer is shown, so remove it
+            const planarLayer = local.view.getLayerById('planar');
+            planarLayer.visible = false;
+            local.finaliseScene();
+        }
     }
 
     /**
@@ -780,6 +802,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         local.view.addLayer(colorlayer);
     }
 
+
     /**
      * The final stage of drawing the model on screen. This is where WMS layers and XYZ axes are drawn,
      * and popup boxes are initialiseModel
@@ -789,7 +812,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Itowns code assumes that only its view objects have been added to the scene, and gets confused when there are
      * other objects in the scene.
      */
-    private finaliseView() {
+    private createView() {
         const local = this;
 
         // Create an instance of PlanarView
@@ -801,6 +824,18 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.view.camera.camera3D.far = 200 * Math.max(this.extentObj.dimensions().x, this.extentObj.dimensions().y);
         this.view.camera.camera3D.updateProjectionMatrix();
         this.view.camera.camera3D.updateMatrixWorld(true);
+
+        this.addWMSLayers();
+    }
+
+
+    /**
+     * Adds the final elements to the scene e.g mouse controls, file import handler
+     */
+    private finaliseScene() {
+        const local = this;
+
+        this.addBoreholes();
 
         // The Raycaster is used to find which part of the model was clicked on, then create a popup box
         this.raycaster = new ITOWNS.THREE.Raycaster();
@@ -920,9 +955,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.trackBallControls = new ThreeDVirtSphereCtrls(this.scene, this.viewerDiv, this.view.camera.camera3D, this.view,
                                         this.extentObj.center().toVector3(), this.initCamDist, this.cameraPosChange.bind(this));
         this.onResize();
-
-        // Load all the WMS layers
-        this.addWMSLayers();
 
         // Wait for the signal to start model demonstration
         const helpObs = this.helpinfoService.waitForModelDemo();

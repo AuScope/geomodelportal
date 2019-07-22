@@ -57,7 +57,7 @@
         <div id="spinnerDiv" #spinnerDiv><i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw" aria-hidden="true"></i></div>
         <div id="drop_zone" (drop)="dropHandler($event)" (dragover)="preventDefault($event)"
                                        [ngStyle]="{'visibility':enableFileDrop ? 'visible' : 'hidden'}">
-            <p>Drag a GOCAD .TS (TSURF) file into the blue box to display it.</p>
+            <p>Drag a GOCAD .TS (TSURF) file into the blue box to display it.&nbsp;&nbsp;(CRS: {{crs}})</p>
         </div>
         <app-overview></app-overview>
 </div>
