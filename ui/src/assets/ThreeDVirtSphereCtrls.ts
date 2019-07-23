@@ -41,7 +41,8 @@ const VIRT_SPHERE_RADIUS = 0.33333;
 * @param initCameraDist initial distance from camera to centre of model (metres)
 * @param mouseEventCallback function to be called upon mouse events format: function()
 */
-function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCameraDist, cameraMoveCallback) {
+function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.PerspectiveCamera, view,
+                               rotCentre: THREE.Vector3, initCameraDist: number, cameraMoveCallback) {
     const scope = this;
     this.domElement = view.mainLoop.gfxEngine.renderer.domElement;
     this.rotCentre = rotCentre;
@@ -49,44 +50,52 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
     this.cameraMoveCallback = cameraMoveCallback;
     this.scene = scene;
     this.initCameraDist = initCameraDist;
+    this.realCamera = camera;
+    this.dummyCamera = new THREE.Object3D();
+    const viewObject = view;
 
     // State of the model movement demonstration
-    this.demoState = 0;
+    const demoState = 0;
 
-    // Animation mixer, used for model movement demonstration
-    this.mixer = null;
+    // Animation mixer and action objects, used for model movement demonstration
+    const demoMixer: THREE.AnimationMixer = null;
+    const demoAction: THREE.AnimationAction = null;
+
+    // Set mouse state for drag and rotate
+    this.state = STATE.NONE;
 
     // Used to track mouse movement
     const mousePosition = new THREE.Vector2();
     const lastMousePosition = new THREE.Vector2(Number.MAX_VALUE, 0);
 
+    // Set camera position relative to model centre
+    this.dummyCamera.position.set(0.0, 0.0, initCameraDist);
+
     // Rotational object, used to rotate the camera around the model
     const rObject = new THREE.Object3D();
-    rObject.add(camera);
-
-    // Set camera position relative to model centre
-    camera.position.set(0.0, 0.0, initCameraDist);
-    this.camera = camera;
-    this.camera.lookAt(new THREE.Vector3());
-    const viewObject = view;
+    this.rObject = rObject;
 
     // Set position of rotational object relative to world centre
     rObject.name = 'ThreeDVirtSphereCtrls';
-    rObject.position.set(rotCentre.x, rotCentre.y, rotCentre.z);
+    rObject.position.copy(rotCentre);
 
     // Move camera to look at model at a nice 45 degree angle to the Y-axis, facing north
     rObject.rotateZ( - Math.PI / 2.0);
     rObject.rotateY( Math.PI / 4.0);
-
-    // Set mouse state for drag and rotate
-    this.state = STATE.NONE;
-
-    // Setup the AnimationMixer
-    let runningDemo = false;
+    rObject.updateMatrixWorld(true);
 
     // Update rObject's local matrix and store the value of the camera, rObject and offset for a future reset operation
-    rObject.updateMatrix();
-    this.resetState = { rObj: rObject.clone(), camera: this.camera.clone() };
+    rObject.add(this.dummyCamera);
+    scene.add(rObject);
+    this.resetState = { rObj: rObject.clone(), camera: this.dummyCamera.clone() };
+
+    const wPos = new THREE.Vector3();
+    this.dummyCamera.getWorldPosition(wPos);
+    this.realCamera.position.copy(wPos);
+    this.realCamera.lookAt(rotCentre);
+    this.realCamera.updateMatrixWorld(true);
+    this.realCamera.updateProjectionMatrix();
+    viewObject.notifyChange(scope.realCamera, true);
 
 
     /**
@@ -108,10 +117,24 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
 
         // notify change if moving
         if (scope.state !== STATE.NONE) {
-            viewObject.notifyChange(true);
+            viewObject.notifyChange(scope.realCamera, true);
         }
     };
 
+    /**
+     * Update the real camera with the current position and rotation of the dummy camera
+     */
+    this.updateCamera = function upateCamera() {
+        const wPosi = new THREE.Vector3();
+        const wQuat = new THREE.Quaternion();
+        scope.dummyCamera.getWorldPosition(wPosi);
+        scope.dummyCamera.getWorldQuaternion(wQuat);
+        scope.realCamera.position.copy(wPosi);
+        scope.realCamera.setRotationFromQuaternion(wQuat);
+        scope.realCamera.rotateZ( Math.PI / 2.0);
+        scope.realCamera.updateProjectionMatrix();
+        viewObject.notifyChange(scope.realCamera, true);
+    };
 
     /**
      * Called when mouse wheel is rotated
@@ -121,12 +144,12 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
         event.preventDefault();
         event.stopPropagation();
         if (event.deltaY > 0) {
-            camera.position.multiplyScalar(1 + ZOOM_FACTOR);
+            scope.dummyCamera.position.multiplyScalar(1 + ZOOM_FACTOR);
         } else {
-            camera.position.multiplyScalar(1 - ZOOM_FACTOR);
+            scope.dummyCamera.position.multiplyScalar(1 - ZOOM_FACTOR);
         }
         // Update view
-        viewObject.notifyChange(true);
+        scope.updateCamera();
     };
 
 
@@ -138,16 +161,16 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
         const diff = new THREE.Vector3();
         diff.subVectors(point, rObject.position);
         rObject.position.copy(point);
+        rObject.updateMatrixWorld(true);
         rObject.updateMatrix();
         // Tell everyone that the camera has changed position
         scope.cameraMoveCallback();
 
         // Now that rotational centre is moved, must move the camera position back
         // because camera's global position = rObject.position + camera.position
-        scope.camera.position.setX(scope.resetState.camera.position.x);
-        scope.camera.position.setY(scope.resetState.camera.position.y);
-
-        viewObject.notifyChange(true);
+        scope.dummyCamera.position.setX(scope.resetState.camera.position.x);
+        scope.dummyCamera.position.setY(scope.resetState.camera.position.y);
+        scope.updateCamera();
     };
 
     /**
@@ -155,9 +178,9 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
      * @param newDist new distance value
      */
     this.adjustCamDist = function adjustCamDist(newDist: number) {
-        camera.position.setZ(newDist);
+        scope.dummyCamera.position.setZ(newDist);
         // Update view
-        viewObject.notifyChange(true);
+        scope.updateCamera();
     };
 
 
@@ -178,7 +201,7 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
 
             // Update the picking ray with the camera and centre screen position
             const raycaster = new THREE.Raycaster();
-            raycaster.setFromCamera(centre, scope.camera);
+            raycaster.setFromCamera(centre, scope.realCamera);
 
             // Calculate objects intersecting the picking ray
             const intersects = raycaster.intersectObjects(scope.scene.children, true);
@@ -193,7 +216,7 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
                 const startW = scope.resetState['cameraMouseDownWorldPos'];
                 // Get current camera position in world coords
                 const endW = new THREE.Vector3();
-                scope.camera.getWorldPosition(endW);
+                scope.dummyCamera.getWorldPosition(endW);
                 // Subtract old camera pos from new camera pos
                 const diffW = new THREE.Vector3();
                 diffW.subVectors(endW, startW);
@@ -223,7 +246,7 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
         scope.updateMousePositionAndDelta(event);
         // Store the current camera position in world coords to help move model rotational centre
         const camWorldPos = new THREE.Vector3();
-        scope.camera.getWorldPosition(camWorldPos);
+        scope.dummyCamera.getWorldPosition(camWorldPos);
         scope.resetState['cameraMouseDownWorldPos'] = camWorldPos;
 
         // Left click does rotation, right click does drag
@@ -275,9 +298,9 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
         }
 
         // Animation
-        if (runningDemo) {
-            scope.mixer.update(0.04);
-            viewObject.notifyChange(true);
+        if (scope.demoAction && scope.demoMixer && scope.demoAction.isRunning()) {
+            scope.demoMixer.update(0.04);
+            scope.updateCamera();
         }
     };
 
@@ -296,11 +319,11 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
         const deltaMousePosition = new THREE.Vector2();
         deltaMousePosition.copy(mousePosition).sub(lastMousePosition);
         lastMousePosition.copy(mousePosition);
-        const x_mvt = deltaMousePosition.y * MOVEMENT_FACTOR * scope.camera.position.length();
-        const y_mvt = deltaMousePosition.x * MOVEMENT_FACTOR * scope.camera.position.length();
-        scope.camera.position.x -= x_mvt;
-        scope.camera.position.y -= y_mvt;
-        viewObject.notifyChange(true);
+        const x_mvt = deltaMousePosition.y * MOVEMENT_FACTOR * scope.dummyCamera.position.length();
+        const y_mvt = deltaMousePosition.x * MOVEMENT_FACTOR * scope.dummyCamera.position.length();
+        scope.dummyCamera.position.x -= x_mvt;
+        scope.dummyCamera.position.y -= y_mvt;
+        scope.updateCamera();
     };
 
 
@@ -328,7 +351,10 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
      * @return returns true iff currently running the model demonstration
      */
     this.isRunningDemo = function isRunningDemo() {
-        return runningDemo;
+        if (scope.demoAction) {
+            return scope.demoAction.isRunning();
+        }
+        return false;
     };
 
 
@@ -356,9 +382,9 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
         lastMousePosition.copy(mousePosition);
 
         const r = scope.getVirtualSphereRadius(); // Size of virtual sphere
-        let rotAxisLocal;  // Rotational axis in virtual sphere coords
-        let rDelta; // Rotational angle
-        let rotAxis; // Rotational axis in camera coords
+        let rotAxisLocal: THREE.Vector3;  // Rotational axis in virtual sphere coords
+        let rDelta: number; // Rotational angle
+        let rotAxis: THREE.Vector3; // Rotational axis in camera coords
 
         // Exit if no change
         if (deltaMousePosition.x === 0.0 && deltaMousePosition.y === 0.0) {
@@ -418,9 +444,8 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
         rMat.makeRotationAxis(rotAxis, rDelta);
         rObject.matrix.multiply(rMat);
         rObject.rotation.setFromRotationMatrix(rObject.matrix);
-
-        // Update view
-        viewObject.notifyChange(true);
+        rObject.updateMatrixWorld(true);
+        scope.updateCamera();
 
         // Tell caller that camera angle has changed
         scope.cameraMoveCallback();
@@ -446,15 +471,6 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
 
 
     /**
-    * This function is called externally to add camera to the scene
-    * @return object at centre of model (THREE.Object3D)
-    */
-    this.getObject = function getObject() {
-        return rObject;
-    };
-
-
-    /**
      * @return direction that camera is facing (THREE.Vector3)
      */
     this.getDirection = (() => {
@@ -472,7 +488,8 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
      * Stops the demo loop
      */
     this.stopDemoLoop = function stopDemoLoop() {
-        runningDemo = false;
+        scope.demoAction.stop();
+        scope.updateCamera();
     };
 
 
@@ -480,7 +497,7 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
      * Use threejs animation to perform model rotation demonstration
      * @param axisState 0 = rotate along x-axis, 1 = y-axis, 2 = z-axis, 3 = stop demo
      */
-    this.runModelRotate = function runModelRotate(axisState) {
+    this.runModelRotate = function runModelRotate(axisState: number) {
 
         let axis = null;
         switch (axisState) {
@@ -494,14 +511,14 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
                 axis = new THREE.Vector3( 0, 0, 1 );
                 break;
             default:
-                runningDemo = false;
+                scope.stopDemoLoop();
                 return;
         }
         // Initial rotation = current rObject rotation
-        const qInitial = new THREE.Quaternion().copy(rObject.quaternion);
+        const qInitial = new THREE.Quaternion().copy(scope.rObject.quaternion);
 
         // Final rotation = current rObject rotation + 45 degree rotation along axis
-        const qFinal = new THREE.Quaternion().copy(rObject.quaternion);
+        const qFinal = new THREE.Quaternion().copy(scope.rObject.quaternion);
         const rotFinal = new THREE.Quaternion().setFromAxisAngle( axis, Math.PI / 4.0 );
         qFinal.multiply(rotFinal);
 
@@ -513,13 +530,10 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
 
         // Create an animation sequence from the keyframe track
         const clip = new THREE.AnimationClip( 'Action', 10.0, [ quaternionKF ] );
-        scope.mixer = new THREE.AnimationMixer(rObject);
-        scope.mixer.addEventListener('finished', scope.stopDemoLoop);
-        const action = scope.mixer.clipAction(clip);
-        action.setLoop(THREE.LoopOnce, 1);
-        action.play();
-        runningDemo = true;
-        viewObject.notifyChange(true);
+        scope.demoMixer = new THREE.AnimationMixer(scope.rObject);
+        scope.demoAction = scope.demoMixer.clipAction(clip);
+        scope.demoAction.setLoop(THREE.LoopOnce, 1);
+        scope.demoAction.play();
     };
 
 
@@ -531,10 +545,11 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
         rObject.position.copy(scope.resetState.rObj.position);
         rObject.matrix.copy(scope.resetState.rObj.matrix);
         rObject.rotation.setFromRotationMatrix(rObject.matrix);
-        scope.camera.position.copy(scope.resetState.camera.position);
+        rObject.updateMatrixWorld(true);
+        scope.dummyCamera.position.copy(scope.resetState.camera.position);
 
         // Update view
-        viewObject.notifyChange(true);
+        scope.updateCamera();
     };
 
 
@@ -543,7 +558,7 @@ function ThreeDVirtSphereCtrls(scene, viewerDiv, camera, view, rotCentre, initCa
      */
     this.updateView = function updateView() {
         // Update view
-        viewObject.notifyChange(true);
+        scope.updateCamera();
     };
 
 
