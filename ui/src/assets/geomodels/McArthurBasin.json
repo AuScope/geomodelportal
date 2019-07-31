@@ -386,7 +386,7 @@
         ],
         "Surfaces": [
             {
-                "display_name": "Arnold-Crawford-Mainoru Fm AB",
+                "display_name": "Arnold-Crawford-M'oru Fm AB",
                 "displayed": true,
                 "include": true,
                 "model_url": "S_Top_Arnold-Crawford-Mainoru_Fm_AB.gltf",
@@ -399,7 +399,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "Arnold-Crawford-Mainoru Fm C1",
+                "display_name": "Arnold-Crawford-M'oru Fm C1",
                 "displayed": true,
                 "include": true,
                 "model_url": "S_Top_Arnold-Crawford-Mainoru_Fm_CDV1.gltf",
@@ -412,7 +412,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "Arnold-Crawford-Mainoru Fm C2",
+                "display_name": "Arnold-Crawford-M'oru Fm C2",
                 "displayed": true,
                 "include": true,
                 "model_url": "S_Top_Arnold-Crawford-Mainoru_Fm_CDV2.gltf",
