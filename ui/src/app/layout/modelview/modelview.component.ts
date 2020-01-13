@@ -449,21 +449,31 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param sceneObj  GLTF object that must be labelled
      * @param labelStr  text label string
      * @param size scale up size of label
-     * @param heightOffset height in pixals that the label floats above the object
+     * @param offsetOrPos height offset in pixels that the label floats above the object, or an (x,y,z) triplet for absolute position of label
      */
-    private makeGLTFLabel(sceneObj: ITOWNS.THREE.Object3D, labelStr: string, size: number, heightOffset: number) {
+    private makeGLTFLabel(sceneObj: ITOWNS.THREE.Object3D, labelStr: string, size: number, offsetOrPos: number | (number, number, number)) {
         const local = this;
-        const meshObj = <ITOWNS.THREE.Mesh>sceneObj.getObjectByProperty('type', 'Mesh');
-        if (meshObj) {
-            const bufferGeoObj = <ITOWNS.THREE.BufferGeometry>meshObj.geometry;
-            const arrayObj  =  bufferGeoObj.attributes.position.array;
-            if (arrayObj) {
-                const spriteObj = local.makeLabel(labelStr, size, heightOffset);
-                spriteObj.position.x += arrayObj[0];
-                spriteObj.position.y += arrayObj[1];
-                spriteObj.position.z += arrayObj[2];
-                sceneObj.add(spriteObj);
+        if (typeof offsetOrPos === 'number') {
+            // When given an offset, use the sceneObj's position
+            const meshObj = <ITOWNS.THREE.Mesh>sceneObj.getObjectByProperty('type', 'Mesh');
+            if (meshObj) {
+                const bufferGeoObj = <ITOWNS.THREE.BufferGeometry>meshObj.geometry;
+                const arrayObj  =  bufferGeoObj.attributes.position.array;
+                if (arrayObj) {
+                    const spriteObj = local.makeLabel(labelStr, size, heightOffset);
+                    spriteObj.position.x += arrayObj[0];
+                    spriteObj.position.y += arrayObj[1];
+                    spriteObj.position.z += arrayObj[2];
+                    sceneObj.add(spriteObj);
+                }
             }
+        } else {
+            // When given a position
+            const spriteObj = local.makeLabel(labelStr, size, 0.0);
+            spriteObj.position.x += offsetOrPos[0];
+            spriteObj.position.y += offsetOrPos[1];
+            spriteObj.position.z += offsetOrPos[2];
+            sceneObj.add(spriteObj);
         }
     }
 
@@ -502,7 +512,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                             }
                                             // Makes a label for the object
                                             if (part['styling'].hasOwnProperty('is_labelled') && part['styling']['is_labelled'] === true) {
-                                                local.makeGLTFLabel(gObject.scene, part.display_name, sc * 3000, 300);
+                                                if (part['styling'].hasOwnProperty('position')) {
+                                                    local.makeGLTFLabel(gObject.scene, part.display_name, sc * 3000, part['styling']['position']);
+                                                } else {
+                                                    local.makeGLTFLabel(gObject.scene, part.display_name, sc * 3000, 300);
+                                                }
                                             }
                                         }
 
