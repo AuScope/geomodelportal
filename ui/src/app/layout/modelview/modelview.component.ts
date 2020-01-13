@@ -100,9 +100,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     // Popup box that is created during sidebar help tour
     public demoPopupMsg = '';
 
-    // itowns' tile layer
-    private tileLayer = null;
-
     // Default distance from model to camera in metres, can be overidden in model file
     private initCamDist = 500000.0;
 
@@ -449,9 +446,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param sceneObj  GLTF object that must be labelled
      * @param labelStr  text label string
      * @param size scale up size of label
-     * @param offsetOrPos height offset in pixels that the label floats above the object, or an (x,y,z) triplet for absolute position of label
+     * @param offsetOrPos height offset in pixels that the label floats above the object, or an (x,y,z) triplet
+     *                    for absolute position of label
      */
-    private makeGLTFLabel(sceneObj: ITOWNS.THREE.Object3D, labelStr: string, size: number, offsetOrPos: number | (number, number, number)) {
+    private makeGLTFLabel(sceneObj: ITOWNS.THREE.Object3D, labelStr: string, size: number, offsetOrPos: number | [number, number, number]) {
         const local = this;
         if (typeof offsetOrPos === 'number') {
             // When given an offset, use the sceneObj's position
@@ -460,7 +458,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 const bufferGeoObj = <ITOWNS.THREE.BufferGeometry>meshObj.geometry;
                 const arrayObj  =  bufferGeoObj.attributes.position.array;
                 if (arrayObj) {
-                    const spriteObj = local.makeLabel(labelStr, size, heightOffset);
+                    const spriteObj = local.makeLabel(labelStr, size, offsetOrPos);
                     spriteObj.position.x += arrayObj[0];
                     spriteObj.position.y += arrayObj[1];
                     spriteObj.position.z += arrayObj[2];
@@ -513,7 +511,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                             // Makes a label for the object
                                             if (part['styling'].hasOwnProperty('is_labelled') && part['styling']['is_labelled'] === true) {
                                                 if (part['styling'].hasOwnProperty('position')) {
-                                                    local.makeGLTFLabel(gObject.scene, part.display_name, sc * 3000, part['styling']['position']);
+                                                    local.makeGLTFLabel(gObject.scene, part.display_name, sc * 3000,
+                                                                        part['styling']['position']);
                                                 } else {
                                                     local.makeGLTFLabel(gObject.scene, part.display_name, sc * 3000, 300);
                                                 }
@@ -728,7 +727,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      */
     private addWMSLayers() {
         const local = this;
-        const props = local.config.properties;
         const promiseList = [];
         for (const group in local.config.groups) {
             if (local.config.groups.hasOwnProperty(group)) {
@@ -827,8 +825,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * other objects in the scene.
      */
     private createView() {
-        const local = this;
-
         // Create an instance of PlanarView
         this.view = new ITOWNS.PlanarView(this.viewerDiv, this.extentObj, {scene3D: this.scene, maxSubdivisionLevel: 2.0,
                                                                            disableSkirt: true});
