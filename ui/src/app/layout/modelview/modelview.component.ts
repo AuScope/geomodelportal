@@ -501,20 +501,28 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
                                         // Object styling
                                         if (part.hasOwnProperty('styling')) {
-
                                             // Scales the object
                                             let sc = 1.0;
-                                            if (part['styling'].hasOwnProperty('scale')) {
-                                                sc = part['styling']['scale'];
+                                            if (part.styling.hasOwnProperty('scale')) {
+                                                sc = part.styling.scale;
                                                 gObject.scene.scale.setComponent(2, sc);
                                             }
-                                            // Makes a label for the object
-                                            if (part['styling'].hasOwnProperty('is_labelled') && part['styling']['is_labelled'] === true) {
-                                                if (part['styling'].hasOwnProperty('position')) {
-                                                    local.makeGLTFLabel(gObject.scene, part.display_name, sc * 3000,
-                                                                        part['styling']['position']);
-                                                } else {
-                                                    local.makeGLTFLabel(gObject.scene, part.display_name, sc * 3000, 300);
+
+                                            if (part.styling.hasOwnProperty('labels')) {
+                                                for (label of part.styling.labels) {
+
+                                                    // Makes a label for the object
+                                                    let display_name = part.display_name;
+                                                    if (label.hasOwnProperty('display_name')) {
+                                                        display_name = label.display_name;
+                                                    }
+                                                    if (label.hasOwnProperty('position')) {
+                                                        local.makeGLTFLabel(gObject.scene, display_name, sc * 3000,
+                                                                            label.position);
+                                                    } else {
+                                                        local.makeGLTFLabel(gObject.scene, display_name, sc * 3000,
+                                                                            300);
+                                                    }
                                                 }
                                             }
                                         }
