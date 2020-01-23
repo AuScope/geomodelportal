@@ -501,7 +501,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
                                         // Object styling
                                         if (part.hasOwnProperty('styling')) {
-                                            // Scales the object
+                                            // Scales the object in z-direction
                                             let sc = 1.0;
                                             if (part.styling.hasOwnProperty('scale')) {
                                                 sc = part.styling.scale;

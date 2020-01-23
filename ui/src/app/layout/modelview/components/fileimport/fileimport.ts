@@ -61,9 +61,9 @@ export class FileImport {
      *  Converts a string to glTF
      * @param fileStr string to be converted to GLTF
      **/
-    private convertToGLTF(fileStr: string | ArrayBuffer): Promise<any> {
+    private importFile(fileStr: string | ArrayBuffer): Promise<any> {
         const local = this;
-        const URL =  './api/' + this.modelUrlPath + '?' + local.modelInfoService.buildURL({'service': 'CONVERT',
+        const URL =  './api/' + this.modelUrlPath + '?' + local.modelInfoService.buildURL({'service': 'IMPORT',
                                                                                             'id': this.generateId(16)});
         this.gltfPromise = new Promise(function(resolve, reject) {
             local.httpService.post(URL, fileStr).subscribe(
@@ -156,7 +156,7 @@ export class FileImport {
                     if (file) {
                         const reader = new FileReader();
                         reader.onload = function (_evt) {
-                            local.convertToGLTF(reader.result).then(
+                            local.importFile(reader.result).then(
                                 function(data) {
                                     local.readAndConvert(data, file.name);
                                 },
