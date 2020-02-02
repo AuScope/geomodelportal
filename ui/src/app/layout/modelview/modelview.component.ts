@@ -509,7 +509,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                             }
 
                                             if (part.styling.hasOwnProperty('labels')) {
-                                                for (label of part.styling.labels) {
+                                                for (const label of part.styling.labels) {
 
                                                     // Makes a label for the object
                                                     let display_name = part.display_name;
