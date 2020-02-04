@@ -10,6 +10,8 @@
 
 **NB: It is not fully developed, still a work in progress!**
 
+But you can see what it looks like here: http://geomodels.auscope.org/
+
 This project is a website that is designed to display geological models and their associated information in 3d.
 
 It is broadly based on these:
