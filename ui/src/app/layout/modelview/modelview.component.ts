@@ -43,10 +43,10 @@ const BACKGROUND_COLOUR = new ITOWNS.THREE.Color(0xC0C0C0);
     animations: [routerTransition()]
 })
 export class ModelViewComponent  implements AfterViewInit, OnDestroy {
-    @ViewChild('viewerDiv') private viewerDivElem: ElementRef;
-    @ViewChild('popupBoxDiv') private popupBoxDivElem: ElementRef;
-    @ViewChild('errorDiv') private errorDivElem: ElementRef;
-    @ViewChild('spinnerDiv') private spinnerDivElem: ElementRef;
+    @ViewChild('viewerDiv', { static: true }) private viewerDivElem: ElementRef;
+    @ViewChild('popupBoxDiv', { static: true }) private popupBoxDivElem: ElementRef;
+    @ViewChild('errorDiv', { static: true }) private errorDivElem: ElementRef;
+    @ViewChild('spinnerDiv', { static: true }) private spinnerDivElem: ElementRef;
 
     // iTowns extent object
     private extentObj;

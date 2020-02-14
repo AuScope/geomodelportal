@@ -16,12 +16,12 @@ import { VolumecontrolsComponent } from './components/sidebar/components/volumec
 @NgModule({
     imports: [
         CommonModule,
-        NgbCarouselModule.forRoot(),
-        NgbAlertModule.forRoot(),
+        NgbCarouselModule,
+        NgbAlertModule,
         ModelViewRoutingModule,
         ModelCardModule,
         MatSliderModule,
-        NgbModule.forRoot()
+        NgbModule
     ],
     declarations: [
         ModelViewComponent,

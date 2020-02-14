@@ -9,8 +9,8 @@ import { ModelCardModule } from '../../shared';
 @NgModule({
     imports: [
         CommonModule,
-        NgbCarouselModule.forRoot(),
-        NgbAlertModule.forRoot(),
+        NgbCarouselModule,
+        NgbAlertModule,
         ModelSelectionRoutingModule,
         ModelCardModule
     ],

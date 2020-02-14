@@ -9,15 +9,15 @@ const routes: Routes = [
         children: [
             {
                 path: '',
-                loadChildren: './providerselection/providerselection.module#ProviderSelectionModule'
+                loadChildren: () => import('./providerselection/providerselection.module').then(m => m.ProviderSelectionModule)
             },
             {
                 path: 'provider',
-                loadChildren: './modelselection/modelselection.module#ModelSelectionModule'
+                loadChildren: () => import('./modelselection/modelselection.module').then(m => m.ModelSelectionModule)
             },
             {
                 path: 'model',
-                loadChildren: './modelview/modelview.module#ModelViewModule'
+                loadChildren: () => import('./modelview/modelview.module').then(m => m.ModelViewModule)
             }
         ]
     }

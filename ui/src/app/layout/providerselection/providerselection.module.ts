@@ -9,8 +9,8 @@ import { ProviderCardModule } from '../../shared';
 @NgModule({
     imports: [
         CommonModule,
-        NgbCarouselModule.forRoot(),
-        NgbAlertModule.forRoot(),
+        NgbCarouselModule,
+        NgbAlertModule,
         ProviderSelectionRoutingModule,
         ProviderCardModule
     ],

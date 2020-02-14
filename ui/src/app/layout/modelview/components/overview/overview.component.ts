@@ -28,7 +28,7 @@ const TEXT_SIZE = 400;
     encapsulation: ViewEncapsulation.None // NB: Needed to style the popovers
 })
 export class OverviewComponent implements AfterViewInit {
-    @ViewChild('canvas') private canvasRef: ElementRef;
+    @ViewChild('canvas', { static: true }) private canvasRef: ElementRef;
 
     private renderer: THREE.WebGLRenderer;
     private camera: THREE.PerspectiveCamera;
