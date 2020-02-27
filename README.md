@@ -22,8 +22,10 @@ It is broadly based on these:
 
 3. [itowns](http://www.itowns-project.org/) provides geospatial support.
 
-4. <https://github.com/AuScope/geomodel-2-3dweb> contains code to convert GOCAD models into graphics files from the command line, and a web service that provides borehole information and performs on the fly GOCAD TSURF conversion to GLTF.
-
+4. <https://github.com/AuScope/geomodel-2-3dweb> contains code to convert GOCAD models into graphics files from the command line, and a web service that provides:
+     * borehole graphics and information from Australia's NVCL (National Virtual Core Library)
+     * an OGC WMS service
+     * on the fly GOCAD TSURF conversion to GLTF.
 
 ### How to initiate
 **Note** that this project requires npm >=6.9
@@ -90,7 +92,7 @@ $ npm start
 ### Build for production server
 ```bash
 # As currently set up, the prod build will output the production website files to `dist` directory
-# This can be deployed to an apache server or something similar. The output of the 'build_api_dir.sh' 
+# This can be deployed to an Apache server or something similar. The output of the 'build_api_dir.sh' 
 # must be unpacked and placed within the same deployment.
 $ ng build --prod
 ```
