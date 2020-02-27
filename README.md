@@ -16,7 +16,7 @@ This project is a website that is designed to display geological models and thei
 
 It is broadly based on these:
 
-1. Start Angular's template for Bootstrap 4 and Angular 5, (https://github.com/start-angular/SB-Admin-BS4-Angular-5) but ported to Angular 7. This provides a basic Angular+Bootstrap website framework.
+1. Start Angular's template for Bootstrap 4 and Angular 5, (https://github.com/start-angular/SB-Admin-BS4-Angular-5) but ported to Angular 8. This provides a basic Angular+Bootstrap website framework.
 
 2. [ThreeJS](https://threejs.org/) provides 3d.
 
