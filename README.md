@@ -52,10 +52,14 @@ the '_new' from the filename (e.g. becomes  'McArthurBasin.json')
 
 NB: For information on the JSON files, see [README.md](ui/src/assets/geomodels/README.md)
 
-### Adding borehole info and file conversion web service
-The web service requires an [Apache](https://httpd.apache.org/) server with Python WSGI [mod_wsgi](https://modwsgi.readthedocs.io/en/develop/) enabled.  Python should be setup as described in [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/README.md)
+### Adding NVCL borehole info, WMS proxy and file conversion web service
 
-A borehole database file can be produced by running the "makeBoreholes.py" conversion script. See [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/scripts/README.md)
+The web service requires an [Apache](https://httpd.apache.org/) server with Python WSGI [mod_wsgi](https://modwsgi.readthedocs.io/en/develop/) enabled, or similar WSGI compatible server. 
+Python should be setup as described in [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/README.md)
+
+For development, you can use 'uwsgi' [WSGI Quick Start](https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html) for a quick command line start
+
+An NVCL (Australia's National Virtual Core Library) borehole database file can be produced by running the "makeBoreholes.py" conversion script. See [README.md](https://github.com/AuScope/geomodel-2-3dweb/blob/master/scripts/README.md) If you don't need the NVCL database, then you can skip this step.
 
 The web service is served from the 'api' directory as _http://website/api_.
 
@@ -66,7 +70,18 @@ Make sure that the files in 'api' can be accessed by Python.
 
 ### Start a local dev server
 ```bash
-# Run `npm start` to start the dev server.
+# To start the proxy/borehole server, run 'uwsgi' in the 'api' directory created using 'build_api_dir.sh'
+# NB: Make sure you have set the port number in "proxy.conf.json" (geomodelportal/ui/proxy.conf.json)
+# to match uwsgi's listening port
+# e.g. change "target": "http://localhost", to "target": "http://localhost:4040",
+#
+$ tar xvf *-api.tar
+$ cd api
+$ uwsgi --http :4040 --wsgi-file index.py
+```
+
+```bash
+# Run `npm start` to start the front-end dev server.
 # Navigate to `http://localhost:4200`. It should automatically reload if you change any 
 # of the source files.
 $ npm start
@@ -75,6 +90,8 @@ $ npm start
 ### Build for production server
 ```bash
 # As currently set up, the prod build will output the production website files to `dist` directory
+# This can be deployed to an apache server or something similar. The output of the 'build_api_dir.sh' 
+# must be unpacked and placed within the same deployment.
 $ ng build --prod
 ```
 
