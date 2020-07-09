@@ -96,15 +96,15 @@ export class SidebarComponent  implements OnInit, OnDestroy {
 
     // These refer to each help popover in the sidebar
     // NB: If you add a new popover, you must also add a new enum value to WidgetType in 'helpinfo.service'
-    @ViewChild('group_tick_popover', { static: false }) public groupTickPopover: NgbPopover = null;
-    @ViewChild('group_menu_popover', { static: false }) public groupMenuPopover: NgbPopover = null;
-    @ViewChild('part_config_popover', { static: false }) public partConfigPopover: NgbPopover = null;
-    @ViewChild('part_zoom_popover', { static: false }) public partZoomPopover: NgbPopover = null;
-    @ViewChild('part_eyeball_popover', { static: false }) public partEyeballPopover: NgbPopover = null;
-    @ViewChild('part_offset_popover', { static: false }) public partOffsetPopover: NgbPopover = null;
-    @ViewChild('part_trans_popover', { static: false }) public partTransPopover: NgbPopover = null;
-    @ViewChild('part_scale_popover', { static: false }) public partScalePopover: NgbPopover = null;
-    @ViewChild('part_tick_popover', { static: false }) public partTickPopover: NgbPopover = null;
+    @ViewChild('group_tick_popover') public groupTickPopover: NgbPopover = null;
+    @ViewChild('group_menu_popover') public groupMenuPopover: NgbPopover = null;
+    @ViewChild('part_config_popover') public partConfigPopover: NgbPopover = null;
+    @ViewChild('part_zoom_popover') public partZoomPopover: NgbPopover = null;
+    @ViewChild('part_eyeball_popover') public partEyeballPopover: NgbPopover = null;
+    @ViewChild('part_offset_popover') public partOffsetPopover: NgbPopover = null;
+    @ViewChild('part_trans_popover') public partTransPopover: NgbPopover = null;
+    @ViewChild('part_scale_popover') public partScalePopover: NgbPopover = null;
+    @ViewChild('part_tick_popover') public partTickPopover: NgbPopover = null;
     @ViewChild('reset_view_popover', { static: true }) public resetViewPopover: NgbPopover = null;
     @ViewChild('mouse_guide_popover', { static: true }) public mouseGuidePopover: NgbPopover = null;
     @ViewChild('compass_rose_popover', { static: true }) public compassRosePopover: NgbPopover = null;
