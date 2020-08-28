@@ -1,10 +1,5 @@
 # Geological Models Portal  
 
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=vjf_geomodelportal&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=vjf_geomodelportal)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=vjf_geomodelportal&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=vjf_geomodelportal)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=vjf_geomodelportal&metric=security_rating)](https://sonarcloud.io/dashboard?id=vjf_geomodelportal)
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=vjf_geomodelportal&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=vjf_geomodelportal)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=vjf_geomodelportal&metric=ncloc)](https://sonarcloud.io/dashboard?id=vjf_geomodelportal)
 
 ### Purpose
 
