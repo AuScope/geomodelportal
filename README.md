@@ -11,7 +11,7 @@ This project is a website that is designed to display geological models and thei
 
 It is broadly based on these:
 
-1. Start Angular's template for Bootstrap 4 and Angular 5, (https://github.com/start-angular/SB-Admin-BS4-Angular-5) but ported to Angular 8. This provides a basic Angular+Bootstrap website framework.
+1. Start Angular's template for Bootstrap 4 and Angular 5, (https://github.com/start-angular/SB-Admin-BS4-Angular-5) but ported to Angular 10. This provides a basic Angular+Bootstrap website framework.
 
 2. [ThreeJS](https://threejs.org/) provides 3d.
 
@@ -23,7 +23,7 @@ It is broadly based on these:
      * on the fly GOCAD TSURF conversion to GLTF.
 
 ### How to initiate
-**Note** that this project requires npm >=6.9
+**Note** that this project requires npm >=6.14 & nodejs >= 12.18
 
 In order to get started:
 ```bash
