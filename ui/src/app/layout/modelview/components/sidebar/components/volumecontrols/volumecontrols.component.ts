@@ -34,7 +34,12 @@ export class VolumecontrolsComponent implements OnInit {
       this.sliderVal[dimIdx] = event.value;
   }
 
-
+  /**
+   * Changes all slices in a group
+   * @param event material slider change event, contains slider's latest selected value
+   * @param groupName name of group
+   * @param partId model part id
+   */
   public changeAllSlices(event: MatSliderChange, groupName: string, partId: string) {
       for (const dIdx of [0, 1, 2]) {
         this.modelInfoService.setModelPartStateChange(groupName, partId,

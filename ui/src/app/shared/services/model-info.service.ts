@@ -118,12 +118,21 @@ export class ModelInfoService {
         return this.initPromise;
     }
 
+
+    /**
+     * Builds an HTTP GET URL using parameters
+     * @param params parameters Javascript object with key-val pairs
+     * @return URL string
+     */
     public buildURL(params): string {
         return Object.keys(params).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k])).join('&');
     }
 
+
     /**
      * Retrieve a list of borehole ids from server
+     * @param modelName name of model
+     * @returns Promise object
      */
     public getBoreHoleIds(modelName): Promise<any> {
         const local = this;
