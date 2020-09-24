@@ -43,7 +43,7 @@
                 "infoUrl": "http://www.dmp.wa.gov.au/"
             },
             "sa": {
-                "name": "South Australia (Minerals)",
+                "name": "South Australia (Energy & Mining)",
                 "models": [
                     {
                         "name": "North Gawler",
@@ -52,12 +52,12 @@
                         "colourClass": "warning",
                         "configFile": "NorthGawler.json",
                         "modelDir": "NorthGawler",
-                        "srcUrl" : "http://www.minerals.statedevelopment.sa.gov.au/geoscience/geoscientific_data/3d_geological_models/northern_gawler_province"
+                        "srcUrl" : "https://energymining.sa.gov.au/minerals/geoscience/geoscientific_data/3d_geological_models/northern_gawler_province"
                     }
                 ],
                 "icon": "sa-white-icon.png",
                 "colourClass": "success",
-                "infoUrl": "http://www.minerals.statedevelopment.sa.gov.au/home"
+                "infoUrl": "https://energymining.sa.gov.au/minerals"
             },
             "tas": {
                 "name": "Tasmania (MRT)",
@@ -69,7 +69,7 @@
                         "colourClass": "warning",
                         "configFile": "RoseberyLyell.json",
                         "modelDir": "RoseberyLyell",
-                        "srcUrl" : "http://www.mrt.tas.gov.au/portal/west-tasmania-3d-geological-geophysical-modelling"
+                        "srcUrl" : "http://www.mrt.tas.gov.au/geoscience/3d_geological_and_geophysical_modelling/west_tasmania_3d_geological_and_geophysical_modelling"
                     }
                 ],
                 "icon": "tas-white-icon.png",
@@ -86,7 +86,7 @@
                         "colourClass": "danger",
                         "configFile": "Quamby.json",
                         "modelDir": "Quamby",
-                        "srcUrl" : "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/search?REPORT_ID=89698&COLLECTION_ID=999"
+                        "srcUrl" : "https://geoscience.data.qld.gov.au/dataset/ds000006"
                     }
                 ],
                 "icon": "qld-white-icon.png",
