@@ -16,8 +16,8 @@ COPY . .
 
 # Build angular's static website files
 RUN npm run build --prod
-COPY docker/geomodel-2-3dweb/scripts/geomodels/ ./dist/assets/geomodels/
-COPY docker/geomodel-2-3dweb/scripts/20*-api.tar .
+COPY docker/geomodel-2-3dweb/web_build/geomodels/ ./dist/assets/geomodels/
+COPY docker/geomodel-2-3dweb/web_build/20*-api.tar .
 RUN tar xvf 20*-api.tar -C ./dist
 COPY docker/apache.htaccess ./dist/.htaccess
 RUN chmod a+r ./dist/.htaccess
