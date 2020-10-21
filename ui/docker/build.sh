@@ -52,7 +52,7 @@ sudo docker system prune -af && sudo docker build -t geomodels -f docker/Dockerf
 popd
 
 # To run locally at port 4000:
-# sudo docker run -p 4000:80 geomodels
+# sudo docker run -d -p 4000:80 geomodels
 
 # To stop:
 # sudo docker ps
