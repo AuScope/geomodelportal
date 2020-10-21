@@ -23,7 +23,7 @@ COPY docker/apache.htaccess ./dist/.htaccess
 RUN chmod a+r ./dist/.htaccess
 
 # Second image, install website
-FROM debian:9
+FROM debian:10
 
 ENV appdir /usr/src/app
 
@@ -36,13 +36,16 @@ COPY --chown=www-data:www-data --from=node /usr/src/app/dist /var/www/html/
 COPY docker/000-default.conf /etc/apache2/sites-enabled/
 
 # Install things necessary for wsgi
-RUN apt-get update && apt-get -y install python3 python3-pip wget cmake
-RUN apt-get install -y apache2 apache2-dev libapache2-mod-wsgi-py3
+RUN apt-get update && apt-get -y install apt-utils python3 python3-pip wget cmake
+RUN apt-get install -y apache2 apache2-dev libapache2-mod-wsgi-py3 libhdf5-dev libnetcdf-dev
+RUN ln -s /usr/include/hdf5/serial /usr/include/hdf5/include
+
 COPY docker/wsgi.conf /etc/apache2/mods-enabled/
 RUN a2enmod rewrite
 
 # Install any needed python packages specified in requirements.txt
 COPY docker/geomodel-2-3dweb/requirements.txt .
+ENV HDF5_DIR /usr/include/hdf5
 RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
 
 # Build assimp C++ lib
