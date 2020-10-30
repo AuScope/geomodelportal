@@ -37,7 +37,7 @@ COPY docker/000-default.conf /etc/apache2/sites-enabled/
 
 # Install things necessary for apache & python
 RUN apt-get update && apt-get -y install apt-utils python3 python3-pip wget cmake
-RUN apt-get install -y apache2 apache2-dev libapache2-mod-proxy-html libxml2-dev libhdf5-dev libnetcdf-dev
+RUN apt-get install -y apache2 apache2-dev libxml2-dev libhdf5-dev libnetcdf-dev
 RUN ln -s /usr/include/hdf5/serial /usr/include/hdf5/include
 RUN a2enmod rewrite && a2enmod proxy && a2enmod proxy_http && a2enmod proxy_html 
 
@@ -51,8 +51,9 @@ RUN wget https://github.com/assimp/assimp/archive/v5.0.0.tar.gz && tar xvf v5.0.
 RUN cd assimp-5.0.0 && cmake CMakeLists.txt -G 'Unix Makefiles' && make && cd ..
 ENV LD_LIBRARY_PATH ${appdir}/assimp-5.0.0/lib
 
-#TODO: Start uvicorn
-CMD ["/usr/sbin/apache2ctl","-D","FOREGROUND"]
+# Start services
+COPY docker/startup.sh startup.sh
+CMD ./startup.sh
 
 EXPOSE 80
 
