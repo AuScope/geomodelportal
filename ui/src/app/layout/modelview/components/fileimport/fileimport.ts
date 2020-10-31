@@ -63,10 +63,9 @@ export class FileImport {
      **/
     private importFile(fileStr: string | ArrayBuffer): Promise<any> {
         const local = this;
-        const URL =  './api/' + this.modelUrlPath + '?' + local.modelInfoService.buildURL({'service': 'IMPORT',
-                                                                                            'id': this.generateId(16)});
+        const URL =  './api/' + this.modelUrlPath + '/import/' + this.generateId(16);
         this.gltfPromise = new Promise(function(resolve, reject) {
-            local.httpService.post(URL, fileStr).subscribe(
+            local.httpService.post(URL, { 'content':fileStr, 'crs':'EPSG:4326'}).subscribe(
                 data => {
                     const dataResult = data as string [];
                     resolve(dataResult);

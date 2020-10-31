@@ -800,7 +800,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         // Create the source
         const wmsSource = new ITOWNS.WMSSource({
             name: name,
-            url: 'api/tas?service=WMS&STYLES=default&wmsurl=' + url,
+            url: 'api/tas/wmsproxy/default?wmsUrl=' + url,
             version: version,
             projection: 'EPSG:3857',
             format: 'image/png',
