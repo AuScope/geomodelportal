@@ -46,10 +46,10 @@ COPY docker/geomodel-2-3dweb/requirements.txt .
 ENV HDF5_DIR /usr/include/hdf5
 RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
 
-# Build assimp C++ lib
-RUN wget https://github.com/assimp/assimp/archive/v5.0.0.tar.gz && tar xvf v5.0.0.tar.gz
-RUN cd assimp-5.0.0 && cmake CMakeLists.txt -G 'Unix Makefiles' && make && cd ..
-ENV LD_LIBRARY_PATH ${appdir}/assimp-5.0.0/lib
+# Build assimp C++ lib, only v4.1.0 works with pyassimp
+RUN wget https://github.com/assimp/assimp/archive/v4.1.0.tar.gz && tar xvf v4.1.0.tar.gz
+RUN cd assimp-4.1.0 && cmake CMakeLists.txt -G 'Unix Makefiles' && make && cd ..
+ENV LD_LIBRARY_PATH ${appdir}/assimp-4.1.0/lib
 
 # Start services
 COPY docker/startup.sh startup.sh
