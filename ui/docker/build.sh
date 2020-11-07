@@ -48,8 +48,8 @@ popd
 # Go to root dir
 pushd ..
 # Build docker image
-sudo docker system prune -af && sudo docker build -t geomodels -f docker/Dockerfile .
-#sudo docker build -t geomodels -f docker/Dockerfile .
+docker system prune -af && sudo docker build -t geomodels -f docker/Dockerfile .
+#docker build -t geomodels -f docker/Dockerfile .
 popd
 
 # To run locally at port 4000:

@@ -48,7 +48,7 @@ RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
 
 # Build assimp C++ lib, only v4.1.0 works with pyassimp
 RUN wget https://github.com/assimp/assimp/archive/v4.1.0.tar.gz && tar xvf v4.1.0.tar.gz
-RUN cd assimp-4.1.0 && cmake CMakeLists.txt -G 'Unix Makefiles' && make && cd ..
+RUN cd assimp-4.1.0 && cmake CMakeLists.txt && make -j4 && cd ..
 ENV LD_LIBRARY_PATH ${appdir}/assimp-4.1.0/lib
 
 # Start services
