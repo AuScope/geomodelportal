@@ -36,7 +36,7 @@ COPY --chown=www-data:www-data --from=node /usr/src/app/dist /var/www/html/
 COPY docker/000-default.conf /etc/apache2/sites-enabled/
 
 # Install things necessary for apache & python
-RUN apt-get update && apt-get -y install apt-utils python3 python3-pip wget cmake
+RUN apt-get update && apt-get upgrade -y && apt-get -y install apt-utils python3 python3-pip wget cmake
 RUN apt-get install -y apache2 apache2-dev libxml2-dev libhdf5-dev libnetcdf-dev
 RUN ln -s /usr/include/hdf5/serial /usr/include/hdf5/include
 RUN a2enmod rewrite && a2enmod proxy && a2enmod proxy_http && a2enmod proxy_html 
