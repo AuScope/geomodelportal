@@ -3,7 +3,7 @@ import { Observable ,  Subject } from 'rxjs';
 
 // NB: 1) 'END_TOUR' must always be the last item in the list
 //     2) There is one of these for each help popover in the sidebar
-export enum WidgetType { GROUP_TICKBOX, GROUP_TOGGLE, PART_TICKBOX, PART_CONFIG, ZOOM_VIEW, PART_EYEBALL,
+export enum WidgetType { GROUP_TICKBOX, GROUP_TOGGLE, PART_TICKBOX, PART_CONFIG, PART_DOWNLOAD, PART_EYEBALL, ZOOM_VIEW,
                           PART_OFFSET, PART_VISIBILITY, PART_SCALE, RESET_VIEW, MOUSE_GUIDE, COMPASS_ROSE, END_TOUR }
 
 @Injectable()

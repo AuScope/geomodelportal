@@ -52,6 +52,12 @@
                                    </div>
                                 </i>
 
+                                <!-- Download -->
+                                <i *ngIf="subGroupObj.type === 'GLTFObject'" class="fa fa-download" (click)="downloadPart(groupName, subGroupObj.model_url)"
+                                    ngbPopover="{{HELP_TEXT.partDownload.desc}}"  popoverTitle="{{HELP_TEXT.partDownload.title}}" placement="bottom" #part_download_popover="ngbPopover"
+                                    triggers="manual" title="{{HELP_TEXT.partDownload.title}}" aria-hidden="true">
+                                </i>
+
                                 <!-- Zoom to Model Part -->
                                 <i *ngIf="subGroupObj.type === 'GLTFObject'" class="fa fa-lg fa-compress" (click)="zoomToPart(groupName, subGroupObj.model_url)"
                                     ngbPopover="{{HELP_TEXT.partZoom.desc}}"  popoverTitle="{{HELP_TEXT.partZoom.title}}" placement="left" #part_zoom_popover="ngbPopover"

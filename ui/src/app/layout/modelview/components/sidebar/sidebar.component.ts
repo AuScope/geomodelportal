@@ -76,6 +76,8 @@ export class SidebarComponent  implements OnInit, OnDestroy {
                                 desc: 'Click here to open/close the control panel for this model part.' },
         partZoom: { title: 'Zoom to View a Model Part',
                           desc: 'Click here to zoom in and view a model part.' },
+        partDownload: { title: 'Download a Model Part',
+                          desc: 'Click here to download a model part.' },
         partEyeball: { title: 'Reveal a Hidden Model Part',
                            desc: 'To reveal a hidden model part in the viewing area, move your mouse over its eyeball icon.' },
         partOffset: { title: 'Adjust Height Offset',
@@ -100,6 +102,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     @ViewChild('group_menu_popover') public groupMenuPopover: NgbPopover = null;
     @ViewChild('part_config_popover') public partConfigPopover: NgbPopover = null;
     @ViewChild('part_zoom_popover') public partZoomPopover: NgbPopover = null;
+    @ViewChild('part_download_popover') public partDownloadPopover: NgbPopover = null;
     @ViewChild('part_eyeball_popover') public partEyeballPopover: NgbPopover = null;
     @ViewChild('part_offset_popover') public partOffsetPopover: NgbPopover = null;
     @ViewChild('part_trans_popover') public partTransPopover: NgbPopover = null;
@@ -179,8 +182,9 @@ export class SidebarComponent  implements OnInit, OnDestroy {
         // NB: This list must contain all the ViewChild popovers above and in the correct order
         // The order must correspond to the WidgetType enum
         const popoverList: NgbPopover[] = [ this.groupMenuPopover, this.groupTickPopover, this.partTickPopover,
-          this.partConfigPopover, this.partEyeballPopover, this.partZoomPopover, this.partTransPopover, this.partOffsetPopover,
-          this.partScalePopover,  this.resetViewPopover, this.mouseGuidePopover, this.compassRosePopover ];
+          this.partConfigPopover, this.partDownloadPopover, this.partEyeballPopover, this.partZoomPopover,
+          this.partTransPopover, this.partOffsetPopover, this.partScalePopover,  this.resetViewPopover,
+          this.mouseGuidePopover, this.compassRosePopover ];
 
         // Open up menu items at first group
         if (seqNum === 0 && this.groupList.length > 0) {
@@ -361,6 +365,17 @@ export class SidebarComponent  implements OnInit, OnDestroy {
         this.modelInfoService.zoomToPart(groupName, partId);
         this.makeInvisibleBarOne(groupName, partId);
     }
+
+
+    /**
+     * Downloads models part
+     * @param groupName model part's group name
+     * @param partId model part's id
+     */
+    public downloadPart(groupName: string, partId: string) {
+        console.log("DOWNLOADING: ", groupName, partId);
+    }
+     
 
     /**
      * Changes height of a particular part of the model
