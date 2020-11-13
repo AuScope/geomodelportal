@@ -8,6 +8,7 @@ import { NgbPopover} from '@ng-bootstrap/ng-bootstrap';
 import { ModelInfoService, ModelPartStateChangeType } from '../../../../shared/services/model-info.service';
 import { SidebarService, MenuStateChangeType, MenuChangeType } from '../../services/sidebar.service';
 import { HelpinfoService, WidgetType } from '../../services/helpinfo.service';
+import { saveAs } from 'file-saver';
 
 
 // Used to control visibility of parts in the menu
@@ -40,6 +41,9 @@ export class SidebarComponent  implements OnInit, OnDestroy {
 
     // Part of the URL which specifies the model name
     private modelPath = '';
+
+    // Directory name containing model's data files
+    private modelDir = '';
 
     // List of group names in sidebar
     public groupList: Array<string> = [];
@@ -114,8 +118,9 @@ export class SidebarComponent  implements OnInit, OnDestroy {
 
 
 
-    constructor(private translate: TranslateService, private modelInfoService: ModelInfoService, private route: ActivatedRoute,
-                public router: Router, private sideBarService: SidebarService, private helpinfoService: HelpinfoService) {
+    constructor(private translate: TranslateService, private modelInfoService: ModelInfoService,
+                private route: ActivatedRoute, public router: Router, private sideBarService: SidebarService,
+                private helpinfoService: HelpinfoService) {
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de']);
         this.translate.setDefaultLang('en');
         const browserLang = this.translate.getBrowserLang();
@@ -151,6 +156,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
             data => {
                 this.modelConfig = data[0] as string [];
                 this.sourceOrgName = data[2];
+                this.modelDir = data[1];
                 this.title = this.modelConfig['properties'].name;
                 this.groupList = Object.keys(this.modelConfig['groups']);
                 this.modelPartState = this.modelInfoService.getModelPartStateObj();
@@ -372,8 +378,13 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * @param groupName model part's group name
      * @param partId model part's id
      */
-    public downloadPart(groupName: string, partId: string) {
-        console.log("DOWNLOADING: ", groupName, partId);
+    private downloadPart(groupName: string, partId: string) {
+        // const partObjList = this.modelConfig['groups'][groupName];
+        // for (const partObj of partObjList) {
+        //     console.log(partObj.model_url);
+        // }
+        // console.log(window.location.origin + "/assets/geomodels/" + this.modelDir + "/" + partId, partId);
+        saveAs(window.location.origin + '/assets/geomodels/' + this.modelDir + '/' + partId, partId);
     }
      
 
