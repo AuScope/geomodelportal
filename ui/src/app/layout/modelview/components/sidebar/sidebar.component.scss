@@ -28,7 +28,7 @@
             color: #999;
             text-decoration: none;
             .fa {
-                margin-right: 10px;
+                margin-right: 6px;
             }
             .fa-eye {
                 vertical-align: 0%;
@@ -109,6 +109,9 @@
     }
     .nested {
         list-style-type: none;
+    }
+    ul {
+        padding-inline-start: 1em;
     }
     ul.submenu {
         display: none;
