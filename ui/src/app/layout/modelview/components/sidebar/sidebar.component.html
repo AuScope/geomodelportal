@@ -54,7 +54,7 @@
 
                                 <!-- Download -->
                                 <i *ngIf="subGroupObj.type === 'GLTFObject'" class="fa fa-download"
-                                    (click)="downloadPart(groupName, subGroupObj.model_url)"
+                                    (click)="downloadPart(groupName, subGroupObj.src_filename)"
                                     ngbPopover="{{HELP_TEXT.partDownload.desc}}" 
                                     popoverTitle="{{HELP_TEXT.partDownload.title}}"
                                     placement="bottom" #part_download_popover="ngbPopover"
