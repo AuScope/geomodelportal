@@ -13,6 +13,10 @@ import { VolView, VolviewService, DataType } from './services/volview.service';
 import { SceneObject, PlaneSceneObject, WMSSceneObject, VolSceneObject, addSceneObj } from './scene-object';
 import { FileImportFactory } from './components/fileimport/fileimportfactory';
 import { hasWebGL, detectIE, getWebGLErrorMessage, createErrorBox, createMissingIEMsgBox, makePopup } from './html-helpers';
+import { Zlib } from 'zlibjs/bin/gunzip.min.js';
+import { featureEach } from '@turf/meta';
+import { getCoord } from '@turf/invariant';
+import { Feature, Point } from '@turf/helpers';
 
 
 // Import itowns library
@@ -401,7 +405,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         }
 
         // Start by adding GLTF objects
-        this.add3DObjects();
+        this.addGEOJSONPoints();
     }
 
 
@@ -474,6 +478,92 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             sceneObj.add(spriteObj);
         }
     }
+
+    /**
+     * GZipped GEOJSON (GZSON)
+     * This allows adding of hundreds of thousands of points to scene
+     */
+    private addGEOJSONPoints() {
+        const promiseList = [];
+        const local = this;
+
+        // Load geojson objects into scene
+        for (const group in this.config.groups) {
+            if (this.config.groups.hasOwnProperty(group)) {
+                const parts = this.config.groups[group];
+                for (let i = 0; i < parts.length; i++) {
+                    console.log("parts[i].type=", parts[i].type);
+                    if (parts[i].type === 'GZSON' && parts[i].include) {
+                        promiseList.push( new Promise( function( resolve, _reject ) {
+                            (function(part, grp) {
+                                console.log('loading: ', local.modelDir + '/' + part.model_url);
+                                local.httpService.get('./assets/geomodels/' + local.modelDir + '/' + part.model_url, { responseType: 'arraybuffer' }).subscribe(
+                                    // function called if loading successful
+                                    function (gzsonObject) {
+                                        console.log('loaded: ', local.modelDir + '/' + part.model_url);
+                                        const view = new Uint8Array(gzsonObject);
+                                        const gunzip = new Zlib.Gunzip(view);
+                                        const plain = gunzip.decompress();
+                                        const str = new TextDecoder("utf-8").decode(plain);
+                                        const featureColl = JSON.parse(str);
+                                        const ptList = [];
+                                        const colList = [];
+                                        const col = new ITOWNS.THREE.Color();
+                                        featureEach(featureColl, function(feat: Feature<Point>, idx) {
+                                            const coord = getCoord(feat);
+                                            const col_tup = feat['properties']['colour'];
+                                            col.setRGB(col_tup[0], col_tup[1], col_tup[2]);
+                                            ptList.push(coord[0], coord[1], coord[2]);
+                                            colList.push(col.r, col.g, col.b)
+                                        });
+                                        const geometry = new ITOWNS.THREE.BufferGeometry();
+                                        geometry.setAttribute('position', new ITOWNS.THREE.Float32BufferAttribute(ptList, 3));
+                                        geometry.setAttribute('color', new ITOWNS.THREE.Float32BufferAttribute(colList, 3));
+                                        geometry.computeBoundingSphere();
+                                        const material = new ITOWNS.THREE.PointsMaterial({size: 500, vertexColors: true});
+                                        const points = new ITOWNS.THREE.Points(geometry, material);
+                                        local.scene.add(points);
+
+                                        // Adds it to the scene array to keep track of it
+                                        addSceneObj(local.sceneArr, part, new SceneObject(points), grp);
+                                        resolve(points);
+                                    },
+                                    // function called during loading
+                                    //function () {
+                                        // console.log('GLTF onProgress()', xhr);
+                                        // if ( xhr.lengthComputable ) {
+                                        //    const percentComplete = xhr.loaded / xhr.total * 100;
+                                        //    console.log( xhr.currentTarget.responseURL, Math.round(percentComplete) + '% downloaded' );
+                                        // }
+                                    //},
+                                    // function called when loading fails
+                                    function (error) {
+                                         console.error('GZSON load error!', error);
+                                         // Accept errors
+                                         resolve(null);
+                                    }
+                                );
+                            })(parts[i], group);
+                        }));
+                    }
+                }
+            }
+        }
+
+        Promise.all(promiseList).then(
+            // function called when all objects are loaded
+            function() {
+                console.log('GZSONs are loaded');
+                // Add image files to scene
+                local.add3DObjects();
+            },
+            // function called when one or more objects fail
+            function(error) {
+                console.error( 'Could not load all GLTFs:', error );
+            });
+    }
+
+
 
     /**
      * Loads and draws the GLTF objects
