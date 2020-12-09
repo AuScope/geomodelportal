@@ -322,5 +322,22 @@
                 "icon": "aus-white-icon.png",
                 "colourClass": "dark",
                 "infoUrl": "https://www.csiro.au/en/Research/MRF"
+            },
+            "nci-ga": {
+                "name":"National Computational Infrstructure (NCI) and Geoscience Australia (GA)",
+                "models": [
+                    {
+                        "name": "Stuart Shelf",
+                        "modelUrlPath": "stuartshelf",
+                        "icon": "aus-white-icon.png",
+                        "colourClass": "dark",
+                        "configFile": "StuartShelf.json",
+                        "modelDir": "StuartShelf",
+                        "srcUrl": ""
+                    } 
+                ],
+                "icon": "aus-white-icon.png",
+                "colourClass": "success",
+                "infoUrl": "https://nci.org.au/"
             }
 }

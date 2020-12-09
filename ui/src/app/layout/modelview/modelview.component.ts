@@ -28,7 +28,8 @@ import * as ITOWNS from 'itowns/dist/itowns';
 // GLTFLoader is not fully part of ThreeJS'. It is separate.
 // We must use a GLTFLoader that is in ITOWNS' namespace, to avoid the problem described above.
 // This older library works well because the namespace is an input parameter
-// FIXME: Wean ourselves off this library
+// FIXME: Wean ourselves off this library - it is now producing errors:
+// "THREE.Mesh: .drawMode has been removed. The renderer now always assumes THREE.TrianglesDrawMode. Transform your geometry via BufferGeometryUtils.toTrianglesDrawMode() if necessary."
 import * as GLTFLoader from 'three-gltf2-loader/lib/main';
 
 // If you want to use your own CRS instead of the ITOWNS' default one then you must use ITOWNS' version of proj4
