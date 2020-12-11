@@ -513,9 +513,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         featureEach(featureColl, function(feat: Feature<Point>, idx) {
                                             const coord = getCoord(feat);
                                             const col_tup = feat['properties']['colour'];
-                                            col.setRGB(col_tup[0], col_tup[1], col_tup[2]);
-                                            ptList.push(coord[0], coord[1], coord[2]);
-                                            colList.push(col.r, col.g, col.b)
+                                            if (col_tup !== undefined) {
+                                                col.setRGB(col_tup[0], col_tup[1], col_tup[2]);
+                                                ptList.push(coord[0], coord[1], coord[2]);
+                                                colList.push(col.r, col.g, col.b)
+                                            }
                                         });
                                         const geometry = new ITOWNS.THREE.BufferGeometry();
                                         geometry.setAttribute('position', new ITOWNS.THREE.Float32BufferAttribute(ptList, 3));
