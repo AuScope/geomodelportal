@@ -1,0 +1,332 @@
+{
+    "groups": {
+        "Confidence Attribution": [
+            {
+                "display_name": "NEO CMB Conf Level 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_CMB_CA1.gltf",
+                "popups": {
+                    "NEO_CMB_CA1": {
+                        "confidence_level": "1 - Highest Constraint",
+                        "name": "NEO_CMB_CA1",
+                        "title": "NEO_CMB_CA1"
+                    }
+                },
+                "src_filename": "NEO_CMB_CA1.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO CMB Conf Level 2",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_CMB_CA2.gltf",
+                "popups": {
+                    "NEO_CMB_CA2": {
+                        "confidence_level": "2 - Moderate to high Constraint",
+                        "name": "NEO_CMB_CA2",
+                        "title": "NEO_CMB_CA2"
+                    }
+                },
+                "src_filename": "NEO_CMB_CA2.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO CMB Conf Level 3",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_CMB_CA3.gltf",
+                "popups": {
+                    "NEO_CMB_CA3": {
+                        "confidence_level": "3 - Moderate Constraint",
+                        "name": "NEO_CMB_CA3",
+                        "title": "NEO_CMB_CA3"
+                    }
+                },
+                "src_filename": "NEO_CMB_CA3.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO CMB Conf Level 4",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_CMB_CA4.gltf",
+                "popups": {
+                    "NEO_CMB_CA4": {
+                        "confidence_level": "4 - Intermediate to Poor Constraint",
+                        "name": "NEO_CMB_CA4",
+                        "title": "NEO_CMB_CA4"
+                    }
+                },
+                "src_filename": "NEO_CMB_CA4.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO CMB Conf Level 5",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_CMB_CA5.gltf",
+                "popups": {
+                    "NEO_CMB_CA5": {
+                        "confidence_level": "5 - Poor Constraint",
+                        "name": "NEO_CMB_CA5",
+                        "title": "NEO_CMB_CA5"
+                    }
+                },
+                "src_filename": "NEO_CMB_CA5.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO CMB Conf Level >5",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_CMB_CAGr5.gltf",
+                "popups": {
+                    "NEO_CMB_CAGR5": {
+                        "confidence_level": ">5 - No constraint",
+                        "name": "NEO_CMB_CAGR5",
+                        "title": "NEO_CMB_CAGR5"
+                    }
+                },
+                "src_filename": "NEO_CMB_CAGr5.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB Conf Level 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_CA1.gltf",
+                "popups": {
+                    "NEO_TB_CA1": {
+                        "confidence_level": "1 - Highest Constraint",
+                        "name": "NEO_TB_CA1",
+                        "title": "NEO_TB_CA1"
+                    }
+                },
+                "src_filename": "NEO_TB_CA1.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB Conf Level 2",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_CA2.gltf",
+                "popups": {
+                    "NEO_TB_CA2": {
+                        "confidence_level": "2 - Moderate to high Constraint",
+                        "name": "NEO_TB_CA2",
+                        "title": "NEO_TB_CA2"
+                    }
+                },
+                "src_filename": "NEO_TB_CA2.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB Conf Level 3",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_CA3.gltf",
+                "popups": {
+                    "NEO_TB_CA3": {
+                        "confidence_level": "3 - Moderate Constraint",
+                        "name": "NEO_TB_CA3",
+                        "title": "NEO_TB_CA3"
+                    }
+                },
+                "src_filename": "NEO_TB_CA3.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB Conf Level 4",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_CA4.gltf",
+                "popups": {
+                    "NEO_TB_CA4": {
+                        "confidence_level": "4 - Intermediate to Poor Constraint",
+                        "name": "NEO_TB_CA4",
+                        "title": "NEO_TB_CA4"
+                    }
+                },
+                "src_filename": "NEO_TB_CA4.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB Conf Level 5",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_CA5.gltf",
+                "popups": {
+                    "NEO_TB_CA5": {
+                        "confidence_level": "5 - Poor Constraint",
+                        "name": "NEO_TB_CA5",
+                        "title": "NEO_TB_CA5"
+                    }
+                },
+                "src_filename": "NEO_TB_CA5.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO TB Conf Level >5",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_TB_CAGr5.gltf",
+                "popups": {
+                    "NEO_TB_CAGR5": {
+                        "confidence_level": ">5 - No constraint",
+                        "name": "NEO_TB_CAGR5",
+                        "title": "NEO_TB_CAGR5"
+                    }
+                },
+                "src_filename": "NEO_TB_CAGr5.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ],
+        "DTM": [
+            {
+                "display_name": "GAB CMB DTM 1000m",
+                "displayed": true,
+                "include": true,
+                "model_url": "GAB_CMB_DTM_1000m.gltf",
+                "popups": {
+                    "CMB_DTM_1000M": {
+                        "name": "CMB_DTM_1000M",
+                        "title": "CMB_DTM_1000M"
+                    }
+                },
+                "src_filename": "GAB_CMB_DTM_1000m.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "GAB Surat DTM 1000m",
+                "displayed": true,
+                "include": true,
+                "model_url": "GAB_Surat_DTM_1000m.gltf",
+                "popups": {
+                    "SURAT_DTM_1000M": {
+                        "name": "SURAT_DTM_1000M",
+                        "title": "SURAT_DTM_1000M"
+                    }
+                },
+                "src_filename": "GAB_Surat_DTM_1000m.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NEO DTM 1000m Palaeozoic",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_DTM_1000m_Palaeozoic.gltf",
+                "popups": {
+                    "NEO_DTM_1000M_PALAEOZOIC": {
+                        "name": "NEO_DTM_1000M_PALAEOZOIC",
+                        "title": "NEO_DTM_1000M_PALAEOZOIC"
+                    }
+                },
+                "src_filename": "NEO_DTM_1000m_Palaeozoic.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ],
+        "New England Orogen Faults": [
+            {
+                "display_name": "Demon Fault",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_Flt_Demon.gltf",
+                "popups": {
+                    "NEO_FLT_DEMON": {
+                        "name": "NEO_FLT_DEMON",
+                        "title": "NEO_FLT_DEMON"
+                    }
+                },
+                "src_filename": "NEO_Flt_Demon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Drake Edge Fault",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_Flt_Drakeedge.gltf",
+                "popups": {
+                    "NEO_FLT_DRAKEEDGE": {
+                        "name": "NEO_FLT_DRAKEEDGE",
+                        "title": "NEO_FLT_DRAKEEDGE"
+                    }
+                },
+                "src_filename": "NEO_Flt_Drakeedge.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Hunter Mooki Fault",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_Flt_Hunter_Mooki.gltf",
+                "popups": {
+                    "NEO_FLT_HUNTER_MOOKI": {
+                        "name": "NEO_FLT_HUNTER_MOOKI",
+                        "title": "NEO_FLT_HUNTER_MOOKI"
+                    }
+                },
+                "src_filename": "NEO_Flt_Hunter_Mooki.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Peel Manning Fault",
+                "displayed": true,
+                "include": true,
+                "model_url": "NEO_Flt_Peel_Manning.gltf",
+                "popups": {
+                    "NEO_FLT_PEEL_MANNING": {
+                        "name": "NEO_FLT_PEEL_MANNING",
+                        "title": "NEO_FLT_PEEL_MANNING"
+                    }
+                },
+                "src_filename": "NEO_Flt_Peel_Manning.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ],
+        "WMS Layers": [
+            {
+                "display_name": "GA Lithostratigraphy",
+                "displayed": true,
+                "include": true,
+                "model_url": "http://services.ga.gov.au/gis/services/GA_Surface_Geology/MapServer/WMSServer",
+                "name": "AUS_GA_2500k_GUPoly_Lithostratigraphy",
+                "type": "WMSLayer",
+                "version": "1.3.0"
+            }
+        ]
+    },
+    "properties": {
+        "crs": "EPSG:28356",
+        "extent": [
+            215459.5078125,
+            561284.15625,
+            6369421.046875,
+            6886778.65625
+        ],
+        "init_cam_dist": 900000.0,
+        "name": "South New England Deep Crustal",
+        "proj4_defn": "+proj=utm +zone=56 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    },
+    "type": "GeologicalModel",
+    "version": 1.0
+}
