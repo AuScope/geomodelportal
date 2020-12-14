@@ -15,8 +15,8 @@ import { FileImportFactory } from './components/fileimport/fileimportfactory';
 import { hasWebGL, detectIE, getWebGLErrorMessage, createErrorBox, createMissingIEMsgBox, makePopup } from './html-helpers';
 import { Zlib } from 'zlibjs/bin/gunzip.min.js';
 import { featureEach } from '@turf/meta';
-import { getCoord } from '@turf/invariant';
-import { Feature, Point } from '@turf/helpers';
+import { getCoord, getCoords, getType } from '@turf/invariant';
+import { Feature, Point, LineString } from '@turf/helpers';
 
 
 // Import itowns library
@@ -405,8 +405,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             num += 1;
         }
 
-        // Start by adding GLTF objects
-        this.addGEOJSONPoints();
+        // Start by adding GEOJSON objects
+        this.addGEOJSONPointsOrLines();
     }
 
 
@@ -482,9 +482,13 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
     /**
      * GZipped GEOJSON (GZSON)
-     * This allows adding of hundreds of thousands of points to scene
+     * This allows adding of hundreds of thousands of points or lines to scene.
+     * Displaying such large numbers of items is not feasible Using GLTF rectangles (pairs of triangles)
+     * And, unfortunately GLTF 2.0 does not fully specify points and lines
+     * (https://github.com/KhronosGroup/glTF/issues/1277)
+     * So I have to send the data in compressed format and draw my own lines and points
      */
-    private addGEOJSONPoints() {
+    private addGEOJSONPointsOrLines() {
         const promiseList = [];
         const local = this;
 
@@ -507,29 +511,59 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         const plain = gunzip.decompress();
                                         const str = new TextDecoder("utf-8").decode(plain);
                                         const featureColl = JSON.parse(str);
-                                        const ptList = [];
-                                        const colList = [];
-                                        const col = new ITOWNS.THREE.Color();
-                                        featureEach(featureColl, function(feat: Feature<Point>, idx) {
-                                            const coord = getCoord(feat);
-                                            const col_tup = feat['properties']['colour'];
-                                            if (col_tup !== undefined) {
-                                                col.setRGB(col_tup[0], col_tup[1], col_tup[2]);
-                                                ptList.push(coord[0], coord[1], coord[2]);
-                                                colList.push(col.r, col.g, col.b)
-                                            }
-                                        });
                                         const geometry = new ITOWNS.THREE.BufferGeometry();
-                                        geometry.setAttribute('position', new ITOWNS.THREE.Float32BufferAttribute(ptList, 3));
-                                        geometry.setAttribute('color', new ITOWNS.THREE.Float32BufferAttribute(colList, 3));
-                                        geometry.computeBoundingSphere();
-                                        const material = new ITOWNS.THREE.PointsMaterial({size: 500, vertexColors: true});
-                                        const points = new ITOWNS.THREE.Points(geometry, material);
-                                        local.scene.add(points);
+                                        let material = null;
+                                        let items = null;
+
+                                        // Is is a collection of points or lines?
+                                        if (featureColl['features'].length > 0) {
+                                            // Points
+                                            if (getType(featureColl['features'][0]) === 'Point') {
+                                                const ptList = [];
+                                                const colList = [];
+                                                const col = new ITOWNS.THREE.Color();
+                                                featureEach(featureColl, function(feat: Feature<Point>, idx) {
+                                                    const coord = getCoord(feat);
+                                                    const col_tup = feat['properties']['colour'];
+                                                    if (col_tup !== undefined) {
+                                                        col.setRGB(col_tup[0], col_tup[1], col_tup[2]);
+                                                        ptList.push(coord[0], coord[1], coord[2]);
+                                                        colList.push(col.r, col.g, col.b);
+                                                    }
+                                                });
+                                                geometry.setAttribute('position', new ITOWNS.THREE.Float32BufferAttribute(ptList, 3));
+                                                geometry.setAttribute('color', new ITOWNS.THREE.Float32BufferAttribute(colList, 3));
+                                                geometry.computeBoundingSphere();
+                                                material = new ITOWNS.THREE.PointsMaterial({size: 500, vertexColors: true});
+                                                items = new ITOWNS.THREE.Points(geometry, material);
+                                            // LineString
+                                            } else {
+                                                const lnList = [];
+                                                const colList = [];
+                                                const indices = [];
+                                                const col = new ITOWNS.THREE.Color();
+                                                featureEach(featureColl, function(feat: Feature<LineString>, idx) {
+                                                    const coords = getCoords(feat);
+                                                    const col_tup = feat['properties']['colour'];
+                                                    if (col_tup !== undefined) {
+                                                        col.setRGB(col_tup[0], col_tup[1], col_tup[2]);
+                                                        lnList.push(coords[0][0], coords[0][1], coords[0][2], coords[1][0], coords[1][1], coords[1][2]);
+                                                        colList.push(col.r, col.g, col.b);
+                                                        indices.push(2*idx, 2*idx+1);
+                                                    }
+                                                });
+                                                geometry.setIndex(indices);
+                                                geometry.setAttribute('position', new ITOWNS.THREE.Float32BufferAttribute(lnList, 3));
+                                                geometry.setAttribute('color', new ITOWNS.THREE.Float32BufferAttribute(colList, 3));
+                                                material = new ITOWNS.THREE.LineBasicMaterial({vertexColors: true, morphTargets: true});
+                                                items = new ITOWNS.THREE.LineSegments(geometry, material);
+                                            }
+                                        }
+                                        local.scene.add(items);
 
                                         // Adds it to the scene array to keep track of it
-                                        addSceneObj(local.sceneArr, part, new SceneObject(points), grp);
-                                        resolve(points);
+                                        addSceneObj(local.sceneArr, part, new SceneObject(items), grp);
+                                        resolve(items);
                                     },
                                     // function called during loading
                                     //function () {
