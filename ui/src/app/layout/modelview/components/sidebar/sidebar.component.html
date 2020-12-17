@@ -11,7 +11,7 @@
         <i class="fa fa-arrows-alt" aria-hidden="true"></i>&nbsp;Compass Rose</button>
     </div>
     <h6 class="text-muted">&nbsp;{{sourceOrgName}}</h6>
-    <h2 class="text-muted">&nbsp;{{title}}</h2>
+    <h3 class="text-muted">&nbsp;{{title}}</h3>
     <h6 class="text-muted all-tick">&nbsp;<input (click)="allCheckBoxClick(!getAllTickBoxChecked())" [checked] = "getAllTickBoxChecked()" class="vis-toggle" type="checkbox"/>&nbsp;All</h6>
     <div *ngIf="groupList.length > 0" class="list-group">
         <div *ngFor="let groupName of groupList" class="nested-menu">
