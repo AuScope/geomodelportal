@@ -12,6 +12,8 @@
                         "title": "NEO_DTM_1000M_PALAEOZOIC"
                     }
                 },
+                "src_filename": "NEO_DTM_1000m_Palaeozoic.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],
@@ -27,6 +29,8 @@
                         "title": "NEO_TB_CA1"
                     }
                 },
+                "src_filename": "NEO_TB_CA1.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -40,6 +44,8 @@
                         "title": "NEO_TB_CA2"
                     }
                 },
+                "src_filename": "NEO_TB_CA2.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -53,6 +59,8 @@
                         "title": "NEO_TB_CA3"
                     }
                 },
+                "src_filename": "NEO_TB_CA3.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -66,6 +74,8 @@
                         "title": "NEO_TB_CA4"
                     }
                 },
+                "src_filename": "NEO_TB_CA4.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -79,6 +89,8 @@
                         "title": "NEO_TB_CA5"
                     }
                 },
+                "src_filename": "NEO_TB_CA5.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -92,6 +104,8 @@
                         "title": "NEO_TB_CAGR5"
                     }
                 },
+                "src_filename": "NEO_TB_CAGr5.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -105,6 +119,8 @@
                         "title": "NEO_TB_CARBONIFEROUS_Z56"
                     }
                 },
+                "src_filename": "NEO_TB_Carboniferous_z56.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -118,6 +134,8 @@
                         "title": "NEO_TB_CARBONIFEROUS_DEVONIAN_Z56"
                     }
                 },
+                "src_filename": "NEO_TB_Carboniferous_Devonian_z56.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -131,6 +149,8 @@
                         "title": "NEO_TB_DEVONIAN_Z56"
                     }
                 },
+                "src_filename": "NEO_TB_Devonian_z56.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -240,6 +260,8 @@
                         "title": "NEO_TBFN_FLT_SEAMGEO_UKN18"
                     }
                 },
+                "src_filename": "NEO_TB_Fault_Package_Far_North.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -257,6 +279,8 @@
                         "title": "NEO_FLT_SEAMGEO_PEEL_MANNING"
                     }
                 },
+                "src_filename": "NEO_TB_Fault_Package_Major.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -410,6 +434,8 @@
                         "title": "NEO_TBN_FLT_SEAMGEO_WAVERLEY"
                     }
                 },
+                "src_filename": "NEO_TB_Fault_Package_North.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -571,6 +597,8 @@
                         "title": "NEO_TBSE_FLT_SEAMGEO_WILLIAMSRIV"
                     }
                 },
+                "src_filename": "NEO_TB_Fault_Package_Southeast.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -584,6 +612,8 @@
                         "title": "NEO_TB_PERMIAN_Z56"
                     }
                 },
+                "src_filename": "NEO_TB_Permian_z56.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -597,6 +627,8 @@
                         "title": "NEO_TB_PERMIAN_INTRUSIVES"
                     }
                 },
+                "src_filename": "NEO_TB_Permian_Intrusives.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],
