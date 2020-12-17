@@ -549,6 +549,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                                         col.setRGB(col_tup[0], col_tup[1], col_tup[2]);
                                                         lnList.push(coords[0][0], coords[0][1], coords[0][2], coords[1][0], coords[1][1], coords[1][2]);
                                                         colList.push(col.r, col.g, col.b);
+                                                        colList.push(col.r, col.g, col.b);
                                                         indices.push(2*idx, 2*idx+1);
                                                     }
                                                 });
