@@ -64,24 +64,6 @@
                 "name": "South Australia (Energy & Mining)",
                 "models": [
                     {
-                        "name":"Cariewerloo Basin",
-                        "modelUrlPath":"cariewerloo",
-                        "icon": "sa-white-icon.png",
-                        "colourClass": "warning",
-                        "configFile":"Cariewerloo.json",
-                        "modelDir":"Cariewerloo",
-                        "srcUrl":"https://energymining.sa.gov.au/minerals/geoscience/geoscientific_data/3d_geological_models/cariewerloo_basin"
-                    },
-                    {
-                        "name": "Emmie Bluff",
-                        "modelUrlPath": "emmiebluff",
-                        "icon": "sa-white-icon.png",
-                        "colourClass": "warning",
-                        "configFile": "EmmieBluff.json",
-                        "modelDir": "EmmieBluff",
-                        "srcUrl" : "https://energymining.sa.gov.au/minerals/geoscience/geoscientific_data/3d_geological_models/emmie_bluff_regional"
-                    },
-                    {
                         "name": "Burra Mine",
                         "modelUrlPath": "burramine",
                         "icon": "sa-white-icon.png",
@@ -118,7 +100,7 @@
                         "srcUrl" : "https://energymining.sa.gov.au/minerals/geoscience/geoscientific_data/3d_geological_models/northern_gawler_province"
                     },
                     {
-                        "name": "Curnamona Basins",
+                        "name": "Curnamona Sedimentary Basins",
                         "modelUrlPath": "curnamonased",
                         "icon": "sa-white-icon.png",
                         "colourClass": "warning",
@@ -170,7 +152,7 @@
                         "srcUrl" : "https://geoscience.data.qld.gov.au/dataset/ds000006"
                     },
                     {
-                        "name": "MtDore",
+                        "name": "Mt Dore",
                         "modelUrlPath": "mtdore",
                         "icon": "qld-white-icon.png",
                         "colourClass": "danger",
@@ -187,7 +169,7 @@
                 "name": "N.S.W. (Resources & Geoscience)",
                 "models": [
                     {
-                        "name": "Western Tamworth",
+                        "name": "Western Tamworth Belt",
                         "modelUrlPath": "tamworth",
                         "icon": "nsw-white-icon.png",
                         "colourClass": "info",
@@ -205,7 +187,7 @@
                         "srcUrl" : "https://www.resourcesandgeoscience.nsw.gov.au/miners-and-explorers/geoscience-information/products-and-data/3d-mapping-data"
                     },
                     {
-                        "name": "Curnamona Province",
+                        "name": "Curnamona Province and Delamerian Orogen",
                         "modelUrlPath": "curnamona",
                         "icon": "nsw-white-icon.png",
                         "colourClass": "info",
@@ -214,7 +196,7 @@
                         "srcUrl" : "https://www.resourcesandgeoscience.nsw.gov.au/miners-and-explorers/geoscience-information/products-and-data/3d-mapping-data"
                     },
                     {
-                        "name": "Eastern Lachlan",
+                        "name": "Eastern Lachlan Orogen",
                         "modelUrlPath": "eastlachlan",
                         "icon": "nsw-white-icon.png",
                         "colourClass": "info",
@@ -223,7 +205,7 @@
                         "srcUrl" : "https://www.resourcesandgeoscience.nsw.gov.au/miners-and-explorers/geoscience-information/products-and-data/3d-mapping-data"
                     },
                     {
-                        "name": "Western Lachlan",
+                        "name": "Western Lachlan and Southern Thomson Orogens",
                         "modelUrlPath": "westlachlan",
                         "icon": "nsw-white-icon.png",
                         "colourClass": "info",
@@ -241,7 +223,7 @@
                         "srcUrl" : "https://www.resourcesandgeoscience.nsw.gov.au/miners-and-explorers/geoscience-information/products-and-data/3d-mapping-data"
                     },
                     {
-                        "name": "New England",
+                        "name": "New England Orogen",
                         "modelUrlPath": "newengland",
                         "icon": "nsw-white-icon.png",
                         "colourClass": "info",
@@ -334,7 +316,7 @@
                         "configFile": "StuartShelf.json",
                         "modelDir": "StuartShelf",
                         "srcUrl": ""
-                    } 
+                    }
                 ],
                 "icon": "aus-white-icon.png",
                 "colourClass": "success",

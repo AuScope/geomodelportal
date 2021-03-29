@@ -1,0 +1,63 @@
+{
+    "groups": {
+        "Depth To Basement Model": [
+            {
+                "display_name": "Depth To Basement",
+                "displayed": true,
+                "include": true,
+                "model_url": "Depth_To_Basement.gltf",
+                "popups": {
+                    "DEPTH_TO_BASEMENT": {
+                        "name": "DEPTH_TO_BASEMENT",
+                        "title": "DEPTH_TO_BASEMENT"
+                    }
+                },
+                "src_filename": "Depth_To_Basement.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ],
+        "Faults": [
+            {
+                "display_name": "3D Fault Architecture",
+                "displayed": true,
+                "include": true,
+                "model_url": "Eastern_Lachlan_Orogen_3D_Fault_Architecture.gltf",
+                "popups": {
+                    "EASTERN_LACHLAN_OROGEN_3D_FAULT_ARCHITECTURE": {
+                        "name": "EASTERN_LACHLAN_OROGEN_3D_FAULT_ARCHITECTURE",
+                        "title": "EASTERN_LACHLAN_OROGEN_3D_FAULT_ARCHITECTURE"
+                    }
+                },
+                "src_filename": "Eastern_Lachlan_Orogen_3D_Fault_Architecture.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ],
+        "WMS Layers": [
+            {
+                "display_name": "GA Lithostratigraphy",
+                "displayed": true,
+                "include": true,
+                "model_url": "http://services.ga.gov.au/gis/services/GA_Surface_Geology/MapServer/WMSServer",
+                "name": "AUS_GA_2500k_GUPoly_Lithostratigraphy",
+                "type": "WMSLayer",
+                "version": "1.3.0"
+            }
+        ]
+    },
+    "properties": {
+        "crs": "EPSG:28355",
+        "extent": [
+            300000.0,
+            984000.0,
+            5843999.999267578,
+            6840000.0
+        ],
+        "init_cam_dist": 900000.0,
+        "name": "East Lachlan Orogen",
+        "proj4_defn": "+proj=utm +zone=55 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    },
+    "type": "GeologicalModel",
+    "version": 1.0
+}

@@ -1,0 +1,1722 @@
+{
+    "groups": {
+        "Not Grouped": [
+            {
+                "display_name": "B-CAMBRIAN",
+                "displayed": true,
+                "include": true,
+                "model_url": "B-CAMBRIAN.gltf",
+                "popups": {
+                    "B-CAMBRIAN": {
+                        "name": "B-CAMBRIAN",
+                        "title": "B-CAMBRIAN"
+                    }
+                },
+                "src_filename": "B-CAMBRIAN.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Blinman Diapir ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "Blinman_Diapir_ribbon.gltf",
+                "popups": {
+                    "BLINMAN_DIAPIR_RIBBON": {
+                        "name": "BLINMAN_DIAPIR_RIBBON",
+                        "title": "BLINMAN_DIAPIR_RIBBON"
+                    }
+                },
+                "src_filename": "Blinman_Diapir_ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Brachina Fault",
+                "displayed": true,
+                "include": true,
+                "model_url": "Brachina_Fault.gltf",
+                "popups": {
+                    "BRACHINA_FAULT": {
+                        "name": "BRACHINA_FAULT",
+                        "title": "BRACHINA_FAULT"
+                    }
+                },
+                "src_filename": "Brachina_Fault.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "C-WILPENA",
+                "displayed": true,
+                "include": true,
+                "model_url": "C-WILPENA.gltf",
+                "popups": {
+                    "C-WILPENA": {
+                        "name": "C-WILPENA",
+                        "title": "C-WILPENA"
+                    }
+                },
+                "src_filename": "C-WILPENA.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "CW Wilpena Ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "CW_Wilpena_Ribbon.gltf",
+                "popups": {
+                    "CW_WILPENA_RIBBON": {
+                        "name": "CW_WILPENA_RIBBON",
+                        "title": "CW_WILPENA_RIBBON"
+                    }
+                },
+                "src_filename": "CW_Wilpena_Ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "D-UMBERATANA",
+                "displayed": true,
+                "include": true,
+                "model_url": "D-UMBERATANA.gltf",
+                "popups": {
+                    "D-UMBERATANA": {
+                        "name": "D-UMBERATANA",
+                        "title": "D-UMBERATANA"
+                    }
+                },
+                "src_filename": "D-UMBERATANA.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "E-BURRA",
+                "displayed": true,
+                "include": true,
+                "model_url": "E-BURRA.gltf",
+                "popups": {
+                    "E-BURRA": {
+                        "name": "E-BURRA",
+                        "title": "E-BURRA"
+                    }
+                },
+                "src_filename": "E-BURRA.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "EFlinders Burra",
+                "displayed": true,
+                "include": true,
+                "model_url": "EFlinders_Burra.gltf",
+                "popups": {
+                    "EFLINDERS_BURRA": {
+                        "name": "EFLINDERS_BURRA",
+                        "title": "EFLINDERS_BURRA"
+                    }
+                },
+                "src_filename": "EFlinders_Burra.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "EFlinders Umberatana",
+                "displayed": true,
+                "include": true,
+                "model_url": "EFlinders_Umberatana.gltf",
+                "popups": {
+                    "EFLINDERS_UMBERATANA": {
+                        "name": "EFLINDERS_UMBERATANA",
+                        "title": "EFLINDERS_UMBERATANA"
+                    }
+                },
+                "src_filename": "EFlinders_Umberatana.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Enamora Diapir RIBBON",
+                "displayed": true,
+                "include": true,
+                "model_url": "Enamora_Diapir_RIBBON.gltf",
+                "popups": {
+                    "ENAMORA_DIAPIR_RIBBON": {
+                        "name": "ENAMORA_DIAPIR_RIBBON",
+                        "title": "ENAMORA_DIAPIR_RIBBON"
+                    }
+                },
+                "src_filename": "Enamora_Diapir_RIBBON.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "F-TORRENSIAN",
+                "displayed": true,
+                "include": true,
+                "model_url": "F-TORRENSIAN.gltf",
+                "popups": {
+                    "F-TORRENSIAN": {
+                        "name": "F-TORRENSIAN",
+                        "title": "F-TORRENSIAN"
+                    }
+                },
+                "src_filename": "F-TORRENSIAN.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Flinders NF CENTRAL interp",
+                "displayed": true,
+                "include": true,
+                "model_url": "Flinders_NF_CENTRAL_interp.gltf",
+                "popups": {
+                    "FLINDERS_NF_CENTRAL_INTERP": {
+                        "name": "FLINDERS_NF_CENTRAL_INTERP",
+                        "title": "FLINDERS_NF_CENTRAL_INTERP"
+                    }
+                },
+                "src_filename": "Flinders_NF_CENTRAL_interp.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "G-WILLOURAN",
+                "displayed": true,
+                "include": true,
+                "model_url": "G-WILLOURAN.gltf",
+                "popups": {
+                    "G-WILLOURAN": {
+                        "name": "G-WILLOURAN",
+                        "title": "G-WILLOURAN"
+                    }
+                },
+                "src_filename": "G-WILLOURAN.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Graben Central",
+                "displayed": true,
+                "include": true,
+                "model_url": "Graben_Central.gltf",
+                "popups": {
+                    "GRABEN_CENTRAL": {
+                        "name": "GRABEN_CENTRAL",
+                        "title": "GRABEN_CENTRAL"
+                    }
+                },
+                "src_filename": "Graben_Central.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Graben Central E",
+                "displayed": true,
+                "include": true,
+                "model_url": "Graben_Central_E.gltf",
+                "popups": {
+                    "GRABEN_CENTRAL_E": {
+                        "name": "GRABEN_CENTRAL_E",
+                        "title": "GRABEN_CENTRAL_E"
+                    }
+                },
+                "src_filename": "Graben_Central_E.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Graben Wilpena Ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "Graben_Wilpena_Ribbon.gltf",
+                "popups": {
+                    "GRABEN_WILPENA_RIBBON": {
+                        "name": "GRABEN_WILPENA_RIBBON",
+                        "title": "GRABEN_WILPENA_RIBBON"
+                    }
+                },
+                "src_filename": "Graben_Wilpena_Ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Graben ediacara",
+                "displayed": true,
+                "include": true,
+                "model_url": "Graben_ediacara.gltf",
+                "popups": {
+                    "GRABEN_EDIACARA": {
+                        "name": "GRABEN_EDIACARA",
+                        "title": "GRABEN_EDIACARA"
+                    }
+                },
+                "src_filename": "Graben_ediacara.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Graben ediacara 215",
+                "displayed": true,
+                "include": true,
+                "model_url": "Graben_ediacara_215.gltf",
+                "popups": {
+                    "GRABEN_EDIACARA_215": {
+                        "name": "GRABEN_EDIACARA_215",
+                        "title": "GRABEN_EDIACARA_215"
+                    }
+                },
+                "src_filename": "Graben_ediacara_215.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "H-BASEMENT",
+                "displayed": true,
+                "include": true,
+                "model_url": "H-BASEMENT.gltf",
+                "popups": {
+                    "H-BASEMENT": {
+                        "name": "H-BASEMENT",
+                        "title": "H-BASEMENT"
+                    }
+                },
+                "src_filename": "H-BASEMENT.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Lake Torrens",
+                "displayed": true,
+                "include": true,
+                "model_url": "Lake_Torrens.gltf",
+                "popups": {
+                    "LAKE_TORRENS": {
+                        "name": "LAKE_TORRENS",
+                        "title": "LAKE_TORRENS"
+                    }
+                },
+                "src_filename": "Lake_Torrens.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NE1 Umberatana",
+                "displayed": true,
+                "include": true,
+                "model_url": "NE1_Umberatana.gltf",
+                "popups": {
+                    "NE1_UMBERATANA": {
+                        "name": "NE1_UMBERATANA",
+                        "title": "NE1_UMBERATANA"
+                    }
+                },
+                "src_filename": "NE1_Umberatana.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NF Bunker",
+                "displayed": true,
+                "include": true,
+                "model_url": "NF_Bunker.gltf",
+                "popups": {
+                    "NF_BUNKER": {
+                        "name": "NF_BUNKER",
+                        "title": "NF_BUNKER"
+                    }
+                },
+                "src_filename": "NF_Bunker.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NF Curnamona 213",
+                "displayed": true,
+                "include": true,
+                "model_url": "NF_Curnamona_213.gltf",
+                "popups": {
+                    "NF_CURNAMONA_213": {
+                        "name": "NF_CURNAMONA_213",
+                        "title": "NF_CURNAMONA_213"
+                    }
+                },
+                "src_filename": "NF_Curnamona_213.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NF DIAPIRS",
+                "displayed": true,
+                "include": true,
+                "model_url": "NF_DIAPIRS.gltf",
+                "popups": {
+                    "NF_DIAPIRS": {
+                        "name": "NF_DIAPIRS",
+                        "title": "NF_DIAPIRS"
+                    }
+                },
+                "src_filename": "NF_DIAPIRS.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NF THZ E",
+                "displayed": true,
+                "include": true,
+                "model_url": "NF_THZ_E.gltf",
+                "popups": {
+                    "NF_THZ_E": {
+                        "name": "NF_THZ_E",
+                        "title": "NF_THZ_E"
+                    }
+                },
+                "src_filename": "NF_THZ_E.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "NW3 Wilpena ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "NW3_Wilpena_ribbon.gltf",
+                "popups": {
+                    "NW3_WILPENA_RIBBON": {
+                        "name": "NW3_WILPENA_RIBBON",
+                        "title": "NW3_WILPENA_RIBBON"
+                    }
+                },
+                "src_filename": "NW3_Wilpena_ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Oraparina DIAPIR RIBBON",
+                "displayed": true,
+                "include": true,
+                "model_url": "Oraparina_DIAPIR_RIBBON.gltf",
+                "popups": {
+                    "ORAPARINA_DIAPIR_RIBBON": {
+                        "name": "ORAPARINA_DIAPIR_RIBBON",
+                        "title": "ORAPARINA_DIAPIR_RIBBON"
+                    }
+                },
+                "src_filename": "Oraparina_DIAPIR_RIBBON.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Oraparina Diapir Bunker",
+                "displayed": true,
+                "include": true,
+                "model_url": "Oraparina_Diapir_Bunker.gltf",
+                "popups": {
+                    "ORAPARINA_DIAPIR_BUNKER": {
+                        "name": "ORAPARINA_DIAPIR_BUNKER",
+                        "title": "ORAPARINA_DIAPIR_BUNKER"
+                    }
+                },
+                "src_filename": "Oraparina_Diapir_Bunker.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "PARACHILNA MAP 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "PARACHILNA_map_PARACHILNA_map_prop@@.PNG",
+                "popups": {
+                    "PARACHILNA_map_PARACHILNA_map_prop@@": {
+                        "name": "PARACHILNA_MAP_PROP",
+                        "title": "PARACHILNA_MAP_PROP"
+                    }
+                },
+                "position": [
+                    213980.578125,
+                    6566185.0,
+                    -1000.0
+                ],
+                "src_filename": "PARACHILNA_map_PARACHILNA_map_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "PARACHILNA SCAN A 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "PARACHILNA_Scan_A_PARACHILNA_Scan_A_prop@@.PNG",
+                "popups": {
+                    "PARACHILNA_Scan_A_PARACHILNA_Scan_A_prop@@": {
+                        "name": "PARACHILNA_SCAN_A_PROP",
+                        "title": "PARACHILNA_SCAN_A_PROP"
+                    }
+                },
+                "position": [
+                    226756.71875,
+                    6532393.0,
+                    -2500.0
+                ],
+                "src_filename": "PARACHILNA_Scan_A_PARACHILNA_Scan_A_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "RFT Flinders",
+                "displayed": true,
+                "include": true,
+                "model_url": "RFT_Flinders.gltf",
+                "popups": {
+                    "RFT_FLINDERS": {
+                        "name": "RFT_FLINDERS",
+                        "title": "RFT_FLINDERS"
+                    }
+                },
+                "src_filename": "RFT_Flinders.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Ribbon Bunker NF N",
+                "displayed": true,
+                "include": true,
+                "model_url": "Ribbon_Bunker_NF_N.gltf",
+                "popups": {
+                    "RIBBON_BUNKER_NF_N": {
+                        "name": "RIBBON_BUNKER_NF_N",
+                        "title": "RIBBON_BUNKER_NF_N"
+                    }
+                },
+                "src_filename": "Ribbon_Bunker_NF_N.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Ribbon Bunker NF S",
+                "displayed": true,
+                "include": true,
+                "model_url": "Ribbon_Bunker_NF_S.gltf",
+                "popups": {
+                    "RIBBON_BUNKER_NF_S": {
+                        "name": "RIBBON_BUNKER_NF_S",
+                        "title": "RIBBON_BUNKER_NF_S"
+                    }
+                },
+                "src_filename": "Ribbon_Bunker_NF_S.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Ribbon Top Umberatana SW",
+                "displayed": true,
+                "include": true,
+                "model_url": "Ribbon_Top_Umberatana_SW.gltf",
+                "popups": {
+                    "RIBBON_TOP_UMBERATANA_SW": {
+                        "name": "RIBBON_TOP_UMBERATANA_SW",
+                        "title": "RIBBON_TOP_UMBERATANA_SW"
+                    }
+                },
+                "src_filename": "Ribbon_Top_Umberatana_SW.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Ribbon Wirrealpa Fault N",
+                "displayed": true,
+                "include": true,
+                "model_url": "Ribbon_Wirrealpa_Fault_N.gltf",
+                "popups": {
+                    "RIBBON_WIRREALPA_FAULT_N": {
+                        "name": "RIBBON_WIRREALPA_FAULT_N",
+                        "title": "RIBBON_WIRREALPA_FAULT_N"
+                    }
+                },
+                "src_filename": "Ribbon_Wirrealpa_Fault_N.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Ribbon Wirrealpa South",
+                "displayed": true,
+                "include": true,
+                "model_url": "Ribbon_Wirrealpa_South.gltf",
+                "popups": {
+                    "RIBBON_WIRREALPA_SOUTH": {
+                        "name": "RIBBON_WIRREALPA_SOUTH",
+                        "title": "RIBBON_WIRREALPA_SOUTH"
+                    }
+                },
+                "src_filename": "Ribbon_Wirrealpa_South.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Ribbon depth Wilpena W 2",
+                "displayed": true,
+                "include": true,
+                "model_url": "Ribbon_depth_Wilpena_W_2.gltf",
+                "popups": {
+                    "RIBBON_DEPTH_WILPENA_W_2": {
+                        "name": "RIBBON_DEPTH_WILPENA_W_2",
+                        "title": "RIBBON_DEPTH_WILPENA_W_2"
+                    }
+                },
+                "src_filename": "Ribbon_depth_Wilpena_W_2.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "S0 PARACHILNA",
+                "displayed": true,
+                "include": true,
+                "model_url": "S0_parachilna.gltf",
+                "popups": {
+                    "S0_PARACHILNA-0000000000": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 15.0
+                    },
+                    "S0_PARACHILNA-0000000001": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 65.0
+                    },
+                    "S0_PARACHILNA-0000000002": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 30.0
+                    },
+                    "S0_PARACHILNA-0000000003": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    },
+                    "S0_PARACHILNA-0000000004": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 70.0
+                    },
+                    "S0_PARACHILNA-0000000005": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 28.0
+                    },
+                    "S0_PARACHILNA-0000000006": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 19.0
+                    },
+                    "S0_PARACHILNA-0000000007": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 18.0
+                    },
+                    "S0_PARACHILNA-0000000008": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    },
+                    "S0_PARACHILNA-0000000009": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 30.0
+                    },
+                    "S0_PARACHILNA-0000000010": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 15.0
+                    },
+                    "S0_PARACHILNA-0000000011": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000012": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 30.0
+                    },
+                    "S0_PARACHILNA-0000000013": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 25.0
+                    },
+                    "S0_PARACHILNA-0000000014": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 25.0
+                    },
+                    "S0_PARACHILNA-0000000015": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000016": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 18.0
+                    },
+                    "S0_PARACHILNA-0000000017": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 45.0
+                    },
+                    "S0_PARACHILNA-0000000018": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 50.0
+                    },
+                    "S0_PARACHILNA-0000000019": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 26.0
+                    },
+                    "S0_PARACHILNA-0000000020": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 35.0
+                    },
+                    "S0_PARACHILNA-0000000021": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 5.0
+                    },
+                    "S0_PARACHILNA-0000000022": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000023": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 75.0
+                    },
+                    "S0_PARACHILNA-0000000024": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 39.0
+                    },
+                    "S0_PARACHILNA-0000000025": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 22.0
+                    },
+                    "S0_PARACHILNA-0000000026": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 45.0
+                    },
+                    "S0_PARACHILNA-0000000027": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 45.0
+                    },
+                    "S0_PARACHILNA-0000000028": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    },
+                    "S0_PARACHILNA-0000000029": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 45.0
+                    },
+                    "S0_PARACHILNA-0000000030": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 60.0
+                    },
+                    "S0_PARACHILNA-0000000031": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 25.0
+                    },
+                    "S0_PARACHILNA-0000000032": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 30.0
+                    },
+                    "S0_PARACHILNA-0000000033": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 55.0
+                    },
+                    "S0_PARACHILNA-0000000034": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 50.0
+                    },
+                    "S0_PARACHILNA-0000000035": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 25.0
+                    },
+                    "S0_PARACHILNA-0000000036": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    },
+                    "S0_PARACHILNA-0000000037": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 12.0
+                    },
+                    "S0_PARACHILNA-0000000038": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 25.0
+                    },
+                    "S0_PARACHILNA-0000000039": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 35.0
+                    },
+                    "S0_PARACHILNA-0000000040": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 60.0
+                    },
+                    "S0_PARACHILNA-0000000041": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 22.0
+                    },
+                    "S0_PARACHILNA-0000000042": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 15.0
+                    },
+                    "S0_PARACHILNA-0000000043": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    },
+                    "S0_PARACHILNA-0000000044": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000045": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 30.0
+                    },
+                    "S0_PARACHILNA-0000000046": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 55.0
+                    },
+                    "S0_PARACHILNA-0000000047": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    },
+                    "S0_PARACHILNA-0000000048": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 43.0
+                    },
+                    "S0_PARACHILNA-0000000049": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 10.0
+                    },
+                    "S0_PARACHILNA-0000000050": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 19.0
+                    },
+                    "S0_PARACHILNA-0000000051": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 15.0
+                    },
+                    "S0_PARACHILNA-0000000052": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 25.0
+                    },
+                    "S0_PARACHILNA-0000000053": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 25.0
+                    },
+                    "S0_PARACHILNA-0000000054": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 33.0
+                    },
+                    "S0_PARACHILNA-0000000055": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 15.0
+                    },
+                    "S0_PARACHILNA-0000000056": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 14.0
+                    },
+                    "S0_PARACHILNA-0000000057": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000058": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 15.0
+                    },
+                    "S0_PARACHILNA-0000000059": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 6.0
+                    },
+                    "S0_PARACHILNA-0000000060": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 10.0
+                    },
+                    "S0_PARACHILNA-0000000061": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 15.0
+                    },
+                    "S0_PARACHILNA-0000000062": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 25.0
+                    },
+                    "S0_PARACHILNA-0000000063": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 30.0
+                    },
+                    "S0_PARACHILNA-0000000064": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 30.0
+                    },
+                    "S0_PARACHILNA-0000000065": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 35.0
+                    },
+                    "S0_PARACHILNA-0000000066": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 60.0
+                    },
+                    "S0_PARACHILNA-0000000067": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 60.0
+                    },
+                    "S0_PARACHILNA-0000000068": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 42.0
+                    },
+                    "S0_PARACHILNA-0000000069": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 28.0
+                    },
+                    "S0_PARACHILNA-0000000070": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 28.0
+                    },
+                    "S0_PARACHILNA-0000000071": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 65.0
+                    },
+                    "S0_PARACHILNA-0000000072": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 45.0
+                    },
+                    "S0_PARACHILNA-0000000073": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 15.0
+                    },
+                    "S0_PARACHILNA-0000000074": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 27.0
+                    },
+                    "S0_PARACHILNA-0000000075": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    },
+                    "S0_PARACHILNA-0000000076": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000077": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 46.0
+                    },
+                    "S0_PARACHILNA-0000000078": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 30.0
+                    },
+                    "S0_PARACHILNA-0000000079": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000080": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 35.0
+                    },
+                    "S0_PARACHILNA-0000000081": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 30.0
+                    },
+                    "S0_PARACHILNA-0000000082": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000083": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    },
+                    "S0_PARACHILNA-0000000084": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    },
+                    "S0_PARACHILNA-0000000085": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000086": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 28.0
+                    },
+                    "S0_PARACHILNA-0000000087": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 26.0
+                    },
+                    "S0_PARACHILNA-0000000088": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 10.0
+                    },
+                    "S0_PARACHILNA-0000000089": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 30.0
+                    },
+                    "S0_PARACHILNA-0000000090": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 35.0
+                    },
+                    "S0_PARACHILNA-0000000091": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 45.0
+                    },
+                    "S0_PARACHILNA-0000000092": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 35.0
+                    },
+                    "S0_PARACHILNA-0000000093": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000094": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 15.0
+                    },
+                    "S0_PARACHILNA-0000000095": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 35.0
+                    },
+                    "S0_PARACHILNA-0000000096": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 15.0
+                    },
+                    "S0_PARACHILNA-0000000097": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 22.0
+                    },
+                    "S0_PARACHILNA-0000000098": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 30.0
+                    },
+                    "S0_PARACHILNA-0000000099": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000100": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 21.0
+                    },
+                    "S0_PARACHILNA-0000000101": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 25.0
+                    },
+                    "S0_PARACHILNA-0000000102": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 55.0
+                    },
+                    "S0_PARACHILNA-0000000103": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 39.0
+                    },
+                    "S0_PARACHILNA-0000000104": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 15.0
+                    },
+                    "S0_PARACHILNA-0000000105": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 34.0
+                    },
+                    "S0_PARACHILNA-0000000106": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 15.0
+                    },
+                    "S0_PARACHILNA-0000000107": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 49.0
+                    },
+                    "S0_PARACHILNA-0000000108": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 56.0
+                    },
+                    "S0_PARACHILNA-0000000109": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 51.0
+                    },
+                    "S0_PARACHILNA-0000000110": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 86.0
+                    },
+                    "S0_PARACHILNA-0000000111": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 51.0
+                    },
+                    "S0_PARACHILNA-0000000112": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 80.0
+                    },
+                    "S0_PARACHILNA-0000000113": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 60.0
+                    },
+                    "S0_PARACHILNA-0000000114": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 35.0
+                    },
+                    "S0_PARACHILNA-0000000115": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 37.0
+                    },
+                    "S0_PARACHILNA-0000000116": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 18.0
+                    },
+                    "S0_PARACHILNA-0000000117": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 10.0
+                    },
+                    "S0_PARACHILNA-0000000118": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 26.0
+                    },
+                    "S0_PARACHILNA-0000000119": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000120": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 45.0
+                    },
+                    "S0_PARACHILNA-0000000121": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 50.0
+                    },
+                    "S0_PARACHILNA-0000000122": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 12.0
+                    },
+                    "S0_PARACHILNA-0000000123": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 16.0
+                    },
+                    "S0_PARACHILNA-0000000124": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    },
+                    "S0_PARACHILNA-0000000125": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 35.0
+                    },
+                    "S0_PARACHILNA-0000000126": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 30.0
+                    },
+                    "S0_PARACHILNA-0000000127": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 25.0
+                    },
+                    "S0_PARACHILNA-0000000128": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 25.0
+                    },
+                    "S0_PARACHILNA-0000000129": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 45.0
+                    },
+                    "S0_PARACHILNA-0000000130": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    },
+                    "S0_PARACHILNA-0000000131": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 45.0
+                    },
+                    "S0_PARACHILNA-0000000132": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 70.0
+                    },
+                    "S0_PARACHILNA-0000000133": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    },
+                    "S0_PARACHILNA-0000000134": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 26.0
+                    },
+                    "S0_PARACHILNA-0000000135": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 15.0
+                    },
+                    "S0_PARACHILNA-0000000136": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 25.0
+                    },
+                    "S0_PARACHILNA-0000000137": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    },
+                    "S0_PARACHILNA-0000000138": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    },
+                    "S0_PARACHILNA-0000000139": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    },
+                    "S0_PARACHILNA-0000000140": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 35.0
+                    },
+                    "S0_PARACHILNA-0000000141": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000142": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 15.0
+                    },
+                    "S0_PARACHILNA-0000000143": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 35.0
+                    },
+                    "S0_PARACHILNA-0000000144": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 30.0
+                    },
+                    "S0_PARACHILNA-0000000145": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000146": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 19.0
+                    },
+                    "S0_PARACHILNA-0000000147": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000148": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000149": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 15.0
+                    },
+                    "S0_PARACHILNA-0000000150": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 35.0
+                    },
+                    "S0_PARACHILNA-0000000151": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    },
+                    "S0_PARACHILNA-0000000152": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 41.0
+                    },
+                    "S0_PARACHILNA-0000000153": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 49.0
+                    },
+                    "S0_PARACHILNA-0000000154": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 35.0
+                    },
+                    "S0_PARACHILNA-0000000155": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 30.0
+                    },
+                    "S0_PARACHILNA-0000000156": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 50.0
+                    },
+                    "S0_PARACHILNA-0000000157": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 15.0
+                    },
+                    "S0_PARACHILNA-0000000158": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 10.0
+                    },
+                    "S0_PARACHILNA-0000000159": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 19.0
+                    },
+                    "S0_PARACHILNA-0000000160": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000161": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000162": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 68.0
+                    },
+                    "S0_PARACHILNA-0000000163": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000164": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    },
+                    "S0_PARACHILNA-0000000165": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000166": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 20.0
+                    },
+                    "S0_PARACHILNA-0000000167": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 75.0
+                    },
+                    "S0_PARACHILNA-0000000168": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 85.0
+                    },
+                    "S0_PARACHILNA-0000000169": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 80.0
+                    },
+                    "S0_PARACHILNA-0000000170": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 62.0
+                    },
+                    "S0_PARACHILNA-0000000171": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    },
+                    "S0_PARACHILNA-0000000172": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 60.0
+                    },
+                    "S0_PARACHILNA-0000000173": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 50.0
+                    },
+                    "S0_PARACHILNA-0000000174": {
+                        "name": "DIP",
+                        "title": "S0 PARACHILNA",
+                        "val": 40.0
+                    }
+                },
+                "src_filename": "S0_parachilna.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "SE Umberatana RIBBON",
+                "displayed": true,
+                "include": true,
+                "model_url": "SE_Umberatana_RIBBON.gltf",
+                "popups": {
+                    "SE_UMBERATANA_RIBBON": {
+                        "name": "SE_UMBERATANA_RIBBON",
+                        "title": "SE_UMBERATANA_RIBBON"
+                    }
+                },
+                "src_filename": "SE_Umberatana_RIBBON.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "SRTM1sec400m surf",
+                "displayed": true,
+                "include": true,
+                "model_url": "SRTM1sec400m_surf.gltf",
+                "popups": {
+                    "SRTM1SEC400M_SURF": {
+                        "name": "SRTM1SEC400M_SURF",
+                        "title": "SRTM1SEC400M_SURF"
+                    }
+                },
+                "src_filename": "SRTM1sec400m_surf.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Transcurrent Fault N",
+                "displayed": true,
+                "include": true,
+                "model_url": "Transcurrent_Fault_N.gltf",
+                "popups": {
+                    "TRANSCURRENT_FAULT_N": {
+                        "name": "TRANSCURRENT_FAULT_N",
+                        "title": "TRANSCURRENT_FAULT_N"
+                    }
+                },
+                "src_filename": "Transcurrent_Fault_N.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Transcurrent Fault NC",
+                "displayed": true,
+                "include": true,
+                "model_url": "Transcurrent_Fault_NC.gltf",
+                "popups": {
+                    "TRANSCURRENT_FAULT_NC": {
+                        "name": "TRANSCURRENT_FAULT_NC",
+                        "title": "TRANSCURRENT_FAULT_NC"
+                    }
+                },
+                "src_filename": "Transcurrent_Fault_NC.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Transcurrent Fault S",
+                "displayed": true,
+                "include": true,
+                "model_url": "Transcurrent_Fault_S.gltf",
+                "popups": {
+                    "TRANSCURRENT_FAULT_S": {
+                        "name": "TRANSCURRENT_FAULT_S",
+                        "title": "TRANSCURRENT_FAULT_S"
+                    }
+                },
+                "src_filename": "Transcurrent_Fault_S.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Transcurrent Fault SC",
+                "displayed": true,
+                "include": true,
+                "model_url": "Transcurrent_Fault_SC.gltf",
+                "popups": {
+                    "TRANSCURRENT_FAULT_SC": {
+                        "name": "TRANSCURRENT_FAULT_SC",
+                        "title": "TRANSCURRENT_FAULT_SC"
+                    }
+                },
+                "src_filename": "Transcurrent_Fault_SC.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Umberatana E Ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "Umberatana_E_Ribbon.gltf",
+                "popups": {
+                    "UMBERATANA_E_RIBBON": {
+                        "name": "UMBERATANA_E_RIBBON",
+                        "title": "UMBERATANA_E_RIBBON"
+                    }
+                },
+                "src_filename": "Umberatana_E_Ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Umberatana E Umberatana Wirealpa RIBBON",
+                "displayed": true,
+                "include": true,
+                "model_url": "Umberatana_E_Umberatana_Wirealpa_RIBBON.gltf",
+                "popups": {
+                    "UMBERATANA_E_UMBERATANA_WIREALPA_RIBBON": {
+                        "name": "UMBERATANA_E_UMBERATANA_WIREALPA_RIBBON",
+                        "title": "UMBERATANA_E_UMBERATANA_WIREALPA_RIBBON"
+                    }
+                },
+                "src_filename": "Umberatana_E_Umberatana_Wirealpa_RIBBON.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "W Umberatana Ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "W_Umberatana_Ribbon.gltf",
+                "popups": {
+                    "W_UMBERATANA_RIBBON": {
+                        "name": "W_UMBERATANA_RIBBON",
+                        "title": "W_UMBERATANA_RIBBON"
+                    }
+                },
+                "src_filename": "W_Umberatana_Ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "W Wilpena Ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "W_Wilpena_Ribbon.gltf",
+                "popups": {
+                    "W_WILPENA_RIBBON": {
+                        "name": "W_WILPENA_RIBBON",
+                        "title": "W_WILPENA_RIBBON"
+                    }
+                },
+                "src_filename": "W_Wilpena_Ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Wilpena E ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "Wilpena_E_ribbon.gltf",
+                "popups": {
+                    "WILPENA_E_RIBBON": {
+                        "name": "WILPENA_E_RIBBON",
+                        "title": "WILPENA_E_RIBBON"
+                    }
+                },
+                "src_filename": "Wilpena_E_ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Wilpena SE Ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "Wilpena_SE_Ribbon.gltf",
+                "popups": {
+                    "WILPENA_SE_RIBBON": {
+                        "name": "WILPENA_SE_RIBBON",
+                        "title": "WILPENA_SE_RIBBON"
+                    }
+                },
+                "src_filename": "Wilpena_SE_Ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Wilpena TOP CW",
+                "displayed": true,
+                "include": true,
+                "model_url": "Wilpena_TOP_CW.gltf",
+                "popups": {
+                    "WILPENA_TOP_CW": {
+                        "name": "WILPENA_TOP_CW",
+                        "title": "WILPENA_TOP_CW"
+                    }
+                },
+                "src_filename": "Wilpena_TOP_CW.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Wilpena TOP CW Ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "Wilpena_TOP_CW_Ribbon.gltf",
+                "popups": {
+                    "WILPENA_TOP_CW_RIBBON": {
+                        "name": "WILPENA_TOP_CW_RIBBON",
+                        "title": "WILPENA_TOP_CW_RIBBON"
+                    }
+                },
+                "src_filename": "Wilpena_TOP_CW_Ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Wilpena W RIBBON",
+                "displayed": true,
+                "include": true,
+                "model_url": "Wilpena_W_RIBBON.gltf",
+                "popups": {
+                    "WILPENA_W_RIBBON": {
+                        "name": "WILPENA_W_RIBBON",
+                        "title": "WILPENA_W_RIBBON"
+                    }
+                },
+                "src_filename": "Wilpena_W_RIBBON.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Wirrealpa E Fault",
+                "displayed": true,
+                "include": true,
+                "model_url": "Wirrealpa_E_Fault.gltf",
+                "popups": {
+                    "WIRREALPA_E_FAULT": {
+                        "name": "WIRREALPA_E_FAULT",
+                        "title": "WIRREALPA_E_FAULT"
+                    }
+                },
+                "src_filename": "Wirrealpa_E_Fault.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ],
+        "WMS Layers": [
+            {
+                "display_name": "GA Lithostratigraphy",
+                "displayed": true,
+                "include": true,
+                "model_url": "http://services.ga.gov.au/gis/services/GA_Surface_Geology/MapServer/WMSServer",
+                "name": "AUS_GA_2500k_GUPoly_Lithostratigraphy",
+                "type": "WMSLayer",
+                "version": "1.3.0"
+            }
+        ]
+    },
+    "properties": {
+        "crs": "EPSG:28354",
+        "extent": [
+            168403.375,
+            417764.03125,
+            6431118.0,
+            6591618.0
+        ],
+        "init_cam_dist": 500000.0,
+        "name": "CentralFlinders",
+        "proj4_defn": "+proj=utm +zone=54 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    },
+    "type": "GeologicalModel",
+    "version": 1.0
+}

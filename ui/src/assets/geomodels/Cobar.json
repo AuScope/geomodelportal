@@ -1,0 +1,393 @@
+{
+    "groups": {
+        "Faults": [
+            {
+                "display_name": "Barrow Fault",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Barrow Fault.gltf",
+                "popups": {
+                    "GM - BARROW FAULT": {
+                        "name": "BARROW FAULT",
+                        "title": "BARROW FAULT"
+                    }
+                },
+                "src_filename": "GM - Barrow Fault.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Boxtank Fault",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Boxtank Fault.gltf",
+                "popups": {
+                    "GM - BOXTANK FAULT": {
+                        "name": "BOXTANK FAULT",
+                        "title": "BOXTANK FAULT"
+                    }
+                },
+                "src_filename": "GM - Boxtank Fault.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Coonara Fault",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Coonara Fault.gltf",
+                "popups": {
+                    "GM - COONARA FAULT": {
+                        "name": "COONARA FAULT",
+                        "title": "COONARA FAULT"
+                    }
+                },
+                "src_filename": "GM - Coonara Fault.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Crowl Fault",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Crowl Fault.gltf",
+                "popups": {
+                    "GM - CROWL FAULT": {
+                        "name": "CROWL FAULT",
+                        "title": "CROWL FAULT"
+                    }
+                },
+                "src_filename": "GM - Crowl Fault.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Ironbark Fault",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Ironbark Fault.gltf",
+                "popups": {
+                    "GM - IRONBARK FAULT": {
+                        "name": "IRONBARK FAULT",
+                        "title": "IRONBARK FAULT"
+                    }
+                },
+                "src_filename": "GM - Ironbark Fault.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Myrt Fault",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Myrt Fault.gltf",
+                "popups": {
+                    "GM - MYRT FAULT": {
+                        "name": "MYRT FAULT",
+                        "title": "MYRT FAULT"
+                    }
+                },
+                "src_filename": "GM - Myrt Fault.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Rookery Fault",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Rookery Fault.gltf",
+                "popups": {
+                    "GM - ROOKERY FAULT": {
+                        "name": "ROOKERY FAULT",
+                        "title": "ROOKERY FAULT"
+                    }
+                },
+                "src_filename": "GM - Rookery Fault.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Wildcat Fault",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Wildcat Fault.gltf",
+                "popups": {
+                    "GM - WILDCAT FAULT": {
+                        "name": "WILDCAT FAULT",
+                        "title": "WILDCAT FAULT"
+                    }
+                },
+                "src_filename": "GM - Wildcat Fault.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Woorara Fault",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Woorara Fault.gltf",
+                "popups": {
+                    "GM - WOORARA FAULT": {
+                        "name": "WOORARA FAULT",
+                        "title": "WOORARA FAULT"
+                    }
+                },
+                "src_filename": "GM - Woorara Fault.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ],
+        "Stratigraphy": [
+            {
+                "display_name": "Babinda Volcanics",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Babinda Volcanics.gltf",
+                "popups": {
+                    "GM - BABINDA VOLCANICS.TS.TMP": {
+                        "name": "BABINDA VOLCANICS",
+                        "title": "BABINDA VOLCANICS"
+                    }
+                },
+                "src_filename": "GM - Babinda Volcanics.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Balemund Formation",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Balemund Formation.gltf",
+                "popups": {
+                    "GM - BALEMUND FORMATION.TS.TMP": {
+                        "name": "BALEMUND FORMATION",
+                        "title": "BALEMUND FORMATION"
+                    }
+                },
+                "src_filename": "GM - Balemund Formation.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Bendoc Group",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Bendoc Group.gltf",
+                "popups": {
+                    "GM - BENDOC GROUP.TS.TMP": {
+                        "name": "BENDOC GROUP",
+                        "title": "BENDOC GROUP"
+                    }
+                },
+                "src_filename": "GM - Bendoc Group.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Clements Formation",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Clements Formation.gltf",
+                "popups": {
+                    "GM - CLEMENTS FORMATION.TS.TMP": {
+                        "name": "CLEMENTS FORMATION",
+                        "title": "CLEMENTS FORMATION"
+                    }
+                },
+                "src_filename": "GM - Clements Formation.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Erimeran Granite",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Erimeran Granite.gltf",
+                "popups": {
+                    "GM - ERIMERAN GRANITE.TS.TMP": {
+                        "name": "ERIMERAN GRANITE",
+                        "title": "ERIMERAN GRANITE"
+                    }
+                },
+                "src_filename": "GM - Erimeran Granite.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Lang-Ballast Formation",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Lang-Ballast Formation.gltf",
+                "popups": {
+                    "GM - LANG-BALLAST FORMATION.TS.TMP": {
+                        "name": "LANG-BALLAST FORMATION",
+                        "title": "LANG-BALLAST FORMATION"
+                    }
+                },
+                "src_filename": "GM - Lang-Ballast Formation.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Lower Amphitheatre",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Lower Amphitheatre.gltf",
+                "popups": {
+                    "GM - LOWER AMPHITHEATRE.TS.TMP": {
+                        "name": "LOWER AMPHITHEATRE",
+                        "title": "LOWER AMPHITHEATRE"
+                    }
+                },
+                "src_filename": "GM - Lower Amphitheatre.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Majaba Volcanics",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Majaba Volcanics.gltf",
+                "popups": {
+                    "GM - MAJABA VOLCANICS.TS.TMP": {
+                        "name": "MAJABA VOLCANICS",
+                        "title": "MAJABA VOLCANICS"
+                    }
+                },
+                "src_filename": "GM - Majaba Volcanics.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Nymagee Igneous",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Nymagee Igneous.gltf",
+                "popups": {
+                    "GM - NYMAGEE IGNEOUS.TS.TMP": {
+                        "name": "NYMAGEE IGNEOUS",
+                        "title": "NYMAGEE IGNEOUS"
+                    }
+                },
+                "src_filename": "GM - Nymagee Igneous.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Shume Formation",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Shume Formation.gltf",
+                "popups": {
+                    "GM - SHUME FORMATION.TS.TMP": {
+                        "name": "SHUME FORMATION",
+                        "title": "SHUME FORMATION"
+                    }
+                },
+                "src_filename": "GM - Shume Formation.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Tarran Volcanics",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Tarran Volcanics.gltf",
+                "popups": {
+                    "GM - TARRAN VOLCANICS.TS.TMP": {
+                        "name": "TARRAN VOLCANICS",
+                        "title": "TARRAN VOLCANICS"
+                    }
+                },
+                "src_filename": "GM - Tarran Volcanics.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Undiff. Girilambone",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Undiff. Girilambone.gltf",
+                "popups": {
+                    "GM - UNDIFF. GIRILAMBONE.TS.TMP": {
+                        "name": "UNDIFF. GIRILAMBONE",
+                        "title": "UNDIFF. GIRILAMBONE"
+                    }
+                },
+                "src_filename": "GM - Undiff. Girilambone.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Unknown Intrusive",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Unknwon Intrusive.gltf",
+                "popups": {
+                    "GM - UNKNWON INTRUSIVE.TS.TMP": {
+                        "name": "UNKNOWN INTRUSIVE",
+                        "title": "UNKNOWN INTRUSIVE"
+                    }
+                },
+                "src_filename": "GM - Unknwon Intrusive.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Upper Amphitheatre",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Upper Amphitheatre.gltf",
+                "popups": {
+                    "GM - UPPER AMPHITHEATRE.TS.TMP": {
+                        "name": "UPPER AMPHITHEATRE",
+                        "title": "UPPER AMPHITHEATRE"
+                    }
+                },
+                "src_filename": "GM - Upper Amphitheatre.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "display_name": "Wagga Group",
+                "displayed": true,
+                "include": true,
+                "model_url": "GM - Wagga Group.gltf",
+                "popups": {
+                    "GM - WAGGA GROUP.TS.TMP": {
+                        "name": "WAGGA GROUP",
+                        "title": "WAGGA GROUP"
+                    }
+                },
+                "src_filename": "GM - Wagga Group.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ],
+        "WMS Layers": [
+            {
+                "display_name": "GA Lithostratigraphy",
+                "displayed": true,
+                "include": true,
+                "model_url": "http://services.ga.gov.au/gis/services/GA_Surface_Geology/MapServer/WMSServer",
+                "name": "AUS_GA_2500k_GUPoly_Lithostratigraphy",
+                "type": "WMSLayer",
+                "version": "1.3.0"
+            }
+        ]
+    },
+    "properties": {
+        "crs": "EPSG:28355",
+        "extent": [
+            411839.48227417044,
+            452433.54486757674,
+            6410221.7202726165,
+            6466286.830872239
+        ],
+        "init_cam_dist": 150000.0,
+        "name": "Cobar Geology & Faults",
+        "proj4_defn": "+proj=utm +zone=55 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    },
+    "type": "GeologicalModel",
+    "version": 1.0
+}
