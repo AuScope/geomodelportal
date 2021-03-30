@@ -5,3 +5,36 @@
 @import "rtl";
 @import "responsive";
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* Card colours for each provider */
+.bg-vic {
+   background-color: #000066!important;
+}
+.bg-nci {
+   background-color: #ff9900!important;
+}
+.bg-tas {
+   background-color: #008800!important;
+}
+.bg-nsw {
+   background-color: #FF3300!important;
+}
+.bg-qld {
+   background-color: #730073!important;
+}
+.bg-ga {
+   background-color: #CC33FF!important;
+}
+.bg-sa {
+   background-color: #9f7800!important;
+}
+.bg-nt {
+   background-color: #222222!important;
+}
+.bg-wa {
+   background-color: #CC0099!important;
+}
+.bg-csiro {
+   background-color: #00CCFF!important;
+}
+
