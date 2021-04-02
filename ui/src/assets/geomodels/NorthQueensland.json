@@ -18,6 +18,8 @@
                         "title": "ABINGDON_SURF"
                     }
                 },
+                "src_filename": "abingdon_surf.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -37,6 +39,8 @@
                         "title": "AGWAMIN_SURF"
                     }
                 },
+                "src_filename": "agwamin_surf.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -56,6 +60,8 @@
                         "title": "DRUMMOND_SURF"
                     }
                 },
+                "src_filename": "drummond_surf.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -75,6 +81,8 @@
                         "title": "ETHERIDGE_2_SURF"
                     }
                 },
+                "src_filename": "etheridge_2_surf.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -94,6 +102,8 @@
                         "title": "ETHERIDGE_SURF"
                     }
                 },
+                "src_filename": "etheridge_surf.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -113,6 +123,8 @@
                         "title": "MOHO_BASE_SURF"
                     }
                 },
+                "src_filename": "moho_base_surf.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -132,6 +144,8 @@
                         "title": "NUMIL_SURF"
                     }
                 },
+                "src_filename": "numil_surf.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -151,6 +165,8 @@
                         "title": "PILGRIM_SURF"
                     }
                 },
+                "src_filename": "pilgrim_surf.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -170,6 +186,8 @@
                         "title": "SUTURE_SURF"
                     }
                 },
+                "src_filename": "suture_surf.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],

@@ -12,6 +12,8 @@
                         "title": "FAULTS_AMMAROODINNA_YOOLPERLUNNA-1_S_AMMA_1"
                     }
                 },
+                "src_filename": "Faults_Ammaroodinna_Yoolperlunna.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -25,6 +27,8 @@
                         "title": "FAULTS_AMMAROODINNA_YOOLPERLUNNA-1_S_AMMA_2"
                     }
                 },
+                "src_filename": "Faults_Ammaroodinna_Yoolperlunna.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -38,6 +42,8 @@
                         "title": "FAULTS_AMMAROODINNA_YOOLPERLUNNA-1_S_AMMA_3"
                     }
                 },
+                "src_filename": "Faults_Ammaroodinna_Yoolperlunna.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -51,6 +57,8 @@
                         "title": "FAULTS_AMMAROODINNA_YOOLPERLUNNA-1_S_AMMA_BACK"
                     }
                 },
+                "src_filename": "Faults_Ammaroodinna_Yoolperlunna.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -64,6 +72,8 @@
                         "title": "FAULTS_AMMAROODINNA_YOOLPERLUNNA-1_S_MARLA_1"
                     }
                 },
+                "src_filename": "Faults_Ammaroodinna_Yoolperlunna.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -77,6 +87,8 @@
                         "title": "FAULTS_AMMAROODINNA_YOOLPERLUNNA-1_S_MARLA_2"
                     }
                 },
+                "src_filename": "Faults_Ammaroodinna_Yoolperlunna.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -90,6 +102,8 @@
                         "title": "FAULTS_AMMAROODINNA_YOOLPERLUNNA-1_S_MARLA_3"
                     }
                 },
+                "src_filename": "Faults_Ammaroodinna_Yoolperlunna.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -103,6 +117,8 @@
                         "title": "FAULTS_AMMAROODINNA_YOOLPERLUNNA-1_S_YOOLP"
                     }
                 },
+                "src_filename": "Faults_Ammaroodinna_Yoolperlunna.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],
@@ -118,6 +134,8 @@
                         "title": "CP_SURFACE_FIXED"
                     }
                 },
+                "src_filename": "CP_Surface_Fixed.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -131,6 +149,8 @@
                         "title": "2_BASEMENT_FIXED"
                     }
                 },
+                "src_filename": "2_Basement_Fixed.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -144,6 +164,8 @@
                         "title": "GRAVDRAPE"
                     }
                 },
+                "src_filename": "GravDrape.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -157,6 +179,8 @@
                         "title": "MAGDRAPE"
                     }
                 },
+                "src_filename": "MagDrape.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -214,6 +238,8 @@
                         "title": "MARLAOUTLINE"
                     }
                 },
+                "src_filename": "MarlaOutline.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -227,6 +253,8 @@
                         "title": "SRTM_SURF"
                     }
                 },
+                "src_filename": "SRTM_surf.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -240,6 +268,8 @@
                         "title": "VOL-VOI_MARLA"
                     }
                 },
+                "src_filename": "VOL.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],
@@ -262,6 +292,8 @@
                     0.0
                 ],
                 "reference_url": "https://sarigbasis.pir.sa.gov.au/WebtopEw/ws/samref/sarig1/image/DDD/GDP00026.pdf#page=5",
+                "src_filename": "BougGrav_BougGrav_prop@@.PNG",
+                "styling": {},
                 "type": "ImagePlane"
             }
         ],
@@ -284,6 +316,8 @@
                     0.0
                 ],
                 "reference_url": "https://sarigbasis.pir.sa.gov.au/WebtopEw/ws/samref/sarig1/image/DDD/GDP00026.pdf#page=5",
+                "src_filename": "TMI_RTP_TMI_RTP_prop@@.PNG",
+                "styling": {},
                 "type": "ImagePlane"
             }
         ],
@@ -299,6 +333,8 @@
                         "title": "FAULTS_MIDDLEBORERIDGE-1_S_MIDBORE_MAIN"
                     }
                 },
+                "src_filename": "Faults_MiddleBoreRidge.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -312,6 +348,8 @@
                         "title": "FAULTS_MIDDLEBORERIDGE-1_S_MIDBORE_SPLAY"
                     }
                 },
+                "src_filename": "Faults_MiddleBoreRidge.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],
@@ -327,6 +365,8 @@
                         "title": "FAULTS_MUSGRAVEBLOCK-1_S_MUSGRAVE_MAIN"
                     }
                 },
+                "src_filename": "Faults_MusgraveBlock.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -340,6 +380,8 @@
                         "title": "FAULTS_MUSGRAVEBLOCK-1_S_MUSGRAVE_SPLAY"
                     }
                 },
+                "src_filename": "Faults_MusgraveBlock.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],
@@ -362,6 +404,8 @@
                     0.0
                 ],
                 "reference_url": "https://energymining.sa.gov.au/minerals/geoscience/geoscientific_data/3d_geological_models/northern_gawler_province",
+                "src_filename": "2MsurfaceGeologyZ52_PMsurfaceGeologyZ52_prop@@.PNG",
+                "styling": {},
                 "type": "ImagePlane"
             }
         ],
@@ -377,6 +421,8 @@
                         "title": "UBC_BASEMENT"
                     }
                 },
+                "src_filename": "UBC_Basement.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],
@@ -392,6 +438,8 @@
                         "title": "UBC_DENSITY_NEG_PT04"
                     }
                 },
+                "src_filename": "UBC_Density_neg_pt04.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -405,6 +453,8 @@
                         "title": "UBC_DENSITY_NEG_PT08"
                     }
                 },
+                "src_filename": "UBC_Density_neg_pt08.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -418,6 +468,8 @@
                         "title": "UBC_DENSITY_NEG_PT3"
                     }
                 },
+                "src_filename": "UBC_Density_neg_pt3.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -431,6 +483,8 @@
                         "title": "UBC_DENSITY_OZERO"
                     }
                 },
+                "src_filename": "UBC_Density_oZero.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -444,6 +498,8 @@
                         "title": "UBC_DENSITY_POS_PT01"
                     }
                 },
+                "src_filename": "UBC_Density_pos_pt01.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -457,6 +513,8 @@
                         "title": "UBC_DENSITY_POS_PT04"
                     }
                 },
+                "src_filename": "UBC_Density_pos_pt04.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -470,6 +528,8 @@
                         "title": "UBC_DENSITY_POS_PT08"
                     }
                 },
+                "src_filename": "UBC_Density_pos_pt08.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],
@@ -14301,6 +14361,8 @@
                         "val": -17.750499725341797
                     }
                 },
+                "src_filename": "UBC_GravObs.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],
@@ -27062,6 +27124,8 @@
                         "val": 277.6180114746094
                     }
                 },
+                "src_filename": "UBC_MagObs.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],
@@ -27077,6 +27141,8 @@
                         "title": "UBC_SUSC_0_0001"
                     }
                 },
+                "src_filename": "UBC_Susc_0_0001.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -27090,6 +27156,8 @@
                         "title": "UBC_SUSC_0_0010"
                     }
                 },
+                "src_filename": "UBC_Susc_0_0010.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -27103,6 +27171,8 @@
                         "title": "UBC_SUSC_0_0100"
                     }
                 },
+                "src_filename": "UBC_Susc_0_0100.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -27116,6 +27186,8 @@
                         "title": "UBC_SUSC_0_0200"
                     }
                 },
+                "src_filename": "UBC_Susc_0_0200.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -27129,6 +27201,8 @@
                         "title": "UBC_SUSC_0_0300"
                     }
                 },
+                "src_filename": "UBC_Susc_0_0300.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -27142,6 +27216,8 @@
                         "title": "UBC_SUSC_0_0400"
                     }
                 },
+                "src_filename": "UBC_Susc_0_0400.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -27155,6 +27231,8 @@
                         "title": "UBC_SUSC_0_0500"
                     }
                 },
+                "src_filename": "UBC_Susc_0_0500.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -27168,6 +27246,8 @@
                         "title": "UBC_SUSC_0_0600"
                     }
                 },
+                "src_filename": "UBC_Susc_0_0600.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],
@@ -27183,6 +27263,8 @@
                         "title": "FAULTS_WINTINNATROUGH-1_S_WINT_1"
                     }
                 },
+                "src_filename": "Faults_WintinnaTrough.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -27196,6 +27278,8 @@
                         "title": "FAULTS_WINTINNATROUGH-1_S_WINT_2"
                     }
                 },
+                "src_filename": "Faults_WintinnaTrough.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ]

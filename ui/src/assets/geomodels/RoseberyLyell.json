@@ -12,6 +12,8 @@
                         "title": "RL_DEM100M"
                     }
                 },
+                "src_filename": "RL_DEM100m.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],
@@ -27,6 +29,8 @@
                         "title": "F_015_ANTHONY_RIVER_FAULT"
                     }
                 },
+                "src_filename": "F_015_Anthony_River_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -40,6 +44,8 @@
                         "title": "F_083_BRICKFIELD_FAULT"
                     }
                 },
+                "src_filename": "F_083_Brickfield_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -53,6 +59,8 @@
                         "title": "F_048_COMSTOCK_FAULT"
                     }
                 },
+                "src_filename": "F_048_Comstock_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -66,6 +74,8 @@
                         "title": "F_038_EAST_JUKES_FAULT"
                     }
                 },
+                "src_filename": "F_038_East_Jukes_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -79,6 +89,8 @@
                         "title": "F_021_ENGINEER_FAULT"
                     }
                 },
+                "src_filename": "F_021_Engineer_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -92,6 +104,8 @@
                         "title": "F_018_EWART_FAULT"
                     }
                 },
+                "src_filename": "F_018_Ewart_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -105,6 +119,8 @@
                         "title": "F_008"
                     }
                 },
+                "src_filename": "F_008.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -118,6 +134,8 @@
                         "title": "F_009"
                     }
                 },
+                "src_filename": "F_009.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -131,6 +149,8 @@
                         "title": "F_011"
                     }
                 },
+                "src_filename": "F_011.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -144,6 +164,8 @@
                         "title": "F_013"
                     }
                 },
+                "src_filename": "F_013.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -157,6 +179,8 @@
                         "title": "F_014"
                     }
                 },
+                "src_filename": "F_014.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -170,6 +194,8 @@
                         "title": "F_016"
                     }
                 },
+                "src_filename": "F_016.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -183,6 +209,8 @@
                         "title": "F_017"
                     }
                 },
+                "src_filename": "F_017.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -196,6 +224,8 @@
                         "title": "F_019"
                     }
                 },
+                "src_filename": "F_019.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -209,6 +239,8 @@
                         "title": "F_020"
                     }
                 },
+                "src_filename": "F_020.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -222,6 +254,8 @@
                         "title": "F_024"
                     }
                 },
+                "src_filename": "F_024.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -235,6 +269,8 @@
                         "title": "F_025"
                     }
                 },
+                "src_filename": "F_025.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -248,6 +284,8 @@
                         "title": "F_026"
                     }
                 },
+                "src_filename": "F_026.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -261,6 +299,8 @@
                         "title": "F_029"
                     }
                 },
+                "src_filename": "F_029.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -274,6 +314,8 @@
                         "title": "F_033"
                     }
                 },
+                "src_filename": "F_033.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -287,6 +329,8 @@
                         "title": "F_034"
                     }
                 },
+                "src_filename": "F_034.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -300,6 +344,8 @@
                         "title": "F_035"
                     }
                 },
+                "src_filename": "F_035.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -313,6 +359,8 @@
                         "title": "F_036"
                     }
                 },
+                "src_filename": "F_036.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -326,6 +374,8 @@
                         "title": "F_041"
                     }
                 },
+                "src_filename": "F_041.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -339,6 +389,8 @@
                         "title": "F_044"
                     }
                 },
+                "src_filename": "F_044.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -352,6 +404,8 @@
                         "title": "F_045"
                     }
                 },
+                "src_filename": "F_045.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -365,6 +419,8 @@
                         "title": "F_046"
                     }
                 },
+                "src_filename": "F_046.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -378,6 +434,8 @@
                         "title": "F_047"
                     }
                 },
+                "src_filename": "F_047.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -391,6 +449,8 @@
                         "title": "F_050"
                     }
                 },
+                "src_filename": "F_050.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -404,6 +464,8 @@
                         "title": "F_051"
                     }
                 },
+                "src_filename": "F_051.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -417,6 +479,8 @@
                         "title": "F_052"
                     }
                 },
+                "src_filename": "F_052.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -430,6 +494,8 @@
                         "title": "F_053"
                     }
                 },
+                "src_filename": "F_053.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -443,6 +509,8 @@
                         "title": "F_054"
                     }
                 },
+                "src_filename": "F_054.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -456,6 +524,8 @@
                         "title": "F_055"
                     }
                 },
+                "src_filename": "F_055.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -469,6 +539,8 @@
                         "title": "F_056"
                     }
                 },
+                "src_filename": "F_056.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -482,6 +554,8 @@
                         "title": "F_057"
                     }
                 },
+                "src_filename": "F_057.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -495,6 +569,8 @@
                         "title": "F_058"
                     }
                 },
+                "src_filename": "F_058.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -508,6 +584,8 @@
                         "title": "F_059"
                     }
                 },
+                "src_filename": "F_059.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -521,6 +599,8 @@
                         "title": "F_060"
                     }
                 },
+                "src_filename": "F_060.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -534,6 +614,8 @@
                         "title": "F_061"
                     }
                 },
+                "src_filename": "F_061.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -547,6 +629,8 @@
                         "title": "F_062"
                     }
                 },
+                "src_filename": "F_062.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -560,6 +644,8 @@
                         "title": "F_064"
                     }
                 },
+                "src_filename": "F_064.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -573,6 +659,8 @@
                         "title": "F_065"
                     }
                 },
+                "src_filename": "F_065.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -586,6 +674,8 @@
                         "title": "F_066"
                     }
                 },
+                "src_filename": "F_066.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -599,6 +689,8 @@
                         "title": "F_067"
                     }
                 },
+                "src_filename": "F_067.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -612,6 +704,8 @@
                         "title": "F_068"
                     }
                 },
+                "src_filename": "F_068.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -625,6 +719,8 @@
                         "title": "F_069"
                     }
                 },
+                "src_filename": "F_069.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -638,6 +734,8 @@
                         "title": "F_070"
                     }
                 },
+                "src_filename": "F_070.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -651,6 +749,8 @@
                         "title": "F_071"
                     }
                 },
+                "src_filename": "F_071.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -664,6 +764,8 @@
                         "title": "F_072"
                     }
                 },
+                "src_filename": "F_072.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -677,6 +779,8 @@
                         "title": "F_073"
                     }
                 },
+                "src_filename": "F_073.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -690,6 +794,8 @@
                         "title": "F_074"
                     }
                 },
+                "src_filename": "F_074.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -703,6 +809,8 @@
                         "title": "F_075"
                     }
                 },
+                "src_filename": "F_075.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -716,6 +824,8 @@
                         "title": "F_076"
                     }
                 },
+                "src_filename": "F_076.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -729,6 +839,8 @@
                         "title": "F_077"
                     }
                 },
+                "src_filename": "F_077.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -742,6 +854,8 @@
                         "title": "F_078"
                     }
                 },
+                "src_filename": "F_078.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -755,6 +869,8 @@
                         "title": "F_079"
                     }
                 },
+                "src_filename": "F_079.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -768,6 +884,8 @@
                         "title": "F_080"
                     }
                 },
+                "src_filename": "F_080.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -781,6 +899,8 @@
                         "title": "F_081"
                     }
                 },
+                "src_filename": "F_081.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -794,6 +914,8 @@
                         "title": "F_082"
                     }
                 },
+                "src_filename": "F_082.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -807,6 +929,8 @@
                         "title": "F_084"
                     }
                 },
+                "src_filename": "F_084.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -820,6 +944,8 @@
                         "title": "F_085"
                     }
                 },
+                "src_filename": "F_085.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -833,6 +959,8 @@
                         "title": "F_086"
                     }
                 },
+                "src_filename": "F_086.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -846,6 +974,8 @@
                         "title": "F_087"
                     }
                 },
+                "src_filename": "F_087.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -859,6 +989,8 @@
                         "title": "F_088"
                     }
                 },
+                "src_filename": "F_088.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -872,6 +1004,8 @@
                         "title": "F_089"
                     }
                 },
+                "src_filename": "F_089.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -885,6 +1019,8 @@
                         "title": "F_090"
                     }
                 },
+                "src_filename": "F_090.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -898,6 +1034,8 @@
                         "title": "F_091"
                     }
                 },
+                "src_filename": "F_091.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -911,6 +1049,8 @@
                         "title": "F_092"
                     }
                 },
+                "src_filename": "F_092.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -924,6 +1064,8 @@
                         "title": "F_093"
                     }
                 },
+                "src_filename": "F_093.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -937,6 +1079,8 @@
                         "title": "F_094"
                     }
                 },
+                "src_filename": "F_094.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -950,6 +1094,8 @@
                         "title": "F_095"
                     }
                 },
+                "src_filename": "F_095.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -963,6 +1109,8 @@
                         "title": "F_096"
                     }
                 },
+                "src_filename": "F_096.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -976,6 +1124,8 @@
                         "title": "F_097"
                     }
                 },
+                "src_filename": "F_097.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -989,6 +1139,8 @@
                         "title": "F_098"
                     }
                 },
+                "src_filename": "F_098.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1002,6 +1154,8 @@
                         "title": "F_099"
                     }
                 },
+                "src_filename": "F_099.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1015,6 +1169,8 @@
                         "title": "F_100"
                     }
                 },
+                "src_filename": "F_100.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1028,6 +1184,8 @@
                         "title": "F_101"
                     }
                 },
+                "src_filename": "F_101.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1041,6 +1199,8 @@
                         "title": "F_102"
                     }
                 },
+                "src_filename": "F_102.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1054,6 +1214,8 @@
                         "title": "F_103"
                     }
                 },
+                "src_filename": "F_103.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1067,6 +1229,8 @@
                         "title": "F_104"
                     }
                 },
+                "src_filename": "F_104.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1080,6 +1244,8 @@
                         "title": "F_105"
                     }
                 },
+                "src_filename": "F_105.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1093,6 +1259,8 @@
                         "title": "F_106"
                     }
                 },
+                "src_filename": "F_106.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1106,6 +1274,8 @@
                         "title": "F_107"
                     }
                 },
+                "src_filename": "F_107.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1119,6 +1289,8 @@
                         "title": "F_108"
                     }
                 },
+                "src_filename": "F_108.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1132,6 +1304,8 @@
                         "title": "F_109"
                     }
                 },
+                "src_filename": "F_109.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1145,6 +1319,8 @@
                         "title": "F_110"
                     }
                 },
+                "src_filename": "F_110.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1158,6 +1334,8 @@
                         "title": "F_000_FEDERAL_BASSETT_FAULT"
                     }
                 },
+                "src_filename": "F_000_Federal_Bassett_fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1171,6 +1349,8 @@
                         "title": "F_023_FIREWOOD_SIDING_FAULT_02"
                     }
                 },
+                "src_filename": "F_023_Firewood_Siding_Fault_02.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1184,6 +1364,8 @@
                         "title": "F_023_FIREWOOD_SIDING_FAULT_03"
                     }
                 },
+                "src_filename": "F_023_Firewood_Siding_Fault_03.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1197,6 +1379,8 @@
                         "title": "F_023_FIREWOOD_SIDING_FAULT_04"
                     }
                 },
+                "src_filename": "F_023_Firewood_Siding_Fault_04.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1210,6 +1394,8 @@
                         "title": "F_023_FIREWOOD_SIDING_FAULT_05"
                     }
                 },
+                "src_filename": "F_023_Firewood_Siding_Fault_05.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1223,6 +1409,8 @@
                         "title": "F_023_FIREWOOD_SIDING_FAULT_01"
                     }
                 },
+                "src_filename": "F_023_Firewood_Siding_fault_01.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1236,6 +1424,8 @@
                         "title": "F_027_GLEN_LYELL_FAULT"
                     }
                 },
+                "src_filename": "F_027_Glen_Lyell_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1249,6 +1439,8 @@
                         "title": "F_030_GREAT_LYELL_FAULT"
                     }
                 },
+                "src_filename": "F_030_Great_Lyell_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1262,6 +1454,8 @@
                         "title": "F_028_GREAT_NORTHERN_FAULT"
                     }
                 },
+                "src_filename": "F_028_Great_Northern_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1275,6 +1469,8 @@
                         "title": "F_005_HENTY_FAULT_1"
                     }
                 },
+                "src_filename": "F_005_Henty_Fault_1.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1288,6 +1484,8 @@
                         "title": "F_005_HENTY_FAULT_2"
                     }
                 },
+                "src_filename": "F_005_Henty_Fault_2.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1301,6 +1499,8 @@
                         "title": "F_005_HENTY_FAULT_3"
                     }
                 },
+                "src_filename": "F_005_Henty_Fault_3.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1314,6 +1514,8 @@
                         "title": "F_032_KING_RIVER_FAULT"
                     }
                 },
+                "src_filename": "F_032_King_River_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1327,6 +1529,8 @@
                         "title": "F_031_KING_RIVER_FAULT_SPLAY"
                     }
                 },
+                "src_filename": "F_031_King_River_Fault_splay.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1340,6 +1544,8 @@
                         "title": "F_043_LITTLE_HENTY_FAULT"
                     }
                 },
+                "src_filename": "F_043_Little_Henty_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1353,6 +1559,8 @@
                         "title": "F_004_MARIONOAK_FAULT"
                     }
                 },
+                "src_filename": "F_004_Marionoak_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1366,6 +1574,8 @@
                         "title": "F_003_MOXONS_FAULT"
                     }
                 },
+                "src_filename": "F_003_Moxons_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1379,6 +1589,8 @@
                         "title": "F_002_MT_BLACK_FAULT"
                     }
                 },
+                "src_filename": "F_002_Mt_Black_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1392,6 +1604,8 @@
                         "title": "F_012_MT_CHARTER_FAULT"
                     }
                 },
+                "src_filename": "F_012_Mt_Charter_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1405,6 +1619,8 @@
                         "title": "F_010_MT_CRIPPS_FAULT"
                     }
                 },
+                "src_filename": "F_010_Mt_Cripps_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1418,6 +1634,8 @@
                         "title": "F_007_MT_STRAHAN_FAULT"
                     }
                 },
+                "src_filename": "F_007_Mt_Strahan_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1431,6 +1649,8 @@
                         "title": "F_037_NORTH_LYELL_FAULT"
                     }
                 },
+                "src_filename": "F_037_North_Lyell_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1444,6 +1664,8 @@
                         "title": "F_040_NORTH_LYELL_FAULT"
                     }
                 },
+                "src_filename": "F_040_North_Lyell_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1457,6 +1679,8 @@
                         "title": "F_001_ROSEBERY_FAULT"
                     }
                 },
+                "src_filename": "F_001_Rosebery_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1470,6 +1694,8 @@
                         "title": "F_001_ROSEBERY_FAULT_INFERRED"
                     }
                 },
+                "src_filename": "F_001_Rosebery_Fault_inferred.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1483,6 +1709,8 @@
                         "title": "F_006_SOUTH_HENTY_FAULT"
                     }
                 },
+                "src_filename": "F_006_South_Henty_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1496,6 +1724,8 @@
                         "title": "F_042_TEEPOOKANA"
                     }
                 },
+                "src_filename": "F_042_Teepookana.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1509,6 +1739,8 @@
                         "title": "F_049_TENTH_LEGION_THRUST"
                     }
                 },
+                "src_filename": "F_049_Tenth_Legion_Thrust.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1522,6 +1754,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_01"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_01.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1535,6 +1769,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_02"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_02.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1548,6 +1784,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_03"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_03.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1561,6 +1799,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_04"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_04.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1574,6 +1814,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_05"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_05.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1587,6 +1829,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_06"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_06.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1600,6 +1844,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_07"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_07.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1613,6 +1859,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_08"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_08.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1626,6 +1874,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_09"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_09.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1639,6 +1889,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_10"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_10.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1652,6 +1904,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_11"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_11.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1665,6 +1919,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_01"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_01.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1678,6 +1934,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_02"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_02.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1691,6 +1949,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_03"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_03.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1704,6 +1964,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_04"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_04.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1717,6 +1979,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_05"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_05.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1730,6 +1994,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_06"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_06.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1743,6 +2009,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_07"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_07.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1756,6 +2024,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_08"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_08.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1769,6 +2039,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_09"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_09.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1782,6 +2054,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_10"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_10.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1795,6 +2069,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_11"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_11.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1808,6 +2084,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_12"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_12.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1821,6 +2099,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_13"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_13.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1834,6 +2114,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_14"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_14.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1847,6 +2129,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_15"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_15.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1860,6 +2144,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_16"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_16.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1873,6 +2159,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_17"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_17.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1886,6 +2174,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_18"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_18.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1899,6 +2189,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_19"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_19.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1912,6 +2204,8 @@
                         "title": "F_022_ULTRAMAFIC_FAULT_INFERRED_20"
                     }
                 },
+                "src_filename": "F_022_ultramafic_fault_inferred_20.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -1925,6 +2219,8 @@
                         "title": "F_039_WEST_JUKES_FAULT"
                     }
                 },
+                "src_filename": "F_039_West_Jukes_Fault.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],
@@ -1944,8 +2240,13 @@
                         "title": "AVEBURY"
                     }
                 },
+                "src_filename": "Avebury.zip",
                 "styling": {
-                    "is_labelled": true,
+                    "labels": [
+                        {
+                            "display_name": "Avebury"
+                        }
+                    ],
                     "scale": 2.0
                 },
                 "type": "GLTFObject"
@@ -1965,8 +2266,13 @@
                         "title": "HELLYER"
                     }
                 },
+                "src_filename": "Hellyer.zip",
                 "styling": {
-                    "is_labelled": true,
+                    "labels": [
+                        {
+                            "display_name": "Hellyer"
+                        }
+                    ],
                     "scale": 2.0
                 },
                 "type": "GLTFObject"
@@ -1983,8 +2289,13 @@
                         "val": 0.0
                     }
                 },
+                "src_filename": "Henty.zip",
                 "styling": {
-                    "is_labelled": true,
+                    "labels": [
+                        {
+                            "display_name": "Henty"
+                        }
+                    ],
                     "scale": 2.0
                 },
                 "type": "GLTFObject"
@@ -2004,8 +2315,13 @@
                         "title": "MT LINDSAY"
                     }
                 },
+                "src_filename": "Mt_Lindsay.zip",
                 "styling": {
-                    "is_labelled": true,
+                    "labels": [
+                        {
+                            "display_name": "Mt Lindsay"
+                        }
+                    ],
                     "scale": 2.0
                 },
                 "type": "GLTFObject"
@@ -2029,8 +2345,13 @@
                         "title": "QUEENSTOWN"
                     }
                 },
+                "src_filename": "Queenstown.zip",
                 "styling": {
-                    "is_labelled": true,
+                    "labels": [
+                        {
+                            "display_name": "Queenstown"
+                        }
+                    ],
                     "scale": 2.0
                 },
                 "type": "GLTFObject"
@@ -2054,8 +2375,13 @@
                         "title": "RENISON"
                     }
                 },
+                "src_filename": "Renison.zip",
                 "styling": {
-                    "is_labelled": true,
+                    "labels": [
+                        {
+                            "display_name": "Renison"
+                        }
+                    ],
                     "scale": 2.0
                 },
                 "type": "GLTFObject"
@@ -2079,8 +2405,13 @@
                         "title": "ROSEBERY"
                     }
                 },
+                "src_filename": "Rosebery.zip",
                 "styling": {
-                    "is_labelled": true,
+                    "labels": [
+                        {
+                            "display_name": "Rosebery"
+                        }
+                    ],
                     "scale": 2.0
                 },
                 "type": "GLTFObject"
@@ -2104,8 +2435,13 @@
                         "title": "STRAHAN"
                     }
                 },
+                "src_filename": "Strahan.zip",
                 "styling": {
-                    "is_labelled": true,
+                    "labels": [
+                        {
+                            "display_name": "Strahan"
+                        }
+                    ],
                     "scale": 2.0
                 },
                 "type": "GLTFObject"
@@ -2125,8 +2461,13 @@
                         "title": "ZEEHAN"
                     }
                 },
+                "src_filename": "Zeehan.zip",
                 "styling": {
-                    "is_labelled": true,
+                    "labels": [
+                        {
+                            "display_name": "Zeehan"
+                        }
+                    ],
                     "scale": 2.0
                 },
                 "type": "GLTFObject"
@@ -2496,43 +2837,7 @@
         ],
         "Grav model grids density": [
             {
-                "display_name": "RL GRAV MODEL GRIDS DENSITY 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "RL_Grav_model_grids_density_B_Forward@@.PNG",
-                "popups": {
-                    "RL_Grav_model_grids_density_B_Forward@@": {
-                        "name": "VPMG_OBS_GRV",
-                        "title": "VPMG_OBS_GRV"
-                    }
-                },
-                "position": [
-                    352050.0,
-                    5320050.0,
-                    500.0
-                ],
-                "type": "ImagePlane"
-            },
-            {
-                "display_name": "RL GRAV MODEL GRIDS DENSITY 2",
-                "displayed": true,
-                "include": true,
-                "model_url": "RL_Grav_model_grids_density_C_Residual_homogeneous@@.PNG",
-                "popups": {
-                    "RL_Grav_model_grids_density_C_Residual_homogeneous@@": {
-                        "name": "VPMG_RESID_GRV",
-                        "title": "VPMG_RESID_GRV"
-                    }
-                },
-                "position": [
-                    352050.0,
-                    5320050.0,
-                    500.0
-                ],
-                "type": "ImagePlane"
-            },
-            {
-                "display_name": "RL GRAV MODEL GRIDS DENSITY 3",
+                "display_name": "A Observed",
                 "displayed": true,
                 "include": true,
                 "model_url": "RL_Grav_model_grids_density_A_Observed@@.PNG",
@@ -2547,15 +2852,17 @@
                     5320050.0,
                     500.0
                 ],
+                "src_filename": "RL_Grav_model_grids_density_A_Observed@@.PNG",
+                "styling": {},
                 "type": "ImagePlane"
             },
             {
-                "display_name": "RL GRAV MODEL GRIDS DENSITY 4",
+                "display_name": "B Forward",
                 "displayed": true,
                 "include": true,
-                "model_url": "RL_Grav_model_grids_density_D_Heterogeneous@@.PNG",
+                "model_url": "RL_Grav_model_grids_density_B_Forward@@.PNG",
                 "popups": {
-                    "RL_Grav_model_grids_density_D_Heterogeneous@@": {
+                    "RL_Grav_model_grids_density_B_Forward@@": {
                         "name": "VPMG_OBS_GRV",
                         "title": "VPMG_OBS_GRV"
                     }
@@ -2565,10 +2872,12 @@
                     5320050.0,
                     500.0
                 ],
+                "src_filename": "RL_Grav_model_grids_density_B_Forward@@.PNG",
+                "styling": {},
                 "type": "ImagePlane"
             },
             {
-                "display_name": "RL GRAV MODEL GRIDS DENSITY 5",
+                "display_name": "C Homogeneous",
                 "displayed": true,
                 "include": true,
                 "model_url": "RL_Grav_model_grids_density_C_Homogeneous@@.PNG",
@@ -2583,10 +2892,52 @@
                     5320050.0,
                     500.0
                 ],
+                "src_filename": "RL_Grav_model_grids_density_C_Homogeneous@@.PNG",
+                "styling": {},
                 "type": "ImagePlane"
             },
             {
-                "display_name": "RL GRAV MODEL GRIDS DENSITY 6",
+                "display_name": "C Residual Homogeneous",
+                "displayed": true,
+                "include": true,
+                "model_url": "RL_Grav_model_grids_density_C_Residual_homogeneous@@.PNG",
+                "popups": {
+                    "RL_Grav_model_grids_density_C_Residual_homogeneous@@": {
+                        "name": "VPMG_RESID_GRV",
+                        "title": "VPMG_RESID_GRV"
+                    }
+                },
+                "position": [
+                    352050.0,
+                    5320050.0,
+                    500.0
+                ],
+                "src_filename": "RL_Grav_model_grids_density_C_Residual_homogeneous@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "D Heterogeneous",
+                "displayed": true,
+                "include": true,
+                "model_url": "RL_Grav_model_grids_density_D_Heterogeneous@@.PNG",
+                "popups": {
+                    "RL_Grav_model_grids_density_D_Heterogeneous@@": {
+                        "name": "VPMG_OBS_GRV",
+                        "title": "VPMG_OBS_GRV"
+                    }
+                },
+                "position": [
+                    352050.0,
+                    5320050.0,
+                    500.0
+                ],
+                "src_filename": "RL_Grav_model_grids_density_D_Heterogeneous@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "D Residual Heterogeneous",
                 "displayed": true,
                 "include": true,
                 "model_url": "RL_Grav_model_grids_density_D_Residual_Heterogeneous@@.PNG",
@@ -2601,6 +2952,8 @@
                     5320050.0,
                     500.0
                 ],
+                "src_filename": "RL_Grav_model_grids_density_D_Residual_Heterogeneous@@.PNG",
+                "styling": {},
                 "type": "ImagePlane"
             }
         ],
@@ -2616,8 +2969,13 @@
                         "title": "352000ME 5320000MN"
                     }
                 },
+                "src_filename": "352000mE_5320000mN.zip",
                 "styling": {
-                    "is_labelled": true
+                    "labels": [
+                        {
+                            "display_name": "352000mE 5320000mN"
+                        }
+                    ]
                 },
                 "type": "GLTFObject"
             },
@@ -2632,8 +2990,13 @@
                         "title": "352000ME 5335000MN"
                     }
                 },
+                "src_filename": "352000mE_5335000mN.zip",
                 "styling": {
-                    "is_labelled": true
+                    "labels": [
+                        {
+                            "display_name": "352000mE 5335000mN"
+                        }
+                    ]
                 },
                 "type": "GLTFObject"
             },
@@ -2648,8 +3011,13 @@
                         "title": "352000ME 5355000MN"
                     }
                 },
+                "src_filename": "352000mE_5355000mN.zip",
                 "styling": {
-                    "is_labelled": true
+                    "labels": [
+                        {
+                            "display_name": "352000mE 5355000mN"
+                        }
+                    ]
                 },
                 "type": "GLTFObject"
             },
@@ -2664,8 +3032,13 @@
                         "title": "352000ME 5375000MN"
                     }
                 },
+                "src_filename": "352000mE_5375000mN.zip",
                 "styling": {
-                    "is_labelled": true
+                    "labels": [
+                        {
+                            "display_name": "352000mE 5375000mN"
+                        }
+                    ]
                 },
                 "type": "GLTFObject"
             },
@@ -2680,8 +3053,13 @@
                         "title": "352000ME 5395000MN"
                     }
                 },
+                "src_filename": "352000mE_5395000mN.zip",
                 "styling": {
-                    "is_labelled": true
+                    "labels": [
+                        {
+                            "display_name": "352000mE 5395000mN"
+                        }
+                    ]
                 },
                 "type": "GLTFObject"
             },
@@ -2696,8 +3074,13 @@
                         "title": "372000ME 5320000MN"
                     }
                 },
+                "src_filename": "372000mE_5320000mN.zip",
                 "styling": {
-                    "is_labelled": true
+                    "labels": [
+                        {
+                            "display_name": "372000mE 5320000mN"
+                        }
+                    ]
                 },
                 "type": "GLTFObject"
             },
@@ -2712,8 +3095,13 @@
                         "title": "372000ME 5335000MN"
                     }
                 },
+                "src_filename": "372000mE_5335000mN.zip",
                 "styling": {
-                    "is_labelled": true
+                    "labels": [
+                        {
+                            "display_name": "372000mE 5335000mN"
+                        }
+                    ]
                 },
                 "type": "GLTFObject"
             },
@@ -2728,8 +3116,13 @@
                         "title": "372000ME 5355000MN"
                     }
                 },
+                "src_filename": "372000mE_5355000mN.zip",
                 "styling": {
-                    "is_labelled": true
+                    "labels": [
+                        {
+                            "display_name": "372000mE 5355000mN"
+                        }
+                    ]
                 },
                 "type": "GLTFObject"
             },
@@ -2744,8 +3137,13 @@
                         "title": "372000ME 5375000MN"
                     }
                 },
+                "src_filename": "372000mE_5375000mN.zip",
                 "styling": {
-                    "is_labelled": true
+                    "labels": [
+                        {
+                            "display_name": "372000mE 5375000mN"
+                        }
+                    ]
                 },
                 "type": "GLTFObject"
             },
@@ -2760,8 +3158,13 @@
                         "title": "372000ME 5395000MN"
                     }
                 },
+                "src_filename": "372000mE_5395000mN.zip",
                 "styling": {
-                    "is_labelled": true
+                    "labels": [
+                        {
+                            "display_name": "372000mE 5395000mN"
+                        }
+                    ]
                 },
                 "type": "GLTFObject"
             },
@@ -2776,8 +3179,13 @@
                         "title": "397000ME 5320000MN"
                     }
                 },
+                "src_filename": "397000mE_5320000mN.zip",
                 "styling": {
-                    "is_labelled": true
+                    "labels": [
+                        {
+                            "display_name": "397000mE 5320000mN"
+                        }
+                    ]
                 },
                 "type": "GLTFObject"
             },
@@ -2792,8 +3200,13 @@
                         "title": "397000ME 5335000MN"
                     }
                 },
+                "src_filename": "397000mE_5335000mN.zip",
                 "styling": {
-                    "is_labelled": true
+                    "labels": [
+                        {
+                            "display_name": "397000mE 5335000mN"
+                        }
+                    ]
                 },
                 "type": "GLTFObject"
             },
@@ -2808,8 +3221,13 @@
                         "title": "397000ME 5355000MN"
                     }
                 },
+                "src_filename": "397000mE_5355000mN.zip",
                 "styling": {
-                    "is_labelled": true
+                    "labels": [
+                        {
+                            "display_name": "397000mE 5355000mN"
+                        }
+                    ]
                 },
                 "type": "GLTFObject"
             },
@@ -2824,8 +3242,13 @@
                         "title": "397000ME 5375000MN"
                     }
                 },
+                "src_filename": "397000mE_5375000mN.zip",
                 "styling": {
-                    "is_labelled": true
+                    "labels": [
+                        {
+                            "display_name": "397000mE 5375000mN"
+                        }
+                    ]
                 },
                 "type": "GLTFObject"
             },
@@ -2840,51 +3263,20 @@
                         "title": "397000ME 5395000MN"
                     }
                 },
+                "src_filename": "397000mE_5395000mN.zip",
                 "styling": {
-                    "is_labelled": true
+                    "labels": [
+                        {
+                            "display_name": "397000mE 5395000mN"
+                        }
+                    ]
                 },
                 "type": "GLTFObject"
             }
         ],
         "Mag model grids susc": [
             {
-                "display_name": "RL MAG MODEL GRIDS SUSC 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "RL_Mag_model_grids_susc_B_Forward@@.PNG",
-                "popups": {
-                    "RL_Mag_model_grids_susc_B_Forward@@": {
-                        "name": "VPMG_OBS_MAG",
-                        "title": "VPMG_OBS_MAG"
-                    }
-                },
-                "position": [
-                    352050.0,
-                    5320050.0,
-                    500.0
-                ],
-                "type": "ImagePlane"
-            },
-            {
-                "display_name": "RL MAG MODEL GRIDS SUSC 2",
-                "displayed": true,
-                "include": true,
-                "model_url": "RL_Mag_model_grids_susc_C_Residual_Homogeneous@@.PNG",
-                "popups": {
-                    "RL_Mag_model_grids_susc_C_Residual_Homogeneous@@": {
-                        "name": "VPMG_RESID_MAG",
-                        "title": "VPMG_RESID_MAG"
-                    }
-                },
-                "position": [
-                    352050.0,
-                    5320050.0,
-                    500.0
-                ],
-                "type": "ImagePlane"
-            },
-            {
-                "display_name": "RL MAG MODEL GRIDS SUSC 3",
+                "display_name": "A Observed",
                 "displayed": true,
                 "include": true,
                 "model_url": "RL_Mag_model_grids_susc_A_Observed@@.PNG",
@@ -2899,15 +3291,17 @@
                     5320050.0,
                     500.0
                 ],
+                "src_filename": "RL_Mag_model_grids_susc_A_Observed@@.PNG",
+                "styling": {},
                 "type": "ImagePlane"
             },
             {
-                "display_name": "RL MAG MODEL GRIDS SUSC 4",
+                "display_name": "B Forward",
                 "displayed": true,
                 "include": true,
-                "model_url": "RL_Mag_model_grids_susc_D_heterogeneous@@.PNG",
+                "model_url": "RL_Mag_model_grids_susc_B_Forward@@.PNG",
                 "popups": {
-                    "RL_Mag_model_grids_susc_D_heterogeneous@@": {
+                    "RL_Mag_model_grids_susc_B_Forward@@": {
                         "name": "VPMG_OBS_MAG",
                         "title": "VPMG_OBS_MAG"
                     }
@@ -2917,10 +3311,12 @@
                     5320050.0,
                     500.0
                 ],
+                "src_filename": "RL_Mag_model_grids_susc_B_Forward@@.PNG",
+                "styling": {},
                 "type": "ImagePlane"
             },
             {
-                "display_name": "RL MAG MODEL GRIDS SUSC 5",
+                "display_name": "C Homogeneous",
                 "displayed": true,
                 "include": true,
                 "model_url": "RL_Mag_model_grids_susc_C_Homogeneous@@.PNG",
@@ -2935,10 +3331,52 @@
                     5320050.0,
                     500.0
                 ],
+                "src_filename": "RL_Mag_model_grids_susc_C_Homogeneous@@.PNG",
+                "styling": {},
                 "type": "ImagePlane"
             },
             {
-                "display_name": "RL MAG MODEL GRIDS SUSC 6",
+                "display_name": "C Residual Homogeneous",
+                "displayed": true,
+                "include": true,
+                "model_url": "RL_Mag_model_grids_susc_C_Residual_Homogeneous@@.PNG",
+                "popups": {
+                    "RL_Mag_model_grids_susc_C_Residual_Homogeneous@@": {
+                        "name": "VPMG_RESID_MAG",
+                        "title": "VPMG_RESID_MAG"
+                    }
+                },
+                "position": [
+                    352050.0,
+                    5320050.0,
+                    500.0
+                ],
+                "src_filename": "RL_Mag_model_grids_susc_C_Residual_Homogeneous@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "D Heterogeneous",
+                "displayed": true,
+                "include": true,
+                "model_url": "RL_Mag_model_grids_susc_D_heterogeneous@@.PNG",
+                "popups": {
+                    "RL_Mag_model_grids_susc_D_heterogeneous@@": {
+                        "name": "VPMG_OBS_MAG",
+                        "title": "VPMG_OBS_MAG"
+                    }
+                },
+                "position": [
+                    352050.0,
+                    5320050.0,
+                    500.0
+                ],
+                "src_filename": "RL_Mag_model_grids_susc_D_heterogeneous@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "display_name": "E Residual Heterogeneous",
                 "displayed": true,
                 "include": true,
                 "model_url": "RL_Mag_model_grids_susc_E_Residual_heterogeneous@@.PNG",
@@ -2953,6 +3391,8 @@
                     5320050.0,
                     500.0
                 ],
+                "src_filename": "RL_Mag_model_grids_susc_E_Residual_heterogeneous@@.PNG",
+                "styling": {},
                 "type": "ImagePlane"
             }
         ],
@@ -2968,6 +3408,8 @@
                         "title": "14_ANDESITE"
                     }
                 },
+                "src_filename": "14_andesite.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -2987,6 +3429,8 @@
                         "title": "21_BONDS_RANGE_PORPHYRY"
                     }
                 },
+                "src_filename": "21_Bonds_Range_Porphyry.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3000,6 +3444,8 @@
                         "title": "17_CAMBRIAN_GRANITE_MAGNETIC"
                     }
                 },
+                "src_filename": "17_Cambrian_granite_magnetic.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3013,6 +3459,8 @@
                         "title": "18_CAMBRIAN_GRANITE_NON_MAGNETIC"
                     }
                 },
+                "src_filename": "18_Cambrian_granite_non_magnetic.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3026,6 +3474,8 @@
                         "title": "03_CENOZOIC_BASALT"
                     }
                 },
+                "src_filename": "03_Cenozoic_basalt.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3039,6 +3489,8 @@
                         "title": "04_CENOZOIC_SEDIMENT"
                     }
                 },
+                "src_filename": "04_Cenozoic_sediment.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3058,6 +3510,8 @@
                         "title": "20_CENTRAL_VOLCANIC_COMPLEX"
                     }
                 },
+                "src_filename": "20_Central_Volcanic_Complex.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3077,6 +3531,8 @@
                         "title": "27_CRIMSON_CREEK_FORMATION"
                     }
                 },
+                "src_filename": "27_Crimson_Creek_Formation.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3090,6 +3546,8 @@
                         "title": "06_DEVONIAN_GRANITE"
                     }
                 },
+                "src_filename": "06_Devonian_granite.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3103,6 +3561,8 @@
                         "title": "06_DEVONIAN_GRANITE_BASE"
                     }
                 },
+                "src_filename": "06_Devonian_granite_base.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3116,6 +3576,8 @@
                         "title": "23_EASTERN_QUARTZ_PHYRIC_SEQUENCE"
                     }
                 },
+                "src_filename": "23_Eastern_Quartz_Phyric_Sequence.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3135,6 +3597,8 @@
                         "title": "08_ELDON_GROUP"
                     }
                 },
+                "src_filename": "08_Eldon_Group.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3154,6 +3618,8 @@
                         "title": "22_FARRELL_SLATE"
                     }
                 },
+                "src_filename": "22_Farrell_Slate.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3173,6 +3639,8 @@
                         "title": "09_GORDON_GROUP"
                     }
                 },
+                "src_filename": "09_Gordon_Group.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3192,6 +3660,8 @@
                         "title": "25_LUINA_GROUP"
                     }
                 },
+                "src_filename": "25_Luina_Group.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3211,6 +3681,8 @@
                         "title": "09_MOINA_SANDSTONE"
                     }
                 },
+                "src_filename": "09_Moina_Sandstone.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3230,6 +3702,8 @@
                         "title": "10_OWEN_GROUP"
                     }
                 },
+                "src_filename": "10_Owen_Group.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3249,6 +3723,8 @@
                         "title": "07_PARMEENER_SUPERGROUP"
                     }
                 },
+                "src_filename": "07_Parmeener_Supergroup.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3268,6 +3744,8 @@
                         "title": "19_QUARTZ_FELDSPAR_PORPHYRY"
                     }
                 },
+                "src_filename": "19_quartz_feldspar_porphyry.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3287,6 +3765,8 @@
                         "title": "12_QUE_HELLYER_VOLCANICS"
                     }
                 },
+                "src_filename": "12_Que_Hellyer_Volcanics.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3306,6 +3786,8 @@
                         "title": "30_ROCKY_CAPE_GROUP"
                     }
                 },
+                "src_filename": "30_Rocky_Cape_Group.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3325,6 +3807,8 @@
                         "title": "24_STICHT_RANGE_FORMATION"
                     }
                 },
+                "src_filename": "24_Sticht_Range_Formation.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3344,6 +3828,8 @@
                         "title": "28_SUCCESS_CREEK_GROUP"
                     }
                 },
+                "src_filename": "28_Success_Creek_Group.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3357,6 +3843,8 @@
                         "title": "05_TASMANIAN_DOLERITE"
                     }
                 },
+                "src_filename": "05_Tasmanian_Dolerite.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3376,6 +3864,8 @@
                         "title": "11_TYNDALL_GROUP"
                     }
                 },
+                "src_filename": "11_Tyndall_Group.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3389,6 +3879,8 @@
                         "title": "02_WATER"
                     }
                 },
+                "src_filename": "02_water.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -3402,6 +3894,8 @@
                         "title": "12_WESTERN_VOLCANO_SEDIMENTARY_SEQUENCE"
                     }
                 },
+                "src_filename": "12_Western_Volcano_Sedimentary_sequence.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ]
