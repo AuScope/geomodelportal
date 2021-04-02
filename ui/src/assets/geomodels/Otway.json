@@ -468,6 +468,8 @@
                         "title": "FINAL_OTWAY_FAULTS_14-07-11-FLT_YARRAMYLJUP"
                     }
                 },
+                "src_filename": "FINAL_OTWAY_FAULTS_14-07-11.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],
@@ -739,6 +741,8 @@
                         "title": "FINAL_OTWAY_INTRUSIVES_13-07-11-OB_GRANITE5"
                     }
                 },
+                "src_filename": "FINAL_OTWAY_INTRUSIVES_13-07-11.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],
@@ -798,6 +802,8 @@
                         "title": "STRAT_TORQUAY_TOP-OTWAYGP_GSV_FINAL"
                     }
                 },
+                "src_filename": "FINAL_OTWAY_STRAT_SURFACES_13-07-11.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],
@@ -813,6 +819,8 @@
                         "title": "FINAL_OTWAY_EXTRA_STRAT_13-07-11-STRAT_TOP-BSMT_GSV"
                     }
                 },
+                "src_filename": "FINAL_OTWAY_EXTRA_STRAT_13-07-11.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -832,6 +840,8 @@
                         "title": "STRAT_TOP-CRAYFISH_GSV"
                     }
                 },
+                "src_filename": "FINAL_OTWAY_EXTRA_STRAT_13-07-11.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -851,6 +861,8 @@
                         "title": "STRAT_TOP-EUMERALLA_GSV"
                     }
                 },
+                "src_filename": "FINAL_OTWAY_EXTRA_STRAT_13-07-11.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -870,6 +882,8 @@
                         "title": "STRAT_TOP-PRETTY-HILL-EAST_FROGTECH_FINAL"
                     }
                 },
+                "src_filename": "FINAL_OTWAY_EXTRA_STRAT_13-07-11.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -889,6 +903,8 @@
                         "title": "STRAT_TOP-PRETTY-HILL-WEST_FROGTECH_FINAL"
                     }
                 },
+                "src_filename": "FINAL_OTWAY_EXTRA_STRAT_13-07-11.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],
