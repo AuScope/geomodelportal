@@ -1,8 +1,9 @@
 {
     "groups": {
-        "Surface": [
+        "3D Surface": [
             {
-                "display_name": "BurraMine3DSurface",
+                "alt_group_label": "Gocad_BurraMine3DSurface",
+                "display_name": "3D Surface",
                 "displayed": true,
                 "include": true,
                 "model_url": "BurraMine3DSurface.gltf",

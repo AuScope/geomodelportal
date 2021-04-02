@@ -1,17 +1,252 @@
 {
     "groups": {
-        "Not Grouped": [
+        "3D Volume Model density Density@@": [
             {
-                "display_name": "08GA OM1 CDP",
-                "displayed": true,
+                "alt_group_label": "3D Volume Model density Density@@",
+                "display_name": "MODEL_DENSITY",
+                "displayed": false,
                 "include": true,
-                "model_url": "08GA_OM1_CDP.gzson",
-                "popups": {},
-                "src_filename": "08GA_OM1_CDP.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
+                "model_url": "Model_density_Density@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "colourLookup": {
+                        "0": [
+                            0.0,
+                            0.0,
+                            1.0,
+                            1.0
+                        ],
+                        "32": [
+                            0.0,
+                            0.5,
+                            1.0,
+                            1.0
+                        ],
+                        "64": [
+                            0.0,
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "96": [
+                            0.200000003,
+                            1.0,
+                            0.699999988,
+                            1.0
+                        ],
+                        "128": [
+                            0.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "160": [
+                            0.699999988,
+                            1.0,
+                            0.200000003,
+                            1.0
+                        ],
+                        "192": [
+                            1.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "224": [
+                            1.0,
+                            0.5,
+                            0.0,
+                            1.0
+                        ],
+                        "255": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ]
+                    },
+                    "dataDims": [
+                        122,
+                        79,
+                        253
+                    ],
+                    "dataType": "FLOAT_32",
+                    "maxVal": -1.7976931348623157e+308,
+                    "minVal": 1.7976931348623157e+308,
+                    "origin": [
+                        35000.0,
+                        6455000.0,
+                        3000.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            -0.0,
+                            -0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        360024.5949394672,
+                        231037.97218359448,
+                        62750.98814229249
+                    ]
+                }
+            }
+        ],
+        "3D Volume Model density Rock unit@@": [
             {
+                "alt_group_label": "3D Volume Model density Rock unit@@",
+                "display_name": "MODEL_DENSITY",
+                "displayed": false,
+                "include": true,
+                "model_url": "Model_density_Rock_unit@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "dataDims": [
+                        122,
+                        79,
+                        253
+                    ],
+                    "dataType": "INT_16",
+                    "maxVal": -1.7976931348623157e+308,
+                    "minVal": 1.7976931348623157e+308,
+                    "origin": [
+                        35000.0,
+                        6455000.0,
+                        3000.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            -0.0,
+                            -0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        360024.5949394672,
+                        231037.97218359448,
+                        62750.98814229249
+                    ]
+                }
+            }
+        ],
+        "3D Volume Model susceptibility Magnetic susctptibility@@": [
+            {
+                "alt_group_label": "3D Volume Model susceptibility Magnetic susctptibility@@",
+                "display_name": "MODEL_SUSCEPTIBILITY",
+                "displayed": false,
+                "include": true,
+                "model_url": "Model_susceptibility_Magnetic_susctptibility@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "dataDims": [
+                        122,
+                        79,
+                        253
+                    ],
+                    "dataType": "FLOAT_32",
+                    "maxVal": -1.7976931348623157e+308,
+                    "minVal": 1.7976931348623157e+308,
+                    "origin": [
+                        35000.0,
+                        6455000.0,
+                        3000.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            -0.0,
+                            -0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        360024.5949394672,
+                        231037.97218359448,
+                        62750.98814229249
+                    ]
+                }
+            }
+        ],
+        "3D Volume Model susceptibility Rock unit@@": [
+            {
+                "alt_group_label": "3D Volume Model susceptibility Rock unit@@",
+                "display_name": "MODEL_SUSCEPTIBILITY",
+                "displayed": false,
+                "include": true,
+                "model_url": "Model_susceptibility_Rock_unit@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "dataDims": [
+                        122,
+                        79,
+                        253
+                    ],
+                    "dataType": "INT_16",
+                    "maxVal": -1.7976931348623157e+308,
+                    "minVal": 1.7976931348623157e+308,
+                    "origin": [
+                        35000.0,
+                        6455000.0,
+                        3000.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            -0.0,
+                            -0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        360024.5949394672,
+                        231037.97218359448,
+                        62750.98814229249
+                    ]
+                }
+            }
+        ],
+        "Gocad objects_08GA_OM1_Line": [
+            {
+                "alt_group_label": "Gocad objects_08GA_OM1_Line",
                 "display_name": "08GA OM1 Line",
                 "displayed": true,
                 "include": true,
@@ -157,18 +392,11 @@
                 "src_filename": "08GA_OM1_Line.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_13GA_EG1_Line": [
             {
-                "display_name": "13GA EG1 CDP",
-                "displayed": true,
-                "include": true,
-                "model_url": "13GA_EG1_CDP.gzson",
-                "popups": {},
-                "src_filename": "13GA_EG1_CDP.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
+                "alt_group_label": "Gocad objects_13GA_EG1_Line",
                 "display_name": "13GA EG1 Line",
                 "displayed": true,
                 "include": true,
@@ -462,8 +690,11 @@
                 "src_filename": "13GA_EG1_Line.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_13GA_EG1_interpretation_located": [
             {
+                "alt_group_label": "Gocad objects_13GA_EG1_interpretation_located",
                 "display_name": "13GA EG1 interpretation located",
                 "displayed": true,
                 "include": true,
@@ -477,8 +708,11 @@
                 "src_filename": "13GA_EG1_interpretation_located.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_B1_Eucla_Basin": [
             {
+                "alt_group_label": "Gocad objects_B1_Eucla_Basin",
                 "display_name": "B1 Eucla Basin",
                 "displayed": true,
                 "include": true,
@@ -492,8 +726,11 @@
                 "src_filename": "B1_Eucla_Basin.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_B2_Bight_Basin": [
             {
+                "alt_group_label": "Gocad objects_B2_Bight_Basin",
                 "display_name": "B2 Bight Basin",
                 "displayed": true,
                 "include": true,
@@ -507,8 +744,11 @@
                 "src_filename": "B2_Bight_Basin.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_B3_Arckaringa_Basin": [
             {
+                "alt_group_label": "Gocad objects_B3_Arckaringa_Basin",
                 "display_name": "B3 Arckaringa Basin",
                 "displayed": true,
                 "include": true,
@@ -522,8 +762,11 @@
                 "src_filename": "B3_Arckaringa_Basin.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_B4_Officer_Basin": [
             {
+                "alt_group_label": "Gocad objects_B4_Officer_Basin",
                 "display_name": "B4 Officer Basin",
                 "displayed": true,
                 "include": true,
@@ -537,8 +780,11 @@
                 "src_filename": "B4_Officer_Basin.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_Basin_outline_Arkaringa": [
             {
+                "alt_group_label": "Gocad objects_Basin_outline_Arkaringa",
                 "display_name": "Basin outline Arkaringa",
                 "displayed": true,
                 "include": true,
@@ -984,8 +1230,11 @@
                 "src_filename": "Basin_outline_Arkaringa.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_Basin_outline_Bight": [
             {
+                "alt_group_label": "Gocad objects_Basin_outline_Bight",
                 "display_name": "Basin outline Bight",
                 "displayed": true,
                 "include": true,
@@ -1155,8 +1404,11 @@
                 "src_filename": "Basin_outline_Bight.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_Basin_outline_Eucla": [
             {
+                "alt_group_label": "Gocad objects_Basin_outline_Eucla",
                 "display_name": "Basin outline Eucla",
                 "displayed": true,
                 "include": true,
@@ -5254,8 +5506,11 @@
                 "src_filename": "Basin_outline_Eucla.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_Basin_outline_Officer": [
             {
+                "alt_group_label": "Gocad objects_Basin_outline_Officer",
                 "display_name": "Basin outline Officer",
                 "displayed": true,
                 "include": true,
@@ -5797,8 +6052,11 @@
                 "src_filename": "Basin_outline_Officer.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_D01_Basins": [
             {
+                "alt_group_label": "Gocad objects_D01_Basins",
                 "display_name": "D01 Basins",
                 "displayed": true,
                 "include": true,
@@ -5812,8 +6070,11 @@
                 "src_filename": "D01_Basins.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_D02_Nawa_Metasediments": [
             {
+                "alt_group_label": "Gocad objects_D02_Nawa_Metasediments",
                 "display_name": "D02 Nawa Metasediments",
                 "displayed": true,
                 "include": true,
@@ -5827,8 +6088,11 @@
                 "src_filename": "D02_Nawa_Metasediments.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_D03_Upper_Crust": [
             {
+                "alt_group_label": "Gocad objects_D03_Upper_Crust",
                 "display_name": "D03 Upper Crust",
                 "displayed": true,
                 "include": true,
@@ -5842,8 +6106,11 @@
                 "src_filename": "D03_Upper_Crust.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_D04_Middle_crust": [
             {
+                "alt_group_label": "Gocad objects_D04_Middle_crust",
                 "display_name": "D04 Middle crust",
                 "displayed": true,
                 "include": true,
@@ -5857,8 +6124,11 @@
                 "src_filename": "D04_Middle_crust.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_D05_Moho": [
             {
+                "alt_group_label": "Gocad objects_D05_Moho",
                 "display_name": "D05 Moho",
                 "displayed": true,
                 "include": true,
@@ -5872,8 +6142,11 @@
                 "src_filename": "D05_Moho.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F01_Jindarnga": [
             {
+                "alt_group_label": "Gocad objects_F01_Jindarnga",
                 "display_name": "F01 Jindarnga",
                 "displayed": true,
                 "include": true,
@@ -5887,8 +6160,11 @@
                 "src_filename": "F01_Jindarnga.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F02_Yarle": [
             {
+                "alt_group_label": "Gocad objects_F02_Yarle",
                 "display_name": "F02 Yarle",
                 "displayed": true,
                 "include": true,
@@ -5902,8 +6178,11 @@
                 "src_filename": "F02_Yarle.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F03_Wirratinna": [
             {
+                "alt_group_label": "Gocad objects_F03_Wirratinna",
                 "display_name": "F03 Wirratinna",
                 "displayed": true,
                 "include": true,
@@ -5917,8 +6196,11 @@
                 "src_filename": "F03_Wirratinna.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F04_Wirinjinna": [
             {
+                "alt_group_label": "Gocad objects_F04_Wirinjinna",
                 "display_name": "F04 Wirinjinna",
                 "displayed": true,
                 "include": true,
@@ -5932,8 +6214,11 @@
                 "src_filename": "F04_Wirinjinna.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F05_Karari_1": [
             {
+                "alt_group_label": "Gocad objects_F05_Karari_1",
                 "display_name": "F05 Karari 1",
                 "displayed": true,
                 "include": true,
@@ -5947,8 +6232,11 @@
                 "src_filename": "F05_Karari_1.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F06_Karari_2": [
             {
+                "alt_group_label": "Gocad objects_F06_Karari_2",
                 "display_name": "F06 Karari 2",
                 "displayed": true,
                 "include": true,
@@ -5962,8 +6250,11 @@
                 "src_filename": "F06_Karari_2.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F07_Karari_3": [
             {
+                "alt_group_label": "Gocad objects_F07_Karari_3",
                 "display_name": "F07 Karari 3",
                 "displayed": true,
                 "include": true,
@@ -5977,8 +6268,11 @@
                 "src_filename": "F07_Karari_3.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F08_Karari_4": [
             {
+                "alt_group_label": "Gocad objects_F08_Karari_4",
                 "display_name": "F08 Karari 4",
                 "displayed": true,
                 "include": true,
@@ -5992,8 +6286,11 @@
                 "src_filename": "F08_Karari_4.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F09_HorseCamp": [
             {
+                "alt_group_label": "Gocad objects_F09_HorseCamp",
                 "display_name": "F09 HorseCamp",
                 "displayed": true,
                 "include": true,
@@ -6007,8 +6304,11 @@
                 "src_filename": "F09_HorseCamp.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F10_Ifould": [
             {
+                "alt_group_label": "Gocad objects_F10_Ifould",
                 "display_name": "F10 Ifould",
                 "displayed": true,
                 "include": true,
@@ -6022,8 +6322,11 @@
                 "src_filename": "F10_Ifould.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F11_Tallacootra_1": [
             {
+                "alt_group_label": "Gocad objects_F11_Tallacootra_1",
                 "display_name": "F11 Tallacootra 1",
                 "displayed": true,
                 "include": true,
@@ -6037,8 +6340,11 @@
                 "src_filename": "F11_Tallacootra_1.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F12_Tallacootra_2": [
             {
+                "alt_group_label": "Gocad objects_F12_Tallacootra_2",
                 "display_name": "F12 Tallacootra 2",
                 "displayed": true,
                 "include": true,
@@ -6052,8 +6358,11 @@
                 "src_filename": "F12_Tallacootra_2.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F13_Beella": [
             {
+                "alt_group_label": "Gocad objects_F13_Beella",
                 "display_name": "F13 Beella",
                 "displayed": true,
                 "include": true,
@@ -6067,8 +6376,11 @@
                 "src_filename": "F13_Beella.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F14_Domain_boundary_ChristieFowler": [
             {
+                "alt_group_label": "Gocad objects_F14_Domain_boundary_ChristieFowler",
                 "display_name": "F14 Domain boundary ChristieFowler",
                 "displayed": true,
                 "include": true,
@@ -6082,8 +6394,11 @@
                 "src_filename": "F14_Domain_boundary_ChristieFowler.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F15_Chimpering_1": [
             {
+                "alt_group_label": "Gocad objects_F15_Chimpering_1",
                 "display_name": "F15 Chimpering 1",
                 "displayed": true,
                 "include": true,
@@ -6097,8 +6412,11 @@
                 "src_filename": "F15_Chimpering_1.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F16_Chimpering_2": [
             {
+                "alt_group_label": "Gocad objects_F16_Chimpering_2",
                 "display_name": "F16 Chimpering 2",
                 "displayed": true,
                 "include": true,
@@ -6112,8 +6430,11 @@
                 "src_filename": "F16_Chimpering_2.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F17_Colona_1": [
             {
+                "alt_group_label": "Gocad objects_F17_Colona_1",
                 "display_name": "F17 Colona 1",
                 "displayed": true,
                 "include": true,
@@ -6127,8 +6448,11 @@
                 "src_filename": "F17_Colona_1.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F18_Colona_2": [
             {
+                "alt_group_label": "Gocad objects_F18_Colona_2",
                 "display_name": "F18 Colona 2",
                 "displayed": true,
                 "include": true,
@@ -6142,8 +6466,11 @@
                 "src_filename": "F18_Colona_2.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F19_Coorabie_1": [
             {
+                "alt_group_label": "Gocad objects_F19_Coorabie_1",
                 "display_name": "F19 Coorabie 1",
                 "displayed": true,
                 "include": true,
@@ -6157,8 +6484,11 @@
                 "src_filename": "F19_Coorabie_1.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F20_Coorabie_2": [
             {
+                "alt_group_label": "Gocad objects_F20_Coorabie_2",
                 "display_name": "F20 Coorabie 2",
                 "displayed": true,
                 "include": true,
@@ -6172,8 +6502,11 @@
                 "src_filename": "F20_Coorabie_2.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F21_Coorabie_3": [
             {
+                "alt_group_label": "Gocad objects_F21_Coorabie_3",
                 "display_name": "F21 Coorabie 3",
                 "displayed": true,
                 "include": true,
@@ -6187,8 +6520,11 @@
                 "src_filename": "F21_Coorabie_3.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F22_Coorabie_4": [
             {
+                "alt_group_label": "Gocad objects_F22_Coorabie_4",
                 "display_name": "F22 Coorabie 4",
                 "displayed": true,
                 "include": true,
@@ -6202,8 +6538,11 @@
                 "src_filename": "F22_Coorabie_4.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F23_Coorabie_5": [
             {
+                "alt_group_label": "Gocad objects_F23_Coorabie_5",
                 "display_name": "F23 Coorabie 5",
                 "displayed": true,
                 "include": true,
@@ -6217,8 +6556,11 @@
                 "src_filename": "F23_Coorabie_5.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F24_MiddleCrust": [
             {
+                "alt_group_label": "Gocad objects_F24_MiddleCrust",
                 "display_name": "F24 MiddleCrust",
                 "displayed": true,
                 "include": true,
@@ -6232,8 +6574,11 @@
                 "src_filename": "F24_MiddleCrust.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F25_Muckanippie": [
             {
+                "alt_group_label": "Gocad objects_F25_Muckanippie",
                 "display_name": "F25 Muckanippie",
                 "displayed": true,
                 "include": true,
@@ -6247,8 +6592,11 @@
                 "src_filename": "F25_Muckanippie.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F26_Bulgunnia": [
             {
+                "alt_group_label": "Gocad objects_F26_Bulgunnia",
                 "display_name": "F26 Bulgunnia",
                 "displayed": true,
                 "include": true,
@@ -6262,8 +6610,11 @@
                 "src_filename": "F26_Bulgunnia.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F27_Yerda": [
             {
+                "alt_group_label": "Gocad objects_F27_Yerda",
                 "display_name": "F27 Yerda",
                 "displayed": true,
                 "include": true,
@@ -6277,8 +6628,11 @@
                 "src_filename": "F27_Yerda.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F28_Oolabinna": [
             {
+                "alt_group_label": "Gocad objects_F28_Oolabinna",
                 "display_name": "F28 Oolabinna",
                 "displayed": true,
                 "include": true,
@@ -6292,8 +6646,11 @@
                 "src_filename": "F28_Oolabinna.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F29_Koonibba": [
             {
+                "alt_group_label": "Gocad objects_F29_Koonibba",
                 "display_name": "F29 Koonibba",
                 "displayed": true,
                 "include": true,
@@ -6307,8 +6664,11 @@
                 "src_filename": "F29_Koonibba.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_F30_Bulga": [
             {
+                "alt_group_label": "Gocad objects_F30_Bulga",
                 "display_name": "F30 Bulga",
                 "displayed": true,
                 "include": true,
@@ -6322,38 +6682,11 @@
                 "src_filename": "F30_Bulga.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_H01_Cenozoic": [
             {
-                "display_name": "GRAV 3KM POINTS",
-                "displayed": true,
-                "include": true,
-                "model_url": "Grav_3km_points.gzson",
-                "popups": {},
-                "src_filename": "Grav_3km_points.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "display_name": "GRAV 3KM UP20 POINTS",
-                "displayed": true,
-                "include": true,
-                "model_url": "Grav_3km_up20_points.gzson",
-                "popups": {},
-                "src_filename": "Grav_3km_up20_points.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "display_name": "GRAVITY INVERSION",
-                "displayed": true,
-                "include": true,
-                "model_url": "Gravity_inversion.gzson",
-                "popups": {},
-                "src_filename": "Gravity_inversion.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
+                "alt_group_label": "Gocad objects_H01_Cenozoic",
                 "display_name": "H01 Cenozoic",
                 "displayed": true,
                 "include": true,
@@ -7035,8 +7368,11 @@
                 "src_filename": "H01_Cenozoic.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_H02_Mesozoic": [
             {
+                "alt_group_label": "Gocad objects_H02_Mesozoic",
                 "display_name": "H02 Mesozoic",
                 "displayed": true,
                 "include": true,
@@ -7914,8 +8250,11 @@
                 "src_filename": "H02_Mesozoic.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_H03_Upper_Mt_Toondina_Formation": [
             {
+                "alt_group_label": "Gocad objects_H03_Upper_Mt_Toondina_Formation",
                 "display_name": "H03 Upper Mt Toondina Formation",
                 "displayed": true,
                 "include": true,
@@ -8113,8 +8452,11 @@
                 "src_filename": "H03_Upper_Mt_Toondina_Formation.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_H04_Lower_Mt_Toondina_Formation": [
             {
+                "alt_group_label": "Gocad objects_H04_Lower_Mt_Toondina_Formation",
                 "display_name": "H04 Lower Mt Toondina Formation",
                 "displayed": true,
                 "include": true,
@@ -8584,8 +8926,11 @@
                 "src_filename": "H04_Lower_Mt_Toondina_Formation.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_H05_Stuart_Range_Formation": [
             {
+                "alt_group_label": "Gocad objects_H05_Stuart_Range_Formation",
                 "display_name": "H05 Stuart Range Formation",
                 "displayed": true,
                 "include": true,
@@ -9303,8 +9648,11 @@
                 "src_filename": "H05_Stuart_Range_Formation.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_H06_Boorthanna_Formation": [
             {
+                "alt_group_label": "Gocad objects_H06_Boorthanna_Formation",
                 "display_name": "H06 Boorthanna Formation",
                 "displayed": true,
                 "include": true,
@@ -10254,8 +10602,11 @@
                 "src_filename": "H06_Boorthanna_Formation.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_H07_Gawler_Range_Volcanics": [
             {
+                "alt_group_label": "Gocad objects_H07_Gawler_Range_Volcanics",
                 "display_name": "H07 Gawler Range Volcanics",
                 "displayed": true,
                 "include": true,
@@ -10501,8 +10852,11 @@
                 "src_filename": "H07_Gawler_Range_Volcanics.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_H08_Tarcoola_Formation": [
             {
+                "alt_group_label": "Gocad objects_H08_Tarcoola_Formation",
                 "display_name": "H08 Tarcoola Formation",
                 "displayed": true,
                 "include": true,
@@ -10720,8 +11074,11 @@
                 "src_filename": "H08_Tarcoola_Formation.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_H09_Granite": [
             {
+                "alt_group_label": "Gocad objects_H09_Granite",
                 "display_name": "H09 Granite",
                 "displayed": true,
                 "include": true,
@@ -11919,8 +12276,11 @@
                 "src_filename": "H09_Granite.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_H10_Moho": [
             {
+                "alt_group_label": "Gocad objects_H10_Moho",
                 "display_name": "H10 Moho",
                 "displayed": true,
                 "include": true,
@@ -12542,8 +12902,11 @@
                 "src_filename": "H10_Moho.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_Hx_08GA_OM1_Form_Line": [
             {
+                "alt_group_label": "Gocad objects_Hx_08GA_OM1_Form_Line",
                 "display_name": "Hx 08GA OM1 Form Line",
                 "displayed": true,
                 "include": true,
@@ -19265,8 +19628,11 @@
                 "src_filename": "Hx_08GA_OM1_Form_Line.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_Hy_08GA_OM1_Fault": [
             {
+                "alt_group_label": "Gocad objects_Hy_08GA_OM1_Fault",
                 "display_name": "Hy 08GA OM1 Fault",
                 "displayed": true,
                 "include": true,
@@ -22624,250 +22990,11 @@
                 "src_filename": "Hy_08GA_OM1_Fault.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ01_Jindarnga": [
             {
-                "display_name": "MAGNETIC INVERSION",
-                "displayed": true,
-                "include": true,
-                "model_url": "Magnetic_inversion.gzson",
-                "popups": {},
-                "src_filename": "Magnetic_inversion.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "display_name": "MODEL_DENSITY",
-                "displayed": false,
-                "include": true,
-                "model_url": "Model_density_Density@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "colourLookup": {
-                        "0": [
-                            0.0,
-                            0.0,
-                            1.0,
-                            1.0
-                        ],
-                        "32": [
-                            0.0,
-                            0.5,
-                            1.0,
-                            1.0
-                        ],
-                        "64": [
-                            0.0,
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "96": [
-                            0.200000003,
-                            1.0,
-                            0.699999988,
-                            1.0
-                        ],
-                        "128": [
-                            0.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "160": [
-                            0.699999988,
-                            1.0,
-                            0.200000003,
-                            1.0
-                        ],
-                        "192": [
-                            1.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "224": [
-                            1.0,
-                            0.5,
-                            0.0,
-                            1.0
-                        ],
-                        "255": [
-                            1.0,
-                            0.0,
-                            0.0,
-                            1.0
-                        ]
-                    },
-                    "dataDims": [
-                        122,
-                        79,
-                        253
-                    ],
-                    "dataType": "FLOAT_32",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
-                    "origin": [
-                        35000.0,
-                        6455000.0,
-                        3000.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            -0.0,
-                            -0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        360024.5949394672,
-                        231037.97218359448,
-                        62750.98814229249
-                    ]
-                }
-            },
-            {
-                "display_name": "MODEL_DENSITY",
-                "displayed": false,
-                "include": true,
-                "model_url": "Model_density_Rock_unit@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "dataDims": [
-                        122,
-                        79,
-                        253
-                    ],
-                    "dataType": "INT_16",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
-                    "origin": [
-                        35000.0,
-                        6455000.0,
-                        3000.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            -0.0,
-                            -0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        360024.5949394672,
-                        231037.97218359448,
-                        62750.98814229249
-                    ]
-                }
-            },
-            {
-                "display_name": "MODEL_SUSCEPTIBILITY",
-                "displayed": false,
-                "include": true,
-                "model_url": "Model_susceptibility_Magnetic_susctptibility@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "dataDims": [
-                        122,
-                        79,
-                        253
-                    ],
-                    "dataType": "FLOAT_32",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
-                    "origin": [
-                        35000.0,
-                        6455000.0,
-                        3000.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            -0.0,
-                            -0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        360024.5949394672,
-                        231037.97218359448,
-                        62750.98814229249
-                    ]
-                }
-            },
-            {
-                "display_name": "MODEL_SUSCEPTIBILITY",
-                "displayed": false,
-                "include": true,
-                "model_url": "Model_susceptibility_Rock_unit@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "dataDims": [
-                        122,
-                        79,
-                        253
-                    ],
-                    "dataType": "INT_16",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
-                    "origin": [
-                        35000.0,
-                        6455000.0,
-                        3000.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            -0.0,
-                            -0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        360024.5949394672,
-                        231037.97218359448,
-                        62750.98814229249
-                    ]
-                }
-            },
-            {
+                "alt_group_label": "Gocad objects_SZ01_Jindarnga",
                 "display_name": "SZ01 Jindarnga",
                 "displayed": true,
                 "include": true,
@@ -23057,8 +23184,11 @@
                 "src_filename": "SZ01_Jindarnga.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ02_Yarle": [
             {
+                "alt_group_label": "Gocad objects_SZ02_Yarle",
                 "display_name": "SZ02 Yarle",
                 "displayed": true,
                 "include": true,
@@ -23216,8 +23346,11 @@
                 "src_filename": "SZ02_Yarle.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ03_Wirratinna": [
             {
+                "alt_group_label": "Gocad objects_SZ03_Wirratinna",
                 "display_name": "SZ03 Wirratinna",
                 "displayed": true,
                 "include": true,
@@ -23483,8 +23616,11 @@
                 "src_filename": "SZ03_Wirratinna.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ04_Wirinjinna": [
             {
+                "alt_group_label": "Gocad objects_SZ04_Wirinjinna",
                 "display_name": "SZ04 Wirinjinna",
                 "displayed": true,
                 "include": true,
@@ -23750,8 +23886,11 @@
                 "src_filename": "SZ04_Wirinjinna.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ05_Karari_1": [
             {
+                "alt_group_label": "Gocad objects_SZ05_Karari_1",
                 "display_name": "SZ05 Karari 1",
                 "displayed": true,
                 "include": true,
@@ -24029,8 +24168,11 @@
                 "src_filename": "SZ05_Karari_1.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ06_Karari_2": [
             {
+                "alt_group_label": "Gocad objects_SZ06_Karari_2",
                 "display_name": "SZ06 Karari 2",
                 "displayed": true,
                 "include": true,
@@ -24256,8 +24398,11 @@
                 "src_filename": "SZ06_Karari_2.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ08_Karari_4": [
             {
+                "alt_group_label": "Gocad objects_SZ08_Karari_4",
                 "display_name": "SZ08 Karari 4",
                 "displayed": true,
                 "include": true,
@@ -24735,8 +24880,11 @@
                 "src_filename": "SZ08_Karari_4.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ09_HorseCamp": [
             {
+                "alt_group_label": "Gocad objects_SZ09_HorseCamp",
                 "display_name": "SZ09 HorseCamp",
                 "displayed": true,
                 "include": true,
@@ -24770,8 +24918,11 @@
                 "src_filename": "SZ09_HorseCamp.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ10_Ifould": [
             {
+                "alt_group_label": "Gocad objects_SZ10_Ifould",
                 "display_name": "SZ10 Ifould",
                 "displayed": true,
                 "include": true,
@@ -24933,8 +25084,11 @@
                 "src_filename": "SZ10_Ifould.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ11_Tallacootra_1": [
             {
+                "alt_group_label": "Gocad objects_SZ11_Tallacootra_1",
                 "display_name": "SZ11 Tallacootra 1",
                 "displayed": true,
                 "include": true,
@@ -25368,8 +25522,11 @@
                 "src_filename": "SZ11_Tallacootra_1.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ12_Tallacootra_2": [
             {
+                "alt_group_label": "Gocad objects_SZ12_Tallacootra_2",
                 "display_name": "SZ12 Tallacootra 2",
                 "displayed": true,
                 "include": true,
@@ -25803,8 +25960,11 @@
                 "src_filename": "SZ12_Tallacootra_2.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ13_Beella": [
             {
+                "alt_group_label": "Gocad objects_SZ13_Beella",
                 "display_name": "SZ13 Beella",
                 "displayed": true,
                 "include": true,
@@ -26114,8 +26274,11 @@
                 "src_filename": "SZ13_Beella.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ15_Chimpering_1": [
             {
+                "alt_group_label": "Gocad objects_SZ15_Chimpering_1",
                 "display_name": "SZ15 Chimpering 1",
                 "displayed": true,
                 "include": true,
@@ -26361,8 +26524,11 @@
                 "src_filename": "SZ15_Chimpering_1.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ16_Chimpering_2": [
             {
+                "alt_group_label": "Gocad objects_SZ16_Chimpering_2",
                 "display_name": "SZ16 Chimpering 2",
                 "displayed": true,
                 "include": true,
@@ -26880,8 +27046,11 @@
                 "src_filename": "SZ16_Chimpering_2.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ17_Colona_1": [
             {
+                "alt_group_label": "Gocad objects_SZ17_Colona_1",
                 "display_name": "SZ17 Colona 1",
                 "displayed": true,
                 "include": true,
@@ -27335,8 +27504,11 @@
                 "src_filename": "SZ17_Colona_1.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ18_Colona_2": [
             {
+                "alt_group_label": "Gocad objects_SZ18_Colona_2",
                 "display_name": "SZ18 Colona 2",
                 "displayed": true,
                 "include": true,
@@ -27530,8 +27702,11 @@
                 "src_filename": "SZ18_Colona_2.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ19_Coorabie_1": [
             {
+                "alt_group_label": "Gocad objects_SZ19_Coorabie_1",
                 "display_name": "SZ19 Coorabie 1",
                 "displayed": true,
                 "include": true,
@@ -27753,8 +27928,11 @@
                 "src_filename": "SZ19_Coorabie_1.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ20_Coorabie_2": [
             {
+                "alt_group_label": "Gocad objects_SZ20_Coorabie_2",
                 "display_name": "SZ20 Coorabie 2",
                 "displayed": true,
                 "include": true,
@@ -28056,8 +28234,11 @@
                 "src_filename": "SZ20_Coorabie_2.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ21_Coorabie_3": [
             {
+                "alt_group_label": "Gocad objects_SZ21_Coorabie_3",
                 "display_name": "SZ21 Coorabie 3",
                 "displayed": true,
                 "include": true,
@@ -28307,8 +28488,11 @@
                 "src_filename": "SZ21_Coorabie_3.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ22_Coorabie_4": [
             {
+                "alt_group_label": "Gocad objects_SZ22_Coorabie_4",
                 "display_name": "SZ22 Coorabie 4",
                 "displayed": true,
                 "include": true,
@@ -28398,8 +28582,11 @@
                 "src_filename": "SZ22_Coorabie_4.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ23_Coorabie_5": [
             {
+                "alt_group_label": "Gocad objects_SZ23_Coorabie_5",
                 "display_name": "SZ23 Coorabie 5",
                 "displayed": true,
                 "include": true,
@@ -28937,8 +29124,11 @@
                 "src_filename": "SZ23_Coorabie_5.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ25_Muckanippie": [
             {
+                "alt_group_label": "Gocad objects_SZ25_Muckanippie",
                 "display_name": "SZ25 Muckanippie",
                 "displayed": true,
                 "include": true,
@@ -29160,8 +29350,11 @@
                 "src_filename": "SZ25_Muckanippie.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ26_Bulgunnia": [
             {
+                "alt_group_label": "Gocad objects_SZ26_Bulgunnia",
                 "display_name": "SZ26 Bulgunnia",
                 "displayed": true,
                 "include": true,
@@ -29431,8 +29624,11 @@
                 "src_filename": "SZ26_Bulgunnia.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ27_Yerda": [
             {
+                "alt_group_label": "Gocad objects_SZ27_Yerda",
                 "display_name": "SZ27 Yerda",
                 "displayed": true,
                 "include": true,
@@ -29710,8 +29906,11 @@
                 "src_filename": "SZ27_Yerda.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ28_Oolabinna": [
             {
+                "alt_group_label": "Gocad objects_SZ28_Oolabinna",
                 "display_name": "SZ28 Oolabinna",
                 "displayed": true,
                 "include": true,
@@ -30229,8 +30428,11 @@
                 "src_filename": "SZ28_Oolabinna.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_SZ29_Koonibba": [
             {
+                "alt_group_label": "Gocad objects_SZ29_Koonibba",
                 "display_name": "SZ29 Koonibba",
                 "displayed": true,
                 "include": true,
@@ -30344,28 +30546,11 @@
                 "src_filename": "SZ29_Koonibba.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_Topo_2k_surface": [
             {
-                "display_name": "TMI 3K POINTS",
-                "displayed": true,
-                "include": true,
-                "model_url": "TMI_3k_points.gzson",
-                "popups": {},
-                "src_filename": "TMI_3k_points.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "display_name": "TMI 3K UP5",
-                "displayed": true,
-                "include": true,
-                "model_url": "TMI_3k_up5.gzson",
-                "popups": {},
-                "src_filename": "TMI_3k_up5.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
+                "alt_group_label": "Gocad objects_Topo_2k_surface",
                 "display_name": "Topo 2k surface",
                 "displayed": true,
                 "include": true,
@@ -30379,8 +30564,11 @@
                 "src_filename": "Topo_2k_surface.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Gocad objects_Topo_surface": [
             {
+                "alt_group_label": "Gocad objects_Topo_surface",
                 "display_name": "Topo surface",
                 "displayed": true,
                 "include": true,
@@ -30405,6 +30593,110 @@
                 "name": "AUS_GA_2500k_GUPoly_Lithostratigraphy",
                 "type": "WMSLayer",
                 "version": "1.3.0"
+            }
+        ],
+        "output_08GA_OM1_CDP": [
+            {
+                "alt_group_label": "output_08GA_OM1_CDP",
+                "display_name": "08GA OM1 CDP",
+                "displayed": true,
+                "include": true,
+                "model_url": "08GA_OM1_CDP.gzson",
+                "popups": {},
+                "src_filename": "08GA_OM1_CDP.zip",
+                "styling": {},
+                "type": "GZSON"
+            }
+        ],
+        "output_13GA_EG1_CDP": [
+            {
+                "alt_group_label": "output_13GA_EG1_CDP",
+                "display_name": "13GA EG1 CDP",
+                "displayed": true,
+                "include": true,
+                "model_url": "13GA_EG1_CDP.gzson",
+                "popups": {},
+                "src_filename": "13GA_EG1_CDP.zip",
+                "styling": {},
+                "type": "GZSON"
+            }
+        ],
+        "output_Grav_3km_points": [
+            {
+                "alt_group_label": "output_Grav_3km_points",
+                "display_name": "GRAV 3KM POINTS",
+                "displayed": true,
+                "include": true,
+                "model_url": "Grav_3km_points.gzson",
+                "popups": {},
+                "src_filename": "Grav_3km_points.zip",
+                "styling": {},
+                "type": "GZSON"
+            }
+        ],
+        "output_Grav_3km_up20_points": [
+            {
+                "alt_group_label": "output_Grav_3km_up20_points",
+                "display_name": "GRAV 3KM UP20 POINTS",
+                "displayed": true,
+                "include": true,
+                "model_url": "Grav_3km_up20_points.gzson",
+                "popups": {},
+                "src_filename": "Grav_3km_up20_points.zip",
+                "styling": {},
+                "type": "GZSON"
+            }
+        ],
+        "output_Gravity_inversion": [
+            {
+                "alt_group_label": "output_Gravity_inversion",
+                "display_name": "GRAVITY INVERSION",
+                "displayed": true,
+                "include": true,
+                "model_url": "Gravity_inversion.gzson",
+                "popups": {},
+                "src_filename": "Gravity_inversion.zip",
+                "styling": {},
+                "type": "GZSON"
+            }
+        ],
+        "output_Magnetic_inversion": [
+            {
+                "alt_group_label": "output_Magnetic_inversion",
+                "display_name": "MAGNETIC INVERSION",
+                "displayed": true,
+                "include": true,
+                "model_url": "Magnetic_inversion.gzson",
+                "popups": {},
+                "src_filename": "Magnetic_inversion.zip",
+                "styling": {},
+                "type": "GZSON"
+            }
+        ],
+        "output_TMI_3k_points": [
+            {
+                "alt_group_label": "output_TMI_3k_points",
+                "display_name": "TMI 3K POINTS",
+                "displayed": true,
+                "include": true,
+                "model_url": "TMI_3k_points.gzson",
+                "popups": {},
+                "src_filename": "TMI_3k_points.zip",
+                "styling": {},
+                "type": "GZSON"
+            }
+        ],
+        "output_TMI_3k_up5": [
+            {
+                "alt_group_label": "output_TMI_3k_up5",
+                "display_name": "TMI 3K UP5",
+                "displayed": true,
+                "include": true,
+                "model_url": "TMI_3k_up5.gzson",
+                "popups": {},
+                "src_filename": "TMI_3k_up5.zip",
+                "styling": {},
+                "type": "GZSON"
             }
         ]
     },

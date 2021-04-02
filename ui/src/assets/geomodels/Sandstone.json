@@ -2,6 +2,7 @@
     "groups": {
         "3D Slice Views": [
             {
+                "alt_group_label": "3D Volume 3D geology VPmg density@@",
                 "display_name": "Density",
                 "displayed": false,
                 "include": true,
@@ -46,6 +47,7 @@
                 }
             },
             {
+                "alt_group_label": "3D Volume 3D geology Lithology@@",
                 "display_name": "Lithology",
                 "displayed": false,
                 "include": true,
@@ -241,6 +243,7 @@
                 }
             },
             {
+                "alt_group_label": "3D Volume 3D geology VPmg susceptibility@@",
                 "display_name": "Susceptibility",
                 "displayed": false,
                 "include": true,
@@ -287,6 +290,7 @@
         ],
         "Bouger Anomaly": [
             {
+                "alt_group_label": "output_Sandstone_grav_boug_grid_grav@@",
                 "display_name": "SANDSTONE GRAV BOUG GRID 1",
                 "displayed": true,
                 "include": true,
@@ -309,6 +313,7 @@
         ],
         "Faults": [
             {
+                "alt_group_label": "STRUCTURE_SURFACES_F2_Edale_Shear_Zone",
                 "display_name": "Edale Shear Zone",
                 "displayed": true,
                 "include": true,
@@ -324,6 +329,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "STRUCTURE_SURFACES_F3_Granite_fault",
                 "display_name": "F3 Granite fault",
                 "displayed": true,
                 "include": true,
@@ -339,6 +345,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "STRUCTURE_SURFACES_F4_Granite_fault",
                 "display_name": "F4 Granite fault",
                 "displayed": true,
                 "include": true,
@@ -354,6 +361,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "STRUCTURE_SURFACES_F5_Greenstone_fault",
                 "display_name": "F5 Greenstone fault",
                 "displayed": true,
                 "include": true,
@@ -369,6 +377,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "STRUCTURE_SURFACES_F6_Greenstone_fault",
                 "display_name": "F6 Greenstone fault",
                 "displayed": true,
                 "include": true,
@@ -384,6 +393,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "STRUCTURE_SURFACES_F7_Greenstone_fault",
                 "display_name": "F7 Greenstone fault",
                 "displayed": true,
                 "include": true,
@@ -399,6 +409,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "STRUCTURE_SURFACES_F1_Youanmi_Shear_Zone",
                 "display_name": "Youanmi Shear Zone",
                 "displayed": true,
                 "include": true,
@@ -414,8 +425,33 @@
                 "type": "GLTFObject"
             }
         ],
+        "Inversion Results": [
+            {
+                "alt_group_label": "output_VPmg_gravity_inversion_results",
+                "display_name": "VPMG GRAVITY",
+                "displayed": true,
+                "include": true,
+                "model_url": "VPmg_gravity_inversion_results.gzson",
+                "popups": {},
+                "src_filename": "VPmg_gravity_inversion_results.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "output_VPmg_magnetic_inversion_results",
+                "display_name": "VPMG MAGNETIC",
+                "displayed": true,
+                "include": true,
+                "model_url": "VPmg_magnetic_inversion_results.gzson",
+                "popups": {},
+                "src_filename": "VPmg_magnetic_inversion_results.zip",
+                "styling": {},
+                "type": "GZSON"
+            }
+        ],
         "Magnetics": [
             {
+                "alt_group_label": "output_Sandstone_TMI_grid_mag@@",
                 "display_name": "SANDSTONE TMI GRID 1",
                 "displayed": true,
                 "include": true,
@@ -436,30 +472,9 @@
                 "type": "ImagePlane"
             }
         ],
-        "Inversion Results": [
-            {
-                "display_name": "VPMG GRAVITY INVERSION RESULTS",
-                "displayed": true,
-                "include": true,
-                "model_url": "VPmg_gravity_inversion_results.gzson",
-                "popups": {},
-                "src_filename": "VPmg_gravity_inversion_results.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "display_name": "VPMG MAGNETIC INVERSION RESULTS",
-                "displayed": true,
-                "include": true,
-                "model_url": "VPmg_magnetic_inversion_results.gzson",
-                "popups": {},
-                "src_filename": "VPmg_magnetic_inversion_results.zip",
-                "styling": {},
-                "type": "GZSON"
-            }
-        ],
         "Seismic": [
             {
+                "alt_group_label": "output_10GA_YU2",
                 "display_name": "10GA YU2",
                 "displayed": true,
                 "include": true,
@@ -13398,6 +13413,7 @@
         ],
         "Stratigraphic Block Volumes": [
             {
+                "alt_group_label": "VOLUME_SURFACES_V02_Bald_Rock_Supersuite",
                 "display_name": "Bald Rock Supersuite",
                 "displayed": true,
                 "include": true,
@@ -13413,6 +13429,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V07_Banded_iron_formation",
                 "display_name": "Banded iron formation",
                 "displayed": true,
                 "include": true,
@@ -13428,6 +13445,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V13_Barrambie_Igneous_Complex",
                 "display_name": "Barrambie Igneous Complex",
                 "displayed": true,
                 "include": true,
@@ -13443,6 +13461,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V10_Basal_mafic",
                 "display_name": "Basal mafic",
                 "displayed": true,
                 "include": true,
@@ -13458,6 +13477,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V03_D2_granite",
                 "display_name": "D2 granite",
                 "displayed": true,
                 "include": true,
@@ -13473,6 +13493,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V15_Foliated_granite",
                 "display_name": "Foliated granite",
                 "displayed": true,
                 "include": true,
@@ -13488,6 +13509,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V12_Gum_Creek_greenstone",
                 "display_name": "Gum Creek greenstone",
                 "displayed": true,
                 "include": true,
@@ -13503,6 +13525,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V19_Lower_crust",
                 "display_name": "Lower crust",
                 "displayed": true,
                 "include": true,
@@ -13518,6 +13541,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V06_Mafic_with_BIF",
                 "display_name": "Mafic with BIF",
                 "displayed": true,
                 "include": true,
@@ -13533,6 +13557,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V20_Mantle",
                 "display_name": "Mantle",
                 "displayed": true,
                 "include": true,
@@ -13548,6 +13573,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V08_Massive_mafic",
                 "display_name": "Massive mafic",
                 "displayed": true,
                 "include": true,
@@ -13563,6 +13589,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V04_Metasedimentary",
                 "display_name": "Metasedimentary",
                 "displayed": true,
                 "include": true,
@@ -13578,6 +13605,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V17_Murchison_granite",
                 "display_name": "Murchison granite",
                 "displayed": true,
                 "include": true,
@@ -13593,6 +13621,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V14_North_Cook_Well_greenstone",
                 "display_name": "North Cook Well greenstone",
                 "displayed": true,
                 "include": true,
@@ -13608,6 +13637,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V01_Proterozoic_dyke",
                 "display_name": "Proterozoic dyke",
                 "displayed": true,
                 "include": true,
@@ -13623,6 +13653,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V16_Southern_Cross_granite",
                 "display_name": "Southern Cross granite",
                 "displayed": true,
                 "include": true,
@@ -13638,6 +13669,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V09_Tremolite_schist",
                 "display_name": "Tremolite schist",
                 "displayed": true,
                 "include": true,
@@ -13653,6 +13685,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V05_Ultramafic",
                 "display_name": "Ultramafic",
                 "displayed": true,
                 "include": true,
@@ -13668,6 +13701,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V11_Unaly_Hill_greenstone",
                 "display_name": "Unaly Hill greenstone",
                 "displayed": true,
                 "include": true,
@@ -13683,6 +13717,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "VOLUME_SURFACES_V18_Yarraquin_Seismic_Province",
                 "display_name": "Yarraquin Seismic Province",
                 "displayed": true,
                 "include": true,
@@ -13700,6 +13735,7 @@
         ],
         "Stratigraphic Surfaces": [
             {
+                "alt_group_label": "LOWER_BOUNDING_SURFACES_S02_Bald_Rock_Supersuite",
                 "display_name": "Bald Rock Supersuite",
                 "displayed": true,
                 "include": true,
@@ -13715,6 +13751,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "LOWER_BOUNDING_SURFACES_S07_Banded_iron_formation",
                 "display_name": "Banded iron formation",
                 "displayed": true,
                 "include": true,
@@ -13730,6 +13767,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "LOWER_BOUNDING_SURFACES_S13_Barrambie_Igneous_Complex",
                 "display_name": "Barrambie Igneous Complex",
                 "displayed": true,
                 "include": true,
@@ -13745,6 +13783,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "LOWER_BOUNDING_SURFACES_S10_Base_of_greenstone",
                 "display_name": "Base of greenstone",
                 "displayed": true,
                 "include": true,
@@ -13760,6 +13799,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "LOWER_BOUNDING_SURFACES_S03_D2_granite",
                 "display_name": "D2 granite",
                 "displayed": true,
                 "include": true,
@@ -13775,6 +13815,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "LOWER_BOUNDING_SURFACES_S12_Gum_Creek_greenstone",
                 "display_name": "Gum Creek greenstone",
                 "displayed": true,
                 "include": true,
@@ -13790,6 +13831,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "LOWER_BOUNDING_SURFACES_S19_Lower_crust",
                 "display_name": "Lower crust",
                 "displayed": true,
                 "include": true,
@@ -13805,6 +13847,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "LOWER_BOUNDING_SURFACES_S06_Mafic_with_BIF",
                 "display_name": "Mafic with BIF",
                 "displayed": true,
                 "include": true,
@@ -13820,6 +13863,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "LOWER_BOUNDING_SURFACES_S08_Massive_mafic",
                 "display_name": "Massive mafic",
                 "displayed": true,
                 "include": true,
@@ -13835,6 +13879,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "LOWER_BOUNDING_SURFACES_S04_Metasedimentary",
                 "display_name": "Metasedimentary",
                 "displayed": true,
                 "include": true,
@@ -13850,6 +13895,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "LOWER_BOUNDING_SURFACES_S17_Murchison_granite",
                 "display_name": "Murchison granite",
                 "displayed": true,
                 "include": true,
@@ -13865,6 +13911,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "LOWER_BOUNDING_SURFACES_S14_North_Cook_Well_greenstone",
                 "display_name": "North Cook Well greenstone",
                 "displayed": true,
                 "include": true,
@@ -13880,6 +13927,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "LOWER_BOUNDING_SURFACES_S01_Protoerozoic_dyke",
                 "display_name": "Protoerozoic dyke",
                 "displayed": true,
                 "include": true,
@@ -13895,6 +13943,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "LOWER_BOUNDING_SURFACES_S09_Tremolite_schist",
                 "display_name": "Tremolite schist",
                 "displayed": true,
                 "include": true,
@@ -13910,6 +13959,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "LOWER_BOUNDING_SURFACES_S05_Ultramafic",
                 "display_name": "Ultramafic",
                 "displayed": true,
                 "include": true,
@@ -13925,6 +13975,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "LOWER_BOUNDING_SURFACES_S11_Unaly_Hill_greenstone",
                 "display_name": "Unaly Hill greenstone",
                 "displayed": true,
                 "include": true,
@@ -13940,6 +13991,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "LOWER_BOUNDING_SURFACES_S18_Yarraquin_Seismic_Province",
                 "display_name": "Yarraquin Seismic Province",
                 "displayed": true,
                 "include": true,
@@ -13957,6 +14009,7 @@
         ],
         "Topography": [
             {
+                "alt_group_label": "RELIEF_Sandstone_SRTM_elevation",
                 "display_name": "Sandstone SRTM elevation",
                 "displayed": true,
                 "include": true,

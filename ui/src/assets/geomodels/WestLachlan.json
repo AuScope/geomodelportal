@@ -2,6 +2,7 @@
     "groups": {
         "Faults": [
             {
+                "alt_group_label": "W_Lachlan_Orogen_GDA94_Z55_GOCAD_Western_Lachlan_South_Thomson_3D_Fault_Architecture_GDA94_Z55",
                 "display_name": "West Lachlan & South Thomson Orogen",
                 "displayed": true,
                 "include": true,
@@ -19,6 +20,7 @@
         ],
         "Seismic": [
             {
+                "alt_group_label": "W_Lachlan_Orogen_GDA94_Z55_GOCAD_NSW_Seismic_Profiles_Location_GDA94_Z55",
                 "display_name": "Seismic Profiles Location",
                 "displayed": true,
                 "include": true,
@@ -31,6 +33,7 @@
         ],
         "Top of Basement": [
             {
+                "alt_group_label": "W_Lachlan_Orogen_GDA94_Z55_GOCAD_2019_Z54_Top_of_Basement_GDA94_Z55",
                 "display_name": "2019 Zone 54 Depth To Basement",
                 "displayed": true,
                 "include": true,
@@ -46,6 +49,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "W_Lachlan_Orogen_GDA94_Z55_GOCAD_2019_Z55_Top_of_Basement_GDA94_Z55",
                 "display_name": "2019 Zone 55 Depth To Basement",
                 "displayed": true,
                 "include": true,

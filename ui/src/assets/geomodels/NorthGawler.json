@@ -2,6 +2,7 @@
     "groups": {
         "Ammaroodinna Faults": [
             {
+                "alt_group_label": "output_Faults_Ammaroodinna_Yoolperlunna_0",
                 "display_name": "Fault 1",
                 "displayed": true,
                 "include": true,
@@ -17,6 +18,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "output_Faults_Ammaroodinna_Yoolperlunna_1",
                 "display_name": "Fault 2",
                 "displayed": true,
                 "include": true,
@@ -32,6 +34,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "output_Faults_Ammaroodinna_Yoolperlunna_2",
                 "display_name": "Fault 3",
                 "displayed": true,
                 "include": true,
@@ -47,6 +50,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "output_Faults_Ammaroodinna_Yoolperlunna_3",
                 "display_name": "Fault 4",
                 "displayed": true,
                 "include": true,
@@ -62,6 +66,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "output_Faults_Ammaroodinna_Yoolperlunna_4",
                 "display_name": "Fault 5",
                 "displayed": true,
                 "include": true,
@@ -77,6 +82,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "output_Faults_Ammaroodinna_Yoolperlunna_5",
                 "display_name": "Fault 6",
                 "displayed": true,
                 "include": true,
@@ -92,6 +98,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "output_Faults_Ammaroodinna_Yoolperlunna_6",
                 "display_name": "Fault 7",
                 "displayed": true,
                 "include": true,
@@ -107,6 +114,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "output_Faults_Ammaroodinna_Yoolperlunna_7",
                 "display_name": "Fault 8",
                 "displayed": true,
                 "include": true,
@@ -124,6 +132,7 @@
         ],
         "Drapes": [
             {
+                "alt_group_label": "GDP00026_CP_Surface_Fixed",
                 "display_name": "Base of Carboniferous",
                 "displayed": true,
                 "include": true,
@@ -139,6 +148,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "GDP00026_2_Basement_Fixed",
                 "display_name": "Depth to basement",
                 "displayed": true,
                 "include": true,
@@ -154,6 +164,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "GDP00026_GravDrape",
                 "display_name": "Gravity Drape",
                 "displayed": true,
                 "include": true,
@@ -169,6 +180,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "GDP00026_MagDrape",
                 "display_name": "Magnetic Drape",
                 "displayed": true,
                 "include": true,
@@ -184,6 +196,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "GDP00026_MarlaOutline",
                 "display_name": "Marla Outline",
                 "displayed": true,
                 "include": true,
@@ -243,6 +256,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "GDP00026_SRTM_surf",
                 "display_name": "SRTM surface topology",
                 "displayed": true,
                 "include": true,
@@ -258,6 +272,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "output_VOL_0",
                 "display_name": "VOI Marla",
                 "displayed": true,
                 "include": true,
@@ -276,6 +291,7 @@
         "Gravity": [
             {
                 "3dobject_label": "BougGrav_BougGrav_prop@@_0",
+                "alt_group_label": "output_BougGrav_BougGrav_prop@@",
                 "display_name": "Bouguer Gravity",
                 "displayed": true,
                 "include": true,
@@ -300,6 +316,7 @@
         "Magnetism": [
             {
                 "3dobject_label": "TMI_RTP_TMI_RTP_prop@@_0",
+                "alt_group_label": "output_TMI_RTP_TMI_RTP_prop@@",
                 "display_name": "Total Magnetic Intensity RTP",
                 "displayed": true,
                 "include": true,
@@ -323,6 +340,7 @@
         ],
         "Middle Bore Ridge Faults": [
             {
+                "alt_group_label": "output_Faults_MiddleBoreRidge_0",
                 "display_name": "Fault 1",
                 "displayed": true,
                 "include": true,
@@ -338,6 +356,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "output_Faults_MiddleBoreRidge_1",
                 "display_name": "Fault 2",
                 "displayed": true,
                 "include": true,
@@ -355,6 +374,7 @@
         ],
         "Musgrave Block Faults": [
             {
+                "alt_group_label": "output_Faults_MusgraveBlock_0",
                 "display_name": "Fault 1",
                 "displayed": true,
                 "include": true,
@@ -370,6 +390,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "output_Faults_MusgraveBlock_1",
                 "display_name": "Fault 2",
                 "displayed": true,
                 "include": true,
@@ -388,6 +409,7 @@
         "Surface Geology": [
             {
                 "3dobject_label": "2MsurfaceGeologyZ52_PMsurfaceGeologyZ52_prop@@_0",
+                "alt_group_label": "output_2MsurfaceGeologyZ52_PMsurfaceGeologyZ52_prop@@",
                 "display_name": "2M Surface Geology",
                 "displayed": true,
                 "include": true,
@@ -411,6 +433,7 @@
         ],
         "UBC Basement Input": [
             {
+                "alt_group_label": "GDP00026_UBC_Basement",
                 "display_name": "UBC Basement Input",
                 "displayed": true,
                 "include": true,
@@ -428,6 +451,7 @@
         ],
         "UBC Density Isosurfaces": [
             {
+                "alt_group_label": "GDP00026_UBC_Density_neg_pt04",
                 "display_name": "-0.04g/cc",
                 "displayed": true,
                 "include": true,
@@ -443,6 +467,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "GDP00026_UBC_Density_neg_pt08",
                 "display_name": "-0.08g/cc",
                 "displayed": true,
                 "include": true,
@@ -458,6 +483,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "GDP00026_UBC_Density_neg_pt3",
                 "display_name": "-0.30g/cc",
                 "displayed": true,
                 "include": true,
@@ -473,6 +499,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "GDP00026_UBC_Density_oZero",
                 "display_name": "0.00g/cc",
                 "displayed": true,
                 "include": true,
@@ -488,6 +515,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "GDP00026_UBC_Density_pos_pt01",
                 "display_name": "0.01g/cc",
                 "displayed": true,
                 "include": true,
@@ -503,6 +531,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "GDP00026_UBC_Density_pos_pt04",
                 "display_name": "0.04g/cc",
                 "displayed": true,
                 "include": true,
@@ -518,6 +547,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "GDP00026_UBC_Density_pos_pt08",
                 "display_name": "0.08g/cc",
                 "displayed": true,
                 "include": true,
@@ -535,6 +565,7 @@
         ],
         "UBC Gravity Observations": [
             {
+                "alt_group_label": "output_UBC_GravObs",
                 "display_name": "UBC Gravity Observations",
                 "displayed": true,
                 "include": true,
@@ -14368,6 +14399,7 @@
         ],
         "UBC Magnetic Observations": [
             {
+                "alt_group_label": "output_UBC_MagObs",
                 "display_name": "UBC Magnetic Observations",
                 "displayed": true,
                 "include": true,
@@ -27131,6 +27163,7 @@
         ],
         "UBC Susceptibility Isosurfaces": [
             {
+                "alt_group_label": "GDP00026_UBC_Susc_0_0001",
                 "display_name": "0.0001 SI",
                 "displayed": true,
                 "include": true,
@@ -27146,6 +27179,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "GDP00026_UBC_Susc_0_0010",
                 "display_name": "0.001 SI",
                 "displayed": true,
                 "include": true,
@@ -27161,6 +27195,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "GDP00026_UBC_Susc_0_0100",
                 "display_name": "0.01 SI",
                 "displayed": true,
                 "include": true,
@@ -27176,6 +27211,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "GDP00026_UBC_Susc_0_0200",
                 "display_name": "0.02 SI",
                 "displayed": true,
                 "include": true,
@@ -27191,6 +27227,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "GDP00026_UBC_Susc_0_0300",
                 "display_name": "0.03 SI",
                 "displayed": true,
                 "include": true,
@@ -27206,6 +27243,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "GDP00026_UBC_Susc_0_0400",
                 "display_name": "0.04 SI",
                 "displayed": true,
                 "include": true,
@@ -27221,6 +27259,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "GDP00026_UBC_Susc_0_0500",
                 "display_name": "0.05 SI",
                 "displayed": true,
                 "include": true,
@@ -27236,6 +27275,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "GDP00026_UBC_Susc_0_0600",
                 "display_name": "0.06 SI",
                 "displayed": true,
                 "include": true,
@@ -27253,6 +27293,7 @@
         ],
         "Wintinna Trough Faults": [
             {
+                "alt_group_label": "output_Faults_WintinnaTrough_0",
                 "display_name": "Fault 1",
                 "displayed": true,
                 "include": true,
@@ -27268,6 +27309,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "output_Faults_WintinnaTrough_1",
                 "display_name": "Fault 2",
                 "displayed": true,
                 "include": true,

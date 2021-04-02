@@ -1,7 +1,1507 @@
 {
     "groups": {
-        "Not Grouped": [
+        "Conductivity": [
             {
+                "alt_group_label": "output_attributes_07-07-11_13",
+                "display_name": "GEOTHERM CONDUCTIVITY Z55MGA",
+                "displayed": true,
+                "include": true,
+                "model_url": "attributes_07-07-11_13.gltf",
+                "popups": {
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000000": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.17879104614258
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000001": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.06888961791992
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000002": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.17879104614258
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000003": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.20457077026367
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000004": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.20457077026367
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000005": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.55659866333008
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000006": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.20457077026367
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000007": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.20457077026367
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000008": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.166290283203125
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000009": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.56399917602539
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000010": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.17879104614258
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000011": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.189029693603516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000012": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.155399322509766
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000013": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.155399322509766
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000014": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.55659866333008
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000015": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.17626190185547
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000016": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.166290283203125
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000017": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.114891052246094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000018": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.114891052246094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000019": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.442840576171875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000020": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.20457077026367
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000021": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.155399322509766
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000022": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.189029693603516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000023": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.17626190185547
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000024": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.189029693603516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000025": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.34743118286133
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000026": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.17879104614258
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000027": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.19847106933594
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000028": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.903438568115234
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000029": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.166908264160156
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000030": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.34743118286133
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000031": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.16529083251953
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000032": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.006229400634766
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000033": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.006229400634766
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000034": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.11558151245117
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000035": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.114891052246094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000036": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.023319244384766
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000037": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.17626190185547
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000038": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.023319244384766
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000039": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.320308685302734
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000040": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.17879104614258
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000041": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.903438568115234
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000042": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.16529083251953
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000043": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.16529083251953
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000044": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.903438568115234
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000045": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.006229400634766
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000046": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.55659866333008
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000047": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.114891052246094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000048": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.903438568115234
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000049": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.320308685302734
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000050": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.166908264160156
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000051": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.20457077026367
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000052": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.10667037963867
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000053": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.114891052246094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000054": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.155399322509766
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000055": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.166908264160156
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000056": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.166908264160156
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000057": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.23112869262695
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000058": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.5349006652832
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000059": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.114891052246094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000060": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.155399322509766
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000061": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.442840576171875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000062": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.5349006652832
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000063": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.17879104614258
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000064": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.166908264160156
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000065": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.23112869262695
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000066": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.10667037963867
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000067": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.17626190185547
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000068": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.19847106933594
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000069": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.166908264160156
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000070": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.114891052246094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000071": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.16529083251953
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000072": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.166908264160156
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000073": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.23112869262695
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000074": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.11558151245117
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000075": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.190330505371094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000076": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.23112869262695
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000077": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.20457077026367
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000078": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.23112869262695
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000079": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.06888961791992
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000080": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.13874816894531
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000081": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.365150451660156
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000082": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.23112869262695
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000083": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.10667037963867
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000084": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.365150451660156
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000085": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.06888961791992
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000086": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.166290283203125
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000087": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.20457077026367
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000088": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.320308685302734
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000089": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.166908264160156
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000090": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.640560150146484
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000091": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.13874816894531
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000092": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.190330505371094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000093": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.320308685302734
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000094": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.13874816894531
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000095": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.065731048583984
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000096": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.640560150146484
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000097": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.17879104614258
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000098": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.155399322509766
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000099": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.114891052246094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000100": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.25210189819336
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000101": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.06888961791992
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000102": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.13874816894531
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000103": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.352699279785156
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000104": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.20457077026367
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000105": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.149871826171875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000106": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.166908264160156
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000107": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.166908264160156
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000108": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.149871826171875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000109": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.25210189819336
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000110": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.907779693603516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000111": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.106201171875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000112": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.155399322509766
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000113": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.19847106933594
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000114": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.56399917602539
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000115": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.155399322509766
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000116": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.03261184692383
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000117": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.190330505371094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000118": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.19847106933594
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000119": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.20457077026367
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000120": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.056129455566406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000121": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.067691802978516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000122": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.92092514038086
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000123": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.058658599853516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000124": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.2923583984375
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000125": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.114891052246094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000126": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.2923583984375
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000127": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.19847106933594
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000128": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.971168518066406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000129": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.058658599853516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000130": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.971168518066406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000131": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.058658599853516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000132": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.058658599853516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000133": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.114891052246094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000134": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.57209014892578
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000135": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.114891052246094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000136": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.971168518066406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000137": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.058658599853516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000138": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.114891052246094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000139": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.114891052246094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000140": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.971168518066406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000141": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.57209014892578
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000142": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.971168518066406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000143": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.971168518066406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000144": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.058658599853516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000145": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.971168518066406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000146": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.57209014892578
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000147": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.971168518066406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000148": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.058658599853516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000149": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.57209014892578
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000150": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.114891052246094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000151": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.971168518066406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000152": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.058658599853516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000153": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.114891052246094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000154": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.57209014892578
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000155": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.058658599853516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000156": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.058658599853516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000157": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.57209014892578
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000158": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.971168518066406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000159": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.971168518066406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000160": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.57209014892578
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000161": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.57209014892578
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000162": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.058658599853516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000163": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.2923583984375
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000164": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.2923583984375
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000165": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.058658599853516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000166": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.57209014892578
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000167": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.058658599853516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000168": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.971168518066406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000169": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.058658599853516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000170": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.57209014892578
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000171": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.57209014892578
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000172": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.971168518066406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000173": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.114891052246094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000174": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.57209014892578
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000175": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.57209014892578
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000176": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.971168518066406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000177": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.971168518066406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000178": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.57209014892578
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000179": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.971168518066406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000180": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.2923583984375
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000181": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.058658599853516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000182": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.57209014892578
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000183": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.971168518066406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000184": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.058658599853516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000185": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.058658599853516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000186": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -35.965301513671875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000187": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -34.39939880371094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000188": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -34.39939880371094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000189": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -34.055599212646484
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000190": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -34.26620101928711
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000191": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -34.4650993347168
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000192": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -35.125301361083984
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000193": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -34.4650993347168
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000194": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -34.39939880371094
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000195": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -34.26620101928711
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000196": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -34.267799377441406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000197": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -34.17660140991211
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000198": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -34.055599212646484
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000199": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -34.920101165771484
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000200": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -34.267799377441406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000201": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -36.05799865722656
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000202": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -35.60369873046875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000203": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -34.17660140991211
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000204": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -35.3306999206543
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000205": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -35.60369873046875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000206": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -34.26620101928711
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000207": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -36.19860076904297
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000208": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -35.08209991455078
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000209": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -36.05799865722656
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000210": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -34.267799377441406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000211": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -36.161800384521484
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000212": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -36.161800384521484
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000213": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -35.965301513671875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000214": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -36.117000579833984
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000215": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -35.77109909057617
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000216": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -36.19860076904297
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000217": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -35.77109909057617
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000218": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -35.965301513671875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000219": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -35.125301361083984
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000220": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -35.47315979003906
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000221": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -36.32929992675781
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000222": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -35.05500030517578
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000223": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -36.117000579833984
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000224": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -35.46030044555664
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000225": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -35.3306999206543
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000226": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -35.05500030517578
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000227": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -35.08209991455078
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000228": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -35.965301513671875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000229": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.53499984741211
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000230": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.1710090637207
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000231": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.4005012512207
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000232": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.1710090637207
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000233": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.47129821777344
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000234": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.47129821777344
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000235": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.47129821777344
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000236": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.438201904296875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000237": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.97480010986328
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000238": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.37950134277344
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000239": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.37950134277344
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000240": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.77830123901367
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000241": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.53499984741211
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000242": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.21929931640625
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000243": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.97480010986328
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000244": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.46929931640625
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000245": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.58102035522461
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000246": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.2588996887207
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000247": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.53499984741211
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000248": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.97480010986328
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000249": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.249698638916016
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000250": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.35860061645508
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000251": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.4822998046875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000252": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.1710090637207
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000253": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.46929931640625
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000254": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.35860061645508
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000255": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.859500885009766
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000256": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.12419891357422
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000257": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.438201904296875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000258": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.1710090637207
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000259": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.97480010986328
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000260": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.12419891357422
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000261": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.152400970458984
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000262": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.12419891357422
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000263": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.624351501464844
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000264": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.3837890625
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000265": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.07991027832031
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000266": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.895729064941406
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000267": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.21929931640625
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000268": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.51210021972656
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000269": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.22187042236328
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000270": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.4822998046875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000271": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.405731201171875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000272": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.46929931640625
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000273": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.4005012512207
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000274": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -37.859500885009766
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000275": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.37950134277344
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000276": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.2588996887207
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000277": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.420101165771484
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000278": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.405731201171875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000279": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.53499984741211
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000280": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.2588996887207
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000281": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.12419891357422
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000282": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.215999603271484
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000283": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.405731201171875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000284": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.53499984741211
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000285": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.405731201171875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000286": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.405731201171875
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000287": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.6207389831543
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000288": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.134071350097656
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000289": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.450199127197266
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000290": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.31768035888672
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000291": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.134071350097656
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000292": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.067691802978516
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000293": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.58102035522461
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000294": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.22187042236328
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000295": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.134071350097656
+                    },
+                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000296": {
+                        "name": "LAT",
+                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
+                        "val": -38.6207389831543
+                    }
+                },
+                "src_filename": "attributes_07-07-11.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ],
+        "Density": [
+            {
+                "alt_group_label": "output_attributes_07-07-11_2",
                 "display_name": "BULKDRY DENSITY CORE",
                 "displayed": true,
                 "include": true,
@@ -413,6 +1913,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "output_attributes_07-07-11_3",
                 "display_name": "BULKWET DENSITY CORE",
                 "displayed": true,
                 "include": true,
@@ -859,6 +2360,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "output_attributes_07-07-11_4",
                 "display_name": "BULKWET DENSITY CORE NO-DEPTH",
                 "displayed": true,
                 "include": true,
@@ -1250,6 +2752,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "output_attributes_07-07-11_5",
                 "display_name": "BULKWET DENSITY SAMPLE",
                 "displayed": true,
                 "include": true,
@@ -3331,6 +4834,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "output_attributes_07-07-11_0",
                 "display_name": "DENSITY GSV PETRO DATABASE",
                 "displayed": true,
                 "include": true,
@@ -3341,1502 +4845,7 @@
                 "type": "GZSON"
             },
             {
-                "display_name": "GEOTHERM CONDUCTIVITY Z55MGA",
-                "displayed": true,
-                "include": true,
-                "model_url": "attributes_07-07-11_13.gltf",
-                "popups": {
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000000": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.17879104614258
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000001": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.06888961791992
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000002": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.17879104614258
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000003": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.20457077026367
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000004": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.20457077026367
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000005": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.55659866333008
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000006": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.20457077026367
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000007": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.20457077026367
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000008": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.166290283203125
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000009": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.56399917602539
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000010": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.17879104614258
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000011": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.189029693603516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000012": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.155399322509766
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000013": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.155399322509766
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000014": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.55659866333008
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000015": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.17626190185547
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000016": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.166290283203125
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000017": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.114891052246094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000018": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.114891052246094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000019": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.442840576171875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000020": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.20457077026367
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000021": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.155399322509766
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000022": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.189029693603516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000023": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.17626190185547
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000024": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.189029693603516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000025": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.34743118286133
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000026": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.17879104614258
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000027": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.19847106933594
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000028": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.903438568115234
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000029": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.166908264160156
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000030": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.34743118286133
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000031": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.16529083251953
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000032": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.006229400634766
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000033": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.006229400634766
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000034": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.11558151245117
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000035": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.114891052246094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000036": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.023319244384766
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000037": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.17626190185547
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000038": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.023319244384766
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000039": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.320308685302734
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000040": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.17879104614258
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000041": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.903438568115234
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000042": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.16529083251953
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000043": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.16529083251953
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000044": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.903438568115234
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000045": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.006229400634766
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000046": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.55659866333008
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000047": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.114891052246094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000048": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.903438568115234
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000049": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.320308685302734
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000050": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.166908264160156
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000051": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.20457077026367
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000052": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.10667037963867
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000053": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.114891052246094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000054": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.155399322509766
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000055": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.166908264160156
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000056": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.166908264160156
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000057": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.23112869262695
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000058": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.5349006652832
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000059": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.114891052246094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000060": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.155399322509766
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000061": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.442840576171875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000062": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.5349006652832
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000063": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.17879104614258
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000064": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.166908264160156
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000065": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.23112869262695
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000066": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.10667037963867
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000067": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.17626190185547
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000068": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.19847106933594
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000069": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.166908264160156
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000070": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.114891052246094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000071": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.16529083251953
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000072": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.166908264160156
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000073": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.23112869262695
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000074": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.11558151245117
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000075": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.190330505371094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000076": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.23112869262695
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000077": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.20457077026367
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000078": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.23112869262695
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000079": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.06888961791992
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000080": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.13874816894531
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000081": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.365150451660156
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000082": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.23112869262695
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000083": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.10667037963867
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000084": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.365150451660156
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000085": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.06888961791992
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000086": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.166290283203125
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000087": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.20457077026367
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000088": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.320308685302734
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000089": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.166908264160156
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000090": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.640560150146484
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000091": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.13874816894531
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000092": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.190330505371094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000093": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.320308685302734
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000094": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.13874816894531
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000095": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.065731048583984
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000096": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.640560150146484
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000097": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.17879104614258
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000098": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.155399322509766
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000099": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.114891052246094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000100": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.25210189819336
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000101": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.06888961791992
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000102": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.13874816894531
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000103": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.352699279785156
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000104": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.20457077026367
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000105": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.149871826171875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000106": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.166908264160156
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000107": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.166908264160156
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000108": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.149871826171875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000109": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.25210189819336
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000110": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.907779693603516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000111": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.106201171875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000112": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.155399322509766
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000113": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.19847106933594
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000114": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.56399917602539
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000115": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.155399322509766
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000116": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.03261184692383
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000117": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.190330505371094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000118": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.19847106933594
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000119": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.20457077026367
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000120": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.056129455566406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000121": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.067691802978516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000122": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.92092514038086
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000123": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.058658599853516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000124": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.2923583984375
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000125": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.114891052246094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000126": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.2923583984375
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000127": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.19847106933594
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000128": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.971168518066406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000129": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.058658599853516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000130": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.971168518066406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000131": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.058658599853516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000132": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.058658599853516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000133": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.114891052246094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000134": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.57209014892578
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000135": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.114891052246094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000136": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.971168518066406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000137": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.058658599853516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000138": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.114891052246094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000139": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.114891052246094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000140": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.971168518066406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000141": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.57209014892578
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000142": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.971168518066406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000143": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.971168518066406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000144": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.058658599853516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000145": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.971168518066406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000146": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.57209014892578
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000147": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.971168518066406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000148": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.058658599853516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000149": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.57209014892578
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000150": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.114891052246094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000151": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.971168518066406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000152": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.058658599853516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000153": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.114891052246094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000154": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.57209014892578
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000155": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.058658599853516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000156": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.058658599853516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000157": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.57209014892578
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000158": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.971168518066406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000159": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.971168518066406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000160": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.57209014892578
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000161": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.57209014892578
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000162": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.058658599853516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000163": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.2923583984375
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000164": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.2923583984375
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000165": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.058658599853516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000166": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.57209014892578
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000167": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.058658599853516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000168": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.971168518066406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000169": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.058658599853516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000170": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.57209014892578
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000171": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.57209014892578
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000172": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.971168518066406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000173": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.114891052246094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000174": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.57209014892578
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000175": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.57209014892578
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000176": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.971168518066406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000177": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.971168518066406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000178": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.57209014892578
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000179": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.971168518066406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000180": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.2923583984375
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000181": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.058658599853516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000182": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.57209014892578
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000183": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.971168518066406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000184": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.058658599853516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000185": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.058658599853516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000186": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -35.965301513671875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000187": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -34.39939880371094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000188": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -34.39939880371094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000189": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -34.055599212646484
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000190": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -34.26620101928711
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000191": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -34.4650993347168
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000192": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -35.125301361083984
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000193": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -34.4650993347168
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000194": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -34.39939880371094
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000195": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -34.26620101928711
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000196": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -34.267799377441406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000197": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -34.17660140991211
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000198": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -34.055599212646484
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000199": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -34.920101165771484
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000200": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -34.267799377441406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000201": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -36.05799865722656
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000202": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -35.60369873046875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000203": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -34.17660140991211
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000204": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -35.3306999206543
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000205": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -35.60369873046875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000206": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -34.26620101928711
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000207": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -36.19860076904297
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000208": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -35.08209991455078
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000209": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -36.05799865722656
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000210": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -34.267799377441406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000211": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -36.161800384521484
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000212": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -36.161800384521484
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000213": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -35.965301513671875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000214": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -36.117000579833984
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000215": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -35.77109909057617
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000216": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -36.19860076904297
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000217": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -35.77109909057617
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000218": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -35.965301513671875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000219": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -35.125301361083984
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000220": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -35.47315979003906
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000221": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -36.32929992675781
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000222": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -35.05500030517578
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000223": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -36.117000579833984
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000224": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -35.46030044555664
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000225": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -35.3306999206543
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000226": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -35.05500030517578
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000227": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -35.08209991455078
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000228": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -35.965301513671875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000229": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.53499984741211
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000230": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.1710090637207
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000231": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.4005012512207
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000232": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.1710090637207
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000233": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.47129821777344
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000234": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.47129821777344
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000235": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.47129821777344
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000236": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.438201904296875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000237": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.97480010986328
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000238": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.37950134277344
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000239": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.37950134277344
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000240": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.77830123901367
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000241": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.53499984741211
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000242": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.21929931640625
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000243": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.97480010986328
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000244": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.46929931640625
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000245": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.58102035522461
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000246": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.2588996887207
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000247": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.53499984741211
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000248": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.97480010986328
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000249": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.249698638916016
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000250": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.35860061645508
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000251": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.4822998046875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000252": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.1710090637207
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000253": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.46929931640625
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000254": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.35860061645508
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000255": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.859500885009766
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000256": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.12419891357422
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000257": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.438201904296875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000258": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.1710090637207
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000259": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.97480010986328
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000260": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.12419891357422
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000261": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.152400970458984
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000262": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.12419891357422
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000263": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.624351501464844
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000264": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.3837890625
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000265": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.07991027832031
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000266": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.895729064941406
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000267": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.21929931640625
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000268": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.51210021972656
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000269": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.22187042236328
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000270": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.4822998046875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000271": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.405731201171875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000272": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.46929931640625
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000273": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.4005012512207
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000274": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -37.859500885009766
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000275": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.37950134277344
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000276": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.2588996887207
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000277": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.420101165771484
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000278": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.405731201171875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000279": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.53499984741211
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000280": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.2588996887207
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000281": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.12419891357422
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000282": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.215999603271484
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000283": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.405731201171875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000284": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.53499984741211
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000285": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.405731201171875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000286": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.405731201171875
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000287": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.6207389831543
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000288": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.134071350097656
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000289": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.450199127197266
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000290": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.31768035888672
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000291": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.134071350097656
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000292": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.067691802978516
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000293": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.58102035522461
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000294": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.22187042236328
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000295": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.134071350097656
-                    },
-                    "GEOTHERM_CONDUCTIVITY_Z55MGA-0000000296": {
-                        "name": "LAT",
-                        "title": "GEOTHERM CONDUCTIVITY Z55MGA",
-                        "val": -38.6207389831543
-                    }
-                },
-                "src_filename": "attributes_07-07-11.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
+                "alt_group_label": "output_attributes_07-07-11_1",
                 "display_name": "GEOTHERM DENSITY Z55MGA",
                 "displayed": true,
                 "include": true,
@@ -5461,8 +5470,37 @@
                 "src_filename": "attributes_07-07-11.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Magnetic Susceptibility": [
             {
+                "alt_group_label": "output_attributes_07-07-11_6",
+                "display_name": "MAGNETIC SUSC GSV SITES DATABASE",
+                "displayed": true,
+                "include": true,
+                "model_url": "attributes_07-07-11_6.gzson",
+                "popups": {},
+                "src_filename": "attributes_07-07-11.zip",
+                "styling": {},
+                "type": "GZSON"
+            }
+        ],
+        "Permeability": [
+            {
+                "alt_group_label": "output_attributes_07-07-11_7",
+                "display_name": "PERMEABILITY GSV PETRO DATABASE",
+                "displayed": true,
+                "include": true,
+                "model_url": "attributes_07-07-11_7.gzson",
+                "popups": {},
+                "src_filename": "attributes_07-07-11.zip",
+                "styling": {},
+                "type": "GZSON"
+            }
+        ],
+        "Porosity": [
+            {
+                "alt_group_label": "output_attributes_07-07-11_9",
                 "display_name": "GEOTHERM POROSITY Z55MGA",
                 "displayed": true,
                 "include": true,
@@ -6094,26 +6132,7 @@
                 "type": "GLTFObject"
             },
             {
-                "display_name": "MAGNETICSUSC GSVDATABASE",
-                "displayed": true,
-                "include": true,
-                "model_url": "attributes_07-07-11_6.gzson",
-                "popups": {},
-                "src_filename": "attributes_07-07-11.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "display_name": "PERMEABILITY GSV PETRO DATABASE",
-                "displayed": true,
-                "include": true,
-                "model_url": "attributes_07-07-11_7.gzson",
-                "popups": {},
-                "src_filename": "attributes_07-07-11.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
+                "alt_group_label": "output_attributes_07-07-11_8",
                 "display_name": "POROSITY GSV PETRO DATABASE",
                 "displayed": true,
                 "include": true,
@@ -6122,8 +6141,11 @@
                 "src_filename": "attributes_07-07-11.zip",
                 "styling": {},
                 "type": "GZSON"
-            },
+            }
+        ],
+        "Temperature": [
             {
+                "alt_group_label": "output_attributes_07-07-11_12",
                 "display_name": "TEMPERATURE FROG TECH",
                 "displayed": true,
                 "include": true,
@@ -8905,6 +8927,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "output_attributes_07-07-11_11",
                 "display_name": "TEMPERATURE VIMP OFFSHORE",
                 "displayed": true,
                 "include": true,
@@ -9221,6 +9244,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "output_attributes_07-07-11_10",
                 "display_name": "TEMPERATURE VIMP ONSHORE",
                 "displayed": true,
                 "include": true,

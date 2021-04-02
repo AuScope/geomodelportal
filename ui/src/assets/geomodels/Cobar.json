@@ -2,6 +2,7 @@
     "groups": {
         "Faults": [
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Barrow Fault",
                 "display_name": "Barrow Fault",
                 "displayed": true,
                 "include": true,
@@ -17,6 +18,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Boxtank Fault",
                 "display_name": "Boxtank Fault",
                 "displayed": true,
                 "include": true,
@@ -32,6 +34,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Coonara Fault",
                 "display_name": "Coonara Fault",
                 "displayed": true,
                 "include": true,
@@ -47,6 +50,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Crowl Fault",
                 "display_name": "Crowl Fault",
                 "displayed": true,
                 "include": true,
@@ -62,6 +66,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Ironbark Fault",
                 "display_name": "Ironbark Fault",
                 "displayed": true,
                 "include": true,
@@ -77,6 +82,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Myrt Fault",
                 "display_name": "Myrt Fault",
                 "displayed": true,
                 "include": true,
@@ -92,6 +98,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Rookery Fault",
                 "display_name": "Rookery Fault",
                 "displayed": true,
                 "include": true,
@@ -107,6 +114,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Wildcat Fault",
                 "display_name": "Wildcat Fault",
                 "displayed": true,
                 "include": true,
@@ -122,6 +130,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Woorara Fault",
                 "display_name": "Woorara Fault",
                 "displayed": true,
                 "include": true,
@@ -139,6 +148,7 @@
         ],
         "Stratigraphy": [
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Babinda Volcanics",
                 "display_name": "Babinda Volcanics",
                 "displayed": true,
                 "include": true,
@@ -154,6 +164,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Balemund Formation",
                 "display_name": "Balemund Formation",
                 "displayed": true,
                 "include": true,
@@ -169,6 +180,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Bendoc Group",
                 "display_name": "Bendoc Group",
                 "displayed": true,
                 "include": true,
@@ -184,6 +196,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Clements Formation",
                 "display_name": "Clements Formation",
                 "displayed": true,
                 "include": true,
@@ -199,6 +212,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Erimeran Granite",
                 "display_name": "Erimeran Granite",
                 "displayed": true,
                 "include": true,
@@ -214,6 +228,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Lang-Ballast Formation",
                 "display_name": "Lang-Ballast Formation",
                 "displayed": true,
                 "include": true,
@@ -229,6 +244,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Lower Amphitheatre",
                 "display_name": "Lower Amphitheatre",
                 "displayed": true,
                 "include": true,
@@ -244,6 +260,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Majaba Volcanics",
                 "display_name": "Majaba Volcanics",
                 "displayed": true,
                 "include": true,
@@ -259,6 +276,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Nymagee Igneous",
                 "display_name": "Nymagee Igneous",
                 "displayed": true,
                 "include": true,
@@ -274,6 +292,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Shume Formation",
                 "display_name": "Shume Formation",
                 "displayed": true,
                 "include": true,
@@ -289,6 +308,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Tarran Volcanics",
                 "display_name": "Tarran Volcanics",
                 "displayed": true,
                 "include": true,
@@ -304,6 +324,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Undiff. Girilambone",
                 "display_name": "Undiff. Girilambone",
                 "displayed": true,
                 "include": true,
@@ -319,6 +340,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Unknwon Intrusive",
                 "display_name": "Unknown Intrusive",
                 "displayed": true,
                 "include": true,
@@ -334,6 +356,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Upper Amphitheatre",
                 "display_name": "Upper Amphitheatre",
                 "displayed": true,
                 "include": true,
@@ -349,6 +372,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Cobar_GM_gocad_May18_GM - Wagga Group",
                 "display_name": "Wagga Group",
                 "displayed": true,
                 "include": true,

@@ -2,18 +2,13 @@
     "groups": {
         "Quamby": [
             {
+                "alt_group_label": "TSurf_25_Argylla",
                 "display_name": "Argylla",
                 "displayed": true,
                 "include": true,
                 "model_url": "25_Argylla.gltf",
                 "popups": {
                     "25_ARGYLLA": {
-			    "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "25_ARGYLLA",
                         "title": "25_ARGYLLA"
                     }
@@ -23,18 +18,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_24_Boomarra_Meta",
                 "display_name": "Boomarra Meta",
                 "displayed": true,
                 "include": true,
                 "model_url": "24_Boomarra_Meta.gltf",
                 "popups": {
                     "24_BOOMARRA_META": {
-			    "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "24_BOOMARRA_META",
                         "title": "24_BOOMARRA_META"
                     }
@@ -44,18 +34,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_23_Bulonga",
                 "display_name": "Bulonga",
                 "displayed": true,
                 "include": true,
                 "model_url": "23_Bulonga.gltf",
                 "popups": {
                     "23_BULONGA": {
-			    "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "23_BULONGA",
                         "title": "23_BULONGA"
                     }
@@ -65,18 +50,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_21_Corrella",
                 "display_name": "Corrella",
                 "displayed": true,
                 "include": true,
                 "model_url": "21_Corrella.gltf",
                 "popups": {
                     "21_CORRELLA": {
-			    "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "21_CORRELLA",
                         "title": "21_CORRELLA"
                     }
@@ -86,18 +66,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_09G_Dipvale_Granite",
                 "display_name": "Dipvale Granite",
                 "displayed": true,
                 "include": true,
                 "model_url": "09G_Dipvale_Granite.gltf",
                 "popups": {
                     "09G_DIPVALE_GRANITE": {
-		       "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "09G_DIPVALE_GRANITE",
                         "title": "09G_DIPVALE_GRANITE"
                     }
@@ -107,18 +82,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_00_Faults",
                 "display_name": "Faults",
                 "displayed": true,
                 "include": true,
                 "model_url": "00_Faults.gltf",
                 "popups": {
                     "00_FAULTS": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "00_FAULTS",
                         "title": "00_FAULTS"
                     }
@@ -128,18 +98,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_07G_Godkin_Granite",
                 "display_name": "Godkin Granite",
                 "displayed": true,
                 "include": true,
                 "model_url": "07G_Godkin_Granite.gltf",
                 "popups": {
                     "07G_GODKIN_GRANITE": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "07G_GODKIN_GRANITE",
                         "title": "07G_GODKIN_GRANITE"
                     }
@@ -149,18 +114,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_15_Kuridala",
                 "display_name": "Kuridala",
                 "displayed": true,
                 "include": true,
                 "model_url": "15_Kuridala.gltf",
                 "popups": {
                     "15_KURIDALA": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "15_KURIDALA",
                         "title": "15_KURIDALA"
                     }
@@ -170,18 +130,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_26_Leichardt_Volcanics",
                 "display_name": "Leichardt Volcanics",
                 "displayed": true,
                 "include": true,
                 "model_url": "26_Leichardt_Volcanics.gltf",
                 "popups": {
                     "26_LEICHARDT_VOLCANICS": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "26_LEICHARDT_VOLCANICS",
                         "title": "26_LEICHARDT_VOLCANICS"
                     }
@@ -191,18 +146,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_08G_Levian_Granite",
                 "display_name": "Levian Granite",
                 "displayed": true,
                 "include": true,
                 "model_url": "08G_Levian_Granite.gltf",
                 "popups": {
                     "08G_LEVIAN_GRANITE": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "08G_LEVIAN_GRANITE",
                         "title": "08G_LEVIAN_GRANITE"
                     }
@@ -212,18 +162,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_02G_Malakoff_Granite",
                 "display_name": "Malakoff Granite",
                 "displayed": true,
                 "include": true,
                 "model_url": "02G_Malakoff_Granite.gltf",
                 "popups": {
                     "02G_MALAKOFF_GRANITE": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "02G_MALAKOFF_GRANITE",
                         "title": "02G_MALAKOFF_GRANITE"
                     }
@@ -233,18 +178,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_10_Millungera_Basin",
                 "display_name": "Millungera Basin",
                 "displayed": true,
                 "include": true,
                 "model_url": "10_Millungera_Basin.gltf",
                 "popups": {
                     "10_MILLUNGERA_BASIN": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "10_MILLUNGERA_BASIN",
                         "title": "10_MILLUNGERA_BASIN"
                     }
@@ -254,18 +194,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_12_Milo_Beds",
                 "display_name": "Milo Beds",
                 "displayed": true,
                 "include": true,
                 "model_url": "12_Milo_Beds.gltf",
                 "popups": {
                     "12_MILO_BEDS": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "12_MILO_BEDS",
                         "title": "12_MILO_BEDS"
                     }
@@ -275,18 +210,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_22_Mitakoodi",
                 "display_name": "Mitakoodi",
                 "displayed": true,
                 "include": true,
                 "model_url": "22_Mitakoodi.gltf",
                 "popups": {
                     "22_MITAKOODI": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "22_MITAKOODI",
                         "title": "22_MITAKOODI"
                     }
@@ -296,18 +226,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_18_Mount_Albert_Group_Lower",
                 "display_name": "Mount Albert Group Lower",
                 "displayed": true,
                 "include": true,
                 "model_url": "18_Mount_Albert_Group_Lower.gltf",
                 "popups": {
                     "18_MOUNT_ALBERT_GROUP_LOWER": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "18_MOUNT_ALBERT_GROUP_LOWER",
                         "title": "18_MOUNT_ALBERT_GROUP_LOWER"
                     }
@@ -317,18 +242,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_17_Mount_Albert_Group_Upper",
                 "display_name": "Mount Albert Group Upper",
                 "displayed": true,
                 "include": true,
                 "model_url": "17_Mount_Albert_Group_Upper.gltf",
                 "popups": {
                     "17_MOUNT_ALBERT_GROUP_UPPER": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "17_MOUNT_ALBERT_GROUP_UPPER",
                         "title": "17_MOUNT_ALBERT_GROUP_UPPER"
                     }
@@ -338,18 +258,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_20_Mount_Fort_Constantine",
                 "display_name": "Mount Fort Constantine",
                 "displayed": true,
                 "include": true,
                 "model_url": "20_Mount_Fort_Constantine.gltf",
                 "popups": {
                     "20_MOUNT_FORT_CONSTANTINE": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "20_MOUNT_FORT_CONSTANTINE",
                         "title": "20_MOUNT_FORT_CONSTANTINE"
                     }
@@ -359,18 +274,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_11_Quamby_Conglomerate",
                 "display_name": "Quamby Conglomerate",
                 "displayed": true,
                 "include": true,
                 "model_url": "11_Quamby_Conglomerate.gltf",
                 "popups": {
                     "11_QUAMBY_CONGLOMERATE": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "11_QUAMBY_CONGLOMERATE",
                         "title": "11_QUAMBY_CONGLOMERATE"
                     }
@@ -380,18 +290,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_16_SolidersCap",
                 "display_name": "SolidersCap",
                 "displayed": true,
                 "include": true,
                 "model_url": "16_SolidersCap.gltf",
                 "popups": {
                     "16_SOLIDERSCAP": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "16_SOLIDERSCAP",
                         "title": "16_SOLIDERSCAP"
                     }
@@ -401,18 +306,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_19_Staveley",
                 "display_name": "Staveley",
                 "displayed": true,
                 "include": true,
                 "model_url": "19_Staveley.gltf",
                 "popups": {
                     "19_STAVELEY": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "19_STAVELEY",
                         "title": "19_STAVELEY"
                     }
@@ -422,18 +322,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_14_StavleyThrust",
                 "display_name": "StavleyThrust",
                 "displayed": true,
                 "include": true,
                 "model_url": "14_StavleyThrust.gltf",
                 "popups": {
                     "14_STAVLEYTHRUST": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "14_STAVLEYTHRUST",
                         "title": "14_STAVLEYTHRUST"
                     }
@@ -443,18 +338,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_06G_Tommy_Creek_MicroGranite",
                 "display_name": "Tommy Creek MicroGranite",
                 "displayed": true,
                 "include": true,
                 "model_url": "06G_Tommy_Creek_MicroGranite.gltf",
                 "popups": {
                     "06G_TOMMY_CREEK_MICROGRANITE": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "06G_TOMMY_CREEK_MICROGRANITE",
                         "title": "06G_TOMMY_CREEK_MICROGRANITE"
                     }
@@ -464,18 +354,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_13_TooleCreekVolc",
                 "display_name": "TooleCreekVolc",
                 "displayed": true,
                 "include": true,
                 "model_url": "13_TooleCreekVolc.gltf",
                 "popups": {
                     "13_TOOLECREEKVOLC": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "13_TOOLECREEKVOLC",
                         "title": "13_TOOLECREEKVOLC"
                     }
@@ -485,18 +370,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_03G_Williams_Granite",
                 "display_name": "Williams Granite",
                 "displayed": true,
                 "include": true,
                 "model_url": "03G_Williams_Granite.gltf",
                 "popups": {
                     "03G_WILLIAMS_GRANITE": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "03G_WILLIAMS_GRANITE",
                         "title": "03G_WILLIAMS_GRANITE"
                     }
@@ -506,18 +386,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_05G_Williams_Granite_HM",
                 "display_name": "Williams Granite HM",
                 "displayed": true,
                 "include": true,
                 "model_url": "05G_Williams_Granite_HM.gltf",
                 "popups": {
                     "05G_WILLIAMS_GRANITE_HM": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "05G_WILLIAMS_GRANITE_HM",
                         "title": "05G_WILLIAMS_GRANITE_HM"
                     }
@@ -527,18 +402,13 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "TSurf_04G_Williams_Granite_LM",
                 "display_name": "Williams Granite LM",
                 "displayed": true,
                 "include": true,
                 "model_url": "04G_Williams_Granite_LM.gltf",
                 "popups": {
                     "04G_WILLIAMS_GRANITE_LM": {
-	                "href": [
-                            {
-                                "URL": "https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/template.BINARYPORTLET/search/cr_89698_1.pdf?javax.portlet.tpst=c59371e644a51ca46a5e5410866d10a0_ws_BI&javax.portlet.prp_c59371e644a51ca46a5e5410866d10a0=action%3DdoComponentDisplay%26appName%3Dcompnt%26docId%3D580%252F4-1075753&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
-                                "label": "More Info"
-                            }
-                        ],
                         "name": "04G_WILLIAMS_GRANITE_LM",
                         "title": "04G_WILLIAMS_GRANITE_LM"
                     }
