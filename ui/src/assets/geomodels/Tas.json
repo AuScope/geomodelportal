@@ -220,6 +220,8 @@
                         "title": "TAS_DEV_GRAN-TMS4_D7_B9_DG"
                     }
                 },
+                "src_filename": "tas_dev_gran.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -4915,6 +4917,134 @@
                     "line-TAS_SEIS_INTERP-SL95AGS_T1TYEN_ASC-0000000029": {
                         "name": "TAS_SEIS_INTERP-SL95AGS_T1TYEN_ASC",
                         "title": "TAS_SEIS_INTERP-SL95AGS_T1TYEN_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000000": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000001": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000002": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000003": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000004": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000005": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000006": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000007": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000008": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000009": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000010": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000011": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000012": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000013": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000014": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000015": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000016": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000017": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000018": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000019": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000020": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000021": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000022": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000023": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000024": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000025": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000026": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000027": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000028": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000029": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000030": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
+                    },
+                    "line-TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC-0000000031": {
+                        "name": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC",
+                        "title": "TAS_SEIS_INTERP-SL95AGS_T2BASE_ASC"
                     },
                     "line-TAS_SEIS_INTERP-SL95AGS_T2DUND_ASC-0000000000": {
                         "name": "TAS_SEIS_INTERP-SL95AGS_T2DUND_ASC",
@@ -59093,6 +59223,8 @@
                         "title": "TAS_SEIS_INTERP-SLS148_15WD_ASC"
                     }
                 },
+                "src_filename": "tas_seis_interp.zip",
+                "styling": {},
                 "type": "GLTFObject"
             },
             {
@@ -59182,6 +59314,8 @@
                         "title": "TYENNAN_MARGIN"
                     }
                 },
+                "src_filename": "tas_structures.zip",
+                "styling": {},
                 "type": "GLTFObject"
             }
         ],
