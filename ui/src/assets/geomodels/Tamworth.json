@@ -2,6 +2,7 @@
     "groups": {
         "DTM": [
             {
+                "alt_group_label": "DTM and Images",
                 "display_name": "1000m Palaeozoic",
                 "displayed": true,
                 "include": true,
@@ -19,6 +20,7 @@
         ],
         "Structures and Faults": [
             {
+                "alt_group_label": "Confidence Attribution",
                 "display_name": "CA1",
                 "displayed": true,
                 "include": true,
@@ -34,6 +36,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Confidence Attribution",
                 "display_name": "CA2",
                 "displayed": true,
                 "include": true,
@@ -49,6 +52,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Confidence Attribution",
                 "display_name": "CA3",
                 "displayed": true,
                 "include": true,
@@ -64,6 +68,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Confidence Attribution",
                 "display_name": "CA4",
                 "displayed": true,
                 "include": true,
@@ -79,6 +84,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Confidence Attribution",
                 "display_name": "CA5",
                 "displayed": true,
                 "include": true,
@@ -94,6 +100,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Confidence Attribution",
                 "display_name": "CAGr5",
                 "displayed": true,
                 "include": true,
@@ -109,6 +116,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Stratigraphic Volumes",
                 "display_name": "Carboniferous",
                 "displayed": true,
                 "include": true,
@@ -124,6 +132,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Stratigraphic Volumes",
                 "display_name": "Carboniferous Devonian",
                 "displayed": true,
                 "include": true,
@@ -139,6 +148,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Stratigraphic Volumes",
                 "display_name": "Devonian",
                 "displayed": true,
                 "include": true,
@@ -154,6 +164,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Faults",
                 "display_name": "Fault Package Far North",
                 "displayed": true,
                 "include": true,
@@ -265,6 +276,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Faults",
                 "display_name": "Fault Package Major",
                 "displayed": true,
                 "include": true,
@@ -284,6 +296,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Faults",
                 "display_name": "Fault Package North",
                 "displayed": true,
                 "include": true,
@@ -439,6 +452,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Faults",
                 "display_name": "Fault Package Southeast",
                 "displayed": true,
                 "include": true,
@@ -602,6 +616,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Stratigraphic Volumes",
                 "display_name": "Permian",
                 "displayed": true,
                 "include": true,
@@ -617,6 +632,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Stratigraphic Volumes",
                 "display_name": "Permian Intrusives",
                 "displayed": true,
                 "include": true,

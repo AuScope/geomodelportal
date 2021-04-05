@@ -2,7 +2,7 @@
     "groups": {
         "3D Box Volumes": [
             {
-                "alt_group_label": "VOLUME_SURFACES_V01_BaldRockSupersuite",
+                "alt_group_label": "VOLUME_SURFACES",
                 "display_name": "Bald Rock Supersuite",
                 "displayed": true,
                 "include": true,
@@ -24,7 +24,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "VOLUME_SURFACES_V02_KantieMV_RoofZone",
+                "alt_group_label": "VOLUME_SURFACES",
                 "display_name": "KantieMV Roof Zone",
                 "displayed": true,
                 "include": true,
@@ -40,7 +40,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "VOLUME_SURFACES_V10_LithoMantle",
+                "alt_group_label": "VOLUME_SURFACES",
                 "display_name": "Litho Mantle",
                 "displayed": true,
                 "include": true,
@@ -56,7 +56,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "VOLUME_SURFACES_V06_LowerZoneEast",
+                "alt_group_label": "VOLUME_SURFACES",
                 "display_name": "Lower Zone East",
                 "displayed": true,
                 "include": true,
@@ -72,7 +72,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "VOLUME_SURFACES_V04_LowerZoneWest",
+                "alt_group_label": "VOLUME_SURFACES",
                 "display_name": "Lower Zone West",
                 "displayed": true,
                 "include": true,
@@ -88,7 +88,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "VOLUME_SURFACES_V08_Metagranites_Basement",
+                "alt_group_label": "VOLUME_SURFACES",
                 "display_name": "Metagranites Basement",
                 "displayed": true,
                 "include": true,
@@ -104,7 +104,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "VOLUME_SURFACES_V07_UltramaficZone",
+                "alt_group_label": "VOLUME_SURFACES",
                 "display_name": "Ultramafic Zone",
                 "displayed": true,
                 "include": true,
@@ -120,7 +120,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "VOLUME_SURFACES_V05_UpperMiddleZoneEast",
+                "alt_group_label": "VOLUME_SURFACES",
                 "display_name": "Upper Middle Zone East",
                 "displayed": true,
                 "include": true,
@@ -136,7 +136,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "VOLUME_SURFACES_V03_UpperMiddleZoneWest",
+                "alt_group_label": "VOLUME_SURFACES",
                 "display_name": "Upper Middle Zone West",
                 "displayed": true,
                 "include": true,
@@ -152,7 +152,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "VOLUME_SURFACES_V09_YarraquinSeismicProvince",
+                "alt_group_label": "VOLUME_SURFACES",
                 "display_name": "Yarraquin Seismic Province",
                 "displayed": true,
                 "include": true,
@@ -304,7 +304,7 @@
         ],
         "Faults": [
             {
-                "alt_group_label": "STRUCTURE_SURFACES_F01_ChallaShearZone",
+                "alt_group_label": "STRUCTURE_SURFACES",
                 "display_name": "Challa Shear Zone",
                 "displayed": true,
                 "include": true,
@@ -320,7 +320,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "STRUCTURE_SURFACES_F03_WindiEastShearZone",
+                "alt_group_label": "STRUCTURE_SURFACES",
                 "display_name": "Windi East Shear Zone",
                 "displayed": true,
                 "include": true,
@@ -336,7 +336,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "STRUCTURE_SURFACES_F02_YarlooShearZone",
+                "alt_group_label": "STRUCTURE_SURFACES",
                 "display_name": "Yarloo Shear Zone",
                 "displayed": true,
                 "include": true,
@@ -354,7 +354,7 @@
         ],
         "Seismic Reflection Surveys": [
             {
-                "alt_group_label": "output_10GA_YU1",
+                "alt_group_label": "output",
                 "display_name": "10GA YU1",
                 "displayed": true,
                 "include": true,
@@ -365,7 +365,7 @@
                 "type": "GZSON"
             },
             {
-                "alt_group_label": "output_10GA_YU2",
+                "alt_group_label": "output",
                 "display_name": "10GA YU2",
                 "displayed": true,
                 "include": true,
@@ -376,7 +376,7 @@
                 "type": "GZSON"
             },
             {
-                "alt_group_label": "output_10GA_YU3",
+                "alt_group_label": "output",
                 "display_name": "10GA YU3",
                 "displayed": true,
                 "include": true,
@@ -389,7 +389,7 @@
         ],
         "Stratigraphic Surfaces": [
             {
-                "alt_group_label": "LOWER_BOUNDING_SURFACES_S01_BaldRockSupersuite",
+                "alt_group_label": "LOWER_BOUNDING_SURFACES",
                 "display_name": "Bald Rock Supersuite",
                 "displayed": true,
                 "include": true,
@@ -411,7 +411,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "LOWER_BOUNDING_SURFACES_S02_KantieMV_RoofZone",
+                "alt_group_label": "LOWER_BOUNDING_SURFACES",
                 "display_name": "KantieMV Roof Zone",
                 "displayed": true,
                 "include": true,
@@ -427,7 +427,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "LOWER_BOUNDING_SURFACES_S06_LowerZoneEast",
+                "alt_group_label": "LOWER_BOUNDING_SURFACES",
                 "display_name": "Lower Zone East",
                 "displayed": true,
                 "include": true,
@@ -443,7 +443,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "LOWER_BOUNDING_SURFACES_S08_Metagranites_Basement",
+                "alt_group_label": "LOWER_BOUNDING_SURFACES",
                 "display_name": "Metagranites Basement",
                 "displayed": true,
                 "include": true,
@@ -459,7 +459,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "LOWER_BOUNDING_SURFACES_S04_ShephardsDiscordantZone",
+                "alt_group_label": "LOWER_BOUNDING_SURFACES",
                 "display_name": "Shephards Discordant Zone",
                 "displayed": true,
                 "include": true,
@@ -475,7 +475,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "LOWER_BOUNDING_SURFACES_S07_UltramaficZone",
+                "alt_group_label": "LOWER_BOUNDING_SURFACES",
                 "display_name": "Ultramafic Zone",
                 "displayed": true,
                 "include": true,
@@ -491,7 +491,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "LOWER_BOUNDING_SURFACES_S05_UpperMiddleZonesEast",
+                "alt_group_label": "LOWER_BOUNDING_SURFACES",
                 "display_name": "Upper Middle Zones East",
                 "displayed": true,
                 "include": true,
@@ -507,7 +507,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "LOWER_BOUNDING_SURFACES_S03_UpperMiddleZonesWest",
+                "alt_group_label": "LOWER_BOUNDING_SURFACES",
                 "display_name": "Upper Middle Zones West",
                 "displayed": true,
                 "include": true,
@@ -523,7 +523,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "LOWER_BOUNDING_SURFACES_S09_YarraquinSeismicProvince",
+                "alt_group_label": "LOWER_BOUNDING_SURFACES",
                 "display_name": "Yarraquin Seismic Province",
                 "displayed": true,
                 "include": true,

@@ -2,7 +2,7 @@
     "groups": {
         "Surfaces": [
             {
-                "alt_group_label": "North-Queensland_abingdon_surf",
+                "alt_group_label": "North-Queensland",
                 "display_name": "Abingdon surface",
                 "displayed": true,
                 "include": true,
@@ -24,7 +24,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "North-Queensland_agwamin_surf",
+                "alt_group_label": "North-Queensland",
                 "display_name": "Agwamin surface",
                 "displayed": true,
                 "include": true,
@@ -46,7 +46,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "North-Queensland_drummond_surf",
+                "alt_group_label": "North-Queensland",
                 "display_name": "Drummond surface",
                 "displayed": true,
                 "include": true,
@@ -68,7 +68,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "North-Queensland_etheridge_2_surf",
+                "alt_group_label": "North-Queensland",
                 "display_name": "Etheridge 2 surface",
                 "displayed": true,
                 "include": true,
@@ -90,7 +90,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "North-Queensland_etheridge_surf",
+                "alt_group_label": "North-Queensland",
                 "display_name": "Etheridge surface",
                 "displayed": true,
                 "include": true,
@@ -112,7 +112,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "North-Queensland_moho_base_surf",
+                "alt_group_label": "North-Queensland",
                 "display_name": "Moho base surface",
                 "displayed": true,
                 "include": true,
@@ -134,7 +134,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "North-Queensland_numil_surf",
+                "alt_group_label": "North-Queensland",
                 "display_name": "Numil surface",
                 "displayed": true,
                 "include": true,
@@ -156,7 +156,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "North-Queensland_pilgrim_surf",
+                "alt_group_label": "North-Queensland",
                 "display_name": "Pilgrim surface",
                 "displayed": true,
                 "include": true,
@@ -178,7 +178,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "North-Queensland_suture_surf",
+                "alt_group_label": "North-Queensland",
                 "display_name": "Suture surface",
                 "displayed": true,
                 "include": true,

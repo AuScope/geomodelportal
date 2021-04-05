@@ -2,7 +2,7 @@
     "groups": {
         "Quamby": [
             {
-                "alt_group_label": "TSurf_25_Argylla",
+                "alt_group_label": "TSurf",
                 "display_name": "Argylla",
                 "displayed": true,
                 "include": true,
@@ -18,7 +18,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_24_Boomarra_Meta",
+                "alt_group_label": "TSurf",
                 "display_name": "Boomarra Meta",
                 "displayed": true,
                 "include": true,
@@ -34,7 +34,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_23_Bulonga",
+                "alt_group_label": "TSurf",
                 "display_name": "Bulonga",
                 "displayed": true,
                 "include": true,
@@ -50,7 +50,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_21_Corrella",
+                "alt_group_label": "TSurf",
                 "display_name": "Corrella",
                 "displayed": true,
                 "include": true,
@@ -66,7 +66,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_09G_Dipvale_Granite",
+                "alt_group_label": "TSurf",
                 "display_name": "Dipvale Granite",
                 "displayed": true,
                 "include": true,
@@ -82,7 +82,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_00_Faults",
+                "alt_group_label": "TSurf",
                 "display_name": "Faults",
                 "displayed": true,
                 "include": true,
@@ -98,7 +98,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_07G_Godkin_Granite",
+                "alt_group_label": "TSurf",
                 "display_name": "Godkin Granite",
                 "displayed": true,
                 "include": true,
@@ -114,7 +114,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_15_Kuridala",
+                "alt_group_label": "TSurf",
                 "display_name": "Kuridala",
                 "displayed": true,
                 "include": true,
@@ -130,7 +130,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_26_Leichardt_Volcanics",
+                "alt_group_label": "TSurf",
                 "display_name": "Leichardt Volcanics",
                 "displayed": true,
                 "include": true,
@@ -146,7 +146,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_08G_Levian_Granite",
+                "alt_group_label": "TSurf",
                 "display_name": "Levian Granite",
                 "displayed": true,
                 "include": true,
@@ -162,7 +162,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_02G_Malakoff_Granite",
+                "alt_group_label": "TSurf",
                 "display_name": "Malakoff Granite",
                 "displayed": true,
                 "include": true,
@@ -178,7 +178,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_10_Millungera_Basin",
+                "alt_group_label": "TSurf",
                 "display_name": "Millungera Basin",
                 "displayed": true,
                 "include": true,
@@ -194,7 +194,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_12_Milo_Beds",
+                "alt_group_label": "TSurf",
                 "display_name": "Milo Beds",
                 "displayed": true,
                 "include": true,
@@ -210,7 +210,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_22_Mitakoodi",
+                "alt_group_label": "TSurf",
                 "display_name": "Mitakoodi",
                 "displayed": true,
                 "include": true,
@@ -226,7 +226,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_18_Mount_Albert_Group_Lower",
+                "alt_group_label": "TSurf",
                 "display_name": "Mount Albert Group Lower",
                 "displayed": true,
                 "include": true,
@@ -242,7 +242,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_17_Mount_Albert_Group_Upper",
+                "alt_group_label": "TSurf",
                 "display_name": "Mount Albert Group Upper",
                 "displayed": true,
                 "include": true,
@@ -258,7 +258,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_20_Mount_Fort_Constantine",
+                "alt_group_label": "TSurf",
                 "display_name": "Mount Fort Constantine",
                 "displayed": true,
                 "include": true,
@@ -274,7 +274,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_11_Quamby_Conglomerate",
+                "alt_group_label": "TSurf",
                 "display_name": "Quamby Conglomerate",
                 "displayed": true,
                 "include": true,
@@ -290,7 +290,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_16_SolidersCap",
+                "alt_group_label": "TSurf",
                 "display_name": "SolidersCap",
                 "displayed": true,
                 "include": true,
@@ -306,7 +306,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_19_Staveley",
+                "alt_group_label": "TSurf",
                 "display_name": "Staveley",
                 "displayed": true,
                 "include": true,
@@ -322,7 +322,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_14_StavleyThrust",
+                "alt_group_label": "TSurf",
                 "display_name": "StavleyThrust",
                 "displayed": true,
                 "include": true,
@@ -338,7 +338,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_06G_Tommy_Creek_MicroGranite",
+                "alt_group_label": "TSurf",
                 "display_name": "Tommy Creek MicroGranite",
                 "displayed": true,
                 "include": true,
@@ -354,7 +354,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_13_TooleCreekVolc",
+                "alt_group_label": "TSurf",
                 "display_name": "TooleCreekVolc",
                 "displayed": true,
                 "include": true,
@@ -370,7 +370,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_03G_Williams_Granite",
+                "alt_group_label": "TSurf",
                 "display_name": "Williams Granite",
                 "displayed": true,
                 "include": true,
@@ -386,7 +386,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_05G_Williams_Granite_HM",
+                "alt_group_label": "TSurf",
                 "display_name": "Williams Granite HM",
                 "displayed": true,
                 "include": true,
@@ -402,7 +402,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "TSurf_04G_Williams_Granite_LM",
+                "alt_group_label": "TSurf",
                 "display_name": "Williams Granite LM",
                 "displayed": true,
                 "include": true,

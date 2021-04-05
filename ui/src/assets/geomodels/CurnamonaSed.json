@@ -1,8 +1,8 @@
 {
     "groups": {
-        "Gocad_BaseCambrianSurface": [
+        "Gocad": [
             {
-                "alt_group_label": "Gocad_BaseCambrianSurface",
+                "alt_group_label": "Gocad",
                 "display_name": "BaseCambrianSurface",
                 "displayed": true,
                 "include": true,
@@ -16,11 +16,9 @@
                 "src_filename": "BaseCambrianSurface.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            }
-        ],
-        "Gocad_BaseCenozoicSurface": [
+            },
             {
-                "alt_group_label": "Gocad_BaseCenozoicSurface",
+                "alt_group_label": "Gocad",
                 "display_name": "BaseCenozoicSurface",
                 "displayed": true,
                 "include": true,
@@ -34,11 +32,9 @@
                 "src_filename": "BaseCenozoicSurface.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            }
-        ],
-        "Gocad_BaseMesozoicSurface": [
+            },
             {
-                "alt_group_label": "Gocad_BaseMesozoicSurface",
+                "alt_group_label": "Gocad",
                 "display_name": "BaseMesozoicSurface",
                 "displayed": true,
                 "include": true,
@@ -52,11 +48,9 @@
                 "src_filename": "BaseMesozoicSurface.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            }
-        ],
-        "Gocad_Cambrian_Extent": [
+            },
             {
-                "alt_group_label": "Gocad_Cambrian_Extent",
+                "alt_group_label": "Gocad",
                 "display_name": "Cambrian Extent",
                 "displayed": true,
                 "include": true,
@@ -3166,11 +3160,9 @@
                 "src_filename": "Cambrian_Extent.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            }
-        ],
-        "Gocad_Cenozoic_Extent": [
+            },
             {
-                "alt_group_label": "Gocad_Cenozoic_Extent",
+                "alt_group_label": "Gocad",
                 "display_name": "Cenozoic Extent",
                 "displayed": true,
                 "include": true,
@@ -11464,11 +11456,9 @@
                 "src_filename": "Cenozoic_Extent.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            }
-        ],
-        "Gocad_Curnamona_Boundary": [
+            },
             {
-                "alt_group_label": "Gocad_Curnamona_Boundary",
+                "alt_group_label": "Gocad",
                 "display_name": "Curnamona Boundary",
                 "displayed": true,
                 "include": true,
@@ -11477,11 +11467,9 @@
                 "src_filename": "Curnamona_Boundary.zip",
                 "styling": {},
                 "type": "GZSON"
-            }
-        ],
-        "Gocad_DTB_Draper": [
+            },
             {
-                "alt_group_label": "Gocad_DTB_Draper",
+                "alt_group_label": "Gocad",
                 "display_name": "DTB Draper",
                 "displayed": true,
                 "include": true,
@@ -11495,11 +11483,9 @@
                 "src_filename": "DTB_Draper.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            }
-        ],
-        "Gocad_DepthToBasement": [
+            },
             {
-                "alt_group_label": "Gocad_DepthToBasement",
+                "alt_group_label": "Gocad",
                 "display_name": "DepthToBasement",
                 "displayed": true,
                 "include": true,
@@ -11513,11 +11499,9 @@
                 "src_filename": "DepthToBasement.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            }
-        ],
-        "Gocad_Mapped_and_interpreted_faults_Curn": [
+            },
             {
-                "alt_group_label": "Gocad_Mapped_and_interpreted_faults_Curn",
+                "alt_group_label": "Gocad",
                 "display_name": "Mapped and interpreted faults Curn",
                 "displayed": true,
                 "include": true,
@@ -11526,11 +11510,9 @@
                 "src_filename": "Mapped_and_interpreted_faults_Curn.zip",
                 "styling": {},
                 "type": "GZSON"
-            }
-        ],
-        "Gocad_Mesozoic_Extent": [
+            },
             {
-                "alt_group_label": "Gocad_Mesozoic_Extent",
+                "alt_group_label": "Gocad",
                 "display_name": "Mesozoic Extent",
                 "displayed": true,
                 "include": true,
@@ -12508,11 +12490,9 @@
                 "src_filename": "Mesozoic_Extent.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            }
-        ],
-        "Gocad_Neoproterozoic_Extent": [
+            },
             {
-                "alt_group_label": "Gocad_Neoproterozoic_Extent",
+                "alt_group_label": "Gocad",
                 "display_name": "Neoproterozoic Extent",
                 "displayed": true,
                 "include": true,
@@ -16906,11 +16886,9 @@
                 "src_filename": "Neoproterozoic_Extent.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            }
-        ],
-        "Gocad_SRTM": [
+            },
             {
-                "alt_group_label": "Gocad_SRTM",
+                "alt_group_label": "Gocad",
                 "display_name": "SRTM",
                 "displayed": true,
                 "include": true,
@@ -16924,11 +16902,9 @@
                 "src_filename": "SRTM.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            }
-        ],
-        "Gocad_palaeochan_BHEI2006": [
+            },
             {
-                "alt_group_label": "Gocad_palaeochan_BHEI2006",
+                "alt_group_label": "Gocad",
                 "display_name": "palaeochan BHEI2006",
                 "displayed": true,
                 "include": true,
@@ -16950,9 +16926,9 @@
                 "version": "1.3.0"
             }
         ],
-        "output_BaseCpoints": [
+        "output": [
             {
-                "alt_group_label": "output_BaseCpoints",
+                "alt_group_label": "output",
                 "display_name": "BASECPOINTS",
                 "displayed": true,
                 "include": true,
@@ -19042,11 +19018,9 @@
                 "src_filename": "BaseCpoints.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            }
-        ],
-        "output_BaseKpoints": [
+            },
             {
-                "alt_group_label": "output_BaseKpoints",
+                "alt_group_label": "output",
                 "display_name": "BASEKPOINTS",
                 "displayed": true,
                 "include": true,
@@ -20596,24 +20570,9 @@
                 "src_filename": "BaseKpoints.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            }
-        ],
-        "output_BaseTpoints": [
+            },
             {
-                "alt_group_label": "output_BaseTpoints",
-                "display_name": "BASETPOINTS",
-                "displayed": true,
-                "include": true,
-                "model_url": "BaseTpoints.gzson",
-                "popups": {},
-                "src_filename": "BaseTpoints.zip",
-                "styling": {},
-                "type": "GZSON"
-            }
-        ],
-        "output_Basement_pseudoColour_dtb_varden_15_500_mc10_RF888_1cell_smoothed_cropped_image_prop@@": [
-            {
-                "alt_group_label": "output_Basement_pseudoColour_dtb_varden_15_500_mc10_RF888_1cell_smoothed_cropped_image_prop@@",
+                "alt_group_label": "output",
                 "display_name": "BASEMENT PSEUDOCOLOUR 1",
                 "displayed": true,
                 "include": true,
@@ -20632,11 +20591,9 @@
                 "src_filename": "Basement_pseudoColour_dtb_varden_15_500_mc10_RF888_1cell_smoothed_cropped_image_prop@@.PNG",
                 "styling": {},
                 "type": "ImagePlane"
-            }
-        ],
-        "output_Basementpoints": [
+            },
             {
-                "alt_group_label": "output_Basementpoints",
+                "alt_group_label": "output",
                 "display_name": "BASEMENTPOINTS",
                 "displayed": true,
                 "include": true,
@@ -20645,11 +20602,20 @@
                 "src_filename": "Basementpoints.zip",
                 "styling": {},
                 "type": "GZSON"
-            }
-        ],
-        "output_Curn_regional_TMI_Curn_regional_TMI_prop@@": [
+            },
             {
-                "alt_group_label": "output_Curn_regional_TMI_Curn_regional_TMI_prop@@",
+                "alt_group_label": "output",
+                "display_name": "BASETPOINTS",
+                "displayed": true,
+                "include": true,
+                "model_url": "BaseTpoints.gzson",
+                "popups": {},
+                "src_filename": "BaseTpoints.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "output",
                 "display_name": "CURN REGIONAL TMI 1",
                 "displayed": true,
                 "include": true,
@@ -20668,11 +20634,9 @@
                 "src_filename": "Curn_regional_TMI_Curn_regional_TMI_prop@@.PNG",
                 "styling": {},
                 "type": "ImagePlane"
-            }
-        ],
-        "output_GeologyGeology_clip_Geology_clip_prop@@": [
+            },
             {
-                "alt_group_label": "output_GeologyGeology_clip_Geology_clip_prop@@",
+                "alt_group_label": "output",
                 "display_name": "GEOLOGY CLIP 1",
                 "displayed": true,
                 "include": true,
@@ -20691,11 +20655,9 @@
                 "src_filename": "GeologyGeology_clip_Geology_clip_prop@@.PNG",
                 "styling": {},
                 "type": "ImagePlane"
-            }
-        ],
-        "output_Gravity_PseudoColour_gravity_freeair_colourdrape_pseudo_prop@@": [
+            },
             {
-                "alt_group_label": "output_Gravity_PseudoColour_gravity_freeair_colourdrape_pseudo_prop@@",
+                "alt_group_label": "output",
                 "display_name": "GRAVITY PSEUDOCOLOUR 1",
                 "displayed": true,
                 "include": true,
@@ -20714,11 +20676,9 @@
                 "src_filename": "Gravity_PseudoColour_gravity_freeair_colourdrape_pseudo_prop@@.PNG",
                 "styling": {},
                 "type": "ImagePlane"
-            }
-        ],
-        "output_Landsat7_247_Landsat7_247_2001_prop@@": [
+            },
             {
-                "alt_group_label": "output_Landsat7_247_Landsat7_247_2001_prop@@",
+                "alt_group_label": "output",
                 "display_name": "LANDSAT7 247 1",
                 "displayed": true,
                 "include": true,
@@ -20737,11 +20697,9 @@
                 "src_filename": "Landsat7_247_Landsat7_247_2001_prop@@.PNG",
                 "styling": {},
                 "type": "ImagePlane"
-            }
-        ],
-        "output_Major_Localities": [
+            },
             {
-                "alt_group_label": "output_Major_Localities",
+                "alt_group_label": "output",
                 "display_name": "MAJOR LOCALITIES",
                 "displayed": true,
                 "include": true,
@@ -20791,11 +20749,9 @@
                 "src_filename": "Major_Localities.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            }
-        ],
-        "output_SolidGeology+Structure_solidg_structure_prop@@": [
+            },
             {
-                "alt_group_label": "output_SolidGeology+Structure_solidg_structure_prop@@",
+                "alt_group_label": "output",
                 "display_name": "SOLIDGEOLOGY+STRUCTURE 1",
                 "displayed": true,
                 "include": true,
@@ -20814,11 +20770,9 @@
                 "src_filename": "SolidGeology+Structure_solidg_structure_prop@@.PNG",
                 "styling": {},
                 "type": "ImagePlane"
-            }
-        ],
-        "output_Topomap_1M_Topomap_1M_prop@@": [
+            },
             {
-                "alt_group_label": "output_Topomap_1M_Topomap_1M_prop@@",
+                "alt_group_label": "output",
                 "display_name": "TOPOMAP 1M 1",
                 "displayed": true,
                 "include": true,

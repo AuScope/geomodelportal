@@ -2,7 +2,7 @@
     "groups": {
         "DTM": [
             {
-                "alt_group_label": "DTM and Images_GAB_CMB_DTM_1000m",
+                "alt_group_label": "DTM and Images",
                 "display_name": "GAB CMB DTM 1000m",
                 "displayed": true,
                 "include": true,
@@ -18,7 +18,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "DTM and Images_GAB_Surat_DTM_1000m",
+                "alt_group_label": "DTM and Images",
                 "display_name": "GAB Surat DTM 1000m",
                 "displayed": true,
                 "include": true,
@@ -34,7 +34,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "DTM and Images_NEO_DTM_1000m_Palaeozoic",
+                "alt_group_label": "DTM and Images",
                 "display_name": "NEO DTM 1000m Palaeozoic",
                 "displayed": true,
                 "include": true,
@@ -52,7 +52,7 @@
         ],
         "Faults": [
             {
-                "alt_group_label": "Faults_NEO_Flt_Demon",
+                "alt_group_label": "Faults",
                 "display_name": "NEO Flt Demon",
                 "displayed": true,
                 "include": true,
@@ -68,7 +68,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Faults_NEO_Flt_Drakeedge",
+                "alt_group_label": "Faults",
                 "display_name": "NEO Flt Drakeedge",
                 "displayed": true,
                 "include": true,
@@ -84,7 +84,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Faults_NEO_Flt_Hunter_Mooki",
+                "alt_group_label": "Faults",
                 "display_name": "NEO Flt Hunter Mooki",
                 "displayed": true,
                 "include": true,
@@ -100,7 +100,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Faults_NEO_Flt_Peel_Manning",
+                "alt_group_label": "Faults",
                 "display_name": "NEO Flt Peel Manning",
                 "displayed": true,
                 "include": true,
@@ -118,7 +118,7 @@
         ],
         "Structures": [
             {
-                "alt_group_label": "Confidence Attribution_NEO_CMB_CA1",
+                "alt_group_label": "Confidence Attribution",
                 "display_name": "NEO CMB Conf Level 1",
                 "displayed": true,
                 "include": true,
@@ -135,7 +135,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Confidence Attribution_NEO_CMB_CA2",
+                "alt_group_label": "Confidence Attribution",
                 "display_name": "NEO CMB Conf Level 2",
                 "displayed": true,
                 "include": true,
@@ -152,7 +152,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Confidence Attribution_NEO_CMB_CA3",
+                "alt_group_label": "Confidence Attribution",
                 "display_name": "NEO CMB Conf Level 3",
                 "displayed": true,
                 "include": true,
@@ -169,7 +169,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Confidence Attribution_NEO_CMB_CA4",
+                "alt_group_label": "Confidence Attribution",
                 "display_name": "NEO CMB Conf Level 4",
                 "displayed": true,
                 "include": true,
@@ -186,7 +186,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Confidence Attribution_NEO_CMB_CA5",
+                "alt_group_label": "Confidence Attribution",
                 "display_name": "NEO CMB Conf Level 5",
                 "displayed": true,
                 "include": true,
@@ -203,7 +203,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Confidence Attribution_NEO_CMB_CAGr5",
+                "alt_group_label": "Confidence Attribution",
                 "display_name": "NEO CMB Conf Level >5",
                 "displayed": true,
                 "include": true,
@@ -220,7 +220,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Confidence Attribution_NEO_TB_CA1",
+                "alt_group_label": "Confidence Attribution",
                 "display_name": "NEO TB Conf Level 1",
                 "displayed": true,
                 "include": true,
@@ -237,7 +237,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Confidence Attribution_NEO_TB_CA2",
+                "alt_group_label": "Confidence Attribution",
                 "display_name": "NEO TB Conf Level 2",
                 "displayed": true,
                 "include": true,
@@ -254,7 +254,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Confidence Attribution_NEO_TB_CA3",
+                "alt_group_label": "Confidence Attribution",
                 "display_name": "NEO TB Conf Level 3",
                 "displayed": true,
                 "include": true,
@@ -271,7 +271,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Confidence Attribution_NEO_TB_CA4",
+                "alt_group_label": "Confidence Attribution",
                 "display_name": "NEO TB Conf Level 4",
                 "displayed": true,
                 "include": true,
@@ -288,7 +288,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Confidence Attribution_NEO_TB_CA5",
+                "alt_group_label": "Confidence Attribution",
                 "display_name": "NEO TB Conf Level 5",
                 "displayed": true,
                 "include": true,
@@ -305,7 +305,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Confidence Attribution_NEO_TB_CAGr5",
+                "alt_group_label": "Confidence Attribution",
                 "display_name": "NEO TB Conf Level >5",
                 "displayed": true,
                 "include": true,

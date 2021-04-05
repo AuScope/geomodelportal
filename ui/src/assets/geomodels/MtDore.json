@@ -1,7 +1,8 @@
 {
     "groups": {
-        "Not Grouped": [
+        "Base Layers": [
             {
+                "alt_group_label": "Surfaces",
                 "display_name": "Base 3layer Stavley REP ForIncisionIntoTooleCreek",
                 "displayed": true,
                 "include": true,
@@ -17,6 +18,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Surfaces",
                 "display_name": "Base 3layer TooleCreek 0",
                 "displayed": true,
                 "include": true,
@@ -32,6 +34,7 @@
                 "type": "GLTFObject"
             },
             {
+                "alt_group_label": "Surfaces",
                 "display_name": "Base of Cover",
                 "displayed": true,
                 "include": true,
@@ -45,252 +48,30 @@
                 "src_filename": "Base of Cover.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Batholith": [
             {
-                "display_name": "DoubleCrossing MetamorphicVolume",
+                "alt_group_label": "Surfaces",
+                "display_name": "Williams Naraku Batholith",
                 "displayed": true,
                 "include": true,
-                "model_url": "DoubleCrossing_MetamorphicVolume.gltf",
+                "model_url": "WilliamsNaraku_Batholith.gltf",
                 "popups": {
-                    "DOUBLECROSSING_METAMORPHICVOLUME": {
-                        "name": "DOUBLECROSSING_METAMORPHICVOLUME",
-                        "title": "DOUBLECROSSING_METAMORPHICVOLUME"
+                    "WILLIAMSNARAKU_BATHOLITH": {
+                        "name": "WILLIAMSNARAKU_BATHOLITH",
+                        "title": "WILLIAMSNARAKU_BATHOLITH"
                     }
                 },
-                "src_filename": "DoubleCrossing_MetamorphicVolume.zip",
+                "src_filename": "WilliamsNaraku_Batholith.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "CDI Conductivity": [
             {
-                "display_name": "MTDORE_INVERSION",
-                "displayed": false,
-                "include": true,
-                "model_url": "MtDore_Inversion_Geologically_constrained_density_inversion@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "colourLookup": {
-                        "0": [
-                            0.0,
-                            0.0,
-                            1.0,
-                            1.0
-                        ],
-                        "64": [
-                            0.0,
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "128": [
-                            0.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "192": [
-                            1.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "255": [
-                            1.0,
-                            0.0,
-                            0.0,
-                            1.0
-                        ]
-                    },
-                    "dataDims": [
-                        83,
-                        200,
-                        116
-                    ],
-                    "dataType": "FLOAT_32",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
-                    "origin": [
-                        405450.0,
-                        7534800.0,
-                        700.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        72910.84337349399,
-                        178204.5,
-                        22801.724137931033
-                    ]
-                }
-            },
-            {
-                "display_name": "MTDORE_INVERSION",
-                "displayed": false,
-                "include": true,
-                "model_url": "MtDore_Inversion_Geologically_constrained_susceptibility_inversion@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "colourLookup": {
-                        "0": [
-                            0.0,
-                            0.0,
-                            1.0,
-                            1.0
-                        ],
-                        "64": [
-                            0.0,
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "128": [
-                            0.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "192": [
-                            1.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "255": [
-                            1.0,
-                            0.0,
-                            0.0,
-                            1.0
-                        ]
-                    },
-                    "dataDims": [
-                        83,
-                        200,
-                        116
-                    ],
-                    "dataType": "FLOAT_32",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
-                    "origin": [
-                        405450.0,
-                        7534800.0,
-                        700.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        72910.84337349399,
-                        178204.5,
-                        22801.724137931033
-                    ]
-                }
-            },
-            {
-                "display_name": "MTDORE_INVERSION",
-                "displayed": false,
-                "include": true,
-                "model_url": "MtDore_Inversion_Rockcode@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "colourLookup": {
-                        "0": [
-                            0.0,
-                            0.0,
-                            1.0,
-                            1.0
-                        ],
-                        "64": [
-                            0.0,
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "128": [
-                            0.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "192": [
-                            1.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "255": [
-                            1.0,
-                            0.0,
-                            0.0,
-                            1.0
-                        ]
-                    },
-                    "dataDims": [
-                        83,
-                        200,
-                        116
-                    ],
-                    "dataType": "INT_16",
-                    "maxVal": 31073.0,
-                    "minVal": 0.0,
-                    "origin": [
-                        405450.0,
-                        7534800.0,
-                        700.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        72910.84337349399,
-                        178204.5,
-                        22801.724137931033
-                    ]
-                }
-            },
-            {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting CDI Conductivity ASharp Krig21 TopoMask@@",
+                "display_name": "ASharp Krig21 TopoMask",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_CDI_Conductivity_ASharp_Krig21_TopoMask@@.gz",
@@ -366,7 +147,8 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting CDI Conductivity ASharp Krig21 TopoMask max@@",
+                "display_name": "ASharp Krig21 TopoMask_max",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_CDI_Conductivity_ASharp_Krig21_TopoMask_max@@.gz",
@@ -442,7 +224,8 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting CDI Conductivity CSharp Krig1 TopoMask@@",
+                "display_name": "CSharp Krig1 TopoMask",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_CDI_Conductivity_CSharp_Krig1_TopoMask@@.gz",
@@ -518,7 +301,8 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting CDI Conductivity CSharp Krig1 TopoMask EdgeDetect@@",
+                "display_name": "CSharp Krig1 TopoMask EdgeDet",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_CDI_Conductivity_CSharp_Krig1_TopoMask_EdgeDetect@@.gz",
@@ -594,7 +378,8 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting CDI Conductivity CSharp Krig1 TopoMask max@@",
+                "display_name": "CSharp Krig1 TopoMask max",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_CDI_Conductivity_CSharp_Krig1_TopoMask_max@@.gz",
@@ -668,9 +453,12 @@
                         2857.1429082857144
                     ]
                 }
-            },
+            }
+        ],
+        "Coincident Gravity": [
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting Coincident GravityHigh MagneticHigh@@",
+                "display_name": "High Magnetic High",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_Coincident_GravityHigh_MagneticHigh@@.gz",
@@ -714,8 +502,8 @@
                         21
                     ],
                     "dataType": "FLOAT_32",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
+                    "maxVal": 0.826718270778656,
+                    "minVal": 1.1344314998495975e-06,
                     "origin": [
                         405150.0,
                         7534500.0,
@@ -746,7 +534,8 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting Coincident GravityHigh MagneticHigh out@@",
+                "display_name": "High Magnetic High out",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_Coincident_GravityHigh_MagneticHigh_out@@.gz",
@@ -758,8 +547,55 @@
                         21
                     ],
                     "dataType": "INT_16",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
+                    "maxVal": 2.0,
+                    "minVal": 1.0,
+                    "origin": [
+                        405150.0,
+                        7534500.0,
+                        500.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        74101.2048192771,
+                        179400.5,
+                        2857.1429082857144
+                    ]
+                }
+            }
+        ],
+        "Density": [
+            {
+                "alt_group_label": "3D Volume MtDore targeting Normalised Density@@",
+                "display_name": "Normalised",
+                "displayed": false,
+                "include": true,
+                "model_url": "MtDore_targeting_Normalised_Density@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "dataDims": [
+                        249,
+                        600,
+                        21
+                    ],
+                    "dataType": "FLOAT_32",
+                    "maxVal": 0.18453790247440338,
+                    "minVal": -0.1326947957277298,
                     "origin": [
                         405150.0,
                         7534500.0,
@@ -790,7 +626,87 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting Normalised Density Scaled0to1@@",
+                "display_name": "Normalised Scaled 0-1",
+                "displayed": false,
+                "include": true,
+                "model_url": "MtDore_targeting_Normalised_Density_Scaled0to1@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "colourLookup": {
+                        "0": [
+                            0.0,
+                            0.0,
+                            1.0,
+                            1.0
+                        ],
+                        "64": [
+                            0.0,
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "128": [
+                            0.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "192": [
+                            1.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "255": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ]
+                    },
+                    "dataDims": [
+                        249,
+                        600,
+                        21
+                    ],
+                    "dataType": "FLOAT_32",
+                    "maxVal": 0.9999997019767761,
+                    "minVal": 0.0009611582499928772,
+                    "origin": [
+                        405150.0,
+                        7534500.0,
+                        500.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        74101.2048192771,
+                        179400.5,
+                        2857.1429082857144
+                    ]
+                }
+            }
+        ],
+        "Distance": [
+            {
+                "alt_group_label": "3D Volume MtDore targeting Distance CSharp ISO Gt35@@",
+                "display_name": "CSharp ISO Gt 35",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_Distance_CSharp_ISO_Gt35@@.gz",
@@ -834,7 +750,8 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting Distance CSharp ISO Gt35 out@@",
+                "display_name": "CSharp ISO Gt 35 out",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_Distance_CSharp_ISO_Gt35_out@@.gz",
@@ -846,8 +763,8 @@
                         21
                     ],
                     "dataType": "INT_16",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
+                    "maxVal": 2.0,
+                    "minVal": 1.0,
                     "origin": [
                         405150.0,
                         7534500.0,
@@ -878,7 +795,8 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting Distance CrustalFaults@@",
+                "display_name": "Crustal Faults",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_Distance_CrustalFaults@@.gz",
@@ -922,7 +840,8 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting Distance CrustalFaults out@@",
+                "display_name": "Crustal Faults out",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_Distance_CrustalFaults_out@@.gz",
@@ -934,8 +853,8 @@
                         21
                     ],
                     "dataType": "INT_16",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
+                    "maxVal": 2.0,
+                    "minVal": 1.0,
                     "origin": [
                         405150.0,
                         7534500.0,
@@ -966,51 +885,8 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
-                "displayed": false,
-                "include": true,
-                "model_url": "MtDore_targeting_Distance_MaficIntrusives_NormSuscGt0pt05@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "dataDims": [
-                        249,
-                        600,
-                        21
-                    ],
-                    "dataType": "FLOAT_32",
-                    "maxVal": 31247.9375,
-                    "minVal": 0.0,
-                    "origin": [
-                        405150.0,
-                        7534500.0,
-                        500.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        74101.2048192771,
-                        179400.5,
-                        2857.1429082857144
-                    ]
-                }
-            },
-            {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting Distance MtDore FaultModel Surface intersectingMafics@@",
+                "display_name": "Fault Model Intersecting Mafics",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_Distance_MtDore_FaultModel_Surface_intersectingMafics@@.gz",
@@ -1054,7 +930,8 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting Distance MtDore FaultModel Surface intersectingMafics out@@",
+                "display_name": "Fault Model Intersecting Mafics out",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_Distance_MtDore_FaultModel_Surface_intersectingMafics_out@@.gz",
@@ -1066,8 +943,8 @@
                         21
                     ],
                     "dataType": "INT_16",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
+                    "maxVal": 2.0,
+                    "minVal": 1.0,
                     "origin": [
                         405150.0,
                         7534500.0,
@@ -1098,7 +975,53 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting Distance MaficIntrusives NormSuscGt0pt05@@",
+                "display_name": "Mafic Intrusives Norm Susc Gt Opt 05",
+                "displayed": false,
+                "include": true,
+                "model_url": "MtDore_targeting_Distance_MaficIntrusives_NormSuscGt0pt05@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "dataDims": [
+                        249,
+                        600,
+                        21
+                    ],
+                    "dataType": "FLOAT_32",
+                    "maxVal": 31247.9375,
+                    "minVal": 0.0,
+                    "origin": [
+                        405150.0,
+                        7534500.0,
+                        500.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        74101.2048192771,
+                        179400.5,
+                        2857.1429082857144
+                    ]
+                }
+            },
+            {
+                "alt_group_label": "3D Volume MtDore targeting Distance Williams Batholith InsideSet30000@@",
+                "display_name": "Williams Batholith Inside Set",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_Distance_Williams_Batholith_InsideSet30000@@.gz",
@@ -1140,9 +1063,12 @@
                         2857.1429082857144
                     ]
                 }
-            },
+            }
+        ],
+        "Fault Roughness": [
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting Fault Roughness@@",
+                "display_name": "Fault Roughness",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_Fault_Roughness@@.gz",
@@ -1230,7 +1156,8 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting Fault Roughness out@@",
+                "display_name": "Fault Roughness out",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_Fault_Roughness_out@@.gz",
@@ -1242,8 +1169,105 @@
                         21
                     ],
                     "dataType": "INT_16",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
+                    "maxVal": 2.0,
+                    "minVal": 1.0,
+                    "origin": [
+                        405150.0,
+                        7534500.0,
+                        500.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        74101.2048192771,
+                        179400.5,
+                        2857.1429082857144
+                    ]
+                }
+            }
+        ],
+        "Faults": [
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Mt Dore Model Faults",
+                "displayed": true,
+                "include": true,
+                "model_url": "Mt Dore Model Faults.gltf",
+                "popups": {
+                    "MT DORE MODEL FAULTS": {
+                        "name": "MT DORE MODEL FAULTS",
+                        "title": "MT DORE MODEL FAULTS"
+                    }
+                },
+                "src_filename": "Mt Dore Model Faults.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ],
+        "Geochemistry": [
+            {
+                "alt_group_label": "3D Volume MtDore targeting dist Geochem merged AuGt150@@",
+                "display_name": "Merged Au Gt 150",
+                "displayed": false,
+                "include": true,
+                "model_url": "MtDore_targeting_dist_Geochem_merged_AuGt150@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "colourLookup": {
+                        "0": [
+                            0.0,
+                            0.0,
+                            1.0,
+                            1.0
+                        ],
+                        "64": [
+                            0.0,
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "128": [
+                            0.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "192": [
+                            1.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "255": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ]
+                    },
+                    "dataDims": [
+                        249,
+                        600,
+                        21
+                    ],
+                    "dataType": "FLOAT_32",
+                    "maxVal": 63375.90234375,
+                    "minVal": 50.0996208190918,
                     "origin": [
                         405150.0,
                         7534500.0,
@@ -1274,7 +1298,344 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting dist Geochem merged AuGt150 out@@",
+                "display_name": "Merged Au Gt 150 out",
+                "displayed": false,
+                "include": true,
+                "model_url": "MtDore_targeting_dist_Geochem_merged_AuGt150_out@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "dataDims": [
+                        249,
+                        600,
+                        21
+                    ],
+                    "dataType": "INT_16",
+                    "maxVal": 2.0,
+                    "minVal": 1.0,
+                    "origin": [
+                        405150.0,
+                        7534500.0,
+                        500.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        74101.2048192771,
+                        179400.5,
+                        2857.1429082857144
+                    ]
+                }
+            },
+            {
+                "alt_group_label": "3D Volume MtDore targeting dist Geochem merged CuGt1000@@",
+                "display_name": "Merged Cu Gt 1000",
+                "displayed": false,
+                "include": true,
+                "model_url": "MtDore_targeting_dist_Geochem_merged_CuGt1000@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "colourLookup": {
+                        "0": [
+                            0.0,
+                            0.0,
+                            1.0,
+                            1.0
+                        ],
+                        "64": [
+                            0.0,
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "128": [
+                            0.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "192": [
+                            1.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "255": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ]
+                    },
+                    "dataDims": [
+                        249,
+                        600,
+                        21
+                    ],
+                    "dataType": "FLOAT_32",
+                    "maxVal": 41610.3984375,
+                    "minVal": 50.02647399902344,
+                    "origin": [
+                        405150.0,
+                        7534500.0,
+                        500.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        74101.2048192771,
+                        179400.5,
+                        2857.1429082857144
+                    ]
+                }
+            },
+            {
+                "alt_group_label": "3D Volume MtDore targeting dist Geochem merged CuGt2000@@",
+                "display_name": "Merged Cu Gt 2000",
+                "displayed": false,
+                "include": true,
+                "model_url": "MtDore_targeting_dist_Geochem_merged_CuGt2000@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "colourLookup": {
+                        "0": [
+                            0.0,
+                            0.0,
+                            1.0,
+                            1.0
+                        ],
+                        "64": [
+                            0.0,
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "128": [
+                            0.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "192": [
+                            1.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "255": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ]
+                    },
+                    "dataDims": [
+                        249,
+                        600,
+                        21
+                    ],
+                    "dataType": "FLOAT_32",
+                    "maxVal": 41610.3984375,
+                    "minVal": 50.15605163574219,
+                    "origin": [
+                        405150.0,
+                        7534500.0,
+                        500.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        74101.2048192771,
+                        179400.5,
+                        2857.1429082857144
+                    ]
+                }
+            },
+            {
+                "alt_group_label": "3D Volume MtDore targeting dist Geochem merged CuGt2000 out@@",
+                "display_name": "Merged Cu Gt 2000 out",
+                "displayed": false,
+                "include": true,
+                "model_url": "MtDore_targeting_dist_Geochem_merged_CuGt2000_out@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "dataDims": [
+                        249,
+                        600,
+                        21
+                    ],
+                    "dataType": "INT_16",
+                    "maxVal": 2.0,
+                    "minVal": 1.0,
+                    "origin": [
+                        405150.0,
+                        7534500.0,
+                        500.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        74101.2048192771,
+                        179400.5,
+                        2857.1429082857144
+                    ]
+                }
+            },
+            {
+                "alt_group_label": "3D Volume MtDore targeting Uranium divided Thorium@@",
+                "display_name": "Uranium / Thorium",
+                "displayed": false,
+                "include": true,
+                "model_url": "MtDore_targeting_Uranium_divided_Thorium@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "dataDims": [
+                        249,
+                        600,
+                        21
+                    ],
+                    "dataType": "FLOAT_32",
+                    "maxVal": 3.7973899841308594,
+                    "minVal": -3.1316120624542236,
+                    "origin": [
+                        405150.0,
+                        7534500.0,
+                        500.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        74101.2048192771,
+                        179400.5,
+                        2857.1429082857144
+                    ]
+                }
+            },
+            {
+                "alt_group_label": "3D Volume MtDore targeting Uranium divided Thorium out@@",
+                "display_name": "Uranium / Thorium out",
+                "displayed": false,
+                "include": true,
+                "model_url": "MtDore_targeting_Uranium_divided_Thorium_out@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "dataDims": [
+                        249,
+                        600,
+                        21
+                    ],
+                    "dataType": "INT_16",
+                    "maxVal": 2.0,
+                    "minVal": 1.0,
+                    "origin": [
+                        405150.0,
+                        7534500.0,
+                        500.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        74101.2048192771,
+                        179400.5,
+                        2857.1429082857144
+                    ]
+                }
+            }
+        ],
+        "Geological Complex": [
+            {
+                "alt_group_label": "3D Volume MtDore targeting GeolComplex 552 moving average filter@@",
+                "display_name": "Moving Average Filter",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_GeolComplex_552_moving_average_filter@@.gz",
@@ -1362,7 +1723,8 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting GeolComplex 552 moving average filter out@@",
+                "display_name": "Moving Average Filter out",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_GeolComplex_552_moving_average_filter_out@@.gz",
@@ -1374,8 +1736,8 @@
                         21
                     ],
                     "dataType": "INT_16",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
+                    "maxVal": 2.0,
+                    "minVal": 1.0,
                     "origin": [
                         405150.0,
                         7534500.0,
@@ -1404,9 +1766,476 @@
                         2857.1429082857144
                     ]
                 }
+            }
+        ],
+        "Horizon Base": [
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Marraba Volcanics",
+                "displayed": true,
+                "include": true,
+                "model_url": "MtDore_skua_model_horizon_Base_MarrabaVolcanics_ts.gltf",
+                "popups": {
+                    "MTDORE_SKUA_MODEL_HORIZON_BASE_MARRABAVOLCANICS_TS": {
+                        "name": "MTDORE_SKUA_MODEL_HORIZON_BASE_MARRABAVOLCANICS_TS",
+                        "title": "MTDORE_SKUA_MODEL_HORIZON_BASE_MARRABAVOLCANICS_TS"
+                    }
+                },
+                "src_filename": "MtDore_skua_model_horizon_Base_MarrabaVolcanics_ts.zip",
+                "styling": {},
+                "type": "GLTFObject"
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "Surfaces",
+                "display_name": "Timberoo etc Seds",
+                "displayed": true,
+                "include": true,
+                "model_url": "MtDore_skua_model_horizon_Base_Timberoo_etc_Seds_ts.gltf",
+                "popups": {
+                    "MTDORE_SKUA_MODEL_HORIZON_BASE_TIMBEROO_ETC_SEDS_TS": {
+                        "name": "MTDORE_SKUA_MODEL_HORIZON_BASE_TIMBEROO_ETC_SEDS_TS",
+                        "title": "MTDORE_SKUA_MODEL_HORIZON_BASE_TIMBEROO_ETC_SEDS_TS"
+                    }
+                },
+                "src_filename": "MtDore_skua_model_horizon_Base_Timberoo_etc_Seds_ts.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ],
+        "Horizon Base 3 Layer Curves": [
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Bulonga",
+                "displayed": true,
+                "include": true,
+                "model_url": "MtDore_skua_model_horizon_Base_3Layer_Bulonga_curves_ts.gltf",
+                "popups": {
+                    "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_BULONGA_CURVES_TS": {
+                        "name": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_BULONGA_CURVES_TS",
+                        "title": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_BULONGA_CURVES_TS"
+                    }
+                },
+                "src_filename": "MtDore_skua_model_horizon_Base_3Layer_Bulonga_curves_ts.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Llewellyn",
+                "displayed": true,
+                "include": true,
+                "model_url": "MtDore_skua_model_horizon_Base_3Layer_Llewellyn_curves_ts.gltf",
+                "popups": {
+                    "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_LLEWELLYN_CURVES_TS": {
+                        "name": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_LLEWELLYN_CURVES_TS",
+                        "title": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_LLEWELLYN_CURVES_TS"
+                    }
+                },
+                "src_filename": "MtDore_skua_model_horizon_Base_3Layer_Llewellyn_curves_ts.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Llewellyn REP",
+                "displayed": true,
+                "include": true,
+                "model_url": "MtDore_skua_model_horizon_Base_3Layer_Llewellyn_REP_curves_ts.gltf",
+                "popups": {
+                    "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_LLEWELLYN_REP_CURVES_TS": {
+                        "name": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_LLEWELLYN_REP_CURVES_TS",
+                        "title": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_LLEWELLYN_REP_CURVES_TS"
+                    }
+                },
+                "src_filename": "MtDore_skua_model_horizon_Base_3Layer_Llewellyn_REP_curves_ts.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Stavley",
+                "displayed": true,
+                "include": true,
+                "model_url": "MtDore_skua_model_horizon_Base_3Layer_Stavley_curves_ts.gltf",
+                "popups": {
+                    "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_STAVLEY_CURVES_TS": {
+                        "name": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_STAVLEY_CURVES_TS",
+                        "title": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_STAVLEY_CURVES_TS"
+                    }
+                },
+                "src_filename": "MtDore_skua_model_horizon_Base_3Layer_Stavley_curves_ts.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Stavley REP",
+                "displayed": true,
+                "include": true,
+                "model_url": "MtDore_skua_model_horizon_Base_3Layer_Stavley_REP_curves_ts.gltf",
+                "popups": {
+                    "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_STAVLEY_REP_CURVES_TS": {
+                        "name": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_STAVLEY_REP_CURVES_TS",
+                        "title": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_STAVLEY_REP_CURVES_TS"
+                    }
+                },
+                "src_filename": "MtDore_skua_model_horizon_Base_3Layer_Stavley_REP_curves_ts.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ],
+        "Horizon Model CRC": [
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Model CRC Basement",
+                "displayed": true,
+                "include": true,
+                "model_url": "MtDore_skua_model_horizon_ModelCRC_Basement_ts.gltf",
+                "popups": {
+                    "MTDORE_SKUA_MODEL_HORIZON_MODELCRC_BASEMENT_TS": {
+                        "name": "MTDORE_SKUA_MODEL_HORIZON_MODELCRC_BASEMENT_TS",
+                        "title": "MTDORE_SKUA_MODEL_HORIZON_MODELCRC_BASEMENT_TS"
+                    }
+                },
+                "src_filename": "MtDore_skua_model_horizon_ModelCRC_Basement_ts.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ],
+        "Inversion Results": [
+            {
+                "alt_group_label": "3D Volume MtDore Inversion Geologically constrained density inversion@@",
+                "display_name": "Geo Constrained Density",
+                "displayed": false,
+                "include": true,
+                "model_url": "MtDore_Inversion_Geologically_constrained_density_inversion@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "colourLookup": {
+                        "0": [
+                            0.0,
+                            0.0,
+                            1.0,
+                            1.0
+                        ],
+                        "64": [
+                            0.0,
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "128": [
+                            0.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "192": [
+                            1.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "255": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ]
+                    },
+                    "dataDims": [
+                        83,
+                        200,
+                        116
+                    ],
+                    "dataType": "FLOAT_32",
+                    "maxVal": 3.109999895095825,
+                    "minVal": 2.619999885559082,
+                    "origin": [
+                        405450.0,
+                        7534800.0,
+                        700.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        72910.84337349399,
+                        178204.5,
+                        22801.724137931033
+                    ]
+                }
+            },
+            {
+                "alt_group_label": "3D Volume MtDore Inversion Geologically constrained susceptibility inversion@@",
+                "display_name": "Geo Constrained Susc",
+                "displayed": false,
+                "include": true,
+                "model_url": "MtDore_Inversion_Geologically_constrained_susceptibility_inversion@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "colourLookup": {
+                        "0": [
+                            0.0,
+                            0.0,
+                            1.0,
+                            1.0
+                        ],
+                        "64": [
+                            0.0,
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "128": [
+                            0.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "192": [
+                            1.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "255": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ]
+                    },
+                    "dataDims": [
+                        83,
+                        200,
+                        116
+                    ],
+                    "dataType": "FLOAT_32",
+                    "maxVal": 0.3853192925453186,
+                    "minVal": 0.0,
+                    "origin": [
+                        405450.0,
+                        7534800.0,
+                        700.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        72910.84337349399,
+                        178204.5,
+                        22801.724137931033
+                    ]
+                }
+            },
+            {
+                "alt_group_label": "3D Volume MtDore Inversion Rockcode@@",
+                "display_name": "Rockcode",
+                "displayed": false,
+                "include": true,
+                "model_url": "MtDore_Inversion_Rockcode@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "colourLookup": {
+                        "0": [
+                            0.0,
+                            0.0,
+                            1.0,
+                            1.0
+                        ],
+                        "64": [
+                            0.0,
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "128": [
+                            0.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "192": [
+                            1.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "255": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ]
+                    },
+                    "dataDims": [
+                        83,
+                        200,
+                        116
+                    ],
+                    "dataType": "INT_16",
+                    "maxVal": 31073.0,
+                    "minVal": 0.0,
+                    "origin": [
+                        405450.0,
+                        7534800.0,
+                        700.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        72910.84337349399,
+                        178204.5,
+                        22801.724137931033
+                    ]
+                }
+            }
+        ],
+        "Magnetic Inversion": [
+            {
+                "alt_group_label": "3D Volume MtDore targeting Tiled mag inversion mask TopoMask@@",
+                "display_name": "Topo Mask",
+                "displayed": false,
+                "include": true,
+                "model_url": "MtDore_targeting_Tiled_mag_inversion_mask_TopoMask@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "colourLookup": {
+                        "0": [
+                            0.0,
+                            0.0,
+                            1.0,
+                            1.0
+                        ],
+                        "64": [
+                            0.0,
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "128": [
+                            0.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "192": [
+                            1.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "255": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ]
+                    },
+                    "dataDims": [
+                        249,
+                        600,
+                        21
+                    ],
+                    "dataType": "FLOAT_32",
+                    "maxVal": 0.4246140122413635,
+                    "minVal": 0.0,
+                    "origin": [
+                        405150.0,
+                        7534500.0,
+                        500.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        74101.2048192771,
+                        179400.5,
+                        2857.1429082857144
+                    ]
+                }
+            }
+        ],
+        "Metamorphic Volume": [
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "DoubleCrossing MetamorphicVolume",
+                "displayed": true,
+                "include": true,
+                "model_url": "DoubleCrossing_MetamorphicVolume.gltf",
+                "popups": {
+                    "DOUBLECROSSING_METAMORPHICVOLUME": {
+                        "name": "DOUBLECROSSING_METAMORPHICVOLUME",
+                        "title": "DOUBLECROSSING_METAMORPHICVOLUME"
+                    }
+                },
+                "src_filename": "DoubleCrossing_MetamorphicVolume.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ],
+        "Mineral Favourability": [
+            {
+                "alt_group_label": "3D Volume MtDore targeting Mineral favourability complete model@@",
+                "display_name": "Complete Model",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_Mineral_favourability_complete_model@@.gz",
@@ -1450,8 +2279,8 @@
                         21
                     ],
                     "dataType": "FLOAT_32",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
+                    "maxVal": 0.9998781085014343,
+                    "minVal": 2.3197983978207048e-07,
                     "origin": [
                         405150.0,
                         7534500.0,
@@ -1482,7 +2311,8 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting Mineral favourability logscale@@",
+                "display_name": "Log Scale",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_Mineral_favourability_logscale@@.gz",
@@ -1494,8 +2324,8 @@
                         21
                     ],
                     "dataType": "FLOAT_32",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
+                    "maxVal": -5.2940031309844926e-05,
+                    "minVal": -6.634549617767334,
                     "origin": [
                         405150.0,
                         7534500.0,
@@ -1526,7 +2356,8 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting Mineral favourability under cover logscale@@",
+                "display_name": "Under Cover Log Scale",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_Mineral_favourability_under_cover_logscale@@.gz",
@@ -1538,8 +2369,8 @@
                         21
                     ],
                     "dataType": "FLOAT_32",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
+                    "maxVal": -0.41743966937065125,
+                    "minVal": -5.386214256286621,
                     "origin": [
                         405150.0,
                         7534500.0,
@@ -1570,7 +2401,8 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting Mineral favourability under cover model@@",
+                "display_name": "Under Cover Model",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_Mineral_favourability_under_cover_model@@.gz",
@@ -1614,8 +2446,8 @@
                         21
                     ],
                     "dataType": "FLOAT_32",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
+                    "maxVal": 0.3824373781681061,
+                    "minVal": 4.109467226953711e-06,
                     "origin": [
                         405150.0,
                         7534500.0,
@@ -1644,381 +2476,12 @@
                         2857.1429082857144
                     ]
                 }
-            },
+            }
+        ],
+        "Pseudo Lithology": [
             {
-                "display_name": "MTDORE_TARGETING",
-                "displayed": false,
-                "include": true,
-                "model_url": "MtDore_targeting_Normalised_Density@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "dataDims": [
-                        249,
-                        600,
-                        21
-                    ],
-                    "dataType": "FLOAT_32",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
-                    "origin": [
-                        405150.0,
-                        7534500.0,
-                        500.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        74101.2048192771,
-                        179400.5,
-                        2857.1429082857144
-                    ]
-                }
-            },
-            {
-                "display_name": "MTDORE_TARGETING",
-                "displayed": false,
-                "include": true,
-                "model_url": "MtDore_targeting_Normalised_Density_Scaled0to1@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "colourLookup": {
-                        "0": [
-                            0.0,
-                            0.0,
-                            1.0,
-                            1.0
-                        ],
-                        "64": [
-                            0.0,
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "128": [
-                            0.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "192": [
-                            1.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "255": [
-                            1.0,
-                            0.0,
-                            0.0,
-                            1.0
-                        ]
-                    },
-                    "dataDims": [
-                        249,
-                        600,
-                        21
-                    ],
-                    "dataType": "FLOAT_32",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
-                    "origin": [
-                        405150.0,
-                        7534500.0,
-                        500.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        74101.2048192771,
-                        179400.5,
-                        2857.1429082857144
-                    ]
-                }
-            },
-            {
-                "display_name": "MTDORE_TARGETING",
-                "displayed": false,
-                "include": true,
-                "model_url": "MtDore_targeting_Normalised_Susceptibility@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "colourLookup": {
-                        "0": [
-                            1.0,
-                            0.0,
-                            0.0,
-                            1.0
-                        ],
-                        "42": [
-                            1.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "85": [
-                            0.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "128": [
-                            0.0,
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "170": [
-                            0.0,
-                            0.0,
-                            1.0,
-                            1.0
-                        ],
-                        "212": [
-                            1.0,
-                            0.0,
-                            1.0,
-                            1.0
-                        ],
-                        "255": [
-                            1.0,
-                            1.0,
-                            1.0,
-                            1.0
-                        ]
-                    },
-                    "dataDims": [
-                        249,
-                        600,
-                        21
-                    ],
-                    "dataType": "FLOAT_32",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
-                    "origin": [
-                        405150.0,
-                        7534500.0,
-                        500.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        74101.2048192771,
-                        179400.5,
-                        2857.1429082857144
-                    ]
-                }
-            },
-            {
-                "display_name": "MTDORE_TARGETING",
-                "displayed": false,
-                "include": true,
-                "model_url": "MtDore_targeting_Normalised_Susceptibility_Scaled0to1@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "colourLookup": {
-                        "0": [
-                            0.0,
-                            0.0,
-                            1.0,
-                            1.0
-                        ],
-                        "64": [
-                            0.0,
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "128": [
-                            0.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "192": [
-                            1.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "255": [
-                            1.0,
-                            0.0,
-                            0.0,
-                            1.0
-                        ]
-                    },
-                    "dataDims": [
-                        249,
-                        600,
-                        21
-                    ],
-                    "dataType": "FLOAT_32",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
-                    "origin": [
-                        405150.0,
-                        7534500.0,
-                        500.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        74101.2048192771,
-                        179400.5,
-                        2857.1429082857144
-                    ]
-                }
-            },
-            {
-                "display_name": "MTDORE_TARGETING",
-                "displayed": false,
-                "include": true,
-                "model_url": "MtDore_targeting_Normalised_Susceptibility_out@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "dataDims": [
-                        249,
-                        600,
-                        21
-                    ],
-                    "dataType": "INT_16",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
-                    "origin": [
-                        405150.0,
-                        7534500.0,
-                        500.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        74101.2048192771,
-                        179400.5,
-                        2857.1429082857144
-                    ]
-                }
-            },
-            {
-                "display_name": "MTDORE_TARGETING",
-                "displayed": false,
-                "include": true,
-                "model_url": "MtDore_targeting_PseudoLithology@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "dataDims": [
-                        249,
-                        600,
-                        21
-                    ],
-                    "dataType": "INT_16",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
-                    "origin": [
-                        405150.0,
-                        7534500.0,
-                        500.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        74101.2048192771,
-                        179400.5,
-                        2857.1429082857144
-                    ]
-                }
-            },
-            {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting PseudoLithology Merged Timberoo Stavley Llewellyn@@",
+                "display_name": "Merged Timberoo Stavley Llewellyn",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_PseudoLithology_Merged_Timberoo_Stavley_Llewellyn@@.gz",
@@ -2030,8 +2493,8 @@
                         21
                     ],
                     "dataType": "INT_16",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
+                    "maxVal": 15.0,
+                    "minVal": 1.0,
                     "origin": [
                         405150.0,
                         7534500.0,
@@ -2062,7 +2525,55 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting PseudoLithology@@",
+                "display_name": "Pseudo Lithology",
+                "displayed": false,
+                "include": true,
+                "model_url": "MtDore_targeting_PseudoLithology@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "dataDims": [
+                        249,
+                        600,
+                        21
+                    ],
+                    "dataType": "INT_16",
+                    "maxVal": 15.0,
+                    "minVal": 1.0,
+                    "origin": [
+                        405150.0,
+                        7534500.0,
+                        500.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        74101.2048192771,
+                        179400.5,
+                        2857.1429082857144
+                    ]
+                }
+            }
+        ],
+        "Regional Density Model": [
+            {
+                "alt_group_label": "3D Volume MtDore targeting Regional density model upscaled TopoMask@@",
+                "display_name": "Upscaled Topo Mask",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_Regional_density_model_upscaled_TopoMask@@.gz",
@@ -2106,8 +2617,8 @@
                         21
                     ],
                     "dataType": "FLOAT_32",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
+                    "maxVal": 0.45453789830207825,
+                    "minVal": -0.25,
                     "origin": [
                         405150.0,
                         7534500.0,
@@ -2138,7 +2649,8 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting Regional density model upscaled TopoMask out@@",
+                "display_name": "Upscaled Topo Mask out",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_Regional_density_model_upscaled_TopoMask_out@@.gz",
@@ -2150,8 +2662,8 @@
                         21
                     ],
                     "dataType": "INT_16",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
+                    "maxVal": 2.0,
+                    "minVal": 1.0,
                     "origin": [
                         405150.0,
                         7534500.0,
@@ -2180,9 +2692,12 @@
                         2857.1429082857144
                     ]
                 }
-            },
+            }
+        ],
+        "Rock Code": [
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting RockCode@@",
+                "display_name": "Rock Code",
                 "displayed": false,
                 "include": true,
                 "model_url": "MtDore_targeting_RockCode@@.gz",
@@ -2310,12 +2825,104 @@
                         2857.1429082857144
                     ]
                 }
-            },
+            }
+        ],
+        "Susceptibility": [
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting Normalised Susceptibility@@",
+                "display_name": "Normalised",
                 "displayed": false,
                 "include": true,
-                "model_url": "MtDore_targeting_Tiled_mag_inversion_mask_TopoMask@@.gz",
+                "model_url": "MtDore_targeting_Normalised_Susceptibility@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "colourLookup": {
+                        "0": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "42": [
+                            1.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "85": [
+                            0.0,
+                            1.0,
+                            0.0,
+                            1.0
+                        ],
+                        "128": [
+                            0.0,
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "170": [
+                            0.0,
+                            0.0,
+                            1.0,
+                            1.0
+                        ],
+                        "212": [
+                            1.0,
+                            0.0,
+                            1.0,
+                            1.0
+                        ],
+                        "255": [
+                            1.0,
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    "dataDims": [
+                        249,
+                        600,
+                        21
+                    ],
+                    "dataType": "FLOAT_32",
+                    "maxVal": 0.371614009141922,
+                    "minVal": -0.052998386323451996,
+                    "origin": [
+                        405150.0,
+                        7534500.0,
+                        500.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        74101.2048192771,
+                        179400.5,
+                        2857.1429082857144
+                    ]
+                }
+            },
+            {
+                "alt_group_label": "3D Volume MtDore targeting Normalised Susceptibility Scaled0to1@@",
+                "display_name": "Normalised Scaled 0-1",
+                "displayed": false,
+                "include": true,
+                "model_url": "MtDore_targeting_Normalised_Susceptibility_Scaled0to1@@.gz",
                 "type": "3DVolume",
                 "volumeData": {
                     "colourLookup": {
@@ -2356,8 +2963,8 @@
                         21
                     ],
                     "dataType": "FLOAT_32",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
+                    "maxVal": 1.0,
+                    "minVal": 7.600674962304765e-06,
                     "origin": [
                         405150.0,
                         7534500.0,
@@ -2388,54 +2995,11 @@
                 }
             },
             {
-                "display_name": "MTDORE_TARGETING",
+                "alt_group_label": "3D Volume MtDore targeting Normalised Susceptibility out@@",
+                "display_name": "Normalised out",
                 "displayed": false,
                 "include": true,
-                "model_url": "MtDore_targeting_Uranium_divided_Thorium@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "dataDims": [
-                        249,
-                        600,
-                        21
-                    ],
-                    "dataType": "FLOAT_32",
-                    "maxVal": 3.7973899841308594,
-                    "minVal": -3.1316120624542236,
-                    "origin": [
-                        405150.0,
-                        7534500.0,
-                        500.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        74101.2048192771,
-                        179400.5,
-                        2857.1429082857144
-                    ]
-                }
-            },
-            {
-                "display_name": "MTDORE_TARGETING",
-                "displayed": false,
-                "include": true,
-                "model_url": "MtDore_targeting_Uranium_divided_Thorium_out@@.gz",
+                "model_url": "MtDore_targeting_Normalised_Susceptibility_out@@.gz",
                 "type": "3DVolume",
                 "volumeData": {
                     "dataDims": [
@@ -2444,8 +3008,8 @@
                         21
                     ],
                     "dataType": "INT_16",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
+                    "maxVal": 2.0,
+                    "minVal": 1.0,
                     "origin": [
                         405150.0,
                         7534500.0,
@@ -2474,460 +3038,30 @@
                         2857.1429082857144
                     ]
                 }
-            },
+            }
+        ],
+        "Topology": [
             {
-                "display_name": "MTDORE_TARGETING",
-                "displayed": false,
-                "include": true,
-                "model_url": "MtDore_targeting_dist_Geochem_merged_AuGt150@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "colourLookup": {
-                        "0": [
-                            0.0,
-                            0.0,
-                            1.0,
-                            1.0
-                        ],
-                        "64": [
-                            0.0,
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "128": [
-                            0.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "192": [
-                            1.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "255": [
-                            1.0,
-                            0.0,
-                            0.0,
-                            1.0
-                        ]
-                    },
-                    "dataDims": [
-                        249,
-                        600,
-                        21
-                    ],
-                    "dataType": "FLOAT_32",
-                    "maxVal": 63375.90234375,
-                    "minVal": 50.0996208190918,
-                    "origin": [
-                        405150.0,
-                        7534500.0,
-                        500.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        74101.2048192771,
-                        179400.5,
-                        2857.1429082857144
-                    ]
-                }
-            },
-            {
-                "display_name": "MTDORE_TARGETING",
-                "displayed": false,
-                "include": true,
-                "model_url": "MtDore_targeting_dist_Geochem_merged_AuGt150_out@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "dataDims": [
-                        249,
-                        600,
-                        21
-                    ],
-                    "dataType": "INT_16",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
-                    "origin": [
-                        405150.0,
-                        7534500.0,
-                        500.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        74101.2048192771,
-                        179400.5,
-                        2857.1429082857144
-                    ]
-                }
-            },
-            {
-                "display_name": "MTDORE_TARGETING",
-                "displayed": false,
-                "include": true,
-                "model_url": "MtDore_targeting_dist_Geochem_merged_CuGt1000@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "colourLookup": {
-                        "0": [
-                            0.0,
-                            0.0,
-                            1.0,
-                            1.0
-                        ],
-                        "64": [
-                            0.0,
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "128": [
-                            0.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "192": [
-                            1.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "255": [
-                            1.0,
-                            0.0,
-                            0.0,
-                            1.0
-                        ]
-                    },
-                    "dataDims": [
-                        249,
-                        600,
-                        21
-                    ],
-                    "dataType": "FLOAT_32",
-                    "maxVal": 41610.3984375,
-                    "minVal": 50.02647399902344,
-                    "origin": [
-                        405150.0,
-                        7534500.0,
-                        500.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        74101.2048192771,
-                        179400.5,
-                        2857.1429082857144
-                    ]
-                }
-            },
-            {
-                "display_name": "MTDORE_TARGETING",
-                "displayed": false,
-                "include": true,
-                "model_url": "MtDore_targeting_dist_Geochem_merged_CuGt2000@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "colourLookup": {
-                        "0": [
-                            0.0,
-                            0.0,
-                            1.0,
-                            1.0
-                        ],
-                        "64": [
-                            0.0,
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "128": [
-                            0.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "192": [
-                            1.0,
-                            1.0,
-                            0.0,
-                            1.0
-                        ],
-                        "255": [
-                            1.0,
-                            0.0,
-                            0.0,
-                            1.0
-                        ]
-                    },
-                    "dataDims": [
-                        249,
-                        600,
-                        21
-                    ],
-                    "dataType": "FLOAT_32",
-                    "maxVal": 41610.3984375,
-                    "minVal": 50.15605163574219,
-                    "origin": [
-                        405150.0,
-                        7534500.0,
-                        500.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        74101.2048192771,
-                        179400.5,
-                        2857.1429082857144
-                    ]
-                }
-            },
-            {
-                "display_name": "MTDORE_TARGETING",
-                "displayed": false,
-                "include": true,
-                "model_url": "MtDore_targeting_dist_Geochem_merged_CuGt2000_out@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "dataDims": [
-                        249,
-                        600,
-                        21
-                    ],
-                    "dataType": "INT_16",
-                    "maxVal": -1.7976931348623157e+308,
-                    "minVal": 1.7976931348623157e+308,
-                    "origin": [
-                        405150.0,
-                        7534500.0,
-                        500.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        74101.2048192771,
-                        179400.5,
-                        2857.1429082857144
-                    ]
-                }
-            },
-            {
-                "display_name": "Mt Dore Model Faults",
+                "alt_group_label": "Surfaces",
+                "display_name": "Topo",
                 "displayed": true,
                 "include": true,
-                "model_url": "Mt Dore Model Faults.gltf",
+                "model_url": "Topo.gltf",
                 "popups": {
-                    "MT DORE MODEL FAULTS": {
-                        "name": "MT DORE MODEL FAULTS",
-                        "title": "MT DORE MODEL FAULTS"
+                    "TOPO": {
+                        "name": "TOPO",
+                        "title": "TOPO"
                     }
                 },
-                "src_filename": "Mt Dore Model Faults.zip",
+                "src_filename": "Topo.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
+            }
+        ],
+        "Training Sites": [
             {
-                "display_name": "MtDore skua model horizon Base 3Layer Bulonga curves ts",
-                "displayed": true,
-                "include": true,
-                "model_url": "MtDore_skua_model_horizon_Base_3Layer_Bulonga_curves_ts.gltf",
-                "popups": {
-                    "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_BULONGA_CURVES_TS": {
-                        "name": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_BULONGA_CURVES_TS",
-                        "title": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_BULONGA_CURVES_TS"
-                    }
-                },
-                "src_filename": "MtDore_skua_model_horizon_Base_3Layer_Bulonga_curves_ts.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "MtDore skua model horizon Base 3Layer Llewellyn REP curves ts",
-                "displayed": true,
-                "include": true,
-                "model_url": "MtDore_skua_model_horizon_Base_3Layer_Llewellyn_REP_curves_ts.gltf",
-                "popups": {
-                    "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_LLEWELLYN_REP_CURVES_TS": {
-                        "name": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_LLEWELLYN_REP_CURVES_TS",
-                        "title": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_LLEWELLYN_REP_CURVES_TS"
-                    }
-                },
-                "src_filename": "MtDore_skua_model_horizon_Base_3Layer_Llewellyn_REP_curves_ts.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "MtDore skua model horizon Base 3Layer Llewellyn curves ts",
-                "displayed": true,
-                "include": true,
-                "model_url": "MtDore_skua_model_horizon_Base_3Layer_Llewellyn_curves_ts.gltf",
-                "popups": {
-                    "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_LLEWELLYN_CURVES_TS": {
-                        "name": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_LLEWELLYN_CURVES_TS",
-                        "title": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_LLEWELLYN_CURVES_TS"
-                    }
-                },
-                "src_filename": "MtDore_skua_model_horizon_Base_3Layer_Llewellyn_curves_ts.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "MtDore skua model horizon Base 3Layer Stavley REP curves ts",
-                "displayed": true,
-                "include": true,
-                "model_url": "MtDore_skua_model_horizon_Base_3Layer_Stavley_REP_curves_ts.gltf",
-                "popups": {
-                    "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_STAVLEY_REP_CURVES_TS": {
-                        "name": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_STAVLEY_REP_CURVES_TS",
-                        "title": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_STAVLEY_REP_CURVES_TS"
-                    }
-                },
-                "src_filename": "MtDore_skua_model_horizon_Base_3Layer_Stavley_REP_curves_ts.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "MtDore skua model horizon Base 3Layer Stavley curves ts",
-                "displayed": true,
-                "include": true,
-                "model_url": "MtDore_skua_model_horizon_Base_3Layer_Stavley_curves_ts.gltf",
-                "popups": {
-                    "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_STAVLEY_CURVES_TS": {
-                        "name": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_STAVLEY_CURVES_TS",
-                        "title": "MTDORE_SKUA_MODEL_HORIZON_BASE_3LAYER_STAVLEY_CURVES_TS"
-                    }
-                },
-                "src_filename": "MtDore_skua_model_horizon_Base_3Layer_Stavley_curves_ts.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "MtDore skua model horizon Base MarrabaVolcanics ts",
-                "displayed": true,
-                "include": true,
-                "model_url": "MtDore_skua_model_horizon_Base_MarrabaVolcanics_ts.gltf",
-                "popups": {
-                    "MTDORE_SKUA_MODEL_HORIZON_BASE_MARRABAVOLCANICS_TS": {
-                        "name": "MTDORE_SKUA_MODEL_HORIZON_BASE_MARRABAVOLCANICS_TS",
-                        "title": "MTDORE_SKUA_MODEL_HORIZON_BASE_MARRABAVOLCANICS_TS"
-                    }
-                },
-                "src_filename": "MtDore_skua_model_horizon_Base_MarrabaVolcanics_ts.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "MtDore skua model horizon Base Timberoo etc Seds ts",
-                "displayed": true,
-                "include": true,
-                "model_url": "MtDore_skua_model_horizon_Base_Timberoo_etc_Seds_ts.gltf",
-                "popups": {
-                    "MTDORE_SKUA_MODEL_HORIZON_BASE_TIMBEROO_ETC_SEDS_TS": {
-                        "name": "MTDORE_SKUA_MODEL_HORIZON_BASE_TIMBEROO_ETC_SEDS_TS",
-                        "title": "MTDORE_SKUA_MODEL_HORIZON_BASE_TIMBEROO_ETC_SEDS_TS"
-                    }
-                },
-                "src_filename": "MtDore_skua_model_horizon_Base_Timberoo_etc_Seds_ts.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "MtDore skua model horizon ModelCRC Basement ts",
-                "displayed": true,
-                "include": true,
-                "model_url": "MtDore_skua_model_horizon_ModelCRC_Basement_ts.gltf",
-                "popups": {
-                    "MTDORE_SKUA_MODEL_HORIZON_MODELCRC_BASEMENT_TS": {
-                        "name": "MTDORE_SKUA_MODEL_HORIZON_MODELCRC_BASEMENT_TS",
-                        "title": "MTDORE_SKUA_MODEL_HORIZON_MODELCRC_BASEMENT_TS"
-                    }
-                },
-                "src_filename": "MtDore_skua_model_horizon_ModelCRC_Basement_ts.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "TRAININGSITES FINAL TRANSPOSED",
+                "alt_group_label": "output",
+                "display_name": "TRAINING SITES FINAL TRANSPOSED",
                 "displayed": true,
                 "include": true,
                 "model_url": "TrainingSites_FINAL_transposed.gltf",
@@ -3105,36 +3239,6 @@
                     }
                 },
                 "src_filename": "TrainingSites_FINAL_transposed.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "Topo",
-                "displayed": true,
-                "include": true,
-                "model_url": "Topo.gltf",
-                "popups": {
-                    "TOPO": {
-                        "name": "TOPO",
-                        "title": "TOPO"
-                    }
-                },
-                "src_filename": "Topo.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "display_name": "WilliamsNaraku Batholith",
-                "displayed": true,
-                "include": true,
-                "model_url": "WilliamsNaraku_Batholith.gltf",
-                "popups": {
-                    "WILLIAMSNARAKU_BATHOLITH": {
-                        "name": "WILLIAMSNARAKU_BATHOLITH",
-                        "title": "WILLIAMSNARAKU_BATHOLITH"
-                    }
-                },
-                "src_filename": "WilliamsNaraku_Batholith.zip",
                 "styling": {},
                 "type": "GLTFObject"
             }

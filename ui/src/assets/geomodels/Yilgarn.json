@@ -2,7 +2,7 @@
     "groups": {
         "Surfaces and structures": [
             {
-                "alt_group_label": "Yilgarn-NWS_nws_structures",
+                "alt_group_label": "Yilgarn-NWS",
                 "display_name": "Faults",
                 "displayed": true,
                 "include": true,
@@ -98,7 +98,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output_nws_greenstone_0",
+                "alt_group_label": "output",
                 "display_name": "Greenstone 0",
                 "displayed": true,
                 "include": true,
@@ -114,7 +114,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output_nws_greenstone_1",
+                "alt_group_label": "output",
                 "display_name": "Greenstone 1",
                 "displayed": true,
                 "include": true,

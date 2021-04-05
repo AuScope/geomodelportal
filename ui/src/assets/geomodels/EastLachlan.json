@@ -2,7 +2,7 @@
     "groups": {
         "Depth To Basement Model": [
             {
-                "alt_group_label": "To be uploaded into the GSNSW website Zone 55_Depth_To_Basement",
+                "alt_group_label": "To be uploaded into the GSNSW website Zone 55",
                 "display_name": "Depth To Basement",
                 "displayed": true,
                 "include": true,
@@ -20,7 +20,7 @@
         ],
         "Faults": [
             {
-                "alt_group_label": "To be uploaded into the GSNSW website Zone 55_Eastern_Lachlan_Orogen_3D_Fault_Architecture",
+                "alt_group_label": "To be uploaded into the GSNSW website Zone 55",
                 "display_name": "3D Fault Architecture",
                 "displayed": true,
                 "include": true,

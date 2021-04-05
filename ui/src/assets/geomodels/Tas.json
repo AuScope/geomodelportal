@@ -2,7 +2,7 @@
     "groups": {
         "Tasmania": [
             {
-                "alt_group_label": "Tas_tas_dev_gran",
+                "alt_group_label": "Tas",
                 "display_name": "Devonian granite",
                 "displayed": true,
                 "include": true,
@@ -226,7 +226,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Tas_tas_seis_interp",
+                "alt_group_label": "Tas",
                 "display_name": "Seimic interpretation",
                 "displayed": true,
                 "include": true,
@@ -59230,7 +59230,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Tas_tas_structures",
+                "alt_group_label": "Tas",
                 "display_name": "Structures",
                 "displayed": true,
                 "include": true,
