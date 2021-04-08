@@ -1,879 +1,8 @@
 {
     "groups": {
-        "Surfaces": [
+        "Pointset": [
             {
-                "alt_group_label": "Surfaces",
-                "display_name": "B-CAMBRIAN",
-                "displayed": true,
-                "include": true,
-                "model_url": "B-CAMBRIAN.gltf",
-                "popups": {
-                    "B-CAMBRIAN": {
-                        "name": "B-CAMBRIAN",
-                        "title": "B-CAMBRIAN"
-                    }
-                },
-                "src_filename": "B-CAMBRIAN.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Blinman Diapir ribbon",
-                "displayed": true,
-                "include": true,
-                "model_url": "Blinman_Diapir_ribbon.gltf",
-                "popups": {
-                    "BLINMAN_DIAPIR_RIBBON": {
-                        "name": "BLINMAN_DIAPIR_RIBBON",
-                        "title": "BLINMAN_DIAPIR_RIBBON"
-                    }
-                },
-                "src_filename": "Blinman_Diapir_ribbon.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Brachina Fault",
-                "displayed": true,
-                "include": true,
-                "model_url": "Brachina_Fault.gltf",
-                "popups": {
-                    "BRACHINA_FAULT": {
-                        "name": "BRACHINA_FAULT",
-                        "title": "BRACHINA_FAULT"
-                    }
-                },
-                "src_filename": "Brachina_Fault.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "C-WILPENA",
-                "displayed": true,
-                "include": true,
-                "model_url": "C-WILPENA.gltf",
-                "popups": {
-                    "C-WILPENA": {
-                        "name": "C-WILPENA",
-                        "title": "C-WILPENA"
-                    }
-                },
-                "src_filename": "C-WILPENA.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "CW Wilpena Ribbon",
-                "displayed": true,
-                "include": true,
-                "model_url": "CW_Wilpena_Ribbon.gltf",
-                "popups": {
-                    "CW_WILPENA_RIBBON": {
-                        "name": "CW_WILPENA_RIBBON",
-                        "title": "CW_WILPENA_RIBBON"
-                    }
-                },
-                "src_filename": "CW_Wilpena_Ribbon.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "D-UMBERATANA",
-                "displayed": true,
-                "include": true,
-                "model_url": "D-UMBERATANA.gltf",
-                "popups": {
-                    "D-UMBERATANA": {
-                        "name": "D-UMBERATANA",
-                        "title": "D-UMBERATANA"
-                    }
-                },
-                "src_filename": "D-UMBERATANA.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "E-BURRA",
-                "displayed": true,
-                "include": true,
-                "model_url": "E-BURRA.gltf",
-                "popups": {
-                    "E-BURRA": {
-                        "name": "E-BURRA",
-                        "title": "E-BURRA"
-                    }
-                },
-                "src_filename": "E-BURRA.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "EFlinders Burra",
-                "displayed": true,
-                "include": true,
-                "model_url": "EFlinders_Burra.gltf",
-                "popups": {
-                    "EFLINDERS_BURRA": {
-                        "name": "EFLINDERS_BURRA",
-                        "title": "EFLINDERS_BURRA"
-                    }
-                },
-                "src_filename": "EFlinders_Burra.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "EFlinders Umberatana",
-                "displayed": true,
-                "include": true,
-                "model_url": "EFlinders_Umberatana.gltf",
-                "popups": {
-                    "EFLINDERS_UMBERATANA": {
-                        "name": "EFLINDERS_UMBERATANA",
-                        "title": "EFLINDERS_UMBERATANA"
-                    }
-                },
-                "src_filename": "EFlinders_Umberatana.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Enamora Diapir RIBBON",
-                "displayed": true,
-                "include": true,
-                "model_url": "Enamora_Diapir_RIBBON.gltf",
-                "popups": {
-                    "ENAMORA_DIAPIR_RIBBON": {
-                        "name": "ENAMORA_DIAPIR_RIBBON",
-                        "title": "ENAMORA_DIAPIR_RIBBON"
-                    }
-                },
-                "src_filename": "Enamora_Diapir_RIBBON.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "F-TORRENSIAN",
-                "displayed": true,
-                "include": true,
-                "model_url": "F-TORRENSIAN.gltf",
-                "popups": {
-                    "F-TORRENSIAN": {
-                        "name": "F-TORRENSIAN",
-                        "title": "F-TORRENSIAN"
-                    }
-                },
-                "src_filename": "F-TORRENSIAN.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Flinders NF CENTRAL interp",
-                "displayed": true,
-                "include": true,
-                "model_url": "Flinders_NF_CENTRAL_interp.gltf",
-                "popups": {
-                    "FLINDERS_NF_CENTRAL_INTERP": {
-                        "name": "FLINDERS_NF_CENTRAL_INTERP",
-                        "title": "FLINDERS_NF_CENTRAL_INTERP"
-                    }
-                },
-                "src_filename": "Flinders_NF_CENTRAL_interp.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "G-WILLOURAN",
-                "displayed": true,
-                "include": true,
-                "model_url": "G-WILLOURAN.gltf",
-                "popups": {
-                    "G-WILLOURAN": {
-                        "name": "G-WILLOURAN",
-                        "title": "G-WILLOURAN"
-                    }
-                },
-                "src_filename": "G-WILLOURAN.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Graben Central",
-                "displayed": true,
-                "include": true,
-                "model_url": "Graben_Central.gltf",
-                "popups": {
-                    "GRABEN_CENTRAL": {
-                        "name": "GRABEN_CENTRAL",
-                        "title": "GRABEN_CENTRAL"
-                    }
-                },
-                "src_filename": "Graben_Central.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Graben Central E",
-                "displayed": true,
-                "include": true,
-                "model_url": "Graben_Central_E.gltf",
-                "popups": {
-                    "GRABEN_CENTRAL_E": {
-                        "name": "GRABEN_CENTRAL_E",
-                        "title": "GRABEN_CENTRAL_E"
-                    }
-                },
-                "src_filename": "Graben_Central_E.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Graben Wilpena Ribbon",
-                "displayed": true,
-                "include": true,
-                "model_url": "Graben_Wilpena_Ribbon.gltf",
-                "popups": {
-                    "GRABEN_WILPENA_RIBBON": {
-                        "name": "GRABEN_WILPENA_RIBBON",
-                        "title": "GRABEN_WILPENA_RIBBON"
-                    }
-                },
-                "src_filename": "Graben_Wilpena_Ribbon.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Graben ediacara",
-                "displayed": true,
-                "include": true,
-                "model_url": "Graben_ediacara.gltf",
-                "popups": {
-                    "GRABEN_EDIACARA": {
-                        "name": "GRABEN_EDIACARA",
-                        "title": "GRABEN_EDIACARA"
-                    }
-                },
-                "src_filename": "Graben_ediacara.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Graben ediacara 215",
-                "displayed": true,
-                "include": true,
-                "model_url": "Graben_ediacara_215.gltf",
-                "popups": {
-                    "GRABEN_EDIACARA_215": {
-                        "name": "GRABEN_EDIACARA_215",
-                        "title": "GRABEN_EDIACARA_215"
-                    }
-                },
-                "src_filename": "Graben_ediacara_215.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "H-BASEMENT",
-                "displayed": true,
-                "include": true,
-                "model_url": "H-BASEMENT.gltf",
-                "popups": {
-                    "H-BASEMENT": {
-                        "name": "H-BASEMENT",
-                        "title": "H-BASEMENT"
-                    }
-                },
-                "src_filename": "H-BASEMENT.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Lake Torrens",
-                "displayed": true,
-                "include": true,
-                "model_url": "Lake_Torrens.gltf",
-                "popups": {
-                    "LAKE_TORRENS": {
-                        "name": "LAKE_TORRENS",
-                        "title": "LAKE_TORRENS"
-                    }
-                },
-                "src_filename": "Lake_Torrens.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "NE1 Umberatana",
-                "displayed": true,
-                "include": true,
-                "model_url": "NE1_Umberatana.gltf",
-                "popups": {
-                    "NE1_UMBERATANA": {
-                        "name": "NE1_UMBERATANA",
-                        "title": "NE1_UMBERATANA"
-                    }
-                },
-                "src_filename": "NE1_Umberatana.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "NF Bunker",
-                "displayed": true,
-                "include": true,
-                "model_url": "NF_Bunker.gltf",
-                "popups": {
-                    "NF_BUNKER": {
-                        "name": "NF_BUNKER",
-                        "title": "NF_BUNKER"
-                    }
-                },
-                "src_filename": "NF_Bunker.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "NF Curnamona 213",
-                "displayed": true,
-                "include": true,
-                "model_url": "NF_Curnamona_213.gltf",
-                "popups": {
-                    "NF_CURNAMONA_213": {
-                        "name": "NF_CURNAMONA_213",
-                        "title": "NF_CURNAMONA_213"
-                    }
-                },
-                "src_filename": "NF_Curnamona_213.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "NF DIAPIRS",
-                "displayed": true,
-                "include": true,
-                "model_url": "NF_DIAPIRS.gltf",
-                "popups": {
-                    "NF_DIAPIRS": {
-                        "name": "NF_DIAPIRS",
-                        "title": "NF_DIAPIRS"
-                    }
-                },
-                "src_filename": "NF_DIAPIRS.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "NF THZ E",
-                "displayed": true,
-                "include": true,
-                "model_url": "NF_THZ_E.gltf",
-                "popups": {
-                    "NF_THZ_E": {
-                        "name": "NF_THZ_E",
-                        "title": "NF_THZ_E"
-                    }
-                },
-                "src_filename": "NF_THZ_E.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "NW3 Wilpena ribbon",
-                "displayed": true,
-                "include": true,
-                "model_url": "NW3_Wilpena_ribbon.gltf",
-                "popups": {
-                    "NW3_WILPENA_RIBBON": {
-                        "name": "NW3_WILPENA_RIBBON",
-                        "title": "NW3_WILPENA_RIBBON"
-                    }
-                },
-                "src_filename": "NW3_Wilpena_ribbon.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Oraparina DIAPIR RIBBON",
-                "displayed": true,
-                "include": true,
-                "model_url": "Oraparina_DIAPIR_RIBBON.gltf",
-                "popups": {
-                    "ORAPARINA_DIAPIR_RIBBON": {
-                        "name": "ORAPARINA_DIAPIR_RIBBON",
-                        "title": "ORAPARINA_DIAPIR_RIBBON"
-                    }
-                },
-                "src_filename": "Oraparina_DIAPIR_RIBBON.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Oraparina Diapir Bunker",
-                "displayed": true,
-                "include": true,
-                "model_url": "Oraparina_Diapir_Bunker.gltf",
-                "popups": {
-                    "ORAPARINA_DIAPIR_BUNKER": {
-                        "name": "ORAPARINA_DIAPIR_BUNKER",
-                        "title": "ORAPARINA_DIAPIR_BUNKER"
-                    }
-                },
-                "src_filename": "Oraparina_Diapir_Bunker.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "RFT Flinders",
-                "displayed": true,
-                "include": true,
-                "model_url": "RFT_Flinders.gltf",
-                "popups": {
-                    "RFT_FLINDERS": {
-                        "name": "RFT_FLINDERS",
-                        "title": "RFT_FLINDERS"
-                    }
-                },
-                "src_filename": "RFT_Flinders.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Ribbon Bunker NF N",
-                "displayed": true,
-                "include": true,
-                "model_url": "Ribbon_Bunker_NF_N.gltf",
-                "popups": {
-                    "RIBBON_BUNKER_NF_N": {
-                        "name": "RIBBON_BUNKER_NF_N",
-                        "title": "RIBBON_BUNKER_NF_N"
-                    }
-                },
-                "src_filename": "Ribbon_Bunker_NF_N.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Ribbon Bunker NF S",
-                "displayed": true,
-                "include": true,
-                "model_url": "Ribbon_Bunker_NF_S.gltf",
-                "popups": {
-                    "RIBBON_BUNKER_NF_S": {
-                        "name": "RIBBON_BUNKER_NF_S",
-                        "title": "RIBBON_BUNKER_NF_S"
-                    }
-                },
-                "src_filename": "Ribbon_Bunker_NF_S.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Ribbon Top Umberatana SW",
-                "displayed": true,
-                "include": true,
-                "model_url": "Ribbon_Top_Umberatana_SW.gltf",
-                "popups": {
-                    "RIBBON_TOP_UMBERATANA_SW": {
-                        "name": "RIBBON_TOP_UMBERATANA_SW",
-                        "title": "RIBBON_TOP_UMBERATANA_SW"
-                    }
-                },
-                "src_filename": "Ribbon_Top_Umberatana_SW.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Ribbon Wirrealpa Fault N",
-                "displayed": true,
-                "include": true,
-                "model_url": "Ribbon_Wirrealpa_Fault_N.gltf",
-                "popups": {
-                    "RIBBON_WIRREALPA_FAULT_N": {
-                        "name": "RIBBON_WIRREALPA_FAULT_N",
-                        "title": "RIBBON_WIRREALPA_FAULT_N"
-                    }
-                },
-                "src_filename": "Ribbon_Wirrealpa_Fault_N.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Ribbon Wirrealpa South",
-                "displayed": true,
-                "include": true,
-                "model_url": "Ribbon_Wirrealpa_South.gltf",
-                "popups": {
-                    "RIBBON_WIRREALPA_SOUTH": {
-                        "name": "RIBBON_WIRREALPA_SOUTH",
-                        "title": "RIBBON_WIRREALPA_SOUTH"
-                    }
-                },
-                "src_filename": "Ribbon_Wirrealpa_South.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Ribbon depth Wilpena W 2",
-                "displayed": true,
-                "include": true,
-                "model_url": "Ribbon_depth_Wilpena_W_2.gltf",
-                "popups": {
-                    "RIBBON_DEPTH_WILPENA_W_2": {
-                        "name": "RIBBON_DEPTH_WILPENA_W_2",
-                        "title": "RIBBON_DEPTH_WILPENA_W_2"
-                    }
-                },
-                "src_filename": "Ribbon_depth_Wilpena_W_2.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "SE Umberatana RIBBON",
-                "displayed": true,
-                "include": true,
-                "model_url": "SE_Umberatana_RIBBON.gltf",
-                "popups": {
-                    "SE_UMBERATANA_RIBBON": {
-                        "name": "SE_UMBERATANA_RIBBON",
-                        "title": "SE_UMBERATANA_RIBBON"
-                    }
-                },
-                "src_filename": "SE_Umberatana_RIBBON.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "SRTM1sec400m surf",
-                "displayed": true,
-                "include": true,
-                "model_url": "SRTM1sec400m_surf.gltf",
-                "popups": {
-                    "SRTM1SEC400M_SURF": {
-                        "name": "SRTM1SEC400M_SURF",
-                        "title": "SRTM1SEC400M_SURF"
-                    }
-                },
-                "src_filename": "SRTM1sec400m_surf.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Transcurrent Fault N",
-                "displayed": true,
-                "include": true,
-                "model_url": "Transcurrent_Fault_N.gltf",
-                "popups": {
-                    "TRANSCURRENT_FAULT_N": {
-                        "name": "TRANSCURRENT_FAULT_N",
-                        "title": "TRANSCURRENT_FAULT_N"
-                    }
-                },
-                "src_filename": "Transcurrent_Fault_N.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Transcurrent Fault NC",
-                "displayed": true,
-                "include": true,
-                "model_url": "Transcurrent_Fault_NC.gltf",
-                "popups": {
-                    "TRANSCURRENT_FAULT_NC": {
-                        "name": "TRANSCURRENT_FAULT_NC",
-                        "title": "TRANSCURRENT_FAULT_NC"
-                    }
-                },
-                "src_filename": "Transcurrent_Fault_NC.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Transcurrent Fault S",
-                "displayed": true,
-                "include": true,
-                "model_url": "Transcurrent_Fault_S.gltf",
-                "popups": {
-                    "TRANSCURRENT_FAULT_S": {
-                        "name": "TRANSCURRENT_FAULT_S",
-                        "title": "TRANSCURRENT_FAULT_S"
-                    }
-                },
-                "src_filename": "Transcurrent_Fault_S.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Transcurrent Fault SC",
-                "displayed": true,
-                "include": true,
-                "model_url": "Transcurrent_Fault_SC.gltf",
-                "popups": {
-                    "TRANSCURRENT_FAULT_SC": {
-                        "name": "TRANSCURRENT_FAULT_SC",
-                        "title": "TRANSCURRENT_FAULT_SC"
-                    }
-                },
-                "src_filename": "Transcurrent_Fault_SC.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Umberatana E Ribbon",
-                "displayed": true,
-                "include": true,
-                "model_url": "Umberatana_E_Ribbon.gltf",
-                "popups": {
-                    "UMBERATANA_E_RIBBON": {
-                        "name": "UMBERATANA_E_RIBBON",
-                        "title": "UMBERATANA_E_RIBBON"
-                    }
-                },
-                "src_filename": "Umberatana_E_Ribbon.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Umberatana E Umberatana Wirealpa RIBBON",
-                "displayed": true,
-                "include": true,
-                "model_url": "Umberatana_E_Umberatana_Wirealpa_RIBBON.gltf",
-                "popups": {
-                    "UMBERATANA_E_UMBERATANA_WIREALPA_RIBBON": {
-                        "name": "UMBERATANA_E_UMBERATANA_WIREALPA_RIBBON",
-                        "title": "UMBERATANA_E_UMBERATANA_WIREALPA_RIBBON"
-                    }
-                },
-                "src_filename": "Umberatana_E_Umberatana_Wirealpa_RIBBON.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "W Umberatana Ribbon",
-                "displayed": true,
-                "include": true,
-                "model_url": "W_Umberatana_Ribbon.gltf",
-                "popups": {
-                    "W_UMBERATANA_RIBBON": {
-                        "name": "W_UMBERATANA_RIBBON",
-                        "title": "W_UMBERATANA_RIBBON"
-                    }
-                },
-                "src_filename": "W_Umberatana_Ribbon.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "W Wilpena Ribbon",
-                "displayed": true,
-                "include": true,
-                "model_url": "W_Wilpena_Ribbon.gltf",
-                "popups": {
-                    "W_WILPENA_RIBBON": {
-                        "name": "W_WILPENA_RIBBON",
-                        "title": "W_WILPENA_RIBBON"
-                    }
-                },
-                "src_filename": "W_Wilpena_Ribbon.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Wilpena E ribbon",
-                "displayed": true,
-                "include": true,
-                "model_url": "Wilpena_E_ribbon.gltf",
-                "popups": {
-                    "WILPENA_E_RIBBON": {
-                        "name": "WILPENA_E_RIBBON",
-                        "title": "WILPENA_E_RIBBON"
-                    }
-                },
-                "src_filename": "Wilpena_E_ribbon.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Wilpena SE Ribbon",
-                "displayed": true,
-                "include": true,
-                "model_url": "Wilpena_SE_Ribbon.gltf",
-                "popups": {
-                    "WILPENA_SE_RIBBON": {
-                        "name": "WILPENA_SE_RIBBON",
-                        "title": "WILPENA_SE_RIBBON"
-                    }
-                },
-                "src_filename": "Wilpena_SE_Ribbon.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Wilpena TOP CW",
-                "displayed": true,
-                "include": true,
-                "model_url": "Wilpena_TOP_CW.gltf",
-                "popups": {
-                    "WILPENA_TOP_CW": {
-                        "name": "WILPENA_TOP_CW",
-                        "title": "WILPENA_TOP_CW"
-                    }
-                },
-                "src_filename": "Wilpena_TOP_CW.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Wilpena TOP CW Ribbon",
-                "displayed": true,
-                "include": true,
-                "model_url": "Wilpena_TOP_CW_Ribbon.gltf",
-                "popups": {
-                    "WILPENA_TOP_CW_RIBBON": {
-                        "name": "WILPENA_TOP_CW_RIBBON",
-                        "title": "WILPENA_TOP_CW_RIBBON"
-                    }
-                },
-                "src_filename": "Wilpena_TOP_CW_Ribbon.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Wilpena W RIBBON",
-                "displayed": true,
-                "include": true,
-                "model_url": "Wilpena_W_RIBBON.gltf",
-                "popups": {
-                    "WILPENA_W_RIBBON": {
-                        "name": "WILPENA_W_RIBBON",
-                        "title": "WILPENA_W_RIBBON"
-                    }
-                },
-                "src_filename": "Wilpena_W_RIBBON.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Wirrealpa E Fault",
-                "displayed": true,
-                "include": true,
-                "model_url": "Wirrealpa_E_Fault.gltf",
-                "popups": {
-                    "WIRREALPA_E_FAULT": {
-                        "name": "WIRREALPA_E_FAULT",
-                        "title": "WIRREALPA_E_FAULT"
-                    }
-                },
-                "src_filename": "Wirrealpa_E_Fault.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            }
-        ],
-        "WMS Layers": [
-            {
-                "display_name": "GA Lithostratigraphy",
-                "displayed": true,
-                "include": true,
-                "model_url": "http://services.ga.gov.au/gis/services/GA_Surface_Geology/MapServer/WMSServer",
-                "name": "AUS_GA_2500k_GUPoly_Lithostratigraphy",
-                "type": "WMSLayer",
-                "version": "1.3.0"
-            }
-        ],
-        "output": [
-            {
-                "alt_group_label": "output",
-                "display_name": "PARACHILNA MAP 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "PARACHILNA_map_PARACHILNA_map_prop@@.PNG",
-                "popups": {
-                    "PARACHILNA_map_PARACHILNA_map_prop@@": {
-                        "name": "PARACHILNA_MAP_PROP",
-                        "title": "PARACHILNA_MAP_PROP"
-                    }
-                },
-                "position": [
-                    213980.578125,
-                    6566185.0,
-                    -1000.0
-                ],
-                "src_filename": "PARACHILNA_map_PARACHILNA_map_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "PARACHILNA SCAN A 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "PARACHILNA_Scan_A_PARACHILNA_Scan_A_prop@@.PNG",
-                "popups": {
-                    "PARACHILNA_Scan_A_PARACHILNA_Scan_A_prop@@": {
-                        "name": "PARACHILNA_SCAN_A_PROP",
-                        "title": "PARACHILNA_SCAN_A_PROP"
-                    }
-                },
-                "position": [
-                    226756.71875,
-                    6532393.0,
-                    -2500.0
-                ],
-                "src_filename": "PARACHILNA_Scan_A_PARACHILNA_Scan_A_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
+                "alt_group_label": "Pointset",
                 "display_name": "S0 PARACHILNA",
                 "displayed": true,
                 "include": true,
@@ -1759,6 +888,879 @@
                 "styling": {},
                 "type": "GLTFObject"
             }
+        ],
+        "Surfaces": [
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "B-CAMBRIAN",
+                "displayed": true,
+                "include": true,
+                "model_url": "B-CAMBRIAN.gltf",
+                "popups": {
+                    "B-CAMBRIAN": {
+                        "name": "B-CAMBRIAN",
+                        "title": "B-CAMBRIAN"
+                    }
+                },
+                "src_filename": "B-CAMBRIAN.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Blinman Diapir ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "Blinman_Diapir_ribbon.gltf",
+                "popups": {
+                    "BLINMAN_DIAPIR_RIBBON": {
+                        "name": "BLINMAN_DIAPIR_RIBBON",
+                        "title": "BLINMAN_DIAPIR_RIBBON"
+                    }
+                },
+                "src_filename": "Blinman_Diapir_ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Brachina Fault",
+                "displayed": true,
+                "include": true,
+                "model_url": "Brachina_Fault.gltf",
+                "popups": {
+                    "BRACHINA_FAULT": {
+                        "name": "BRACHINA_FAULT",
+                        "title": "BRACHINA_FAULT"
+                    }
+                },
+                "src_filename": "Brachina_Fault.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "C-WILPENA",
+                "displayed": true,
+                "include": true,
+                "model_url": "C-WILPENA.gltf",
+                "popups": {
+                    "C-WILPENA": {
+                        "name": "C-WILPENA",
+                        "title": "C-WILPENA"
+                    }
+                },
+                "src_filename": "C-WILPENA.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "CW Wilpena Ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "CW_Wilpena_Ribbon.gltf",
+                "popups": {
+                    "CW_WILPENA_RIBBON": {
+                        "name": "CW_WILPENA_RIBBON",
+                        "title": "CW_WILPENA_RIBBON"
+                    }
+                },
+                "src_filename": "CW_Wilpena_Ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "D-UMBERATANA",
+                "displayed": true,
+                "include": true,
+                "model_url": "D-UMBERATANA.gltf",
+                "popups": {
+                    "D-UMBERATANA": {
+                        "name": "D-UMBERATANA",
+                        "title": "D-UMBERATANA"
+                    }
+                },
+                "src_filename": "D-UMBERATANA.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "E-BURRA",
+                "displayed": true,
+                "include": true,
+                "model_url": "E-BURRA.gltf",
+                "popups": {
+                    "E-BURRA": {
+                        "name": "E-BURRA",
+                        "title": "E-BURRA"
+                    }
+                },
+                "src_filename": "E-BURRA.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "EFlinders Burra",
+                "displayed": true,
+                "include": true,
+                "model_url": "EFlinders_Burra.gltf",
+                "popups": {
+                    "EFLINDERS_BURRA": {
+                        "name": "EFLINDERS_BURRA",
+                        "title": "EFLINDERS_BURRA"
+                    }
+                },
+                "src_filename": "EFlinders_Burra.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "EFlinders Umberatana",
+                "displayed": true,
+                "include": true,
+                "model_url": "EFlinders_Umberatana.gltf",
+                "popups": {
+                    "EFLINDERS_UMBERATANA": {
+                        "name": "EFLINDERS_UMBERATANA",
+                        "title": "EFLINDERS_UMBERATANA"
+                    }
+                },
+                "src_filename": "EFlinders_Umberatana.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Enamora Diapir RIBBON",
+                "displayed": true,
+                "include": true,
+                "model_url": "Enamora_Diapir_RIBBON.gltf",
+                "popups": {
+                    "ENAMORA_DIAPIR_RIBBON": {
+                        "name": "ENAMORA_DIAPIR_RIBBON",
+                        "title": "ENAMORA_DIAPIR_RIBBON"
+                    }
+                },
+                "src_filename": "Enamora_Diapir_RIBBON.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "F-TORRENSIAN",
+                "displayed": true,
+                "include": true,
+                "model_url": "F-TORRENSIAN.gltf",
+                "popups": {
+                    "F-TORRENSIAN": {
+                        "name": "F-TORRENSIAN",
+                        "title": "F-TORRENSIAN"
+                    }
+                },
+                "src_filename": "F-TORRENSIAN.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Flinders NF CENTRAL interp",
+                "displayed": true,
+                "include": true,
+                "model_url": "Flinders_NF_CENTRAL_interp.gltf",
+                "popups": {
+                    "FLINDERS_NF_CENTRAL_INTERP": {
+                        "name": "FLINDERS_NF_CENTRAL_INTERP",
+                        "title": "FLINDERS_NF_CENTRAL_INTERP"
+                    }
+                },
+                "src_filename": "Flinders_NF_CENTRAL_interp.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "G-WILLOURAN",
+                "displayed": true,
+                "include": true,
+                "model_url": "G-WILLOURAN.gltf",
+                "popups": {
+                    "G-WILLOURAN": {
+                        "name": "G-WILLOURAN",
+                        "title": "G-WILLOURAN"
+                    }
+                },
+                "src_filename": "G-WILLOURAN.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Graben Central",
+                "displayed": true,
+                "include": true,
+                "model_url": "Graben_Central.gltf",
+                "popups": {
+                    "GRABEN_CENTRAL": {
+                        "name": "GRABEN_CENTRAL",
+                        "title": "GRABEN_CENTRAL"
+                    }
+                },
+                "src_filename": "Graben_Central.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Graben Central E",
+                "displayed": true,
+                "include": true,
+                "model_url": "Graben_Central_E.gltf",
+                "popups": {
+                    "GRABEN_CENTRAL_E": {
+                        "name": "GRABEN_CENTRAL_E",
+                        "title": "GRABEN_CENTRAL_E"
+                    }
+                },
+                "src_filename": "Graben_Central_E.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Graben Wilpena Ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "Graben_Wilpena_Ribbon.gltf",
+                "popups": {
+                    "GRABEN_WILPENA_RIBBON": {
+                        "name": "GRABEN_WILPENA_RIBBON",
+                        "title": "GRABEN_WILPENA_RIBBON"
+                    }
+                },
+                "src_filename": "Graben_Wilpena_Ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Graben ediacara",
+                "displayed": true,
+                "include": true,
+                "model_url": "Graben_ediacara.gltf",
+                "popups": {
+                    "GRABEN_EDIACARA": {
+                        "name": "GRABEN_EDIACARA",
+                        "title": "GRABEN_EDIACARA"
+                    }
+                },
+                "src_filename": "Graben_ediacara.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Graben ediacara 215",
+                "displayed": true,
+                "include": true,
+                "model_url": "Graben_ediacara_215.gltf",
+                "popups": {
+                    "GRABEN_EDIACARA_215": {
+                        "name": "GRABEN_EDIACARA_215",
+                        "title": "GRABEN_EDIACARA_215"
+                    }
+                },
+                "src_filename": "Graben_ediacara_215.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "H-BASEMENT",
+                "displayed": true,
+                "include": true,
+                "model_url": "H-BASEMENT.gltf",
+                "popups": {
+                    "H-BASEMENT": {
+                        "name": "H-BASEMENT",
+                        "title": "H-BASEMENT"
+                    }
+                },
+                "src_filename": "H-BASEMENT.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Lake Torrens",
+                "displayed": true,
+                "include": true,
+                "model_url": "Lake_Torrens.gltf",
+                "popups": {
+                    "LAKE_TORRENS": {
+                        "name": "LAKE_TORRENS",
+                        "title": "LAKE_TORRENS"
+                    }
+                },
+                "src_filename": "Lake_Torrens.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "NE1 Umberatana",
+                "displayed": true,
+                "include": true,
+                "model_url": "NE1_Umberatana.gltf",
+                "popups": {
+                    "NE1_UMBERATANA": {
+                        "name": "NE1_UMBERATANA",
+                        "title": "NE1_UMBERATANA"
+                    }
+                },
+                "src_filename": "NE1_Umberatana.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "NF Bunker",
+                "displayed": true,
+                "include": true,
+                "model_url": "NF_Bunker.gltf",
+                "popups": {
+                    "NF_BUNKER": {
+                        "name": "NF_BUNKER",
+                        "title": "NF_BUNKER"
+                    }
+                },
+                "src_filename": "NF_Bunker.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "NF Curnamona 213",
+                "displayed": true,
+                "include": true,
+                "model_url": "NF_Curnamona_213.gltf",
+                "popups": {
+                    "NF_CURNAMONA_213": {
+                        "name": "NF_CURNAMONA_213",
+                        "title": "NF_CURNAMONA_213"
+                    }
+                },
+                "src_filename": "NF_Curnamona_213.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "NF DIAPIRS",
+                "displayed": true,
+                "include": true,
+                "model_url": "NF_DIAPIRS.gltf",
+                "popups": {
+                    "NF_DIAPIRS": {
+                        "name": "NF_DIAPIRS",
+                        "title": "NF_DIAPIRS"
+                    }
+                },
+                "src_filename": "NF_DIAPIRS.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "NF THZ E",
+                "displayed": true,
+                "include": true,
+                "model_url": "NF_THZ_E.gltf",
+                "popups": {
+                    "NF_THZ_E": {
+                        "name": "NF_THZ_E",
+                        "title": "NF_THZ_E"
+                    }
+                },
+                "src_filename": "NF_THZ_E.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "NW3 Wilpena ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "NW3_Wilpena_ribbon.gltf",
+                "popups": {
+                    "NW3_WILPENA_RIBBON": {
+                        "name": "NW3_WILPENA_RIBBON",
+                        "title": "NW3_WILPENA_RIBBON"
+                    }
+                },
+                "src_filename": "NW3_Wilpena_ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Oraparina DIAPIR RIBBON",
+                "displayed": true,
+                "include": true,
+                "model_url": "Oraparina_DIAPIR_RIBBON.gltf",
+                "popups": {
+                    "ORAPARINA_DIAPIR_RIBBON": {
+                        "name": "ORAPARINA_DIAPIR_RIBBON",
+                        "title": "ORAPARINA_DIAPIR_RIBBON"
+                    }
+                },
+                "src_filename": "Oraparina_DIAPIR_RIBBON.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Oraparina Diapir Bunker",
+                "displayed": true,
+                "include": true,
+                "model_url": "Oraparina_Diapir_Bunker.gltf",
+                "popups": {
+                    "ORAPARINA_DIAPIR_BUNKER": {
+                        "name": "ORAPARINA_DIAPIR_BUNKER",
+                        "title": "ORAPARINA_DIAPIR_BUNKER"
+                    }
+                },
+                "src_filename": "Oraparina_Diapir_Bunker.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "RFT Flinders",
+                "displayed": true,
+                "include": true,
+                "model_url": "RFT_Flinders.gltf",
+                "popups": {
+                    "RFT_FLINDERS": {
+                        "name": "RFT_FLINDERS",
+                        "title": "RFT_FLINDERS"
+                    }
+                },
+                "src_filename": "RFT_Flinders.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Ribbon Bunker NF N",
+                "displayed": true,
+                "include": true,
+                "model_url": "Ribbon_Bunker_NF_N.gltf",
+                "popups": {
+                    "RIBBON_BUNKER_NF_N": {
+                        "name": "RIBBON_BUNKER_NF_N",
+                        "title": "RIBBON_BUNKER_NF_N"
+                    }
+                },
+                "src_filename": "Ribbon_Bunker_NF_N.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Ribbon Bunker NF S",
+                "displayed": true,
+                "include": true,
+                "model_url": "Ribbon_Bunker_NF_S.gltf",
+                "popups": {
+                    "RIBBON_BUNKER_NF_S": {
+                        "name": "RIBBON_BUNKER_NF_S",
+                        "title": "RIBBON_BUNKER_NF_S"
+                    }
+                },
+                "src_filename": "Ribbon_Bunker_NF_S.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Ribbon Top Umberatana SW",
+                "displayed": true,
+                "include": true,
+                "model_url": "Ribbon_Top_Umberatana_SW.gltf",
+                "popups": {
+                    "RIBBON_TOP_UMBERATANA_SW": {
+                        "name": "RIBBON_TOP_UMBERATANA_SW",
+                        "title": "RIBBON_TOP_UMBERATANA_SW"
+                    }
+                },
+                "src_filename": "Ribbon_Top_Umberatana_SW.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Ribbon Wirrealpa Fault N",
+                "displayed": true,
+                "include": true,
+                "model_url": "Ribbon_Wirrealpa_Fault_N.gltf",
+                "popups": {
+                    "RIBBON_WIRREALPA_FAULT_N": {
+                        "name": "RIBBON_WIRREALPA_FAULT_N",
+                        "title": "RIBBON_WIRREALPA_FAULT_N"
+                    }
+                },
+                "src_filename": "Ribbon_Wirrealpa_Fault_N.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Ribbon Wirrealpa South",
+                "displayed": true,
+                "include": true,
+                "model_url": "Ribbon_Wirrealpa_South.gltf",
+                "popups": {
+                    "RIBBON_WIRREALPA_SOUTH": {
+                        "name": "RIBBON_WIRREALPA_SOUTH",
+                        "title": "RIBBON_WIRREALPA_SOUTH"
+                    }
+                },
+                "src_filename": "Ribbon_Wirrealpa_South.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Ribbon depth Wilpena W 2",
+                "displayed": true,
+                "include": true,
+                "model_url": "Ribbon_depth_Wilpena_W_2.gltf",
+                "popups": {
+                    "RIBBON_DEPTH_WILPENA_W_2": {
+                        "name": "RIBBON_DEPTH_WILPENA_W_2",
+                        "title": "RIBBON_DEPTH_WILPENA_W_2"
+                    }
+                },
+                "src_filename": "Ribbon_depth_Wilpena_W_2.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "SE Umberatana RIBBON",
+                "displayed": true,
+                "include": true,
+                "model_url": "SE_Umberatana_RIBBON.gltf",
+                "popups": {
+                    "SE_UMBERATANA_RIBBON": {
+                        "name": "SE_UMBERATANA_RIBBON",
+                        "title": "SE_UMBERATANA_RIBBON"
+                    }
+                },
+                "src_filename": "SE_Umberatana_RIBBON.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "SRTM1sec400m surf",
+                "displayed": true,
+                "include": true,
+                "model_url": "SRTM1sec400m_surf.gltf",
+                "popups": {
+                    "SRTM1SEC400M_SURF": {
+                        "name": "SRTM1SEC400M_SURF",
+                        "title": "SRTM1SEC400M_SURF"
+                    }
+                },
+                "src_filename": "SRTM1sec400m_surf.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Transcurrent Fault N",
+                "displayed": true,
+                "include": true,
+                "model_url": "Transcurrent_Fault_N.gltf",
+                "popups": {
+                    "TRANSCURRENT_FAULT_N": {
+                        "name": "TRANSCURRENT_FAULT_N",
+                        "title": "TRANSCURRENT_FAULT_N"
+                    }
+                },
+                "src_filename": "Transcurrent_Fault_N.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Transcurrent Fault NC",
+                "displayed": true,
+                "include": true,
+                "model_url": "Transcurrent_Fault_NC.gltf",
+                "popups": {
+                    "TRANSCURRENT_FAULT_NC": {
+                        "name": "TRANSCURRENT_FAULT_NC",
+                        "title": "TRANSCURRENT_FAULT_NC"
+                    }
+                },
+                "src_filename": "Transcurrent_Fault_NC.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Transcurrent Fault S",
+                "displayed": true,
+                "include": true,
+                "model_url": "Transcurrent_Fault_S.gltf",
+                "popups": {
+                    "TRANSCURRENT_FAULT_S": {
+                        "name": "TRANSCURRENT_FAULT_S",
+                        "title": "TRANSCURRENT_FAULT_S"
+                    }
+                },
+                "src_filename": "Transcurrent_Fault_S.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Transcurrent Fault SC",
+                "displayed": true,
+                "include": true,
+                "model_url": "Transcurrent_Fault_SC.gltf",
+                "popups": {
+                    "TRANSCURRENT_FAULT_SC": {
+                        "name": "TRANSCURRENT_FAULT_SC",
+                        "title": "TRANSCURRENT_FAULT_SC"
+                    }
+                },
+                "src_filename": "Transcurrent_Fault_SC.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Umberatana E Ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "Umberatana_E_Ribbon.gltf",
+                "popups": {
+                    "UMBERATANA_E_RIBBON": {
+                        "name": "UMBERATANA_E_RIBBON",
+                        "title": "UMBERATANA_E_RIBBON"
+                    }
+                },
+                "src_filename": "Umberatana_E_Ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Umberatana E Umberatana Wirealpa RIBBON",
+                "displayed": true,
+                "include": true,
+                "model_url": "Umberatana_E_Umberatana_Wirealpa_RIBBON.gltf",
+                "popups": {
+                    "UMBERATANA_E_UMBERATANA_WIREALPA_RIBBON": {
+                        "name": "UMBERATANA_E_UMBERATANA_WIREALPA_RIBBON",
+                        "title": "UMBERATANA_E_UMBERATANA_WIREALPA_RIBBON"
+                    }
+                },
+                "src_filename": "Umberatana_E_Umberatana_Wirealpa_RIBBON.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "W Umberatana Ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "W_Umberatana_Ribbon.gltf",
+                "popups": {
+                    "W_UMBERATANA_RIBBON": {
+                        "name": "W_UMBERATANA_RIBBON",
+                        "title": "W_UMBERATANA_RIBBON"
+                    }
+                },
+                "src_filename": "W_Umberatana_Ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "W Wilpena Ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "W_Wilpena_Ribbon.gltf",
+                "popups": {
+                    "W_WILPENA_RIBBON": {
+                        "name": "W_WILPENA_RIBBON",
+                        "title": "W_WILPENA_RIBBON"
+                    }
+                },
+                "src_filename": "W_Wilpena_Ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Wilpena E ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "Wilpena_E_ribbon.gltf",
+                "popups": {
+                    "WILPENA_E_RIBBON": {
+                        "name": "WILPENA_E_RIBBON",
+                        "title": "WILPENA_E_RIBBON"
+                    }
+                },
+                "src_filename": "Wilpena_E_ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Wilpena SE Ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "Wilpena_SE_Ribbon.gltf",
+                "popups": {
+                    "WILPENA_SE_RIBBON": {
+                        "name": "WILPENA_SE_RIBBON",
+                        "title": "WILPENA_SE_RIBBON"
+                    }
+                },
+                "src_filename": "Wilpena_SE_Ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Wilpena TOP CW",
+                "displayed": true,
+                "include": true,
+                "model_url": "Wilpena_TOP_CW.gltf",
+                "popups": {
+                    "WILPENA_TOP_CW": {
+                        "name": "WILPENA_TOP_CW",
+                        "title": "WILPENA_TOP_CW"
+                    }
+                },
+                "src_filename": "Wilpena_TOP_CW.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Wilpena TOP CW Ribbon",
+                "displayed": true,
+                "include": true,
+                "model_url": "Wilpena_TOP_CW_Ribbon.gltf",
+                "popups": {
+                    "WILPENA_TOP_CW_RIBBON": {
+                        "name": "WILPENA_TOP_CW_RIBBON",
+                        "title": "WILPENA_TOP_CW_RIBBON"
+                    }
+                },
+                "src_filename": "Wilpena_TOP_CW_Ribbon.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Wilpena W RIBBON",
+                "displayed": true,
+                "include": true,
+                "model_url": "Wilpena_W_RIBBON.gltf",
+                "popups": {
+                    "WILPENA_W_RIBBON": {
+                        "name": "WILPENA_W_RIBBON",
+                        "title": "WILPENA_W_RIBBON"
+                    }
+                },
+                "src_filename": "Wilpena_W_RIBBON.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Wirrealpa E Fault",
+                "displayed": true,
+                "include": true,
+                "model_url": "Wirrealpa_E_Fault.gltf",
+                "popups": {
+                    "WIRREALPA_E_FAULT": {
+                        "name": "WIRREALPA_E_FAULT",
+                        "title": "WIRREALPA_E_FAULT"
+                    }
+                },
+                "src_filename": "Wirrealpa_E_Fault.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ],
+        "Voxets": [
+            {
+                "alt_group_label": "Voxets",
+                "display_name": "PARACHILNA MAP 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "PARACHILNA_map_PARACHILNA_map_prop@@.PNG",
+                "popups": {
+                    "PARACHILNA_map_PARACHILNA_map_prop@@": {
+                        "name": "PARACHILNA_MAP_PROP",
+                        "title": "PARACHILNA_MAP_PROP"
+                    }
+                },
+                "position": [
+                    213980.578125,
+                    6566185.0,
+                    -1000.0
+                ],
+                "src_filename": "PARACHILNA_map_PARACHILNA_map_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "Voxets",
+                "display_name": "PARACHILNA SCAN A 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "PARACHILNA_Scan_A_PARACHILNA_Scan_A_prop@@.PNG",
+                "popups": {
+                    "PARACHILNA_Scan_A_PARACHILNA_Scan_A_prop@@": {
+                        "name": "PARACHILNA_SCAN_A_PROP",
+                        "title": "PARACHILNA_SCAN_A_PROP"
+                    }
+                },
+                "position": [
+                    226756.71875,
+                    6532393.0,
+                    -2500.0
+                ],
+                "src_filename": "PARACHILNA_Scan_A_PARACHILNA_Scan_A_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            }
+        ],
+        "WMS Layers": [
+            {
+                "display_name": "GA Lithostratigraphy",
+                "displayed": true,
+                "include": true,
+                "model_url": "http://services.ga.gov.au/gis/services/GA_Surface_Geology/MapServer/WMSServer",
+                "name": "AUS_GA_2500k_GUPoly_Lithostratigraphy",
+                "type": "WMSLayer",
+                "version": "1.3.0"
+            }
         ]
     },
     "properties": {
@@ -1770,7 +1772,7 @@
             6591618.0
         ],
         "init_cam_dist": 500000.0,
-        "name": "CentralFlinders",
+        "name": "Central Flinders",
         "proj4_defn": "+proj=utm +zone=54 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
     },
     "type": "GeologicalModel",

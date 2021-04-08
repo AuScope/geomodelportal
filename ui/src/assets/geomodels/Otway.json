@@ -812,7 +812,7 @@
         ],
         "Stratigraphy": [
             {
-                "alt_group_label": "output",
+                "alt_group_label": "otway",
                 "display_name": "BSMT",
                 "displayed": true,
                 "include": true,
@@ -828,7 +828,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "otway",
                 "display_name": "CRAYFISH",
                 "displayed": true,
                 "include": true,
@@ -850,7 +850,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "otway",
                 "display_name": "EUMERALLA",
                 "displayed": true,
                 "include": true,
@@ -872,7 +872,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "otway",
                 "display_name": "PRETTY HILL EAST",
                 "displayed": true,
                 "include": true,
@@ -894,7 +894,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "otway",
                 "display_name": "PRETTY HILL WEST",
                 "displayed": true,
                 "include": true,

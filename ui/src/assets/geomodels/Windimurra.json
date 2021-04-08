@@ -354,7 +354,7 @@
         ],
         "Seismic Reflection Surveys": [
             {
-                "alt_group_label": "output",
+                "alt_group_label": "CDP_LOCATIONS",
                 "display_name": "10GA YU1",
                 "displayed": true,
                 "include": true,
@@ -365,7 +365,7 @@
                 "type": "GZSON"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "CDP_LOCATIONS",
                 "display_name": "10GA YU2",
                 "displayed": true,
                 "include": true,
@@ -376,7 +376,7 @@
                 "type": "GZSON"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "CDP_LOCATIONS",
                 "display_name": "10GA YU3",
                 "displayed": true,
                 "include": true,

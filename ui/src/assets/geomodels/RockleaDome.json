@@ -1,0 +1,666 @@
+{
+    "groups": {
+        "WMS Layers": [
+            {
+                "display_name": "GA Lithostratigraphy",
+                "displayed": true,
+                "include": true,
+                "model_url": "http://services.ga.gov.au/gis/services/GA_Surface_Geology/MapServer/WMSServer",
+                "name": "AUS_GA_2500k_GUPoly_Lithostratigraphy",
+                "type": "WMSLayer",
+                "version": "1.3.0"
+            }
+        ],
+        "pointset": [
+            {
+                "alt_group_label": "pointset",
+                "display_name": "ALOH AB",
+                "displayed": true,
+                "include": true,
+                "model_url": "AlOH_Ab.gzson",
+                "popups": {},
+                "src_filename": "AlOH_Ab.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "pointset",
+                "display_name": "ALOHABVEGUNM",
+                "displayed": true,
+                "include": true,
+                "model_url": "AlOHAbVegunm.gzson",
+                "popups": {},
+                "src_filename": "AlOHAbVegunm.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "pointset",
+                "display_name": "AMPHAB",
+                "displayed": true,
+                "include": true,
+                "model_url": "AmphAb.gzson",
+                "popups": {},
+                "src_filename": "AmphAb.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "pointset",
+                "display_name": "CARBAB RKC",
+                "displayed": true,
+                "include": true,
+                "model_url": "CarbAb_RKC.gzson",
+                "popups": {},
+                "src_filename": "CarbAb_RKC.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "pointset",
+                "display_name": "CHLAB",
+                "displayed": true,
+                "include": true,
+                "model_url": "ChlAb.gzson",
+                "popups": {},
+                "src_filename": "ChlAb.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "pointset",
+                "display_name": "FEOXAB 900D",
+                "displayed": true,
+                "include": true,
+                "model_url": "FeoxAb_900D.gzson",
+                "popups": {},
+                "src_filename": "FeoxAb_900D.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "pointset",
+                "display_name": "FEOXVEGUNM",
+                "displayed": true,
+                "include": true,
+                "model_url": "FeOxVegUnm.gzson",
+                "popups": {},
+                "src_filename": "FeOxVegUnm.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "pointset",
+                "display_name": "FEOXVEGUNM INTERPOL MASKED",
+                "displayed": true,
+                "include": true,
+                "model_url": "FeOxVegUnm_interpol_masked.gzson",
+                "popups": {},
+                "src_filename": "FeOxVegUnm_interpol_masked.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "pointset",
+                "display_name": "FEPCT",
+                "displayed": true,
+                "include": true,
+                "model_url": "FePct.gzson",
+                "popups": {},
+                "src_filename": "FePct.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "pointset",
+                "display_name": "KAOLCOMP RKC",
+                "displayed": true,
+                "include": true,
+                "model_url": "KaolComp_RKC.gzson",
+                "popups": {},
+                "src_filename": "KaolComp_RKC.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "pointset",
+                "display_name": "KC 5MF",
+                "displayed": true,
+                "include": true,
+                "model_url": "KC_5MF.gzson",
+                "popups": {},
+                "src_filename": "KC_5MF.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "pointset",
+                "display_name": "SEGMENTATIONIMAGE",
+                "displayed": true,
+                "include": true,
+                "model_url": "SegmentationImage.gzson",
+                "popups": {},
+                "src_filename": "SegmentationImage.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "pointset",
+                "display_name": "SRTM ROCKLEADOME+HARDEYRIVER",
+                "displayed": true,
+                "include": true,
+                "model_url": "SRTM_RockleaDome+HardeyRiver.gzson",
+                "popups": {},
+                "src_filename": "SRTM_RockleaDome+HardeyRiver.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "pointset",
+                "display_name": "WMAB",
+                "displayed": true,
+                "include": true,
+                "model_url": "WMAb.gzson",
+                "popups": {},
+                "src_filename": "WMAb.zip",
+                "styling": {},
+                "type": "GZSON"
+            }
+        ],
+        "surfaces": [
+            {
+                "alt_group_label": "surfaces",
+                "display_name": "CID outline UTM",
+                "displayed": true,
+                "include": true,
+                "model_url": "CID_outline_UTM.gltf",
+                "popups": {
+                    "CID_OUTLINE_UTM": {
+                        "name": "CID_OUTLINE_UTM",
+                        "title": "CID_OUTLINE_UTM"
+                    }
+                },
+                "src_filename": "CID_outline_UTM.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "surfaces",
+                "display_name": "ChannelBottom South+North",
+                "displayed": true,
+                "include": true,
+                "model_url": "ChannelBottom_South+North.gltf",
+                "popups": {
+                    "CHANNELBOTTOM_SOUTH+NORTH": {
+                        "name": "CHANNELBOTTOM_SOUTH+NORTH",
+                        "title": "CHANNELBOTTOM_SOUTH+NORTH"
+                    }
+                },
+                "src_filename": "ChannelBottom_South+North.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "surfaces",
+                "display_name": "GibbsiteLayer",
+                "displayed": true,
+                "include": true,
+                "model_url": "GibbsiteLayer.gltf",
+                "popups": {
+                    "GIBBSITELAYER": {
+                        "name": "GIBBSITELAYER",
+                        "title": "GIBBSITELAYER"
+                    }
+                },
+                "src_filename": "GibbsiteLayer.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "surfaces",
+                "display_name": "Topo SRTMonly",
+                "displayed": true,
+                "include": true,
+                "model_url": "Topo_SRTMonly.gltf",
+                "popups": {
+                    "TOPO_SRTMONLY": {
+                        "name": "TOPO_SRTMONLY",
+                        "title": "TOPO_SRTMONLY"
+                    }
+                },
+                "src_filename": "Topo_SRTMonly.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "surfaces",
+                "display_name": "Wireframe Set Ore bottom                      Surface",
+                "displayed": true,
+                "include": true,
+                "model_url": "Wireframe_Set_Ore_bottom______________________Surface.gltf",
+                "popups": {
+                    "WIREFRAME_SET_ORE_BOTTOM______________________SURFACE": {
+                        "name": "WIREFRAME_SET_ORE_BOTTOM______________________SURFACE",
+                        "title": "WIREFRAME_SET_ORE_BOTTOM______________________SURFACE"
+                    }
+                },
+                "src_filename": "Wireframe_Set_Ore_bottom______________________Surface.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "surfaces",
+                "display_name": "Wireframe Set Ore main lense                  Surface",
+                "displayed": true,
+                "include": true,
+                "model_url": "Wireframe_Set_Ore_main_lense__________________Surface.gltf",
+                "popups": {
+                    "WIREFRAME_SET_ORE_MAIN_LENSE__________________SURFACE": {
+                        "name": "WIREFRAME_SET_ORE_MAIN_LENSE__________________SURFACE",
+                        "title": "WIREFRAME_SET_ORE_MAIN_LENSE__________________SURFACE"
+                    }
+                },
+                "src_filename": "Wireframe_Set_Ore_main_lense__________________Surface.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "surfaces",
+                "display_name": "Wireframe Set Ore upper lenses                Surface",
+                "displayed": true,
+                "include": true,
+                "model_url": "Wireframe_Set_Ore_upper_lenses________________Surface.gltf",
+                "popups": {
+                    "WIREFRAME_SET_ORE_UPPER_LENSES________________SURFACE": {
+                        "name": "WIREFRAME_SET_ORE_UPPER_LENSES________________SURFACE",
+                        "title": "WIREFRAME_SET_ORE_UPPER_LENSES________________SURFACE"
+                    }
+                },
+                "src_filename": "Wireframe_Set_Ore_upper_lenses________________Surface.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ],
+        "voxets": [
+            {
+                "alt_group_label": "voxets",
+                "display_name": "ALOH ABUNDANCE 1 9-2 07 ASTER 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "AlOH_abundance_1_9-2_07_ASTER_AlOH_abundance_1_9_2_07_ASTER_prop@@.PNG",
+                "popups": {
+                    "AlOH_abundance_1_9-2_07_ASTER_AlOH_abundance_1_9_2_07_ASTER_prop@@": {
+                        "name": "ALOH_ABUNDANCE_1_9_2_07_ASTER_PROP",
+                        "title": "ALOH_ABUNDANCE_1_9_2_07_ASTER_PROP"
+                    }
+                },
+                "position": [
+                    513575.7890625,
+                    7455828.5126953125,
+                    0.0
+                ],
+                "src_filename": "AlOH_abundance_1_9-2_07_ASTER_AlOH_abundance_1_9_2_07_ASTER_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "voxets",
+                "display_name": "ALOH COMPOSITION 1 192-1 35 ASTER 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "AlOH_composition_1_192-1_35_ASTER_AlOH_composition_1_192_1_35_ASTER_prop@@.PNG",
+                "popups": {
+                    "AlOH_composition_1_192-1_35_ASTER_AlOH_composition_1_192_1_35_ASTER_prop@@": {
+                        "name": "ALOH_COMPOSITION_1_192_1_35_ASTER_PROP",
+                        "title": "ALOH_COMPOSITION_1_192_1_35_ASTER_PROP"
+                    }
+                },
+                "position": [
+                    513575.7890625,
+                    7455828.5126953125,
+                    0.0
+                ],
+                "src_filename": "AlOH_composition_1_192-1_35_ASTER_AlOH_composition_1_192_1_35_ASTER_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "voxets",
+                "display_name": "FALSECOLOUR COLOURBALANCED CROSSTRACKCORR1 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "FalseColour_colourbalanced_crosstrackcorr1_FalseColour_colourbalanced_crosstrackcorr1_prop@@.PNG",
+                "popups": {
+                    "FalseColour_colourbalanced_crosstrackcorr1_FalseColour_colourbalanced_crosstrackcorr1_prop@@": {
+                        "name": "FALSECOLOUR_COLOURBALANCED_CROSSTRACKCORR1_PROP",
+                        "title": "FALSECOLOUR_COLOURBALANCED_CROSSTRACKCORR1_PROP"
+                    }
+                },
+                "position": [
+                    519870.2339935303,
+                    7464568.53515625,
+                    0.0
+                ],
+                "src_filename": "FalseColour_colourbalanced_crosstrackcorr1_FalseColour_colourbalanced_crosstrackcorr1_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "voxets",
+                "display_name": "FE-OXIDE 0 27-0 35 ASTER 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Fe-oxide_0_27-0_35_ASTER_Fe_oxide_0_27_0_35_ASTER_prop@@.PNG",
+                "popups": {
+                    "Fe-oxide_0_27-0_35_ASTER_Fe_oxide_0_27_0_35_ASTER_prop@@": {
+                        "name": "FE_OXIDE_0_27_0_35_ASTER_PROP",
+                        "title": "FE_OXIDE_0_27_0_35_ASTER_PROP"
+                    }
+                },
+                "position": [
+                    513575.7890625,
+                    7455828.5126953125,
+                    0.0
+                ],
+                "src_filename": "Fe-oxide_0_27-0_35_ASTER_Fe_oxide_0_27_0_35_ASTER_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "voxets",
+                "display_name": "FE2+ 0 26-0 314 ASTER 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Fe2+_0_26-0_314_ASTER_Fe2__0_26_0_314_ASTER_prop@@.PNG",
+                "popups": {
+                    "Fe2+_0_26-0_314_ASTER_Fe2__0_26_0_314_ASTER_prop@@": {
+                        "name": "FE2__0_26_0_314_ASTER_PROP",
+                        "title": "FE2__0_26_0_314_ASTER_PROP"
+                    }
+                },
+                "position": [
+                    513575.7890625,
+                    7455828.5126953125,
+                    0.0
+                ],
+                "src_filename": "Fe2+_0_26-0_314_ASTER_Fe2__0_26_0_314_ASTER_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "voxets",
+                "display_name": "GRAVITY UTM 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Gravity_UTM_Gravity_UTM_prop@@.PNG",
+                "popups": {
+                    "Gravity_UTM_Gravity_UTM_prop@@": {
+                        "name": "GRAVITY_UTM_PROP",
+                        "title": "GRAVITY_UTM_PROP"
+                    }
+                },
+                "position": [
+                    500527.900390625,
+                    7456427.5625,
+                    0.0
+                ],
+                "src_filename": "Gravity_UTM_Gravity_UTM_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "voxets",
+                "display_name": "HAMERSLEYRANGE SF501 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "HamersleyRange_SF501_HamersleyRange_SF501_prop@@.PNG",
+                "popups": {
+                    "HamersleyRange_SF501_HamersleyRange_SF501_prop@@": {
+                        "name": "HAMERSLEYRANGE_SF501_PROP",
+                        "title": "HAMERSLEYRANGE_SF501_PROP"
+                    }
+                },
+                "position": [
+                    491776.66015625,
+                    7419138.69921875,
+                    0.0
+                ],
+                "src_filename": "HamersleyRange_SF501_HamersleyRange_SF501_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "voxets",
+                "display_name": "MAG 1STDERIVVD UTM 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Mag_1stderivVD_UTM_Mag_1stderivVD_UTM_prop@@.PNG",
+                "popups": {
+                    "Mag_1stderivVD_UTM_Mag_1stderivVD_UTM_prop@@": {
+                        "name": "MAG_1STDERIVVD_UTM_PROP",
+                        "title": "MAG_1STDERIVVD_UTM_PROP"
+                    }
+                },
+                "position": [
+                    500093.396484375,
+                    7456358.783203125,
+                    0.0
+                ],
+                "src_filename": "Mag_1stderivVD_UTM_Mag_1stderivVD_UTM_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "voxets",
+                "display_name": "MGOH ABUNDANCE 0 95-1 05 ASTER 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "MgOH_abundance_0_95-1_05_ASTER_MgOH_abundance_0_95_1_05_ASTER_prop@@.PNG",
+                "popups": {
+                    "MgOH_abundance_0_95-1_05_ASTER_MgOH_abundance_0_95_1_05_ASTER_prop@@": {
+                        "name": "MGOH_ABUNDANCE_0_95_1_05_ASTER_PROP",
+                        "title": "MGOH_ABUNDANCE_0_95_1_05_ASTER_PROP"
+                    }
+                },
+                "position": [
+                    513575.7890625,
+                    7455828.5126953125,
+                    0.0
+                ],
+                "src_filename": "MgOH_abundance_0_95-1_05_ASTER_MgOH_abundance_0_95_1_05_ASTER_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "voxets",
+                "display_name": "MGOH COMP 1 48-1 6 ASTER 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "MgOH_comp_1_48-1_6_ASTER_MgOH_comp_1_48_1_6_ASTER_prop@@.PNG",
+                "popups": {
+                    "MgOH_comp_1_48-1_6_ASTER_MgOH_comp_1_48_1_6_ASTER_prop@@": {
+                        "name": "MGOH_COMP_1_48_1_6_ASTER_PROP",
+                        "title": "MGOH_COMP_1_48_1_6_ASTER_PROP"
+                    }
+                },
+                "position": [
+                    513575.7890625,
+                    7455828.5126953125,
+                    0.0
+                ],
+                "src_filename": "MgOH_comp_1_48-1_6_ASTER_MgOH_comp_1_48_1_6_ASTER_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "voxets",
+                "display_name": "OPAQUES 3 4-4 5 ASTER 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Opaques_3_4-4_5_ASTER_Opaques_3_4_4_5_ASTER_prop@@.PNG",
+                "popups": {
+                    "Opaques_3_4-4_5_ASTER_Opaques_3_4_4_5_ASTER_prop@@": {
+                        "name": "OPAQUES_3_4_4_5_ASTER_PROP",
+                        "title": "OPAQUES_3_4_4_5_ASTER_PROP"
+                    }
+                },
+                "position": [
+                    513575.7890625,
+                    7455828.5126953125,
+                    0.0
+                ],
+                "src_filename": "Opaques_3_4-4_5_ASTER_Opaques_3_4_4_5_ASTER_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "voxets",
+                "display_name": "PCTK UTM 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "PctK_UTM_PctK_UTM_prop@@.PNG",
+                "popups": {
+                    "PctK_UTM_PctK_UTM_prop@@": {
+                        "name": "PCTK_UTM_PROP",
+                        "title": "PCTK_UTM_PROP"
+                    }
+                },
+                "position": [
+                    513578.6611328125,
+                    7456294.6083984375,
+                    0.0
+                ],
+                "src_filename": "PctK_UTM_PctK_UTM_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "voxets",
+                "display_name": "PPMTH UTM 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "PpmTh_UTM_PpmTh_UTM_prop@@.PNG",
+                "popups": {
+                    "PpmTh_UTM_PpmTh_UTM_prop@@": {
+                        "name": "PPMTH_UTM_PROP",
+                        "title": "PPMTH_UTM_PROP"
+                    }
+                },
+                "position": [
+                    513578.6611328125,
+                    7456294.6083984375,
+                    0.0
+                ],
+                "src_filename": "PpmTh_UTM_PpmTh_UTM_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "voxets",
+                "display_name": "PPMU UTM 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "PpmU_UTM_PpmU_UTM_prop@@.PNG",
+                "popups": {
+                    "PpmU_UTM_PpmU_UTM_prop@@": {
+                        "name": "PPMU_UTM_PROP",
+                        "title": "PPMU_UTM_PROP"
+                    }
+                },
+                "position": [
+                    513578.66064453125,
+                    7456294.6083984375,
+                    0.0
+                ],
+                "src_filename": "PpmU_UTM_PpmU_UTM_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "voxets",
+                "display_name": "ROCKLEAASTER FALSECOLOUR 15M 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "RockleaASTER_falsecolour_15m_RockleaASTER_falsecolour_15m_prop@@.PNG",
+                "popups": {
+                    "RockleaASTER_falsecolour_15m_RockleaASTER_falsecolour_15m_prop@@": {
+                        "name": "ROCKLEAASTER_FALSECOLOUR_15M_PROP",
+                        "title": "ROCKLEAASTER_FALSECOLOUR_15M_PROP"
+                    }
+                },
+                "position": [
+                    488774.529296875,
+                    7422207.828125,
+                    0.0
+                ],
+                "src_filename": "RockleaASTER_falsecolour_15m_RockleaASTER_falsecolour_15m_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            }
+        ],
+        "wells": [
+            {
+                "alt_group_label": "wells",
+                "display_name": "allwells",
+                "displayed": true,
+                "include": true,
+                "model_url": "allwells.gltf",
+                "popups": {
+                    "line-RKC306-0000000000": {
+                        "name": "RKC306",
+                        "title": "RKC306"
+                    },
+                    "line-RKC309-0000000000": {
+                        "name": "RKC309",
+                        "title": "RKC309"
+                    },
+                    "line-RKC317-0000000000": {
+                        "name": "RKC317",
+                        "title": "RKC317"
+                    },
+                    "line-RKC322-0000000000": {
+                        "name": "RKC322",
+                        "title": "RKC322"
+                    },
+                    "line-RKC433-0000000000": {
+                        "name": "RKC433",
+                        "title": "RKC433"
+                    },
+                    "line-RKC437-0000000000": {
+                        "name": "RKC437",
+                        "title": "RKC437"
+                    },
+                    "line-RKC451-0000000000": {
+                        "name": "RKC451",
+                        "title": "RKC451"
+                    },
+                    "line-RKC453-0000000000": {
+                        "name": "RKC453",
+                        "title": "RKC453"
+                    },
+                    "line-RKC458-0000000000": {
+                        "name": "RKC458",
+                        "title": "RKC458"
+                    }
+                },
+                "src_filename": "allwells.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ]
+    },
+    "properties": {
+        "crs": "EPSG:28350",
+        "extent": [
+            488774.529296875,
+            575921.4257321017,
+            7419138.69921875,
+            7552214.972943687
+        ],
+        "init_cam_dist": 1500000.0,
+        "name": "Rocklea Dome",
+        "proj4_defn": "+proj=utm +zone=50 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    },
+    "type": "GeologicalModel",
+    "version": 1.0
+}

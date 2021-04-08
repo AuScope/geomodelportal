@@ -49150,118 +49150,9 @@
                 "type": "GLTFObject"
             }
         ],
-        "Surfaces": [
+        "Points": [
             {
-                "alt_group_label": "Surfaces",
-                "display_name": "Base tertiary Eromanga",
-                "displayed": true,
-                "include": true,
-                "model_url": "Base_tertiary_Eromanga.gltf",
-                "popups": {
-                    "BASE_TERTIARY_EROMANGA": {
-                        "name": "BASE_TERTIARY_EROMANGA",
-                        "title": "BASE_TERTIARY_EROMANGA"
-                    }
-                },
-                "src_filename": "Base_tertiary_Eromanga.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Base tertiary Torrens",
-                "displayed": true,
-                "include": true,
-                "model_url": "Base_tertiary_Torrens.gltf",
-                "popups": {
-                    "BASE_TERTIARY_TORRENS": {
-                        "name": "BASE_TERTIARY_TORRENS",
-                        "title": "BASE_TERTIARY_TORRENS"
-                    }
-                },
-                "src_filename": "Base_tertiary_Torrens.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Botom Pound Quartzite",
-                "displayed": true,
-                "include": true,
-                "model_url": "Botom_Pound_Quartzite.gltf",
-                "popups": {
-                    "BOTOM_POUND_QUARTZITE": {
-                        "name": "BOTOM_POUND_QUARTZITE",
-                        "title": "BOTOM_POUND_QUARTZITE"
-                    }
-                },
-                "src_filename": "Botom_Pound_Quartzite.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Bottom Ulupa siltstone",
-                "displayed": true,
-                "include": true,
-                "model_url": "Bottom_Ulupa_siltstone.gltf",
-                "popups": {
-                    "BOTTOM_ULUPA_SILTSTONE": {
-                        "name": "BOTTOM_ULUPA_SILTSTONE",
-                        "title": "BOTTOM_ULUPA_SILTSTONE"
-                    }
-                },
-                "src_filename": "Bottom_Ulupa_siltstone.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Central North Flinders topography",
-                "displayed": true,
-                "include": true,
-                "model_url": "Central_North_Flinders_topography.gltf",
-                "popups": {
-                    "CENTRAL_NORTH_FLINDERS_TOPOGRAPHY": {
-                        "name": "CENTRAL_NORTH_FLINDERS_TOPOGRAPHY",
-                        "title": "CENTRAL_NORTH_FLINDERS_TOPOGRAPHY"
-                    }
-                },
-                "src_filename": "Central_North_Flinders_topography.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "Surfaces",
-                "display_name": "Top Burra Group",
-                "displayed": true,
-                "include": true,
-                "model_url": "Top_Burra_Group.gltf",
-                "popups": {
-                    "TOP_BURRA_GROUP": {
-                        "name": "TOP_BURRA_GROUP",
-                        "title": "TOP_BURRA_GROUP"
-                    }
-                },
-                "src_filename": "Top_Burra_Group.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            }
-        ],
-        "WMS Layers": [
-            {
-                "display_name": "GA Lithostratigraphy",
-                "displayed": true,
-                "include": true,
-                "model_url": "http://services.ga.gov.au/gis/services/GA_Surface_Geology/MapServer/WMSServer",
-                "name": "AUS_GA_2500k_GUPoly_Lithostratigraphy",
-                "type": "WMSLayer",
-                "version": "1.3.0"
-            }
-        ],
-        "output": [
-            {
-                "alt_group_label": "output",
+                "alt_group_label": "Points",
                 "display_name": "BASE MESOZOIC DRILLHOLE POINTS",
                 "displayed": true,
                 "include": true,
@@ -52593,7 +52484,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "Points",
                 "display_name": "BASE MESOZOIC EROMANGA DRILLHOLES",
                 "displayed": true,
                 "include": true,
@@ -53025,7 +52916,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "Points",
                 "display_name": "BASE NEOPROT DRILLHOLE POINTS",
                 "displayed": true,
                 "include": true,
@@ -53112,7 +53003,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "Points",
                 "display_name": "BASE PRECAMBRIAN DRILLHOLE POINTS",
                 "displayed": true,
                 "include": true,
@@ -53872,7 +53763,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "Points",
                 "display_name": "BASE TERTIARY ALL POINTS",
                 "displayed": true,
                 "include": true,
@@ -57268,7 +57159,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "Points",
                 "display_name": "BASE TERTIARY DRILLING POINTS",
                 "displayed": true,
                 "include": true,
@@ -60850,7 +60741,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "Points",
                 "display_name": "BASE TERTIARY EROMANGA DRILLHOLES",
                 "displayed": true,
                 "include": true,
@@ -62758,7 +62649,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "Points",
                 "display_name": "BASE TERTIARY POINTS FROM SEISMIC",
                 "displayed": true,
                 "include": true,
@@ -63866,7 +63757,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "Points",
                 "display_name": "BASE TERTIARY TORRENS DRILLHOLES",
                 "displayed": true,
                 "include": true,
@@ -65258,28 +65149,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
-                "display_name": "COPLEY TOPOGRAPHY 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Copley_Topography_Copley_Topography_prop@@.PNG",
-                "popups": {
-                    "Copley_Topography_Copley_Topography_prop@@": {
-                        "name": "COPLEY_TOPOGRAPHY2_PROP",
-                        "title": "COPLEY_TOPOGRAPHY2_PROP"
-                    }
-                },
-                "position": [
-                    180455.03125,
-                    6543254.375,
-                    0.0
-                ],
-                "src_filename": "Copley_Topography_Copley_Topography_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
+                "alt_group_label": "Points",
                 "display_name": "EDGE TERTIARY POINTS",
                 "displayed": true,
                 "include": true,
@@ -65949,9 +65819,130 @@
                 "src_filename": "Edge_tertiary_points.zip",
                 "styling": {},
                 "type": "GLTFObject"
+            }
+        ],
+        "Surfaces": [
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Base tertiary Eromanga",
+                "displayed": true,
+                "include": true,
+                "model_url": "Base_tertiary_Eromanga.gltf",
+                "popups": {
+                    "BASE_TERTIARY_EROMANGA": {
+                        "name": "BASE_TERTIARY_EROMANGA",
+                        "title": "BASE_TERTIARY_EROMANGA"
+                    }
+                },
+                "src_filename": "Base_tertiary_Eromanga.zip",
+                "styling": {},
+                "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "Surfaces",
+                "display_name": "Base tertiary Torrens",
+                "displayed": true,
+                "include": true,
+                "model_url": "Base_tertiary_Torrens.gltf",
+                "popups": {
+                    "BASE_TERTIARY_TORRENS": {
+                        "name": "BASE_TERTIARY_TORRENS",
+                        "title": "BASE_TERTIARY_TORRENS"
+                    }
+                },
+                "src_filename": "Base_tertiary_Torrens.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Botom Pound Quartzite",
+                "displayed": true,
+                "include": true,
+                "model_url": "Botom_Pound_Quartzite.gltf",
+                "popups": {
+                    "BOTOM_POUND_QUARTZITE": {
+                        "name": "BOTOM_POUND_QUARTZITE",
+                        "title": "BOTOM_POUND_QUARTZITE"
+                    }
+                },
+                "src_filename": "Botom_Pound_Quartzite.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Bottom Ulupa siltstone",
+                "displayed": true,
+                "include": true,
+                "model_url": "Bottom_Ulupa_siltstone.gltf",
+                "popups": {
+                    "BOTTOM_ULUPA_SILTSTONE": {
+                        "name": "BOTTOM_ULUPA_SILTSTONE",
+                        "title": "BOTTOM_ULUPA_SILTSTONE"
+                    }
+                },
+                "src_filename": "Bottom_Ulupa_siltstone.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Central North Flinders topography",
+                "displayed": true,
+                "include": true,
+                "model_url": "Central_North_Flinders_topography.gltf",
+                "popups": {
+                    "CENTRAL_NORTH_FLINDERS_TOPOGRAPHY": {
+                        "name": "CENTRAL_NORTH_FLINDERS_TOPOGRAPHY",
+                        "title": "CENTRAL_NORTH_FLINDERS_TOPOGRAPHY"
+                    }
+                },
+                "src_filename": "Central_North_Flinders_topography.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Top Burra Group",
+                "displayed": true,
+                "include": true,
+                "model_url": "Top_Burra_Group.gltf",
+                "popups": {
+                    "TOP_BURRA_GROUP": {
+                        "name": "TOP_BURRA_GROUP",
+                        "title": "TOP_BURRA_GROUP"
+                    }
+                },
+                "src_filename": "Top_Burra_Group.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ],
+        "Voxets": [
+            {
+                "alt_group_label": "Voxets",
+                "display_name": "COPLEY TOPOGRAPHY 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Copley_Topography_Copley_Topography_prop@@.PNG",
+                "popups": {
+                    "Copley_Topography_Copley_Topography_prop@@": {
+                        "name": "COPLEY_TOPOGRAPHY2_PROP",
+                        "title": "COPLEY_TOPOGRAPHY2_PROP"
+                    }
+                },
+                "position": [
+                    180455.03125,
+                    6543254.375,
+                    0.0
+                ],
+                "src_filename": "Copley_Topography_Copley_Topography_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "Voxets",
                 "display_name": "NORTHFLINDERS 2MGEOLOGY 1",
                 "displayed": true,
                 "include": true,
@@ -65971,6 +65962,17 @@
                 "styling": {},
                 "type": "ImagePlane"
             }
+        ],
+        "WMS Layers": [
+            {
+                "display_name": "GA Lithostratigraphy",
+                "displayed": true,
+                "include": true,
+                "model_url": "http://services.ga.gov.au/gis/services/GA_Surface_Geology/MapServer/WMSServer",
+                "name": "AUS_GA_2500k_GUPoly_Lithostratigraphy",
+                "type": "WMSLayer",
+                "version": "1.3.0"
+            }
         ]
     },
     "properties": {
@@ -65982,7 +65984,7 @@
             6946150.0
         ],
         "init_cam_dist": 500000.0,
-        "name": "NorthFlinders",
+        "name": "North Flinders",
         "proj4_defn": "+proj=utm +zone=54 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
     },
     "type": "GeologicalModel",

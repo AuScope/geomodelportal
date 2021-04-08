@@ -290,7 +290,7 @@
         ],
         "Bouger Anomaly": [
             {
-                "alt_group_label": "output",
+                "alt_group_label": "GRID",
                 "display_name": "SANDSTONE GRAV BOUG GRID 1",
                 "displayed": true,
                 "include": true,
@@ -427,7 +427,7 @@
         ],
         "Inversion Results": [
             {
-                "alt_group_label": "output",
+                "alt_group_label": "INVERSIONS",
                 "display_name": "VPMG GRAVITY",
                 "displayed": true,
                 "include": true,
@@ -438,7 +438,7 @@
                 "type": "GZSON"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "INVERSIONS",
                 "display_name": "VPMG MAGNETIC",
                 "displayed": true,
                 "include": true,
@@ -451,7 +451,7 @@
         ],
         "Magnetics": [
             {
-                "alt_group_label": "output",
+                "alt_group_label": "GRID",
                 "display_name": "SANDSTONE TMI GRID 1",
                 "displayed": true,
                 "include": true,
@@ -474,7 +474,7 @@
         ],
         "Seismic": [
             {
-                "alt_group_label": "output",
+                "alt_group_label": "CDP_LOCATIONS",
                 "display_name": "10GA YU2",
                 "displayed": true,
                 "include": true,

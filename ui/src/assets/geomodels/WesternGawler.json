@@ -247,6 +247,17 @@
         "Gocad objects": [
             {
                 "alt_group_label": "Gocad objects",
+                "display_name": "08GA OM1 CDP",
+                "displayed": true,
+                "include": true,
+                "model_url": "08GA_OM1_CDP.gzson",
+                "popups": {},
+                "src_filename": "08GA_OM1_CDP.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "Gocad objects",
                 "display_name": "08GA OM1 Line",
                 "displayed": true,
                 "include": true,
@@ -392,6 +403,17 @@
                 "src_filename": "08GA_OM1_Line.zip",
                 "styling": {},
                 "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Gocad objects",
+                "display_name": "13GA EG1 CDP",
+                "displayed": true,
+                "include": true,
+                "model_url": "13GA_EG1_CDP.gzson",
+                "popups": {},
+                "src_filename": "13GA_EG1_CDP.zip",
+                "styling": {},
+                "type": "GZSON"
             },
             {
                 "alt_group_label": "Gocad objects",
@@ -6592,6 +6614,39 @@
                 "src_filename": "F30_Bulga.zip",
                 "styling": {},
                 "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Gocad objects",
+                "display_name": "GRAV 3KM POINTS",
+                "displayed": true,
+                "include": true,
+                "model_url": "Grav_3km_points.gzson",
+                "popups": {},
+                "src_filename": "Grav_3km_points.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "Gocad objects",
+                "display_name": "GRAV 3KM UP20 POINTS",
+                "displayed": true,
+                "include": true,
+                "model_url": "Grav_3km_up20_points.gzson",
+                "popups": {},
+                "src_filename": "Grav_3km_up20_points.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "Gocad objects",
+                "display_name": "GRAVITY INVERSION",
+                "displayed": true,
+                "include": true,
+                "model_url": "Gravity_inversion.gzson",
+                "popups": {},
+                "src_filename": "Gravity_inversion.zip",
+                "styling": {},
+                "type": "GZSON"
             },
             {
                 "alt_group_label": "Gocad objects",
@@ -22879,6 +22934,17 @@
             },
             {
                 "alt_group_label": "Gocad objects",
+                "display_name": "MAGNETIC INVERSION",
+                "displayed": true,
+                "include": true,
+                "model_url": "Magnetic_inversion.gzson",
+                "popups": {},
+                "src_filename": "Magnetic_inversion.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "Gocad objects",
                 "display_name": "SZ01 Jindarnga",
                 "displayed": true,
                 "include": true,
@@ -30383,6 +30449,28 @@
             },
             {
                 "alt_group_label": "Gocad objects",
+                "display_name": "TMI 3K POINTS",
+                "displayed": true,
+                "include": true,
+                "model_url": "TMI_3k_points.gzson",
+                "popups": {},
+                "src_filename": "TMI_3k_points.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "Gocad objects",
+                "display_name": "TMI 3K UP5",
+                "displayed": true,
+                "include": true,
+                "model_url": "TMI_3k_up5.gzson",
+                "popups": {},
+                "src_filename": "TMI_3k_up5.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "Gocad objects",
                 "display_name": "Topo 2k surface",
                 "displayed": true,
                 "include": true,
@@ -30424,96 +30512,6 @@
                 "type": "WMSLayer",
                 "version": "1.3.0"
             }
-        ],
-        "output": [
-            {
-                "alt_group_label": "output",
-                "display_name": "08GA OM1 CDP",
-                "displayed": true,
-                "include": true,
-                "model_url": "08GA_OM1_CDP.gzson",
-                "popups": {},
-                "src_filename": "08GA_OM1_CDP.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "13GA EG1 CDP",
-                "displayed": true,
-                "include": true,
-                "model_url": "13GA_EG1_CDP.gzson",
-                "popups": {},
-                "src_filename": "13GA_EG1_CDP.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "GRAV 3KM POINTS",
-                "displayed": true,
-                "include": true,
-                "model_url": "Grav_3km_points.gzson",
-                "popups": {},
-                "src_filename": "Grav_3km_points.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "GRAV 3KM UP20 POINTS",
-                "displayed": true,
-                "include": true,
-                "model_url": "Grav_3km_up20_points.gzson",
-                "popups": {},
-                "src_filename": "Grav_3km_up20_points.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "GRAVITY INVERSION",
-                "displayed": true,
-                "include": true,
-                "model_url": "Gravity_inversion.gzson",
-                "popups": {},
-                "src_filename": "Gravity_inversion.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "MAGNETIC INVERSION",
-                "displayed": true,
-                "include": true,
-                "model_url": "Magnetic_inversion.gzson",
-                "popups": {},
-                "src_filename": "Magnetic_inversion.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "TMI 3K POINTS",
-                "displayed": true,
-                "include": true,
-                "model_url": "TMI_3k_points.gzson",
-                "popups": {},
-                "src_filename": "TMI_3k_points.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "TMI 3K UP5",
-                "displayed": true,
-                "include": true,
-                "model_url": "TMI_3k_up5.gzson",
-                "popups": {},
-                "src_filename": "TMI_3k_up5.zip",
-                "styling": {},
-                "type": "GZSON"
-            }
         ]
     },
     "properties": {
@@ -30525,7 +30523,7 @@
             6809000.0
         ],
         "init_cam_dist": 500000.0,
-        "name": "westerngawler",
+        "name": "Western Gawler",
         "proj4_defn": "+proj=utm +zone=53 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
     },
     "type": "GeologicalModel",

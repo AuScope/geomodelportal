@@ -34,7 +34,7 @@
             16730178.84
         ],
         "init_cam_dist": 200000.0,
-        "name": "StuartShelf",
+        "name": "Stuart Shelf",
         "proj4_defn": "+proj=utm +zone=53 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
     },
     "type": "GeologicalModel",

@@ -2,7 +2,7 @@
     "groups": {
         "Conductivity": [
             {
-                "alt_group_label": "output",
+                "alt_group_label": "pointsets_gocad",
                 "display_name": "GEOTHERM CONDUCTIVITY Z55MGA",
                 "displayed": true,
                 "include": true,
@@ -1501,7 +1501,7 @@
         ],
         "Density": [
             {
-                "alt_group_label": "output",
+                "alt_group_label": "pointsets_gocad",
                 "display_name": "BULKDRY DENSITY CORE",
                 "displayed": true,
                 "include": true,
@@ -1913,7 +1913,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "pointsets_gocad",
                 "display_name": "BULKWET DENSITY CORE",
                 "displayed": true,
                 "include": true,
@@ -2360,7 +2360,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "pointsets_gocad",
                 "display_name": "BULKWET DENSITY CORE NO-DEPTH",
                 "displayed": true,
                 "include": true,
@@ -2752,7 +2752,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "pointsets_gocad",
                 "display_name": "BULKWET DENSITY SAMPLE",
                 "displayed": true,
                 "include": true,
@@ -4834,7 +4834,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "pointsets_gocad",
                 "display_name": "DENSITY GSV PETRO DATABASE",
                 "displayed": true,
                 "include": true,
@@ -4845,7 +4845,7 @@
                 "type": "GZSON"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "pointsets_gocad",
                 "display_name": "GEOTHERM DENSITY Z55MGA",
                 "displayed": true,
                 "include": true,
@@ -5474,7 +5474,7 @@
         ],
         "Magnetic Susceptibility": [
             {
-                "alt_group_label": "output",
+                "alt_group_label": "pointsets_gocad",
                 "display_name": "MAGNETIC SUSC GSV SITES DATABASE",
                 "displayed": true,
                 "include": true,
@@ -5487,7 +5487,7 @@
         ],
         "Permeability": [
             {
-                "alt_group_label": "output",
+                "alt_group_label": "pointsets_gocad",
                 "display_name": "PERMEABILITY GSV PETRO DATABASE",
                 "displayed": true,
                 "include": true,
@@ -5500,7 +5500,7 @@
         ],
         "Porosity": [
             {
-                "alt_group_label": "output",
+                "alt_group_label": "pointsets_gocad",
                 "display_name": "GEOTHERM POROSITY Z55MGA",
                 "displayed": true,
                 "include": true,
@@ -6132,7 +6132,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "pointsets_gocad",
                 "display_name": "POROSITY GSV PETRO DATABASE",
                 "displayed": true,
                 "include": true,
@@ -6145,7 +6145,7 @@
         ],
         "Temperature": [
             {
-                "alt_group_label": "output",
+                "alt_group_label": "pointsets_gocad",
                 "display_name": "TEMPERATURE FROG TECH",
                 "displayed": true,
                 "include": true,
@@ -8927,7 +8927,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "pointsets_gocad",
                 "display_name": "TEMPERATURE VIMP OFFSHORE",
                 "displayed": true,
                 "include": true,
@@ -9244,7 +9244,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "pointsets_gocad",
                 "display_name": "TEMPERATURE VIMP ONSHORE",
                 "displayed": true,
                 "include": true,

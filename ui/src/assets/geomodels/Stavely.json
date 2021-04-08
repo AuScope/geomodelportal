@@ -65,6 +65,239 @@
                 "type": "GLTFObject"
             }
         ],
+        "Stavely_section": [
+            {
+                "alt_group_label": "Stavely_section",
+                "display_name": "STAVELY SECTION-01 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "stavely_section-01_reg_gsv_stavely_3d_cs_section_01_ps_prop@@.PNG",
+                "popups": {
+                    "stavely_section-01_reg_gsv_stavely_3d_cs_section_01_ps_prop@@": {
+                        "name": "GSV_STAVELY_3D_CS_SECTION_01_PS_PROP",
+                        "title": "GSV_STAVELY_3D_CS_SECTION_01_PS_PROP"
+                    }
+                },
+                "position": [
+                    587289.0625,
+                    5780273.0,
+                    -45512.81640625
+                ],
+                "src_filename": "stavely_section-01_reg_gsv_stavely_3d_cs_section_01_ps_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "Stavely_section",
+                "display_name": "STAVELY SECTION-02 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "stavely_section-02_reg_gsv_stavely_3d_cs_section_02_ps_prop@@.PNG",
+                "popups": {
+                    "stavely_section-02_reg_gsv_stavely_3d_cs_section_02_ps_prop@@": {
+                        "name": "GSV_STAVELY_3D_CS_SECTION_02_PS_PROP",
+                        "title": "GSV_STAVELY_3D_CS_SECTION_02_PS_PROP"
+                    }
+                },
+                "position": [
+                    586701.0625,
+                    5798256.0,
+                    -44942.79296875
+                ],
+                "src_filename": "stavely_section-02_reg_gsv_stavely_3d_cs_section_02_ps_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "Stavely_section",
+                "display_name": "STAVELY SECTION-03 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "stavely_section-03_reg_gsv_stavely_3d_cs_section_03_ps_prop@@.PNG",
+                "popups": {
+                    "stavely_section-03_reg_gsv_stavely_3d_cs_section_03_ps_prop@@": {
+                        "name": "GSV_STAVELY_3D_CS_SECTION_03_PS_PROP",
+                        "title": "GSV_STAVELY_3D_CS_SECTION_03_PS_PROP"
+                    }
+                },
+                "position": [
+                    580556.5625,
+                    5816598.5,
+                    -45367.55078125
+                ],
+                "src_filename": "stavely_section-03_reg_gsv_stavely_3d_cs_section_03_ps_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "Stavely_section",
+                "display_name": "STAVELY SECTION-04 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "stavely_section-04_reg_gsv_stavely_3d_cs_section_04_ps_prop@@.PNG",
+                "popups": {
+                    "stavely_section-04_reg_gsv_stavely_3d_cs_section_04_ps_prop@@": {
+                        "name": "GSV_STAVELY_3D_CS_SECTION_04_PS_PROP",
+                        "title": "GSV_STAVELY_3D_CS_SECTION_04_PS_PROP"
+                    }
+                },
+                "position": [
+                    571242.625,
+                    5842486.0,
+                    -46249.3203125
+                ],
+                "src_filename": "stavely_section-04_reg_gsv_stavely_3d_cs_section_04_ps_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "Stavely_section",
+                "display_name": "STAVELY SECTION-05 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "stavely_section-05_reg_gsv_stavely_3d_cs_section_05_ps_prop@@.PNG",
+                "popups": {
+                    "stavely_section-05_reg_gsv_stavely_3d_cs_section_05_ps_prop@@": {
+                        "name": "GSV_STAVELY_3D_CS_SECTION_05_PS_PROP",
+                        "title": "GSV_STAVELY_3D_CS_SECTION_05_PS_PROP"
+                    }
+                },
+                "position": [
+                    604821.5,
+                    5823199.5,
+                    -44005.92578125
+                ],
+                "src_filename": "stavely_section-05_reg_gsv_stavely_3d_cs_section_05_ps_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "Stavely_section",
+                "display_name": "STAVELY SECTION-06 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "stavely_section-06_reg_gsv_stavely_3d_cs_section_06_ps_prop@@.PNG",
+                "popups": {
+                    "stavely_section-06_reg_gsv_stavely_3d_cs_section_06_ps_prop@@": {
+                        "name": "GSV_STAVELY_3D_CS_SECTION_06_PS_PROP",
+                        "title": "GSV_STAVELY_3D_CS_SECTION_06_PS_PROP"
+                    }
+                },
+                "position": [
+                    562999.6875,
+                    5874941.0,
+                    -45261.46484375
+                ],
+                "src_filename": "stavely_section-06_reg_gsv_stavely_3d_cs_section_06_ps_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "Stavely_section",
+                "display_name": "STAVELY SECTION-07 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "stavely_section-07_reg_gsv_stavely_3d_cs_section_07_ps_prop@@.PNG",
+                "popups": {
+                    "stavely_section-07_reg_gsv_stavely_3d_cs_section_07_ps_prop@@": {
+                        "name": "GSV_STAVELY_3D_CS_SECTION_07_PS_PROP",
+                        "title": "GSV_STAVELY_3D_CS_SECTION_07_PS_PROP"
+                    }
+                },
+                "position": [
+                    551747.9375,
+                    5918074.5,
+                    -44672.91015625
+                ],
+                "src_filename": "stavely_section-07_reg_gsv_stavely_3d_cs_section_07_ps_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "Stavely_section",
+                "display_name": "STAVELY SECTION-08 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "stavely_section-08_reg_gsv_stavely_3d_cs_section_08_ps_prop@@.PNG",
+                "popups": {
+                    "stavely_section-08_reg_gsv_stavely_3d_cs_section_08_ps_prop@@": {
+                        "name": "GSV_STAVELY_3D_CS_SECTION_08_PS_PROP",
+                        "title": "GSV_STAVELY_3D_CS_SECTION_08_PS_PROP"
+                    }
+                },
+                "position": [
+                    546037.1875,
+                    5915458.5,
+                    -44929.015625
+                ],
+                "src_filename": "stavely_section-08_reg_gsv_stavely_3d_cs_section_08_ps_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "Stavely_section",
+                "display_name": "STAVELY SECTION-09 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "stavely_section-09_reg_gsv_stavely_3d_cs_section_09_ps_prop@@.PNG",
+                "popups": {
+                    "stavely_section-09_reg_gsv_stavely_3d_cs_section_09_ps_prop@@": {
+                        "name": "GSV_STAVELY_3D_CS_SECTION_09_PS_PROP",
+                        "title": "GSV_STAVELY_3D_CS_SECTION_09_PS_PROP"
+                    }
+                },
+                "position": [
+                    537602.1875,
+                    5943480.5,
+                    -44733.484375
+                ],
+                "src_filename": "stavely_section-09_reg_gsv_stavely_3d_cs_section_09_ps_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "Stavely_section",
+                "display_name": "STAVELY SECTION-10 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "stavely_section-10_reg_gsv_stavely_3d_cs_section_10_ps_prop@@.PNG",
+                "popups": {
+                    "stavely_section-10_reg_gsv_stavely_3d_cs_section_10_ps_prop@@": {
+                        "name": "GSV_STAVELY_3D_CS_SECTION_10_PS_PROP",
+                        "title": "GSV_STAVELY_3D_CS_SECTION_10_PS_PROP"
+                    }
+                },
+                "position": [
+                    528158.5625,
+                    5953881.0,
+                    -43336.109375
+                ],
+                "src_filename": "stavely_section-10_reg_gsv_stavely_3d_cs_section_10_ps_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "Stavely_section",
+                "display_name": "STAVELY SECTION-11 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "stavely_section-11_reg_gsv_stavely_3d_cs_section_11_ps_prop@@.PNG",
+                "popups": {
+                    "stavely_section-11_reg_gsv_stavely_3d_cs_section_11_ps_prop@@": {
+                        "name": "GSV_STAVELY_3D_CS_SECTION_11_PS_PROP",
+                        "title": "GSV_STAVELY_3D_CS_SECTION_11_PS_PROP"
+                    }
+                },
+                "position": [
+                    521313.0625,
+                    5995764.0,
+                    -44937.328125
+                ],
+                "src_filename": "stavely_section-11_reg_gsv_stavely_3d_cs_section_11_ps_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            }
+        ],
         "WMS Layers": [
             {
                 "display_name": "GA Lithostratigraphy",
@@ -44794,6 +45027,344 @@
                 "type": "GLTFObject"
             }
         ],
+        "cross-section_voxets": [
+            {
+                "alt_group_label": "cross-section_voxets",
+                "display_name": "SECTION B1 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Section_B1_reg_section_B1_prop@@.PNG",
+                "popups": {
+                    "Section_B1_reg_section_B1_prop@@": {
+                        "name": "SECTION_B1_PROP",
+                        "title": "SECTION_B1_PROP"
+                    }
+                },
+                "position": [
+                    590948.1875,
+                    5892405.5,
+                    -16641.025390625
+                ],
+                "src_filename": "Section_B1_reg_section_B1_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "cross-section_voxets",
+                "display_name": "SECTION BA1 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Section_BA1_reg_Section_BA1_prop@@.PNG",
+                "popups": {
+                    "Section_BA1_reg_Section_BA1_prop@@": {
+                        "name": "SECTION_BA1_PROP",
+                        "title": "SECTION_BA1_PROP"
+                    }
+                },
+                "position": [
+                    573762.25,
+                    5888832.5,
+                    -10362.7900390625
+                ],
+                "src_filename": "Section_BA1_reg_Section_BA1_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "cross-section_voxets",
+                "display_name": "SECTION D1 REG 1 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Section_D1_reg_1_Section_D1_prop@@.PNG",
+                "popups": {
+                    "Section_D1_reg_1_Section_D1_prop@@": {
+                        "name": "SECTION_D1_PROP",
+                        "title": "SECTION_D1_PROP"
+                    }
+                },
+                "position": [
+                    569631.3125,
+                    5853671.5,
+                    -1946.32763671875
+                ],
+                "src_filename": "Section_D1_reg_1_Section_D1_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "cross-section_voxets",
+                "display_name": "SECTION D2 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Section_D2_reg_Section_D2_prop@@.PNG",
+                "popups": {
+                    "Section_D2_reg_Section_D2_prop@@": {
+                        "name": "SECTION_D2_PROP",
+                        "title": "SECTION_D2_PROP"
+                    }
+                },
+                "position": [
+                    571591.5625,
+                    5873212.5,
+                    -2956.273681640625
+                ],
+                "src_filename": "Section_D2_reg_Section_D2_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "cross-section_voxets",
+                "display_name": "SECTION F1 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Section_F1_reg_Section_F1_prop@@.PNG",
+                "popups": {
+                    "Section_F1_reg_Section_F1_prop@@": {
+                        "name": "SECTION_F1_PROP",
+                        "title": "SECTION_F1_PROP"
+                    }
+                },
+                "position": [
+                    646236.75,
+                    5883177.0,
+                    -5460.9375
+                ],
+                "src_filename": "Section_F1_reg_Section_F1_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "cross-section_voxets",
+                "display_name": "SECTION F3 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Section_F3_reg_Section_F3_prop@@.PNG",
+                "popups": {
+                    "Section_F3_reg_Section_F3_prop@@": {
+                        "name": "SECTION_F3_PROP",
+                        "title": "SECTION_F3_PROP"
+                    }
+                },
+                "position": [
+                    638010.3125,
+                    5904139.0,
+                    -2876.923095703125
+                ],
+                "src_filename": "Section_F3_reg_Section_F3_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "cross-section_voxets",
+                "display_name": "SECTION GN1 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Section_GN1_reg_Section_GN1_prop@@.PNG",
+                "popups": {
+                    "Section_GN1_reg_Section_GN1_prop@@": {
+                        "name": "SECTION_GN1_PROP",
+                        "title": "SECTION_GN1_PROP"
+                    }
+                },
+                "position": [
+                    627409.9375,
+                    5878231.5,
+                    -3219.575927734375
+                ],
+                "src_filename": "Section_GN1_reg_Section_GN1_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "cross-section_voxets",
+                "display_name": "SECTION GN2 REG1 16 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Section_GN2_reg1_16_Section_GN2_prop@@.PNG",
+                "popups": {
+                    "Section_GN2_reg1_16_Section_GN2_prop@@": {
+                        "name": "SECTION_GN2_PROP",
+                        "title": "SECTION_GN2_PROP"
+                    }
+                },
+                "position": [
+                    606667.0625,
+                    5890676.0,
+                    -12192.5234375
+                ],
+                "src_filename": "Section_GN2_reg1_16_Section_GN2_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "cross-section_voxets",
+                "display_name": "SECTION GN3 1 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Section_GN3_1_reg_Section_GN3_1_prop@@.PNG",
+                "popups": {
+                    "Section_GN3_1_reg_Section_GN3_1_prop@@": {
+                        "name": "SECTION_GN3_1_PROP",
+                        "title": "SECTION_GN3_1_PROP"
+                    }
+                },
+                "position": [
+                    614729.0625,
+                    5914850.5,
+                    -7213.36279296875
+                ],
+                "src_filename": "Section_GN3_1_reg_Section_GN3_1_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "cross-section_voxets",
+                "display_name": "SECTION GN3 2 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Section_GN3_2_reg_Section_GN3_2_prop@@.PNG",
+                "popups": {
+                    "Section_GN3_2_reg_Section_GN3_2_prop@@": {
+                        "name": "SECTION_GN3_2_PROP",
+                        "title": "SECTION_GN3_2_PROP"
+                    }
+                },
+                "position": [
+                    627975.25,
+                    5903187.0,
+                    -7172.72265625
+                ],
+                "src_filename": "Section_GN3_2_reg_Section_GN3_2_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "cross-section_voxets",
+                "display_name": "SECTION GS1 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Section_GS1_reg_Section_GS1_prop@@.PNG",
+                "popups": {
+                    "Section_GS1_reg_Section_GS1_prop@@": {
+                        "name": "SECTION_GS1_PROP",
+                        "title": "SECTION_GS1_PROP"
+                    }
+                },
+                "position": [
+                    627254.5,
+                    5863608.5,
+                    -13351.6396484375
+                ],
+                "src_filename": "Section_GS1_reg_Section_GS1_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "cross-section_voxets",
+                "display_name": "SECTION GS2 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Section_GS2_reg_Section_GS2_prop@@.PNG",
+                "popups": {
+                    "Section_GS2_reg_Section_GS2_prop@@": {
+                        "name": "SECTION_GS2_PROP",
+                        "title": "SECTION_GS2_PROP"
+                    }
+                },
+                "position": [
+                    605300.375,
+                    5863927.5,
+                    -10282.787109375
+                ],
+                "src_filename": "Section_GS2_reg_Section_GS2_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "cross-section_voxets",
+                "display_name": "SECTION GS3 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Section_GS3_reg_Section_GS3_prop@@.PNG",
+                "popups": {
+                    "Section_GS3_reg_Section_GS3_prop@@": {
+                        "name": "SECTION_GS3_PROP",
+                        "title": "SECTION_GS3_PROP"
+                    }
+                },
+                "position": [
+                    621992.375,
+                    5871181.0,
+                    -11101.009765625
+                ],
+                "src_filename": "Section_GS3_reg_Section_GS3_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "cross-section_voxets",
+                "display_name": "SECTION GS4 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Section_GS4_reg_Section_GS4_prop@@.PNG",
+                "popups": {
+                    "Section_GS4_reg_Section_GS4_prop@@": {
+                        "name": "SECTION_GS4_PROP",
+                        "title": "SECTION_GS4_PROP"
+                    }
+                },
+                "position": [
+                    609898.125,
+                    5871190.5,
+                    -6880.0
+                ],
+                "src_filename": "Section_GS4_reg_Section_GS4_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "cross-section_voxets",
+                "display_name": "SECTION M1 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Section_M1_reg_Section_M1_prop@@.PNG",
+                "popups": {
+                    "Section_M1_reg_Section_M1_prop@@": {
+                        "name": "SECTION_M1_PROP",
+                        "title": "SECTION_M1_PROP"
+                    }
+                },
+                "position": [
+                    586846.9375,
+                    5864289.5,
+                    -9750.0
+                ],
+                "src_filename": "Section_M1_reg_Section_M1_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "cross-section_voxets",
+                "display_name": "W1 CROP REG 1 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "W1_crop_reg_1_W1_crop_prop@@.PNG",
+                "popups": {
+                    "W1_crop_reg_1_W1_crop_prop@@": {
+                        "name": "W1_CROP_PROP",
+                        "title": "W1_CROP_PROP"
+                    }
+                },
+                "position": [
+                    644209.5,
+                    5868563.5,
+                    -11008.076171875
+                ],
+                "src_filename": "W1_crop_reg_1_W1_crop_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            }
+        ],
         "curve_pl": [
             {
                 "alt_group_label": "curve_pl",
@@ -65334,6 +65905,430 @@
                 "type": "GLTFObject"
             }
         ],
+        "gravity_forward_models": [
+            {
+                "alt_group_label": "gravity_forward_models",
+                "display_name": "PROFILE SECTION1 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "profile_section1_reg_profile_section1_prop@@.PNG",
+                "popups": {
+                    "profile_section1_reg_profile_section1_prop@@": {
+                        "name": "PROFILE_SECTION1_PROP",
+                        "title": "PROFILE_SECTION1_PROP"
+                    }
+                },
+                "position": [
+                    592179.5,
+                    5780888.0,
+                    -46217.10546875
+                ],
+                "src_filename": "profile_section1_reg_profile_section1_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "gravity_forward_models",
+                "display_name": "PROFILE SECTION10 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "profile_section10_reg_profile_section10_prop@@.PNG",
+                "popups": {
+                    "profile_section10_reg_profile_section10_prop@@": {
+                        "name": "PROFILE_SECTION10_PROP",
+                        "title": "PROFILE_SECTION10_PROP"
+                    }
+                },
+                "position": [
+                    537469.625,
+                    5958469.5,
+                    -45933.33203125
+                ],
+                "src_filename": "profile_section10_reg_profile_section10_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "gravity_forward_models",
+                "display_name": "PROFILE SECTION11 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "profile_section11_reg_profile_section11_prop@@.PNG",
+                "popups": {
+                    "profile_section11_reg_profile_section11_prop@@": {
+                        "name": "PROFILE_SECTION11_PROP",
+                        "title": "PROFILE_SECTION11_PROP"
+                    }
+                },
+                "position": [
+                    533636.0625,
+                    6000618.0,
+                    -45971.64453125
+                ],
+                "src_filename": "profile_section11_reg_profile_section11_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "gravity_forward_models",
+                "display_name": "PROFILE SECTION2 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "profile_section2_reg_profile_section2_prop@@.PNG",
+                "popups": {
+                    "profile_section2_reg_profile_section2_prop@@": {
+                        "name": "PROFILE_SECTION2_PROP",
+                        "title": "PROFILE_SECTION2_PROP"
+                    }
+                },
+                "position": [
+                    586375.3125,
+                    5798202.0,
+                    -46134.5859375
+                ],
+                "src_filename": "profile_section2_reg_profile_section2_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "gravity_forward_models",
+                "display_name": "PROFILE SECTION3 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "profile_section3_reg_profile_section3_prop@@.PNG",
+                "popups": {
+                    "profile_section3_reg_profile_section3_prop@@": {
+                        "name": "PROFILE_SECTION3_PROP",
+                        "title": "PROFILE_SECTION3_PROP"
+                    }
+                },
+                "position": [
+                    581037.4375,
+                    5816769.5,
+                    -46025.10546875
+                ],
+                "src_filename": "profile_section3_reg_profile_section3_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "gravity_forward_models",
+                "display_name": "PROFILE SECTION4 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "profile_section4_reg_profile_section4_prop@@.PNG",
+                "popups": {
+                    "profile_section4_reg_profile_section4_prop@@": {
+                        "name": "PROFILE_SECTION4_PROP",
+                        "title": "PROFILE_SECTION4_PROP"
+                    }
+                },
+                "position": [
+                    571298.5,
+                    5842601.0,
+                    -45828.4765625
+                ],
+                "src_filename": "profile_section4_reg_profile_section4_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "gravity_forward_models",
+                "display_name": "PROFILE SECTION5 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "profile_section5_reg_profile_section5_prop@@.PNG",
+                "popups": {
+                    "profile_section5_reg_profile_section5_prop@@": {
+                        "name": "PROFILE_SECTION5_PROP",
+                        "title": "PROFILE_SECTION5_PROP"
+                    }
+                },
+                "position": [
+                    615877.5,
+                    5833418.5,
+                    -46097.15234375
+                ],
+                "src_filename": "profile_section5_reg_profile_section5_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "gravity_forward_models",
+                "display_name": "PROFILE SECTION6 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "profile_section6_reg_profile_section6_prop@@.PNG",
+                "popups": {
+                    "profile_section6_reg_profile_section6_prop@@": {
+                        "name": "PROFILE_SECTION6_PROP",
+                        "title": "PROFILE_SECTION6_PROP"
+                    }
+                },
+                "position": [
+                    567245.875,
+                    5875895.0,
+                    -46236.37890625
+                ],
+                "src_filename": "profile_section6_reg_profile_section6_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "gravity_forward_models",
+                "display_name": "PROFILE SECTION7 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "profile_section7_reg_profile_section7_prop@@.PNG",
+                "popups": {
+                    "profile_section7_reg_profile_section7_prop@@": {
+                        "name": "PROFILE_SECTION7_PROP",
+                        "title": "PROFILE_SECTION7_PROP"
+                    }
+                },
+                "position": [
+                    552275.625,
+                    5918073.0,
+                    -46058.578125
+                ],
+                "src_filename": "profile_section7_reg_profile_section7_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "gravity_forward_models",
+                "display_name": "PROFILE SECTION8 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "profile_section8_reg_profile_section8_prop@@.PNG",
+                "popups": {
+                    "profile_section8_reg_profile_section8_prop@@": {
+                        "name": "PROFILE_SECTION8_PROP",
+                        "title": "PROFILE_SECTION8_PROP"
+                    }
+                },
+                "position": [
+                    552759.625,
+                    5917205.0,
+                    -46213.265625
+                ],
+                "src_filename": "profile_section8_reg_profile_section8_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "gravity_forward_models",
+                "display_name": "PROFILE SECTION9 REG 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "profile_section9_reg_profile_section9_prop@@.PNG",
+                "popups": {
+                    "profile_section9_reg_profile_section9_prop@@": {
+                        "name": "PROFILE_SECTION9_PROP",
+                        "title": "PROFILE_SECTION9_PROP"
+                    }
+                },
+                "position": [
+                    541430.75,
+                    5944682.0,
+                    -46203.94140625
+                ],
+                "src_filename": "profile_section9_reg_profile_section9_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            }
+        ],
+        "imagery": [
+            {
+                "alt_group_label": "imagery",
+                "display_name": "GRAVITY CBA267 1200DPI 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Gravity_cba267_1200dpi_Gravity_cba267_1200dpi_prop@@.PNG",
+                "popups": {
+                    "Gravity_cba267_1200dpi_Gravity_cba267_1200dpi_prop@@": {
+                        "name": "GRAVITY_CBA267_1200DPI_PROP",
+                        "title": "GRAVITY_CBA267_1200DPI_PROP"
+                    }
+                },
+                "position": [
+                    520349.20703125,
+                    5746832.171875,
+                    0.0
+                ],
+                "src_filename": "Gravity_cba267_1200dpi_Gravity_cba267_1200dpi_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "imagery",
+                "display_name": "GRAVITY CBA267-HP15000 1200DPI 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Gravity_cba267-HP15000_1200dpi_Gravity_cba267_HP15000_1200dpi_prop@@.PNG",
+                "popups": {
+                    "Gravity_cba267-HP15000_1200dpi_Gravity_cba267_HP15000_1200dpi_prop@@": {
+                        "name": "GRAVITY_CBA267_HP15000_1200DPI_PROP",
+                        "title": "GRAVITY_CBA267_HP15000_1200DPI_PROP"
+                    }
+                },
+                "position": [
+                    520349.20703125,
+                    5746832.171875,
+                    0.0
+                ],
+                "src_filename": "Gravity_cba267-HP15000_1200dpi_Gravity_cba267_HP15000_1200dpi_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "imagery",
+                "display_name": "GRAVITY CBA267-HP30000 1200DPI 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Gravity_cba267-HP30000_1200dpi_Gravity_cba267_HP30000_1200dpi_prop@@.PNG",
+                "popups": {
+                    "Gravity_cba267-HP30000_1200dpi_Gravity_cba267_HP30000_1200dpi_prop@@": {
+                        "name": "GRAVITY_CBA267_HP30000_1200DPI_PROP",
+                        "title": "GRAVITY_CBA267_HP30000_1200DPI_PROP"
+                    }
+                },
+                "position": [
+                    520349.20703125,
+                    5746832.171875,
+                    0.0
+                ],
+                "src_filename": "Gravity_cba267-HP30000_1200dpi_Gravity_cba267_HP30000_1200dpi_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "imagery",
+                "display_name": "GRAVITY HP30KM-RTP INTENSITY 1200DPI 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Gravity_HP30km-RTP_intensity_1200dpi_Gravity_HP30km_RTP_intensity_1200dpi_prop@@.PNG",
+                "popups": {
+                    "Gravity_HP30km-RTP_intensity_1200dpi_Gravity_HP30km_RTP_intensity_1200dpi_prop@@": {
+                        "name": "GRAVITY_HP30KM_RTP_INTENSITY_1200DPI_PROP",
+                        "title": "GRAVITY_HP30KM_RTP_INTENSITY_1200DPI_PROP"
+                    }
+                },
+                "position": [
+                    520349.20703125,
+                    5746832.171875,
+                    0.0
+                ],
+                "src_filename": "Gravity_HP30km-RTP_intensity_1200dpi_Gravity_HP30km_RTP_intensity_1200dpi_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "imagery",
+                "display_name": "MAGNETICS-FILTERED TILT-BP 1200DPI 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Magnetics-filtered_Tilt-BP_1200dpi_Magnetics_filtered_Tilt_BP_1200dpi_prop@@.PNG",
+                "popups": {
+                    "Magnetics-filtered_Tilt-BP_1200dpi_Magnetics_filtered_Tilt_BP_1200dpi_prop@@": {
+                        "name": "MAGNETICS_FILTERED_TILT_BP_1200DPI_PROP",
+                        "title": "MAGNETICS_FILTERED_TILT_BP_1200DPI_PROP"
+                    }
+                },
+                "position": [
+                    520349.20703125,
+                    5746832.171875,
+                    0.0
+                ],
+                "src_filename": "Magnetics-filtered_Tilt-BP_1200dpi_Magnetics_filtered_Tilt_BP_1200dpi_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "imagery",
+                "display_name": "MAGNETICS-TMI 1200DPI 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Magnetics-TMI_1200dpi_Magnetics_TMI_1200dpi_prop@@.PNG",
+                "popups": {
+                    "Magnetics-TMI_1200dpi_Magnetics_TMI_1200dpi_prop@@": {
+                        "name": "MAGNETICS_TMI_1200DPI_PROP",
+                        "title": "MAGNETICS_TMI_1200DPI_PROP"
+                    }
+                },
+                "position": [
+                    520349.20703125,
+                    5746832.171875,
+                    0.0
+                ],
+                "src_filename": "Magnetics-TMI_1200dpi_Magnetics_TMI_1200dpi_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "imagery",
+                "display_name": "RADIOMETRICS RGB 1200DPI 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Radiometrics_RGB_1200dpi_Radiometrics_RGB_1200dpi_prop@@.PNG",
+                "popups": {
+                    "Radiometrics_RGB_1200dpi_Radiometrics_RGB_1200dpi_prop@@": {
+                        "name": "RADIOMETRICS_RGB_1200DPI_PROP",
+                        "title": "RADIOMETRICS_RGB_1200DPI_PROP"
+                    }
+                },
+                "position": [
+                    520349.20703125,
+                    5746832.171875,
+                    0.0
+                ],
+                "src_filename": "Radiometrics_RGB_1200dpi_Radiometrics_RGB_1200dpi_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "imagery",
+                "display_name": "SEAMLESS-GEOLOGY 250K 1200DPI 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Seamless-geology_250k_1200dpi_Seamless_geology_250k_1200dpi_prop@@.PNG",
+                "popups": {
+                    "Seamless-geology_250k_1200dpi_Seamless_geology_250k_1200dpi_prop@@": {
+                        "name": "SEAMLESS_GEOLOGY_250K_1200DPI_PROP",
+                        "title": "SEAMLESS_GEOLOGY_250K_1200DPI_PROP"
+                    }
+                },
+                "position": [
+                    520349.20703125,
+                    5746832.171875,
+                    0.0
+                ],
+                "src_filename": "Seamless-geology_250k_1200dpi_Seamless_geology_250k_1200dpi_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "imagery",
+                "display_name": "SRTM 1200DPI 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "SRTM_1200dpi_SRTM_1200dpi_prop@@.PNG",
+                "popups": {
+                    "SRTM_1200dpi_SRTM_1200dpi_prop@@": {
+                        "name": "SRTM_1200DPI_PROP",
+                        "title": "SRTM_1200DPI_PROP"
+                    }
+                },
+                "position": [
+                    520349.20703125,
+                    5746832.171875,
+                    0.0
+                ],
+                "src_filename": "SRTM_1200dpi_SRTM_1200dpi_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            }
+        ],
         "intrusives": [
             {
                 "alt_group_label": "intrusives",
@@ -70314,828 +71309,9 @@
                 "type": "GLTFObject"
             }
         ],
-        "output": [
+        "points_vs": [
             {
-                "alt_group_label": "output",
-                "display_name": "AR LINE 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "AR_line_AR_line_updated_prop@@.PNG",
-                "popups": {
-                    "AR_line_AR_line_updated_prop@@": {
-                        "name": "AR_LINE_UPDATED_PROP",
-                        "title": "AR_LINE_UPDATED_PROP"
-                    }
-                },
-                "position": [
-                    570000.0,
-                    5860000.0,
-                    0.0
-                ],
-                "src_filename": "AR_line_AR_line_updated_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "FIG INTERP-97AGS-V1 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Fig_interp-97AGS-V1_Fig_interp_97AGS_V1_prop@@.PNG",
-                "popups": {
-                    "Fig_interp-97AGS-V1_Fig_interp_97AGS_V1_prop@@": {
-                        "name": "FIG_INTERP_97AGS_V1_PROP",
-                        "title": "FIG_INTERP_97AGS_V1_PROP"
-                    }
-                },
-                "position": [
-                    570000.0,
-                    5860000.0,
-                    0.0
-                ],
-                "src_filename": "Fig_interp-97AGS-V1_Fig_interp_97AGS_V1_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "FIG INTERP-97AGS-V2 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Fig_interp-97AGS-V2_Fig_interp_97AGS_V2_prop@@.PNG",
-                "popups": {
-                    "Fig_interp-97AGS-V2_Fig_interp_97AGS_V2_prop@@": {
-                        "name": "FIG_INTERP_97AGS_V2_PROP",
-                        "title": "FIG_INTERP_97AGS_V2_PROP"
-                    }
-                },
-                "position": [
-                    570000.0,
-                    5860000.0,
-                    0.0
-                ],
-                "src_filename": "Fig_interp-97AGS-V2_Fig_interp_97AGS_V2_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "GRAVITY CBA267 1200DPI 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Gravity_cba267_1200dpi_Gravity_cba267_1200dpi_prop@@.PNG",
-                "popups": {
-                    "Gravity_cba267_1200dpi_Gravity_cba267_1200dpi_prop@@": {
-                        "name": "GRAVITY_CBA267_1200DPI_PROP",
-                        "title": "GRAVITY_CBA267_1200DPI_PROP"
-                    }
-                },
-                "position": [
-                    520349.20703125,
-                    5746832.171875,
-                    0.0
-                ],
-                "src_filename": "Gravity_cba267_1200dpi_Gravity_cba267_1200dpi_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "GRAVITY CBA267-HP15000 1200DPI 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Gravity_cba267-HP15000_1200dpi_Gravity_cba267_HP15000_1200dpi_prop@@.PNG",
-                "popups": {
-                    "Gravity_cba267-HP15000_1200dpi_Gravity_cba267_HP15000_1200dpi_prop@@": {
-                        "name": "GRAVITY_CBA267_HP15000_1200DPI_PROP",
-                        "title": "GRAVITY_CBA267_HP15000_1200DPI_PROP"
-                    }
-                },
-                "position": [
-                    520349.20703125,
-                    5746832.171875,
-                    0.0
-                ],
-                "src_filename": "Gravity_cba267-HP15000_1200dpi_Gravity_cba267_HP15000_1200dpi_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "GRAVITY CBA267-HP30000 1200DPI 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Gravity_cba267-HP30000_1200dpi_Gravity_cba267_HP30000_1200dpi_prop@@.PNG",
-                "popups": {
-                    "Gravity_cba267-HP30000_1200dpi_Gravity_cba267_HP30000_1200dpi_prop@@": {
-                        "name": "GRAVITY_CBA267_HP30000_1200DPI_PROP",
-                        "title": "GRAVITY_CBA267_HP30000_1200DPI_PROP"
-                    }
-                },
-                "position": [
-                    520349.20703125,
-                    5746832.171875,
-                    0.0
-                ],
-                "src_filename": "Gravity_cba267-HP30000_1200dpi_Gravity_cba267_HP30000_1200dpi_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "GRAVITY HP30KM-RTP INTENSITY 1200DPI 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Gravity_HP30km-RTP_intensity_1200dpi_Gravity_HP30km_RTP_intensity_1200dpi_prop@@.PNG",
-                "popups": {
-                    "Gravity_HP30km-RTP_intensity_1200dpi_Gravity_HP30km_RTP_intensity_1200dpi_prop@@": {
-                        "name": "GRAVITY_HP30KM_RTP_INTENSITY_1200DPI_PROP",
-                        "title": "GRAVITY_HP30KM_RTP_INTENSITY_1200DPI_PROP"
-                    }
-                },
-                "position": [
-                    520349.20703125,
-                    5746832.171875,
-                    0.0
-                ],
-                "src_filename": "Gravity_HP30km-RTP_intensity_1200dpi_Gravity_HP30km_RTP_intensity_1200dpi_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "MAGNETICS-FILTERED TILT-BP 1200DPI 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Magnetics-filtered_Tilt-BP_1200dpi_Magnetics_filtered_Tilt_BP_1200dpi_prop@@.PNG",
-                "popups": {
-                    "Magnetics-filtered_Tilt-BP_1200dpi_Magnetics_filtered_Tilt_BP_1200dpi_prop@@": {
-                        "name": "MAGNETICS_FILTERED_TILT_BP_1200DPI_PROP",
-                        "title": "MAGNETICS_FILTERED_TILT_BP_1200DPI_PROP"
-                    }
-                },
-                "position": [
-                    520349.20703125,
-                    5746832.171875,
-                    0.0
-                ],
-                "src_filename": "Magnetics-filtered_Tilt-BP_1200dpi_Magnetics_filtered_Tilt_BP_1200dpi_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "MAGNETICS-TMI 1200DPI 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Magnetics-TMI_1200dpi_Magnetics_TMI_1200dpi_prop@@.PNG",
-                "popups": {
-                    "Magnetics-TMI_1200dpi_Magnetics_TMI_1200dpi_prop@@": {
-                        "name": "MAGNETICS_TMI_1200DPI_PROP",
-                        "title": "MAGNETICS_TMI_1200DPI_PROP"
-                    }
-                },
-                "position": [
-                    520349.20703125,
-                    5746832.171875,
-                    0.0
-                ],
-                "src_filename": "Magnetics-TMI_1200dpi_Magnetics_TMI_1200dpi_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "PROFILE SECTION1 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "profile_section1_reg_profile_section1_prop@@.PNG",
-                "popups": {
-                    "profile_section1_reg_profile_section1_prop@@": {
-                        "name": "PROFILE_SECTION1_PROP",
-                        "title": "PROFILE_SECTION1_PROP"
-                    }
-                },
-                "position": [
-                    592179.5,
-                    5780888.0,
-                    -46217.10546875
-                ],
-                "src_filename": "profile_section1_reg_profile_section1_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "PROFILE SECTION10 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "profile_section10_reg_profile_section10_prop@@.PNG",
-                "popups": {
-                    "profile_section10_reg_profile_section10_prop@@": {
-                        "name": "PROFILE_SECTION10_PROP",
-                        "title": "PROFILE_SECTION10_PROP"
-                    }
-                },
-                "position": [
-                    537469.625,
-                    5958469.5,
-                    -45933.33203125
-                ],
-                "src_filename": "profile_section10_reg_profile_section10_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "PROFILE SECTION11 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "profile_section11_reg_profile_section11_prop@@.PNG",
-                "popups": {
-                    "profile_section11_reg_profile_section11_prop@@": {
-                        "name": "PROFILE_SECTION11_PROP",
-                        "title": "PROFILE_SECTION11_PROP"
-                    }
-                },
-                "position": [
-                    533636.0625,
-                    6000618.0,
-                    -45971.64453125
-                ],
-                "src_filename": "profile_section11_reg_profile_section11_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "PROFILE SECTION2 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "profile_section2_reg_profile_section2_prop@@.PNG",
-                "popups": {
-                    "profile_section2_reg_profile_section2_prop@@": {
-                        "name": "PROFILE_SECTION2_PROP",
-                        "title": "PROFILE_SECTION2_PROP"
-                    }
-                },
-                "position": [
-                    586375.3125,
-                    5798202.0,
-                    -46134.5859375
-                ],
-                "src_filename": "profile_section2_reg_profile_section2_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "PROFILE SECTION3 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "profile_section3_reg_profile_section3_prop@@.PNG",
-                "popups": {
-                    "profile_section3_reg_profile_section3_prop@@": {
-                        "name": "PROFILE_SECTION3_PROP",
-                        "title": "PROFILE_SECTION3_PROP"
-                    }
-                },
-                "position": [
-                    581037.4375,
-                    5816769.5,
-                    -46025.10546875
-                ],
-                "src_filename": "profile_section3_reg_profile_section3_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "PROFILE SECTION4 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "profile_section4_reg_profile_section4_prop@@.PNG",
-                "popups": {
-                    "profile_section4_reg_profile_section4_prop@@": {
-                        "name": "PROFILE_SECTION4_PROP",
-                        "title": "PROFILE_SECTION4_PROP"
-                    }
-                },
-                "position": [
-                    571298.5,
-                    5842601.0,
-                    -45828.4765625
-                ],
-                "src_filename": "profile_section4_reg_profile_section4_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "PROFILE SECTION5 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "profile_section5_reg_profile_section5_prop@@.PNG",
-                "popups": {
-                    "profile_section5_reg_profile_section5_prop@@": {
-                        "name": "PROFILE_SECTION5_PROP",
-                        "title": "PROFILE_SECTION5_PROP"
-                    }
-                },
-                "position": [
-                    615877.5,
-                    5833418.5,
-                    -46097.15234375
-                ],
-                "src_filename": "profile_section5_reg_profile_section5_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "PROFILE SECTION6 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "profile_section6_reg_profile_section6_prop@@.PNG",
-                "popups": {
-                    "profile_section6_reg_profile_section6_prop@@": {
-                        "name": "PROFILE_SECTION6_PROP",
-                        "title": "PROFILE_SECTION6_PROP"
-                    }
-                },
-                "position": [
-                    567245.875,
-                    5875895.0,
-                    -46236.37890625
-                ],
-                "src_filename": "profile_section6_reg_profile_section6_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "PROFILE SECTION7 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "profile_section7_reg_profile_section7_prop@@.PNG",
-                "popups": {
-                    "profile_section7_reg_profile_section7_prop@@": {
-                        "name": "PROFILE_SECTION7_PROP",
-                        "title": "PROFILE_SECTION7_PROP"
-                    }
-                },
-                "position": [
-                    552275.625,
-                    5918073.0,
-                    -46058.578125
-                ],
-                "src_filename": "profile_section7_reg_profile_section7_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "PROFILE SECTION8 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "profile_section8_reg_profile_section8_prop@@.PNG",
-                "popups": {
-                    "profile_section8_reg_profile_section8_prop@@": {
-                        "name": "PROFILE_SECTION8_PROP",
-                        "title": "PROFILE_SECTION8_PROP"
-                    }
-                },
-                "position": [
-                    552759.625,
-                    5917205.0,
-                    -46213.265625
-                ],
-                "src_filename": "profile_section8_reg_profile_section8_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "PROFILE SECTION9 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "profile_section9_reg_profile_section9_prop@@.PNG",
-                "popups": {
-                    "profile_section9_reg_profile_section9_prop@@": {
-                        "name": "PROFILE_SECTION9_PROP",
-                        "title": "PROFILE_SECTION9_PROP"
-                    }
-                },
-                "position": [
-                    541430.75,
-                    5944682.0,
-                    -46203.94140625
-                ],
-                "src_filename": "profile_section9_reg_profile_section9_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "RADIOMETRICS RGB 1200DPI 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Radiometrics_RGB_1200dpi_Radiometrics_RGB_1200dpi_prop@@.PNG",
-                "popups": {
-                    "Radiometrics_RGB_1200dpi_Radiometrics_RGB_1200dpi_prop@@": {
-                        "name": "RADIOMETRICS_RGB_1200DPI_PROP",
-                        "title": "RADIOMETRICS_RGB_1200DPI_PROP"
-                    }
-                },
-                "position": [
-                    520349.20703125,
-                    5746832.171875,
-                    0.0
-                ],
-                "src_filename": "Radiometrics_RGB_1200dpi_Radiometrics_RGB_1200dpi_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "SD1 LINE UPDATED 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "SD1_line_updated_SD1_line_updated_prop@@.PNG",
-                "popups": {
-                    "SD1_line_updated_SD1_line_updated_prop@@": {
-                        "name": "SD1_LINE_UPDATED_PROP",
-                        "title": "SD1_LINE_UPDATED_PROP"
-                    }
-                },
-                "position": [
-                    570000.0,
-                    5860000.0,
-                    0.0
-                ],
-                "src_filename": "SD1_line_updated_SD1_line_updated_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "SEAMLESS-GEOLOGY 250K 1200DPI 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Seamless-geology_250k_1200dpi_Seamless_geology_250k_1200dpi_prop@@.PNG",
-                "popups": {
-                    "Seamless-geology_250k_1200dpi_Seamless_geology_250k_1200dpi_prop@@": {
-                        "name": "SEAMLESS_GEOLOGY_250K_1200DPI_PROP",
-                        "title": "SEAMLESS_GEOLOGY_250K_1200DPI_PROP"
-                    }
-                },
-                "position": [
-                    520349.20703125,
-                    5746832.171875,
-                    0.0
-                ],
-                "src_filename": "Seamless-geology_250k_1200dpi_Seamless_geology_250k_1200dpi_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "SECTION B1 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Section_B1_reg_section_B1_prop@@.PNG",
-                "popups": {
-                    "Section_B1_reg_section_B1_prop@@": {
-                        "name": "SECTION_B1_PROP",
-                        "title": "SECTION_B1_PROP"
-                    }
-                },
-                "position": [
-                    590948.1875,
-                    5892405.5,
-                    -16641.025390625
-                ],
-                "src_filename": "Section_B1_reg_section_B1_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "SECTION BA1 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Section_BA1_reg_Section_BA1_prop@@.PNG",
-                "popups": {
-                    "Section_BA1_reg_Section_BA1_prop@@": {
-                        "name": "SECTION_BA1_PROP",
-                        "title": "SECTION_BA1_PROP"
-                    }
-                },
-                "position": [
-                    573762.25,
-                    5888832.5,
-                    -10362.7900390625
-                ],
-                "src_filename": "Section_BA1_reg_Section_BA1_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "SECTION D1 REG 1 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Section_D1_reg_1_Section_D1_prop@@.PNG",
-                "popups": {
-                    "Section_D1_reg_1_Section_D1_prop@@": {
-                        "name": "SECTION_D1_PROP",
-                        "title": "SECTION_D1_PROP"
-                    }
-                },
-                "position": [
-                    569631.3125,
-                    5853671.5,
-                    -1946.32763671875
-                ],
-                "src_filename": "Section_D1_reg_1_Section_D1_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "SECTION D2 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Section_D2_reg_Section_D2_prop@@.PNG",
-                "popups": {
-                    "Section_D2_reg_Section_D2_prop@@": {
-                        "name": "SECTION_D2_PROP",
-                        "title": "SECTION_D2_PROP"
-                    }
-                },
-                "position": [
-                    571591.5625,
-                    5873212.5,
-                    -2956.273681640625
-                ],
-                "src_filename": "Section_D2_reg_Section_D2_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "SECTION F1 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Section_F1_reg_Section_F1_prop@@.PNG",
-                "popups": {
-                    "Section_F1_reg_Section_F1_prop@@": {
-                        "name": "SECTION_F1_PROP",
-                        "title": "SECTION_F1_PROP"
-                    }
-                },
-                "position": [
-                    646236.75,
-                    5883177.0,
-                    -5460.9375
-                ],
-                "src_filename": "Section_F1_reg_Section_F1_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "SECTION F3 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Section_F3_reg_Section_F3_prop@@.PNG",
-                "popups": {
-                    "Section_F3_reg_Section_F3_prop@@": {
-                        "name": "SECTION_F3_PROP",
-                        "title": "SECTION_F3_PROP"
-                    }
-                },
-                "position": [
-                    638010.3125,
-                    5904139.0,
-                    -2876.923095703125
-                ],
-                "src_filename": "Section_F3_reg_Section_F3_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "SECTION GN1 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Section_GN1_reg_Section_GN1_prop@@.PNG",
-                "popups": {
-                    "Section_GN1_reg_Section_GN1_prop@@": {
-                        "name": "SECTION_GN1_PROP",
-                        "title": "SECTION_GN1_PROP"
-                    }
-                },
-                "position": [
-                    627409.9375,
-                    5878231.5,
-                    -3219.575927734375
-                ],
-                "src_filename": "Section_GN1_reg_Section_GN1_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "SECTION GN2 REG1 16 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Section_GN2_reg1_16_Section_GN2_prop@@.PNG",
-                "popups": {
-                    "Section_GN2_reg1_16_Section_GN2_prop@@": {
-                        "name": "SECTION_GN2_PROP",
-                        "title": "SECTION_GN2_PROP"
-                    }
-                },
-                "position": [
-                    606667.0625,
-                    5890676.0,
-                    -12192.5234375
-                ],
-                "src_filename": "Section_GN2_reg1_16_Section_GN2_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "SECTION GN3 1 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Section_GN3_1_reg_Section_GN3_1_prop@@.PNG",
-                "popups": {
-                    "Section_GN3_1_reg_Section_GN3_1_prop@@": {
-                        "name": "SECTION_GN3_1_PROP",
-                        "title": "SECTION_GN3_1_PROP"
-                    }
-                },
-                "position": [
-                    614729.0625,
-                    5914850.5,
-                    -7213.36279296875
-                ],
-                "src_filename": "Section_GN3_1_reg_Section_GN3_1_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "SECTION GN3 2 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Section_GN3_2_reg_Section_GN3_2_prop@@.PNG",
-                "popups": {
-                    "Section_GN3_2_reg_Section_GN3_2_prop@@": {
-                        "name": "SECTION_GN3_2_PROP",
-                        "title": "SECTION_GN3_2_PROP"
-                    }
-                },
-                "position": [
-                    627975.25,
-                    5903187.0,
-                    -7172.72265625
-                ],
-                "src_filename": "Section_GN3_2_reg_Section_GN3_2_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "SECTION GS1 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Section_GS1_reg_Section_GS1_prop@@.PNG",
-                "popups": {
-                    "Section_GS1_reg_Section_GS1_prop@@": {
-                        "name": "SECTION_GS1_PROP",
-                        "title": "SECTION_GS1_PROP"
-                    }
-                },
-                "position": [
-                    627254.5,
-                    5863608.5,
-                    -13351.6396484375
-                ],
-                "src_filename": "Section_GS1_reg_Section_GS1_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "SECTION GS2 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Section_GS2_reg_Section_GS2_prop@@.PNG",
-                "popups": {
-                    "Section_GS2_reg_Section_GS2_prop@@": {
-                        "name": "SECTION_GS2_PROP",
-                        "title": "SECTION_GS2_PROP"
-                    }
-                },
-                "position": [
-                    605300.375,
-                    5863927.5,
-                    -10282.787109375
-                ],
-                "src_filename": "Section_GS2_reg_Section_GS2_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "SECTION GS3 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Section_GS3_reg_Section_GS3_prop@@.PNG",
-                "popups": {
-                    "Section_GS3_reg_Section_GS3_prop@@": {
-                        "name": "SECTION_GS3_PROP",
-                        "title": "SECTION_GS3_PROP"
-                    }
-                },
-                "position": [
-                    621992.375,
-                    5871181.0,
-                    -11101.009765625
-                ],
-                "src_filename": "Section_GS3_reg_Section_GS3_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "SECTION GS4 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Section_GS4_reg_Section_GS4_prop@@.PNG",
-                "popups": {
-                    "Section_GS4_reg_Section_GS4_prop@@": {
-                        "name": "SECTION_GS4_PROP",
-                        "title": "SECTION_GS4_PROP"
-                    }
-                },
-                "position": [
-                    609898.125,
-                    5871190.5,
-                    -6880.0
-                ],
-                "src_filename": "Section_GS4_reg_Section_GS4_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "SECTION M1 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "Section_M1_reg_Section_M1_prop@@.PNG",
-                "popups": {
-                    "Section_M1_reg_Section_M1_prop@@": {
-                        "name": "SECTION_M1_PROP",
-                        "title": "SECTION_M1_PROP"
-                    }
-                },
-                "position": [
-                    586846.9375,
-                    5864289.5,
-                    -9750.0
-                ],
-                "src_filename": "Section_M1_reg_Section_M1_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "SRTM 1200DPI 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "SRTM_1200dpi_SRTM_1200dpi_prop@@.PNG",
-                "popups": {
-                    "SRTM_1200dpi_SRTM_1200dpi_prop@@": {
-                        "name": "SRTM_1200DPI_PROP",
-                        "title": "SRTM_1200DPI_PROP"
-                    }
-                },
-                "position": [
-                    520349.20703125,
-                    5746832.171875,
-                    0.0
-                ],
-                "src_filename": "SRTM_1200dpi_SRTM_1200dpi_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
+                "alt_group_label": "points_vs",
                 "display_name": "STAVELY DRILL HOLES",
                 "displayed": true,
                 "include": true,
@@ -71217,238 +71393,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
-                "display_name": "STAVELY SECTION-01 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "stavely_section-01_reg_gsv_stavely_3d_cs_section_01_ps_prop@@.PNG",
-                "popups": {
-                    "stavely_section-01_reg_gsv_stavely_3d_cs_section_01_ps_prop@@": {
-                        "name": "GSV_STAVELY_3D_CS_SECTION_01_PS_PROP",
-                        "title": "GSV_STAVELY_3D_CS_SECTION_01_PS_PROP"
-                    }
-                },
-                "position": [
-                    587289.0625,
-                    5780273.0,
-                    -45512.81640625
-                ],
-                "src_filename": "stavely_section-01_reg_gsv_stavely_3d_cs_section_01_ps_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "STAVELY SECTION-02 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "stavely_section-02_reg_gsv_stavely_3d_cs_section_02_ps_prop@@.PNG",
-                "popups": {
-                    "stavely_section-02_reg_gsv_stavely_3d_cs_section_02_ps_prop@@": {
-                        "name": "GSV_STAVELY_3D_CS_SECTION_02_PS_PROP",
-                        "title": "GSV_STAVELY_3D_CS_SECTION_02_PS_PROP"
-                    }
-                },
-                "position": [
-                    586701.0625,
-                    5798256.0,
-                    -44942.79296875
-                ],
-                "src_filename": "stavely_section-02_reg_gsv_stavely_3d_cs_section_02_ps_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "STAVELY SECTION-03 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "stavely_section-03_reg_gsv_stavely_3d_cs_section_03_ps_prop@@.PNG",
-                "popups": {
-                    "stavely_section-03_reg_gsv_stavely_3d_cs_section_03_ps_prop@@": {
-                        "name": "GSV_STAVELY_3D_CS_SECTION_03_PS_PROP",
-                        "title": "GSV_STAVELY_3D_CS_SECTION_03_PS_PROP"
-                    }
-                },
-                "position": [
-                    580556.5625,
-                    5816598.5,
-                    -45367.55078125
-                ],
-                "src_filename": "stavely_section-03_reg_gsv_stavely_3d_cs_section_03_ps_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "STAVELY SECTION-04 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "stavely_section-04_reg_gsv_stavely_3d_cs_section_04_ps_prop@@.PNG",
-                "popups": {
-                    "stavely_section-04_reg_gsv_stavely_3d_cs_section_04_ps_prop@@": {
-                        "name": "GSV_STAVELY_3D_CS_SECTION_04_PS_PROP",
-                        "title": "GSV_STAVELY_3D_CS_SECTION_04_PS_PROP"
-                    }
-                },
-                "position": [
-                    571242.625,
-                    5842486.0,
-                    -46249.3203125
-                ],
-                "src_filename": "stavely_section-04_reg_gsv_stavely_3d_cs_section_04_ps_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "STAVELY SECTION-05 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "stavely_section-05_reg_gsv_stavely_3d_cs_section_05_ps_prop@@.PNG",
-                "popups": {
-                    "stavely_section-05_reg_gsv_stavely_3d_cs_section_05_ps_prop@@": {
-                        "name": "GSV_STAVELY_3D_CS_SECTION_05_PS_PROP",
-                        "title": "GSV_STAVELY_3D_CS_SECTION_05_PS_PROP"
-                    }
-                },
-                "position": [
-                    604821.5,
-                    5823199.5,
-                    -44005.92578125
-                ],
-                "src_filename": "stavely_section-05_reg_gsv_stavely_3d_cs_section_05_ps_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "STAVELY SECTION-06 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "stavely_section-06_reg_gsv_stavely_3d_cs_section_06_ps_prop@@.PNG",
-                "popups": {
-                    "stavely_section-06_reg_gsv_stavely_3d_cs_section_06_ps_prop@@": {
-                        "name": "GSV_STAVELY_3D_CS_SECTION_06_PS_PROP",
-                        "title": "GSV_STAVELY_3D_CS_SECTION_06_PS_PROP"
-                    }
-                },
-                "position": [
-                    562999.6875,
-                    5874941.0,
-                    -45261.46484375
-                ],
-                "src_filename": "stavely_section-06_reg_gsv_stavely_3d_cs_section_06_ps_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "STAVELY SECTION-07 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "stavely_section-07_reg_gsv_stavely_3d_cs_section_07_ps_prop@@.PNG",
-                "popups": {
-                    "stavely_section-07_reg_gsv_stavely_3d_cs_section_07_ps_prop@@": {
-                        "name": "GSV_STAVELY_3D_CS_SECTION_07_PS_PROP",
-                        "title": "GSV_STAVELY_3D_CS_SECTION_07_PS_PROP"
-                    }
-                },
-                "position": [
-                    551747.9375,
-                    5918074.5,
-                    -44672.91015625
-                ],
-                "src_filename": "stavely_section-07_reg_gsv_stavely_3d_cs_section_07_ps_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "STAVELY SECTION-08 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "stavely_section-08_reg_gsv_stavely_3d_cs_section_08_ps_prop@@.PNG",
-                "popups": {
-                    "stavely_section-08_reg_gsv_stavely_3d_cs_section_08_ps_prop@@": {
-                        "name": "GSV_STAVELY_3D_CS_SECTION_08_PS_PROP",
-                        "title": "GSV_STAVELY_3D_CS_SECTION_08_PS_PROP"
-                    }
-                },
-                "position": [
-                    546037.1875,
-                    5915458.5,
-                    -44929.015625
-                ],
-                "src_filename": "stavely_section-08_reg_gsv_stavely_3d_cs_section_08_ps_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "STAVELY SECTION-09 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "stavely_section-09_reg_gsv_stavely_3d_cs_section_09_ps_prop@@.PNG",
-                "popups": {
-                    "stavely_section-09_reg_gsv_stavely_3d_cs_section_09_ps_prop@@": {
-                        "name": "GSV_STAVELY_3D_CS_SECTION_09_PS_PROP",
-                        "title": "GSV_STAVELY_3D_CS_SECTION_09_PS_PROP"
-                    }
-                },
-                "position": [
-                    537602.1875,
-                    5943480.5,
-                    -44733.484375
-                ],
-                "src_filename": "stavely_section-09_reg_gsv_stavely_3d_cs_section_09_ps_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "STAVELY SECTION-10 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "stavely_section-10_reg_gsv_stavely_3d_cs_section_10_ps_prop@@.PNG",
-                "popups": {
-                    "stavely_section-10_reg_gsv_stavely_3d_cs_section_10_ps_prop@@": {
-                        "name": "GSV_STAVELY_3D_CS_SECTION_10_PS_PROP",
-                        "title": "GSV_STAVELY_3D_CS_SECTION_10_PS_PROP"
-                    }
-                },
-                "position": [
-                    528158.5625,
-                    5953881.0,
-                    -43336.109375
-                ],
-                "src_filename": "stavely_section-10_reg_gsv_stavely_3d_cs_section_10_ps_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "STAVELY SECTION-11 REG 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "stavely_section-11_reg_gsv_stavely_3d_cs_section_11_ps_prop@@.PNG",
-                "popups": {
-                    "stavely_section-11_reg_gsv_stavely_3d_cs_section_11_ps_prop@@": {
-                        "name": "GSV_STAVELY_3D_CS_SECTION_11_PS_PROP",
-                        "title": "GSV_STAVELY_3D_CS_SECTION_11_PS_PROP"
-                    }
-                },
-                "position": [
-                    521313.0625,
-                    5995764.0,
-                    -44937.328125
-                ],
-                "src_filename": "stavely_section-11_reg_gsv_stavely_3d_cs_section_11_ps_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
-            },
-            {
-                "alt_group_label": "output",
+                "alt_group_label": "points_vs",
                 "display_name": "TOWNS",
                 "displayed": true,
                 "include": true,
@@ -71515,7 +71460,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "points_vs",
                 "display_name": "VIMP DRILLHOLES",
                 "displayed": true,
                 "include": true,
@@ -71620,27 +71565,6 @@
                 "src_filename": "VIMP_drillholes.zip",
                 "styling": {},
                 "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "output",
-                "display_name": "W1 CROP REG 1 1",
-                "displayed": true,
-                "include": true,
-                "model_url": "W1_crop_reg_1_W1_crop_prop@@.PNG",
-                "popups": {
-                    "W1_crop_reg_1_W1_crop_prop@@": {
-                        "name": "W1_CROP_PROP",
-                        "title": "W1_CROP_PROP"
-                    }
-                },
-                "position": [
-                    644209.5,
-                    5868563.5,
-                    -11008.076171875
-                ],
-                "src_filename": "W1_crop_reg_1_W1_crop_prop@@.PNG",
-                "styling": {},
-                "type": "ImagePlane"
             }
         ],
         "seismic_draped_on_surfaces": [
@@ -71675,6 +71599,90 @@
                 "src_filename": "97AGS_2.zip",
                 "styling": {},
                 "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "seismic_draped_on_surfaces",
+                "display_name": "AR LINE 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "AR_line_AR_line_updated_prop@@.PNG",
+                "popups": {
+                    "AR_line_AR_line_updated_prop@@": {
+                        "name": "AR_LINE_UPDATED_PROP",
+                        "title": "AR_LINE_UPDATED_PROP"
+                    }
+                },
+                "position": [
+                    570000.0,
+                    5860000.0,
+                    0.0
+                ],
+                "src_filename": "AR_line_AR_line_updated_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "seismic_draped_on_surfaces",
+                "display_name": "FIG INTERP-97AGS-V1 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Fig_interp-97AGS-V1_Fig_interp_97AGS_V1_prop@@.PNG",
+                "popups": {
+                    "Fig_interp-97AGS-V1_Fig_interp_97AGS_V1_prop@@": {
+                        "name": "FIG_INTERP_97AGS_V1_PROP",
+                        "title": "FIG_INTERP_97AGS_V1_PROP"
+                    }
+                },
+                "position": [
+                    570000.0,
+                    5860000.0,
+                    0.0
+                ],
+                "src_filename": "Fig_interp-97AGS-V1_Fig_interp_97AGS_V1_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "seismic_draped_on_surfaces",
+                "display_name": "FIG INTERP-97AGS-V2 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "Fig_interp-97AGS-V2_Fig_interp_97AGS_V2_prop@@.PNG",
+                "popups": {
+                    "Fig_interp-97AGS-V2_Fig_interp_97AGS_V2_prop@@": {
+                        "name": "FIG_INTERP_97AGS_V2_PROP",
+                        "title": "FIG_INTERP_97AGS_V2_PROP"
+                    }
+                },
+                "position": [
+                    570000.0,
+                    5860000.0,
+                    0.0
+                ],
+                "src_filename": "Fig_interp-97AGS-V2_Fig_interp_97AGS_V2_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
+            },
+            {
+                "alt_group_label": "seismic_draped_on_surfaces",
+                "display_name": "SD1 LINE UPDATED 1",
+                "displayed": true,
+                "include": true,
+                "model_url": "SD1_line_updated_SD1_line_updated_prop@@.PNG",
+                "popups": {
+                    "SD1_line_updated_SD1_line_updated_prop@@": {
+                        "name": "SD1_LINE_UPDATED_PROP",
+                        "title": "SD1_LINE_UPDATED_PROP"
+                    }
+                },
+                "position": [
+                    570000.0,
+                    5860000.0,
+                    0.0
+                ],
+                "src_filename": "SD1_line_updated_SD1_line_updated_prop@@.PNG",
+                "styling": {},
+                "type": "ImagePlane"
             },
             {
                 "alt_group_label": "seismic_draped_on_surfaces",

@@ -2374,7 +2374,7 @@
         ],
         "Geography": [
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "Avebury",
                 "displayed": true,
                 "include": true,
@@ -2401,7 +2401,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "Hellyer",
                 "displayed": true,
                 "include": true,
@@ -2428,7 +2428,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "Henty",
                 "displayed": true,
                 "include": true,
@@ -2452,7 +2452,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "Mt Lindsay",
                 "displayed": true,
                 "include": true,
@@ -2479,7 +2479,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "Queenstown",
                 "displayed": true,
                 "include": true,
@@ -2510,7 +2510,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "Renison",
                 "displayed": true,
                 "include": true,
@@ -2541,7 +2541,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "Rosebery",
                 "displayed": true,
                 "include": true,
@@ -2572,7 +2572,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "Strahan",
                 "displayed": true,
                 "include": true,
@@ -2603,7 +2603,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "Zeehan",
                 "displayed": true,
                 "include": true,
@@ -2997,7 +2997,7 @@
         ],
         "Grav model grids density": [
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "A Observed",
                 "displayed": true,
                 "include": true,
@@ -3018,7 +3018,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "B Forward",
                 "displayed": true,
                 "include": true,
@@ -3039,7 +3039,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "C Homogeneous",
                 "displayed": true,
                 "include": true,
@@ -3060,7 +3060,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "C Residual Homogeneous",
                 "displayed": true,
                 "include": true,
@@ -3081,7 +3081,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "D Heterogeneous",
                 "displayed": true,
                 "include": true,
@@ -3102,7 +3102,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "D Residual Heterogeneous",
                 "displayed": true,
                 "include": true,
@@ -3125,7 +3125,7 @@
         ],
         "Grid points": [
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "352000mE 5320000mN",
                 "displayed": true,
                 "include": true,
@@ -3147,7 +3147,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "352000mE 5335000mN",
                 "displayed": true,
                 "include": true,
@@ -3169,7 +3169,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "352000mE 5355000mN",
                 "displayed": true,
                 "include": true,
@@ -3191,7 +3191,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "352000mE 5375000mN",
                 "displayed": true,
                 "include": true,
@@ -3213,7 +3213,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "352000mE 5395000mN",
                 "displayed": true,
                 "include": true,
@@ -3235,7 +3235,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "372000mE 5320000mN",
                 "displayed": true,
                 "include": true,
@@ -3257,7 +3257,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "372000mE 5335000mN",
                 "displayed": true,
                 "include": true,
@@ -3279,7 +3279,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "372000mE 5355000mN",
                 "displayed": true,
                 "include": true,
@@ -3301,7 +3301,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "372000mE 5375000mN",
                 "displayed": true,
                 "include": true,
@@ -3323,7 +3323,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "372000mE 5395000mN",
                 "displayed": true,
                 "include": true,
@@ -3345,7 +3345,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "397000mE 5320000mN",
                 "displayed": true,
                 "include": true,
@@ -3367,7 +3367,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "397000mE 5335000mN",
                 "displayed": true,
                 "include": true,
@@ -3389,7 +3389,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "397000mE 5355000mN",
                 "displayed": true,
                 "include": true,
@@ -3411,7 +3411,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "397000mE 5375000mN",
                 "displayed": true,
                 "include": true,
@@ -3433,7 +3433,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "397000mE 5395000mN",
                 "displayed": true,
                 "include": true,
@@ -3457,7 +3457,7 @@
         ],
         "Mag model grids susc": [
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "A Observed",
                 "displayed": true,
                 "include": true,
@@ -3478,7 +3478,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "B Forward",
                 "displayed": true,
                 "include": true,
@@ -3499,7 +3499,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "C Homogeneous",
                 "displayed": true,
                 "include": true,
@@ -3520,7 +3520,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "C Residual Homogeneous",
                 "displayed": true,
                 "include": true,
@@ -3541,7 +3541,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "D Heterogeneous",
                 "displayed": true,
                 "include": true,
@@ -3562,7 +3562,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "output",
+                "alt_group_label": "RoseberyLyell",
                 "display_name": "E Residual Heterogeneous",
                 "displayed": true,
                 "include": true,
