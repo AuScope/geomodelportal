@@ -35,7 +35,9 @@ export class SceneObject {
      * @param visibility boolean
      */
     public setVisibility(visibility: boolean) {
-        this.sceneObj.visible = visibility;
+        if (this.sceneObj) {
+	    this.sceneObj.visible = visibility;
+        }
     }
 
     /**

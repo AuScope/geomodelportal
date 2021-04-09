@@ -559,11 +559,12 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                                 material = new ITOWNS.THREE.LineBasicMaterial({vertexColors: true, morphTargets: true});
                                                 items = new ITOWNS.THREE.LineSegments(geometry, material);
                                             }
-                                        }
-                                        local.scene.add(items);
-
-                                        // Adds it to the scene array to keep track of it
-                                        addSceneObj(local.sceneArr, part, new SceneObject(items), grp);
+                                            local.scene.add(items);
+                                            // Adds it to the scene array to keep track of it
+                                            addSceneObj(local.sceneArr, part, new SceneObject(items), grp);
+					} else {
+                                            console.warn(local.modelDir + '/' + part.model_url, 'is empty');
+					}
                                         resolve(items);
                                     },
                                     // function called during loading
@@ -892,11 +893,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     // Adding parent controls visibility and transparency of base layer at same time
                     // Assumes one layer visible at a time.
                     const layer = local.view.getLayerById(part.name);
-                    if (layer) {
-                        const parentLayer = local.view.getParentLayer(layer);
-                        if (parentLayer) {
-                            addSceneObj(local.sceneArr, part, new WMSSceneObject(parentLayer), group);
-                        }
+                    if (layer && layer.parent) {
+                        addSceneObj(local.sceneArr, part, new WMSSceneObject(layer.parent), group);
                     } else {
                         console.error('Cannot find loaded WMS layer', part.name);
                     }
