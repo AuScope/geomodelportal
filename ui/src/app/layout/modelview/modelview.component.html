@@ -54,7 +54,15 @@
         </div>
         <div id="popupBoxDiv" #popupBoxDiv><div id="popupExitDiv">X</div></div>
         <div id="errorDiv" #errorDiv></div>
-        <div id="spinnerDiv" #spinnerDiv><i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw" aria-hidden="true"></i></div>
+	<div id="spinnerDiv" #spinnerDiv>
+		<div style='width:200px; color:black'>
+		<p>Loading:</p>
+		<p *ngIf="volTotal>0" >&nbsp;volumes: {{volCnt/volTotal*100.0 | number: '1.1-1'}}%</p>
+	        <p *ngIf="planeTotal>0" >&nbsp;planes: {{planeCnt/planeTotal*100.0 | number: '1.1-1'}}%</p>
+		<p *ngIf="gltfTotal>0" >&nbsp;surfaces: {{gltfCnt/gltfTotal*100.0 | number: '1.1-1'}}%</p>
+		<p *ngIf="gzsonTotal>0" >&nbsp;points/lines: {{gzsonCnt/gzsonTotal*100.0 | number: '1.1-1'}}%</p>
+		</div>
+	</div>
         <div id="drop_zone" (drop)="dropHandler($event)" (dragover)="preventDefault($event)"
                                        [ngStyle]="{'visibility':enableFileDrop ? 'visible' : 'hidden'}">
             <p>Drag a GOCAD .TS (TSURF) file into the blue box to display it.&nbsp;&nbsp;(CRS: {{crs}})</p>

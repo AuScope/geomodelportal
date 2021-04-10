@@ -143,6 +143,16 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     // Model's coordinate reference system
     public crs = 'blah';
 
+    // Used to display asset loading progress
+    public gltfCnt = 0;
+    public gltfTotal = 0;
+    public volCnt = 0;
+    public volTotal = 0;
+    public gzsonCnt = 0;
+    public gzsonTotal = 0;
+    public planeCnt = 0;
+    public planeTotal = 0;
+
     constructor(private modelInfoService: ModelInfoService, private ngRenderer: Renderer2,
                 private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
                 private helpinfoService: HelpinfoService, private httpService: HttpClient,
@@ -171,10 +181,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.popupBoxDiv = this.popupBoxDivElem.nativeElement;
 
         // errorDiv is used to tell user that WebGL is not supported, or IE is not supported
-        this.errorDiv = this.errorDivElem. nativeElement;
+        this.errorDiv = this.errorDivElem.nativeElement;
 
         // spinnerDiv is used to indicate that the model is loading
-        this.spinnerDiv = this.spinnerDivElem. nativeElement;
+        this.spinnerDiv = this.spinnerDivElem.nativeElement;
 
         // Used to access 'this' from within callback functions
         const local = this;
@@ -499,7 +509,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 for (let i = 0; i < parts.length; i++) {
                     console.log("parts[i].type=", parts[i].type);
                     if (parts[i].type === 'GZSON' && parts[i].include) {
-                        promiseList.push( new Promise( function( resolve, _reject ) {
+                        promiseList.push( new Promise( function( resolve, reject ) {
                             (function(part, grp) {
                                 console.log('loading: ', local.modelDir + '/' + part.model_url);
                                 local.httpService.get('./assets/geomodels/' + local.modelDir + '/' + part.model_url, { responseType: 'arraybuffer' }).subscribe(
@@ -565,21 +575,23 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 					} else {
                                             console.warn(local.modelDir + '/' + part.model_url, 'is empty');
 					}
+                                        local.gzsonCnt++;
                                         resolve(items);
                                     },
                                     // function called during loading
-                                    //function () {
+				     //function () {
                                         // console.log('GLTF onProgress()', xhr);
                                         // if ( xhr.lengthComputable ) {
                                         //    const percentComplete = xhr.loaded / xhr.total * 100;
                                         //    console.log( xhr.currentTarget.responseURL, Math.round(percentComplete) + '% downloaded' );
                                         // }
-                                    //},
+				     //},
                                     // function called when loading fails
                                     function (error) {
-                                         console.error('GZSON load error!', error);
-                                         // Accept errors
-                                         resolve(null);
+                                        console.error('GZSON load error!', error);
+                                        local.gzsonCnt++;
+                                        // Accept errors
+                                        resolve(null);
                                     }
                                 );
                             })(parts[i], group);
@@ -588,7 +600,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 }
             }
         }
-
+        this.gzsonTotal = promiseList.length;
         Promise.all(promiseList).then(
             // function called when all objects are loaded
             function() {
@@ -617,7 +629,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 const parts = this.config.groups[group];
                 for (let i = 0; i < parts.length; i++) {
                     if (parts[i].type === 'GLTFObject' && parts[i].include) {
-                        promiseList.push( new Promise( function( resolve, _reject ) {
+                        promiseList.push( new Promise( function( resolve, reject ) {
                             (function(part, grp) {
                                 local.gltfLoader.load('./assets/geomodels/' + local.modelDir + '/' + part.model_url,
                                     // function called if loading successful
@@ -661,6 +673,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
                                         // Adds it to the scene array to keep track of it
                                         addSceneObj(local.sceneArr, part, new SceneObject(gObject.scene), grp);
+					local.gltfCnt++;
                                         resolve(gObject.scene);
                                     },
                                     // function called during loading
@@ -673,9 +686,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     },
                                     // function called when loading fails
                                     function (error) {
-                                         console.error('GLTF/OBJ load error!', error);
-                                         // Accept errors
-                                         resolve(null);
+                                        console.error('GLTF/OBJ load error!', error);
+					local.gltfCnt++;
+                                        // Accept errors
+                                        resolve(null);
                                     }
                                 );
                             })(parts[i], group);
@@ -684,7 +698,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 }
             }
         }
-
+        this.gltfTotal = promiseList.length;
         Promise.all(promiseList).then(
             // function called when all objects are loaded
             function() {
@@ -772,10 +786,13 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         './assets/geomodels/' + local.modelDir + '/' + parts[i].model_url,
                                         local.scene, volSceneObj.volObjList, parts[i].displayed));
                         addSceneObj(this.sceneArr, parts[i], volSceneObj, group);
+			// TODO: Counter increment must be inside promise
+                        local.volCnt++;
                     }
                 }
             }
         }
+        this.volTotal = promiseList.length;
         Promise.all(promiseList).then(
             // function called when all objects are loaded
             function() {
@@ -826,6 +843,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 plane.visible = part.displayed;
                                 local.scene.add(plane);
                                 addSceneObj(local.sceneArr, part, new PlaneSceneObject(plane), grp);
+                                local.planeCnt++;
                                 resolve(plane);
                             },
                             // Function called when download progresses
@@ -835,7 +853,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             // Function called when download errors
                             function () {
                                 console.error('An error happened loading image plane');
-                                reject(null);
+                                local.planeCnt++;
+                                resolve(null);
                             }
                           );
                        })(parts[i], group);
@@ -844,7 +863,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 }
             }
         }
-
+        this.planeTotal = promiseList.length;
         Promise.all(promiseList).then(
         // function called when all objects successfully loaded
         function() {
