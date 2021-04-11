@@ -2,7 +2,7 @@
     "groups": {
         "3D MT Inversion Model": [
             {
-                "alt_group_label": "output",
+                "alt_group_label": "Output",
                 "display_name": "Model",
                 "displayed": true,
                 "include": true,

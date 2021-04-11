@@ -244,9 +244,9 @@
                 }
             }
         ],
-        "Gocad objects": [
+        "Gocad Objects": [
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "08GA OM1 CDP",
                 "displayed": true,
                 "include": true,
@@ -257,7 +257,7 @@
                 "type": "GZSON"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "08GA OM1 Line",
                 "displayed": true,
                 "include": true,
@@ -405,7 +405,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "13GA EG1 CDP",
                 "displayed": true,
                 "include": true,
@@ -416,7 +416,7 @@
                 "type": "GZSON"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "13GA EG1 Line",
                 "displayed": true,
                 "include": true,
@@ -712,7 +712,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "13GA EG1 interpretation located",
                 "displayed": true,
                 "include": true,
@@ -728,7 +728,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "B1 Eucla Basin",
                 "displayed": true,
                 "include": true,
@@ -744,7 +744,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "B2 Bight Basin",
                 "displayed": true,
                 "include": true,
@@ -760,7 +760,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "B3 Arckaringa Basin",
                 "displayed": true,
                 "include": true,
@@ -776,7 +776,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "B4 Officer Basin",
                 "displayed": true,
                 "include": true,
@@ -792,7 +792,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "Basin outline Arkaringa",
                 "displayed": true,
                 "include": true,
@@ -1240,7 +1240,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "Basin outline Bight",
                 "displayed": true,
                 "include": true,
@@ -1412,7 +1412,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "Basin outline Eucla",
                 "displayed": true,
                 "include": true,
@@ -5512,7 +5512,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "Basin outline Officer",
                 "displayed": true,
                 "include": true,
@@ -6056,7 +6056,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "D01 Basins",
                 "displayed": true,
                 "include": true,
@@ -6072,7 +6072,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "D02 Nawa Metasediments",
                 "displayed": true,
                 "include": true,
@@ -6088,7 +6088,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "D03 Upper Crust",
                 "displayed": true,
                 "include": true,
@@ -6104,7 +6104,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "D04 Middle crust",
                 "displayed": true,
                 "include": true,
@@ -6120,7 +6120,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "D05 Moho",
                 "displayed": true,
                 "include": true,
@@ -6136,7 +6136,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F01 Jindarnga",
                 "displayed": true,
                 "include": true,
@@ -6152,7 +6152,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F02 Yarle",
                 "displayed": true,
                 "include": true,
@@ -6168,7 +6168,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F03 Wirratinna",
                 "displayed": true,
                 "include": true,
@@ -6184,7 +6184,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F04 Wirinjinna",
                 "displayed": true,
                 "include": true,
@@ -6200,7 +6200,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F05 Karari 1",
                 "displayed": true,
                 "include": true,
@@ -6216,7 +6216,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F06 Karari 2",
                 "displayed": true,
                 "include": true,
@@ -6232,7 +6232,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F07 Karari 3",
                 "displayed": true,
                 "include": true,
@@ -6248,7 +6248,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F08 Karari 4",
                 "displayed": true,
                 "include": true,
@@ -6264,7 +6264,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F09 HorseCamp",
                 "displayed": true,
                 "include": true,
@@ -6280,7 +6280,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F10 Ifould",
                 "displayed": true,
                 "include": true,
@@ -6296,7 +6296,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F11 Tallacootra 1",
                 "displayed": true,
                 "include": true,
@@ -6312,7 +6312,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F12 Tallacootra 2",
                 "displayed": true,
                 "include": true,
@@ -6328,7 +6328,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F13 Beella",
                 "displayed": true,
                 "include": true,
@@ -6344,7 +6344,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F14 Domain boundary ChristieFowler",
                 "displayed": true,
                 "include": true,
@@ -6360,7 +6360,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F15 Chimpering 1",
                 "displayed": true,
                 "include": true,
@@ -6376,7 +6376,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F16 Chimpering 2",
                 "displayed": true,
                 "include": true,
@@ -6392,7 +6392,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F17 Colona 1",
                 "displayed": true,
                 "include": true,
@@ -6408,7 +6408,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F18 Colona 2",
                 "displayed": true,
                 "include": true,
@@ -6424,7 +6424,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F19 Coorabie 1",
                 "displayed": true,
                 "include": true,
@@ -6440,7 +6440,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F20 Coorabie 2",
                 "displayed": true,
                 "include": true,
@@ -6456,7 +6456,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F21 Coorabie 3",
                 "displayed": true,
                 "include": true,
@@ -6472,7 +6472,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F22 Coorabie 4",
                 "displayed": true,
                 "include": true,
@@ -6488,7 +6488,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F23 Coorabie 5",
                 "displayed": true,
                 "include": true,
@@ -6504,7 +6504,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F24 MiddleCrust",
                 "displayed": true,
                 "include": true,
@@ -6520,7 +6520,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F25 Muckanippie",
                 "displayed": true,
                 "include": true,
@@ -6536,7 +6536,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F26 Bulgunnia",
                 "displayed": true,
                 "include": true,
@@ -6552,7 +6552,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F27 Yerda",
                 "displayed": true,
                 "include": true,
@@ -6568,7 +6568,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F28 Oolabinna",
                 "displayed": true,
                 "include": true,
@@ -6584,7 +6584,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F29 Koonibba",
                 "displayed": true,
                 "include": true,
@@ -6600,7 +6600,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "F30 Bulga",
                 "displayed": true,
                 "include": true,
@@ -6616,7 +6616,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "GRAV 3KM POINTS",
                 "displayed": true,
                 "include": true,
@@ -6627,7 +6627,7 @@
                 "type": "GZSON"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "GRAV 3KM UP20 POINTS",
                 "displayed": true,
                 "include": true,
@@ -6638,7 +6638,7 @@
                 "type": "GZSON"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "GRAVITY INVERSION",
                 "displayed": true,
                 "include": true,
@@ -6649,7 +6649,7 @@
                 "type": "GZSON"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "H01 Cenozoic",
                 "displayed": true,
                 "include": true,
@@ -7333,7 +7333,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "H02 Mesozoic",
                 "displayed": true,
                 "include": true,
@@ -8213,7 +8213,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "H03 Upper Mt Toondina Formation",
                 "displayed": true,
                 "include": true,
@@ -8413,7 +8413,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "H04 Lower Mt Toondina Formation",
                 "displayed": true,
                 "include": true,
@@ -8885,7 +8885,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "H05 Stuart Range Formation",
                 "displayed": true,
                 "include": true,
@@ -9605,7 +9605,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "H06 Boorthanna Formation",
                 "displayed": true,
                 "include": true,
@@ -10557,7 +10557,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "H07 Gawler Range Volcanics",
                 "displayed": true,
                 "include": true,
@@ -10805,7 +10805,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "H08 Tarcoola Formation",
                 "displayed": true,
                 "include": true,
@@ -11025,7 +11025,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "H09 Granite",
                 "displayed": true,
                 "include": true,
@@ -12225,7 +12225,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "H10 Moho",
                 "displayed": true,
                 "include": true,
@@ -12849,7 +12849,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "Hx 08GA OM1 Form Line",
                 "displayed": true,
                 "include": true,
@@ -19573,7 +19573,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "Hy 08GA OM1 Fault",
                 "displayed": true,
                 "include": true,
@@ -22933,7 +22933,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "MAGNETIC INVERSION",
                 "displayed": true,
                 "include": true,
@@ -22944,7 +22944,7 @@
                 "type": "GZSON"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ01 Jindarnga",
                 "displayed": true,
                 "include": true,
@@ -23136,7 +23136,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ02 Yarle",
                 "displayed": true,
                 "include": true,
@@ -23296,7 +23296,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ03 Wirratinna",
                 "displayed": true,
                 "include": true,
@@ -23564,7 +23564,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ04 Wirinjinna",
                 "displayed": true,
                 "include": true,
@@ -23832,7 +23832,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ05 Karari 1",
                 "displayed": true,
                 "include": true,
@@ -24112,7 +24112,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ06 Karari 2",
                 "displayed": true,
                 "include": true,
@@ -24340,7 +24340,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ08 Karari 4",
                 "displayed": true,
                 "include": true,
@@ -24820,7 +24820,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ09 HorseCamp",
                 "displayed": true,
                 "include": true,
@@ -24856,7 +24856,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ10 Ifould",
                 "displayed": true,
                 "include": true,
@@ -25020,7 +25020,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ11 Tallacootra 1",
                 "displayed": true,
                 "include": true,
@@ -25456,7 +25456,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ12 Tallacootra 2",
                 "displayed": true,
                 "include": true,
@@ -25892,7 +25892,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ13 Beella",
                 "displayed": true,
                 "include": true,
@@ -26204,7 +26204,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ15 Chimpering 1",
                 "displayed": true,
                 "include": true,
@@ -26452,7 +26452,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ16 Chimpering 2",
                 "displayed": true,
                 "include": true,
@@ -26972,7 +26972,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ17 Colona 1",
                 "displayed": true,
                 "include": true,
@@ -27428,7 +27428,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ18 Colona 2",
                 "displayed": true,
                 "include": true,
@@ -27624,7 +27624,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ19 Coorabie 1",
                 "displayed": true,
                 "include": true,
@@ -27848,7 +27848,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ20 Coorabie 2",
                 "displayed": true,
                 "include": true,
@@ -28152,7 +28152,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ21 Coorabie 3",
                 "displayed": true,
                 "include": true,
@@ -28404,7 +28404,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ22 Coorabie 4",
                 "displayed": true,
                 "include": true,
@@ -28496,7 +28496,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ23 Coorabie 5",
                 "displayed": true,
                 "include": true,
@@ -29036,7 +29036,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ25 Muckanippie",
                 "displayed": true,
                 "include": true,
@@ -29260,7 +29260,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ26 Bulgunnia",
                 "displayed": true,
                 "include": true,
@@ -29532,7 +29532,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ27 Yerda",
                 "displayed": true,
                 "include": true,
@@ -29812,7 +29812,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ28 Oolabinna",
                 "displayed": true,
                 "include": true,
@@ -30332,7 +30332,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "SZ29 Koonibba",
                 "displayed": true,
                 "include": true,
@@ -30448,7 +30448,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "TMI 3K POINTS",
                 "displayed": true,
                 "include": true,
@@ -30459,7 +30459,7 @@
                 "type": "GZSON"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "TMI 3K UP5",
                 "displayed": true,
                 "include": true,
@@ -30470,7 +30470,7 @@
                 "type": "GZSON"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "Topo 2k surface",
                 "displayed": true,
                 "include": true,
@@ -30486,7 +30486,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "Gocad objects",
+                "alt_group_label": "Gocad Objects",
                 "display_name": "Topo surface",
                 "displayed": true,
                 "include": true,

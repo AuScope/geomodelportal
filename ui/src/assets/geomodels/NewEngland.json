@@ -2,7 +2,7 @@
     "groups": {
         "Base of Unconsolidated": [
             {
-                "alt_group_label": "NEO_GDA94_Z56_GOCAD",
+                "alt_group_label": "Neo Gda94 Z56 Gocad",
                 "display_name": "2019 Base of Unconsolidated",
                 "displayed": true,
                 "include": true,
@@ -20,7 +20,7 @@
         ],
         "Faults": [
             {
-                "alt_group_label": "NEO_GDA94_Z56_GOCAD",
+                "alt_group_label": "Neo Gda94 Z56 Gocad",
                 "display_name": "New England Orogen 3D Fault Architecture",
                 "displayed": true,
                 "include": true,
@@ -38,7 +38,7 @@
         ],
         "Seismic": [
             {
-                "alt_group_label": "NEO_GDA94_Z56_GOCAD",
+                "alt_group_label": "Neo Gda94 Z56 Gocad",
                 "display_name": "NSW Seismic Profiles Location",
                 "displayed": true,
                 "include": true,
@@ -51,7 +51,7 @@
         ],
         "Top of Basement": [
             {
-                "alt_group_label": "NEO_GDA94_Z56_GOCAD",
+                "alt_group_label": "Neo Gda94 Z56 Gocad",
                 "display_name": "2019 Top of Basement",
                 "displayed": true,
                 "include": true,

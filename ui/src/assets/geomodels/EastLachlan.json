@@ -2,7 +2,7 @@
     "groups": {
         "Depth To Basement Model": [
             {
-                "alt_group_label": "To be uploaded into the GSNSW website Zone 55",
+                "alt_group_label": "To Be Uploaded Into The Gsnsw Website Zone 55",
                 "display_name": "Depth To Basement",
                 "displayed": true,
                 "include": true,
@@ -20,7 +20,7 @@
         ],
         "Faults": [
             {
-                "alt_group_label": "To be uploaded into the GSNSW website Zone 55",
+                "alt_group_label": "To Be Uploaded Into The Gsnsw Website Zone 55",
                 "display_name": "3D Fault Architecture",
                 "displayed": true,
                 "include": true,

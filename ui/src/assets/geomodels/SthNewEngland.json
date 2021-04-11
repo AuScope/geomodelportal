@@ -2,7 +2,7 @@
     "groups": {
         "DTM": [
             {
-                "alt_group_label": "DTM and Images",
+                "alt_group_label": "Dtm And Images",
                 "display_name": "GAB CMB DTM 1000m",
                 "displayed": true,
                 "include": true,
@@ -18,7 +18,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "DTM and Images",
+                "alt_group_label": "Dtm And Images",
                 "display_name": "GAB Surat DTM 1000m",
                 "displayed": true,
                 "include": true,
@@ -34,7 +34,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "DTM and Images",
+                "alt_group_label": "Dtm And Images",
                 "display_name": "NEO DTM 1000m Palaeozoic",
                 "displayed": true,
                 "include": true,

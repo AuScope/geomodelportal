@@ -1,289 +1,8 @@
 {
     "groups": {
-        "WMS Layers": [
+        "3D Volumes": [
             {
-                "display_name": "GA Lithostratigraphy",
-                "displayed": true,
-                "include": true,
-                "model_url": "http://services.ga.gov.au/gis/services/GA_Surface_Geology/MapServer/WMSServer",
-                "name": "AUS_GA_2500k_GUPoly_Lithostratigraphy",
-                "type": "WMSLayer",
-                "version": "1.3.0"
-            }
-        ],
-        "pointset": [
-            {
-                "alt_group_label": "pointset",
-                "display_name": "ALOH AB",
-                "displayed": true,
-                "include": true,
-                "model_url": "AlOH_Ab.gzson",
-                "popups": {},
-                "src_filename": "AlOH_Ab.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "pointset",
-                "display_name": "ALOHABVEGUNM",
-                "displayed": true,
-                "include": true,
-                "model_url": "AlOHAbVegunm.gzson",
-                "popups": {},
-                "src_filename": "AlOHAbVegunm.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "pointset",
-                "display_name": "AMPHAB",
-                "displayed": true,
-                "include": true,
-                "model_url": "AmphAb.gzson",
-                "popups": {},
-                "src_filename": "AmphAb.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "pointset",
-                "display_name": "CARBAB RKC",
-                "displayed": true,
-                "include": true,
-                "model_url": "CarbAb_RKC.gzson",
-                "popups": {},
-                "src_filename": "CarbAb_RKC.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "pointset",
-                "display_name": "CHLAB",
-                "displayed": true,
-                "include": true,
-                "model_url": "ChlAb.gzson",
-                "popups": {},
-                "src_filename": "ChlAb.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "pointset",
-                "display_name": "FEOXAB 900D",
-                "displayed": true,
-                "include": true,
-                "model_url": "FeoxAb_900D.gzson",
-                "popups": {},
-                "src_filename": "FeoxAb_900D.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "pointset",
-                "display_name": "FEOXVEGUNM",
-                "displayed": true,
-                "include": true,
-                "model_url": "FeOxVegUnm.gzson",
-                "popups": {},
-                "src_filename": "FeOxVegUnm.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "pointset",
-                "display_name": "FEOXVEGUNM INTERPOL MASKED",
-                "displayed": true,
-                "include": true,
-                "model_url": "FeOxVegUnm_interpol_masked.gzson",
-                "popups": {},
-                "src_filename": "FeOxVegUnm_interpol_masked.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "pointset",
-                "display_name": "FEPCT",
-                "displayed": true,
-                "include": true,
-                "model_url": "FePct.gzson",
-                "popups": {},
-                "src_filename": "FePct.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "pointset",
-                "display_name": "KAOLCOMP RKC",
-                "displayed": true,
-                "include": true,
-                "model_url": "KaolComp_RKC.gzson",
-                "popups": {},
-                "src_filename": "KaolComp_RKC.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "pointset",
-                "display_name": "KC 5MF",
-                "displayed": true,
-                "include": true,
-                "model_url": "KC_5MF.gzson",
-                "popups": {},
-                "src_filename": "KC_5MF.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "pointset",
-                "display_name": "SEGMENTATIONIMAGE",
-                "displayed": true,
-                "include": true,
-                "model_url": "SegmentationImage.gzson",
-                "popups": {},
-                "src_filename": "SegmentationImage.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "pointset",
-                "display_name": "SRTM ROCKLEADOME+HARDEYRIVER",
-                "displayed": true,
-                "include": true,
-                "model_url": "SRTM_RockleaDome+HardeyRiver.gzson",
-                "popups": {},
-                "src_filename": "SRTM_RockleaDome+HardeyRiver.zip",
-                "styling": {},
-                "type": "GZSON"
-            },
-            {
-                "alt_group_label": "pointset",
-                "display_name": "WMAB",
-                "displayed": true,
-                "include": true,
-                "model_url": "WMAb.gzson",
-                "popups": {},
-                "src_filename": "WMAb.zip",
-                "styling": {},
-                "type": "GZSON"
-            }
-        ],
-        "surfaces": [
-            {
-                "alt_group_label": "surfaces",
-                "display_name": "CID outline UTM",
-                "displayed": true,
-                "include": true,
-                "model_url": "CID_outline_UTM.gltf",
-                "popups": {
-                    "CID_OUTLINE_UTM": {
-                        "name": "CID_OUTLINE_UTM",
-                        "title": "CID_OUTLINE_UTM"
-                    }
-                },
-                "src_filename": "CID_outline_UTM.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "surfaces",
-                "display_name": "ChannelBottom South+North",
-                "displayed": true,
-                "include": true,
-                "model_url": "ChannelBottom_South+North.gltf",
-                "popups": {
-                    "CHANNELBOTTOM_SOUTH+NORTH": {
-                        "name": "CHANNELBOTTOM_SOUTH+NORTH",
-                        "title": "CHANNELBOTTOM_SOUTH+NORTH"
-                    }
-                },
-                "src_filename": "ChannelBottom_South+North.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "surfaces",
-                "display_name": "GibbsiteLayer",
-                "displayed": true,
-                "include": true,
-                "model_url": "GibbsiteLayer.gltf",
-                "popups": {
-                    "GIBBSITELAYER": {
-                        "name": "GIBBSITELAYER",
-                        "title": "GIBBSITELAYER"
-                    }
-                },
-                "src_filename": "GibbsiteLayer.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "surfaces",
-                "display_name": "Topo SRTMonly",
-                "displayed": true,
-                "include": true,
-                "model_url": "Topo_SRTMonly.gltf",
-                "popups": {
-                    "TOPO_SRTMONLY": {
-                        "name": "TOPO_SRTMONLY",
-                        "title": "TOPO_SRTMONLY"
-                    }
-                },
-                "src_filename": "Topo_SRTMonly.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "surfaces",
-                "display_name": "Wireframe Set Ore bottom                      Surface",
-                "displayed": true,
-                "include": true,
-                "model_url": "Wireframe_Set_Ore_bottom______________________Surface.gltf",
-                "popups": {
-                    "WIREFRAME_SET_ORE_BOTTOM______________________SURFACE": {
-                        "name": "WIREFRAME_SET_ORE_BOTTOM______________________SURFACE",
-                        "title": "WIREFRAME_SET_ORE_BOTTOM______________________SURFACE"
-                    }
-                },
-                "src_filename": "Wireframe_Set_Ore_bottom______________________Surface.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "surfaces",
-                "display_name": "Wireframe Set Ore main lense                  Surface",
-                "displayed": true,
-                "include": true,
-                "model_url": "Wireframe_Set_Ore_main_lense__________________Surface.gltf",
-                "popups": {
-                    "WIREFRAME_SET_ORE_MAIN_LENSE__________________SURFACE": {
-                        "name": "WIREFRAME_SET_ORE_MAIN_LENSE__________________SURFACE",
-                        "title": "WIREFRAME_SET_ORE_MAIN_LENSE__________________SURFACE"
-                    }
-                },
-                "src_filename": "Wireframe_Set_Ore_main_lense__________________Surface.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            },
-            {
-                "alt_group_label": "surfaces",
-                "display_name": "Wireframe Set Ore upper lenses                Surface",
-                "displayed": true,
-                "include": true,
-                "model_url": "Wireframe_Set_Ore_upper_lenses________________Surface.gltf",
-                "popups": {
-                    "WIREFRAME_SET_ORE_UPPER_LENSES________________SURFACE": {
-                        "name": "WIREFRAME_SET_ORE_UPPER_LENSES________________SURFACE",
-                        "title": "WIREFRAME_SET_ORE_UPPER_LENSES________________SURFACE"
-                    }
-                },
-                "src_filename": "Wireframe_Set_Ore_upper_lenses________________Surface.zip",
-                "styling": {},
-                "type": "GLTFObject"
-            }
-        ],
-        "voxets": [
-            {
-                "alt_group_label": "voxets",
+                "alt_group_label": "Voxets",
                 "display_name": "ALOH ABUNDANCE 1 9-2 07 ASTER 1",
                 "displayed": true,
                 "include": true,
@@ -304,7 +23,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "voxets",
+                "alt_group_label": "Voxets",
                 "display_name": "ALOH COMPOSITION 1 192-1 35 ASTER 1",
                 "displayed": true,
                 "include": true,
@@ -325,7 +44,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "voxets",
+                "alt_group_label": "Voxets",
                 "display_name": "FALSECOLOUR COLOURBALANCED CROSSTRACKCORR1 1",
                 "displayed": true,
                 "include": true,
@@ -346,7 +65,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "voxets",
+                "alt_group_label": "Voxets",
                 "display_name": "FE-OXIDE 0 27-0 35 ASTER 1",
                 "displayed": true,
                 "include": true,
@@ -367,7 +86,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "voxets",
+                "alt_group_label": "Voxets",
                 "display_name": "FE2+ 0 26-0 314 ASTER 1",
                 "displayed": true,
                 "include": true,
@@ -388,7 +107,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "voxets",
+                "alt_group_label": "Voxets",
                 "display_name": "GRAVITY UTM 1",
                 "displayed": true,
                 "include": true,
@@ -409,7 +128,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "voxets",
+                "alt_group_label": "Voxets",
                 "display_name": "HAMERSLEYRANGE SF501 1",
                 "displayed": true,
                 "include": true,
@@ -430,7 +149,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "voxets",
+                "alt_group_label": "Voxets",
                 "display_name": "MAG 1STDERIVVD UTM 1",
                 "displayed": true,
                 "include": true,
@@ -451,7 +170,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "voxets",
+                "alt_group_label": "Voxets",
                 "display_name": "MGOH ABUNDANCE 0 95-1 05 ASTER 1",
                 "displayed": true,
                 "include": true,
@@ -472,7 +191,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "voxets",
+                "alt_group_label": "Voxets",
                 "display_name": "MGOH COMP 1 48-1 6 ASTER 1",
                 "displayed": true,
                 "include": true,
@@ -493,7 +212,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "voxets",
+                "alt_group_label": "Voxets",
                 "display_name": "OPAQUES 3 4-4 5 ASTER 1",
                 "displayed": true,
                 "include": true,
@@ -514,7 +233,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "voxets",
+                "alt_group_label": "Voxets",
                 "display_name": "PCTK UTM 1",
                 "displayed": true,
                 "include": true,
@@ -535,7 +254,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "voxets",
+                "alt_group_label": "Voxets",
                 "display_name": "PPMTH UTM 1",
                 "displayed": true,
                 "include": true,
@@ -556,7 +275,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "voxets",
+                "alt_group_label": "Voxets",
                 "display_name": "PPMU UTM 1",
                 "displayed": true,
                 "include": true,
@@ -577,7 +296,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "voxets",
+                "alt_group_label": "Voxets",
                 "display_name": "ROCKLEAASTER FALSECOLOUR 15M 1",
                 "displayed": true,
                 "include": true,
@@ -598,54 +317,252 @@
                 "type": "ImagePlane"
             }
         ],
-        "wells": [
+        "Points": [
             {
-                "alt_group_label": "wells",
-                "display_name": "allwells",
+                "alt_group_label": "Pointset",
+                "display_name": "ALOH AB",
                 "displayed": true,
                 "include": true,
-                "model_url": "allwells.gltf",
+                "model_url": "AlOH_Ab.gzson",
+                "popups": {},
+                "src_filename": "AlOH_Ab.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "Pointset",
+                "display_name": "AMPHAB",
+                "displayed": true,
+                "include": true,
+                "model_url": "AmphAb.gzson",
+                "popups": {},
+                "src_filename": "AmphAb.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "Pointset",
+                "display_name": "CARBAB RKC",
+                "displayed": true,
+                "include": true,
+                "model_url": "CarbAb_RKC.gzson",
+                "popups": {},
+                "src_filename": "CarbAb_RKC.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "Pointset",
+                "display_name": "CHLAB",
+                "displayed": true,
+                "include": true,
+                "model_url": "ChlAb.gzson",
+                "popups": {},
+                "src_filename": "ChlAb.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "Pointset",
+                "display_name": "FEOXAB 900D",
+                "displayed": true,
+                "include": true,
+                "model_url": "FeoxAb_900D.gzson",
+                "popups": {},
+                "src_filename": "FeoxAb_900D.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "Pointset",
+                "display_name": "FEOXVEGUNM INTERPOL MASKED",
+                "displayed": true,
+                "include": true,
+                "model_url": "FeOxVegUnm_interpol_masked.gzson",
+                "popups": {},
+                "src_filename": "FeOxVegUnm_interpol_masked.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "Pointset",
+                "display_name": "FEPCT",
+                "displayed": true,
+                "include": true,
+                "model_url": "FePct.gzson",
+                "popups": {},
+                "src_filename": "FePct.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "Pointset",
+                "display_name": "KAOLCOMP RKC",
+                "displayed": true,
+                "include": true,
+                "model_url": "KaolComp_RKC.gzson",
+                "popups": {},
+                "src_filename": "KaolComp_RKC.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "Pointset",
+                "display_name": "KC 5MF",
+                "displayed": true,
+                "include": true,
+                "model_url": "KC_5MF.gzson",
+                "popups": {},
+                "src_filename": "KC_5MF.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "Pointset",
+                "display_name": "SEGMENTATIONIMAGE",
+                "displayed": true,
+                "include": true,
+                "model_url": "SegmentationImage.gzson",
+                "popups": {},
+                "src_filename": "SegmentationImage.zip",
+                "styling": {},
+                "type": "GZSON"
+            },
+            {
+                "alt_group_label": "Pointset",
+                "display_name": "SRTM ROCKLEADOME+HARDEYRIVER",
+                "displayed": true,
+                "include": true,
+                "model_url": "SRTM_RockleaDome+HardeyRiver.gzson",
+                "popups": {},
+                "src_filename": "SRTM_RockleaDome+HardeyRiver.zip",
+                "styling": {},
+                "type": "GZSON"
+            }
+        ],
+        "Surfaces": [
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "CID outline UTM",
+                "displayed": true,
+                "include": true,
+                "model_url": "CID_outline_UTM.gltf",
                 "popups": {
-                    "line-RKC306-0000000000": {
-                        "name": "RKC306",
-                        "title": "RKC306"
-                    },
-                    "line-RKC309-0000000000": {
-                        "name": "RKC309",
-                        "title": "RKC309"
-                    },
-                    "line-RKC317-0000000000": {
-                        "name": "RKC317",
-                        "title": "RKC317"
-                    },
-                    "line-RKC322-0000000000": {
-                        "name": "RKC322",
-                        "title": "RKC322"
-                    },
-                    "line-RKC433-0000000000": {
-                        "name": "RKC433",
-                        "title": "RKC433"
-                    },
-                    "line-RKC437-0000000000": {
-                        "name": "RKC437",
-                        "title": "RKC437"
-                    },
-                    "line-RKC451-0000000000": {
-                        "name": "RKC451",
-                        "title": "RKC451"
-                    },
-                    "line-RKC453-0000000000": {
-                        "name": "RKC453",
-                        "title": "RKC453"
-                    },
-                    "line-RKC458-0000000000": {
-                        "name": "RKC458",
-                        "title": "RKC458"
+                    "CID_OUTLINE_UTM": {
+                        "name": "CID_OUTLINE_UTM",
+                        "title": "CID_OUTLINE_UTM"
                     }
                 },
-                "src_filename": "allwells.zip",
+                "src_filename": "CID_outline_UTM.zip",
                 "styling": {},
                 "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "ChannelBottom South+North",
+                "displayed": true,
+                "include": true,
+                "model_url": "ChannelBottom_South+North.gltf",
+                "popups": {
+                    "CHANNELBOTTOM_SOUTH+NORTH": {
+                        "name": "CHANNELBOTTOM_SOUTH+NORTH",
+                        "title": "CHANNELBOTTOM_SOUTH+NORTH"
+                    }
+                },
+                "src_filename": "ChannelBottom_South+North.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "GibbsiteLayer",
+                "displayed": true,
+                "include": true,
+                "model_url": "GibbsiteLayer.gltf",
+                "popups": {
+                    "GIBBSITELAYER": {
+                        "name": "GIBBSITELAYER",
+                        "title": "GIBBSITELAYER"
+                    }
+                },
+                "src_filename": "GibbsiteLayer.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Topo SRTMonly",
+                "displayed": true,
+                "include": true,
+                "model_url": "Topo_SRTMonly.gltf",
+                "popups": {
+                    "TOPO_SRTMONLY": {
+                        "name": "TOPO_SRTMONLY",
+                        "title": "TOPO_SRTMONLY"
+                    }
+                },
+                "src_filename": "Topo_SRTMonly.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Wireframe Set Ore bottom                      Surface",
+                "displayed": true,
+                "include": true,
+                "model_url": "Wireframe_Set_Ore_bottom______________________Surface.gltf",
+                "popups": {
+                    "WIREFRAME_SET_ORE_BOTTOM______________________SURFACE": {
+                        "name": "WIREFRAME_SET_ORE_BOTTOM______________________SURFACE",
+                        "title": "WIREFRAME_SET_ORE_BOTTOM______________________SURFACE"
+                    }
+                },
+                "src_filename": "Wireframe_Set_Ore_bottom______________________Surface.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Wireframe Set Ore main lense                  Surface",
+                "displayed": true,
+                "include": true,
+                "model_url": "Wireframe_Set_Ore_main_lense__________________Surface.gltf",
+                "popups": {
+                    "WIREFRAME_SET_ORE_MAIN_LENSE__________________SURFACE": {
+                        "name": "WIREFRAME_SET_ORE_MAIN_LENSE__________________SURFACE",
+                        "title": "WIREFRAME_SET_ORE_MAIN_LENSE__________________SURFACE"
+                    }
+                },
+                "src_filename": "Wireframe_Set_Ore_main_lense__________________Surface.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            },
+            {
+                "alt_group_label": "Surfaces",
+                "display_name": "Wireframe Set Ore upper lenses                Surface",
+                "displayed": true,
+                "include": true,
+                "model_url": "Wireframe_Set_Ore_upper_lenses________________Surface.gltf",
+                "popups": {
+                    "WIREFRAME_SET_ORE_UPPER_LENSES________________SURFACE": {
+                        "name": "WIREFRAME_SET_ORE_UPPER_LENSES________________SURFACE",
+                        "title": "WIREFRAME_SET_ORE_UPPER_LENSES________________SURFACE"
+                    }
+                },
+                "src_filename": "Wireframe_Set_Ore_upper_lenses________________Surface.zip",
+                "styling": {},
+                "type": "GLTFObject"
+            }
+        ],
+        "WMS Layers": [
+            {
+                "display_name": "GA Lithostratigraphy",
+                "displayed": true,
+                "include": true,
+                "model_url": "http://services.ga.gov.au/gis/services/GA_Surface_Geology/MapServer/WMSServer",
+                "name": "AUS_GA_2500k_GUPoly_Lithostratigraphy",
+                "type": "WMSLayer",
+                "version": "1.3.0"
             }
         ]
     },

@@ -2,7 +2,7 @@
     "groups": {
         "Digital Elevation Model": [
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "RL DEM100m",
                 "displayed": true,
                 "include": true,
@@ -20,7 +20,7 @@
         ],
         "Faults": [
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Anthony River Fault",
                 "displayed": true,
                 "include": true,
@@ -36,7 +36,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Brickfield Fault",
                 "displayed": true,
                 "include": true,
@@ -52,7 +52,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Comstock Fault",
                 "displayed": true,
                 "include": true,
@@ -68,7 +68,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "East Jukes Fault",
                 "displayed": true,
                 "include": true,
@@ -84,7 +84,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Engineer Fault",
                 "displayed": true,
                 "include": true,
@@ -100,7 +100,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ewart Fault",
                 "displayed": true,
                 "include": true,
@@ -116,7 +116,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 008",
                 "displayed": true,
                 "include": true,
@@ -132,7 +132,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 009",
                 "displayed": true,
                 "include": true,
@@ -148,7 +148,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 011",
                 "displayed": true,
                 "include": true,
@@ -164,7 +164,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 013",
                 "displayed": true,
                 "include": true,
@@ -180,7 +180,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 014",
                 "displayed": true,
                 "include": true,
@@ -196,7 +196,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 016",
                 "displayed": true,
                 "include": true,
@@ -212,7 +212,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 017",
                 "displayed": true,
                 "include": true,
@@ -228,7 +228,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 019",
                 "displayed": true,
                 "include": true,
@@ -244,7 +244,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 020",
                 "displayed": true,
                 "include": true,
@@ -260,7 +260,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 024",
                 "displayed": true,
                 "include": true,
@@ -276,7 +276,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 025",
                 "displayed": true,
                 "include": true,
@@ -292,7 +292,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 026",
                 "displayed": true,
                 "include": true,
@@ -308,7 +308,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 029",
                 "displayed": true,
                 "include": true,
@@ -324,7 +324,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 033",
                 "displayed": true,
                 "include": true,
@@ -340,7 +340,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 034",
                 "displayed": true,
                 "include": true,
@@ -356,7 +356,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 035",
                 "displayed": true,
                 "include": true,
@@ -372,7 +372,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 036",
                 "displayed": true,
                 "include": true,
@@ -388,7 +388,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 041",
                 "displayed": true,
                 "include": true,
@@ -404,7 +404,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 044",
                 "displayed": true,
                 "include": true,
@@ -420,7 +420,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 045",
                 "displayed": true,
                 "include": true,
@@ -436,7 +436,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 046",
                 "displayed": true,
                 "include": true,
@@ -452,7 +452,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 047",
                 "displayed": true,
                 "include": true,
@@ -468,7 +468,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 050",
                 "displayed": true,
                 "include": true,
@@ -484,7 +484,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 051",
                 "displayed": true,
                 "include": true,
@@ -500,7 +500,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 052",
                 "displayed": true,
                 "include": true,
@@ -516,7 +516,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 053",
                 "displayed": true,
                 "include": true,
@@ -532,7 +532,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 054",
                 "displayed": true,
                 "include": true,
@@ -548,7 +548,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 055",
                 "displayed": true,
                 "include": true,
@@ -564,7 +564,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 056",
                 "displayed": true,
                 "include": true,
@@ -580,7 +580,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 057",
                 "displayed": true,
                 "include": true,
@@ -596,7 +596,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 058",
                 "displayed": true,
                 "include": true,
@@ -612,7 +612,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 059",
                 "displayed": true,
                 "include": true,
@@ -628,7 +628,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 060",
                 "displayed": true,
                 "include": true,
@@ -644,7 +644,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 061",
                 "displayed": true,
                 "include": true,
@@ -660,7 +660,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 062",
                 "displayed": true,
                 "include": true,
@@ -676,7 +676,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 064",
                 "displayed": true,
                 "include": true,
@@ -692,7 +692,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 065",
                 "displayed": true,
                 "include": true,
@@ -708,7 +708,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 066",
                 "displayed": true,
                 "include": true,
@@ -724,7 +724,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 067",
                 "displayed": true,
                 "include": true,
@@ -740,7 +740,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 068",
                 "displayed": true,
                 "include": true,
@@ -756,7 +756,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 069",
                 "displayed": true,
                 "include": true,
@@ -772,7 +772,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 070",
                 "displayed": true,
                 "include": true,
@@ -788,7 +788,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 071",
                 "displayed": true,
                 "include": true,
@@ -804,7 +804,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 072",
                 "displayed": true,
                 "include": true,
@@ -820,7 +820,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 073",
                 "displayed": true,
                 "include": true,
@@ -836,7 +836,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 074",
                 "displayed": true,
                 "include": true,
@@ -852,7 +852,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 075",
                 "displayed": true,
                 "include": true,
@@ -868,7 +868,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 076",
                 "displayed": true,
                 "include": true,
@@ -884,7 +884,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 077",
                 "displayed": true,
                 "include": true,
@@ -900,7 +900,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 078",
                 "displayed": true,
                 "include": true,
@@ -916,7 +916,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 079",
                 "displayed": true,
                 "include": true,
@@ -932,7 +932,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 080",
                 "displayed": true,
                 "include": true,
@@ -948,7 +948,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 081",
                 "displayed": true,
                 "include": true,
@@ -964,7 +964,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 082",
                 "displayed": true,
                 "include": true,
@@ -980,7 +980,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 084",
                 "displayed": true,
                 "include": true,
@@ -996,7 +996,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 085",
                 "displayed": true,
                 "include": true,
@@ -1012,7 +1012,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 086",
                 "displayed": true,
                 "include": true,
@@ -1028,7 +1028,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 087",
                 "displayed": true,
                 "include": true,
@@ -1044,7 +1044,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 088",
                 "displayed": true,
                 "include": true,
@@ -1060,7 +1060,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 089",
                 "displayed": true,
                 "include": true,
@@ -1076,7 +1076,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 090",
                 "displayed": true,
                 "include": true,
@@ -1092,7 +1092,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 091",
                 "displayed": true,
                 "include": true,
@@ -1108,7 +1108,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 092",
                 "displayed": true,
                 "include": true,
@@ -1124,7 +1124,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 093",
                 "displayed": true,
                 "include": true,
@@ -1140,7 +1140,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 094",
                 "displayed": true,
                 "include": true,
@@ -1156,7 +1156,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 095",
                 "displayed": true,
                 "include": true,
@@ -1172,7 +1172,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 096",
                 "displayed": true,
                 "include": true,
@@ -1188,7 +1188,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 097",
                 "displayed": true,
                 "include": true,
@@ -1204,7 +1204,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 098",
                 "displayed": true,
                 "include": true,
@@ -1220,7 +1220,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 099",
                 "displayed": true,
                 "include": true,
@@ -1236,7 +1236,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 100",
                 "displayed": true,
                 "include": true,
@@ -1252,7 +1252,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 101",
                 "displayed": true,
                 "include": true,
@@ -1268,7 +1268,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 102",
                 "displayed": true,
                 "include": true,
@@ -1284,7 +1284,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 103",
                 "displayed": true,
                 "include": true,
@@ -1300,7 +1300,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 104",
                 "displayed": true,
                 "include": true,
@@ -1316,7 +1316,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 105",
                 "displayed": true,
                 "include": true,
@@ -1332,7 +1332,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 106",
                 "displayed": true,
                 "include": true,
@@ -1348,7 +1348,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 107",
                 "displayed": true,
                 "include": true,
@@ -1364,7 +1364,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 108",
                 "displayed": true,
                 "include": true,
@@ -1380,7 +1380,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 109",
                 "displayed": true,
                 "include": true,
@@ -1396,7 +1396,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Fault 110",
                 "displayed": true,
                 "include": true,
@@ -1412,7 +1412,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Federal Bassett fault",
                 "displayed": true,
                 "include": true,
@@ -1428,7 +1428,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Firewood Siding Fault 02",
                 "displayed": true,
                 "include": true,
@@ -1444,7 +1444,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Firewood Siding Fault 03",
                 "displayed": true,
                 "include": true,
@@ -1460,7 +1460,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Firewood Siding Fault 04",
                 "displayed": true,
                 "include": true,
@@ -1476,7 +1476,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Firewood Siding Fault 05",
                 "displayed": true,
                 "include": true,
@@ -1492,7 +1492,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Firewood Siding fault 01",
                 "displayed": true,
                 "include": true,
@@ -1508,7 +1508,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Glen Lyell Fault",
                 "displayed": true,
                 "include": true,
@@ -1524,7 +1524,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Great Lyell Fault",
                 "displayed": true,
                 "include": true,
@@ -1540,7 +1540,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Great Northern Fault",
                 "displayed": true,
                 "include": true,
@@ -1556,7 +1556,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Henty Fault 1",
                 "displayed": true,
                 "include": true,
@@ -1572,7 +1572,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Henty Fault 2",
                 "displayed": true,
                 "include": true,
@@ -1588,7 +1588,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Henty Fault 3",
                 "displayed": true,
                 "include": true,
@@ -1604,7 +1604,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "King River Fault",
                 "displayed": true,
                 "include": true,
@@ -1620,7 +1620,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "King River Fault splay",
                 "displayed": true,
                 "include": true,
@@ -1636,7 +1636,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Little Henty Fault",
                 "displayed": true,
                 "include": true,
@@ -1652,7 +1652,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Marionoak Fault",
                 "displayed": true,
                 "include": true,
@@ -1668,7 +1668,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Moxons Fault",
                 "displayed": true,
                 "include": true,
@@ -1684,7 +1684,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Mt Black Fault",
                 "displayed": true,
                 "include": true,
@@ -1700,7 +1700,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Mt Charter Fault",
                 "displayed": true,
                 "include": true,
@@ -1716,7 +1716,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Mt Cripps Fault",
                 "displayed": true,
                 "include": true,
@@ -1732,7 +1732,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Mt Strahan Fault",
                 "displayed": true,
                 "include": true,
@@ -1748,7 +1748,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "North Lyell Fault 1",
                 "displayed": true,
                 "include": true,
@@ -1764,7 +1764,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "North Lyell Fault 2",
                 "displayed": true,
                 "include": true,
@@ -1780,7 +1780,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Rosebery Fault",
                 "displayed": true,
                 "include": true,
@@ -1796,7 +1796,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Rosebery Fault inferred",
                 "displayed": true,
                 "include": true,
@@ -1812,7 +1812,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "South Henty Fault",
                 "displayed": true,
                 "include": true,
@@ -1828,7 +1828,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Teepookana",
                 "displayed": true,
                 "include": true,
@@ -1844,7 +1844,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Tenth Legion Thrust",
                 "displayed": true,
                 "include": true,
@@ -1860,7 +1860,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault 01",
                 "displayed": true,
                 "include": true,
@@ -1876,7 +1876,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault 02",
                 "displayed": true,
                 "include": true,
@@ -1892,7 +1892,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault 03",
                 "displayed": true,
                 "include": true,
@@ -1908,7 +1908,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault 04",
                 "displayed": true,
                 "include": true,
@@ -1924,7 +1924,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault 05",
                 "displayed": true,
                 "include": true,
@@ -1940,7 +1940,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault 06",
                 "displayed": true,
                 "include": true,
@@ -1956,7 +1956,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault 07",
                 "displayed": true,
                 "include": true,
@@ -1972,7 +1972,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault 08",
                 "displayed": true,
                 "include": true,
@@ -1988,7 +1988,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault 09",
                 "displayed": true,
                 "include": true,
@@ -2004,7 +2004,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault 10",
                 "displayed": true,
                 "include": true,
@@ -2020,7 +2020,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault 11",
                 "displayed": true,
                 "include": true,
@@ -2036,7 +2036,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 01",
                 "displayed": true,
                 "include": true,
@@ -2052,7 +2052,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 02",
                 "displayed": true,
                 "include": true,
@@ -2068,7 +2068,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 03",
                 "displayed": true,
                 "include": true,
@@ -2084,7 +2084,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 04",
                 "displayed": true,
                 "include": true,
@@ -2100,7 +2100,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 05",
                 "displayed": true,
                 "include": true,
@@ -2116,7 +2116,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 06",
                 "displayed": true,
                 "include": true,
@@ -2132,7 +2132,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 07",
                 "displayed": true,
                 "include": true,
@@ -2148,7 +2148,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 08",
                 "displayed": true,
                 "include": true,
@@ -2164,7 +2164,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 09",
                 "displayed": true,
                 "include": true,
@@ -2180,7 +2180,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 10",
                 "displayed": true,
                 "include": true,
@@ -2196,7 +2196,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 11",
                 "displayed": true,
                 "include": true,
@@ -2212,7 +2212,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 12",
                 "displayed": true,
                 "include": true,
@@ -2228,7 +2228,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 13",
                 "displayed": true,
                 "include": true,
@@ -2244,7 +2244,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 14",
                 "displayed": true,
                 "include": true,
@@ -2260,7 +2260,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 15",
                 "displayed": true,
                 "include": true,
@@ -2276,7 +2276,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 16",
                 "displayed": true,
                 "include": true,
@@ -2292,7 +2292,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 17",
                 "displayed": true,
                 "include": true,
@@ -2308,7 +2308,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 18",
                 "displayed": true,
                 "include": true,
@@ -2324,7 +2324,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 19",
                 "displayed": true,
                 "include": true,
@@ -2340,7 +2340,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Ultramafic fault inferred 20",
                 "displayed": true,
                 "include": true,
@@ -2356,7 +2356,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "West Jukes Fault",
                 "displayed": true,
                 "include": true,
@@ -2374,7 +2374,7 @@
         ],
         "Geography": [
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Avebury",
                 "displayed": true,
                 "include": true,
@@ -2401,7 +2401,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Hellyer",
                 "displayed": true,
                 "include": true,
@@ -2428,7 +2428,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Henty",
                 "displayed": true,
                 "include": true,
@@ -2452,7 +2452,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Mt Lindsay",
                 "displayed": true,
                 "include": true,
@@ -2479,7 +2479,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Queenstown",
                 "displayed": true,
                 "include": true,
@@ -2510,7 +2510,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Renison",
                 "displayed": true,
                 "include": true,
@@ -2541,7 +2541,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Rosebery",
                 "displayed": true,
                 "include": true,
@@ -2572,7 +2572,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Strahan",
                 "displayed": true,
                 "include": true,
@@ -2603,7 +2603,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Zeehan",
                 "displayed": true,
                 "include": true,
@@ -2997,7 +2997,7 @@
         ],
         "Grav model grids density": [
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "A Observed",
                 "displayed": true,
                 "include": true,
@@ -3018,7 +3018,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "B Forward",
                 "displayed": true,
                 "include": true,
@@ -3039,7 +3039,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "C Homogeneous",
                 "displayed": true,
                 "include": true,
@@ -3060,7 +3060,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "C Residual Homogeneous",
                 "displayed": true,
                 "include": true,
@@ -3081,7 +3081,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "D Heterogeneous",
                 "displayed": true,
                 "include": true,
@@ -3102,7 +3102,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "D Residual Heterogeneous",
                 "displayed": true,
                 "include": true,
@@ -3125,7 +3125,7 @@
         ],
         "Grid points": [
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "352000mE 5320000mN",
                 "displayed": true,
                 "include": true,
@@ -3147,7 +3147,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "352000mE 5335000mN",
                 "displayed": true,
                 "include": true,
@@ -3169,7 +3169,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "352000mE 5355000mN",
                 "displayed": true,
                 "include": true,
@@ -3191,7 +3191,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "352000mE 5375000mN",
                 "displayed": true,
                 "include": true,
@@ -3213,7 +3213,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "352000mE 5395000mN",
                 "displayed": true,
                 "include": true,
@@ -3235,7 +3235,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "372000mE 5320000mN",
                 "displayed": true,
                 "include": true,
@@ -3257,7 +3257,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "372000mE 5335000mN",
                 "displayed": true,
                 "include": true,
@@ -3279,7 +3279,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "372000mE 5355000mN",
                 "displayed": true,
                 "include": true,
@@ -3301,7 +3301,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "372000mE 5375000mN",
                 "displayed": true,
                 "include": true,
@@ -3323,7 +3323,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "372000mE 5395000mN",
                 "displayed": true,
                 "include": true,
@@ -3345,7 +3345,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "397000mE 5320000mN",
                 "displayed": true,
                 "include": true,
@@ -3367,7 +3367,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "397000mE 5335000mN",
                 "displayed": true,
                 "include": true,
@@ -3389,7 +3389,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "397000mE 5355000mN",
                 "displayed": true,
                 "include": true,
@@ -3411,7 +3411,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "397000mE 5375000mN",
                 "displayed": true,
                 "include": true,
@@ -3433,7 +3433,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "397000mE 5395000mN",
                 "displayed": true,
                 "include": true,
@@ -3457,7 +3457,7 @@
         ],
         "Mag model grids susc": [
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "A Observed",
                 "displayed": true,
                 "include": true,
@@ -3478,7 +3478,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "B Forward",
                 "displayed": true,
                 "include": true,
@@ -3499,7 +3499,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "C Homogeneous",
                 "displayed": true,
                 "include": true,
@@ -3520,7 +3520,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "C Residual Homogeneous",
                 "displayed": true,
                 "include": true,
@@ -3541,7 +3541,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "D Heterogeneous",
                 "displayed": true,
                 "include": true,
@@ -3562,7 +3562,7 @@
                 "type": "ImagePlane"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "E Residual Heterogeneous",
                 "displayed": true,
                 "include": true,
@@ -3585,7 +3585,7 @@
         ],
         "Stratigraphic Surfaces": [
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Andesite",
                 "displayed": true,
                 "include": true,
@@ -3601,7 +3601,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Bonds Range Porphyry",
                 "displayed": true,
                 "include": true,
@@ -3623,7 +3623,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Cambrian granite magnetic",
                 "displayed": true,
                 "include": true,
@@ -3639,7 +3639,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Cambrian granite non magnetic",
                 "displayed": true,
                 "include": true,
@@ -3655,7 +3655,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Cenozoic basalt",
                 "displayed": true,
                 "include": true,
@@ -3671,7 +3671,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Cenozoic sediment",
                 "displayed": true,
                 "include": true,
@@ -3687,7 +3687,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Central Volcanic Complex",
                 "displayed": true,
                 "include": true,
@@ -3709,7 +3709,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Crimson Creek Formation",
                 "displayed": true,
                 "include": true,
@@ -3731,7 +3731,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Devonian granite",
                 "displayed": true,
                 "include": true,
@@ -3747,7 +3747,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Devonian granite base",
                 "displayed": true,
                 "include": true,
@@ -3763,7 +3763,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Eastern Quartz Phyric Seq",
                 "displayed": true,
                 "include": true,
@@ -3779,7 +3779,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Eldon Group",
                 "displayed": true,
                 "include": true,
@@ -3801,7 +3801,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Farrell Slate",
                 "displayed": true,
                 "include": true,
@@ -3823,7 +3823,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Gordon Group",
                 "displayed": true,
                 "include": true,
@@ -3845,7 +3845,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Luina Group",
                 "displayed": true,
                 "include": true,
@@ -3867,7 +3867,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Moina Sandstone",
                 "displayed": true,
                 "include": true,
@@ -3889,7 +3889,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Owen Group",
                 "displayed": true,
                 "include": true,
@@ -3911,7 +3911,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Parmeener Supergroup",
                 "displayed": true,
                 "include": true,
@@ -3933,7 +3933,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Quartz Feldspar Porphyry",
                 "displayed": true,
                 "include": true,
@@ -3955,7 +3955,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Que Hellyer Volcanics",
                 "displayed": true,
                 "include": true,
@@ -3977,7 +3977,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Rocky Cape Group",
                 "displayed": true,
                 "include": true,
@@ -3999,7 +3999,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Sticht Range Formation",
                 "displayed": true,
                 "include": true,
@@ -4021,7 +4021,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Success Creek Group",
                 "displayed": true,
                 "include": true,
@@ -4043,7 +4043,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Tasmanian Dolerite",
                 "displayed": true,
                 "include": true,
@@ -4059,7 +4059,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Tyndall Group",
                 "displayed": true,
                 "include": true,
@@ -4081,7 +4081,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Water",
                 "displayed": true,
                 "include": true,
@@ -4097,7 +4097,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "RoseberyLyell",
+                "alt_group_label": "Roseberylyell",
                 "display_name": "Western Volcano Sedimentary",
                 "displayed": true,
                 "include": true,

@@ -2,7 +2,7 @@
     "groups": {
         "Faults": [
             {
-                "alt_group_label": "otway",
+                "alt_group_label": "Otway",
                 "display_name": "OTWAY FAULTS",
                 "displayed": true,
                 "include": true,
@@ -476,7 +476,7 @@
         ],
         "Granitic Magnetics and Gravity": [
             {
-                "alt_group_label": "otway",
+                "alt_group_label": "Otway",
                 "display_name": "OTWAY INTRUSIVES",
                 "displayed": true,
                 "include": true,
@@ -750,7 +750,7 @@
         ],
         "Stratigraphic Surfaces": [
             {
-                "alt_group_label": "otway",
+                "alt_group_label": "Otway",
                 "display_name": "OTWAY STRAT SURFACES",
                 "displayed": true,
                 "include": true,
@@ -812,7 +812,7 @@
         ],
         "Stratigraphy": [
             {
-                "alt_group_label": "otway",
+                "alt_group_label": "Otway",
                 "display_name": "BSMT",
                 "displayed": true,
                 "include": true,
@@ -828,7 +828,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "otway",
+                "alt_group_label": "Otway",
                 "display_name": "CRAYFISH",
                 "displayed": true,
                 "include": true,
@@ -850,7 +850,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "otway",
+                "alt_group_label": "Otway",
                 "display_name": "EUMERALLA",
                 "displayed": true,
                 "include": true,
@@ -872,7 +872,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "otway",
+                "alt_group_label": "Otway",
                 "display_name": "PRETTY HILL EAST",
                 "displayed": true,
                 "include": true,
@@ -894,7 +894,7 @@
                 "type": "GLTFObject"
             },
             {
-                "alt_group_label": "otway",
+                "alt_group_label": "Otway",
                 "display_name": "PRETTY HILL WEST",
                 "displayed": true,
                 "include": true,
