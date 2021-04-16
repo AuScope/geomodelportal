@@ -464,7 +464,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param offsetOrPos height offset in pixels that the label floats above the object, or an (x,y,z) triplet
      *                    for absolute position of label
      */
-    private makeGLTFLabel(sceneObj: ITOWNS.THREE.Object3D, labelStr: string, size: number, offsetOrPos: number | [number, number, number]) {
+    private makeGLTFLabel(sceneObj: ITOWNS.THREE.Object3D, labelStr: string, size: number,
+                          offsetOrPos: number | [number, number, number]) {
         const local = this;
         if (typeof offsetOrPos === 'number') {
             // When given an offset, use the sceneObj's position
@@ -507,12 +508,12 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             if (this.config.groups.hasOwnProperty(group)) {
                 const parts = this.config.groups[group];
                 for (let i = 0; i < parts.length; i++) {
-                    console.log("parts[i].type=", parts[i].type);
                     if (parts[i].type === 'GZSON' && parts[i].include) {
                         promiseList.push( new Promise( function( resolve, reject ) {
                             (function(part, grp) {
                                 console.log('loading: ', local.modelDir + '/' + part.model_url);
-                                local.httpService.get('./assets/geomodels/' + local.modelDir + '/' + part.model_url, { responseType: 'arraybuffer' }).subscribe(
+                                local.httpService.get('./assets/geomodels/' + local.modelDir + '/' + part.model_url,
+                                { responseType: 'arraybuffer' }).subscribe(
                                     // function called if loading successful
                                     function (gzsonObject) {
                                         console.log('loaded: ', local.modelDir + '/' + part.model_url);
@@ -529,12 +530,12 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         if (featureColl['features'].length > 0) {
                                             // Points
                                             if (getType(featureColl['features'][0]) === 'Point') {
-					        // Point list
+                                                // Point list
                                                 const ptList = [];
-						// Colour list
+                                                // Colour list
                                                 const colList = [];
-						// Lookup values using colour
-						const colourLookup = {};
+                                                // Lookup values using colour
+                                                const colourLookup = {};
                                                 const col = new ITOWNS.THREE.Color();
                                                 featureEach(featureColl, function(feat: Feature<Point>, idx) {
                                                     const coord = getCoord(feat);
@@ -542,21 +543,24 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                                     if (col_tup !== undefined) {
                                                         col.setRGB(col_tup[0], col_tup[1], col_tup[2]);
                                                         ptList.push(coord[0], coord[1], coord[2]);
-							colList.push(col.r, col.g, col.b);
-							colourLookup[col.r.toFixed(2)+"-"+col.g.toFixed(2)+"-"+ col.b.toFixed(2)] = feat['properties']['val'];
+                                                        colList.push(col.r, col.g, col.b);
+                                                        colourLookup[col.r.toFixed(2)+"-"
+                                                                     +col.g.toFixed(2)+"-"
+                                                                     +col.b.toFixed(2)] = feat['properties']['val'];
                                                     }
                                                 });
                                                 geometry.setAttribute('position', new ITOWNS.THREE.Float32BufferAttribute(ptList, 3));
                                                 geometry.setAttribute('color', new ITOWNS.THREE.Float32BufferAttribute(colList, 3));
-						geometry.userData = { 'colourLookup': colourLookup };
+                                                // Add the colour lookup table so we can lookup values upon click event
+                                                geometry.userData = { 'colourLookup': colourLookup };
 
-						// Set up a value in 
                                                 geometry.computeBoundingSphere();
                                                 material = new ITOWNS.THREE.PointsMaterial({size: 500, vertexColors: true});
-						items = new ITOWNS.THREE.Points(geometry, material);
-						// Name it "Point Data" so it can be recognised when clicked on
-						items.name = "Point Data";
-						items.userData = { "name": part.display_name };
+                                                items = new ITOWNS.THREE.Points(geometry, material);
+                                                // Name it "Point Data" so it can be recognised when clicked on
+                                                items.name = "Point Data";
+                                                items.userData = { "name": part.display_name };
+
                                             // LineString
                                             } else {
                                                 const lnList = [];
@@ -568,7 +572,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                                     const col_tup = feat['properties']['colour'];
                                                     if (col_tup !== undefined) {
                                                         col.setRGB(col_tup[0], col_tup[1], col_tup[2]);
-                                                        lnList.push(coords[0][0], coords[0][1], coords[0][2], coords[1][0], coords[1][1], coords[1][2]);
+                                                        lnList.push(coords[0][0], coords[0][1], coords[0][2],
+                                                                    coords[1][0], coords[1][1], coords[1][2]);
                                                         colList.push(col.r, col.g, col.b);
                                                         colList.push(col.r, col.g, col.b);
                                                         indices.push(2*idx, 2*idx+1);
@@ -577,30 +582,32 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                                 geometry.setIndex(indices);
                                                 geometry.setAttribute('position', new ITOWNS.THREE.Float32BufferAttribute(lnList, 3));
                                                 geometry.setAttribute('color', new ITOWNS.THREE.Float32BufferAttribute(colList, 3));
-                                                material = new ITOWNS.THREE.LineBasicMaterial({vertexColors: true, morphTargets: true});
-						items = new ITOWNS.THREE.LineSegments(geometry, material);
-						// Name it "Line Data" so it can be recognised when clicked on
-						items.name = "Line Data";
-						items.userData = { "name": part.display_name };
+                                                material = new ITOWNS.THREE.LineBasicMaterial({vertexColors: true,
+                                                                                               morphTargets: true});
+                                                items = new ITOWNS.THREE.LineSegments(geometry, material);
+                                                // Name it "Line Data" so it can be recognised when clicked on
+                                                items.name = "Line Data";
+                                                items.userData = { "name": part.display_name };
                                             }
-					    // Add to scene
+                                            // Add to scene
                                             local.scene.add(items);
                                             // Adds it to the scene array to keep track of it
                                             addSceneObj(local.sceneArr, part, new SceneObject(items), grp);
-					} else {
+                                        } else {
                                             console.warn(local.modelDir + '/' + part.model_url, 'is empty');
-					}
+                                        }
                                         local.gzsonCnt++;
                                         resolve(items);
                                     },
                                     // function called during loading
-				     //function () {
+                                    //function () {
                                         // console.log('GLTF onProgress()', xhr);
                                         // if ( xhr.lengthComputable ) {
                                         //    const percentComplete = xhr.loaded / xhr.total * 100;
-                                        //    console.log( xhr.currentTarget.responseURL, Math.round(percentComplete) + '% downloaded' );
+                                        //    console.log(xhr.currentTarget.responseURL,
+                                        //                Math.round(percentComplete)+'% downloaded');
                                         // }
-				     //},
+                                    //},
                                     // function called when loading fails
                                     function (error) {
                                         console.error('GZSON load error!', error);
@@ -688,7 +695,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
                                         // Adds it to the scene array to keep track of it
                                         addSceneObj(local.sceneArr, part, new SceneObject(gObject.scene), grp);
-					local.gltfCnt++;
+                                        local.gltfCnt++;
                                         resolve(gObject.scene);
                                     },
                                     // function called during loading
@@ -696,13 +703,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         // console.log('GLTF onProgress()', xhr);
                                         // if ( xhr.lengthComputable ) {
                                         //    const percentComplete = xhr.loaded / xhr.total * 100;
-                                        //    console.log( xhr.currentTarget.responseURL, Math.round(percentComplete) + '% downloaded' );
+                                        //    console.log(xhr.currentTarget.responseURL,
+                                        //                Math.round(percentComplete) + '% downloaded');
                                         // }
                                     },
                                     // function called when loading fails
                                     function (error) {
                                         console.error('GLTF/OBJ load error!', error);
-					local.gltfCnt++;
+                                        local.gltfCnt++;
                                         // Accept errors
                                         resolve(null);
                                     }
@@ -756,8 +764,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             local.scene.add(gObject.scene);
                             // Add floating label
                             local.makeGLTFLabel(gObject.scene, boreholeId, 200, 20);
-                            addSceneObj(local.sceneArr, { 'display_name': boreholeId, 'displayed': true, 'model_url': boreholeId,
-                                                        'type': 'GLTFObject' }, new SceneObject(gObject.scene), groupName);
+                            addSceneObj(local.sceneArr, { 'display_name': boreholeId, 'displayed': true,
+                                                          'model_url': boreholeId, 'type': 'GLTFObject' },
+                                        new SceneObject(gObject.scene), groupName);
                             local.sidebarSrvRequest(groupName, boreholeId, MenuStateChangeType.NEW_PART);
                         },
                         // function called during loading
@@ -765,7 +774,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             /*console.log('BOREHOLE GLTF onProgress()', xhr);
                             if ( xhr.lengthComputable ) {
                                 const percentComplete = xhr.loaded / xhr.total * 100;
-                                console.log( xhr.currentTarget.responseURL, Math.round(percentComplete) + '% downloaded' );
+                                console.log(xhr.currentTarget.responseURL, Math.round(percentComplete)+'% downloaded');
                             }*/
                         },
                         // function called when loading fails
@@ -801,7 +810,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         './assets/geomodels/' + local.modelDir + '/' + parts[i].model_url,
                                         local.scene, volSceneObj.volObjList, parts[i].displayed));
                         addSceneObj(this.sceneArr, parts[i], volSceneObj, group);
-			// TODO: Counter increment must be inside promise
+                        // TODO: Counter increment must be inside promise
                         local.volCnt++;
                     }
                 }
@@ -997,7 +1006,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.view = new ITOWNS.PlanarView(this.viewerDiv, this.extentObj, {scene3D: this.scene, maxSubdivisionLevel: 2.0,
                                                                            disableSkirt: true});
 
-        // Change defaults to allow the camera to get very close and very far away without exceeding boundaries of field of view
+        // Change defaults to allow the camera to get very close and very far away
+        // without exceeding boundaries of field of view
         this.view.camera.camera3D.near = 0.01;
         this.view.camera.camera3D.far = 200 * Math.max(this.extentObj.dimensions().x, this.extentObj.dimensions().y);
         this.view.camera.camera3D.updateProjectionMatrix();
@@ -1017,8 +1027,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
         // The Raycaster is used to find which part of the model was clicked on, then create a popup box
         this.raycaster = new ITOWNS.THREE.Raycaster();
-	// Set the sensitivity of points selection
-	this.raycaster.params.Points.threshold = 50;
+        // Set the sensitivity of points selection
+        this.raycaster.params.Points.threshold = 50;
         this.ngRenderer.listen(this.viewerDiv, 'dblclick', function(event: any) {
 
                 event.preventDefault();
@@ -1032,35 +1042,40 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                 if (intersects.length > 0) {
 
                     // Find closest object that has a name
-                    for (closest = 0; (closest < intersects.length && intersects[closest].object.name === ''); closest++) { }
+                    for (closest = 0;
+                         (closest < intersects.length && intersects[closest].object.name === '');
+                         closest++) { }
                     if (closest < intersects.length) {
                         const objName = intersects[closest].object.name;
                         const objIntPt = intersects[closest].point;
-			const objUserData = intersects[closest].object.userData;
+                        const objUserData = intersects[closest].object.userData;
                         const point: [number, number, number] = [ objIntPt.x, objIntPt.y, objIntPt.z];
 
                         // TODO: Remove to a separate lookup service
 
-			// Is this points data?
-			if (objName === "Point Data") {
-			    var index = intersects[closest].index;
-			    const geomUserData = intersects[closest].object.geometry.userData;
+                        // Is this points data?
+                        if (objName === "Point Data") {
+                            // Get faces index
+                            var index = intersects[closest].index;
                             const colourArr = intersects[closest].object.geometry.getAttribute('color').array;
-			    const r = colourArr[index*3];
-			    const g = colourArr[index*3+1];
-			    const b = colourArr[index*3+2];
-			    const val = geomUserData.colourLookup[r.toFixed(2)+"-"+g.toFixed(2)+"-"+b.toFixed(2)]
-			    const popObj = {'title': objUserData.name, 'val': val };
+                            // Use faces index to find the colour of the clicked on object
+                            const r = colourArr[index*3];
+                            const g = colourArr[index*3+1];
+                            const b = colourArr[index*3+2];
+                            // Use colour lookup table to find the associated value
+                            const geomUserData = intersects[closest].object.geometry.userData;
+                            const val = geomUserData.colourLookup[r.toFixed(2)+"-"+g.toFixed(2)+"-"+b.toFixed(2)]
+                            const popObj = {'title': objUserData.name, 'val': val };
                             makePopup(local.ngRenderer, local.popupBoxDiv, event, popObj, point);
-			    return;
-		        }
+                            return;
+                        }
 
-			// Is this line data?
-			if (objName === "Line Data") {
-                           const popObj = {'title': objUserData.name};
-                           makePopup(local.ngRenderer, local.popupBoxDiv, event, popObj, point);
-                           return;
-			}
+                        // Is this line data?
+                        if (objName === "Line Data") {
+                            const popObj = {'title': objUserData.name};
+                            makePopup(local.ngRenderer, local.popupBoxDiv, event, popObj, point);
+                            return;
+                        }
 
                         // Is this a volume object?
                         if (local.volViewService.isVolLabel(objName)) {
@@ -1153,8 +1168,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         });
 
         // 3 axis virtual globe controller
-        this.trackBallControls = new ThreeDVirtSphereCtrls(this.scene, this.viewerDiv, this.view.camera.camera3D, this.view,
-                                        this.extentObj.center().toVector3(), this.initCamDist, this.cameraPosChange.bind(this));
+        this.trackBallControls = new ThreeDVirtSphereCtrls(this.scene, this.viewerDiv, this.view.camera.camera3D,
+                                        this.view, this.extentObj.center().toVector3(), this.initCamDist,
+                                        this.cameraPosChange.bind(this));
         this.onResize();
 
         // Wait for the signal to start model demonstration
