@@ -529,8 +529,12 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         if (featureColl['features'].length > 0) {
                                             // Points
                                             if (getType(featureColl['features'][0]) === 'Point') {
+					        // Point list
                                                 const ptList = [];
+						// Colour list
                                                 const colList = [];
+						// Lookup values using colour
+						const colourLookup = {};
                                                 const col = new ITOWNS.THREE.Color();
                                                 featureEach(featureColl, function(feat: Feature<Point>, idx) {
                                                     const coord = getCoord(feat);
@@ -538,14 +542,21 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                                     if (col_tup !== undefined) {
                                                         col.setRGB(col_tup[0], col_tup[1], col_tup[2]);
                                                         ptList.push(coord[0], coord[1], coord[2]);
-                                                        colList.push(col.r, col.g, col.b);
+							colList.push(col.r, col.g, col.b);
+							colourLookup[col.r.toFixed(2)+"-"+col.g.toFixed(2)+"-"+ col.b.toFixed(2)] = feat['properties']['val'];
                                                     }
                                                 });
                                                 geometry.setAttribute('position', new ITOWNS.THREE.Float32BufferAttribute(ptList, 3));
                                                 geometry.setAttribute('color', new ITOWNS.THREE.Float32BufferAttribute(colList, 3));
+						geometry.userData = { 'colourLookup': colourLookup };
+
+						// Set up a value in 
                                                 geometry.computeBoundingSphere();
                                                 material = new ITOWNS.THREE.PointsMaterial({size: 500, vertexColors: true});
-                                                items = new ITOWNS.THREE.Points(geometry, material);
+						items = new ITOWNS.THREE.Points(geometry, material);
+						// Name it "Point Data" so it can be recognised when clicked on
+						items.name = "Point Data";
+						items.userData = { "name": part.display_name };
                                             // LineString
                                             } else {
                                                 const lnList = [];
@@ -567,8 +578,12 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                                 geometry.setAttribute('position', new ITOWNS.THREE.Float32BufferAttribute(lnList, 3));
                                                 geometry.setAttribute('color', new ITOWNS.THREE.Float32BufferAttribute(colList, 3));
                                                 material = new ITOWNS.THREE.LineBasicMaterial({vertexColors: true, morphTargets: true});
-                                                items = new ITOWNS.THREE.LineSegments(geometry, material);
+						items = new ITOWNS.THREE.LineSegments(geometry, material);
+						// Name it "Line Data" so it can be recognised when clicked on
+						items.name = "Line Data";
+						items.userData = { "name": part.display_name };
                                             }
+					    // Add to scene
                                             local.scene.add(items);
                                             // Adds it to the scene array to keep track of it
                                             addSceneObj(local.sceneArr, part, new SceneObject(items), grp);
@@ -1002,6 +1017,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
         // The Raycaster is used to find which part of the model was clicked on, then create a popup box
         this.raycaster = new ITOWNS.THREE.Raycaster();
+	// Set the sensitivity of points selection
+	this.raycaster.params.Points.threshold = 50;
         this.ngRenderer.listen(this.viewerDiv, 'dblclick', function(event: any) {
 
                 event.preventDefault();
@@ -1019,10 +1036,31 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     if (closest < intersects.length) {
                         const objName = intersects[closest].object.name;
                         const objIntPt = intersects[closest].point;
+			const objUserData = intersects[closest].object.userData;
                         const point: [number, number, number] = [ objIntPt.x, objIntPt.y, objIntPt.z];
 
                         // TODO: Remove to a separate lookup service
 
+			// Is this points data?
+			if (objName === "Point Data") {
+			    var index = intersects[closest].index;
+			    const geomUserData = intersects[closest].object.geometry.userData;
+                            const colourArr = intersects[closest].object.geometry.getAttribute('color').array;
+			    const r = colourArr[index*3];
+			    const g = colourArr[index*3+1];
+			    const b = colourArr[index*3+2];
+			    const val = geomUserData.colourLookup[r.toFixed(2)+"-"+g.toFixed(2)+"-"+b.toFixed(2)]
+			    const popObj = {'title': objUserData.name, 'val': val };
+                            makePopup(local.ngRenderer, local.popupBoxDiv, event, popObj, point);
+			    return;
+		        }
+
+			// Is this line data?
+			if (objName === "Line Data") {
+                           const popObj = {'title': objUserData.name};
+                           makePopup(local.ngRenderer, local.popupBoxDiv, event, popObj, point);
+                           return;
+			}
 
                         // Is this a volume object?
                         if (local.volViewService.isVolLabel(objName)) {
