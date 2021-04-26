@@ -10,6 +10,8 @@ import { SidebarService, MenuStateChangeType, MenuChangeType } from '../../servi
 import { HelpinfoService, WidgetType } from '../../services/helpinfo.service';
 import { saveAs } from 'file-saver';
 
+// Google Analytics
+declare var gtag;
 
 // Used to control visibility of parts in the menu
 const DISPLAY_CTRL_ON = 'block';
@@ -384,6 +386,13 @@ export class SidebarComponent  implements OnInit, OnDestroy {
         //     console.log(partObj.model_url);
         // }
         // console.log(window.location.origin + "/assets/geomodels/" + this.modelDir + "/" + partId, partId);
+
+        // Inform Google Analytics
+        gtag('event', 'view_item', {
+             'event_category': 'download_model_part',
+             'event_label': this.modelDir + "_" + partId,
+        });
+
         saveAs(window.location.origin + '/assets/geomodels/' + this.modelDir + '/' + partId, partId);
     }
      

@@ -18,6 +18,9 @@ import { featureEach } from '@turf/meta';
 import { getCoord, getCoords, getType } from '@turf/invariant';
 import { Feature, Point, LineString } from '@turf/helpers';
 
+// Google Analytics
+declare var gtag;
+
 
 // Import itowns library
 // Note: In ThreeJS, buffer geometry ids are created by incrementing a counter which is local to the library.
@@ -1051,6 +1054,12 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                         const objUserData = intersects[closest].object.userData;
                         const point: [number, number, number] = [ objIntPt.x, objIntPt.y, objIntPt.z];
 
+                        // Tell Google Analytics
+                        gtag('event', 'view_item', {
+                            'event_category' : 'model_info_click',
+                            'event_label' : local.modelDir
+                        });
+
                         // TODO: Remove to a separate lookup service
 
                         // Is this points data?
@@ -1332,6 +1341,12 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     public dropHandler(ev) {
         // Prevent default behaviour (stop file being opened)
         ev.preventDefault();
+        // Tell Google Analytics
+        gtag('event', 'view_item', {
+            'event_category' : 'import_file',
+            'event_label' : this.modelDir
+        });
+
         this.fileImport.doTryConvert(ev);
         this.enableFileDrop = false;
     }
