@@ -41,7 +41,8 @@ const proj4 = ITOWNS.proj4;
 // Three axis virtual globe controller
 import ThreeDVirtSphereCtrls from '../../../assets/ThreeDVirtSphereCtrls';
 
-const BACKGROUND_COLOUR = new ITOWNS.THREE.Color(0xC0C0C0);
+// Default grey background
+const BACKGROUND_COLOUR = 0xC0C0C0;
 
 
 @Component({
@@ -384,8 +385,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         // Scene
         this.scene = new ITOWNS.THREE.Scene();
 
-        // Grey background
-        this.scene.background = BACKGROUND_COLOUR;
+        // Set background colour
+        if (props.hasOwnProperty('background_colour')) {
+            // Custom background
+            this.scene.background = new ITOWNS.THREE.Color(props.background_colour)
+        } else {
+            // Default background
+            this.scene.background = new ITOWNS.THREE.Color(BACKGROUND_COLOUR);
+        }
 
         // Ambient light
         const ambient = new ITOWNS.THREE.AmbientLight(0x404040);
