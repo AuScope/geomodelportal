@@ -410,7 +410,8 @@
         ],
         "init_cam_dist": 150000.0,
         "name": "Cobar Geology & Faults",
-        "proj4_defn": "+proj=utm +zone=55 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+        "proj4_defn": "+proj=utm +zone=55 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+        "background_colour": "rgb(159, 157, 230)"
     },
     "type": "GeologicalModel",
     "version": 1.0
