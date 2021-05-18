@@ -1,6 +1,6 @@
 {
     "groups": {
-        "3D Volume Model density Density@@": [
+        "3D Density": [
             {
                 "alt_group_label": "3D Volume Model density Density@@",
                 "display_name": "MODEL_DENSITY",
@@ -103,54 +103,7 @@
                 }
             }
         ],
-        "3D Volume Model density Rock unit@@": [
-            {
-                "alt_group_label": "3D Volume Model density Rock unit@@",
-                "display_name": "MODEL_DENSITY",
-                "displayed": false,
-                "include": true,
-                "model_url": "Model_density_Rock_unit@@.gz",
-                "type": "3DVolume",
-                "volumeData": {
-                    "dataDims": [
-                        122,
-                        79,
-                        253
-                    ],
-                    "dataType": "INT_16",
-                    "maxVal": 36.0,
-                    "minVal": 1.0,
-                    "origin": [
-                        35000.0,
-                        6455000.0,
-                        3000.0
-                    ],
-                    "rotation": [
-                        [
-                            1.0,
-                            0.0,
-                            0.0
-                        ],
-                        [
-                            0.0,
-                            1.0,
-                            0.0
-                        ],
-                        [
-                            -0.0,
-                            -0.0,
-                            -1.0
-                        ]
-                    ],
-                    "size": [
-                        360024.5949394672,
-                        231037.97218359448,
-                        62750.98814229249
-                    ]
-                }
-            }
-        ],
-        "3D Volume Model susceptibility Magnetic susctptibility@@": [
+        "3D Magnetic Susc": [
             {
                 "alt_group_label": "3D Volume Model susceptibility Magnetic susctptibility@@",
                 "display_name": "MODEL_SUSCEPTIBILITY",
@@ -197,7 +150,54 @@
                 }
             }
         ],
-        "3D Volume Model susceptibility Rock unit@@": [
+        "3D Rock Unit Density": [
+            {
+                "alt_group_label": "3D Volume Model density Rock unit@@",
+                "display_name": "MODEL_DENSITY",
+                "displayed": false,
+                "include": true,
+                "model_url": "Model_density_Rock_unit@@.gz",
+                "type": "3DVolume",
+                "volumeData": {
+                    "dataDims": [
+                        122,
+                        79,
+                        253
+                    ],
+                    "dataType": "INT_16",
+                    "maxVal": 36.0,
+                    "minVal": 1.0,
+                    "origin": [
+                        35000.0,
+                        6455000.0,
+                        3000.0
+                    ],
+                    "rotation": [
+                        [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        [
+                            -0.0,
+                            -0.0,
+                            -1.0
+                        ]
+                    ],
+                    "size": [
+                        360024.5949394672,
+                        231037.97218359448,
+                        62750.98814229249
+                    ]
+                }
+            }
+        ],
+        "3D Rock Unit Magnetic Susc": [
             {
                 "alt_group_label": "3D Volume Model susceptibility Rock unit@@",
                 "display_name": "MODEL_SUSCEPTIBILITY",
@@ -244,7 +244,7 @@
                 }
             }
         ],
-        "Gocad Objects": [
+        "Geology": [
             {
                 "alt_group_label": "Gocad Objects",
                 "display_name": "08GA OM1 CDP",
