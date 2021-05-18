@@ -154,8 +154,10 @@ The "Ammyool Faults" is the name of a group of parts. It is a label that appears
 * "crs"- this is the coordinate reference system of x,y,z coordinates that are contained in all the GLTF files
 * "extent" -  this is the extent (2D bounding box of the model: W, E, S, N) in model coordinates
 * "name" - name of model for display purposes
-* "proj4_defn" - if the CRS is not common, a 'proj4' definition may sometimes be necessary (http://proj4js.org/)
 * "init_cam_dist" - this is the initial camera distance to the model
+* "proj4_defn" - OPTIONAL if the CRS is not common, a 'proj4' definition may sometimes be necessary (http://proj4js.org/)
+* "background_colour" - OPTIONAL set the background colour to something other than default grey colour 
+
 
 
 ```
@@ -164,7 +166,8 @@ The "Ammyool Faults" is the name of a group of parts. It is a label that appears
         "extent": [868000.0,1036000.0,6848000.0,7016000.0],
         "name": "East Fort",
         "init_cam_dist": 900000.0,
-        "proj4_defn": "+proj=utm +zone=52 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+        "proj4_defn": "+proj=utm +zone=52 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+        "background_colour": "rgb(159, 157, 230)"
 }
 ```
 
