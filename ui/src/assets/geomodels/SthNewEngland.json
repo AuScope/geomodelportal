@@ -335,6 +335,7 @@
         ]
     },
     "properties": {
+        "background_colour": "rgb(159, 157, 230)",
         "crs": "EPSG:28356",
         "extent": [
             215459.5078125,
