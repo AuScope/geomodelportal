@@ -445,7 +445,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         bitmap.width = 1024;
         bitmap.height = 512;
         const ctx = bitmap.getContext('2d');
-        ctx.font = '100px Arial';
+        ctx.font = '10px Arial';
         ctx.textAlign = 'center';
         ctx.fillText(labelStr, 512, 256, 1024);
 
