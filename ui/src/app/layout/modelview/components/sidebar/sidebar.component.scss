@@ -25,7 +25,7 @@
             background: $topnav-background-color;
             border: 0;
             border-radius: 0;
-            color: #999;
+            color: #DDD;
             text-decoration: none;
             .fa {
                 margin-right: 6px;
@@ -60,7 +60,7 @@
             height: 50px;
             margin-bottom: 0;
             a {
-                color: #999;
+                color: #DDD;
                 text-decoration: none;
                 font-weight: 400;
                 background: $topnav-background-color;
@@ -90,7 +90,7 @@
                     background-color: $topnav-background-color;
                     border: 0 solid transparent;
                     a {
-                        color: #999;
+                        color: #DDD;
                     }
                     a:hover {
                         color: #fff;
@@ -124,7 +124,7 @@
             height: auto;
             li {
                 a {
-                    color: #fff;
+                    color: #DDD;
                     padding: 0 10px 0 10px;
                     display: block;
                     height: 3rem;
@@ -177,7 +177,7 @@ i.fa.fa-lg.fa-eye, i.fa.fa-lg.fa-compress {
 
 .span-part-controls  {
     padding: 0 0 0 20px;
-    color: #AAA;
+    color: #DDD;
 }
 
 .vis-toggle {
