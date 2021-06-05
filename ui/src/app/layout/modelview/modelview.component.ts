@@ -30,10 +30,9 @@ import * as ITOWNS from 'itowns/dist/itowns';
 
 // GLTFLoader is not fully part of ThreeJS'. It is separate.
 // We must use a GLTFLoader that is in ITOWNS' namespace, to avoid the problem described above.
+// We use an updated version of https://github.com/antonio-gomez/three-gltf2-loader
 // This older library works well because the namespace is an input parameter
-// FIXME: Wean ourselves off this library - it is now producing errors:
-// "THREE.Mesh: .drawMode has been removed. The renderer now always assumes THREE.TrianglesDrawMode. Transform your geometry via BufferGeometryUtils.toTrianglesDrawMode() if necessary."
-import * as GLTFLoader from 'three-gltf2-loader/lib/main';
+import * as GLTFLoader from '../../../assets/three-gltf2-loader';
 
 // If you want to use your own CRS instead of the ITOWNS' default one then you must use ITOWNS' version of proj4
 const proj4 = ITOWNS.proj4;
@@ -363,6 +362,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param modelDir directory where model files are found
      */
     private initialiseModel(config, modelDir: string) {
+        const local = this;
         const props = config.properties;
         this.config = config;
         this.modelDir = modelDir;
@@ -400,28 +400,62 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.scene.add(ambient);
 
         // Add point lights from all directions to show surfaces
-        const pointLightZDist = 100000;
+        const pointLightZDist = 80000;
         const pointLightXYOffset = 20000;
         const pointLightColour = 0x404040;
         const pointLightIntensity = 1.0;
+        const eastWest = (this.extentObj.east + this.extentObj.west)/2.0;
+        const eastWest1 = (2.0 * this.extentObj.east + this.extentObj.west)/3.0;
+        const eastWest2 = (this.extentObj.east + 2.0 * this.extentObj.west)/3.0;
+        const northSouth = (this.extentObj.north + this.extentObj.south)/2.0;
+        const northSouth1 = (2.0 * this.extentObj.north + this.extentObj.south)/3.0;
+        const northSouth2 = (this.extentObj.north + 2.0 * this.extentObj.south)/3.0;
+ 
         const plPosArray = [[ this.extentObj.west - pointLightXYOffset, this.extentObj.south - pointLightXYOffset, pointLightZDist ],
-                            [ this.extentObj.west - pointLightXYOffset, this.extentObj.south - pointLightXYOffset, -pointLightZDist],
+                            [ this.extentObj.west - pointLightXYOffset, this.extentObj.south - pointLightXYOffset, -pointLightZDist ],
 
-                            [ this.extentObj.west - pointLightXYOffset, this.extentObj.north + pointLightXYOffset, pointLightZDist],
-                            [ this.extentObj.west - pointLightXYOffset, this.extentObj.north + pointLightXYOffset, -pointLightZDist],
+                            [ this.extentObj.west - pointLightXYOffset, this.extentObj.north + pointLightXYOffset, pointLightZDist ],
+                            [ this.extentObj.west - pointLightXYOffset, this.extentObj.north + pointLightXYOffset, -pointLightZDist ],
 
-                            [this.extentObj.east + pointLightXYOffset, this.extentObj.north + pointLightXYOffset, pointLightZDist ],
-                            [this.extentObj.east + pointLightXYOffset, this.extentObj.north + pointLightXYOffset, -pointLightZDist],
+                            [ this.extentObj.east + pointLightXYOffset, this.extentObj.north + pointLightXYOffset, pointLightZDist ],
+                            [ this.extentObj.east + pointLightXYOffset, this.extentObj.north + pointLightXYOffset, -pointLightZDist ],
 
-                            [this.extentObj.east + pointLightXYOffset, this.extentObj.south - pointLightXYOffset, pointLightZDist ],
-                            [this.extentObj.east + pointLightXYOffset, this.extentObj.south - pointLightXYOffset, -pointLightZDist ]
+                            [ this.extentObj.east + pointLightXYOffset, this.extentObj.south - pointLightXYOffset, pointLightZDist ],
+                            [ this.extentObj.east + pointLightXYOffset, this.extentObj.south - pointLightXYOffset, -pointLightZDist ],
+
+                            [ eastWest, this.extentObj.north + pointLightXYOffset, -5000 ],
+                            [ eastWest, this.extentObj.south - pointLightXYOffset, -5000 ],
+
+                            [ this.extentObj.east + pointLightXYOffset, northSouth, -5000 ],
+                            [ this.extentObj.west - pointLightXYOffset, northSouth, -5000 ]
+
                             ];
+        // Larger models need more lights 
+        if (this.extentObj.east - this.extentObj.west > 200000) {
+            plPosArray.push([eastWest1, northSouth1, pointLightZDist ]);
+            plPosArray.push([eastWest1, northSouth2, pointLightZDist ]);
+            plPosArray.push([eastWest2, northSouth1, pointLightZDist ]);
+            plPosArray.push([eastWest2, northSouth2, pointLightZDist ]);
+
+            plPosArray.push([eastWest1, northSouth1, -pointLightZDist ]);
+            plPosArray.push([eastWest1, northSouth2, -pointLightZDist ]);
+            plPosArray.push([eastWest2, northSouth1, -pointLightZDist ]);
+            plPosArray.push([eastWest2, northSouth2, -pointLightZDist ]);
+        } else {
+            plPosArray.push([eastWest, northSouth, pointLightZDist ]);
+            plPosArray.push([eastWest, northSouth, -pointLightZDist ]);
+        }
+
+        // Add the lights
         let num = 1;
         for (const plPos of plPosArray) {
-            const pointlight = new ITOWNS.THREE.PointLight(pointLightColour, pointLightIntensity);
-            pointlight.position.set(plPos[0], plPos[1], plPos[2]);
-            pointlight.name = 'Point Light ' + num.toString();
-            this.scene.add(pointlight);
+            const pointLight = new ITOWNS.THREE.PointLight(pointLightColour, pointLightIntensity);
+            pointLight.position.set(plPos[0], plPos[1], plPos[2]);
+            pointLight.name = 'Point Light ' + num.toString();
+            this.scene.add(pointLight);
+            // const sphereSize = 10000;
+            // const pointLightHelper = new ITOWNS.THREE.PointLightHelper( pointLight, sphereSize );
+            // this.scene.add( pointLightHelper );
             num += 1;
         }
 
@@ -638,7 +672,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             function() {
                 console.log('GZSONs are loaded');
                 // Add image files to scene
-                local.add3DObjects();
+                local.addGLTFObjects();
             },
             // function called when one or more objects fail
             function(error) {
@@ -651,7 +685,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     /**
      * Loads and draws the GLTF objects
      */
-    private add3DObjects() {
+    private addGLTFObjects() {
         const promiseList = [];
         const local = this;
 
@@ -806,6 +840,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     private addVolumes() {
         const promiseList = [];
         const local = this;
+
         for (const group in local.config.groups) {
             if (local.config.groups.hasOwnProperty(group)) {
                 const parts = local.config.groups[group];
@@ -1012,6 +1047,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * other objects in the scene.
      */
     private createView() {
+        const local = this;
         // Create an instance of PlanarView
         this.view = new ITOWNS.PlanarView(this.viewerDiv, this.extentObj, {scene3D: this.scene, maxSubdivisionLevel: 2.0,
                                                                            disableSkirt: true});
@@ -1023,7 +1059,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.view.camera.camera3D.updateProjectionMatrix();
         this.view.camera.camera3D.updateMatrixWorld(true);
 
-        this.addWMSLayers();
+        local.addWMSLayers();
     }
 
 
@@ -1033,7 +1069,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     private finaliseScene() {
         const local = this;
 
-        this.addBoreholes();
+        local.addBoreholes();
 
         // The Raycaster is used to find which part of the model was clicked on, then create a popup box
         this.raycaster = new ITOWNS.THREE.Raycaster();
@@ -1188,6 +1224,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         this.view, this.extentObj.center().toVector3(), this.initCamDist,
                                         this.cameraPosChange.bind(this));
         this.onResize();
+   
 
         // Wait for the signal to start model demonstration
         const helpObs = this.helpinfoService.waitForModelDemo();
@@ -1215,7 +1252,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.fileImport = this.fileImportFactory.createFileImport(this.scene, this.gltfLoader, this.modelUrlPath,
                                                                              this.sceneArr, this.trackBallControls);
         // Everything except the WMS layers are loaded at this point, so turn off loading spinner
-        this.controlLoadSpinner(false);
+        local.controlLoadSpinner(false);
     }
 
     /**
