@@ -16,6 +16,7 @@ export class ModelCardComponent {
     @Input() modelPath: string;
     @Input() prePath = '';
     @Input() modelInfoLink = '';
+    @Input() modelInfoMessage = '';
 
     constructor() {
         // If this website sits in a subdirectory of web server's 'document root' directory
