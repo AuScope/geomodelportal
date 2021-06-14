@@ -1019,7 +1019,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             projection: 'EPSG:3857',
             format: 'image/png',
             extent: local.extentObj,
-            transparent: 'true'
+            transparent: true
         });
 
         // Create the layer
