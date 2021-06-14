@@ -563,7 +563,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         console.log('loaded: ', local.modelDir + '/' + part.model_url);
                                         const view = new Uint8Array(gzsonObject);
                                         const gunzip = new Zlib.Gunzip(view);
-                                        const plain = gunzip.decompress();
+                                        let plain;
+                                        try {
+                                            plain = gunzip.decompress();
+                                        } catch (zlibError) {
+                                            console.error("Cannot decompress " + part.model_url + ". It is not GZIP:" + zlibError);
+                                            const enc = new TextEncoder()
+                                            plain = enc.encode('{"features":[]}');
+                                        }
                                         const str = new TextDecoder("utf-8").decode(plain);
                                         const featureColl = JSON.parse(str);
                                         const geometry = new ITOWNS.THREE.BufferGeometry();
