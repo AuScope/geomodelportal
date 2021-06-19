@@ -18,29 +18,44 @@ export class ProviderSelectionComponent {
     constructor(private modelInfoService: ModelInfoService) {
         this.sliders.push(
             {
+                imagePath: 'assets/images/StuartShelf.PNG',
+                text: 'National Computational Infrastructure (NCI) & G. Heinson (Uni. of Adelaide)',
+                label: 'Stuart Shelf Model'
+            },
+            {
+                imagePath: 'assets/images/SouthNewEngland.PNG',
+                text: 'N.S.W. (Resources & Geoscience)',
+                label: 'South New England Deep Crustal Model'
+            },
+            {
+                imagePath: 'assets/images/CurnamonaSed.PNG',
+                text: 'South Australia (Energy and Mining)',
+                label: 'Curnamona Sedimentary Basins Model'
+            },
+            {
                 imagePath: 'assets/images/Windimurra.PNG',
-                label: 'Western Australia (DMIRS)',
-                text: 'Windimurra Model'
+                text: 'Western Australia (DMIRS)',
+                label: 'Windimurra Model'
             },
             {
                 imagePath: 'assets/images/NorthGawler.PNG',
-                label: 'South Australia (Minerals)',
-                text: 'North Gawler Model'
+                text: 'South Australia (Energy and Mining)',
+                label: 'North Gawler Model'
             },
             {
                 imagePath: 'assets/images/RoseberyLyell.PNG',
-                label: 'Tasmania (MRT)',
-                text: 'Rosebery Lyell Model'
+                text: 'Tasmania (MRT)',
+                label: 'Rosebery Lyell Model'
             },
             {
                 imagePath: 'assets/images/Yilgarn.PNG',
-                label: 'Geoscience Australia',
-                text: 'Yilgarn Model'
+                text: 'Geoscience Australia',
+                label: 'Yilgarn Model'
             },
             {
-              imagePath: 'assets/images/Otway.PNG',
-              label: 'Victoria (Earth Resources)',
-              text: 'Otway Model'
+                imagePath: 'assets/images/Otway.PNG',
+                text: 'Victoria (Earth Resources)',
+                label: 'Otway Model'
             }
         );
         this.modelInfoService.getProviderInfo().then(res => { this.sources = res; });
