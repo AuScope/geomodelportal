@@ -395,7 +395,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         }
 
         // Ambient light
-        const ambient = new ITOWNS.THREE.AmbientLight(0x404040);
+        const ambient = new ITOWNS.THREE.AmbientLight(0x606060);
         ambient.name = 'Ambient Light';
         this.scene.add(ambient);
 
@@ -403,7 +403,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         const pointLightZDist = 80000;
         const pointLightXYOffset = 20000;
         const pointLightColour = 0x404040;
-        const pointLightIntensity = 1.0;
+        const lowIntensity = 0.6;
+        const highIntensity = 2.0;
         const eastWest = (this.extentObj.east + this.extentObj.west)/2.0;
         const eastWest1 = (2.0 * this.extentObj.east + this.extentObj.west)/3.0;
         const eastWest2 = (this.extentObj.east + 2.0 * this.extentObj.west)/3.0;
@@ -411,45 +412,45 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         const northSouth1 = (2.0 * this.extentObj.north + this.extentObj.south)/3.0;
         const northSouth2 = (this.extentObj.north + 2.0 * this.extentObj.south)/3.0;
  
-        const plPosArray = [[ this.extentObj.west - pointLightXYOffset, this.extentObj.south - pointLightXYOffset, pointLightZDist ],
-                            [ this.extentObj.west - pointLightXYOffset, this.extentObj.south - pointLightXYOffset, -pointLightZDist ],
+        const plPosArray = [[ this.extentObj.west - pointLightXYOffset, this.extentObj.south - pointLightXYOffset, pointLightZDist, lowIntensity ],
+                            [ this.extentObj.west - pointLightXYOffset, this.extentObj.south - pointLightXYOffset, -pointLightZDist, lowIntensity ],
 
-                            [ this.extentObj.west - pointLightXYOffset, this.extentObj.north + pointLightXYOffset, pointLightZDist ],
-                            [ this.extentObj.west - pointLightXYOffset, this.extentObj.north + pointLightXYOffset, -pointLightZDist ],
+                            [ this.extentObj.west - pointLightXYOffset, this.extentObj.north + pointLightXYOffset, pointLightZDist, lowIntensity ],
+                            [ this.extentObj.west - pointLightXYOffset, this.extentObj.north + pointLightXYOffset, -pointLightZDist, lowIntensity ],
 
-                            [ this.extentObj.east + pointLightXYOffset, this.extentObj.north + pointLightXYOffset, pointLightZDist ],
-                            [ this.extentObj.east + pointLightXYOffset, this.extentObj.north + pointLightXYOffset, -pointLightZDist ],
+                            [ this.extentObj.east + pointLightXYOffset, this.extentObj.north + pointLightXYOffset, pointLightZDist, lowIntensity ],
+                            [ this.extentObj.east + pointLightXYOffset, this.extentObj.north + pointLightXYOffset, -pointLightZDist, lowIntensity ],
 
-                            [ this.extentObj.east + pointLightXYOffset, this.extentObj.south - pointLightXYOffset, pointLightZDist ],
-                            [ this.extentObj.east + pointLightXYOffset, this.extentObj.south - pointLightXYOffset, -pointLightZDist ],
+                            [ this.extentObj.east + pointLightXYOffset, this.extentObj.south - pointLightXYOffset, pointLightZDist, lowIntensity ],
+                            [ this.extentObj.east + pointLightXYOffset, this.extentObj.south - pointLightXYOffset, -pointLightZDist, lowIntensity ],
 
-                            [ eastWest, this.extentObj.north + pointLightXYOffset, -5000 ],
-                            [ eastWest, this.extentObj.south - pointLightXYOffset, -5000 ],
+                            [ eastWest, this.extentObj.north + pointLightXYOffset, -5000, highIntensity ],
+                            [ eastWest, this.extentObj.south - pointLightXYOffset, -5000, highIntensity ],
 
-                            [ this.extentObj.east + pointLightXYOffset, northSouth, -5000 ],
-                            [ this.extentObj.west - pointLightXYOffset, northSouth, -5000 ]
+                            [ this.extentObj.east + pointLightXYOffset, northSouth, -5000, highIntensity ],
+                            [ this.extentObj.west - pointLightXYOffset, northSouth, -5000, highIntensity ]
 
                             ];
         // Larger models need more lights 
         if (this.extentObj.east - this.extentObj.west > 200000) {
-            plPosArray.push([eastWest1, northSouth1, pointLightZDist ]);
-            plPosArray.push([eastWest1, northSouth2, pointLightZDist ]);
-            plPosArray.push([eastWest2, northSouth1, pointLightZDist ]);
-            plPosArray.push([eastWest2, northSouth2, pointLightZDist ]);
+            plPosArray.push([eastWest1, northSouth1, pointLightZDist, lowIntensity ]);
+            plPosArray.push([eastWest1, northSouth2, pointLightZDist, lowIntensity ]);
+            plPosArray.push([eastWest2, northSouth1, pointLightZDist, lowIntensity ]);
+            plPosArray.push([eastWest2, northSouth2, pointLightZDist, lowIntensity ]);
 
-            plPosArray.push([eastWest1, northSouth1, -pointLightZDist ]);
-            plPosArray.push([eastWest1, northSouth2, -pointLightZDist ]);
-            plPosArray.push([eastWest2, northSouth1, -pointLightZDist ]);
-            plPosArray.push([eastWest2, northSouth2, -pointLightZDist ]);
+            plPosArray.push([eastWest1, northSouth1, -pointLightZDist, lowIntensity ]);
+            plPosArray.push([eastWest1, northSouth2, -pointLightZDist, lowIntensity ]);
+            plPosArray.push([eastWest2, northSouth1, -pointLightZDist, lowIntensity ]);
+            plPosArray.push([eastWest2, northSouth2, -pointLightZDist, lowIntensity ]);
         } else {
-            plPosArray.push([eastWest, northSouth, pointLightZDist ]);
-            plPosArray.push([eastWest, northSouth, -pointLightZDist ]);
+            plPosArray.push([eastWest, northSouth, pointLightZDist, lowIntensity ]);
+            plPosArray.push([eastWest, northSouth, -pointLightZDist, lowIntensity ]);
         }
 
         // Add the lights
         let num = 1;
         for (const plPos of plPosArray) {
-            const pointLight = new ITOWNS.THREE.PointLight(pointLightColour, pointLightIntensity);
+            const pointLight = new ITOWNS.THREE.PointLight(pointLightColour, plPos[3]);
             pointLight.position.set(plPos[0], plPos[1], plPos[2]);
             pointLight.name = 'Point Light ' + num.toString();
             this.scene.add(pointLight);
