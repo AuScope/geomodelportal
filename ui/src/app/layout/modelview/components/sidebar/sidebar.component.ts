@@ -31,6 +31,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     public isActive = false;
     private showMenu = '';
     private pushRightClass: 'push-right';
+    private localSeqNum = 0;
 
     // Name of model
     public title = '';
@@ -118,8 +119,6 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     @ViewChild('mouse_guide_popover', { static: true }) public mouseGuidePopover: NgbPopover = null;
     @ViewChild('compass_rose_popover', { static: true }) public compassRosePopover: NgbPopover = null;
 
-
-
     constructor(private translate: TranslateService, private modelInfoService: ModelInfoService,
                 private route: ActivatedRoute, public router: Router, private sideBarService: SidebarService,
                 private helpinfoService: HelpinfoService) {
@@ -184,7 +183,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     /**
      * This is called by the subscription to the help info service
      * It a state machine that displays popovers for various parts of the model view
-     * @param seqNum sequnce number
+     * @param seqNum sequence number
      */
     private showHelpHints(seqNum: number) {
         // NB: This list must contain all the ViewChild popovers above and in the correct order
@@ -195,27 +194,36 @@ export class SidebarComponent  implements OnInit, OnDestroy {
           this.mouseGuidePopover, this.compassRosePopover ];
 
         // Open up menu items at first group
-        if (seqNum === 0 && this.groupList.length > 0) {
+        if (this.localSeqNum === 0 && this.groupList.length > 0) {
             this.revealFirstMenus(true);
         }
-        // Open new help info
-        if (seqNum < popoverList.length && popoverList[seqNum] !== null) {
-            popoverList[seqNum].open();
+        // Locate viable help info and open
+        while (this.localSeqNum < popoverList.length) {
+            if (!popoverList[this.localSeqNum]) {
+                this.localSeqNum++;
+            } else {
+                popoverList[this.localSeqNum].open();
+                break;
+            }
         }
         // Close old help info
-        if (seqNum > 0 && seqNum <= popoverList.length && popoverList[seqNum - 1] !== null) {
-            popoverList[seqNum - 1].close();
+        if (this.localSeqNum > 0 && this.localSeqNum <= popoverList.length && popoverList[this.localSeqNum - 1]) {
+            popoverList[this.localSeqNum - 1].close();
         }
+        
         // Close everything if user terminates the tour
-        if (seqNum === WidgetType.END_TOUR) {
+        if (this.localSeqNum === WidgetType.END_TOUR) {
             for (const popover of popoverList) {
-                if (popover !== null && popover.isOpen()) {
+                if (popover && popover.isOpen()) {
                     popover.close();
                 }
             }
             // Closes menu item
             this.showMenu = null;
             this.revealFirstMenus(false);
+            this.localSeqNum = 0;
+        } else {
+            this.localSeqNum++;
         }
     }
 

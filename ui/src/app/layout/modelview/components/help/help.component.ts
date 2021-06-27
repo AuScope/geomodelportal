@@ -73,7 +73,6 @@ export class HelpComponent {
    * Stops the tour of the sidebar controls
    */
   public endSidebarTour() {
-      this.helpinfoService.triggerHelpPopover(WidgetType.END_TOUR);
       this.resetSidebarTour();
   }
 
