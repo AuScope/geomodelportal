@@ -4,7 +4,7 @@
   "license": "Apache",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json  --host 0.0.0.0 --disableHostCheck",
+    "start": "ng serve --proxy-config proxy.conf.json  --host 0.0.0.0 --disable-host-check --verbose",
     "build": "ng build --prod",
     "gitbuild": "ng build --prod --base /AuScope/geomodelportal/master/dist/",
     "test": "ng test",
