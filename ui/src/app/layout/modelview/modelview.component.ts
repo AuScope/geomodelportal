@@ -1058,7 +1058,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         const local = this;
         // Create an instance of PlanarView
         this.view = new ITOWNS.PlanarView(this.viewerDiv, this.extentObj, {scene3D: this.scene, maxSubdivisionLevel: 2.0,
-                                                                           disableSkirt: true});
+                                                                           disableSkirt: true, noControls: true});
 
         // Change defaults to allow the camera to get very close and very far away
         // without exceeding boundaries of field of view
