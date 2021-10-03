@@ -1024,7 +1024,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             name: name,
             url: 'api/tas/wmsproxy/default?wmsUrl=' + url,
             version: version,
-            projection: 'EPSG:3857',
+            crs: 'EPSG:3857',
             format: 'image/png',
             extent: local.extentObj,
             transparent: true

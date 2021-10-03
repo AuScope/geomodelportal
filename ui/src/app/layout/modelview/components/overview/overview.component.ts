@@ -111,7 +111,7 @@ export class OverviewComponent implements AfterViewInit {
                 // Calculate the end angle, then invert it
                 const qEndInv = new THREE.Quaternion();
                 qEndInv.setFromEuler(rotEul);
-                qEndInv.inverse();
+                qEndInv.invert();
                 // Calculate the start angle
                 const qStart = new THREE.Quaternion();
                 qStart.setFromEuler(local.prevAngle);
