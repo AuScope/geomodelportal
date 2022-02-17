@@ -26,7 +26,7 @@
     "@angular/platform-server": "^12.2.16",
     "@angular/router": "^12.2.16",
     "@babel/plugin-transform-block-scoping": "^7.0.0",
-    "@ng-bootstrap/ng-bootstrap": "^9.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^11.0.0",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
     "@turf/helpers": "^6.1.4",
