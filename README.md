@@ -9,16 +9,17 @@ This project is a website that is designed to display geological models and thei
 
 It is broadly based on these:
 
-1. Start Angular's template (https://github.com/start-angular/SB-Admin-BS4-Angular-5) but ported to Angular 11. This provides a basic Angular+Bootstrap website framework.
+1. Start Angular's template (https://github.com/start-angular/SB-Admin-BS4-Angular-5) but ported to Angular 13. This provides a basic Angular+Bootstrap website framework.
 
 2. [ThreeJS](https://threejs.org/) provides 3d.
 
 3. [itowns](http://www.itowns-project.org/) provides geospatial support.
 
 4. <https://github.com/AuScope/geomodel-2-3dweb> contains code to convert GOCAD models into graphics files from the command line, and a web service that provides:
-     * borehole graphics and information from Australia's NVCL (National Virtual Core Library)
-     * an OGC WMS service
-     * on the fly GOCAD TSURF conversion to GLTF.
+     * Borehole graphics and information from Australia's NVCL (National Virtual Core Library)
+     * An OGC WMS, WFS, 3DPS services
+     * On the fly GOCAD TSURF conversion to GLTF.
+     * Model part export service
 
 ### How to initiate
 **Note** that this project requires npm >= 7.24.1 & nodejs >= 14.17.4
