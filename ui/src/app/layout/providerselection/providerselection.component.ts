@@ -24,7 +24,7 @@ export class ProviderSelectionComponent {
             },
             {
                 imagePath: 'assets/images/SouthNewEngland.PNG',
-                text: 'N.S.W. (Resources & Geoscience)',
+                text: 'N.S.W. (Mining, Exploration & Geoscience)',
                 label: 'South New England Deep Crustal Model'
             },
             {
