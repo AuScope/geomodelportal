@@ -139,7 +139,6 @@
       }
     }
   },
-  "defaultProject": "3dgeomodel",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
