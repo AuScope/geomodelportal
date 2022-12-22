@@ -22,7 +22,7 @@ It is broadly based on these:
      * Model part export service
 
 ### How to initiate
-**Note** that this project requires npm >= 7.24.1 & nodejs >= 14.17.4
+**Note** that this project requires npm >= 8.19.3 & nodejs >= 16.19.0
 
 In order to get started:
 ```bash
