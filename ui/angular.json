@@ -17,35 +17,16 @@
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
             "assets": [
-                "src/assets",
-                "src/favicon.ico",
-                "src/assets/geomodels/",
-                "src/assets/geomodels/Bendigo/",
-                "src/assets/geomodels/BurraMine/",
-                "src/assets/geomodels/CentralFlinders/",
-                "src/assets/geomodels/Cobar/",
-                "src/assets/geomodels/Curnamona/",
-                "src/assets/geomodels/CurnamonaSed/",
-                "src/assets/geomodels/EastLachlan/",
-                "src/assets/geomodels/McArthurBasin/",
-                "src/assets/geomodels/MtDore/",
-                "src/assets/geomodels/NewEngland/",
-                "src/assets/geomodels/NorthFlinders/",
-                "src/assets/geomodels/NorthGawler/",
-                "src/assets/geomodels/NorthQueensland/",
-                "src/assets/geomodels/Otway/",
-                "src/assets/geomodels/Quamby/",
-                "src/assets/geomodels/RockleaDome/",
-                "src/assets/geomodels/RoseberyLyell/",
-                "src/assets/geomodels/Sandstone/",
-                "src/assets/geomodels/SthNewEngland/",
-                "src/assets/geomodels/StuartShelf/",
-                "src/assets/geomodels/Tamworth/",
-                "src/assets/geomodels/Tas/",
-                "src/assets/geomodels/WestGawler/",
-                "src/assets/geomodels/WestLachlan/",
-                "src/assets/geomodels/Windimurra/",
-                "src/assets/geomodels/Yilgarn/"
+	        {
+		  "glob": "**/*",
+		  "input": "src/assets/",
+		  "output": "/assets/"
+		},
+		{
+                  "glob": "favicon.ico",
+                  "input": "src/",
+                  "output": "/"
+                }
             ],
             "styles": [
               "node_modules/font-awesome/css/font-awesome.css",
