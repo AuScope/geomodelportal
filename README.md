@@ -91,4 +91,9 @@ $ npm start
 $ ng build --prod
 ```
 
+### Citation
+
+Please cite as:
+
+Fazio, Vincent; Woodcock, Robert (2024): AuScope 3D Geological Models Portal. v1. CSIRO. Service Collection. http://hdl.handle.net/102.100.100/609085?index=1
 
