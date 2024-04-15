@@ -3,7 +3,7 @@
 
 ### Purpose
 
-** You can see what it looks like here: http://geomodels.auscope.org/**
+** You can see what it looks like here: https://geomodels.auscope.org/**
 
 This project is a website that is designed to display geological models and their associated information in 3d.
 
