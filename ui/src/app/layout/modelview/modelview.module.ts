@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
-import { MatSliderModule} from '@angular/material/slider';
+import { MatLegacySliderModule as MatSliderModule} from '@angular/material/legacy-slider';
 
 import { ModelViewRoutingModule } from './modelview-routing.module';
 import { ModelViewComponent } from './modelview.component';
