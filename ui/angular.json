@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "3dgeomodel:build"
+            "buildTarget": "3dgeomodel:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "3dgeomodel:build:production"
+              "buildTarget": "3dgeomodel:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "3dgeomodel:build"
+            "buildTarget": "3dgeomodel:build"
           }
         },
         "test": {
