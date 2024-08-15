@@ -83,7 +83,7 @@
                                 <!-- Height Offset Controls -->
                                 <a *ngIf="modelPartState[groupName][subGroupObj.model_url].heightOffset >= 0 && subGroupObj.type !== '3DVolume'" class="list-group-item" title="{{HELP_TEXT.partOffset.title}}">
                                     <span class="span-part-controls">Height Offset&nbsp;{{modelPartState[groupName][subGroupObj.model_url].heightOffset}}
-                                        <mat-slider (change)="changeHeightOffset($event, groupName, subGroupObj.model_url)" thumbLabel min="0" max="50000" step="1000" value="0">
+                                        <mat-slider thumbLabel min="0" max="50000" step="1000" #ngSlider><input matSliderThumb (change)="changeHeightOffset({source: ngSliderThumb, parent: ngSlider, value: ngSliderThumb.value}, groupName, subGroupObj.model_url)" #ngSliderThumb="matSliderThumb" value="0" />
                                         </mat-slider>
                                         <div *ngIf="subGroupObj.type === 'GLTFObject'" ngbPopover="{{HELP_TEXT.partOffset.desc}}" popoverTitle="{{HELP_TEXT.partOffset.title}}"
                                           placement="bottom" #part_trans_popover="ngbPopover" triggers="manual">
@@ -94,7 +94,7 @@
                                 <!-- Transparency Controls -->
                                 <a class="list-group-item" title="{{HELP_TEXT.partTransp.title}}">
                                     <span class="span-part-controls">Transparency&nbsp;{{modelPartState[groupName][subGroupObj.model_url].transparency.toFixed(1)}}
-                                      <mat-slider (change)="changeTransparency($event, groupName, subGroupObj.model_url)" thumbLabel min="0.0" max="1.0" step="0.1" value="1.0">
+                                      <mat-slider thumbLabel min="0.0" max="1.0" step="0.1" #ngSlider><input matSliderThumb (change)="changeTransparency({source: ngSliderThumb, parent: ngSlider, value: ngSliderThumb.value}, groupName, subGroupObj.model_url)" #ngSliderThumb="matSliderThumb" value="1.0" />
                                       </mat-slider>
                                       <div *ngIf="subGroupObj.type === 'GLTFObject'" ngbPopover="{{HELP_TEXT.partTransp.desc}}" popoverTitle="{{HELP_TEXT.partTransp.title}}"
                                        placement="bottom" #part_offset_popover="ngbPopover" triggers="manual">
@@ -105,7 +105,7 @@
                                 <!-- Height Scale Controls -->
                                 <a *ngIf="subGroupObj.type === 'GLTFObject'" class="list-group-item" title="{{HELP_TEXT.partHeightScale.title}}">
                                     <span class="span-part-controls">Height Scale&nbsp;{{modelPartState[groupName][subGroupObj.model_url].heightScale.toFixed(1)}}
-                                      <mat-slider (change)="changeHeightScale($event, groupName, subGroupObj.model_url)" thumbLabel min="1.0" max="5.0" step="0.1" value="1.0">
+                                      <mat-slider thumbLabel min="1.0" max="5.0" step="0.1" #ngSlider><input matSliderThumb (change)="changeHeightScale({source: ngSliderThumb, parent: ngSlider, value: ngSliderThumb.value}, groupName, subGroupObj.model_url)" #ngSliderThumb="matSliderThumb" value="1.0" />
                                       </mat-slider>
                                       <div ngbPopover="{{HELP_TEXT.partHeightScale.desc}}" popoverTitle="{{HELP_TEXT.partHeightScale.title}}"
                                        placement="bottom" #part_scale_popover="ngbPopover" triggers="manual">

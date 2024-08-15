@@ -1,10 +1,10 @@
 <!-- 3D Slice Controls -->
 <a class="list-group-item">
-    <span class="span-part-controls">X slice <mat-slider (change)="changeSlices($event, 0, groupName)" thumbLabel min="0.0" max="1.0" step="0.01" [value]="sliderVal[0]"></mat-slider></span>
+    <span class="span-part-controls">X slice <mat-slider thumbLabel min="0.0" max="1.0" step="0.01" #ngSlider><input matSliderThumb [value]="sliderVal[0]" (change)="changeSlices({source: ngSliderThumb, parent: ngSlider, value: ngSliderThumb.value}, 0, groupName)" #ngSliderThumb="matSliderThumb" /></mat-slider></span>
 </a>
 <a class="list-group-item">
-    <span class="span-part-controls">Y slice <mat-slider (change)="changeSlices($event, 1, groupName)" thumbLabel min="0.0" max="1.0" step="0.01" [value]="sliderVal[1]"></mat-slider></span>
+    <span class="span-part-controls">Y slice <mat-slider thumbLabel min="0.0" max="1.0" step="0.01" #ngSlider><input matSliderThumb [value]="sliderVal[1]" (change)="changeSlices({source: ngSliderThumb, parent: ngSlider, value: ngSliderThumb.value}, 1, groupName)" #ngSliderThumb="matSliderThumb" /></mat-slider></span>
 </a>
 <a class="list-group-item">
-    <span class="span-part-controls">Z slice <mat-slider (change)="changeSlices($event, 2, groupName)" thumbLabel min="0.0" max="1.0" step="0.01" [value]="sliderVal[2]"></mat-slider></span>
+    <span class="span-part-controls">Z slice <mat-slider thumbLabel min="0.0" max="1.0" step="0.01" #ngSlider><input matSliderThumb [value]="sliderVal[2]" (change)="changeSlices({source: ngSliderThumb, parent: ngSlider, value: ngSliderThumb.value}, 2, groupName)" #ngSliderThumb="matSliderThumb" /></mat-slider></span>
 </a>

@@ -162,7 +162,7 @@ i.fa.fa-lg.fa-eye, i.fa.fa-lg.fa-compress {
     -webkit-box-shadow: inset 0 0 3px rgba(255, 255, 255, 1);
 }
 
-.mat-slider {
+.mat-mdc-slider {
     padding: 0px;
 }
 
@@ -232,6 +232,7 @@ h2 {
 }
 
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-slider-horizontal {
     float: right;
     height: 40px !important;

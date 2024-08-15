@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { MatLegacySliderChange as MatSliderChange } from '@angular/material/legacy-slider';
+import { MatSliderChange } from '@angular/material/slider';
 import { Subscription ,  Observable } from 'rxjs';
 import { NgbPopover} from '@ng-bootstrap/ng-bootstrap';
 
