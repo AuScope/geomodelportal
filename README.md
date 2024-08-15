@@ -9,7 +9,7 @@ This project is a website that is designed to display geological models and thei
 
 It is broadly based on these:
 
-1. Start Angular's template (https://github.com/start-angular/SB-Admin-BS4-Angular-5) but ported to Angular 13. This provides a basic Angular+Bootstrap website framework.
+1. Start Angular's template (https://github.com/start-angular/SB-Admin-BS4-Angular-5) but ported to Angular 18. This provides a basic Angular+Bootstrap website framework.
 
 2. [ThreeJS](https://threejs.org/) provides 3d.
 
@@ -22,7 +22,7 @@ It is broadly based on these:
      * Model part export service
 
 ### How to initiate
-**Note** that this project requires npm >= 8.19.3 & nodejs >= 16.19.0
+**Note** that this project requires npm >= 10.7.0 & nodejs >= 18.20.4
 
 In order to get started:
 ```bash
