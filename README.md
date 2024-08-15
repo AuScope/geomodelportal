@@ -1,9 +1,9 @@
-# Geological Models Portal  
+# AuScope Geological Models Portal  
 
 
 ### Purpose
 
-** You can see what it looks like here: https://geomodels.auscope.org/**
+**You can see what it looks like [here](https://geomodels.auscope.org.au)**
 
 This project is a website that is designed to display geological models and their associated information in 3d.
 
