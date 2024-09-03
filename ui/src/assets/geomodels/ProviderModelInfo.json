@@ -166,7 +166,7 @@
                         "colourClass": "nsw",
                         "configFile": "Tamworth.json",
                         "modelDir": "Tamworth",
-                        "srcUrl" : "https://www.regional.nsw.gov.au/meg/geoscience/products-and-data/3d-geological-mapping-data"
+                        "srcUrl" : "https://www.resourcesregulator.nsw.gov.au/meg.site/geological-survey/products-and-data/3d-geological-mapping-data"
                     },
                     {
                         "name": "Cobar",
@@ -175,7 +175,7 @@
                         "colourClass": "nsw",
                         "configFile": "Cobar.json",
                         "modelDir": "Cobar",
-                        "srcUrl" : "https://www.regional.nsw.gov.au/meg/geoscience/products-and-data/3d-geological-mapping-data"
+                        "srcUrl" : "https://www.resourcesregulator.nsw.gov.au/meg.site/geological-survey/products-and-data/3d-geological-mapping-data"
                     },
                     {
                         "name": "Curnamona Province and Delamerian Orogen",
@@ -184,7 +184,7 @@
                         "colourClass": "nsw",
                         "configFile": "Curnamona.json",
                         "modelDir": "Curnamona",
-                        "srcUrl" : "https://www.regional.nsw.gov.au/meg/geoscience/products-and-data/3d-geological-mapping-data"
+                        "srcUrl" : "https://www.resourcesregulator.nsw.gov.au/meg.site/geological-survey/products-and-data/3d-geological-mapping-data"
                     },
                     {
                         "name": "Eastern Lachlan Orogen",
@@ -193,7 +193,7 @@
                         "colourClass": "nsw",
                         "configFile": "EastLachlan.json",
                         "modelDir": "EastLachlan",
-                        "srcUrl" : "https://www.regional.nsw.gov.au/meg/geoscience/products-and-data/3d-geological-mapping-data"
+                        "srcUrl" : "https://www.resourcesregulator.nsw.gov.au/meg.site/geological-survey/products-and-data/3d-geological-mapping-data"
                     },
                     {
                         "name": "Western Lachlan and Southern Thomson Orogens",
@@ -202,7 +202,7 @@
                         "colourClass": "nsw",
                         "configFile": "WestLachlan.json",
                         "modelDir": "WestLachlan",
-                        "srcUrl" : "https://www.regional.nsw.gov.au/meg/geoscience/products-and-data/3d-geological-mapping-data"
+                        "srcUrl" : "https://www.resourcesregulator.nsw.gov.au/meg.site/geological-survey/products-and-data/3d-geological-mapping-data"
                     },
                     {
                         "name": "South New England Deep Crustal",
@@ -211,7 +211,7 @@
                         "colourClass": "nsw",
                         "configFile": "SthNewEngland.json",
                         "modelDir": "SthNewEngland",
-                        "srcUrl" : "https://www.regional.nsw.gov.au/meg/geoscience/products-and-data/3d-geological-mapping-data"
+                        "srcUrl" : "https://www.resourcesregulator.nsw.gov.au/meg.site/geological-survey/products-and-data/3d-geological-mapping-data"
                     },
                     {
                         "name": "New England Orogen",
@@ -220,12 +220,12 @@
                         "colourClass": "nsw",
                         "configFile": "NewEngland.json",
                         "modelDir": "NewEngland",
-                        "srcUrl" : "https://www.regional.nsw.gov.au/meg/geoscience/products-and-data/3d-geological-mapping-data"
+                        "srcUrl" : "https://www.resourcesregulator.nsw.gov.au/meg.site/geological-survey/products-and-data/3d-geological-mapping-data"
                     }
                 ],
                 "icon": "nsw-white-icon.png",
                 "colourClass": "nsw",
-                "infoUrl": "https://www.regional.nsw.gov.au/meg"
+                "infoUrl": "https://www.resourcesregulator.nsw.gov.au"
             },
             "nt": {
                 "name": "Northern Territory (DITT)",
