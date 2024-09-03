@@ -1,15 +1,15 @@
-# Geological Models Portal  
+# AuScope Geoscience Models Portal
 
 
 ### Purpose
 
-** You can see what it looks like here: https://geomodels.auscope.org/**
+** You can see what it looks like here: https://geomodels.auscope.org.au/**
 
-This project is a website that is designed to display geological models and their associated information in 3d.
+This project is a website that is designed to display geoscience models and their associated information in 3d.
 
 It is broadly based on these:
 
-1. Start Angular's template (https://github.com/start-angular/SB-Admin-BS4-Angular-5) but ported to Angular 13. This provides a basic Angular+Bootstrap website framework.
+1. Start Angular's template (https://github.com/start-angular/SB-Admin-BS4-Angular-5) but ported to Angular 17. This provides a basic Angular+Bootstrap website framework.
 
 2. [ThreeJS](https://threejs.org/) provides 3d.
 
