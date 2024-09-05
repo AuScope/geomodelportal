@@ -11,7 +11,7 @@
                     "V01_BALDROCKSUPERSUITE": {
                         "href": [
                             {
-                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "URL": "https://asud.ga.gov.au/search-stratigraphic-units/results/74836",
                                 "label": "Australian Stratigraphic Units Database"
                             }
                         ],
@@ -161,7 +161,7 @@
                     "V09_YARRAQUINSEISMICPROVINCE": {
                         "href": [
                             {
-                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=80136",
+                                "URL": "https://asud.ga.gov.au/search-stratigraphic-units/results/80136",
                                 "label": "Australian Stratigraphic Units Database"
                             }
                         ],
@@ -398,7 +398,7 @@
                     "S01_BALDROCKSUPERSUITE": {
                         "href": [
                             {
-                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=74836",
+                                "URL": "https://asud.ga.gov.au/search-stratigraphic-units/results/74836",
                                 "label": "Australian Stratigraphic Units Database"
                             }
                         ],
@@ -532,7 +532,7 @@
                     "S09_YARRAQUINSEISMICPROVINCE": {
                         "href": [
                             {
-                                "URL": "http://dbforms.ga.gov.au/pls/www/geodx.strat_units.sch_full?wher=stratno=80136",
+                                "URL": "https://asud.ga.gov.au/search-stratigraphic-units/results/80136",
                                 "label": "Australian Stratigraphic Units Database"
                             }
                         ],
