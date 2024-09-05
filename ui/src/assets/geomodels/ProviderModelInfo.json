@@ -123,7 +123,7 @@
                         "colourClass": "tas",
                         "configFile": "RoseberyLyell.json",
                         "modelDir": "RoseberyLyell",
-                        "srcUrl" : "http://www.mrt.tas.gov.au/geoscience/3d_geological_and_geophysical_modelling/west_tasmania_3d_geological_and_geophysical_modelling"
+                        "srcUrl" : "https://www.mrt.tas.gov.au/geoscience/3d_geological_and_geophysical_modelling/west_tasmania_3d_geological_and_geophysical_modelling"
                     }
                 ],
                 "icon": "tas-white-icon.png",
