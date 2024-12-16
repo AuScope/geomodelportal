@@ -45,18 +45,12 @@ RUN apt-get install -y apache2 apache2-dev libxml2-dev libhdf5-dev libnetcdf-dev
 RUN ln -s /usr/include/hdf5/serial /usr/include/hdf5/include
 RUN a2enmod rewrite && a2enmod proxy && a2enmod proxy_http && a2enmod proxy_html 
 
-# Install any needed python packages specified in requirements.txt
-RUN wget https://github.com/AuScope/geomodel-2-3dweb/raw/ed936e3cff695fb0d9b421a4e878e474716d0fd8/pdm.lock
-RUN wget https://github.com/AuScope/geomodel-2-3dweb/raw/ed936e3cff695fb0d9b421a4e878e474716d0fd8/pyproject.toml
-RUN wget https://github.com/AuScope/geomodel-2-3dweb/raw/ed936e3cff695fb0d9b421a4e878e474716d0fd8/build_assimp.sh
+# Install any needed python packages specified in pdm.lock
+RUN wget https://github.com/AuScope/geomodel-2-3dweb/raw/1caedde35eefea530dc9542030ee8a3b2864e286/pdm.lock
+RUN wget https://raw.githubusercontent.com/AuScope/geomodel-2-3dweb/1caedde35eefea530dc9542030ee8a3b2864e286/pyproject.toml
 
-# NB: pdm install will build assimp using 'build_assimp.sh'
-RUN chmod a+x build_assimp.sh
-RUN eval $(pdm venv activate) && pdm --version && pdm install -L pdm.lock && pdm add --no-lock uvicorn
+RUN eval $(pdm venv activate) && pdm --version && pdm install -L pdm.lock && pdm add --frozen-lockfile uvicorn
 ENV HDF5_DIR=/usr/include/hdf5
-
-# Setup lib path for assimp
-ENV LD_LIBRARY_PATH=${appdir}/assimp-5.4.3/bin
 
 # Start services
 COPY docker/startup.sh startup.sh
