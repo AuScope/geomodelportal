@@ -14,6 +14,8 @@ import { HelpinfoService } from './layout/modelview/services/helpinfo.service';
 import {APP_BASE_HREF} from '@angular/common';
 import { environment } from '../environments/environment';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -32,7 +34,8 @@ export function createTranslateLoader(http: HttpClient) {
                 deps: [HttpClient]
             }
         }),
-        AppRoutingModule
+        AppRoutingModule,
+	NgbModule
     ],
     providers: [
         ModelInfoService,
