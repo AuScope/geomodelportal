@@ -7,8 +7,8 @@
             </div>
             <div class="col col-sm-10">
                 <div class="d-block">&nbsp;{{label}}</div>
-                <div *ngIf="count===1" class="d-block huge">{{count}} Model</div>
-                <div *ngIf="count>1||count===0" class="d-block huge">&nbsp;{{count}} Models</div>
+                <div *ngIf="count===1" class="d-block">&nbsp;{{count}} Model</div>
+                <div *ngIf="count>1||count===0" class="d-block">&nbsp;{{count}} Models</div>
             </div>
         </div>
         <div *ngIf="infoLink!=''" class="row" (click)='openInfoLink()'>
