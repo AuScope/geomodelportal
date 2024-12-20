@@ -23,7 +23,7 @@
     <h6>&nbsp;{{sourceOrgName}}</h6>
 
     <!-- All model parts CHECKBOX -->
-    <h6 class="text-muted all-tick">&nbsp;<input (click)="allCheckBoxClick(!getAllTickBoxChecked())" [checked] = "getAllTickBoxChecked()" class="vis-toggle" type="checkbox"/>&nbsp;All</h6>
+    <h6 class="all-tick">&nbsp;<input (click)="allCheckBoxClick(!getAllTickBoxChecked())" [checked] = "getAllTickBoxChecked()" class="vis-toggle" type="checkbox"/>&nbsp;All</h6>
 
     <!-- Model Parts controls start here -->
     <div *ngIf="groupList.length > 0" class="list-group">
