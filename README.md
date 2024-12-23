@@ -83,13 +83,10 @@ $ uwsgi --http :4040 --wsgi-file index.py
 $ npm start
 ```
 
-### Build for production server
-```bash
-# As currently set up, the prod build will output the production website files to `dist` directory
-# This can be deployed to an Apache server or something similar. The output of the 'build_api_dir.sh' 
-# must be unpacked and placed within the same deployment.
-$ ng build --prod
-```
+### Build a production server in a docker container
+
+* The [build.sh](ui/docker/build.sh) script will create a self-contained docker image.
+* It will use the latest release [geomodel-2-3dweb] repository to build the back end
 
 ### Citation
 
