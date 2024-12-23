@@ -1,7 +1,7 @@
 # AuScope Geoscience Models Portal
 
 
-### Purpose
+## Purpose
 
 **You can see what it looks like here: https://geomodels.auscope.org.au**
 
@@ -15,14 +15,16 @@ It is broadly based on these:
 
 3. [itowns](http://www.itowns-project.org/) provides geospatial support.
 
-4. <https://github.com/AuScope/geomodel-2-3dweb> contains code to convert GOCAD models into graphics files from the command line, and a web service that provides:
+4. <https://github.com/AuScope/geomodel-2-3dweb> contains the website's back-end code. It contains code to convert GOCAD and geophysics models into graphics files, and a web service that provides:
      * Borehole graphics and information from Australia's NVCL (National Virtual Core Library)
      * An OGC WMS, WFS, 3DPS services
      * On the fly GOCAD TSURF conversion to GLTF.
-     * Model part export service
+     * Model part export service 
+
+## Development
 
 ### How to initiate
-**Note** that this project requires npm >= 8.19.3 & nodejs >= 16.19.0
+**Note** that this project requires npm >= 10.9.2 & nodejs >= 18.2.5
 
 In order to get started:
 ```bash
@@ -88,7 +90,13 @@ $ npm start
 * The [build.sh](ui/docker/build.sh) script will create a self-contained docker image.
 * It will use the latest release [geomodel-2-3dweb] repository to build the back end
 
-### Citation
+## Acknowledgements
+
+Funding provided by [AuScope Pty Ltd](https://www.auscope.org.au/)
+
+SKUA/GOCAD software from the [Paradigm Academic Software Program](http://www.pdgm.com/affiliations/academic-software-programs/) was used to view some types of GOCAD object files and produce sample GOCAD OBJECT files used for testing
+
+## Citation
 
 Please cite as:
 
