@@ -18,8 +18,8 @@ COPY . .
 RUN npm run build --prod
 
 # Build back-end
-COPY docker/geomodels/ ./dist/assets/geomodels/
-COPY docker/api.tar.gz .
+COPY docker/build/geomodels/ ./dist/assets/geomodels/
+COPY docker/build/api.tar.gz .
 RUN tar xvf api.tar.gz -C ./dist
 COPY src/assets/geomodels/ProviderModelInfo.json ./dist/api/input
 COPY docker/apache.htaccess ./dist/.htaccess
