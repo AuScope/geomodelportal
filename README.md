@@ -87,7 +87,7 @@ $ npm start
 
 ### Build a production server in a docker container
 
-* The [docker_image.yml](.github/workflows/docker-image.yml)) script will create a self-contained docker image.
+* The [docker_image.yml](.github/workflows/docker-image.yml) script will create a self-contained docker image.
 * It will use the latest release from [geomodel-2-3dweb](https://github.com/AuScope/geomodel-2-3dweb) repository to build the back end
 
 ## Acknowledgements
