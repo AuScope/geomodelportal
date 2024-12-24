@@ -30,18 +30,16 @@ done
 ## wget "https://github.com/AuScope/geomodel-2-3dweb/releases/download/PORTAL_RELEASE_20210718/$GZ_FILE"
 #done
 
-# Fetch borehole db from 'geomodels-2-3dweb' repo
-if [ ! -d boreholes ]; then
-curl -s $RELEASES_URL | jq ".assets | .[] | .browser_download_url" | grep boreholes.tar | xargs wget
-tar xvfz boreholes.tar.gz
-rm boreholes.tar.gz
-fi
+## Fetch borehole db from 'geomodels-2-3dweb' repo
+#if [ ! -f boreholes.tar.gz ]; then
+#curl -s $RELEASES_URL | jq ".assets | .[] | .browser_download_url" | grep boreholes.tar | xargs wget
+#tar xvfz boreholes.tar.gz
+#rm boreholes.tar.gz
+#fi
 
 # Fetch API files from 'geomodels-2-3dweb' repo
-if [ ! -d api ]; then
+if [ ! -f api.tar.gz ]; then
 curl -s $RELEASES_URL | jq ".assets | .[] | .browser_download_url" | grep api.tar | xargs wget
-tar xvfz api.tar.gz
-rm api.tar.gz
 fi
 
 popd
