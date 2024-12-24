@@ -12,11 +12,14 @@ pushd build
 
 # Fetches all web assets from latest github release in 'geomodels-2-3dweb' repo
 for url in `curl -s $RELEASES_URL | jq ".assets | .[] | .browser_download_url" | grep web-assets.tar`; do
-trimmed_url=$(echo $url | tr -d '"')
-echo $url
-echo $trimmed_url
+trim_url=$(echo $url | tr -d '"')
+filn=`basename $trim_url`
+p1=${filn%*-web-assets.tar.gz}
+dirn=${p1#geomodels-*}
 
-[ ! -f `basename $trimmed_url` ] && wget $trimmed_url && tar xvfz `basename $trimmed_url`
+[ -d geomodels/$dirn ] && echo "Found geomodels/$dirn"
+
+[ ! -d geomodels/$dirn ] && wget $trim_url && tar xvfz $filn && rm $filn
 done
 
 # Fetch web assets from 'geomodels-2-3dweb' repo
@@ -28,15 +31,17 @@ done
 #done
 
 # Fetch borehole db from 'geomodels-2-3dweb' repo
-if [ ! -f boreholes.tar.gz ]; then
+if [ ! -d boreholes ]; then
 curl -s $RELEASES_URL | jq ".assets | .[] | .browser_download_url" | grep boreholes.tar | xargs wget
 tar xvfz boreholes.tar.gz
+rm boreholes.tar.gz
 fi
 
-# Fetch API file from 'geomodels-2-3dweb' repo
-if [ ! -f api.tar.gz ]; then
+# Fetch API files from 'geomodels-2-3dweb' repo
+if [ ! -d api ]; then
 curl -s $RELEASES_URL | jq ".assets | .[] | .browser_download_url" | grep api.tar | xargs wget
 tar xvfz api.tar.gz
+rm api.tar.gz
 fi
 
 popd
