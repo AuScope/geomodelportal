@@ -46,8 +46,8 @@ RUN ln -s /usr/include/hdf5/serial /usr/include/hdf5/include
 RUN a2enmod rewrite && a2enmod proxy && a2enmod proxy_http && a2enmod proxy_html 
 
 # Install any needed python packages specified in pdm.lock
-RUN wget https://github.com/AuScope/geomodel-2-3dweb/raw/1caedde35eefea530dc9542030ee8a3b2864e286/pdm.lock
-RUN wget https://raw.githubusercontent.com/AuScope/geomodel-2-3dweb/1caedde35eefea530dc9542030ee8a3b2864e286/pyproject.toml
+RUN wget https://github.com/AuScope/geomodel-2-3dweb/raw/f49198006927989314bb939bf72b346e96730401/pdm.lock
+RUN wget https://raw.githubusercontent.com/AuScope/geomodel-2-3dweb/f49198006927989314bb939bf72b346e96730401/pyproject.toml
 
 RUN eval $(pdm venv activate) && pdm --version && pdm install -L pdm.lock && pdm add --frozen-lockfile uvicorn
 ENV HDF5_DIR=/usr/include/hdf5
