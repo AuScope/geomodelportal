@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Build docker image
 
 on:
   workflow_dispatch
@@ -17,11 +17,13 @@ jobs:
       id-token: write
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Assemble all back-end web assets from latest github release in 'geomodels-2-3dweb' repo
       run: |
           cd ui/docker
-          ./build.sh
+          ./assemble.sh
     
     - name: Log in to the Container registry
       uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
@@ -40,7 +42,8 @@ jobs:
       id: push
       uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
       with:
-        context: .
+        context: ui
+        file: ui/docker/Dockerfile
         push: true
         tags: ${{ steps.meta.outputs.tags }}
     
