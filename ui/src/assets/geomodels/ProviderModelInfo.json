@@ -9,7 +9,7 @@
                         "colourClass": "vic",
                         "configFile": "Otway.json",
                         "modelDir": "Otway",
-                        "srcUrl" : "http://earthresources.efirst.com.au/product.asp?pID=1083&cID=54"
+                        "srcUrl" : "https://earthresources.efirst.com.au/product.asp?pID=1083&cID=54"
                     },
                     {
                         "name": "Bendigo",
@@ -18,7 +18,7 @@
                         "colourClass": "vic",
                         "configFile": "Bendigo.json",
                         "modelDir": "Bendigo",
-                        "srcUrl" : "http://earthresources.efirst.com.au/product.asp?pID=1075&cID=54"
+                        "srcUrl" : "https://earthresources.efirst.com.au/product.asp?pID=1075&cID=54"
                     }
                 ],
                 "icon": "vic-white-icon.png",
@@ -154,7 +154,7 @@
                 ],
                 "icon": "qld-white-icon.png",
                 "colourClass": "qld",
-                "infoUrl": "https://www.resources.qld.gov.au/"
+                "infoUrl": "https://www.nrmmrrd.qld.gov.au/"
             },
             "nsw": {
                 "name": "N.S.W. (Mining, Exploration & Geoscience)",
@@ -166,7 +166,7 @@
                         "colourClass": "nsw",
                         "configFile": "Tamworth.json",
                         "modelDir": "Tamworth",
-                        "srcUrl" : "https://www.resourcesregulator.nsw.gov.au/meg.site/geological-survey/products-and-data/3d-geological-mapping-data"
+                        "srcUrl" : "https://www.resources.nsw.gov.au/geological-survey/products-and-data/3d-geological-mapping-data"
                     },
                     {
                         "name": "Cobar",
@@ -175,7 +175,7 @@
                         "colourClass": "nsw",
                         "configFile": "Cobar.json",
                         "modelDir": "Cobar",
-                        "srcUrl" : "https://www.resourcesregulator.nsw.gov.au/meg.site/geological-survey/products-and-data/3d-geological-mapping-data"
+                        "srcUrl" : "https://www.resources.nsw.gov.au/geological-survey/products-and-data/3d-geological-mapping-data"
                     },
                     {
                         "name": "Curnamona Province and Delamerian Orogen",
@@ -184,7 +184,7 @@
                         "colourClass": "nsw",
                         "configFile": "Curnamona.json",
                         "modelDir": "Curnamona",
-                        "srcUrl" : "https://www.resourcesregulator.nsw.gov.au/meg.site/geological-survey/products-and-data/3d-geological-mapping-data"
+                        "srcUrl" : "https://www.resources.nsw.gov.au/geological-survey/products-and-data/3d-geological-mapping-data"
                     },
                     {
                         "name": "Eastern Lachlan Orogen",
@@ -193,7 +193,7 @@
                         "colourClass": "nsw",
                         "configFile": "EastLachlan.json",
                         "modelDir": "EastLachlan",
-                        "srcUrl" : "https://www.resourcesregulator.nsw.gov.au/meg.site/geological-survey/products-and-data/3d-geological-mapping-data"
+                        "srcUrl" : "https://www.resources.nsw.gov.au/geological-survey/products-and-data/3d-geological-mapping-data"
                     },
                     {
                         "name": "Western Lachlan and Southern Thomson Orogens",
@@ -202,7 +202,7 @@
                         "colourClass": "nsw",
                         "configFile": "WestLachlan.json",
                         "modelDir": "WestLachlan",
-                        "srcUrl" : "https://www.resourcesregulator.nsw.gov.au/meg.site/geological-survey/products-and-data/3d-geological-mapping-data"
+                        "srcUrl" : "https://www.resources.nsw.gov.au/geological-survey/products-and-data/3d-geological-mapping-data"
                     },
                     {
                         "name": "South New England Deep Crustal",
@@ -211,7 +211,7 @@
                         "colourClass": "nsw",
                         "configFile": "SthNewEngland.json",
                         "modelDir": "SthNewEngland",
-                        "srcUrl" : "https://www.resourcesregulator.nsw.gov.au/meg.site/geological-survey/products-and-data/3d-geological-mapping-data"
+                        "srcUrl" : "https://www.resources.nsw.gov.au/geological-survey/products-and-data/3d-geological-mapping-data"
                     },
                     {
                         "name": "New England Orogen",
@@ -220,12 +220,12 @@
                         "colourClass": "nsw",
                         "configFile": "NewEngland.json",
                         "modelDir": "NewEngland",
-                        "srcUrl" : "https://www.resourcesregulator.nsw.gov.au/meg.site/geological-survey/products-and-data/3d-geological-mapping-data"
+                        "srcUrl" : "https://www.resources.nsw.gov.au/geological-survey/products-and-data/3d-geological-mapping-data"
                     }
                 ],
                 "icon": "nsw-white-icon.png",
                 "colourClass": "nsw",
-                "infoUrl": "https://www.resourcesregulator.nsw.gov.au"
+                "infoUrl": "https://www.resources.nsw.gov.au/"
             },
             "nt": {
                 "name": "Northern Territory (DITT)",
@@ -288,14 +288,14 @@
                         "modelUrlPath": "rocklea",
                         "icon": "aus-white-icon.png",
                         "colourClass": "csiro",
-                        "configFile": "RockleaDome.json",
-                        "modelDir": "RockleaDome",
-                        "srcUrl": "https://confluence.csiro.au/public/SpecSens/rocklea-dome"
+                        "configFile": "Rocklea.json",
+                        "modelDir": "Rocklea",
+                        "srcUrl": ""
                     } 
                 ],
                 "icon": "aus-white-icon.png",
                 "colourClass": "csiro",
-                "infoUrl": "https://www.csiro.au/en/about/people/business-units/Mineral-Resources"
+                "infoUrl": "https://doi.org/10.25919/5ed83bf55be6a"
             },
             "nci": {
                 "name":"National Computational Infrastructure (NCI) & G. Heinson (Uni. of Adelaide)",
