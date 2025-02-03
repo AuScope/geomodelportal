@@ -1,4 +1,9 @@
-# First image, build angular app
+# This builds the AuScope Geoscience Models portal
+# Both the web service and the backend are included in the docker container
+#
+# NB: Run this from the 'ui' directory
+#
+# First image, build Angular app
 FROM node:22-bookworm-slim AS node
 
 ENV appdir=/usr/src/app
