@@ -44,7 +44,11 @@ curl -s $RELEASES_URL | jq ".assets | .[] | .browser_download_url" | grep api.ta
 fi
 
 # Fetch the Python package state files from 'geomodels-2-3dweb' repo
-if [ ! -f py_pkg_state ]; then
-curl -s $RELEASES_URL | jq ".assets | .[] | .browser_download_url" | grep py_pkg_state | xargs wget
+if [ ! -f pyproject.toml ]; then
+curl -s $RELEASES_URL | jq ".assets | .[] | .browser_download_url" | grep pyproject.toml | xargs wget
+fi
+
+if [ ! -f pdm.lock ]; then
+curl -s $RELEASES_URL | jq ".assets | .[] | .browser_download_url" | grep pdm.lock | xargs wget
 fi
 popd
