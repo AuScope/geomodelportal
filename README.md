@@ -24,7 +24,7 @@ It is broadly based on these:
 ## Development
 
 ### How to initiate
-**Note** that this project requires npm >= 10.9.2 & nodejs >= 18.2.5
+**Note** that this project requires npm >= 10.9.2 & nodejs >= 22.17.0
 
 In order to get started:
 ```bash
