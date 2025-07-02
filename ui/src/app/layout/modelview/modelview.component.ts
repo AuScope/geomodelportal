@@ -634,8 +634,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                                 geometry.setIndex(indices);
                                                 geometry.setAttribute('position', new ITOWNS.THREE.Float32BufferAttribute(lnList, 3));
                                                 geometry.setAttribute('color', new ITOWNS.THREE.Float32BufferAttribute(colList, 3));
-                                                material = new ITOWNS.THREE.LineBasicMaterial({vertexColors: true,
-                                                                                               morphTargets: true});
+                                                material = new ITOWNS.THREE.LineBasicMaterial({vertexColors: true});
                                                 items = new ITOWNS.THREE.LineSegments(geometry, material);
                                                 // Name it "Line Data" so it can be recognised when clicked on
                                                 items.name = "Line Data";
