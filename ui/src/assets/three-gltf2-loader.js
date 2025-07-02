@@ -114,8 +114,6 @@ module.exports = function (THREE) {
 
 				}
 
-				console.time( 'GLTFLoader' );
-
 				var parser = new GLTFParser( json, extensions, {
 
 					path: path || this.path,
@@ -124,8 +122,6 @@ module.exports = function (THREE) {
 				} );
 
 				parser.parse( function ( scene, scenes, cameras, animations ) {
-
-					console.timeEnd( 'GLTFLoader' );
 
 					var glTF = {
 						scene: scene,
