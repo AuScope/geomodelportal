@@ -20,7 +20,7 @@ RUN npm install
 COPY . .
 
 # Build angular's static website files
-RUN npm run build --prod
+RUN npm run build --production
 
 # Build back-end
 COPY docker/build/geomodels/ ./dist/assets/geomodels/
