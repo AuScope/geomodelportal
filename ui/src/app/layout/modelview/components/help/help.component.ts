@@ -6,9 +6,10 @@ const SIDEBAR_INIT_MSG = 'Sidebar controls tour';
 const MODEL_INIT_MSG = 'Model demonstration';
 
 @Component({
-  selector: 'app-help',
-  templateUrl: './help.component.html',
-  styleUrls: ['./help.component.scss']
+    selector: 'app-help',
+    templateUrl: './help.component.html',
+    styleUrls: ['./help.component.scss'],
+    standalone: false
 })
 export class HelpComponent {
 

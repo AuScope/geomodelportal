@@ -6,7 +6,8 @@ import { ModelInfoService } from '../../shared/services/model-info.service';
     selector: 'app-providerselection',
     templateUrl: './providerselection.component.html',
     styleUrls: ['./providerselection.component.scss'],
-    animations: [routerTransition()]
+    animations: [routerTransition()],
+    standalone: false
 })
 export class ProviderSelectionComponent {
     // Model showcase images

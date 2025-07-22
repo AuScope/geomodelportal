@@ -3,9 +3,10 @@ import { MatSliderChange } from '@angular/material/slider';
 import { ModelInfoService, ModelPartStateChangeType } from '../../../../../../shared/services/model-info.service';
 
 @Component({
-  selector: 'app-volumecontrols',
-  templateUrl: './volumecontrols.component.html',
-  styleUrls: ['./volumecontrols.component.scss']
+    selector: 'app-volumecontrols',
+    templateUrl: './volumecontrols.component.html',
+    styleUrls: ['./volumecontrols.component.scss'],
+    standalone: false
 })
 export class VolumecontrolsComponent implements OnInit {
   @Input() dimIdx: number;

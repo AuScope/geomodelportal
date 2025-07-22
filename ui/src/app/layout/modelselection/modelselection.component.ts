@@ -10,7 +10,8 @@ import { ModelInfoService } from '../../shared/services/model-info.service';
     selector: 'app-modelselection',
     templateUrl: './modelselection.component.html',
     styleUrls: ['./modelselection.component.scss'],
-    animations: [routerTransition()]
+    animations: [routerTransition()],
+    standalone: false
 })
 export class ModelSelectionComponent implements OnInit {
 

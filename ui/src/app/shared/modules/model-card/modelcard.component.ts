@@ -7,7 +7,8 @@ import { environment } from '../../../../environments/environment';
 @Component({
     selector: 'app-model-card',
     templateUrl: './modelcard.component.html',
-    styleUrls: ['./modelcard.component.scss']
+    styleUrls: ['./modelcard.component.scss'],
+    standalone: false
 })
 export class ModelCardComponent {
     @Input() bgClass: string;

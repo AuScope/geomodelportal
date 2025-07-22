@@ -32,7 +32,7 @@ import * as ITOWNS from 'itowns/dist/itowns';
 // We must use a GLTFLoader that is in ITOWNS' namespace, to avoid the problem described above.
 // We use an updated version of https://github.com/antonio-gomez/three-gltf2-loader
 // This older library works well because the namespace is an input parameter
-import * as GLTFLoader from '../../../assets/three-gltf2-loader';
+import gltfLoaderInjector from '../../../assets/three-gltf2-loader';
 
 // If you want to use your own CRS instead of the ITOWNS' default one then you must use ITOWNS' version of proj4
 const proj4 = ITOWNS.proj4;
@@ -48,7 +48,8 @@ const BACKGROUND_COLOUR = 0xC0C0C0;
     selector: 'app-modelview',
     templateUrl: './modelview.component.html',
     styleUrls: ['./modelview.component.scss'],
-    animations: [routerTransition()]
+    animations: [routerTransition()],
+    standalone: false
 })
 export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     @ViewChild('viewerDiv', { static: true }) private viewerDivElem: ElementRef;
@@ -164,10 +165,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         const manager = new ITOWNS.THREE.LoadingManager();
 
         // This adds the 'GLTFLoader' object to itowns' THREE
-        GLTFLoader(ITOWNS.THREE);
+        gltfLoaderInjector(ITOWNS.THREE);
 
         // Create our new GLTFLoader object
-        this.gltfLoader = new ITOWNS.THREE['GLTFLoader'](manager);
+        this.gltfLoader = new ITOWNS.THREE.GLTFLoader(manager);
 
 
     }
