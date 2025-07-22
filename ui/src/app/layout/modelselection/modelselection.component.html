@@ -1,14 +1,20 @@
-<div *ngIf="providerModels[providerPath]" [@routerTransition]>
+@if (providerModels[providerPath]) {
+  <div [@routerTransition]>
     <h2 class="title-text">Model Selection - {{this.providerModels[providerPath].name}}</h2>
     <div class="row">
-        <div *ngFor="let model of providerModels[providerPath].models" class="col-xl-3 col-lg-6">
-            <app-model-card [label]="model.name" [bgClass]="model.colourClass" [icon]="model.icon"
-                            [modelInfoLink]="model.srcUrl" [modelPath]="model.modelUrlPath" [modelInfoMessage]="model.infoMessage"></app-model-card>
+      @for (model of providerModels[providerPath].models; track model) {
+        <div class="col-xl-3 col-lg-6">
+          <app-model-card [label]="model.name" [bgClass]="model.colourClass" [icon]="model.icon"
+          [modelInfoLink]="model.srcUrl" [modelPath]="model.modelUrlPath" [modelInfoMessage]="model.infoMessage"></app-model-card>
         </div>
+      }
     </div>
-</div>
-<div *ngIf="!providerModels[providerPath]">
+  </div>
+}
+@if (!providerModels[providerPath]) {
+  <div>
     <div class="d-flex justify-content-center align-items-center" style="height:100px;">
-        <div><span class="text-muted">Cannot find provider. <a href='/'>Return to home page</a></span></div>
+      <div><span class="text-muted">Cannot find provider. <a href='/'>Return to home page</a></span></div>
     </div>
-</div>
+  </div>
+}

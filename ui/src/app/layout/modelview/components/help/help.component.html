@@ -1,30 +1,34 @@
 <div class="row">
-    <div style="max-width: 270px;" class="col-xs-3" id="help">
-        <p>Mouse controls</p>
-        <ul>
-              <li>Left-Click: rotate model</li>
-              <li>Right-Click: move model</li>
-              <li>Mouse Wheel: zoom in/out</li>
-              <li>Double Click: display more information</li>
-        </ul>
-        <div class="row">
-            <div class="col col-xs-12">
-                <button id="modelDemoButton" type="button" class="btn btn-outline-secondary mr-2 help-buttons" [disabled]="isDoingSidebarTour()" (click)="doModelDemo()" placement="left">{{modelButtonStr}}</button>
-		&nbsp;
-                <button *ngIf="modelDemoStarted" type="button" class="btn btn-outline-secondary mr-2 help-buttons" (click)="endModelDemo()" placement="left">Stop Demo</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-xs-12">
-                <button id="sidebarTourButton" type="button" class="btn btn-outline-secondary mr-2 help-buttons" [disabled]="isDoingModelDemo()" (click)="doSidebarTour()" placement="left">{{sidebarButtonStr}}</button>
-		&nbsp;
-                <button *ngIf="sidebarTourStarted" type="button" class="btn btn-outline-secondary mr-2 help-buttons" (click)="endSidebarTour()" placement="right">Stop Tour</button>
-            </div>
-        </div>
-        <hr/>
-        <div class="row">
-            <div class="col col-xs-12">
-              <p>Sept 2024 Release</p>
-            </div>
-        </div>
-</div>
+  <div style="max-width: 270px;" class="col-xs-3" id="help">
+    <p>Mouse controls</p>
+    <ul>
+      <li>Left-Click: rotate model</li>
+      <li>Right-Click: move model</li>
+      <li>Mouse Wheel: zoom in/out</li>
+      <li>Double Click: display more information</li>
+    </ul>
+    <div class="row">
+      <div class="col col-xs-12">
+        <button id="modelDemoButton" type="button" class="btn btn-outline-secondary mr-2 help-buttons" [disabled]="isDoingSidebarTour()" (click)="doModelDemo()" placement="left">{{modelButtonStr}}</button>
+        &nbsp;
+        @if (modelDemoStarted) {
+          <button type="button" class="btn btn-outline-secondary mr-2 help-buttons" (click)="endModelDemo()" placement="left">Stop Demo</button>
+        }
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-xs-12">
+        <button id="sidebarTourButton" type="button" class="btn btn-outline-secondary mr-2 help-buttons" [disabled]="isDoingModelDemo()" (click)="doSidebarTour()" placement="left">{{sidebarButtonStr}}</button>
+        &nbsp;
+        @if (sidebarTourStarted) {
+          <button type="button" class="btn btn-outline-secondary mr-2 help-buttons" (click)="endSidebarTour()" placement="right">Stop Tour</button>
+        }
+      </div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col col-xs-12">
+        <p>Sept 2024 Release</p>
+      </div>
+    </div>
+  </div>

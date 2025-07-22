@@ -1,71 +1,88 @@
 <div [@routerTransition]>
-        <app-sidebar></app-sidebar>
-        <div (window:resize)="onResize()"
-              (dragenter)="dragEnterHandler($event);"
-              [style.opacity]="isRunningModelDemo() || enableFileDrop? 0.5 : 1.0"
-              id="viewerDiv" #viewerDiv></div>
-        <div *ngIf="isRunningModelDemo()||isMouseGuideOn" id="mouseGuideDiv" #mouseGuideDiv>
-            <svg>
-                <g style="stroke: #606060; stroke-width: 1px;">
-                    <line [attr.x1] = "centreX-30" [attr.y1] = "centreY" [attr.x2] = "centreX+30" [attr.y2] = "centreY" />
-                    <line [attr.x1] = "centreX" [attr.y1] = "centreY-30" [attr.x2] = "centreX" [attr.y2] = "centreY+30"/>
-                </g>
-                <circle [style.height]="2.0*sphereRadius" [style.width]="2.0*sphereRadius" [attr.r]="sphereRadius"
-                              style="fill:none; stroke-width: 0.5px; stroke: #606060;" [attr.cx]="centreX" [attr.cy]="centreY"></circle>
-                <g *ngIf="modelDemoSeqNum == 0" style="stroke: rgb(255,0,0); stroke-width: 2;">
-                    <line [attr.x1]="-100+centreX" [attr.y1]="0+centreY" [attr.x2]="100+centreX" [attr.y2]="0+centreY" />
-                    <line [attr.x1]="-90+centreX" [attr.y1]="-10+centreY" [attr.x2]="-100+centreX" [attr.y2]="0+centreY" />
-                    <line [attr.x1]="-100+centreX" [attr.y1]="0+centreY" [attr.x2]="-90+centreX" [attr.y2]="10+centreY" />
-                    <line [attr.x1]="90+centreX" [attr.y1]="-10+centreY" [attr.x2]="100+centreX" [attr.y2]="0+centreY" />
-                    <line [attr.x1]="100+centreX" [attr.y1]="0+centreY" [attr.x2]="90+centreX" [attr.y2]="10+centreY" />
-                </g>
-                <g *ngIf="modelDemoSeqNum == 1" style="stroke: rgb(255,0,0); stroke-width: 2;">
-                    <line [attr.x1]="0+centreX" [attr.y1]="-100+centreY" [attr.x2]="0+centreX" [attr.y2]="100+centreY" />
-                    <line [attr.x1]="-10+centreX" [attr.y1]="-90+centreY" [attr.x2]="0+centreX" [attr.y2]="-100+centreY" />
-                    <line [attr.x1]="0+centreX" [attr.y1]="-100+centreY" [attr.x2]="10+centreX" [attr.y2]="-90+centreY" />
-                    <line [attr.x1]="-10+centreX" [attr.y1]="90+centreY" [attr.x2]="0+centreX" [attr.y2]="100+centreY" />
-                    <line [attr.x1]="0+centreX" [attr.y1]="100+centreY" [attr.x2]="10+centreX" [attr.y2]="90+centreY" />
-                </g>
-                <g *ngIf="modelDemoSeqNum == 2" style="stroke: rgb(255,0,0); stroke-width: 2;">
-                    <line [attr.x1]="0+centreX - sphereRadius - 50" [attr.y1]="-100+centreY" [attr.x2]="0+centreX - sphereRadius - 50" [attr.y2]="100+centreY" />
-                    <line [attr.x1]="-10+centreX - sphereRadius - 50" [attr.y1]="-90+centreY" [attr.x2]="0+centreX - sphereRadius - 50" [attr.y2]="-100+centreY" />
-                    <line [attr.x1]="0+centreX - sphereRadius - 50" [attr.y1]="-100+centreY" [attr.x2]="10+centreX - sphereRadius - 50" [attr.y2]="-90+centreY" />
-                    <line [attr.x1]="-10+centreX - sphereRadius - 50" [attr.y1]="90+centreY" [attr.x2]="0+centreX - sphereRadius - 50" [attr.y2]="100+centreY" />
-                    <line [attr.x1]="0+centreX - sphereRadius - 50" [attr.y1]="100+centreY" [attr.x2]="10+centreX - sphereRadius - 50" [attr.y2]="90+centreY" />
-
-                    <line [attr.x1]="0+centreX + sphereRadius + 50" [attr.y1]="-100+centreY" [attr.x2]="0+centreX + sphereRadius + 50" [attr.y2]="100+centreY" />
-                    <line [attr.x1]="-10+centreX + sphereRadius + 50" [attr.y1]="-90+centreY" [attr.x2]="0+centreX + sphereRadius + 50" [attr.y2]="-100+centreY" />
-                    <line [attr.x1]="0+centreX + sphereRadius + 50" [attr.y1]="-100+centreY" [attr.x2]="10+centreX + sphereRadius + 50" [attr.y2]="-90+centreY" />
-                    <line [attr.x1]="-10+centreX + sphereRadius + 50" [attr.y1]="90+centreY" [attr.x2]="0+centreX + sphereRadius + 50" [attr.y2]="100+centreY" />
-                    <line [attr.x1]="0+centreX + sphereRadius + 50" [attr.y1]="100+centreY" [attr.x2]="10+centreX + sphereRadius + 50" [attr.y2]="90+centreY" />
-                </g>
-            </svg>
-        </div>
-        <div *ngIf="isRunningModelDemo()" id="demoPopup"><p>{{demoPopupMsg}}</p></div>
-        <div id="helpButton">
-            <button class="btn btn-secondary btn-sm" (click)="isHelpCollapsed = !isHelpCollapsed">
-                <i class="fa fa-question-circle" aria-hidden="true"></i>
-                &nbsp;Help&nbsp;
-                <i class="fa" [ngClass]="isHelpCollapsed? 'fa-angle-up':'fa-angle-down'" aria-hidden="true"></i>
-            </button>
-        </div>
-        <div id="helpCollapse" [ngbCollapse]="isHelpCollapsed">
-            <app-help></app-help>
-        </div>
-        <div id="popupBoxDiv" #popupBoxDiv><div id="popupExitDiv">X</div></div>
-        <div id="errorDiv" #errorDiv></div>
-	<div id="spinnerDiv" #spinnerDiv>
-		<div style='width:200px; color:black'>
-		<p>Loading:</p>
-		<p *ngIf="volTotal>0" >&nbsp;volumes: {{volCnt/volTotal*100.0 | number: '1.1-1'}}%</p>
-	        <p *ngIf="planeTotal>0" >&nbsp;planes: {{planeCnt/planeTotal*100.0 | number: '1.1-1'}}%</p>
-		<p *ngIf="gltfTotal>0" >&nbsp;surfaces: {{gltfCnt/gltfTotal*100.0 | number: '1.1-1'}}%</p>
-		<p *ngIf="gzsonTotal>0" >&nbsp;points/lines: {{gzsonCnt/gzsonTotal*100.0 | number: '1.1-1'}}%</p>
-		</div>
-	</div>
-        <div id="drop_zone" (drop)="dropHandler($event)" (dragover)="preventDefault($event)"
-                                       [ngStyle]="{'visibility':enableFileDrop ? 'visible' : 'hidden'}">
-            <p>Drag a GOCAD .TS (TSURF) file into the blue box to display it.&nbsp;&nbsp;(CRS: {{crs}})</p>
-        </div>
-        <app-overview></app-overview>
+  <app-sidebar></app-sidebar>
+  <div (window:resize)="onResize()"
+    (dragenter)="dragEnterHandler($event);"
+    [style.opacity]="isRunningModelDemo() || enableFileDrop? 0.5 : 1.0"
+  id="viewerDiv" #viewerDiv></div>
+  @if (isRunningModelDemo()||isMouseGuideOn) {
+    <div id="mouseGuideDiv" #mouseGuideDiv>
+      <svg>
+        <g style="stroke: #606060; stroke-width: 1px;">
+          <line [attr.x1] = "centreX-30" [attr.y1] = "centreY" [attr.x2] = "centreX+30" [attr.y2] = "centreY" />
+          <line [attr.x1] = "centreX" [attr.y1] = "centreY-30" [attr.x2] = "centreX" [attr.y2] = "centreY+30"/>
+        </g>
+        <circle [style.height]="2.0*sphereRadius" [style.width]="2.0*sphereRadius" [attr.r]="sphereRadius"
+        style="fill:none; stroke-width: 0.5px; stroke: #606060;" [attr.cx]="centreX" [attr.cy]="centreY"></circle>
+        @if (modelDemoSeqNum == 0) {
+          <g style="stroke: rgb(255,0,0); stroke-width: 2;">
+            <line [attr.x1]="-100+centreX" [attr.y1]="0+centreY" [attr.x2]="100+centreX" [attr.y2]="0+centreY" />
+            <line [attr.x1]="-90+centreX" [attr.y1]="-10+centreY" [attr.x2]="-100+centreX" [attr.y2]="0+centreY" />
+            <line [attr.x1]="-100+centreX" [attr.y1]="0+centreY" [attr.x2]="-90+centreX" [attr.y2]="10+centreY" />
+            <line [attr.x1]="90+centreX" [attr.y1]="-10+centreY" [attr.x2]="100+centreX" [attr.y2]="0+centreY" />
+            <line [attr.x1]="100+centreX" [attr.y1]="0+centreY" [attr.x2]="90+centreX" [attr.y2]="10+centreY" />
+          </g>
+        }
+        @if (modelDemoSeqNum == 1) {
+          <g style="stroke: rgb(255,0,0); stroke-width: 2;">
+            <line [attr.x1]="0+centreX" [attr.y1]="-100+centreY" [attr.x2]="0+centreX" [attr.y2]="100+centreY" />
+            <line [attr.x1]="-10+centreX" [attr.y1]="-90+centreY" [attr.x2]="0+centreX" [attr.y2]="-100+centreY" />
+            <line [attr.x1]="0+centreX" [attr.y1]="-100+centreY" [attr.x2]="10+centreX" [attr.y2]="-90+centreY" />
+            <line [attr.x1]="-10+centreX" [attr.y1]="90+centreY" [attr.x2]="0+centreX" [attr.y2]="100+centreY" />
+            <line [attr.x1]="0+centreX" [attr.y1]="100+centreY" [attr.x2]="10+centreX" [attr.y2]="90+centreY" />
+          </g>
+        }
+        @if (modelDemoSeqNum == 2) {
+          <g style="stroke: rgb(255,0,0); stroke-width: 2;">
+            <line [attr.x1]="0+centreX - sphereRadius - 50" [attr.y1]="-100+centreY" [attr.x2]="0+centreX - sphereRadius - 50" [attr.y2]="100+centreY" />
+            <line [attr.x1]="-10+centreX - sphereRadius - 50" [attr.y1]="-90+centreY" [attr.x2]="0+centreX - sphereRadius - 50" [attr.y2]="-100+centreY" />
+            <line [attr.x1]="0+centreX - sphereRadius - 50" [attr.y1]="-100+centreY" [attr.x2]="10+centreX - sphereRadius - 50" [attr.y2]="-90+centreY" />
+            <line [attr.x1]="-10+centreX - sphereRadius - 50" [attr.y1]="90+centreY" [attr.x2]="0+centreX - sphereRadius - 50" [attr.y2]="100+centreY" />
+            <line [attr.x1]="0+centreX - sphereRadius - 50" [attr.y1]="100+centreY" [attr.x2]="10+centreX - sphereRadius - 50" [attr.y2]="90+centreY" />
+            <line [attr.x1]="0+centreX + sphereRadius + 50" [attr.y1]="-100+centreY" [attr.x2]="0+centreX + sphereRadius + 50" [attr.y2]="100+centreY" />
+            <line [attr.x1]="-10+centreX + sphereRadius + 50" [attr.y1]="-90+centreY" [attr.x2]="0+centreX + sphereRadius + 50" [attr.y2]="-100+centreY" />
+            <line [attr.x1]="0+centreX + sphereRadius + 50" [attr.y1]="-100+centreY" [attr.x2]="10+centreX + sphereRadius + 50" [attr.y2]="-90+centreY" />
+            <line [attr.x1]="-10+centreX + sphereRadius + 50" [attr.y1]="90+centreY" [attr.x2]="0+centreX + sphereRadius + 50" [attr.y2]="100+centreY" />
+            <line [attr.x1]="0+centreX + sphereRadius + 50" [attr.y1]="100+centreY" [attr.x2]="10+centreX + sphereRadius + 50" [attr.y2]="90+centreY" />
+          </g>
+        }
+      </svg>
+    </div>
+  }
+  @if (isRunningModelDemo()) {
+    <div id="demoPopup"><p>{{demoPopupMsg}}</p></div>
+  }
+  <div id="helpButton">
+    <button class="btn btn-secondary btn-sm" (click)="isHelpCollapsed = !isHelpCollapsed">
+      <i class="fa fa-question-circle" aria-hidden="true"></i>
+      &nbsp;Help&nbsp;
+      <i class="fa" [ngClass]="isHelpCollapsed? 'fa-angle-up':'fa-angle-down'" aria-hidden="true"></i>
+    </button>
+  </div>
+  <div id="helpCollapse" [ngbCollapse]="isHelpCollapsed">
+    <app-help></app-help>
+  </div>
+  <div id="popupBoxDiv" #popupBoxDiv><div id="popupExitDiv">X</div></div>
+  <div id="errorDiv" #errorDiv></div>
+  <div id="spinnerDiv" #spinnerDiv>
+    <div style='width:200px; color:black'>
+      <p>Loading:</p>
+      @if (volTotal>0) {
+        <p >&nbsp;volumes: {{volCnt/volTotal*100.0 | number: '1.1-1'}}%</p>
+      }
+      @if (planeTotal>0) {
+        <p >&nbsp;planes: {{planeCnt/planeTotal*100.0 | number: '1.1-1'}}%</p>
+      }
+      @if (gltfTotal>0) {
+        <p >&nbsp;surfaces: {{gltfCnt/gltfTotal*100.0 | number: '1.1-1'}}%</p>
+      }
+      @if (gzsonTotal>0) {
+        <p >&nbsp;points/lines: {{gzsonCnt/gzsonTotal*100.0 | number: '1.1-1'}}%</p>
+      }
+    </div>
+  </div>
+  <div id="drop_zone" (drop)="dropHandler($event)" (dragover)="preventDefault($event)"
+    [ngStyle]="{'visibility':enableFileDrop ? 'visible' : 'hidden'}">
+    <p>Drag a GOCAD .TS (TSURF) file into the blue box to display it.&nbsp;&nbsp;(CRS: {{crs}})</p>
+  </div>
+  <app-overview></app-overview>
 </div>

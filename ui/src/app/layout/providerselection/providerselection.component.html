@@ -1,22 +1,28 @@
 <div [@routerTransition]>
-    <div class="container-fluid">
-            <ngb-carousel>
-                <ng-template ngbSlide *ngFor="let slider of sliders">
-                    <img class="img-fluid mx-auto d-block" [src]="slider.imagePath" alt="Geoscience Model: {{slider.text}}}">
-                    <div class="carousel-caption">
-                        <h3>{{slider.label}}</h3>
-                        <p>{{slider.text}}</p>
-                    </div>
-                </ng-template>
-            </ngb-carousel>
-    </div>
-    <hr>
+  <div class="container-fluid">
+    <ngb-carousel>
+      @for (slider of sliders; track slider) {
+        <ng-template ngbSlide>
+          <img class="img-fluid mx-auto d-block" [src]="slider.imagePath" alt="Geoscience Model: {{slider.text}}}">
+          <div class="carousel-caption">
+            <h3>{{slider.label}}</h3>
+            <p>{{slider.text}}</p>
+          </div>
+        </ng-template>
+      }
+    </ngb-carousel>
+  </div>
+  <hr>
     <h2 class="title-text">Provider Selection</h2>
     <div class="container-fluid" >
-      <div *ngIf="sources" class="row">
-          <div *ngFor="let source of sources" class="col-xl-3 col-lg-6" >
+      @if (sources) {
+        <div class="row">
+          @for (source of sources; track source) {
+            <div class="col-xl-3 col-lg-6" >
               <app-provider-card [infoLink]="source.infoUrl" [bgClass]="source.colourClass" [icon]="source.icon" [count]="source.numberModels" [label]="source.name" [providerPath]="source.providerPath"></app-provider-card>
-          </div>
-      </div>
+            </div>
+          }
+        </div>
+      }
     </div>
-</div>
+  </div>

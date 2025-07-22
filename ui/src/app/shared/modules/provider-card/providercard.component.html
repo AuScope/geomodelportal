@@ -1,24 +1,30 @@
 
 <div class="card text-white bg-{{bgClass}}" >
-    <div class="card-header">
-        <div class="row">
-            <div class="col col-sm-2">
-                <img class="icon-img" src="assets/images/{{icon}}" alt="provider-icon"/>
-            </div>
-            <div class="col col-sm-10">
-                <div class="d-block">&nbsp;{{label}}</div>
-                <div *ngIf="count===1" class="d-block">&nbsp;{{count}} Model</div>
-                <div *ngIf="count>1||count===0" class="d-block">&nbsp;{{count}} Models</div>
-            </div>
-        </div>
-        <div *ngIf="infoLink!=''" class="row" (click)='openInfoLink()'>
-            <div class="col col-xs-6">
-                <span class="float-right info-link"><a>Provider Info&nbsp;</a><i class="fa fa-sm fa-external-link" aria-hidden="true"></i></span>
-            </div>
-        </div>
+  <div class="card-header">
+    <div class="row">
+      <div class="col col-sm-2">
+        <img class="icon-img" src="assets/images/{{icon}}" alt="provider-icon"/>
+      </div>
+      <div class="col col-sm-10">
+        <div class="d-block">&nbsp;{{label}}</div>
+        @if (count===1) {
+          <div class="d-block">&nbsp;{{count}} Model</div>
+        }
+        @if (count>1||count===0) {
+          <div class="d-block">&nbsp;{{count}} Models</div>
+        }
+      </div>
     </div>
-    <div class="card-footer text-end" (click)='navigateToProvider(count)'>
-        View Provider Models
-	<i class="fa fa-2x fa-arrow-circle-right" aria-hidden="true"></i>
-    </div>
+    @if (infoLink!='') {
+      <div class="row" (click)='openInfoLink()'>
+        <div class="col col-xs-6">
+          <span class="float-right info-link"><a>Provider Info&nbsp;</a><i class="fa fa-sm fa-external-link" aria-hidden="true"></i></span>
+        </div>
+      </div>
+    }
+  </div>
+  <div class="card-footer text-end" (click)='navigateToProvider(count)'>
+    View Provider Models
+    <i class="fa fa-2x fa-arrow-circle-right" aria-hidden="true"></i>
+  </div>
 </div>
