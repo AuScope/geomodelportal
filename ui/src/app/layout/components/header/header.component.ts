@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../../../environments/environment';
@@ -12,11 +12,12 @@ import { environment } from '../../../../environments/environment';
     styleUrls: ['./header.component.scss'],
     standalone: false
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
     pushRightClass = 'push-right';
 
     // Used to go back to main page via "Home" icon
     homePath = '/';
+    provider = "";
 
     constructor(private translate: TranslateService, public router: Router) {
 
@@ -41,13 +42,17 @@ export class HeaderComponent {
         }
     }
 
+    ngOnInit() {
+        this.detectProvider();
+    }
+
     /**
      * Returns true if header is displayed
      * @returns true if header is displayed
      */
     isToggled(): boolean {
-        const dom: Element = document.querySelector('body');
-        return dom.classList.contains(this.pushRightClass);
+        const dom: HTMLBodyElement | null = document.querySelector('body');
+        return dom ? dom.classList.contains(this.pushRightClass) : false;
     }
 
     /**
@@ -71,5 +76,18 @@ export class HeaderComponent {
      */
     changeLang(language: string) {
         this.translate.use(language);
+    }
+
+    /**
+     * Detects if we are in the models page and previous page was a provider
+     */
+    public detectProvider() {
+        const url = new URL(document.referrer);
+        if (url.pathname.startsWith("/provider/") 
+                      && window.location.pathname.startsWith("/model/")) {
+            this.provider = "provider";
+        } else {
+            this.provider = "";
+        }
     }
 }

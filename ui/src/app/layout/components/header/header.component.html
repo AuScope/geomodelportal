@@ -4,10 +4,32 @@
             <img id="org-logo" src="assets/images/auscope_single-colour-1.png" alt="AuScope Logo"/>
             </a>&nbsp;AuScope 3D Geoscience Models
         </span>
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav">
+            @if (this.provider === "provider") {
+                <li class="nav-item">
+                    <a class="nav-link active" onclick="history.back()">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                        Model Selection
+                    </a>
+                </li>
+            }
+
             <li class="nav-item">
-                <a class="nav-link active" href="{{homePath}}"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a>
+                <a class="nav-link active" href="{{homePath}}">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    &nbsp;Home
+                </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link active" href="https://avre.auscope.org.au" target="_blank">
+                    <i class="fa fa-th" aria-hidden="true"></i>
+                    AVRE App Store
+                </a>
+            </li>
+
+
+
             <li class="nav-item">
                 <a class="nav-link active" href="mailto:cg-admin@csiro.au?Subject=Auscope-geomodel-portal"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;Contact Us</a>
             </li>
