@@ -1,16 +1,17 @@
-@import "../../../globals";
+@use "sass:color";
+@use "../../../globals";
 
 .sidebar {
     position: fixed;
     z-index: 1000;
-    top: $header-height;
-    left: $sidebar-width;
-    width: $sidebar-width;
-    margin-left: calc(-1.0 * #{$sidebar-width}); // The #{} allows it to avoid being preprocessed by sass and getting an 'incompatible units' error
+    top: globals.$header-height;
+    left: globals.$sidebar-width;
+    width: globals.$sidebar-width;
+    margin-left: calc(-1.0 * #{globals.$sidebar-width}); // The #{} allows it to avoid being preprocessed by sass and getting an 'incompatible units' error
     border: none;
     border-radius: 0;
     overflow-y: auto;
-    background-color: $topnav-background-color;
+    background-color: globals.$topnav-background-color;
     bottom: 0;
     overflow-x: hidden;
     /* padding-bottom: 40px; */
@@ -22,7 +23,7 @@
     // border-top: 1px solid rgba(255,255,255,0.3);
     .list-group {
         a.list-group-item {
-            background: $topnav-background-color;
+            background: globals.$topnav-background-color;
             border: 0;
             border-radius: 0;
             color: #DDD;
@@ -35,11 +36,11 @@
             }
         }
         a:hover {
-            background: darken($topnav-background-color, 5%);
+            background: color.adjust(globals.$topnav-background-color, $lightness: -5%);
             color: #fff;
         }
         a.router-link-active {
-            background: darken($topnav-background-color, 5%);
+            background: color.adjust(globals.$topnav-background-color, $lightness: -5%);
             color: #fff;
         }
         .header-fields {
@@ -63,7 +64,7 @@
                 color: #DDD;
                 text-decoration: none;
                 font-weight: 400;
-                background: $topnav-background-color;
+                background: globals.$topnav-background-color;
                 span {
                     position: relative;
                     display: block;
@@ -79,7 +80,7 @@
             }
         }
         .panel-title:hover {
-            background: darken($topnav-background-color, 5%);
+            background: color.adjust(globals.$topnav-background-color, $lightness: -5%);
         }
         .panel-collapse {
             border-radius: 0;
@@ -87,7 +88,7 @@
             .panel-body {
                 .list-group-item {
                     border-radius: 0;
-                    background-color: $topnav-background-color;
+                    background-color: globals.$topnav-background-color;
                     border: 0 solid transparent;
                     a {
                         color: #DDD;
@@ -97,7 +98,7 @@
                     }
                 }
                 .list-group-item:hover {
-                    background: darken($topnav-background-color, 5%);
+                    background: color.adjust(globals.$topnav-background-color, $lightness: -5%);
                 }
             }
         }

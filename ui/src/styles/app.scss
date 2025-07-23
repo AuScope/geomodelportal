@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import "spinner";
-@import "utils";
-@import "rtl";
-@import "responsive";
+@use "spinner";
+@use "utils";
+@use "rtl";
+@use "responsive";
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 /* Card colours for each provider */

@@ -1,9 +1,9 @@
-@import "globals";
+@use "globals";
 
 .main-container {
-    margin-top: $header-height;
+    margin-top: globals.$header-height;
     margin-left: 0;
-    max-height: calc(100vh - #{$header-height});
+    max-height: calc(100vh - #{globals.$header-height});
     position: relative;
     overflow: hidden;
 }

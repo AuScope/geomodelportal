@@ -1,4 +1,4 @@
-@import "../../../globals";
+@use "../../../globals";
 
 #canvas {
     width: 200px;
@@ -11,7 +11,7 @@
     overflow: hidden;
 }
 
-@media screen and (max-width: $small-screen-width) {
+@media screen and (max-width: globals.$small-screen-width) {
     #canvas {
         width: 100px !important;
         height: 100px !important;

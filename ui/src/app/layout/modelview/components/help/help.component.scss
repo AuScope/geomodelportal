@@ -1,4 +1,4 @@
-@import "../../../globals";
+@use "../../../globals";
 
 .help-buttons {
     font-size: 12px;
@@ -40,7 +40,7 @@
     }
 }
 
-@media screen and (max-width: $small-screen-width) {
+@media screen and (max-width: globals.$small-screen-width) {
     #modelDemoButton {
         display: none;
     }

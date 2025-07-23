@@ -1,4 +1,4 @@
-@import "../globals";
+@use "../globals";
 
     a, div {
         font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -12,19 +12,19 @@
         position: absolute;
         color: #FF0000;
         top: 50px;
-        left: calc(#{$sidebar-width} + 200px);
+        left: calc(#{globals.$sidebar-width} + 200px);
         width: 200px;
         height: 300px;
     }
 
     /* Allow space for sidebar */
     #viewerDiv {
-        margin-left: $sidebar-width;
-        height: calc(100vh - #{$header-height});  // The #{} allows it to avoid being preprocessed by sass and getting an 'incompatible units' error
-        min-height: calc(100vh - #{$header-height});
+        margin-left: globals.$sidebar-width;
+        height: calc(100vh - #{globals.$header-height});  // The #{} allows it to avoid being preprocessed by sass and getting an 'incompatible units' error
+        min-height: calc(100vh - #{globals.$header-height});
         padding: 0;
-        width: calc(100vw - #{$sidebar-width});
-        min-width: calc(100vw - #{$sidebar-width});
+        width: calc(100vw - #{globals.$sidebar-width});
+        min-width: calc(100vw - #{globals.$sidebar-width});
     }
 
     /* No sidebar for small screens, so maximise width */
@@ -51,7 +51,7 @@
         top: 0;
         left: 0;
         z-index: 500;
-        margin: auto auto auto $sidebar-width;
+        margin: auto auto auto globals.$sidebar-width;
         height: 100%;
         padding: 0;
         min-height: 100vh;
@@ -114,7 +114,7 @@
         font-weight: 400;
         position: fixed;
         z-index: 2000;
-        top: $header-height;
+        top: globals.$header-height;
         right: 0;
         padding: 0.1rem 0.5rem;
         opacity: 0.8;
@@ -158,9 +158,9 @@
     #drop_zone {
         position: absolute;
         top: 2%;
-        left: calc(#{$sidebar-width} + 1%);
+        left: calc(#{globals.$sidebar-width} + 1%);
         border: 5px solid blue;
-        width:  calc(98% - #{$sidebar-width});
+        width:  calc(98% - #{globals.$sidebar-width});
         height: 96%;
         color: blue;
         p {
