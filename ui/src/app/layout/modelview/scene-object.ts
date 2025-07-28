@@ -38,6 +38,19 @@ export class SceneObject {
         if (this.sceneObj) {
 	    this.sceneObj.visible = visibility;
         }
+        // Enable/disable layer membership so it can be seen by raycaster and double clicked on
+        if (visibility) {
+            // Layer 0 is the default layer
+            this.sceneObj.layers.set(0)
+            this.sceneObj.traverse(function(child) {
+                child.layers.set(0);
+            });
+        } else {
+            this.sceneObj.layers.disableAll();
+            this.sceneObj.traverse(function(child) {
+                child.layers.disableAll();
+            });
+        }
     }
 
     /**
@@ -222,6 +235,19 @@ export class VolSceneObject extends SceneObject {
     public setVisibility(visibility: boolean) {
         for (const obj of this.volObjList) {
             obj.visible = visibility;
+            // Enable/disable layer membership so it can be seen by raycaster and double clicked on
+            if (visibility) {
+                // Layer 0 is the default layer
+                obj.layers.set(0)
+                this.sceneObj.traverse(function(child) {
+                    child.layers.set(0);
+                });
+             } else {
+                obj.layers.disableAll();
+                obj.traverse(function(child) {
+                    child.layers.disableAll();
+                });
+	    }
         }
     }
 

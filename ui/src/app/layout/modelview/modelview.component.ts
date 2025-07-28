@@ -1083,6 +1083,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.raycaster = new ITOWNS.THREE.Raycaster();
         // Set the sensitivity of points selection
         this.raycaster.params.Points.threshold = 50;
+        // Set the raycaster to only recognise objects in the layer 0 (default layer)
+        // otherwise it will capture all objects, visible or not
+        this.raycaster.layers.set(0)
+
+        // Set up double click event handler
         this.ngRenderer.listen(this.viewerDiv, 'dblclick', function(event: any) {
 
                 event.preventDefault();
