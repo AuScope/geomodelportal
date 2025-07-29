@@ -906,8 +906,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     map: textya,
                                    side: ITOWNS.THREE.DoubleSide
                                 });
-                                const geometry = new ITOWNS.THREE.PlaneGeometry(local.extentObj.dimensions().x,
-                                                                                local.extentObj.dimensions().y);
+                                const geometry = new ITOWNS.THREE.PlaneGeometry(local.extentObj.planarDimensions().x,
+                                                                                local.extentObj.planarDimensions().y);
                                 const plane = new ITOWNS.THREE.Mesh(geometry, material);
                                 let z_offset = 0.0;
                                 if (part.hasOwnProperty('position')) {
@@ -1063,7 +1063,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         // Change defaults to allow the camera to get very close and very far away
         // without exceeding boundaries of field of view
         this.view.camera.camera3D.near = 0.01;
-        this.view.camera.camera3D.far = 200 * Math.max(this.extentObj.dimensions().x, this.extentObj.dimensions().y);
+        this.view.camera.camera3D.far = 200 * Math.max(this.extentObj.planarDimensions().x,
+						       this.extentObj.planarDimensions().y);
         this.view.camera.camera3D.updateProjectionMatrix();
         this.view.camera.camera3D.updateMatrixWorld(true);
 
