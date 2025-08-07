@@ -83,10 +83,14 @@ export class HeaderComponent implements OnInit {
      * Detects if we are in the models page and previous page was a provider
      */
     public detectProvider() {
-        const url = new URL(document.referrer);
-        if (url.pathname.startsWith("/provider/") 
-                      && window.location.pathname.startsWith("/model/")) {
-            this.provider = "provider";
+        if (document.referrer) {
+            const url = new URL(document.referrer);
+            if (url.pathname.startsWith("/provider/") 
+                        && window.location.pathname.startsWith("/model/")) {
+                this.provider = "provider";
+            } else {
+                this.provider = "";
+            }
         } else {
             this.provider = "";
         }
