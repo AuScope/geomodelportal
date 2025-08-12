@@ -23,10 +23,10 @@
                 ],
                 "icon": "vic-white-icon.png",
                 "colourClass": "vic",
-                "infoUrl": "https://earthresources.vic.gov.au/home"
+                "infoUrl": "https://resources.vic.gov.au/home"
             },
             "wa": {
-                "name": "Western Australia (DMIRS)",
+                "name": "Western Australia (DMPE)",
                 "models": [
                     {
                         "name": "Windimurra",
@@ -49,7 +49,7 @@
                 ],
                 "icon": "wa-white-icon.png",
                 "colourClass": "wa",
-                "infoUrl": "https://www.dmp.wa.gov.au/"
+                "infoUrl": "https://www.wa.gov.au/organisation/department-of-mines-petroleum-and-exploration"
             },
             "sa": {
                 "name": "South Australia (Energy & Mining)",
@@ -128,7 +128,7 @@
                 ],
                 "icon": "tas-white-icon.png",
                 "colourClass": "tas",
-                "infoUrl": "https://www.mrt.tas.gov.au/home"
+                "infoUrl": "https://mrt.tas.gov.au/home"
             },
             "qld": {
                 "name": "Queensland (Dept of Resources)",
@@ -154,7 +154,7 @@
                 ],
                 "icon": "qld-white-icon.png",
                 "colourClass": "qld",
-                "infoUrl": "https://www.nrmmrrd.qld.gov.au/"
+                "infoUrl": "https://nrmmrrd.qld.gov.au/"
             },
             "nsw": {
                 "name": "N.S.W. (Mining, Exploration & Geoscience)",
@@ -225,7 +225,7 @@
                 ],
                 "icon": "nsw-white-icon.png",
                 "colourClass": "nsw",
-                "infoUrl": "https://www.resources.nsw.gov.au/"
+                "infoUrl": "https://resources.nsw.gov.au/"
             },
             "nt": {
                 "name": "Northern Territory (DITT)",
@@ -243,7 +243,7 @@
                 ],
                 "icon": "nt-white-icon.png",
                 "colourClass": "nt",
-                "infoUrl": "https://industry.nt.gov.au/industries/mining-and-energy"
+                "infoUrl": "https://dme.nt.gov.au/homepage"
             },
             "ga": {
                 "name": "Geoscience Australia",
@@ -278,7 +278,7 @@
                 ],
                 "icon": "aus-white-icon.png",
                 "colourClass": "ga",
-                "infoUrl": "https://www.ga.gov.au/"
+                "infoUrl": "https://ga.gov.au/"
             },
             "csiro": {
                 "name":"Commonwealth Scientific and Industrial Research Organisation (CSIRO Mineral Resources)",
@@ -298,7 +298,7 @@
                 "infoUrl": "https://doi.org/10.25919/5ed83bf55be6a"
             },
             "nci": {
-                "name":"National Computational Infrastructure (NCI) & G. Heinson (Uni. of Adelaide)",
+                "name":"National Computational Infrastructure (NCI) & G. Heinson (Adelaide Uni.)",
                 "models": [
                     {
                         "name": "Stuart Shelf",
