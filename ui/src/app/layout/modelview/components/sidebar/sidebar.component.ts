@@ -31,7 +31,7 @@ const DISPLAY_CTRL_OFF = 'none';
 })
 export class SidebarComponent  implements OnInit, OnDestroy {
     public isActive = false;
-    private showMenu = '';
+    private showMenu: string | null = '';
     private pushRightClass: 'push-right';
     private localSeqNum = 0;
 
@@ -45,7 +45,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     private modelConfig = {};
 
     // Part of the URL which specifies the model name
-    private modelPath = '';
+    private modelPath: string | null = '';
 
     // Directory name containing model's data files
     private modelDir = '';
@@ -67,7 +67,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     private compSubscr: Subscription;
 
     // Menu items use this to trigger the display of help information
-    private helpObs: Observable<any> = null;
+    private helpObs: Observable<any> | null = null;
 
     // State of the mouse guide toggle button
     public mouseGuideBtnState = false;
@@ -107,19 +107,19 @@ export class SidebarComponent  implements OnInit, OnDestroy {
 
     // These refer to each help popover in the sidebar
     // NB: If you add a new popover, you must also add a new enum value to WidgetType in 'helpinfo.service'
-    @ViewChild('group_tick_popover') public groupTickPopover: NgbPopover = null;
-    @ViewChild('group_menu_popover') public groupMenuPopover: NgbPopover = null;
-    @ViewChild('part_config_popover') public partConfigPopover: NgbPopover = null;
-    @ViewChild('part_zoom_popover') public partZoomPopover: NgbPopover = null;
-    @ViewChild('part_download_popover') public partDownloadPopover: NgbPopover = null;
-    @ViewChild('part_eyeball_popover') public partEyeballPopover: NgbPopover = null;
-    @ViewChild('part_offset_popover') public partOffsetPopover: NgbPopover = null;
-    @ViewChild('part_trans_popover') public partTransPopover: NgbPopover = null;
-    @ViewChild('part_scale_popover') public partScalePopover: NgbPopover = null;
-    @ViewChild('part_tick_popover') public partTickPopover: NgbPopover = null;
-    @ViewChild('reset_view_popover', { static: true }) public resetViewPopover: NgbPopover = null;
-    @ViewChild('mouse_guide_popover', { static: true }) public mouseGuidePopover: NgbPopover = null;
-    @ViewChild('compass_rose_popover', { static: true }) public compassRosePopover: NgbPopover = null;
+    @ViewChild('group_tick_popover') public groupTickPopover: NgbPopover;
+    @ViewChild('group_menu_popover') public groupMenuPopover: NgbPopover;
+    @ViewChild('part_config_popover') public partConfigPopover: NgbPopover;
+    @ViewChild('part_zoom_popover') public partZoomPopover: NgbPopover;
+    @ViewChild('part_download_popover') public partDownloadPopover: NgbPopover;
+    @ViewChild('part_eyeball_popover') public partEyeballPopover: NgbPopover;
+    @ViewChild('part_offset_popover') public partOffsetPopover: NgbPopover;
+    @ViewChild('part_trans_popover') public partTransPopover: NgbPopover;
+    @ViewChild('part_scale_popover') public partScalePopover: NgbPopover;
+    @ViewChild('part_tick_popover') public partTickPopover: NgbPopover;
+    @ViewChild('reset_view_popover', { static: true }) public resetViewPopover: NgbPopover;
+    @ViewChild('mouse_guide_popover', { static: true }) public mouseGuidePopover: NgbPopover;
+    @ViewChild('compass_rose_popover', { static: true }) public compassRosePopover: NgbPopover;
 
     constructor(private translate: TranslateService, private modelInfoService: ModelInfoService,
                 private route: ActivatedRoute, public router: Router, private sideBarService: SidebarService,
@@ -127,7 +127,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de']);
         this.translate.setDefaultLang('en');
         const browserLang = this.translate.getBrowserLang();
-        this.translate.use(browserLang.match(/en|fr|ur|es|it|fa|de/) ? browserLang : 'en');
+        this.translate.use(browserLang && browserLang.match(/en|fr|ur|es|it|fa|de/) ? browserLang : 'en');
 
         this.router.events.subscribe(val => {
             if (
@@ -155,31 +155,33 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      */
     public ngOnInit() {
         this.modelPath = this.route.snapshot.paramMap.get('modelPath');
-        this.modelInfoService.getModelInfo(this.modelPath).then(
-            data => {
-                this.modelConfig = data[0] as string [];
-                this.sourceOrgName = data[2];
-                this.modelDir = data[1];
-                this.title = this.modelConfig['properties'].name;
-                this.groupList = Object.keys(this.modelConfig['groups']);
-                this.modelPartState = this.modelInfoService.getModelPartStateObj();
-                this.displayControls = {};
-                for (const groupName in this.modelPartState) {
-                    if (this.modelPartState.hasOwnProperty(groupName)) {
-                        this.displayControls[groupName] = {};
-                        for (const partId in this.modelPartState[groupName]) {
-                            if (this.modelPartState[groupName].hasOwnProperty(partId)) {
-                                this.displayControls[groupName][partId] = DISPLAY_CTRL_OFF;
+        if (this.modelPath) {
+            this.modelInfoService.getModelInfo(this.modelPath).then(
+                data => {
+                    this.modelConfig = data[0] as string [];
+                    this.sourceOrgName = data[2];
+                    this.modelDir = data[1];
+                    this.title = this.modelConfig['properties'].name;
+                    this.groupList = Object.keys(this.modelConfig['groups']);
+                    this.modelPartState = this.modelInfoService.getModelPartStateObj();
+                    this.displayControls = {};
+                    for (const groupName in this.modelPartState) {
+                        if (this.modelPartState.hasOwnProperty(groupName)) {
+                            this.displayControls[groupName] = {};
+                            for (const partId in this.modelPartState[groupName]) {
+                                if (this.modelPartState[groupName].hasOwnProperty(partId)) {
+                                    this.displayControls[groupName][partId] = DISPLAY_CTRL_OFF;
+                                }
                             }
                         }
                     }
+                },
+                // Must catch here to prevent error message appearing on console
+                err => {
+                    console.error('Cannot read model file', this.modelPath, err);
                 }
-            },
-            // Must catch here to prevent error message appearing on console
-            err => {
-                console.error('Cannot read model file', this.modelPath, err);
-            }
-        );
+            );
+        }
     }
 
     /**
@@ -237,8 +239,8 @@ export class SidebarComponent  implements OnInit, OnDestroy {
         if (this.groupList.length > 0) {
 
             // Find included first groupName menu item and first partId descendants
-            let firstGroupName: string = null;
-            let firstPartId: string = null;
+            let firstGroupName: string | null = null;
+            let firstPartId: string | null = null;
             let done = false;
             for (const groupName of this.groupList) {
                 const partObjList = this.modelConfig['groups'][groupName];
@@ -254,7 +256,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
                     break;
                 }
             }
-            if (!done) {
+            if (!done || !firstGroupName) {
                 return;
             }
 
@@ -626,8 +628,8 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * @returns true of sidebar is displayed
      */
     public isToggled(): boolean {
-        const dom: Element = document.querySelector('body');
-        return dom.classList.contains(this.pushRightClass);
+        const dom: Element | null = document.querySelector('body');
+        return dom? dom.classList.contains(this.pushRightClass): false;
     }
 
     /**

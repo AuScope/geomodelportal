@@ -67,14 +67,14 @@ export class ModelInfoService {
     private modelControlEventSub = new Subject<ModelControlEvent>();
 
     // A promise to provider inform data and initialise
-    private initPromise: Promise<any> = null;
+    private initPromise: Promise<any>;
 
     // A promise to fetch model data
-    private modelPromise: Promise<any> = null;
+    private modelPromise: Promise<any>;
 
     // Used to fetch a list of borehole ids
-    private boreholeIdList = [];
-    private bhPromise: Promise<any> = null;
+    private boreholeIdList: string[] = [];
+    private bhPromise: Promise<any>;
 
     // Used to inform of a camera position change
     private cameraPosSub = new Subject<[number, number, number, string]>();

@@ -252,7 +252,7 @@ export class VolviewService {
      */
     private getBitFields(val: number, max: number): number[] {
         let mask = val;
-        const retList = [];
+        const retList: number[] = [];
         for (let i = 0; i < max; i++) {
             // tslint:disable-next-line:no-bitwise
             if ((mask & 1) === 1) {
@@ -397,7 +397,7 @@ export class VolviewService {
                 } else if (pctList[dimIdx] > 1.0) {
                     pctList[dimIdx] = 1.0;
                 }
-                let d1: number, d2: number;
+                let d1: number = 1, d2: number = 2;
                 switch (dimIdx) {
                     case 0:
                         d1 = 1;

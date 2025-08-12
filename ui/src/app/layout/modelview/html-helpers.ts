@@ -154,7 +154,9 @@ export function makePopup(ngRenderer: Renderer2, popupBoxDiv: HTMLElement, event
     ngRenderer.setStyle(popupBoxDiv, 'display', 'inline');
     // Empty its contents using DOM operations (Renderer2 does not currently support proper element querying)
     while (popupBoxDiv.hasChildNodes()) {
-        popupBoxDiv.removeChild(popupBoxDiv.lastChild);
+        if (popupBoxDiv.lastChild) {
+            popupBoxDiv.removeChild(popupBoxDiv.lastChild);
+        }
     }
 
     // Make 'X' for exit button in corner of popup window

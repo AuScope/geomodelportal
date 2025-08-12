@@ -89,7 +89,7 @@ export class FileImport {
             // Convert to string
             const dataStr = JSON.stringify(data);
             // Convert to byte array
-            const arr = [];
+            const arr: number[] = [];
             for (let k = 0; k < dataStr.length; k++) {
                 arr.push(dataStr.charCodeAt(k));
             }
@@ -155,14 +155,16 @@ export class FileImport {
                     if (file) {
                         const reader = new FileReader();
                         reader.onload = function (_evt) {
-                            local.importFile(reader.result).then(
-                                function(data) {
-                                    local.readAndConvert(data, file.name);
-                                },
-                                function(err) {
-                                    console.error('An error occurred converting the GLTF file: ', err);
-                                }
-                            );
+                            if (reader.result) {
+                                local.importFile(reader.result).then(
+                                    function(data) {
+                                        local.readAndConvert(data, file.name);
+                                    },
+                                    function(err) {
+                                        console.error('An error occurred converting the GLTF file: ', err);
+                                    }
+                                );
+                            }
                         };
                         reader.onerror = function (evt) {
                             console.error('An error ocurred reading the file', evt);

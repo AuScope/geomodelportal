@@ -37,13 +37,13 @@ export class OverviewComponent implements AfterViewInit {
 
     // Used to rotate the compass rose
     private axesObj: THREE.Object3D;
-    public scene: THREE.Scene = null;
+    public scene: THREE.Scene | null = null;
 
     // Has camera rotation started?
     private startRot = false;
 
     // Previous camera rotation angle
-    private prevAngle: THREE.Euler = null;
+    private prevAngle: THREE.Euler | null = null;
 
     // Previous quaternions for the compass rose axes
     public prevQuat = {};
@@ -72,7 +72,7 @@ export class OverviewComponent implements AfterViewInit {
      * Creates the scene
      */
     ngAfterViewInit() {
-        this.createScene();
+        this.scene = this.createScene();
 
         // Create light
         const ambient = new THREE.AmbientLight(0x404040);
@@ -109,7 +109,7 @@ export class OverviewComponent implements AfterViewInit {
                 local.prevAngle = rotEul;
                 local.startRot = true;
             // Subsequent times, calculate the difference between the camera's start and end angles
-            } else if (!local.prevAngle.equals(rotEul)) {
+            } else if (local.prevAngle && !local.prevAngle.equals(rotEul)) {
                 // Calculate the end angle, then invert it
                 const qEndInv = new THREE.Quaternion();
                 qEndInv.setFromEuler(rotEul);
@@ -161,9 +161,9 @@ export class OverviewComponent implements AfterViewInit {
     /*
      * Creates the scene which hold the compass rose
      */
-    private createScene() {
+    private createScene(): THREE.Scene {
         const local = this;
-        this.scene = new THREE.Scene();
+        const scene: THREE.Scene = new THREE.Scene();
         const east_dir = new THREE.Vector3(1, 0, 0);
         const west_dir = new THREE.Vector3(-1, 0, 0);
         const north_dir = new THREE.Vector3(0, 1, 0);
@@ -182,12 +182,13 @@ export class OverviewComponent implements AfterViewInit {
         this.axesObj.add(southAxis);
         this.axesObj.add(upAxis);
         this.initAxesQuat.copy(this.axesObj.quaternion);
-        this.scene.add(local.axesObj);
+        scene.add(local.axesObj);
         // Introduce 'N', 'S', 'E','W' floating letters above axes
         this.axesObj.add(local.makeAxisLabel('E', new THREE.Vector3(AXES_LENGTH, 0, 50)));
         this.axesObj.add(local.makeAxisLabel('W', new THREE.Vector3(-AXES_LENGTH, 0, 50)));
         this.axesObj.add(local.makeAxisLabel('N', new THREE.Vector3(0, AXES_LENGTH, 50)));
         this.axesObj.add(local.makeAxisLabel('S', new THREE.Vector3(0, -AXES_LENGTH, 50)));
+        return scene
     }
 
     /*
@@ -203,9 +204,11 @@ export class OverviewComponent implements AfterViewInit {
         bitmap.width = 512;
         bitmap.height = 256;
         const ctx = bitmap.getContext('2d');
-        ctx.font = '96px Arial';
-        ctx.textAlign = 'center';
-        ctx.fillText(labelStr, 256, 128, 512);
+        if (ctx) {
+            ctx.font = '96px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(labelStr, 256, 128, 512);
+        }
 
         // Make a texture from bitmap
         const texture = new THREE.Texture(bitmap);
@@ -264,6 +267,8 @@ export class OverviewComponent implements AfterViewInit {
      * Draws the scene
      */
     public render() {
-        this.renderer.render(this.scene, this.camera);
+        if (this.scene) {
+            this.renderer.render(this.scene, this.camera);
+        }
     }
 }

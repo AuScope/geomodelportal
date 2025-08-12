@@ -21,7 +21,7 @@ export class HelpinfoService {
    * @param widgetTypeList input your widget types as an array
    * @return an observable so that you know when its your turn to display a helpful hint or null
    */
-  public waitForPopoverSignal(widgetTypeList: WidgetType[]): Observable<any> {
+  public waitForPopoverSignal(widgetTypeList: WidgetType[]): Observable<any> | null {
       // If 'widgetType' not in widgetList then include 'widgetType' in our list etc.
       let found = false;
       for (const widgetType of widgetTypeList) {

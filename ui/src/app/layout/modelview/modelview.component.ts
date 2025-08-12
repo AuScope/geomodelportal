@@ -61,10 +61,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     private extentObj;
 
     // <div> where the 3d objects are displayed
-    private viewerDiv = null;
+    private viewerDiv: HTMLElement| null = null;
 
     // <div> where popup information boxes live
-    private popupBoxDiv = null;
+    private popupBoxDiv: HTMLElement | null = null;
 
     // View object
     private view;
@@ -76,7 +76,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     private sceneArr: { [groupName: string]: { [partId: string]: SceneObject } };
 
     // Track ball controls object
-    private trackBallControls = null;
+    private trackBallControls: any = null;
 
     // Raycaster object
     private raycaster;
@@ -167,10 +167,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         // This adds the 'GLTFLoader' object to itowns' THREE
         gltfLoaderInjector(ITOWNS.THREE);
 
-        // Create our new GLTFLoader object
+        // Create our new GLTFLoader object, using unexported interface
+        // @ts-ignore
         this.gltfLoader = new ITOWNS.THREE.GLTFLoader(manager);
-
-
     }
 
     /**
@@ -225,33 +224,33 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                         // Make a part of the model visible or invisible
                         case ModelPartStateChangeType.DISPLAYED:
                             local.sceneArr[groupName][partId].setVisibility(state.new_value);
-                            local.view.notifyChange(undefined, true);
+                            local.view?.notifyChange?.(undefined, true);
                             break;
 
                         // Change the transparency of a part of the model
                         case  ModelPartStateChangeType.TRANSPARENCY:
                             const transparency = <number> state.new_value;
                             local.sceneArr[groupName][partId].setTransparency(transparency);
-                            local.view.notifyChange(undefined, true);
+                            local.view?.notifyChange?.(undefined, true);
                             break;
 
                         // Move a part of the model up or down
                         case ModelPartStateChangeType.HEIGHT_OFFSET:
                             const displacement = new ITOWNS.THREE.Vector3(0.0, 0.0, <number> state.new_value);
                             local.sceneArr[groupName][partId].setDisplacement(displacement);
-                            local.view.notifyChange(undefined, true);
+                            local.view?.notifyChange?.(undefined, true);
                             break;
 
                         // Move a slice of a volume
                         case ModelPartStateChangeType.VOLUME_SLICE:
                             local.sceneArr[groupName][partId].setVolSlice(state.new_value[0], state.new_value[1]);
-                            local.view.notifyChange(undefined, true);
+                            local.view?.notifyChange?.(undefined, true);
                             break;
 
                         // Rescale object in z-direction
                         case ModelPartStateChangeType.RESCALE:
                             local.sceneArr[groupName][partId].setScale(2, state.new_value);
-                            local.view.notifyChange(undefined, true);
+                            local.view?.notifyChange?.(undefined, true);
                             break;
                     }
                 }
@@ -368,7 +367,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.config = config;
         this.modelDir = modelDir;
         if (props.proj4_defn) {
-            proj4.defs(props.crs, props.proj4_defn);
+            ITOWNS.proj4.defs(props.crs, props.proj4_defn);
         }
         this.crs = props.crs;
 
@@ -481,9 +480,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         bitmap.width = 1024;
         bitmap.height = 512;
         const ctx = bitmap.getContext('2d');
-        ctx.font = '10px Arial';
-        ctx.textAlign = 'center';
-        ctx.fillText(labelStr, 512, 256, 1024);
+        if (ctx) {
+            ctx.font = '10px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(labelStr, 512, 256, 1024);
+        }
 
         // Make a texture from bitmap
         const texture = new ITOWNS.THREE.Texture(bitmap);
@@ -546,7 +547,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * So I have to send the data in compressed format and draw my own lines and points
      */
     private addGEOJSONPointsOrLines() {
-        const promiseList = [];
+        const promiseList: Promise<any>[] = [];
         const local = this;
 
         // Load geojson objects into scene
@@ -576,17 +577,16 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         const str = new TextDecoder("utf-8").decode(plain);
                                         const featureColl = JSON.parse(str);
                                         const geometry = new ITOWNS.THREE.BufferGeometry();
-                                        let material = null;
-                                        let items = null;
+                                        let items: any | null = null;
 
                                         // Is is a collection of points or lines?
                                         if (featureColl['features'].length > 0) {
                                             // Points
                                             if (getType(featureColl['features'][0]) === 'Point') {
                                                 // Point list
-                                                const ptList = [];
+                                                const ptList: any[] = [];
                                                 // Colour list
-                                                const colList = [];
+                                                const colList: number[] = [];
                                                 // Lookup values using colour
                                                 const colourLookup = {};
                                                 const col = new ITOWNS.THREE.Color();
@@ -608,17 +608,18 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                                 geometry.userData = { 'colourLookup': colourLookup };
 
                                                 geometry.computeBoundingSphere();
-                                                material = new ITOWNS.THREE.PointsMaterial({size: 500, vertexColors: true});
-                                                items = new ITOWNS.THREE.Points(geometry, material);
-                                                // Name it "Point Data" so it can be recognised when clicked on
-                                                items.name = "Point Data";
-                                                items.userData = { "name": part.display_name };
-
+                                                const pMaterial = new ITOWNS.THREE.PointsMaterial({size: 500, vertexColors: true});
+                                                items = new ITOWNS.THREE.Points(geometry, pMaterial);
+                                                if (items) {
+                                                    // Name it "Point Data" so it can be recognised when clicked on
+                                                    items.name = "Point Data";
+                                                    items.userData = { "name": part.display_name };
+                                                }
                                             // LineString
                                             } else {
-                                                const lnList = [];
-                                                const colList = [];
-                                                const indices = [];
+                                                const lnList: any[] = [];
+                                                const colList: number[] = [];
+                                                const indices: number[] = [];
                                                 const col = new ITOWNS.THREE.Color();
                                                 featureEach(featureColl, function(feat: Feature<LineString>, idx) {
                                                     const coords = getCoords(feat);
@@ -635,11 +636,13 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                                 geometry.setIndex(indices);
                                                 geometry.setAttribute('position', new ITOWNS.THREE.Float32BufferAttribute(lnList, 3));
                                                 geometry.setAttribute('color', new ITOWNS.THREE.Float32BufferAttribute(colList, 3));
-                                                material = new ITOWNS.THREE.LineBasicMaterial({vertexColors: true});
-                                                items = new ITOWNS.THREE.LineSegments(geometry, material);
-                                                // Name it "Line Data" so it can be recognised when clicked on
-                                                items.name = "Line Data";
-                                                items.userData = { "name": part.display_name };
+                                                const lMaterial = new ITOWNS.THREE.LineBasicMaterial({vertexColors: true});
+                                                items = new ITOWNS.THREE.LineSegments(geometry, lMaterial);
+                                                if (items) {
+                                                    // Name it "Line Data" so it can be recognised when clicked on
+                                                    items.name = "Line Data";
+                                                    items.userData = { "name": part.display_name };
+                                                }
                                             }
                                             // Add to scene
                                             local.scene.add(items);
@@ -694,7 +697,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Loads and draws the GLTF objects
      */
     private addGLTFObjects() {
-        const promiseList = [];
+        const promiseList: Promise<any>[] = [];
         const local = this;
 
         // Load GLTF objects into scene
@@ -846,7 +849,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Adds volumes to scene (X,Y,Z slicing)
      */
     private addVolumes() {
-        const promiseList = [];
+        const promiseList: Promise<any>[] = [];
         const local = this;
 
         for (const group in local.config.groups) {
@@ -890,7 +893,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         const manager = new ITOWNS.THREE.LoadingManager();
         const local = this;
         const textureLoader = new ITOWNS.THREE.TextureLoader(manager);
-        const promiseList = [];
+        const promiseList: Promise<any>[] = [];
         for (const group in local.config.groups) {
             if (local.config.groups.hasOwnProperty(group)) {
                 const parts = local.config.groups[group];
@@ -902,13 +905,13 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             // Function called when download successful
                             function (textya) {
                                 textya.minFilter = ITOWNS.THREE.LinearFilter;
-                                const material = new ITOWNS.THREE.MeshBasicMaterial({
+                                const mMaterial = new ITOWNS.THREE.MeshBasicMaterial({
                                     map: textya,
                                    side: ITOWNS.THREE.DoubleSide
                                 });
                                 const geometry = new ITOWNS.THREE.PlaneGeometry(local.extentObj.planarDimensions().x,
                                                                                 local.extentObj.planarDimensions().y);
-                                const plane = new ITOWNS.THREE.Mesh(geometry, material);
+                                const plane = new ITOWNS.THREE.Mesh(geometry, mMaterial);
                                 let z_offset = 0.0;
                                 if (part.hasOwnProperty('position')) {
                                     z_offset = part.position[2];
@@ -960,7 +963,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      */
     private addWMSLayers() {
         const local = this;
-        const promiseList = [];
+        const promiseList: Promise<any>[] = [];
         for (const group in local.config.groups) {
             if (local.config.groups.hasOwnProperty(group)) {
                 const parts = local.config.groups[group];
@@ -1076,7 +1079,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Adds the final elements to the scene e.g mouse controls, file import handler
      */
     private finaliseScene() {
-        const local = this;
+        const local: ModelViewComponent = this;
 
         local.addBoreholes();
 
@@ -1092,6 +1095,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.ngRenderer.listen(this.viewerDiv, 'dblclick', function(event: any) {
 
                 event.preventDefault();
+                if (!local.viewerDiv) {
+                    return;
+                } 
                 local.mouse.x = (event.offsetX / local.viewerDiv.clientWidth) * 2 - 1;
                 local.mouse.y = -(event.offsetY / local.viewerDiv.clientHeight) * 2 + 1;
 
@@ -1132,14 +1138,18 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             const geomUserData = intersects[closest].object.geometry.userData;
                             const val = geomUserData.colourLookup[r.toFixed(2)+"-"+g.toFixed(2)+"-"+b.toFixed(2)]
                             const popObj = {'title': objUserData.name, 'val': val };
-                            makePopup(local.ngRenderer, local.popupBoxDiv, event, popObj, point);
+                            if (local.popupBoxDiv) {
+                                makePopup(local.ngRenderer, local.popupBoxDiv, event, popObj, point);
+                            }
                             return;
                         }
 
                         // Is this line data?
                         if (objName === "Line Data") {
                             const popObj = {'title': objUserData.name};
-                            makePopup(local.ngRenderer, local.popupBoxDiv, event, popObj, point);
+                            if (local.popupBoxDiv) {
+                                makePopup(local.ngRenderer, local.popupBoxDiv, event, popObj, point);
+                            }
                             return;
                         }
 
@@ -1165,7 +1175,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                             local.volLabelArr[group][partId].hasOwnProperty(valStr)) {
                                             popObj['label'] = local.volLabelArr[group][partId][valStr];
                                         }
-                                        makePopup(local.ngRenderer, local.popupBoxDiv, event, popObj, point);
+                                        if (local.popupBoxDiv) {
+                                            makePopup(local.ngRenderer, local.popupBoxDiv, event, popObj, point);
+                                        }
                                         return;
                                     }
                                 }
@@ -1189,8 +1201,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                             if (parts[i]['popups'].hasOwnProperty(popup_key)) {
                                                 // console.log('popup_key = ', popup_key, ' objName = ', objName );
                                                 if (popup_key === objName || popup_key + '_0' === objName ) {
-                                                    makePopup(local.ngRenderer, local.popupBoxDiv, event,
-                                                              parts[i]['popups'][popup_key], point);
+                                                    if (local.popupBoxDiv) {
+                                                        makePopup(local.ngRenderer, local.popupBoxDiv, event,
+                                                                  parts[i]['popups'][popup_key], point);
+                                                    }
                                                     if (parts[i].hasOwnProperty('model_url')) {
                                                         // Open up sidebar menu to reveal relevant part
                                                         local.sidebarSrvRequest(group, parts[i]['model_url'], MenuStateChangeType.OPENED);
@@ -1222,7 +1236,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     queryResult[keyval['name']] = keyval['value'];
                                 }
                                 if  (queryResult.hasOwnProperty('title')) {
-                                    makePopup(local.ngRenderer, local.popupBoxDiv, event, queryResult, point);
+                                    if (local.popupBoxDiv) {
+                                        makePopup(local.ngRenderer, local.popupBoxDiv, event, queryResult, point);
+                                    }
                                 }
                             },
                             (err: HttpErrorResponse) => {
