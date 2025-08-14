@@ -9,7 +9,7 @@ This project is a website that is designed to display geoscience models and thei
 
 It is broadly based on these:
 
-1. Start Angular's template (https://github.com/start-angular/SB-Admin-BS4-Angular-5) but ported to Angular 17. This provides a basic Angular+Bootstrap website framework.
+1. Start Angular's template (https://github.com/start-angular/SB-Admin-BS4-Angular-5) but ported to Angular 20. This provides a basic Angular+Bootstrap website framework.
 
 2. [ThreeJS](https://threejs.org/) provides 3d.
 
