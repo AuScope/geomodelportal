@@ -34,9 +34,6 @@ import * as ITOWNS from 'itowns/dist/itowns';
 // This older library works well because the namespace is an input parameter
 import gltfLoaderInjector from '../../../assets/three-gltf2-loader';
 
-// If you want to use your own CRS instead of the ITOWNS' default one then you must use ITOWNS' version of proj4
-const proj4 = ITOWNS.proj4;
-
 // Three axis virtual globe controller
 import ThreeDVirtSphereCtrls from '../../../assets/ThreeDVirtSphereCtrls';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
