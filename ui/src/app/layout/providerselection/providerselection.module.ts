@@ -4,16 +4,15 @@ import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ProviderSelectionRoutingModule } from './providerselection-routing.module';
 import { ProviderSelectionComponent } from './providerselection.component';
-import { ProviderCardModule } from '../../shared';
+
 
 @NgModule({
     imports: [
-        CommonModule,
-        NgbCarouselModule,
-        NgbAlertModule,
-        ProviderSelectionRoutingModule,
-        ProviderCardModule,
-        ProviderSelectionComponent
-    ]
+    CommonModule,
+    NgbCarouselModule,
+    NgbAlertModule,
+    ProviderSelectionRoutingModule,
+    ProviderSelectionComponent
+]
 })
 export class ProviderSelectionModule {}

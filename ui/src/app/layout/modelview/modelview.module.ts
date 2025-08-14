@@ -7,7 +7,7 @@ import { MatSliderModule} from '@angular/material/slider';
 import { ModelViewRoutingModule } from './modelview-routing.module';
 import { ModelViewComponent } from './modelview.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { ModelCardModule } from '../../shared';
+
 import { HelpComponent } from './components/help/help.component';
 import { OverviewComponent } from './components/overview/overview.component';
 import { VolumecontrolsComponent } from './components/sidebar/components/volumecontrols/volumecontrols.component';
@@ -15,18 +15,17 @@ import { VolumecontrolsComponent } from './components/sidebar/components/volumec
 
 @NgModule({
     imports: [
-        CommonModule,
-        NgbCarouselModule,
-        NgbAlertModule,
-        ModelViewRoutingModule,
-        ModelCardModule,
-        MatSliderModule,
-        NgbModule,
-        ModelViewComponent,
-        SidebarComponent,
-        HelpComponent,
-        OverviewComponent,
-        VolumecontrolsComponent
-    ]
+    CommonModule,
+    NgbCarouselModule,
+    NgbAlertModule,
+    ModelViewRoutingModule,
+    MatSliderModule,
+    NgbModule,
+    ModelViewComponent,
+    SidebarComponent,
+    HelpComponent,
+    OverviewComponent,
+    VolumecontrolsComponent
+]
 })
 export class ModelViewModule {}

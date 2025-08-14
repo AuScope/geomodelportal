@@ -4,16 +4,15 @@ import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ModelSelectionRoutingModule } from './modelselection-routing.module';
 import { ModelSelectionComponent } from './modelselection.component';
-import { ModelCardModule } from '../../shared';
+
 
 @NgModule({
     imports: [
-        CommonModule,
-        NgbCarouselModule,
-        NgbAlertModule,
-        ModelSelectionRoutingModule,
-        ModelCardModule,
-        ModelSelectionComponent
-    ]
+    CommonModule,
+    NgbCarouselModule,
+    NgbAlertModule,
+    ModelSelectionRoutingModule,
+    ModelSelectionComponent
+]
 })
 export class ModelSelectionModule {}
