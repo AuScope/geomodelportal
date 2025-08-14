@@ -12,9 +12,7 @@ import { ModelCardModule } from '../../shared';
         NgbCarouselModule,
         NgbAlertModule,
         ModelSelectionRoutingModule,
-        ModelCardModule
-    ],
-    declarations: [
+        ModelCardModule,
         ModelSelectionComponent
     ]
 })

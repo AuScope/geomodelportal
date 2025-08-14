@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatSliderChange } from '@angular/material/slider';
+import { MatSliderChange, MatSlider, MatSliderThumb } from '@angular/material/slider';
 import { ModelInfoService, ModelPartStateChangeType } from '../../../../../../shared/services/model-info.service';
 
 @Component({
     selector: 'app-volumecontrols',
     templateUrl: './volumecontrols.component.html',
     styleUrls: ['./volumecontrols.component.scss'],
-    standalone: false
+    imports: [MatSlider, MatSliderThumb]
 })
 export class VolumecontrolsComponent implements OnInit {
   @Input() dimIdx: number;

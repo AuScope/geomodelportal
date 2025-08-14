@@ -8,8 +8,8 @@ describe('VolumecontrolsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ VolumecontrolsComponent ]
-    })
+    imports: [VolumecontrolsComponent]
+})
     .compileComponents();
   }));
 

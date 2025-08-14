@@ -8,8 +8,8 @@ describe('ModelViewComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModelViewComponent ]
-    })
+    imports: [ModelViewComponent]
+})
     .compileComponents();
   }));
 

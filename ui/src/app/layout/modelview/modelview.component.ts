@@ -39,6 +39,11 @@ const proj4 = ITOWNS.proj4;
 
 // Three axis virtual globe controller
 import ThreeDVirtSphereCtrls from '../../../assets/ThreeDVirtSphereCtrls';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { NgClass, NgStyle, DecimalPipe } from '@angular/common';
+import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
+import { HelpComponent } from './components/help/help.component';
+import { OverviewComponent } from './components/overview/overview.component';
 
 // Default grey background
 const BACKGROUND_COLOUR = 0xC0C0C0;
@@ -49,7 +54,7 @@ const BACKGROUND_COLOUR = 0xC0C0C0;
     templateUrl: './modelview.component.html',
     styleUrls: ['./modelview.component.scss'],
     animations: [routerTransition()],
-    standalone: false
+    imports: [SidebarComponent, NgClass, NgbCollapse, HelpComponent, NgStyle, OverviewComponent, DecimalPipe]
 })
 export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     @ViewChild('viewerDiv', { static: true }) private viewerDivElem: ElementRef;

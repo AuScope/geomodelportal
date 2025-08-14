@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { MatSliderChange } from '@angular/material/slider';
+import { MatSliderChange, MatSlider, MatSliderThumb } from '@angular/material/slider';
 import { Subscription ,  Observable } from 'rxjs';
 import { NgbPopover} from '@ng-bootstrap/ng-bootstrap';
 
@@ -9,6 +9,8 @@ import { ModelInfoService, ModelPartStateChangeType } from '../../../../shared/s
 import { SidebarService, MenuStateChangeType, MenuChangeType } from '../../services/sidebar.service';
 import { HelpinfoService, WidgetType } from '../../services/helpinfo.service';
 import { saveAs } from 'file-saver';
+import { NgClass } from '@angular/common';
+import { VolumecontrolsComponent } from './components/volumecontrols/volumecontrols.component';
 
 // Google Analytics
 declare var gtag;
@@ -27,7 +29,7 @@ const DISPLAY_CTRL_OFF = 'none';
     styleUrls: ['./sidebar.component.scss'],
     encapsulation: ViewEncapsulation.None // NB: Needed to style the popovers
     ,
-    standalone: false
+    imports: [NgClass, NgbPopover, VolumecontrolsComponent, MatSlider, MatSliderThumb]
 })
 export class SidebarComponent  implements OnInit, OnDestroy {
     public isActive = false;

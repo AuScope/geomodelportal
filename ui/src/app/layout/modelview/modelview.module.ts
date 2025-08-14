@@ -21,9 +21,7 @@ import { VolumecontrolsComponent } from './components/sidebar/components/volumec
         ModelViewRoutingModule,
         ModelCardModule,
         MatSliderModule,
-        NgbModule
-    ],
-    declarations: [
+        NgbModule,
         ModelViewComponent,
         SidebarComponent,
         HelpComponent,

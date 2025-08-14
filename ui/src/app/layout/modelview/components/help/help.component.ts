@@ -8,8 +8,7 @@ const MODEL_INIT_MSG = 'Model demonstration';
 @Component({
     selector: 'app-help',
     templateUrl: './help.component.html',
-    styleUrls: ['./help.component.scss'],
-    standalone: false
+    styleUrls: ['./help.component.scss']
 })
 export class HelpComponent {
 

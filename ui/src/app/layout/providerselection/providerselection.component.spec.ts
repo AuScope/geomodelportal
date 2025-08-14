@@ -8,8 +8,8 @@ describe('ProviderSelectionComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProviderSelectionComponent ]
-    })
+    imports: [ProviderSelectionComponent]
+})
     .compileComponents();
   }));
 

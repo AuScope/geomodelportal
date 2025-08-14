@@ -8,8 +8,7 @@ import { environment } from '../../../../environments/environment';
 @Component({
     selector: 'app-provider-card',
     templateUrl: './providercard.component.html',
-    styleUrls: ['./providercard.component.scss'],
-    standalone: false
+    styleUrls: ['./providercard.component.scss']
 })
 export class ProviderCardComponent {
     @Input() bgClass: string;

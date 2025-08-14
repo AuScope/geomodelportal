@@ -26,8 +26,6 @@ const TEXT_SIZE = 400;
     templateUrl: './overview.component.html',
     styleUrls: ['./overview.component.scss'],
     encapsulation: ViewEncapsulation.None // NB: Needed to style the popovers
-    ,
-    standalone: false
 })
 export class OverviewComponent implements AfterViewInit {
     @ViewChild('canvas', { static: true }) private canvasRef: ElementRef;

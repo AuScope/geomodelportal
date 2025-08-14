@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { ModelInfoService } from '../../shared/services/model-info.service';
+import { NgbCarousel, NgbSlide } from '@ng-bootstrap/ng-bootstrap';
+import { ProviderCardComponent } from '../../shared/modules/provider-card/providercard.component';
 
 @Component({
     selector: 'app-providerselection',
     templateUrl: './providerselection.component.html',
     styleUrls: ['./providerselection.component.scss'],
     animations: [routerTransition()],
-    standalone: false
+    imports: [NgbCarousel, NgbSlide, ProviderCardComponent]
 })
 export class ProviderSelectionComponent {
     // Model showcase images

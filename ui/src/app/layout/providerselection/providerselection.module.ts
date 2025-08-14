@@ -12,9 +12,7 @@ import { ProviderCardModule } from '../../shared';
         NgbCarouselModule,
         NgbAlertModule,
         ProviderSelectionRoutingModule,
-        ProviderCardModule
-    ],
-    declarations: [
+        ProviderCardModule,
         ProviderSelectionComponent
     ]
 })

@@ -12,8 +12,8 @@ import { HeaderComponent } from './components/header/header.component';
         CommonModule,
         LayoutRoutingModule,
         TranslateModule,
-        NgbDropdownModule
-    ],
-    declarations: [LayoutComponent, HeaderComponent]
+        NgbDropdownModule,
+        LayoutComponent, HeaderComponent
+    ]
 })
 export class LayoutModule {}

@@ -5,13 +5,14 @@ import { routerTransition } from '../../router.animations';
 
 
 import { ModelInfoService } from '../../shared/services/model-info.service';
+import { ModelCardComponent } from '../../shared/modules/model-card/modelcard.component';
 
 @Component({
     selector: 'app-modelselection',
     templateUrl: './modelselection.component.html',
     styleUrls: ['./modelselection.component.scss'],
     animations: [routerTransition()],
-    standalone: false
+    imports: [ModelCardComponent]
 })
 export class ModelSelectionComponent implements OnInit {
 
