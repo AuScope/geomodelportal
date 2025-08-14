@@ -253,10 +253,10 @@ export class OverviewComponent implements AfterViewInit {
         this.renderer.setClearColor(BACKGROUND_COLOUR, 0);
         this.renderer.autoClear = true;
 
-        const component: OverviewComponent = this;
+        const local: OverviewComponent = this;
 
         (function render() {
-            component.render();
+            local.render();
         }());
     }
 
