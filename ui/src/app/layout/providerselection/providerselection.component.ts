@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { ModelInfoService } from '../../shared/services/model-info.service';
 import { NgbCarousel, NgbSlide } from '@ng-bootstrap/ng-bootstrap';
@@ -12,13 +12,15 @@ import { ProviderCardComponent } from '../../shared/modules/provider-card/provid
     imports: [NgbCarousel, NgbSlide, ProviderCardComponent]
 })
 export class ProviderSelectionComponent {
+    private modelInfoService = inject(ModelInfoService);
+
     // Model showcase images
     public sliders: Array<any> = [];
 
     // Sources of geological models
     public sources: any;
 
-    constructor(private modelInfoService: ModelInfoService) {
+    constructor() {
         this.sliders.push(
             {
                 imagePath: 'assets/images/StuartShelf.PNG',

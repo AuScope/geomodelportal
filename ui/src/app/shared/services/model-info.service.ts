@@ -3,7 +3,7 @@
 // and to read/write the model parts' state
 //
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Observable ,  Subject } from 'rxjs';
@@ -46,6 +46,8 @@ export type ModelPartCallbackType =  (groupName: string, modelUrl: string, state
  */
 @Injectable()
 export class ModelInfoService {
+    private httpService = inject(HttpClient);
+
     private providerModelInfo = {};
     private providerInfoList: ProviderInfo[] = [];
 
@@ -78,9 +80,6 @@ export class ModelInfoService {
 
     // Used to inform of a camera position change
     private cameraPosSub = new Subject<[number, number, number, string]>();
-
-    constructor(private httpService: HttpClient) {
-    }
 
     /**
      * Initialise service

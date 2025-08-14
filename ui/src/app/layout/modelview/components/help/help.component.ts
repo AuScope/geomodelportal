@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HelpinfoService, WidgetType } from '../../services/helpinfo.service';
 
 
@@ -11,6 +11,8 @@ const MODEL_INIT_MSG = 'Model demonstration';
     styleUrls: ['./help.component.scss']
 })
 export class HelpComponent {
+  private helpinfoService = inject(HelpinfoService);
+
 
   public sidebarButtonStr = SIDEBAR_INIT_MSG;
   public sidebarTourStarted = false;
@@ -18,10 +20,6 @@ export class HelpComponent {
   public modelDemoStarted = false;
   private helpItemCount = -1;
   private modelDemoSeqNum = -1;
-
-  constructor(private helpinfoService: HelpinfoService) {
-
-  }
 
   /**
    * Starts and progresses a tour of the sidebar controls

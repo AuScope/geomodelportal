@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { routerTransition } from '../../router.animations';
 
@@ -15,15 +15,14 @@ import { ModelCardComponent } from '../../shared/modules/model-card/modelcard.co
     imports: [ModelCardComponent]
 })
 export class ModelSelectionComponent implements OnInit {
+    private route = inject(ActivatedRoute);
+    private modelInfoService = inject(ModelInfoService);
+
 
     // Geological models for each provider
     public providerModels: any = {};
 
     public providerPath = '';
-
-    constructor(private route: ActivatedRoute,
-                private modelInfoService: ModelInfoService) {
-    }
 
     ngOnInit() {
         this.providerPath = this.route.snapshot.paramMap.get('providerPath');

@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, Renderer2, ElementRef, OnDestroy } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, Renderer2, ElementRef, OnDestroy, inject } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -57,6 +57,15 @@ const BACKGROUND_COLOUR = 0xC0C0C0;
     imports: [SidebarComponent, NgClass, NgbCollapse, HelpComponent, NgStyle, OverviewComponent, DecimalPipe]
 })
 export class ModelViewComponent  implements AfterViewInit, OnDestroy {
+    private modelInfoService = inject(ModelInfoService);
+    private ngRenderer = inject(Renderer2);
+    private sidebarService = inject(SidebarService);
+    private route = inject(ActivatedRoute);
+    router = inject(Router);
+    private helpinfoService = inject(HelpinfoService);
+    private httpService = inject(HttpClient);
+    private volViewService = inject(VolviewService);
+
     @ViewChild('viewerDiv', { static: true }) private viewerDivElem: ElementRef;
     @ViewChild('popupBoxDiv', { static: true }) private popupBoxDivElem: ElementRef;
     @ViewChild('errorDiv', { static: true }) private errorDivElem: ElementRef;
@@ -162,10 +171,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     public planeCnt = 0;
     public planeTotal = 0;
 
-    constructor(private modelInfoService: ModelInfoService, private ngRenderer: Renderer2,
-                private sidebarService: SidebarService, private route: ActivatedRoute, public router: Router,
-                private helpinfoService: HelpinfoService, private httpService: HttpClient,
-                private volViewService: VolviewService) {
+    constructor() {
         ITOWNS.THREE.Cache.enabled = true;
         const manager = new ITOWNS.THREE.LoadingManager();
 
@@ -1283,7 +1289,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.view.notifyChange(this.view.camera.camera3D, true);
 
         // Set up drag and drop file display mechanism
-        this.fileImportFactory = new FileImportFactory(this.sidebarService, this.modelInfoService, this.httpService);
+        this.fileImportFactory = new FileImportFactory();
         this.fileImport = this.fileImportFactory.createFileImport(this.scene, this.gltfLoader, this.modelUrlPath,
                                                                              this.sceneArr, this.trackBallControls);
         // Everything except the WMS layers are loaded at this point, so turn off loading spinner

@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, ViewEncapsulation, ViewChild, ElementRef, inject } from '@angular/core';
 import { ModelInfoService, ModelControlEventEnum } from '../../../../shared/services/model-info.service';
 
 // Include threejs library
@@ -28,6 +28,8 @@ const TEXT_SIZE = 400;
     encapsulation: ViewEncapsulation.None // NB: Needed to style the popovers
 })
 export class OverviewComponent implements AfterViewInit {
+    private modelInfoService = inject(ModelInfoService);
+
     @ViewChild('canvas', { static: true }) private canvasRef: ElementRef;
 
     private renderer: THREE.WebGLRenderer;
@@ -61,7 +63,7 @@ export class OverviewComponent implements AfterViewInit {
     /**
      * Constructor
      */
-    constructor(private modelInfoService: ModelInfoService) {
+    constructor() {
         this.render = this.render.bind(this);
     }
 

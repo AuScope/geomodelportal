@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ViewEncapsulation, inject } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { MatSliderChange, MatSlider, MatSliderThumb } from '@angular/material/slider';
@@ -32,6 +32,13 @@ const DISPLAY_CTRL_OFF = 'none';
     imports: [NgClass, NgbPopover, VolumecontrolsComponent, MatSlider, MatSliderThumb]
 })
 export class SidebarComponent  implements OnInit, OnDestroy {
+    private translate = inject(TranslateService);
+    private modelInfoService = inject(ModelInfoService);
+    private route = inject(ActivatedRoute);
+    router = inject(Router);
+    private sideBarService = inject(SidebarService);
+    private helpinfoService = inject(HelpinfoService);
+
     public isActive = false;
     private showMenu: string | null = '';
     private pushRightClass: 'push-right';
@@ -123,9 +130,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     @ViewChild('mouse_guide_popover', { static: true }) public mouseGuidePopover: NgbPopover;
     @ViewChild('compass_rose_popover', { static: true }) public compassRosePopover: NgbPopover;
 
-    constructor(private translate: TranslateService, private modelInfoService: ModelInfoService,
-                private route: ActivatedRoute, public router: Router, private sideBarService: SidebarService,
-                private helpinfoService: HelpinfoService) {
+    constructor() {
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de']);
         this.translate.setDefaultLang('en');
         const browserLang = this.translate.getBrowserLang();

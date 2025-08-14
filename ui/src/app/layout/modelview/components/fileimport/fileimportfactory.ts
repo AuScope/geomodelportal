@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { ModelInfoService } from '../../../../shared/services/model-info.service';
@@ -8,15 +8,10 @@ import * as ITOWNS from 'itowns/dist/itowns';
 
 @Injectable()
 export class FileImportFactory {
-    /**
-     * constructor takes parameters taken from ModelView component
-     * @param sidebarService sidebar service
-     * @param modelInfoService model info service
-     * @param httpService http service
-     */
-    constructor(private sidebarService: SidebarService, private modelInfoService: ModelInfoService,
-                private httpService: HttpClient) {
-    }
+    private sidebarService = inject(SidebarService);
+    private modelInfoService = inject(ModelInfoService);
+    private httpService = inject(HttpClient);
+
 
     /**
      * Creates a 'FileImport' object

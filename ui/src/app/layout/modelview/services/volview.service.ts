@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 // Most web servers & browsers will compress & decompress files if set up correctly,
@@ -66,9 +66,8 @@ export class VolView {
   providedIn: 'root'
 })
 export class VolviewService {
+    private httpService = inject(HttpClient);
 
-    constructor(private httpService: HttpClient) {
-    }
 
     /**
      * Setup the parameters for the volume

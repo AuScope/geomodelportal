@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../../../environments/environment';
@@ -12,13 +12,16 @@ import { environment } from '../../../../environments/environment';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+    private translate = inject(TranslateService);
+    router = inject(Router);
+
     pushRightClass = 'push-right';
 
     // Used to go back to main page via "Home" icon
     homePath = '/';
     provider = "";
 
-    constructor(private translate: TranslateService, public router: Router) {
+    constructor() {
 
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de', 'zh-CHS']);
         this.translate.setDefaultLang('en');
