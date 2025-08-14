@@ -38,7 +38,7 @@ export class VolView {
                                                                   new ITOWNS.THREE.Vector3(0, 0, 1) ];
 
     // This is a colour loopkup table for the integer and bit mask volumes
-    colourLookup: { [idx: number]: [number, number, number, number] } = {};
+    colourLookup: Record<number, [number, number, number, number]> = {}; // { [idx: number]: [number, number, number, number] }
 
     // Is true if the DataType is 'BIT_MASK'
     isBitField = false;
@@ -74,7 +74,7 @@ export class VolviewService {
      * @param volDataObj JSON object taken from model config file
      * @param dataType type of data that in within the volume
      */
-    public makeVolView(volDataObj: {}, dataType: DataType): VolView {
+    public makeVolView(volDataObj: object, dataType: DataType): VolView {
         const dims = volDataObj['dataDims'];
         const volView = new VolView();
         if (dataType === DataType.BIT_MASK) {
@@ -102,11 +102,8 @@ export class VolviewService {
      * @returns floating point number
      */
     private int_to_float16(val: number): number {
-        // tslint:disable-next-line:no-bitwise
         const sign = (val & 0x8000) >> 15;
-        // tslint:disable-next-line:no-bitwise
         const exp = (val & 0x7C00) >> 10;
-        // tslint:disable-next-line:no-bitwise
         const frac = val & 0x03FF;
 
         if (exp === 0) {
@@ -123,11 +120,8 @@ export class VolviewService {
      * @returns floating point number
      */
     public int_to_float32(val) {
-        // tslint:disable-next-line:no-bitwise
         const sign = (val & 0x80000000) >> 31;
-        // tslint:disable-next-line:no-bitwise
         const exp = (val & 0x7F800000) >> 23;
-        // tslint:disable-next-line:no-bitwise
         const frac = val & 0x07FFFFF;
 
         if (exp === 0) {
@@ -253,11 +247,9 @@ export class VolviewService {
         let mask = val;
         const retList: number[] = [];
         for (let i = 0; i < max; i++) {
-            // tslint:disable-next-line:no-bitwise
             if ((mask & 1) === 1) {
                 retList.push(i);
             }
-            // tslint:disable-next-line:no-bitwise
             mask = mask >> 1;
         }
         return retList;
@@ -324,7 +316,7 @@ export class VolviewService {
         let val = this.getFromArray(volView, x + y * volView.DIM[0] + z * volView.DIM[0] * volView.DIM[1]);
         if (val !== null) {
             if (volView.isBitField) {
-                const valArr = this.getBitFields(<number>val, volView.BIT_SZ);
+                const valArr = this.getBitFields(val as number, volView.BIT_SZ);
                 if (valArr.length === 0) {
                     return;
                 }
@@ -396,7 +388,7 @@ export class VolviewService {
                 } else if (pctList[dimIdx] > 1.0) {
                     pctList[dimIdx] = 1.0;
                 }
-                let d1: number = 1, d2: number = 2;
+                let d1 = 1, d2 = 2;
                 switch (dimIdx) {
                     case 0:
                         d1 = 1;
@@ -502,8 +494,8 @@ export class VolviewService {
                 } else {
                     // If plane already exists, then just change its material, keeping old opacity
                     const  oldMaterial = objectList[dimIdx].material;
-                    material.opacity = (<ITOWNS.THREE.Material>oldMaterial).opacity;
-                    material.transparent = (<ITOWNS.THREE.Material>oldMaterial).transparent;
+                    material.opacity = (oldMaterial as ITOWNS.THREE.Material).opacity;
+                    material.transparent = (oldMaterial as ITOWNS.THREE.Material).transparent;
                     objectList[dimIdx].material = material;
                 }
 

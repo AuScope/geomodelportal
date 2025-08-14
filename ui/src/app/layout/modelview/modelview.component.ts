@@ -84,7 +84,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     private scene;
 
     // Nested dictionary of 'SceneObject' used by model controls div, partId is model URL
-    private sceneArr: { [groupName: string]: { [partId: string]: SceneObject } };
+    private sceneArr: Record<string, Record<string, SceneObject>>; // { [groupName: string]: { [partId: string]: SceneObject } };
 
     // Track ball controls object
     private trackBallControls: any = null;
@@ -136,10 +136,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     private spinnerDiv;
 
     // FIXME: To be subsumed into a lookup service in future
-    private volLabelArr: { [groupName: string]: { [partId: string]: {} } } = {};
+    private volLabelArr: Record<string, Record<string, object>> = {}; // { [groupName: string]: { [partId: string]: object } } = {};
 
     // Collection of 'VolView' objects, used to keep track of and display volume data
-    private volViewArr: { [groupName: string]: { [partId: string]: VolView } } = {};
+    private volViewArr: Record<string, Record<string, VolView>> = {}; // { [groupName: string]: { [partId: string]: VolView } } = {};
 
     // Shared gltfLoader object
     private gltfLoader;
@@ -231,21 +231,19 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     switch (state.type) {
                         // Make a part of the model visible or invisible
                         case ModelPartStateChangeType.DISPLAYED:
-                            local.sceneArr[groupName][partId].setVisibility(state.new_value);
+                            local.sceneArr[groupName][partId].setVisibility(state.new_value as boolean);
                             local.view?.notifyChange?.(undefined, true);
                             break;
 
                         // Change the transparency of a part of the model
                         case  ModelPartStateChangeType.TRANSPARENCY:
-                            const transparency = <number> state.new_value;
-                            local.sceneArr[groupName][partId].setTransparency(transparency);
+                            local.sceneArr[groupName][partId].setTransparency(state.new_value as number);
                             local.view?.notifyChange?.(undefined, true);
                             break;
 
                         // Move a part of the model up or down
                         case ModelPartStateChangeType.HEIGHT_OFFSET:
-                            const displacement = new ITOWNS.THREE.Vector3(0.0, 0.0, <number> state.new_value);
-                            local.sceneArr[groupName][partId].setDisplacement(displacement);
+                            local.sceneArr[groupName][partId].setDisplacement(new ITOWNS.THREE.Vector3(0.0, 0.0, state.new_value as number));
                             local.view?.notifyChange?.(undefined, true);
                             break;
 
@@ -370,7 +368,6 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param modelDir directory where model files are found
      */
     private initialiseModel(config, modelDir: string) {
-        const local = this;
         const props = config.properties;
         this.config = config;
         this.modelDir = modelDir;
@@ -524,9 +521,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         const local = this;
         if (typeof offsetOrPos === 'number') {
             // When given an offset, use the sceneObj's position
-            const meshObj = <ITOWNS.THREE.Mesh>sceneObj.getObjectByProperty('type', 'Mesh');
+            const meshObj = sceneObj.getObjectByProperty('type', 'Mesh') as ITOWNS.THREE.Mesh;
             if (meshObj) {
-                const bufferGeoObj = <ITOWNS.THREE.BufferGeometry>meshObj.geometry;
+                const bufferGeoObj = meshObj.geometry as ITOWNS.THREE.BufferGeometry;
                 const arrayObj  =  bufferGeoObj.attributes.position.array;
                 if (arrayObj) {
                     const spriteObj = local.makeLabel(labelStr, size, offsetOrPos);
@@ -562,8 +559,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         for (const group in this.config.groups) {
             if (Object.prototype.hasOwnProperty.call(this.config.groups, group)) {
                 const parts = this.config.groups[group];
-                for (let i = 0; i < parts.length; i++) {
-                    if (parts[i].type === 'GZSON' && parts[i].include) {
+                for (const part of parts) {
+                    if (part.type === 'GZSON' && part.include) {
                         promiseList.push( new Promise( function( resolve, reject ) {
                             (function(part, grp) {
                                 console.log('loading: ', local.modelDir + '/' + part.model_url);
@@ -679,7 +676,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         resolve(null);
                                     }
                                 );
-                            })(parts[i], group);
+                            })(part, group);
                         }));
                     }
                 }
@@ -712,8 +709,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         for (const group in this.config.groups) {
             if (Object.prototype.hasOwnProperty.call(this.config.groups, group)) {
                 const parts = this.config.groups[group];
-                for (let i = 0; i < parts.length; i++) {
-                    if (parts[i].type === 'GLTFObject' && parts[i].include) {
+                for (const part of parts) {
+                    if (part.type === 'GLTFObject' && part.include) {
                         promiseList.push( new Promise( function( resolve, reject ) {
                             (function(part, grp) {
                                 local.gltfLoader.load('./assets/geomodels/' + local.modelDir + '/' + part.model_url,
@@ -778,7 +775,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         resolve(null);
                                     }
                                 );
-                            })(parts[i], group);
+                            })(part, group);
                         }));
                     }
                 }
@@ -863,17 +860,17 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         for (const group in local.config.groups) {
             if (Object.prototype.hasOwnProperty.call(local.config.groups, group)) {
                 const parts = local.config.groups[group];
-                for (let i = 0; i < parts.length; i++) {
+                for (const part of parts) {
                     // Load volume
-                    if (parts[i].type === '3DVolume' && parts[i].include) {
-                        const partId  = parts[i].model_url;
+                    if (part.type === '3DVolume' && part.include) {
+                        const partId  = part.model_url;
                         const volView = local.volViewArr[group][partId];
                         const volSceneObj  = new VolSceneObject(null, local.volViewService, volView);
                         volSceneObj.volObjList = [];
                         promiseList.push(local.volViewService.makePromise(volView, group, partId,
-                                        './assets/geomodels/' + local.modelDir + '/' + parts[i].model_url,
-                                        local.scene, volSceneObj.volObjList, parts[i].displayed));
-                        addSceneObj(this.sceneArr, parts[i], volSceneObj, group);
+                                        './assets/geomodels/' + local.modelDir + '/' + part.model_url,
+                                        local.scene, volSceneObj.volObjList, part.displayed));
+                        addSceneObj(this.sceneArr, part, volSceneObj, group);
                         // TODO: Counter increment must be inside promise
                         local.volCnt++;
                     }
@@ -905,8 +902,8 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         for (const group in local.config.groups) {
             if (Object.prototype.hasOwnProperty.call(local.config.groups, group)) {
                 const parts = local.config.groups[group];
-                for (let i = 0; i < parts.length; i++) {
-                    if (parts[i].type === 'ImagePlane' && parts[i].include) {
+                for (const part of parts) {
+                    if (part.type === 'ImagePlane' && part.include) {
                         promiseList.push( new Promise( function( resolve, reject ) {
                         (function(part, grp) {
                             textureLoader.load('./assets/geomodels/' + local.modelDir + '/' + part.model_url,
@@ -945,7 +942,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 resolve(null);
                             }
                           );
-                       })(parts[i], group);
+                       })(part, group);
                         }));
                     }
                 }
@@ -975,13 +972,13 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         for (const group in local.config.groups) {
             if (Object.prototype.hasOwnProperty.call(local.config.groups, group)) {
                 const parts = local.config.groups[group];
-                for (let i = 0; i < parts.length; i++) {
-                    if (parts[i].type === 'WMSLayer' && parts[i].include) {
+                for (const part of parts) {
+                    if (part.type === 'WMSLayer' && part.include) {
                         promiseList.push( new Promise(function(resolve, reject) {
                             (function(part, grp) {
                                 local.addWMSLayer(part.model_url, part.name, part.version);
                                 resolve([part, grp]);
-                            })(parts[i], group);
+                            })(part, group);
                         }));
                         // For the moment only load first one
                         break;
@@ -1136,7 +1133,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                         // Is this points data?
                         if (objName === "Point Data") {
                             // Get faces index
-                            var index = intersects[closest].index;
+                            const index = intersects[closest].index;
                             const colourArr = intersects[closest].object.geometry.getAttribute('color').array;
                             // Use faces index to find the colour of the clicked on object
                             const r = colourArr[index*3];
@@ -1196,26 +1193,26 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                         for (const group in local.config.groups) {
                             if (Object.prototype.hasOwnProperty.call(local.config.groups, group)) {
                                 const parts = local.config.groups[group];
-                                for (let i = 0; i < parts.length; i++) {
+                                for (const part of parts) {
                                     // Open up the URL in a browser new window
-                                    if (Object.prototype.hasOwnProperty.call(parts[i], '3dobject_label') &&
-                                       objName === parts[i]['3dobject_label'] &&
-                                       Object.prototype.hasOwnProperty.call(parts[i], 'reference_url')) {
-                                           window.open(parts[i]['reference_url']);
+                                    if (Object.prototype.hasOwnProperty.call(part, '3dobject_label') &&
+                                       objName === part['3dobject_label'] &&
+                                       Object.prototype.hasOwnProperty.call(part, 'reference_url')) {
+                                           window.open(part['reference_url']);
                                            return;
                                     //
-                                    } else if (Object.prototype.hasOwnProperty.call(parts[i], 'popups')) {
-                                        for (const popup_key in parts[i]['popups']) {
-                                            if (Object.prototype.hasOwnProperty.call(parts[i]['popups'], popup_key)) {
+                                    } else if (Object.prototype.hasOwnProperty.call(part, 'popups')) {
+                                        for (const popup_key in part['popups']) {
+                                            if (Object.prototype.hasOwnProperty.call(part['popups'], popup_key)) {
                                                 // console.log('popup_key = ', popup_key, ' objName = ', objName );
                                                 if (popup_key === objName || popup_key + '_0' === objName ) {
                                                     if (local.popupBoxDiv) {
                                                         makePopup(local.ngRenderer, local.popupBoxDiv, event,
-                                                                  parts[i]['popups'][popup_key], point);
+                                                                  part['popups'][popup_key], point);
                                                     }
-                                                    if (Object.prototype.hasOwnProperty.call(parts[i], 'model_url')) {
+                                                    if (Object.prototype.hasOwnProperty.call(part, 'model_url')) {
                                                         // Open up sidebar menu to reveal relevant part
-                                                        local.sidebarSrvRequest(group, parts[i]['model_url'], MenuStateChangeType.OPENED);
+                                                        local.sidebarSrvRequest(group, part['model_url'], MenuStateChangeType.OPENED);
                                                     }
                                                     return;
                                                 }

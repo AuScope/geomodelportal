@@ -15,7 +15,7 @@ export class ProviderSelectionComponent {
     private modelInfoService = inject(ModelInfoService);
 
     // Model showcase images
-    public sliders: Array<any> = [];
+    public sliders: any[] = [];
 
     // Sources of geological models
     public sources: any;

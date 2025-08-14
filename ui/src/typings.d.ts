@@ -24,7 +24,7 @@ declare module 'itowns/dist/itowns' {
       * east-north corner
       * @param {number} [v2] south value or column value
       * @param {number} [v3] north value*/
-        constructor(crs: string, v0?: number|number[]|Object, v1?: number, v2?: number, v3?: number);
+        constructor(crs: string, v0?: number|number[]|object, v1?: number, v2?: number, v3?: number);
     }
     export class PlanarView {
         constructor(viewerDiv: HTMLElement, extent: Extent, params: any);

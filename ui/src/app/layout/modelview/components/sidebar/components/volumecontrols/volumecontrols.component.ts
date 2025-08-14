@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatSliderChange, MatSlider, MatSliderThumb } from '@angular/material/slider';
 import { ModelInfoService, ModelPartStateChangeType } from '../../../../../../shared/services/model-info.service';
 

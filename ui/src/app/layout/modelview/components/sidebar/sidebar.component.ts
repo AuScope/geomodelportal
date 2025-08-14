@@ -60,7 +60,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     private modelDir = '';
 
     // List of group names in sidebar
-    public groupList: Array<string> = [];
+    public groupList: string[] = [];
 
     // State of each part, whether it is displayed or not
     // (initally copied from model info service, then any changes are relayed back to model info service)
