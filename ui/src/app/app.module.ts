@@ -21,30 +21,4 @@ export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-@NgModule({ declarations: [AppComponent],
-    bootstrap: [AppComponent], imports: [CommonModule,
-        BrowserModule,
-        BrowserAnimationsModule,
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: createTranslateLoader,
-                deps: [HttpClient]
-            }
-        }),
-        AppRoutingModule,
-        NgbModule], providers: [
-        ModelInfoService,
-        SidebarService,
-        HelpinfoService,
-        // Used when the website is installed in a subdirectory of web server's 'document root'
-        // It lets the Angular router know that the base directory of website is a subdirectory of 'document root'
-        { provide: APP_BASE_HREF, useFactory: () => {
-                if (environment.usePrePath) {
-                    return environment.prePath;
-                }
-                return '';
-            } },
-        provideHttpClient(withInterceptorsFromDi())
-    ] })
-export class AppModule {}
+
