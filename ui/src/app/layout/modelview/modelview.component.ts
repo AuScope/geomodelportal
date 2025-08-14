@@ -176,7 +176,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         gltfLoaderInjector(ITOWNS.THREE);
 
         // Create our new GLTFLoader object, using unexported interface
-        // @ts-ignore
+        // @ts-expect-error: overriding an un-exported feature of THREE
         this.gltfLoader = new ITOWNS.THREE.GLTFLoader(manager);
     }
 
