@@ -173,10 +173,10 @@ export class SidebarComponent  implements OnInit, OnDestroy {
                     this.modelPartState = this.modelInfoService.getModelPartStateObj();
                     this.displayControls = {};
                     for (const groupName in this.modelPartState) {
-                        if (this.modelPartState.hasOwnProperty(groupName)) {
+                        if (Object.prototype.hasOwnProperty.call(this.modelPartState, groupName)) {
                             this.displayControls[groupName] = {};
                             for (const partId in this.modelPartState[groupName]) {
-                                if (this.modelPartState[groupName].hasOwnProperty(partId)) {
+                                if (Object.prototype.hasOwnProperty.call(this.modelPartState[groupName], partId)) {
                                     this.displayControls[groupName][partId] = DISPLAY_CTRL_OFF;
                                 }
                             }
@@ -270,7 +270,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
             // Control panel used by demo will not open, unless it is ticked (displayed), so must enable it
             if (open && !this.getGroupTickBoxChecked(firstGroupName)) {
                 for (const partId in this.modelPartState[firstGroupName]) {
-                    if (this.modelPartState[firstGroupName].hasOwnProperty(partId)) {
+                    if (Object.prototype.hasOwnProperty.call(this.modelPartState[firstGroupName], partId)) {
                         this.checkBoxClick(firstGroupName, partId, true);
                     }
                 }
@@ -303,14 +303,14 @@ export class SidebarComponent  implements OnInit, OnDestroy {
                 // If not target group, then make invisible
                 if (groupName !== gName && this.getGroupTickBoxChecked(gName)) {
                     for (const pId in this.modelPartState[gName]) {
-                        if (this.modelPartState[gName].hasOwnProperty(pId)) {
+                        if (Object.prototype.hasOwnProperty.call(this.modelPartState[gName], pId)) {
                             this.checkBoxClick(gName, pId, false);
                         }
                     }
                 // If target group, then make invisible, except target partId
                 } else {
                     for (const pId in this.modelPartState[gName]) {
-                        if (this.modelPartState[gName].hasOwnProperty(pId)) {
+                        if (Object.prototype.hasOwnProperty.call(this.modelPartState[gName], pId)) {
                             const state = (partId === pId);
                             this.checkBoxClick(gName, pId, state);
                         }
@@ -504,7 +504,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
             event.stopPropagation();
         }
         for (const partId in this.modelPartState[groupName]) {
-            if (this.modelPartState[groupName].hasOwnProperty(partId)) {
+            if (Object.prototype.hasOwnProperty.call(this.modelPartState[groupName], partId)) {
                 this.checkBoxClick(groupName, partId, state);
             }
         }
@@ -544,7 +544,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      */
     public getGroupTickBoxChecked(groupName: string) {
         for (const partId in this.modelPartState[groupName]) {
-            if (this.modelPartState[groupName].hasOwnProperty(partId)) {
+            if (Object.prototype.hasOwnProperty.call(this.modelPartState[groupName], partId)) {
                 if (!this.modelPartState[groupName][partId].displayed) {
                     return false;
                 }
@@ -561,7 +561,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     public isSomeTickboxChecked(groupName: string) {
         let count = 0;
         for (const partId in this.modelPartState[groupName]) {
-            if (this.modelPartState[groupName].hasOwnProperty(partId)) {
+            if (Object.prototype.hasOwnProperty.call(this.modelPartState[groupName], partId)) {
                 if (this.modelPartState[groupName][partId].displayed) {
                     count++;
                     if (count > 1) {
@@ -581,7 +581,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     public  getGroupTickBoxIndet(groupName: string) {
         let onState = false, offState = false;
         for (const partId in this.modelPartState[groupName]) {
-            if (this.modelPartState[groupName].hasOwnProperty(partId)) {
+            if (Object.prototype.hasOwnProperty.call(this.modelPartState[groupName], partId)) {
                 if (!this.modelPartState[groupName][partId].displayed) {
                     offState = true;
                 } else {

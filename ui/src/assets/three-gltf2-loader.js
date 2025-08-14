@@ -972,7 +972,7 @@ module.exports = function (THREE) {
 
 				for ( var key in object ) {
 
-					if ( object.hasOwnProperty( key ) ) {
+					if (Object.prototype.hasOwnProperty.call(object, key) ) {
 
 						var value = callback.call( thisObj || this, object[ key ], key );
 

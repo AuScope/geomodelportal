@@ -93,7 +93,7 @@ export class ModelInfoService {
                         local.providerModelInfo = data as string [];
                         local.providerInfoList = [];
                         for (const providerKey in local.providerModelInfo) {
-                            if (local.providerModelInfo.hasOwnProperty(providerKey)) {
+                            if (Object.prototype.hasOwnProperty.call(local.providerModelInfo, providerKey)) {
                                 const providerInfo: ProviderInfo = { name: local.providerModelInfo[providerKey].name,
                                                                  numberModels: local.providerModelInfo[providerKey].models.length,
                                                                  icon: local.providerModelInfo[providerKey].icon,
@@ -170,7 +170,7 @@ export class ModelInfoService {
      */
     private parseModel(modelInfo) {
         for (const groupName in modelInfo.groups) {
-            if (modelInfo.groups.hasOwnProperty(groupName)) {
+            if (Object.prototype.hasOwnProperty.call(modelInfo.groups, groupName)) {
                 this.addGroup(groupName);
                 for (const partObj of modelInfo.groups[groupName]) {
                     // FIXME: Currently cannot change height of WMS layers
@@ -216,7 +216,7 @@ export class ModelInfoService {
      */
     public async getModelInfo(modelKey: string): Promise<any> {
         const local = this;
-        if (this.modelCache.hasOwnProperty(modelKey)) {
+        if (Object.prototype.hasOwnProperty.call(this.modelCache, modelKey)) {
             return new Promise(resolve => resolve(this.modelCache[modelKey]));
         }
         if (!this.initialised) {
@@ -225,7 +225,7 @@ export class ModelInfoService {
         let model;
         let sourceOrgName = '';
         for (const providerKey in local.providerModelInfo) {
-            if (local.providerModelInfo.hasOwnProperty(providerKey)) {
+            if (Object.prototype.hasOwnProperty.call(local.providerModelInfo, providerKey)) {
                 for (const modelInfo of local.providerModelInfo[providerKey]['models']) {
                     if (modelKey === modelInfo['modelUrlPath']) {
                         model = modelInfo;
@@ -300,9 +300,9 @@ export class ModelInfoService {
         const TRANSPARENT = 0.05;
         // Make all other parts translucent
         for (const group in this.modelPartState) {
-            if (this.modelPartState.hasOwnProperty(group)) {
+            if (Object.prototype.hasOwnProperty.call(this.modelPartState, group)) {
                 for (const part in this.modelPartState[group]) {
-                    if (this.modelPartState[group].hasOwnProperty(part)) {
+                    if (Object.prototype.hasOwnProperty.call(this.modelPartState[group], part)) {
                         if (groupName !== group || partId !== part) {
                             if (toggle) {
                                 this.modelPartState[group][part].oldTransparency =
@@ -344,7 +344,7 @@ export class ModelInfoService {
      */
     public setModelGroupStateChange(groupName: string, stateChange: ModelPartStateChange) {
         for (const part in this.modelPartState[groupName]) {
-            if (this.modelPartState[groupName].hasOwnProperty(part)) {
+            if (Object.prototype.hasOwnProperty.call(this.modelPartState[groupName], part)) {
                 this.setModelPartStateChange(groupName, part, stateChange);
             }
         }

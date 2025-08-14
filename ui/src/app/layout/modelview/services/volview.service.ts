@@ -338,11 +338,11 @@ export class VolviewService {
                 dataRGBA[idx * 4 + 3] = val[3];
 
             // If there is a colour map
-            } else if (volView.colourLookup && volView.colourLookup.hasOwnProperty(<number>val)) {
-                dataRGBA[idx * 4] = Math.floor(256.0 * volView.colourLookup[<number>val][0]);
-                dataRGBA[idx * 4 + 1] = Math.floor(256.0 * volView.colourLookup[<number>val][1]);
-                dataRGBA[idx * 4 + 2] = Math.floor(256.0 * volView.colourLookup[<number>val][2]);
-                dataRGBA[idx * 4 + 3] = Math.floor(255.0 * volView.colourLookup[<number>val][3]);
+            } else if (volView.colourLookup && Object.prototype.hasOwnProperty.call(volView.colourLookup, val as number)) {
+                dataRGBA[idx * 4] = Math.floor(256.0 * volView.colourLookup[val as number][0]);
+                dataRGBA[idx * 4 + 1] = Math.floor(256.0 * volView.colourLookup[val as number][1]);
+                dataRGBA[idx * 4 + 2] = Math.floor(256.0 * volView.colourLookup[val as number][2]);
+                dataRGBA[idx * 4 + 3] = Math.floor(255.0 * volView.colourLookup[val as number][3]);
 
             } else {
                 // If no colour data then use greyscale

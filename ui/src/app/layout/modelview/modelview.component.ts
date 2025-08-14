@@ -176,7 +176,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         gltfLoaderInjector(ITOWNS.THREE);
 
         // Create our new GLTFLoader object, using unexported interface
-        // @ts-expect-error: overriding an un-exported feature of THREE
+        // @ts-ignore: overriding an un-exported feature of THREE
         this.gltfLoader = new ITOWNS.THREE.GLTFLoader(manager);
     }
 
@@ -227,7 +227,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
             // Create and register a callback function so this code can be informed when the sidebar controls are changed, so this code
             // can manipulate the model accordingly
             const callbackFn: ModelPartCallbackType =  function(groupName: string, partId: string, state: ModelPartStateChange) {
-                if (local.sceneArr.hasOwnProperty(groupName) && local.sceneArr[groupName].hasOwnProperty(partId)) {
+                if (Object.prototype.hasOwnProperty.call(local.sceneArr, groupName) && Object.prototype.hasOwnProperty.call(local.sceneArr[groupName], partId)) {
                     switch (state.type) {
                         // Make a part of the model visible or invisible
                         case ModelPartStateChangeType.DISPLAYED:
@@ -328,15 +328,15 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      */
     private initialiseVolume(config) {
         // Look for volumes
-        if (config.hasOwnProperty('groups')) {
+        if (Object.prototype.hasOwnProperty.call(config, 'groups')) {
             for (const groupName in config.groups) {
-                if (config.groups.hasOwnProperty(groupName)) {
+                if (Object.prototype.hasOwnProperty.call(config.groups, groupName)) {
                     const groupObjs = config.groups[groupName];
                     for (const groupObj of groupObjs) {
                         // Look for volumes in config file
-                        if (groupObj.hasOwnProperty('type') && groupObj['type'] === '3DVolume') {
+                        if (Object.prototype.hasOwnProperty.call(groupObj, 'type') && groupObj['type'] === '3DVolume') {
                             const volDataObj = groupObj['volumeData'];
-                            if (volDataObj && groupObj.hasOwnProperty('model_url')) {
+                            if (volDataObj && Object.prototype.hasOwnProperty.call(groupObj, 'model_url')) {
                                 let dt: DataType = DataType.FLOAT_32;
                                 switch (volDataObj['dataType']) {
                                     case 'BIT_MASK': dt = DataType.BIT_MASK; break;
@@ -345,14 +345,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     case 'RGBA': dt = DataType.RGBA; break;
                                     case 'FLOAT_32': dt = DataType.FLOAT_32;
                                 }
-                                if (!this.volViewArr.hasOwnProperty(groupName)) {
+                                if (!Object.prototype.hasOwnProperty.call(this.volViewArr, groupName)) {
                                     this.volViewArr[groupName] = {};
                                 }
                                 const partId = groupObj['model_url'];
                                 this.volViewArr[groupName][partId] = this.volViewService.makeVolView(volDataObj, dt);
 
                                 // TODO: Keep this separate, this will become part of a lookup service
-                                if (!this.volLabelArr.hasOwnProperty(groupName)) {
+                                if (!Object.prototype.hasOwnProperty.call(this.volLabelArr, groupName)) {
                                     this.volLabelArr[groupName] = {};
                                 }
                                 this.volLabelArr[groupName][partId] = volDataObj['labelLookup'];
@@ -380,7 +380,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.crs = props.crs;
 
         // If defined in config file, set the initial distance from model to camera
-        if (props.hasOwnProperty('init_cam_dist')) {
+        if (Object.prototype.hasOwnProperty.call(props, 'init_cam_dist')) {
             this.initCamDist = props.init_cam_dist;
         }
         this.initialiseVolume(config);
@@ -394,7 +394,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.scene = new ITOWNS.THREE.Scene();
 
         // Set background colour
-        if (props.hasOwnProperty('background_colour')) {
+        if (Object.prototype.hasOwnProperty.call(props, 'background_colour')) {
             // Custom background
             this.scene.background = new ITOWNS.THREE.Color(props.background_colour)
         } else {
@@ -560,7 +560,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
         // Load geojson objects into scene
         for (const group in this.config.groups) {
-            if (this.config.groups.hasOwnProperty(group)) {
+            if (Object.prototype.hasOwnProperty.call(this.config.groups, group)) {
                 const parts = this.config.groups[group];
                 for (let i = 0; i < parts.length; i++) {
                     if (parts[i].type === 'GZSON' && parts[i].include) {
@@ -710,7 +710,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
         // Load GLTF objects into scene
         for (const group in this.config.groups) {
-            if (this.config.groups.hasOwnProperty(group)) {
+            if (Object.prototype.hasOwnProperty.call(this.config.groups, group)) {
                 const parts = this.config.groups[group];
                 for (let i = 0; i < parts.length; i++) {
                     if (parts[i].type === 'GLTFObject' && parts[i].include) {
@@ -726,23 +726,23 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         }
 
                                         // Object styling
-                                        if (part.hasOwnProperty('styling')) {
+                                        if (Object.prototype.hasOwnProperty.call(part, 'styling')) {
                                             // Scales the object in z-direction
                                             let sc = 1.0;
-                                            if (part.styling.hasOwnProperty('scale')) {
+                                            if (Object.prototype.hasOwnProperty.call(part.styling, 'scale')) {
                                                 sc = part.styling.scale;
                                                 gObject.scene.scale.setComponent(2, sc);
                                             }
 
-                                            if (part.styling.hasOwnProperty('labels')) {
+                                            if (Object.prototype.hasOwnProperty.call(part.styling, 'labels')) {
                                                 for (const label of part.styling.labels) {
 
                                                     // Makes a label for the object
                                                     let display_name = part.display_name;
-                                                    if (label.hasOwnProperty('display_name')) {
+                                                    if (Object.prototype.hasOwnProperty.call(label, 'display_name')) {
                                                         display_name = label.display_name;
                                                     }
-                                                    if (label.hasOwnProperty('position')) {
+                                                    if (Object.prototype.hasOwnProperty.call(label, 'position')) {
                                                         local.makeGLTFLabel(gObject.scene, display_name, sc * 3000,
                                                                             label.position);
                                                     } else {
@@ -861,7 +861,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         const local = this;
 
         for (const group in local.config.groups) {
-            if (local.config.groups.hasOwnProperty(group)) {
+            if (Object.prototype.hasOwnProperty.call(local.config.groups, group)) {
                 const parts = local.config.groups[group];
                 for (let i = 0; i < parts.length; i++) {
                     // Load volume
@@ -903,7 +903,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         const textureLoader = new ITOWNS.THREE.TextureLoader(manager);
         const promiseList: Promise<any>[] = [];
         for (const group in local.config.groups) {
-            if (local.config.groups.hasOwnProperty(group)) {
+            if (Object.prototype.hasOwnProperty.call(local.config.groups, group)) {
                 const parts = local.config.groups[group];
                 for (let i = 0; i < parts.length; i++) {
                     if (parts[i].type === 'ImagePlane' && parts[i].include) {
@@ -921,7 +921,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                                                                 local.extentObj.planarDimensions().y);
                                 const plane = new ITOWNS.THREE.Mesh(geometry, mMaterial);
                                 let z_offset = 0.0;
-                                if (part.hasOwnProperty('position')) {
+                                if (Object.prototype.hasOwnProperty.call(part, 'position')) {
                                     z_offset = part.position[2];
                                 }
                                 const position = new ITOWNS.THREE.Vector3(local.extentObj.center().x,
@@ -973,7 +973,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         const local = this;
         const promiseList: Promise<any>[] = [];
         for (const group in local.config.groups) {
-            if (local.config.groups.hasOwnProperty(group)) {
+            if (Object.prototype.hasOwnProperty.call(local.config.groups, group)) {
                 const parts = local.config.groups[group];
                 for (let i = 0; i < parts.length; i++) {
                     if (parts[i].type === 'WMSLayer' && parts[i].include) {
@@ -1166,9 +1166,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             const labelBits = local.volViewService.parseVolLabel(objName);
                             const group = labelBits[0];
                             const partId = labelBits[1];
-                            if (local.volViewArr.hasOwnProperty(group)) {
+                            if (Object.prototype.hasOwnProperty.call(local.volViewArr, group)) {
                                 const vvArr = local.volViewArr[group];
-                                if (vvArr.hasOwnProperty(partId)) {
+                                if (Object.prototype.hasOwnProperty.call(vvArr, partId)) {
                                     const val = local.volViewService.xyzToProp(vvArr[partId], objIntPt);
                                     let title = objName;
                                     if (val !== null) {
@@ -1177,10 +1177,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         }
                                         const popObj = {'title': title, 'val': val };
                                         const valStr = val.toString();
-                                        if (local.volLabelArr.hasOwnProperty(group) &&
-                                            local.volLabelArr[group].hasOwnProperty(partId) &&
+                                        if (Object.prototype.hasOwnProperty.call(local.volLabelArr, group) &&
+                                            Object.prototype.hasOwnProperty.call(local.volLabelArr[group], partId) &&
                                             local.volLabelArr[group][partId] &&
-                                            local.volLabelArr[group][partId].hasOwnProperty(valStr)) {
+                                            Object.prototype.hasOwnProperty.call(local.volLabelArr[group][partId], valStr)) {
                                             popObj['label'] = local.volLabelArr[group][partId][valStr];
                                         }
                                         if (local.popupBoxDiv) {
@@ -1194,26 +1194,26 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
 
                         // Is there a popup or reference URL in the config?
                         for (const group in local.config.groups) {
-                            if (local.config.groups.hasOwnProperty(group)) {
+                            if (Object.prototype.hasOwnProperty.call(local.config.groups, group)) {
                                 const parts = local.config.groups[group];
                                 for (let i = 0; i < parts.length; i++) {
                                     // Open up the URL in a browser new window
-                                    if (parts[i].hasOwnProperty('3dobject_label') &&
+                                    if (Object.prototype.hasOwnProperty.call(parts[i], '3dobject_label') &&
                                        objName === parts[i]['3dobject_label'] &&
-                                       parts[i].hasOwnProperty('reference_url')) {
+                                       Object.prototype.hasOwnProperty.call(parts[i], 'reference_url')) {
                                            window.open(parts[i]['reference_url']);
                                            return;
                                     //
-                                    } else if (parts[i].hasOwnProperty('popups')) {
+                                    } else if (Object.prototype.hasOwnProperty.call(parts[i], 'popups')) {
                                         for (const popup_key in parts[i]['popups']) {
-                                            if (parts[i]['popups'].hasOwnProperty(popup_key)) {
+                                            if (Object.prototype.hasOwnProperty.call(parts[i]['popups'], popup_key)) {
                                                 // console.log('popup_key = ', popup_key, ' objName = ', objName );
                                                 if (popup_key === objName || popup_key + '_0' === objName ) {
                                                     if (local.popupBoxDiv) {
                                                         makePopup(local.ngRenderer, local.popupBoxDiv, event,
                                                                   parts[i]['popups'][popup_key], point);
                                                     }
-                                                    if (parts[i].hasOwnProperty('model_url')) {
+                                                    if (Object.prototype.hasOwnProperty.call(parts[i], 'model_url')) {
                                                         // Open up sidebar menu to reveal relevant part
                                                         local.sidebarSrvRequest(group, parts[i]['model_url'], MenuStateChangeType.OPENED);
                                                     }
@@ -1243,7 +1243,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                 for (const keyval of attrList) {
                                     queryResult[keyval['name']] = keyval['value'];
                                 }
-                                if  (queryResult.hasOwnProperty('title')) {
+                                if  (Object.prototype.hasOwnProperty.call(queryResult, 'title')) {
                                     if (local.popupBoxDiv) {
                                         makePopup(local.ngRenderer, local.popupBoxDiv, event, queryResult, point);
                                     }
@@ -1371,7 +1371,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param subGroup name of menu item's subgroup
      */
     private moveViewToModelPart(groupName: string, subGroup: string) {
-        if (this.sceneArr.hasOwnProperty(groupName) && this.sceneArr[groupName].hasOwnProperty(subGroup)) {
+        if (Object.prototype.hasOwnProperty.call(this.sceneArr, groupName) && Object.prototype.hasOwnProperty.call(this.sceneArr[groupName], subGroup)) {
             const sceneObj = this.sceneArr[groupName][subGroup].sceneObj;
             if (this.trackBallControls.moveViewToObj(sceneObj)) {
                 this.cameraPosChange();
