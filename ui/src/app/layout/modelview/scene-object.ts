@@ -9,7 +9,7 @@ import { VolView, VolviewService } from './services/volview.service';
  * @param groupName group name
  */
 export function addSceneObj(sceneArr, part, sceneObj: SceneObject, groupName: string) {
-    if (!sceneArr.hasOwnProperty(groupName)) {
+    if (!Object.prototype.hasOwnProperty.call(sceneArr, groupName)) {
         sceneArr[groupName] = {};
     }
     sceneArr[groupName][part.model_url] = sceneObj;
@@ -38,7 +38,7 @@ export class SceneObject {
         if (this.sceneObj) {
 	    this.sceneObj.visible = visibility;
         }
-        if (this.sceneObj.layers) {
+        if (this.sceneObj?.layers) {
             // Enable/disable layer membership so it can be seen by raycaster and double clicked on
             if (visibility) {
                 // Layer 0 is the default layer
@@ -62,7 +62,7 @@ export class SceneObject {
     public setTransparency(transparency: number) {
         const local = this;
         this.sceneObj.traverseVisible( function(child) {
-            if (child.type === 'Mesh' && child.hasOwnProperty('material')) {
+            if (child.type === 'Mesh' && Object.prototype.hasOwnProperty.call(child, 'material')) {
                 if (child['material'].type === 'MeshStandardMaterial') {
                     local.setMatTransparency(child['material'], transparency);
                 }
@@ -91,7 +91,7 @@ export class SceneObject {
      * @param displacement ThreeJS 3d displacement vector
      */
     protected setObjDisplacement(obj: ITOWNS.THREE.Object3D, displacement: ITOWNS.THREE.Vector3) {
-        if (!obj.userData.hasOwnProperty('origPosition')) {
+        if (!Object.prototype.hasOwnProperty.call(obj.userData, 'origPosition')) {
             obj.userData.origPosition = obj.position.clone();
         }
         obj.position.addVectors(obj.userData.origPosition, displacement);
@@ -148,7 +148,7 @@ export class SceneObject {
      */
     protected setObjScale(obj: ITOWNS.THREE.Object3D, dimIdx: number, scale: number) {
       // Rescale GLTF Object
-      if (!obj.userData.hasOwnProperty('origScale')) {
+      if (!Object.prototype.hasOwnProperty.call(obj.userData, 'origScale')) {
           obj.userData.origScale = obj.scale.clone();
       }
       obj.scale.setComponent(dimIdx, scale);
@@ -241,7 +241,7 @@ export class VolSceneObject extends SceneObject {
             if (visibility) {
                 // Layer 0 is the default layer
                 obj.layers.set(0)
-                this.sceneObj.traverse(function(child) {
+                this.sceneObj?.traverse(function(child) {
                     child.layers.set(0);
                 });
              } else {
@@ -270,7 +270,7 @@ export class VolSceneObject extends SceneObject {
      */
     public setTransparency(transparency: number) {
         for (const obj of this.volObjList) {
-            this.setMatTransparency((<ITOWNS.THREE.Material>obj.material), transparency);
+            this.setMatTransparency((obj.material as ITOWNS.THREE.Material), transparency);
         }
     }
 
