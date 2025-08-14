@@ -1,9 +1,3 @@
-/* SystemJS module definition */
-declare var module: NodeModule;
-interface NodeModule {
-    id: string;
-}
-
 // Minimal type definitions: zlibjs
 declare module 'zlibjs/bin/gunzip.min.js' {
   namespace Zlib {
