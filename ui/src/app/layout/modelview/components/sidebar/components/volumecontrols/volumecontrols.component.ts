@@ -8,7 +8,7 @@ import { ModelInfoService, ModelPartStateChangeType } from '../../../../../../sh
     styleUrls: ['./volumecontrols.component.scss'],
     imports: [MatSlider, MatSliderThumb]
 })
-export class VolumecontrolsComponent implements OnInit {
+export class VolumecontrolsComponent {
   @Input() dimIdx: number;
   @Input() groupName: string;
   @Input() partId: string;
@@ -16,14 +16,6 @@ export class VolumecontrolsComponent implements OnInit {
   @Input() modelInfoService: ModelInfoService;
 
   public sliderVal = [0.0, 0.0, 0.0];
-
-
-  constructor() {
-
-  }
-
-  ngOnInit() {
-  }
 
   /**
    * Changes slice of a volume
