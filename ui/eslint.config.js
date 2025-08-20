@@ -18,6 +18,13 @@ module.exports = tseslint.config(
     ],
     processor: angular.processInlineTemplates,
     rules: {
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/ban-ts-comment": "warn",
+      "@typescript-eslint/no-unused-vars": ["warn"],
+      "@typescript-eslint/no-this-alias": [ 
+        "error",
+        { "allowedNames": ["local"] },
+      ],
       '@angular-eslint/directive-selector': [
         'error',
         {
