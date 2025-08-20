@@ -43,7 +43,7 @@ const VIRT_SPHERE_RADIUS = 0.33333;
 */
 function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.PerspectiveCamera, view,
                                rotCentre: THREE.Vector3, initCameraDist: number, cameraMoveCallback) {
-    const scope = this;
+    const local = this;
     this.domElement = view.mainLoop.gfxEngine.renderer.domElement;
     this.rotCentre = rotCentre;
     this.viewerDiv = viewerDiv;
@@ -53,13 +53,6 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
     this.realCamera = camera;
     this.dummyCamera = new THREE.Object3D();
     const viewObject = view;
-
-    // State of the model movement demonstration
-    const demoState = 0;
-
-    // Animation mixer and action objects, used for model movement demonstration
-    const demoMixer: THREE.AnimationMixer = null;
-    const demoAction: THREE.AnimationAction = null;
 
     // Set mouse state for drag and rotate
     this.state = STATE.NONE;
@@ -95,7 +88,7 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
     this.realCamera.lookAt(rotCentre);
     this.realCamera.updateMatrixWorld(true);
     this.realCamera.updateProjectionMatrix();
-    viewObject.notifyChange(scope.realCamera, true);
+    viewObject.notifyChange(local.realCamera, true);
 
 
     /**
@@ -113,11 +106,11 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
       */
     this.onMouseMove = function onMouseMove(event) {
         event.preventDefault();
-        scope.updateMousePositionAndDelta(event);
+        local.updateMousePositionAndDelta(event);
 
         // notify change if moving
-        if (scope.state !== STATE.NONE) {
-            viewObject.notifyChange(scope.realCamera, true);
+        if (local.state !== STATE.NONE) {
+            viewObject.notifyChange(local.realCamera, true);
         }
     };
 
@@ -127,13 +120,13 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
     this.updateCamera = function upateCamera() {
         const wPosi = new THREE.Vector3();
         const wQuat = new THREE.Quaternion();
-        scope.dummyCamera.getWorldPosition(wPosi);
-        scope.dummyCamera.getWorldQuaternion(wQuat);
-        scope.realCamera.position.copy(wPosi);
-        scope.realCamera.setRotationFromQuaternion(wQuat);
-        scope.realCamera.rotateZ( Math.PI / 2.0);
-        scope.realCamera.updateProjectionMatrix();
-        viewObject.notifyChange(scope.realCamera, true);
+        local.dummyCamera.getWorldPosition(wPosi);
+        local.dummyCamera.getWorldQuaternion(wQuat);
+        local.realCamera.position.copy(wPosi);
+        local.realCamera.setRotationFromQuaternion(wQuat);
+        local.realCamera.rotateZ( Math.PI / 2.0);
+        local.realCamera.updateProjectionMatrix();
+        viewObject.notifyChange(local.realCamera, true);
     };
 
     /**
@@ -144,12 +137,12 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
         event.preventDefault();
         event.stopPropagation();
         if (event.deltaY > 0) {
-            scope.dummyCamera.position.multiplyScalar(1 + ZOOM_FACTOR);
+            local.dummyCamera.position.multiplyScalar(1 + ZOOM_FACTOR);
         } else {
-            scope.dummyCamera.position.multiplyScalar(1 - ZOOM_FACTOR);
+            local.dummyCamera.position.multiplyScalar(1 - ZOOM_FACTOR);
         }
         // Update view
-        scope.updateCamera();
+        local.updateCamera();
     };
 
 
@@ -164,13 +157,13 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
         rObject.updateMatrixWorld(true);
         rObject.updateMatrix();
         // Tell everyone that the camera has changed position
-        scope.cameraMoveCallback();
+        local.cameraMoveCallback();
 
         // Now that rotational centre is moved, must move the camera position back
         // because camera's global position = rObject.position + camera.position
-        scope.dummyCamera.position.setX(scope.resetState.camera.position.x);
-        scope.dummyCamera.position.setY(scope.resetState.camera.position.y);
-        scope.updateCamera();
+        local.dummyCamera.position.setX(local.resetState.camera.position.x);
+        local.dummyCamera.position.setY(local.resetState.camera.position.y);
+        local.updateCamera();
     };
 
     /**
@@ -178,9 +171,9 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
      * @param newDist new distance value
      */
     this.adjustCamDist = function adjustCamDist(newDist: number) {
-        scope.dummyCamera.position.setZ(newDist);
+        local.dummyCamera.position.setZ(newDist);
         // Update view
-        scope.updateCamera();
+        local.updateCamera();
     };
 
 
@@ -193,7 +186,7 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
         event.preventDefault();
         // Try to rotate the object around a point on the model, by casting a ray to centre of screen
         // If no part of the model is in centre of screen, then rotate around a point in space
-        if (scope.state === STATE.DRAG) {
+        if (local.state === STATE.DRAG) {
 
             // Centre of screen in normalized device coordinates (-1 <= x,y <= 1)
             const centre = new THREE.Vector2();
@@ -201,22 +194,22 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
 
             // Update the picking ray with the camera and centre screen position
             const raycaster = new THREE.Raycaster();
-            raycaster.setFromCamera(centre, scope.realCamera);
+            raycaster.setFromCamera(centre, local.realCamera);
 
             // Calculate objects intersecting the picking ray
-            const intersects = raycaster.intersectObjects(scope.scene.children, true);
+            const intersects = raycaster.intersectObjects(local.scene.children, true);
             if (intersects.length > 0) {
                 // Pick closest object
                 const point = intersects[0].point;
                 // Move the rotational centre to that point
-                scope.setRotatePoint(point);
+                local.setRotatePoint(point);
             } else {
                 // If no objects intersect, then pick a point in space
                 // Get old camera position in world coords
-                const startW = scope.resetState['cameraMouseDownWorldPos'];
+                const startW = local.resetState['cameraMouseDownWorldPos'];
                 // Get current camera position in world coords
                 const endW = new THREE.Vector3();
-                scope.dummyCamera.getWorldPosition(endW);
+                local.dummyCamera.getWorldPosition(endW);
                 // Subtract old camera pos from new camera pos
                 const diffW = new THREE.Vector3();
                 diffW.subVectors(endW, startW);
@@ -226,14 +219,14 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
                 // Add the camera movement
                 rObjW.add(diffW);
                 // Set new rotation point
-                scope.setRotatePoint(rObjW);
+                local.setRotatePoint(rObjW);
             }
         }
         // When mouse button is let go of, reset mouse position tracking
         lastMousePosition.x = Number.MAX_VALUE;
 
-        scope.state = STATE.NONE;
-        scope.updateMouseCursorType();
+        local.state = STATE.NONE;
+        local.updateMouseCursorType();
     };
 
 
@@ -243,19 +236,19 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
      */
     this.onMouseDown = function onMouseDown(event) {
         event.preventDefault();
-        scope.updateMousePositionAndDelta(event);
+        local.updateMousePositionAndDelta(event);
         // Store the current camera position in world coords to help move model rotational centre
         const camWorldPos = new THREE.Vector3();
-        scope.dummyCamera.getWorldPosition(camWorldPos);
-        scope.resetState['cameraMouseDownWorldPos'] = camWorldPos;
+        local.dummyCamera.getWorldPosition(camWorldPos);
+        local.resetState['cameraMouseDownWorldPos'] = camWorldPos;
 
         // Left click does rotation, right click does drag
         if (event.button === mouseButtons.LEFTCLICK) {
-            scope.initiateRotation();
+            local.initiateRotation();
         } else if (event.button === mouseButtons.RIGHTCLICK) {
-            scope.initiateDrag();
+            local.initiateDrag();
         }
-        scope.updateMouseCursorType();
+        local.updateMouseCursorType();
     };
 
 
@@ -263,10 +256,10 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
       * Releases event listeners
       */
     this.dispose = function dispose() {
-        scope.viewerDiv.removeEventListener('mousemove', scope.onMouseMove, false);
-        scope.viewerDiv.removeEventListener('mouseup', scope.onMouseUp, false);
-        scope.viewerDiv.removeEventListener('mousedown', scope.onMouseDown, false);
-        scope.viewerDiv.removeEventListener('wheel', scope.onMouseWheel, false);
+        local.viewerDiv.removeEventListener('mousemove', local.onMouseMove, false);
+        local.viewerDiv.removeEventListener('mouseup', local.onMouseUp, false);
+        local.viewerDiv.removeEventListener('mousedown', local.onMouseDown, false);
+        local.viewerDiv.removeEventListener('wheel', local.onMouseWheel, false);
     };
 
 
@@ -274,7 +267,7 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
       * Initiates rotation state
       */
     this.initiateRotation = function initiateRotation() {
-        scope.state = STATE.ROTATE;
+        local.state = STATE.ROTATE;
     };
 
 
@@ -282,7 +275,7 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
       * Initiates drag state
       */
     this.initiateDrag = function initiateDrag() {
-        scope.state = STATE.DRAG;
+        local.state = STATE.DRAG;
     };
 
 
@@ -290,17 +283,17 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
     * Updates the view and camera if needed
     */
     this.update = function update(_dt, _updateLoopRestarted) {
-        if (scope.state === STATE.DRAG) {
-            scope.handleDragMovement();
+        if (local.state === STATE.DRAG) {
+            local.handleDragMovement();
         }
-        if (scope.state === STATE.ROTATE) {
-            scope.onRotate();
+        if (local.state === STATE.ROTATE) {
+            local.onRotate();
         }
 
         // Animation
-        if (scope.demoAction && scope.demoMixer && scope.demoAction.isRunning()) {
-            scope.demoMixer.update(0.04);
-            scope.updateCamera();
+        if (local.demoAction && local.demoMixer && local.demoAction.isRunning()) {
+            local.demoMixer.update(0.04);
+            local.updateCamera();
         }
     };
 
@@ -319,11 +312,11 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
         const deltaMousePosition = new THREE.Vector2();
         deltaMousePosition.copy(mousePosition).sub(lastMousePosition);
         lastMousePosition.copy(mousePosition);
-        const x_mvt = deltaMousePosition.y * MOVEMENT_FACTOR * scope.dummyCamera.position.length();
-        const y_mvt = deltaMousePosition.x * MOVEMENT_FACTOR * scope.dummyCamera.position.length();
-        scope.dummyCamera.position.x -= x_mvt;
-        scope.dummyCamera.position.y -= y_mvt;
-        scope.updateCamera();
+        const x_mvt = deltaMousePosition.y * MOVEMENT_FACTOR * local.dummyCamera.position.length();
+        const y_mvt = deltaMousePosition.x * MOVEMENT_FACTOR * local.dummyCamera.position.length();
+        local.dummyCamera.position.x -= x_mvt;
+        local.dummyCamera.position.y -= y_mvt;
+        local.updateCamera();
     };
 
 
@@ -332,7 +325,7 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
      * @return the radius of the virtual sphere in pixels
      */
     this.getVirtualSphereRadius = function getVirtualSphereRadius() {
-        return Math.min(scope.domElement.clientHeight, scope.domElement.clientWidth) * VIRT_SPHERE_RADIUS;
+        return Math.min(local.domElement.clientHeight, local.domElement.clientWidth) * VIRT_SPHERE_RADIUS;
     };
 
 
@@ -341,8 +334,8 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
      * @return returns the centre point in screen coordinates as [x,y], units are pixels
      */
      this.getVirtualSphereCentre = function getVirtualSphereCentre() {
-         return [ scope.domElement.clientWidth / 2.0,
-                 scope.domElement.clientHeight / 2.0];
+         return [ local.domElement.clientWidth / 2.0,
+                 local.domElement.clientHeight / 2.0];
      };
 
 
@@ -351,8 +344,8 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
      * @return returns true iff currently running the model demonstration
      */
     this.isRunningDemo = function isRunningDemo() {
-        if (scope.demoAction) {
-            return scope.demoAction.isRunning();
+        if (local.demoAction) {
+            return local.demoAction.isRunning();
         }
         return false;
     };
@@ -369,8 +362,8 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
         }
 
         // The centre of the virtual sphere is centre of screen +/- offset due to mouse movement
-        const centreOffsetX = scope.domElement.clientWidth / 2.0;
-        const centreOffsetY = scope.domElement.clientHeight / 2.0;
+        const centreOffsetX = local.domElement.clientWidth / 2.0;
+        const centreOffsetY = local.domElement.clientHeight / 2.0;
         // Mouse position in normal XY coords
         const mp = new THREE.Vector2(mousePosition.x - centreOffsetX, centreOffsetY - mousePosition.y);
         // Last mouse position in normal XY coords
@@ -381,7 +374,7 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
         deltaMousePosition.copy(mousePosition).sub(lastMousePosition);
         lastMousePosition.copy(mousePosition);
 
-        const r = scope.getVirtualSphereRadius(); // Size of virtual sphere
+        const r = local.getVirtualSphereRadius(); // Size of virtual sphere
         let rotAxisLocal: THREE.Vector3;  // Rotational axis in virtual sphere coords
         let rDelta: number; // Rotational angle
         let rotAxis: THREE.Vector3; // Rotational axis in camera coords
@@ -393,8 +386,8 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
 
         if (mp.length() > r || lmp.length() > r) {
             // If mouse is outside the virtual sphere do a rotation around a vector pointing out perpendicular to the screen
-            const dx = deltaMousePosition.x / scope.domElement.clientWidth;
-            const dy = deltaMousePosition.y / scope.domElement.clientHeight;
+            const dx = deltaMousePosition.x / local.domElement.clientWidth;
+            const dy = deltaMousePosition.y / local.domElement.clientHeight;
             if (Math.abs(dx) > Math.abs(dy)) {
                 if (dx > 0) {
                     if (mp.y > 0) {
@@ -445,10 +438,10 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
         rObject.matrix.multiply(rMat);
         rObject.rotation.setFromRotationMatrix(rObject.matrix);
         rObject.updateMatrixWorld(true);
-        scope.updateCamera();
+        local.updateCamera();
 
         // Tell caller that camera angle has changed
-        scope.cameraMoveCallback();
+        local.cameraMoveCallback();
     };
 
 
@@ -456,15 +449,15 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
     * Update the cursor image according to the control state
     */
     this.updateMouseCursorType = function updateMouseCursorType() {
-        switch (scope.state) {
+        switch (local.state) {
             case STATE.NONE:
-                scope.domElement.style.cursor = 'auto';
+                local.domElement.style.cursor = 'auto';
                 break;
             case STATE.DRAG:
-                scope.domElement.style.cursor = 'move';
+                local.domElement.style.cursor = 'move';
                 break;
             case STATE.ROTATE:
-                scope.domElement.style.cursor = 'cell';
+                local.domElement.style.cursor = 'cell';
                 break;
         }
     };
@@ -488,8 +481,8 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
      * Stops the demo loop
      */
     this.stopDemoLoop = function stopDemoLoop() {
-        scope.demoAction.stop();
-        scope.updateCamera();
+        local.demoAction.stop();
+        local.updateCamera();
     };
 
 
@@ -511,14 +504,14 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
                 axis = new THREE.Vector3( 0, 0, 1 );
                 break;
             default:
-                scope.stopDemoLoop();
+                local.stopDemoLoop();
                 return;
         }
         // Initial rotation = current rObject rotation
-        const qInitial = new THREE.Quaternion().copy(scope.rObject.quaternion);
+        const qInitial = new THREE.Quaternion().copy(local.rObject.quaternion);
 
         // Final rotation = current rObject rotation + 45 degree rotation along axis
-        const qFinal = new THREE.Quaternion().copy(scope.rObject.quaternion);
+        const qFinal = new THREE.Quaternion().copy(local.rObject.quaternion);
         const rotFinal = new THREE.Quaternion().setFromAxisAngle( axis, Math.PI / 4.0 );
         qFinal.multiply(rotFinal);
 
@@ -530,10 +523,10 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
 
         // Create an animation sequence from the keyframe track
         const clip = new THREE.AnimationClip( 'Action', 10.0, [ quaternionKF ] );
-        scope.demoMixer = new THREE.AnimationMixer(scope.rObject);
-        scope.demoAction = scope.demoMixer.clipAction(clip);
-        scope.demoAction.setLoop(THREE.LoopOnce, 1);
-        scope.demoAction.play();
+        local.demoMixer = new THREE.AnimationMixer(local.rObject);
+        local.demoAction = local.demoMixer.clipAction(clip);
+        local.demoAction.setLoop(THREE.LoopOnce, 1);
+        local.demoAction.play();
     };
 
 
@@ -542,14 +535,14 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
      */
     this.resetView = function resetView() {
         // Restore rObject, camera position and offset
-        rObject.position.copy(scope.resetState.rObj.position);
-        rObject.matrix.copy(scope.resetState.rObj.matrix);
+        rObject.position.copy(local.resetState.rObj.position);
+        rObject.matrix.copy(local.resetState.rObj.matrix);
         rObject.rotation.setFromRotationMatrix(rObject.matrix);
         rObject.updateMatrixWorld(true);
-        scope.dummyCamera.position.copy(scope.resetState.camera.position);
+        local.dummyCamera.position.copy(local.resetState.camera.position);
 
         // Update view
-        scope.updateCamera();
+        local.updateCamera();
     };
 
 
@@ -558,7 +551,7 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
      */
     this.updateView = function updateView() {
         // Update view
-        scope.updateCamera();
+        local.updateCamera();
     };
 
 
@@ -609,13 +602,14 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
                              case 1:
                                  y = elem;
                                  break;
-                             case 2:
-                                 z = elem;
-                                 const centre = new THREE.Vector3(x, y, z);
-                                 sumCentre.add(centre);
-                                 maxCentre.max(centre);
-                                 minCentre.min(centre);
-                                 numCentre += 1;
+                             case 2: {
+                                     z = elem;
+                                     const centre = new THREE.Vector3(x, y, z);
+                                     sumCentre.add(centre);
+                                     maxCentre.max(centre);
+                                     minCentre.min(centre);
+                                     numCentre += 1;
+                                 }
                          }
                      });
                      if (numCentre > 0) {
