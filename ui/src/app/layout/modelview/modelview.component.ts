@@ -587,7 +587,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         // Is is a collection of points or lines?
                                         if (featureColl['features'].length > 0) {
                                             // Points
-                                            if (getType(featureColl['features'][0]) === 'Point') {
+                                            if (getType(featureColl['features'][0], "Points or Lines") === 'Point') {
                                                 // Point list
                                                 const ptList: any[] = [];
                                                 // Colour list
@@ -597,14 +597,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                                 const col = new ITOWNS.THREE.Color();
                                                 featureEach(featureColl, function(feat: Feature<Point>, idx) {
                                                     const coord = getCoord(feat);
-                                                    const col_tup = feat['properties']['colour'];
+                                                    const col_tup = feat?.properties?.colour;
                                                     if (col_tup !== undefined) {
                                                         col.setRGB(col_tup[0], col_tup[1], col_tup[2]);
                                                         ptList.push(coord[0], coord[1], coord[2]);
                                                         colList.push(col.r, col.g, col.b);
                                                         colourLookup[col.r.toFixed(2)+"-"
                                                                      +col.g.toFixed(2)+"-"
-                                                                     +col.b.toFixed(2)] = feat['properties']['val'];
+                                                                     +col.b.toFixed(2)] = feat?.properties?.val;
                                                     }
                                                 });
                                                 geometry.setAttribute('position', new ITOWNS.THREE.Float32BufferAttribute(ptList, 3));
@@ -628,7 +628,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                                 const col = new ITOWNS.THREE.Color();
                                                 featureEach(featureColl, function(feat: Feature<LineString>, idx) {
                                                     const coords = getCoords(feat);
-                                                    const col_tup = feat['properties']['colour'];
+                                                    const col_tup = feat?.properties?.colour;
                                                     if (col_tup !== undefined) {
                                                         col.setRGB(col_tup[0], col_tup[1], col_tup[2]);
                                                         lnList.push(coords[0][0], coords[0][1], coords[0][2],
