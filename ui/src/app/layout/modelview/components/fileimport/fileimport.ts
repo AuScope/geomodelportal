@@ -61,13 +61,13 @@ export class FileImport {
      *  Converts a string to glTF
      * @param fileStr string to be converted to GLTF
      **/
-    private importFile(fileStr: string | ArrayBuffer): Promise<any> {
+    private importFile(fileStr: string | ArrayBuffer): Promise<string[]> {
         const local = this;
         const URL =  './api/' + this.modelUrlPath + '/import/' + this.generateId(16);
         this.gltfPromise = new Promise(function(resolve, reject) {
             local.httpService.post(URL, { 'content':fileStr, 'crs':'EPSG:4326'}).subscribe(
                 data => {
-                    const dataResult = data as string [];
+                    const dataResult = data as string[];
                     resolve(dataResult);
                 },
                 (err: HttpErrorResponse) => {
@@ -83,7 +83,7 @@ export class FileImport {
      * Reads and parses file
      * @param data file's data
      */
-    private readAndConvert(data, fileName: string): any {
+    private readAndConvert(data, fileName: string): string[] {
         const local = this;
         try {
             // Convert to string
@@ -148,10 +148,10 @@ export class FileImport {
         const local = this;
         if (ev.dataTransfer.items) {
             // Use DataTransferItemList interface to access the file(s)
-            for (let i = 0; i < ev.dataTransfer.items.length; i++) {
+            for (const item of ev.dataTransfer.items) {
                 // If dropped items aren't files, reject them
-                if (ev.dataTransfer.items[i].kind === 'file') {
-                    const file = ev.dataTransfer.items[i].getAsFile();
+                if (item.kind === 'file') {
+                    const file = item.getAsFile();
                     if (file) {
                         const reader = new FileReader();
                         reader.onload = function (_evt) {

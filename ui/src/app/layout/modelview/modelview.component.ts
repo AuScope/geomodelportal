@@ -552,7 +552,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * So I have to send the data in compressed format and draw my own lines and points
      */
     private addGEOJSONPointsOrLines() {
-        const promiseList: Promise<any>[] = [];
+        const promiseList: Promise<ITOWNS.THREE.Points | ITOWNS.THREE.LineSegments | null>[] = [];
         const local = this;
 
         // Load geojson objects into scene
@@ -582,14 +582,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         const str = new TextDecoder("utf-8").decode(plain);
                                         const featureColl = JSON.parse(str);
                                         const geometry = new ITOWNS.THREE.BufferGeometry();
-                                        let items: any | null = null;
+                                        let items: ITOWNS.THREE.Points | ITOWNS.THREE.LineSegments | null = null;
 
                                         // Is is a collection of points or lines?
                                         if (featureColl['features'].length > 0) {
                                             // Points
                                             if (getType(featureColl['features'][0], "Points or Lines") === 'Point') {
                                                 // Point list
-                                                const ptList: any[] = [];
+                                                const ptList: number[] = [];
                                                 // Colour list
                                                 const colList: number[] = [];
                                                 // Lookup values using colour
@@ -702,7 +702,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Loads and draws the GLTF objects
      */
     private addGLTFObjects() {
-        const promiseList: Promise<any>[] = [];
+        const promiseList: Promise<unknown>[] = [];
         const local = this;
 
         // Load GLTF objects into scene
@@ -806,7 +806,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         // NB: Use the same model name in the URL for 'api' as for the model viewing URL
         const modelName = this.modelUrlPath;
         this.modelInfoService.getBoreHoleIds(modelName).then(
-            function(boreholeIdList: any[]) {
+            function(boreholeIdList: string[]) {
                 for (const boreholeId of boreholeIdList) {
                     const params = { 'service': '3DPS',
                                     'version': '1.0',
@@ -854,7 +854,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Adds volumes to scene (X,Y,Z slicing)
      */
     private addVolumes() {
-        const promiseList: Promise<any>[] = [];
+        const promiseList: Promise<ITOWNS.THREE.Mesh[]>[] = [];
         const local = this;
 
         for (const group in local.config.groups) {
@@ -898,7 +898,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         const manager = new ITOWNS.THREE.LoadingManager();
         const local = this;
         const textureLoader = new ITOWNS.THREE.TextureLoader(manager);
-        const promiseList: Promise<any>[] = [];
+        const promiseList: Promise<ITOWNS.THREE.Mesh>[] = [];
         for (const group in local.config.groups) {
             if (Object.prototype.hasOwnProperty.call(local.config.groups, group)) {
                 const parts = local.config.groups[group];
@@ -1097,7 +1097,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.raycaster.layers.set(0)
 
         // Set up double click event handler
-        this.ngRenderer.listen(this.viewerDiv, 'dblclick', function(event: any) {
+        this.ngRenderer.listen(this.viewerDiv, 'dblclick', function(event: MouseEvent) {
 
                 event.preventDefault();
                 if (!local.viewerDiv) {

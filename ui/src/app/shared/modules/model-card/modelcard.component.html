@@ -8,20 +8,20 @@
         <div class="d-block">&nbsp;{{label}}</div>
       </div>
     </div>
-    @if (modelInfoLink!='') {
-      <div class="row" (click)='openModelInfoLink()'>
+    @if (modelInfoLink!=='') {
+      <div role="link" tabindex="0" class="row" (click)='openModelInfoLink()' (keyup.enter)='openModelInfoLink()'>
         <div class="col col-xs-6">
           <span class="float-right info-link"><a>Model Info & Downloads&nbsp;</a><i class="fa fa-sm fa-external-link" aria-hidden="true"></i></span>
         </div>
       </div>
     }
   </div>
-  @if (modelInfoMessage && modelInfoMessage!='') {
+  @if (modelInfoMessage && modelInfoMessage!=='') {
     <div class="card-body" style="font-size: 0.7rem">
       {{modelInfoMessage}}
     </div>
   }
-  <div class="card-footer text-end" (click)='navigateToModel()'>
+  <div role="button" tabindex="0" class="card-footer text-end" (click)='navigateToModel()' (keyup.enter)='navigateToModel()'>
     View Model
     <i class="fa fa-2x fa-arrow-circle-right" aria-hidden="true"></i>
   </div>

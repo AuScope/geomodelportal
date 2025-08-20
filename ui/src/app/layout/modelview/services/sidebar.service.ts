@@ -13,9 +13,11 @@ export interface MenuChangeType { group: string; subGroup: string; state: MenuSt
 @Injectable()
 export class SidebarService {
 
-    private menuChangeSub = new Subject<any>();
+    private menuChangeSub = new Subject<MenuChangeType>();
 
-    constructor() { }
+    constructor() { 
+        //empty
+    }
 
     /**
      * Call this to notify the service that a menu item has changed state
@@ -29,7 +31,7 @@ export class SidebarService {
      * Call this to get informed of any changes in menu state
      * @return an observable of the menu item state
      */
-    public getMenuChanges(): Observable<any> {
+    public getMenuChanges(): Observable<MenuChangeType> {
         return this.menuChangeSub.asObservable();
     }
 

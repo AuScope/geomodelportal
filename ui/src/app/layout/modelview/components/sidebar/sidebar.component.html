@@ -28,9 +28,9 @@
         <!-- Model Parts controls start here -->
         @if (groupList.length > 0) {
           <div class="list-group">
-            @for (groupName of groupList; track groupName; let i = $index) {
+            @for (groupName of groupList; track groupName) {
               <div class="nested-menu">
-                <a role="link" tabindex="{{ i }}" class="list-group-item" (click)="addExpandClass(groupName)"  (keyup.enter)="addExpandClass(groupName)">
+                <a role="link" tabindex="0" class="list-group-item" (click)="addExpandClass(groupName)"  (keyup.enter)="addExpandClass(groupName)">
                   <span><i class="fa fa-plus" aria-hidden="true" ngbPopover="{{HELP_TEXT.groupMenuToggle.desc}}" popoverTitle="{{HELP_TEXT.groupMenuToggle.title}}" placement="right" #group_menu_popover="ngbPopover" triggers="manual">
                   </i>&nbsp;{{groupName}}</span>
                   <!-- Group Visibility Checkbox -->

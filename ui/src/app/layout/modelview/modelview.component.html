@@ -13,7 +13,7 @@
         </g>
         <circle [style.height]="2.0*sphereRadius" [style.width]="2.0*sphereRadius" [attr.r]="sphereRadius"
         style="fill:none; stroke-width: 0.5px; stroke: #606060;" [attr.cx]="centreX" [attr.cy]="centreY"></circle>
-        @if (modelDemoSeqNum == 0) {
+        @if (modelDemoSeqNum === 0) {
           <g style="stroke: rgb(255,0,0); stroke-width: 2;">
             <line [attr.x1]="-100+centreX" [attr.y1]="0+centreY" [attr.x2]="100+centreX" [attr.y2]="0+centreY" />
             <line [attr.x1]="-90+centreX" [attr.y1]="-10+centreY" [attr.x2]="-100+centreX" [attr.y2]="0+centreY" />
@@ -22,7 +22,7 @@
             <line [attr.x1]="100+centreX" [attr.y1]="0+centreY" [attr.x2]="90+centreX" [attr.y2]="10+centreY" />
           </g>
         }
-        @if (modelDemoSeqNum == 1) {
+        @if (modelDemoSeqNum === 1) {
           <g style="stroke: rgb(255,0,0); stroke-width: 2;">
             <line [attr.x1]="0+centreX" [attr.y1]="-100+centreY" [attr.x2]="0+centreX" [attr.y2]="100+centreY" />
             <line [attr.x1]="-10+centreX" [attr.y1]="-90+centreY" [attr.x2]="0+centreX" [attr.y2]="-100+centreY" />
@@ -31,7 +31,7 @@
             <line [attr.x1]="0+centreX" [attr.y1]="100+centreY" [attr.x2]="10+centreX" [attr.y2]="90+centreY" />
           </g>
         }
-        @if (modelDemoSeqNum == 2) {
+        @if (modelDemoSeqNum === 2) {
           <g style="stroke: rgb(255,0,0); stroke-width: 2;">
             <line [attr.x1]="0+centreX - sphereRadius - 50" [attr.y1]="-100+centreY" [attr.x2]="0+centreX - sphereRadius - 50" [attr.y2]="100+centreY" />
             <line [attr.x1]="-10+centreX - sphereRadius - 50" [attr.y1]="-90+centreY" [attr.x2]="0+centreX - sphereRadius - 50" [attr.y2]="-100+centreY" />

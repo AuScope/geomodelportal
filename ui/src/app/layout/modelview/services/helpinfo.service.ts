@@ -9,10 +9,12 @@ export enum WidgetType { GROUP_TICKBOX, GROUP_TOGGLE, PART_TICKBOX, PART_CONFIG,
 @Injectable()
 export class HelpinfoService {
 
-  private popoverSubObj = new Subject<any>();
-  private modelSubObj = new Subject<any>();
+  private popoverSubObj = new Subject<number>();
+  private modelSubObj = new Subject<number>();
   private widgetList: WidgetType[] = [];
-  constructor() {}
+  constructor() {
+    //empty
+  }
 
   /**
    * Components with a popover can register their help facilities here.
@@ -21,7 +23,7 @@ export class HelpinfoService {
    * @param widgetTypeList input your widget types as an array
    * @return an observable so that you know when its your turn to display a helpful hint or null
    */
-  public waitForPopoverSignal(widgetTypeList: WidgetType[]): Observable<any> | null {
+  public waitForPopoverSignal(widgetTypeList: WidgetType[]): Observable<number> | null {
       // If 'widgetType' not in widgetList then include 'widgetType' in our list etc.
       let found = false;
       for (const widgetType of widgetTypeList) {
@@ -51,7 +53,7 @@ export class HelpinfoService {
   /**
    * model view component calls this to wait for the signal to start and step through the model demonstration
    */
-  public waitForModelDemo(): Observable<any> {
+  public waitForModelDemo(): Observable<number> {
       return this.modelSubObj.asObservable();
   }
 

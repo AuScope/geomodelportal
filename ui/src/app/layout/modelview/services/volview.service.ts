@@ -189,7 +189,7 @@ export class VolviewService {
      * @returns a promise
      */
     public makePromise(volView: VolView, groupName: string, partId: string, volUrl: string, scene: ITOWNS.THREE.Scene,
-                volObjList: ITOWNS.THREE.Object3D[], displayed: boolean): Promise<any> {
+                volObjList: ITOWNS.THREE.Object3D[], displayed: boolean): Promise<ITOWNS.THREE.Mesh[]> {
         const local = this;
         return new Promise( function( resolve, reject ) {
             local.httpService.get(volUrl, { responseType: 'arraybuffer' }).subscribe(

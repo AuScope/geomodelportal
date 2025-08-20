@@ -9,7 +9,7 @@ import { Renderer2 } from '@angular/core';
 export function hasWebGL() {
     try {
         const canvas = document.createElement('canvas');
-        return !! ( (<any>window).WebGLRenderingContext &&
+        return !! ( (window as any).WebGLRenderingContext &&
                     ( canvas.getContext( 'webgl' ) || canvas.getContext( 'experimental-webgl' ) ) );
     } catch ( e ) {
         return false;
@@ -25,7 +25,7 @@ export function hasWebGL() {
 export function getWebGLErrorMessage(ngRenderer: Renderer2) {
     const p1 = ngRenderer.createElement('p');
     if (!hasWebGL()) {
-        const textStr = (<any>window).WebGLRenderingContext ? [
+        const textStr = (window as any).WebGLRenderingContext ? [
             'Your graphics card does not seem to support WebGL',
             'Find out how to get it '
         ].join( '\n' ) : [
@@ -177,11 +177,11 @@ export function makePopup(ngRenderer: Renderer2, popupBoxDiv: HTMLElement, event
              addTextLineToPopup(ngRenderer, popupBoxDiv, key, popupInfo[key]);
         // Make URLs
         } else if (key === 'href') {
-            for (let hIdx = 0; hIdx < popupInfo['href'].length; hIdx++) {
+            for (const hRef of popupInfo['href']) {
                 const liElem = ngRenderer.createElement('li');
                 const oLink = ngRenderer.createElement('a');
-                ngRenderer.setAttribute(oLink, 'href', popupInfo['href'][hIdx]['URL']); // Attributes are HTML entities
-                ngRenderer.setProperty(oLink, 'innerHTML', popupInfo['href'][hIdx]['label']); // Properties are DOM entities
+                ngRenderer.setAttribute(oLink, 'href', hRef['URL']); // Attributes are HTML entities
+                ngRenderer.setProperty(oLink, 'innerHTML', hRef['label']); // Properties are DOM entities
                 ngRenderer.setAttribute(oLink, 'target', '_blank');
                 ngRenderer.appendChild(liElem, oLink);
                 ngRenderer.appendChild(popupBoxDiv, liElem);

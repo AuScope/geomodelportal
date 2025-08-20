@@ -13,7 +13,7 @@ import { NgClass } from '@angular/common';
 import { VolumecontrolsComponent } from './components/volumecontrols/volumecontrols.component';
 
 // Google Analytics
-declare var gtag;
+let gtag;
 
 // Used to control visibility of parts in the menu
 const DISPLAY_CTRL_ON = 'block';
@@ -76,7 +76,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     private compSubscr: Subscription;
 
     // Menu items use this to trigger the display of help information
-    private helpObs: Observable<any> | null = null;
+    private helpObs: Observable<number> | null = null;
 
     // State of the mouse guide toggle button
     public mouseGuideBtnState = false;
@@ -499,7 +499,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * @param groupName group name of model parts
      * @param state desired checkbox state
      */
-    public groupCheckBoxClick(event: any, groupName: string, state: boolean) {
+    public groupCheckBoxClick(event: MouseEvent, groupName: string, state: boolean) {
         if (event) {
             event.stopPropagation();
         }
@@ -622,7 +622,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * Expands group menu item
      * @param element
      */
-    public addExpandClass(element: any) {
+    public addExpandClass(element: string) {
         if (element === this.showMenu) {
             this.showMenu = '0';
         } else {
@@ -643,7 +643,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * Toggles display of sidebar
      */
     public toggleSidebar() {
-        const dom: any = document.querySelector('body');
+        const dom: HTMLBodyElement = document.querySelector('body');
         dom.classList.toggle(this.pushRightClass);
     }
 
@@ -651,7 +651,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * Toggles layout from right-to-left <-> left-to-right
      */
     public rltAndLtr() {
-        const dom: any = document.querySelector('body');
+        const dom: HTMLBodyElement = document.querySelector('body');
         dom.classList.toggle('rtl');
     }
 

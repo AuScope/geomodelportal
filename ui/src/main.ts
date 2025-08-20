@@ -1,5 +1,4 @@
 import { enableProdMode, importProvidersFrom } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { createTranslateLoader } from './app/app.module';
 import { environment } from './environments/environment';
@@ -11,12 +10,9 @@ import { provideHttpClient, withInterceptorsFromDi, HttpClient } from '@angular/
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app/app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app/app.component';
-
-// import 'hammerjs';
 
 if (environment.production) {
     enableProdMode();
