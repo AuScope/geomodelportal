@@ -15,15 +15,15 @@
         }
       </div>
     </div>
-    @if (infoLink!='') {
-      <div class="row" (click)='openInfoLink()'>
+    @if (infoLink!=='') {
+      <div role="link" tabindex="0" class="row" (click)='openInfoLink()' (keyup.enter)='openInfoLink()'>
         <div class="col col-xs-6">
           <span class="float-right info-link"><a>Provider Info&nbsp;</a><i class="fa fa-sm fa-external-link" aria-hidden="true"></i></span>
         </div>
       </div>
     }
   </div>
-  <div class="card-footer text-end" (click)='navigateToProvider(count)'>
+  <div role="link" tabindex="1" class="card-footer text-end" (click)='navigateToProvider(count)' (keyup.enter)='navigateToProvider(count)'>
     View Provider Models
     <i class="fa fa-2x fa-arrow-circle-right" aria-hidden="true"></i>
   </div>

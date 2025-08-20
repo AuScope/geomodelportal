@@ -172,7 +172,7 @@ export class VolviewService {
                         volView.dataView.getUint8(idx + 2), volView.dataView.getUint8(idx + 3)];
             }
         } catch (err) {
-            // console.log(err);
+            console.error(err);
         }
         return null;
     }

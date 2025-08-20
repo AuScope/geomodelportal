@@ -16,10 +16,10 @@ import { hasWebGL, detectIE, getWebGLErrorMessage, createErrorBox, createMissing
 import { Zlib } from 'zlibjs/bin/gunzip.min.js';
 import { featureEach } from '@turf/meta';
 import { getCoord, getCoords, getType } from '@turf/invariant';
-import { Feature, Point, LineString } from '@turf/helpers';
+import { Feature, Point, LineString } from 'geojson';
 
 // Google Analytics
-declare var gtag;
+let gtag;
 
 
 // Import itowns library
@@ -1115,7 +1115,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     // Find closest object that has a name
                     for (closest = 0;
                          (closest < intersects.length && intersects[closest].object.name === '');
-                         closest++) { }
+                         closest++)
+                        {
+                            // empty
+                        }
                     if (closest < intersects.length) {
                         const objName = intersects[closest].object.name;
                         const objIntPt = intersects[closest].point;
