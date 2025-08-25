@@ -28,7 +28,7 @@ const TEXT_SIZE = 400;
     encapsulation: ViewEncapsulation.None // NB: Needed to style the popovers
 })
 export class OverviewComponent implements AfterViewInit {
-    private modelInfoService = inject(ModelInfoService);
+    private modelInfoService: ModelInfoService;
 
     @ViewChild('canvas', { static: true }) private canvasRef: ElementRef;
 
@@ -64,6 +64,7 @@ export class OverviewComponent implements AfterViewInit {
      * Constructor
      */
     constructor() {
+        this.modelInfoService = inject(ModelInfoService);
         this.render = this.render.bind(this);
     }
 

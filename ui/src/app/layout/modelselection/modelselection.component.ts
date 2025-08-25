@@ -15,14 +15,19 @@ import { ModelCardComponent } from '../../shared/modules/model-card/modelcard.co
     imports: [ModelCardComponent]
 })
 export class ModelSelectionComponent implements OnInit {
-    private route = inject(ActivatedRoute);
-    private modelInfoService = inject(ModelInfoService);
+    private route: ActivatedRoute;
+    private modelInfoService: ModelInfoService;
 
 
     // Geological models for each provider
     public providerModels: any = {};
 
     public providerPath = '';
+
+    constructor() {
+        this.route = inject(ActivatedRoute);
+        this.modelInfoService = inject(ModelInfoService);
+    }
 
     ngOnInit() {
         this.providerPath = this.route.snapshot.paramMap.get('providerPath');

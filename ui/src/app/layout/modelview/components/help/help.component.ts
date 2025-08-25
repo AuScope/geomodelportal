@@ -11,7 +11,7 @@ const MODEL_INIT_MSG = 'Model demonstration';
     styleUrls: ['./help.component.scss']
 })
 export class HelpComponent {
-  private helpinfoService = inject(HelpinfoService);
+  private helpinfoService: HelpinfoService;
 
 
   public sidebarButtonStr = SIDEBAR_INIT_MSG;
@@ -20,6 +20,10 @@ export class HelpComponent {
   public modelDemoStarted = false;
   private helpItemCount = -1;
   private modelDemoSeqNum = -1;
+
+  constructor () {
+      this.helpinfoService = inject(HelpinfoService);
+  }
 
   /**
    * Starts and progresses a tour of the sidebar controls

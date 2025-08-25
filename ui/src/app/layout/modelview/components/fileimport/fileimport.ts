@@ -11,8 +11,12 @@ import * as ITOWNS from 'itowns/dist/itowns';
 // Group name in sidebar for imported filtes
 const IMPORT_GROUP_NAME = 'Imported Files';
 
-// This class is responsible for loading a file into the ModelView THreeJS scene
+// This class is responsible for loading a file into the ModelView ThreeJS scene
 export class FileImport {
+
+    private sidebarService: SidebarService;
+    private modelInfoService: ModelInfoService;
+    private httpService: HttpClient;
 
     // GLTFLoader object
     private gltfLoader;
@@ -21,10 +25,10 @@ export class FileImport {
     private gltfPromise;
 
     // Current model's name as part if its URL
-    private modelUrlPath;
+    private modelUrlPath: string;
 
     // ModelView 'sTHREE scene ovject
-    private scene;
+    private scene: ITOWNS.THREE.Scene;
 
     // Array of SceneObj
     private sceneArr;
@@ -46,12 +50,17 @@ export class FileImport {
      * @param modelInfoService model info service
      * @param httpService http service
      */
-    constructor(scene: ITOWNS.THREE.Scene, gltfLoader, modelUrlPath: string, sceneArr, viewController,
-      private sidebarService: SidebarService, private modelInfoService: ModelInfoService,
-                  private httpService: HttpClient)  {
+    constructor(sidebarService: SidebarService, modelInfoService: ModelInfoService, 
+                httpService: HttpClient,
+                scene: ITOWNS.THREE.Scene, gltfLoader: any, modelUrlPath: string, 
+                sceneArr: any, viewController: any)  {
+        this.sidebarService = sidebarService;
+        this.modelInfoService = modelInfoService;
+        this.httpService = httpService;
+        
+        this.scene = scene;
         this.gltfLoader = gltfLoader;
         this.modelUrlPath = modelUrlPath;
-        this.scene = scene;
         this.sceneArr = sceneArr;
         this.viewController = viewController;
     }

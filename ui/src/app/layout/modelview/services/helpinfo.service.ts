@@ -6,7 +6,9 @@ import { Observable ,  Subject } from 'rxjs';
 export enum WidgetType { GROUP_TICKBOX, GROUP_TOGGLE, PART_TICKBOX, PART_CONFIG, PART_DOWNLOAD, PART_EYEBALL, ZOOM_VIEW,
                           PART_OFFSET, PART_VISIBILITY, PART_SCALE, RESET_VIEW, MOUSE_GUIDE, COMPASS_ROSE, END_TOUR }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class HelpinfoService {
 
   private popoverSubObj = new Subject<number>();

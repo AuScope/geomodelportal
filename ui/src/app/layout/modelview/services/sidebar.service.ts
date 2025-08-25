@@ -10,7 +10,9 @@ export interface MenuChangeType { group: string; subGroup: string; state: MenuSt
 /**
  * Used to share state changes in the sidebar menu tree between components
  */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class SidebarService {
 
     private menuChangeSub = new Subject<MenuChangeType>();

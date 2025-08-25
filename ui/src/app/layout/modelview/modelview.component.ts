@@ -1,4 +1,5 @@
-import { Component, ViewChild, AfterViewInit, Renderer2, ElementRef, OnDestroy, inject } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, Renderer2, ElementRef, OnDestroy } from '@angular/core';
+import { inject } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -11,7 +12,6 @@ import { SidebarService, MenuChangeType, MenuStateChangeType } from './services/
 import { HelpinfoService } from './services/helpinfo.service';
 import { VolView, VolviewService, DataType } from './services/volview.service';
 import { SceneObject, PlaneSceneObject, WMSSceneObject, VolSceneObject, addSceneObj } from './scene-object';
-import { FileImportFactory } from './components/fileimport/fileimportfactory';
 import { hasWebGL, detectIE, getWebGLErrorMessage, createErrorBox, createMissingIEMsgBox, makePopup } from './html-helpers';
 import { Zlib } from 'zlibjs/bin/gunzip.min.js';
 import { featureEach } from '@turf/meta';
@@ -19,7 +19,7 @@ import { getCoord, getCoords, getType } from '@turf/invariant';
 import { Feature, Point, LineString } from 'geojson';
 
 // Google Analytics
-let gtag;
+declare let gtag;
 
 
 // Import itowns library
@@ -41,6 +41,7 @@ import { NgClass, NgStyle, DecimalPipe } from '@angular/common';
 import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
 import { HelpComponent } from './components/help/help.component';
 import { OverviewComponent } from './components/overview/overview.component';
+import { FileImport } from './components/fileimport/fileimport';
 
 // Default grey background
 const BACKGROUND_COLOUR = 0xC0C0C0;
@@ -54,14 +55,14 @@ const BACKGROUND_COLOUR = 0xC0C0C0;
     imports: [SidebarComponent, NgClass, NgbCollapse, HelpComponent, NgStyle, OverviewComponent, DecimalPipe]
 })
 export class ModelViewComponent  implements AfterViewInit, OnDestroy {
-    private modelInfoService = inject(ModelInfoService);
-    private ngRenderer = inject(Renderer2);
-    private sidebarService = inject(SidebarService);
-    private route = inject(ActivatedRoute);
-    router = inject(Router);
-    private helpinfoService = inject(HelpinfoService);
-    private httpService = inject(HttpClient);
-    private volViewService = inject(VolviewService);
+    private modelInfoService: ModelInfoService;
+    private ngRenderer: Renderer2;
+    private sidebarService: SidebarService;
+    private route: ActivatedRoute;
+    router: Router;
+    private helpinfoService: HelpinfoService;
+    private httpService: HttpClient;
+    private volViewService: VolviewService;
 
     @ViewChild('viewerDiv', { static: true }) private viewerDivElem: ElementRef;
     @ViewChild('popupBoxDiv', { static: true }) private popupBoxDivElem: ElementRef;
@@ -145,8 +146,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     private gltfLoader;
 
     // Used to create 'FileImport' object to import files into scene
-    private fileImportFactory;
-    private fileImport;
+    private fileImport : FileImport;
 
     // File drop is enabled
     public enableFileDrop = false;
@@ -169,6 +169,15 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     public planeTotal = 0;
 
     constructor() {
+        this.modelInfoService = inject(ModelInfoService);
+        this.ngRenderer = inject(Renderer2);
+        this.sidebarService = inject(SidebarService);
+        this.route = inject(ActivatedRoute);
+        this.router = inject(Router);
+        this.helpinfoService = inject(HelpinfoService);
+        this.httpService = inject(HttpClient);
+        this.volViewService = inject(VolviewService);
+
         ITOWNS.THREE.Cache.enabled = true;
         const manager = new ITOWNS.THREE.LoadingManager();
 
@@ -1286,9 +1295,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         this.view.notifyChange(this.view.camera.camera3D, true);
 
         // Set up drag and drop file display mechanism
-        this.fileImportFactory = new FileImportFactory();
-        this.fileImport = this.fileImportFactory.createFileImport(this.scene, this.gltfLoader, this.modelUrlPath,
-                                                                             this.sceneArr, this.trackBallControls);
+        this.fileImport = new FileImport(this.sidebarService, this.modelInfoService, 
+                this.httpService, this.scene, this.gltfLoader, this.modelUrlPath,
+                this.sceneArr, this.trackBallControls);
         // Everything except the WMS layers are loaded at this point, so turn off loading spinner
         local.controlLoadSpinner(false);
     }

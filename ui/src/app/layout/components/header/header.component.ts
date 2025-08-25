@@ -12,8 +12,8 @@ import { environment } from '../../../../environments/environment';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-    private translate = inject(TranslateService);
-    router = inject(Router);
+    private translate: TranslateService;
+    router: Router;
 
     pushRightClass = 'push-right';
 
@@ -22,7 +22,8 @@ export class HeaderComponent implements OnInit {
     provider = "";
 
     constructor() {
-
+        this.translate = inject(TranslateService);
+        this.router = inject(Router);
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de', 'zh-CHS']);
         this.translate.setDefaultLang('en');
         const browserLang = this.translate.getBrowserLang();

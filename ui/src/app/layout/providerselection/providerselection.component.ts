@@ -12,15 +12,16 @@ import { ProviderCardComponent } from '../../shared/modules/provider-card/provid
     imports: [NgbCarousel, NgbSlide, ProviderCardComponent]
 })
 export class ProviderSelectionComponent {
-    private modelInfoService = inject(ModelInfoService);
+    private modelInfoService: ModelInfoService;
 
     // Model showcase images
-    public sliders: any[] = [];
+    public sliders: { imagePath: string; text: string; label: string }[] = [];
 
     // Sources of geological models
     public sources: any;
 
     constructor() {
+        this.modelInfoService = inject(ModelInfoService);
         this.sliders.push(
             {
                 imagePath: 'assets/images/StuartShelf.PNG',

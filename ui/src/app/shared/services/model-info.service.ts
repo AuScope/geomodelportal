@@ -44,9 +44,11 @@ export type ModelPartCallbackType =  (groupName: string, modelUrl: string, state
 /**
  * Class used to share model state information between components (e.g. which parts are visible, transparency & displacement values)
  */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ModelInfoService {
-    private httpService = inject(HttpClient);
+    private httpService: HttpClient;
 
     private providerModelInfo = {};
     private providerInfoList: ProviderInfo[] = [];
@@ -80,6 +82,10 @@ export class ModelInfoService {
 
     // Used to inform of a camera position change
     private cameraPosSub = new Subject<[number, number, number, string]>();
+
+    constructor() {
+        this.httpService = inject(HttpClient);
+    }
 
     /**
      * Initialise service

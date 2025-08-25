@@ -66,8 +66,11 @@ export class VolView {
   providedIn: 'root'
 })
 export class VolviewService {
-    private httpService = inject(HttpClient);
+    private httpService: HttpClient;
 
+    constructor () {
+        this.httpService = inject(HttpClient);
+    }
 
     /**
      * Setup the parameters for the volume

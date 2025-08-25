@@ -13,7 +13,7 @@ import { NgClass } from '@angular/common';
 import { VolumecontrolsComponent } from './components/volumecontrols/volumecontrols.component';
 
 // Google Analytics
-let gtag;
+declare let gtag;
 
 // Used to control visibility of parts in the menu
 const DISPLAY_CTRL_ON = 'block';
@@ -32,12 +32,12 @@ const DISPLAY_CTRL_OFF = 'none';
     imports: [NgClass, NgbPopover, VolumecontrolsComponent, MatSlider, MatSliderThumb]
 })
 export class SidebarComponent  implements OnInit, OnDestroy {
-    private translate = inject(TranslateService);
-    private modelInfoService = inject(ModelInfoService);
-    private route = inject(ActivatedRoute);
-    router = inject(Router);
-    private sideBarService = inject(SidebarService);
-    private helpinfoService = inject(HelpinfoService);
+    private translate: TranslateService;
+    private modelInfoService: ModelInfoService;
+    private route: ActivatedRoute;
+    router: Router;
+    private sideBarService: SidebarService;
+    private helpinfoService: HelpinfoService;
 
     public isActive = false;
     private showMenu: string | null = '';
@@ -131,6 +131,13 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     @ViewChild('compass_rose_popover', { static: true }) public compassRosePopover: NgbPopover;
 
     constructor() {
+        this.translate = inject(TranslateService);
+        this.modelInfoService = inject(ModelInfoService);
+        this.route = inject(ActivatedRoute);
+        this.router = inject(Router);
+        this.sideBarService = inject(SidebarService);
+        this.helpinfoService = inject(HelpinfoService);
+
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de']);
         this.translate.setDefaultLang('en');
         const browserLang = this.translate.getBrowserLang();
@@ -499,7 +506,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * @param groupName group name of model parts
      * @param state desired checkbox state
      */
-    public groupCheckBoxClick(event: MouseEvent, groupName: string, state: boolean) {
+    public groupCheckBoxClick(event: MouseEvent | null, groupName: string, state: boolean) {
         if (event) {
             event.stopPropagation();
         }
@@ -643,16 +650,16 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * Toggles display of sidebar
      */
     public toggleSidebar() {
-        const dom: HTMLBodyElement = document.querySelector('body');
-        dom.classList.toggle(this.pushRightClass);
+        const dom: HTMLBodyElement | null = document.querySelector('body');
+        dom?.classList.toggle(this.pushRightClass);
     }
 
     /**
      * Toggles layout from right-to-left <-> left-to-right
      */
     public rltAndLtr() {
-        const dom: HTMLBodyElement = document.querySelector('body');
-        dom.classList.toggle('rtl');
+        const dom: HTMLBodyElement | null = document.querySelector('body');
+        dom?.classList.toggle('rtl');
     }
 
     /**
