@@ -143,7 +143,7 @@ export class VolviewService {
      * @returns a value fetched from the array or null upon error
      */
     private getFromArray(volView: VolView, idx: number): number | [number, number, number, number] | null {
-        if (idx < 0) {
+        if (idx < 0 || !volView?.dataView) {
           return null;
         }
         try {

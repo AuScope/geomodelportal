@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy, ViewChild, ViewEncapsulation, inject } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { MatSliderChange, MatSlider, MatSliderThumb } from '@angular/material/slider';
+import { MatSlider, MatSliderThumb, MatSliderChange } from '@angular/material/slider';
 import { Subscription ,  Observable } from 'rxjs';
 import { NgbPopover} from '@ng-bootstrap/ng-bootstrap';
+import {FormsModule} from '@angular/forms';
 
 import { ModelInfoService, ModelPartStateChangeType } from '../../../../shared/services/model-info.service';
 import { SidebarService, MenuStateChangeType, MenuChangeType } from '../../services/sidebar.service';
@@ -27,9 +28,9 @@ const DISPLAY_CTRL_OFF = 'none';
     selector: 'app-sidebar',
     templateUrl: './sidebar.component.html',
     styleUrls: ['./sidebar.component.scss'],
-    encapsulation: ViewEncapsulation.None // NB: Needed to style the popovers
-    ,
-    imports: [NgClass, NgbPopover, VolumecontrolsComponent, MatSlider, MatSliderThumb]
+    encapsulation: ViewEncapsulation.None, // NB: Needed to style the popovers
+    imports: [NgClass, NgbPopover, VolumecontrolsComponent, MatSlider,
+              MatSliderThumb, FormsModule]
 })
 export class SidebarComponent  implements OnInit, OnDestroy {
     private translate: TranslateService;
@@ -43,6 +44,9 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     private showMenu: string | null = '';
     private pushRightClass: 'push-right';
     private localSeqNum = 0;
+
+    // Transparency slider value must be initialised to 1.0
+    public transpSliderValue = 1.0;
 
     // Name of model
     public title = '';
@@ -425,36 +429,36 @@ export class SidebarComponent  implements OnInit, OnDestroy {
 
     /**
      * Changes height of a particular part of the model
-     * @param event material slider change event, contains slider's latest selected value
+     * @param value contains slider's latest selected value
      * @param groupName model part's group name
      * @param partId model part's id
      */
-    public changeHeightOffset(event: MatSliderChange, groupName: string, partId: string) {
+    public changeHeightOffset(value: number, groupName: string, partId: string) {
         this.modelInfoService.setModelPartStateChange(groupName, partId,
-            { type: ModelPartStateChangeType.HEIGHT_OFFSET, new_value: event.value } );
+            { type: ModelPartStateChangeType.HEIGHT_OFFSET, new_value: value } );
     }
 
 
     /**
      * Changes height scale of a particular part of the model
-     * @param event material slider change event, contains slider's latest selected value
+     * @param value contains slider's latest selected value
      * @param groupName model part's group name
      * @param partId model part's id
      */
-    public changeHeightScale(event: MatSliderChange, groupName: string, partId: string) {
+    public changeHeightScale(value: number, groupName: string, partId: string) {
         this.modelInfoService.setModelPartStateChange(groupName, partId,
-            { type: ModelPartStateChangeType.RESCALE, new_value: event.value } );
+            { type: ModelPartStateChangeType.RESCALE, new_value: value } );
     }
 
     /**
      * Changes transparency of a part of the model
-     * @param event material slider change event, contains slider's latest selected value
+     * @param value contains slider's latest selected value
      * @param groupName model part's group name
      * @param partId model part's id
      */
-    public changeTransparency(event: MatSliderChange, groupName: string, partId: string) {
+    public changeTransparency(value: number, groupName: string, partId: string) {
         this.modelInfoService.setModelPartStateChange(groupName, partId,
-            { type: ModelPartStateChangeType.TRANSPARENCY, new_value: event.value } );
+            { type: ModelPartStateChangeType.TRANSPARENCY, new_value: value } );
     }
 
     /**
