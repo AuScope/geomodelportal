@@ -66,6 +66,10 @@ export class SceneObject {
                 if (child['material'].type === 'MeshStandardMaterial') {
                     local.setMatTransparency(child['material'], transparency);
                 }
+            } else if (child.type === 'Points' && Object.prototype.hasOwnProperty.call(child, 'material')) {
+                if (child['material'].type === 'PointsMaterial') {
+                    local.setMatTransparency(child['material'], transparency);
+                }
             }
         });
     }
