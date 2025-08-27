@@ -4,7 +4,7 @@
 # NB: Run this from the 'ui' directory
 #
 # First image, build Angular app
-FROM node:22-bookworm-slim AS node
+FROM node:24-trixie-slim AS node
 
 ENV appdir=/usr/src/app
 
@@ -31,7 +31,7 @@ COPY docker/apache.htaccess ./dist/.htaccess
 RUN chmod a+r ./dist/.htaccess
 
 # Second image, install website
-FROM debian:bookworm-slim
+FROM debian:trixie-slim
 
 ENV appdir=/usr/src/app
 
