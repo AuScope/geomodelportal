@@ -12,7 +12,7 @@ pushd ..
 
 # Build docker image, assumes shell user id is a member of 'docker' group
 #docker system prune -af && docker build -t geomodels -f docker/Dockerfile .
-docker build -t geomodels -f docker/Dockerfile .
+docker build --progress=plain -t geomodels -f docker/Dockerfile .
 popd
 
 # To run locally at port 4000:

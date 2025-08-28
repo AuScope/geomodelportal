@@ -44,9 +44,8 @@ COPY --chown=www-data:www-data --from=node /usr/src/app/dist /var/www/html/
 COPY docker/000-default.conf /etc/apache2/sites-enabled/
 
 # Install things necessary for apache & python
-RUN apt-get update && apt-get upgrade -y && apt-get -y install apt-utils python3 python3-pip python3-pdm wget cmake
-RUN export PIP_BREAK_SYSTEM_PACKAGES=1 && python3 -m pip install --upgrade pip && pdm self update 
-RUN apt-get install -y apache2 apache2-dev libxml2-dev libhdf5-dev libnetcdf-dev
+RUN apt-get update && apt-get upgrade -y && apt-get -y install apt-utils python3 python3-pip python3-pdm wget cmake proj-bin
+RUN apt-get install -y apache2 apache2-dev libxml2-dev libhdf5-dev libnetcdf-dev libproj-dev
 RUN ln -s /usr/include/hdf5/serial /usr/include/hdf5/include
 RUN a2enmod rewrite && a2enmod proxy && a2enmod proxy_http && a2enmod proxy_html 
 
@@ -54,7 +53,7 @@ RUN a2enmod rewrite && a2enmod proxy && a2enmod proxy_http && a2enmod proxy_html
 COPY docker/build/pdm.lock .
 COPY docker/build/pyproject.toml .
 
-RUN eval $(pdm venv activate) && pdm --version && pdm install -L pdm.lock && pdm add --frozen-lockfile uvicorn
+RUN eval $(pdm venv activate) && pdm --version && pdm install -v -L pdm.lock && pdm add --frozen-lockfile uvicorn
 ENV HDF5_DIR=/usr/include/hdf5
 
 # Start services
