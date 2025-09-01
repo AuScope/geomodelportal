@@ -23,21 +23,6 @@ dirn=${p1#geomodels-*}
 [ ! -d geomodels/$dirn ] && wget $trim_url && tar xvfz $filn && rm $filn
 done
 
-# Fetch web assets from 'geomodels-2-3dweb' repo
-#for model in Bendigo BurraMine CentralFlinders Cobar Curnamona CurnamonaSed EastLachlan McArthurBasin MtDore NewEngland NorthFlinders NorthGawler NorthQueensland Otway Quamby RockleaDome RoseberyLyell Sandstone SthNewEngland StuartShelf Tamworth Tas WesternGawler WestLachlan Windimurra Yilgarn
-#for model in Tas
-#do
-#GZ_FILE="geomodels-$model-web-assets.tar.gz"
-## wget "https://github.com/AuScope/geomodel-2-3dweb/releases/download/PORTAL_RELEASE_20210718/$GZ_FILE"
-#done
-
-## Fetch borehole db from 'geomodels-2-3dweb' repo
-#if [ ! -f boreholes.tar.gz ]; then
-#curl -s $RELEASES_URL | jq ".assets | .[] | .browser_download_url" | grep boreholes.tar | xargs wget
-#tar xvfz boreholes.tar.gz
-#rm boreholes.tar.gz
-#fi
-
 # Fetch API files from 'geomodels-2-3dweb' repo
 if [ ! -f api.tar.gz ]; then
 curl -s $RELEASES_URL | jq ".assets | .[] | .browser_download_url" | grep api.tar | xargs wget
