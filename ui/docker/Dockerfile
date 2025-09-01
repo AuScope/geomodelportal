@@ -14,7 +14,7 @@ WORKDIR ${appdir}
 COPY package*.json ./
 
 # Install required npm packages
-RUN npm install
+RUN npm install --prod
 
 # Copy all the other files
 COPY . .
