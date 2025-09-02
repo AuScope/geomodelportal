@@ -1,15 +1,41 @@
 ## Development Notes
 
-### How to initiate
-**Note** that this project requires npm >= 10.9.2 & nodejs >= 22.17.0
+## How to initialise
+
+**Note** that this project requires npm >= 11.5 & nodejs >= 22.17.0
 
 In order to get started:
 ```bash
-$ git clone https://github.com/AuScope/geomodelportal
-$ cd geomodelportal/ui
-# To install the project's dependencies
-$ npm install
+git clone https://github.com/AuScope/geomodelportal
+cd geomodelportal/ui
+npm install
 ```
+## Docker builds
+
+### From github actions
+
+* The [docker_image.yml](.github/workflows/docker-image.yml) script will create a self-contained docker image.
+
+### From command line
+
+* Useful for development
+
+* The docker build script will use the latest release from [geomodel-2-3dweb](https://github.com/AuScope/geomodel-2-3dweb)
+
+**NB:** Insert 'sudo' if your user is not a member of docker group
+
+Build
+```bash
+cd ui/docker
+./build.sh
+```
+Run, then set browser to http://localhost:4000 or whatever applicable hostname 
+```bash
+docker run -p 4000:80 --name geomodels geomodels
+```
+
+
+## Other Notes
 
 ### Adding Model files
 The conversion process (See <https://github.com/AuScope/geomodel-2-3dweb>) produces graphics 
@@ -25,7 +51,7 @@ named after the model.
 the '_new' from the filename (e.g. becomes  'McArthurBasin.json')
 3. Edit the 'ui/src/assets/geomodels/ProviderModelInfo.json' file, adding a new entry for each new model.
 
-NB: For information on the JSON files, see [README.md](ui/src/assets/geomodels/README.md)
+**NB:** For information on the JSON files, see [README.md](ui/src/assets/geomodels/README.md)
 
 ### Adding NVCL borehole info, WMS proxy and file conversion web service
 
@@ -44,30 +70,28 @@ Make sure that the files in 'api' can be accessed by Python.
  
 
 ### Start a local dev server
+
+**Not recommended.  The docker build option is preferable**
+
 ```bash
 # To start the proxy/borehole server, run 'uwsgi' in the 'api' directory created using 'build_api_dir.sh'
 # NB: Make sure you have set the port number in "proxy.conf.json" (geomodelportal/ui/proxy.conf.json)
 # to match uwsgi's listening port
 # e.g. change "target": "http://localhost", to "target": "http://localhost:4040",
 #
-$ tar xvf *-api.tar
-$ cd api
-$ uwsgi --http :4040 --wsgi-file index.py
+tar xvf *-api.tar
+cd api
+uwsgi --http :4040 --wsgi-file webapi.py
 ```
 
 ```bash
 # Run `npm start` to start the front-end dev server.
 # Navigate to `http://localhost:4200`. It should automatically reload if you change any 
 # of the source files.
-$ npm start
+npm start
 ```
 
-### Build a production server in a docker container
-
-* The [docker_image.yml](.github/workflows/docker-image.yml) script will create a self-contained docker image.
-* It will use the latest release from [geomodel-2-3dweb](https://github.com/AuScope/geomodel-2-3dweb) repository to build the back end
-
-### Linting
+## Linting
 
 ```
 cd ui
