@@ -14,13 +14,13 @@ WORKDIR ${appdir}
 COPY package*.json ./
 
 # Install required npm packages
-RUN npm install --prod
+RUN npm install
 
 # Copy all the other files
 COPY . .
 
 # Build angular's static website files
-RUN npm run build --production
+RUN npm run build --omit=dev 
 
 # Build back-end
 COPY docker/build/geomodels/ ./dist/assets/geomodels/
