@@ -254,7 +254,7 @@
                         "icon": "aus-white-icon.png",
                         "colourClass": "ga",
                         "configFile": "NorthQueensland.json",
-                        "modelDir": "NorthQueensland",'
+                        "modelDir": "NorthQueensland",
                         "srcUrl" : "https://pid.geoscience.gov.au/dataset/ga/69862"
                     },
                     {
