@@ -1,4 +1,4 @@
-## Development Notes
+# Development Notes
 
 ## How to initialise
 
