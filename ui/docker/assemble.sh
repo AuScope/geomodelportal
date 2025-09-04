@@ -20,20 +20,18 @@ dirn=${p1#geomodels-*}
 
 [ -d geomodels/$dirn ] && echo "Found geomodels/$dirn"
 
+# Only fetch model files if folder does not exist
 [ ! -d geomodels/$dirn ] && wget $trim_url && tar xvfz $filn && rm $filn
 done
 
 # Fetch API files from 'geomodels-2-3dweb' repo
-if [ ! -f api.tar.gz ]; then
+[ -f api.tar.gz ] && rm -f api.tar.gz
 curl -s $RELEASES_URL | jq ".assets | .[] | .browser_download_url" | grep api.tar | xargs wget
-fi
 
 # Fetch the Python package state files from 'geomodels-2-3dweb' repo
-if [ ! -f pyproject.toml ]; then
+[ -f pyproject.toml ] && rm -f pyproject.toml
 curl -s $RELEASES_URL | jq ".assets | .[] | .browser_download_url" | grep pyproject.toml | xargs wget
-fi
 
-if [ ! -f pdm.lock ]; then
+[ -f pdm.lock ] && rm -f pdm.lock
 curl -s $RELEASES_URL | jq ".assets | .[] | .browser_download_url" | grep pdm.lock | xargs wget
-fi
 popd
