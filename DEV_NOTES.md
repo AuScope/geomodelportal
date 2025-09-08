@@ -81,7 +81,7 @@ Make sure that the files in 'api' can be accessed by Python.
 #
 tar xvf *-api.tar
 cd api
-uwsgi --http :4040 --wsgi-file webapi.py
+pdm run uwsgi --http :4040 --wsgi-file webapi.py
 ```
 
 ```bash
