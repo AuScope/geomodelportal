@@ -73,7 +73,7 @@
         top: 10vh;
         left: 35vw;
         width: 300px;
-        height: 300px;
+        height: 350px;
         font-size: 12px;
         padding: 0 1rem;
         background: globals.$topnav-background-color;
@@ -82,7 +82,8 @@
         opacity: 1.0;
         display: none;
         text-overflow: ellipsis;
-        overflow: hidden;
+        overflow-y: scroll;
+        scrollbar-color: #7c7c7c globals.$topnav-background-color;
     }
 
     #popupExitDiv {
