@@ -1,6 +1,6 @@
 {
             "vic": {
-                "name": "Victoria (Earth Resources)",
+                "name": "Geological Survey of Victoria",
                 "models": [
                     {
                         "name": "Otway",
@@ -23,10 +23,10 @@
                 ],
                 "icon": "vic-white-icon.png",
                 "colourClass": "vic",
-                "infoUrl": "https://resources.vic.gov.au/home"
+                "infoUrl": "https://resources.vic.gov.au/geology-exploration/geological-survey-victoria"
             },
             "wa": {
-                "name": "Western Australia (DMPE)",
+                "name": "Geological Survey of Western Australia",
                 "models": [
                     {
                         "name": "Windimurra",
@@ -49,10 +49,10 @@
                 ],
                 "icon": "wa-white-icon.png",
                 "colourClass": "wa",
-                "infoUrl": "https://www.wa.gov.au/organisation/department-of-mines-petroleum-and-exploration"
+                "infoUrl": "https://www.wa.gov.au/organisation/department-of-mines-petroleum-and-exploration/geological-survey-of-western-australia"
             },
             "sa": {
-                "name": "South Australia (Energy & Mining)",
+                "name": "Geological Survey of South Australia",
                 "models": [
                     {
                         "name": "Burra Mine",
@@ -111,10 +111,10 @@
                 ],
                 "icon": "sa-white-icon.png",
                 "colourClass": "sa",
-                "infoUrl": "https://www.energymining.sa.gov.au/industry/minerals-and-mining"
+                "infoUrl": "https://www.energymining.sa.gov.au/industry/geological-survey"
             },
             "tas": {
-                "name": "Tasmania (MRT)",
+                "name": "Geological Survey of Tasmania",
                 "models": [
                     {
                         "name": "Rosebery Lyell",
@@ -128,10 +128,10 @@
                 ],
                 "icon": "tas-white-icon.png",
                 "colourClass": "tas",
-                "infoUrl": "https://mrt.tas.gov.au/home"
+                "infoUrl": "https://mrt.tas.gov.au/contact_us/accordion/geological_survey"
             },
             "qld": {
-                "name": "Queensland (Department of Natural Resources and Mines...)",
+                "name": "Geological Survey of Queensland",
                 "models": [
                     {
                         "name": "Quamby",
@@ -154,10 +154,10 @@
                 ],
                 "icon": "qld-white-icon.png",
                 "colourClass": "qld",
-                "infoUrl": "https://nrmmrrd.qld.gov.au/"
+                "infoUrl": "https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq"
             },
             "nsw": {
-                "name": "N.S.W. (Mining, Exploration & Geoscience)",
+                "name": "Geological Survey of N.S.W.",
                 "models": [
                     {
                         "name": "Western Tamworth Belt",
@@ -225,10 +225,10 @@
                 ],
                 "icon": "nsw-white-icon.png",
                 "colourClass": "nsw",
-                "infoUrl": "https://www.resources.nsw.gov.au/"
+                "infoUrl": "https://www.resources.nsw.gov.au/geological-survey"
             },
             "nt": {
-                "name": "Northern Territory (DITT)",
+                "name": "Northern Territory Geological Survey",
                 "models": [
                     {
                         "name": "McArthur Basin",
@@ -243,7 +243,7 @@
                 ],
                 "icon": "nt-white-icon.png",
                 "colourClass": "nt",
-                "infoUrl": "https://dme.nt.gov.au/homepage"
+                "infoUrl": "https://resourcingtheterritory.nt.gov.au/northern-territory-geological-survey-ntgs"
             },
             "ga": {
                 "name": "Geoscience Australia",
@@ -281,7 +281,7 @@
                 "infoUrl": "https://ga.gov.au/"
             },
             "csiro": {
-                "name":"Commonwealth Scientific and Industrial Research Organisation (CSIRO Mineral Resources)",
+                "name":"CSIRO Mineral Resources",
                 "models": [
                     {
                         "name": "Rocklea Dome",
@@ -290,15 +290,15 @@
                         "colourClass": "csiro",
                         "configFile": "Rocklea.json",
                         "modelDir": "Rocklea",
-                        "srcUrl": ""
+                        "srcUrl": "https://doi.org/10.25919/5ed83bf55be6a"
                     } 
                 ],
                 "icon": "aus-white-icon.png",
                 "colourClass": "csiro",
-                "infoUrl": "https://doi.org/10.25919/5ed83bf55be6a"
+                "infoUrl": "https://www.csiro.au/en/about/people/business-units/mineral-resources"
             },
             "nci": {
-                "name":"National Computational Infrastructure (NCI) & G. Heinson (Adelaide Uni.)",
+                "name":"NCI & G. Heinson et al. (Adelaide Uni.)",
                 "models": [
                     {
                         "name": "Stuart Shelf",
