@@ -119,9 +119,9 @@
                               }
                               <!-- Transparency Controls -->
                               <a class="list-group-item" title="{{HELP_TEXT.partTransp.title}}">
-                                <span class="span-part-controls">Transparency&nbsp;{{transpSliderValue}}
+                                <span class="span-part-controls">Transparency&nbsp;{{transpSliderValue.value}}
                                   <mat-slider min="0.0" max="1.0" step="0.1">
-                                    <input matSliderThumb [(ngModel)]="transpSliderValue" (valueChange)="changeTransparency($event, groupName, subGroupObj.model_url)"/>
+                                    <input matSliderThumb value="1.0" (valueChange)="changeTransparency($event, groupName, subGroupObj.model_url)" #transpSliderValue/>
                                     <!-- Used for sidebar controls tour -->
                                     @if (subGroupObj.type === 'GLTFObject') {
                                       <div

@@ -45,9 +45,6 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     private pushRightClass: 'push-right';
     private localSeqNum = 0;
 
-    // Transparency slider value must be initialised to 1.0
-    public transpSliderValue = 1.0;
-
     // Name of model
     public title = '';
 
