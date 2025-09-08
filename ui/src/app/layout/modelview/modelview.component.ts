@@ -1134,6 +1134,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                         const objUserData = intersects[closest].object.userData;
                         const point: [number, number, number] = [ objIntPt.x, objIntPt.y, objIntPt.z];
 
+
                         // Tell Google Analytics
                         gtag('event', 'view_item', {
                             'event_category' : 'model_info_click',
@@ -1236,33 +1237,40 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                         }
 
                         // If got here then, could not find it in config or volumes, so must ask server
-                        const params = { 'service': '3DPS',
-                            'version': '1.0',
-                            'request': 'GetFeatureInfoByObjectId',
-                            'format': 'application/json',
-                            'layers': 'boreholes',
-                            'objectId': objName
-                        };
-                        const modelName = local.modelUrlPath;
-                        local.httpService.get('./api/' + modelName + '?' + local.modelInfoService.buildURL(params)).subscribe(
-                            data => {
-                                const dataResult = data as string [];
-                                const attrList = dataResult['featureInfos'][0]['featureAttributeList'];
-                                const queryResult = {};
-                                for (const keyval of attrList) {
-                                    queryResult[keyval['name']] = keyval['value'];
-                                }
-                                if  (Object.prototype.hasOwnProperty.call(queryResult, 'title')) {
-                                    if (local.popupBoxDiv) {
-                                        makePopup(local.ngRenderer, local.popupBoxDiv, event, queryResult, point);
+                        // 
+			// Did we click on a borehole?
+			if (objName?.length > 0) {
+			    // Remove the '_0' at the end of 'objName'
+			    let boreholeName = objName.slice(0, -2);
+                            const params = { 'service': '3DPS',
+                                'version': '1.0',
+                                'request': 'GetFeatureInfoByObjectId',
+                                'format': 'application/json',
+                                'layers': 'boreholes',
+                                'objectId': boreholeName
+                            };
+                            const modelName = local.modelUrlPath;
+                            local.httpService.get('./api/' + modelName + '?' + local.modelInfoService.buildURL(params)).subscribe(
+                                data => {
+                                    const dataResult = data as string [];
+                                    const attrList = dataResult['featureInfos'][0]['featureAttributeList'];
+                                    const queryResult = {};
+                                    for (const keyval of attrList) {
+                                        queryResult[keyval['name']] = keyval['value'];
                                     }
+                                    if  (Object.prototype.hasOwnProperty.call(queryResult, 'title')) {
+                                        if (local.popupBoxDiv) {
+                                            makePopup(local.ngRenderer, local.popupBoxDiv, event, queryResult, point);
+                                        }
+                                    }
+                                },
+                                (err: HttpErrorResponse) => {
+                                    console.error('Cannot load borehole list', err);
                                 }
-                            },
-                            (err: HttpErrorResponse) => {
-                                console.error('Cannot load borehole list', err);
-                            }
-                        );
-                    }
+                            );
+			} // if (boreholeName.length = 0)
+
+                    } // if (closest < intersects.length)
                 }
         });
 
