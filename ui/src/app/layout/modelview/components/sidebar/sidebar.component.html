@@ -100,7 +100,7 @@
                             <!-- Model Part Control Panel -->
                             <div id="controlsDiv" [style.display]="getDisplayControls(groupName, subGroupObj.model_url)">
                               <!-- Height Offset Controls -->
-                              @if (modelPartState[groupName][subGroupObj.model_url].heightOffset >= 0 && subGroupObj.type !== '3DVolume') {
+                              @if (modelPartState[groupName][subGroupObj.model_url].heightOffset >= 0 && subGroupObj.type !== '3DVolume' && groupName !== "NVCL Boreholes") {
                                 <a class="list-group-item" title="{{HELP_TEXT.partOffset.title}}">
                                   <span class="span-part-controls">Height Offset&nbsp;{{heightOffsetSlider.value}}
                                     <mat-slider min="0" max="50000" step="1000">
@@ -134,7 +134,7 @@
                                 </span>
                               </a>
                               <!-- Height Scale Controls -->
-                              @if (subGroupObj.type === 'GLTFObject') {
+                              @if (subGroupObj.type === 'GLTFObject' && groupName !== "NVCL Boreholes") {
                                 <a class="list-group-item" title="{{HELP_TEXT.partHeightScale.title}}">
                                   <span class="span-part-controls">Height Scale&nbsp;{{heightScaleSlider.value}}
                                     <mat-slider min="1.0" max="5.0" step="0.1">
