@@ -14,7 +14,14 @@ npm install
 
 ### From github actions
 
-* The [docker_image.yml](.github/workflows/docker-image.yml) script will create a self-contained docker image.
+* The [docker_image.yml](.github/workflows/docker-image.yml) script creates self-contained docker images and push them to github's docker repository
+* You can pull an image down and run it:
+ 
+```bash
+docker pull ghcr.io/auscope/geomodelportal:20250910
+docker run -p 4000:80 ghcr.io/auscope/geomodelportal:20250910
+```
+* Then direct your browser to `http://my-hostname:4000`
 
 ### From command line
 
@@ -97,3 +104,9 @@ npm start
 cd ui
 npx eslint ./src
 ```
+
+## Making a release
+
+The "Build docker image and push to github repo" github action will build a docker image using the current tip of the 'main' branch and the latest release from 'https://github.com/AuScope/geomodel-2-3dweb' repository then push it to github's docker repository.
+The github action is manually triggered and requires a docker image tag as input.
+
