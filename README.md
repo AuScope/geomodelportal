@@ -13,12 +13,15 @@ Sources include:
 * Geoscience Australia
 * State Geological Surveys: Tasmania, Victoria, New South Wales, Queensland, Northern Territory, South Australia and West Australia
 
-Features:
+## Features
+
 * 3D virtual sphere model view controller
 * Import GOCAD TSURF files into the scene via drag and drop
 * Export model parts to file
 * Displays NVCL boreholes (https://www.auscope.org.au/nvcl) and their uTSAS_Grp1 mineralogy for some models
 * 3D Volumes displayed as movable X,Y,Z slices
+
+## Technology Stack
 
 It is broadly based on these:
 
