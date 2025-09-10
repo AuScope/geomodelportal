@@ -1,11 +1,24 @@
-# AuScope Geoscience Models Portal
+# AuScope Geoscience 3D Models Portal
 
 
 ## Purpose
 
 **You can see what it looks like here: https://geomodels.auscope.org.au**
 
-This project is a website that is designed to display geoscience models and their associated information in 3d.
+This project is a website that is designed to display geoscience models from various Australian sources and their associated information in 3d.
+
+Sources include:
+* CSIRO
+* NCI/Adelaide University
+* Geoscience Australia
+* State Geological Surveys: Tasmania, Victoria, New South Wales, Queensland, Northern Territory, South Australia and West Australia
+
+Features:
+* 3D virtual sphere model view controller
+* Import GOCAD TSURF files into the scene via drag and drop
+* Export model parts to file
+* Displays NVCL boreholes (https://www.auscope.org.au/nvcl) and their uTSAS_Grp1 mineralogy for some models
+* 3D Volumes displayed as movable X,Y,Z slices
 
 It is broadly based on these:
 
