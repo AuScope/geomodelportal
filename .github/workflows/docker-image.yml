@@ -1,7 +1,12 @@
 name: Build docker image and push to github repo
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: 'Docker image tag'
+        type: string
+        required: true
 
 env:
   REGISTRY: ghcr.io
@@ -34,9 +39,12 @@ jobs:
 
     - name: Extract metadata (tags, labels) for Docker
       id: meta
-      uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+      uses: docker/metadata-action@v5
       with:
-        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+        images: |
+          ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+        tags: |
+          type=raw,value=${{ inputs.image_tag }} 
         
     - name: Build and push Docker image
       id: push
