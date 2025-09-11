@@ -18,7 +18,11 @@ Sources include:
 * 3D virtual sphere model view controller
 * Import GOCAD TSURF files into the scene via drag and drop
 * Export model parts to file
-* Displays NVCL boreholes (https://www.auscope.org.au/nvcl) and their uTSAS_Grp1 mineralogy for some models
+* Displays NVCL boreholes (https://www.auscope.org.au/nvcl) and their uTSAS_Grp1 mineralogy for some models:
+    * Windimurra (WA)
+    * Sandstone (WA)
+    * Rocklea Dome (CSIRO)
+    * Yilgarn (GA)     
 * 3D Volumes displayed as movable X,Y,Z slices
 
 ## Technology Stack
