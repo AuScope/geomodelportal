@@ -28,6 +28,10 @@ done
 [ -f api.tar.gz ] && rm -f api.tar.gz
 curl -s $RELEASES_URL | jq ".assets | .[] | .browser_download_url" | grep api.tar | xargs wget
 
+# Fetch NVCL Boreholes from 'geomodels-2-3dweb' repo
+[ -f boreholes.tar.gz ] && rm -f boreholes.tar.gz
+curl -s $RELEASES_URL | jq ".assets | .[] | .browser_download_url" | grep boreholes.tar | xargs wget
+
 # Fetch the Python package state files from 'geomodels-2-3dweb' repo
 [ -f pyproject.toml ] && rm -f pyproject.toml
 curl -s $RELEASES_URL | jq ".assets | .[] | .browser_download_url" | grep pyproject.toml | xargs wget

@@ -26,6 +26,8 @@ RUN npm run build --omit=dev
 COPY docker/build/geomodels/ ./dist/assets/geomodels/
 COPY docker/build/api.tar.gz .
 RUN tar xvf api.tar.gz -C ./dist
+COPY docker/build/boreholes.tar.gz .
+RUN tar xvf boreholes.tar.gz -C ./dist/assets/geomodels
 COPY src/assets/geomodels/ProviderModelInfo.json ./dist/api/input
 COPY docker/apache.htaccess ./dist/.htaccess
 RUN chmod a+r ./dist/.htaccess
