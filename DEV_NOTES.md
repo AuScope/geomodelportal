@@ -109,4 +109,7 @@ npx eslint ./src
 
 The "Build docker image and push to github repo" github action will build a docker image using the current tip of the 'main' branch and the latest release from 'https://github.com/AuScope/geomodel-2-3dweb' repository then push it to github's docker repository.
 The github action is manually triggered and requires a docker image tag as input.
+The image tag is usually set to the current date in YYYYMMDD format e.g. "20260218"
+This docker image will appear in github's public docker registry where it can be deployed in the cloud.
+
 
