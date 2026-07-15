@@ -55,5 +55,5 @@ SKUA/GOCAD software from the [Paradigm Academic Software Program](http://www.pdg
 
 Please cite as:
 
-Fazio, Vincent; Woodcock, Robert (2024): AuScope 3D Geological Models Portal. v1. CSIRO. Service Collection. http://hdl.handle.net/102.100.100/609085?index=1
+Fazio, Vincent; Woodcock, Robert; & Peters, Chris (2026): AuScope 3D Geological Models Portal. v4. CSIRO. Service Collection. http://hdl.handle.net/102.100.100/609085?index=1
 
