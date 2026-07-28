@@ -73,8 +73,8 @@ export class ModelInfoService {
     // A promise to provider inform data and initialise
     private initPromise: Promise<any>;
 
-    // A promise to fetch model data
-    private modelPromise: Promise<any>;
+    // A promise to fetch model data, keyed by model URL
+    private modelPromises: Record<string, Promise<any>> = {};
 
     // Used to fetch a list of borehole ids
     private boreholeIdList: string[] = [];
@@ -245,14 +245,14 @@ export class ModelInfoService {
             }
         }
         if (model !== undefined) {
-            if (!this.modelPromise) {
-                this.modelPromise = new Promise(function(resolve, reject) {
+            if (!this.modelPromises[modelKey]) {
+                this.modelPromises[modelKey] = new Promise(function(resolve, reject) {
                     local.httpService.get('./assets/geomodels/' + model['configFile']).subscribe(
                         data => {
-                            // const modelInfo = data as string [];
-                            local.modelCache[modelKey] = data;
+                            const modelResult = [data, model['modelDir'], sourceOrgName];
+                            local.modelCache[modelKey] = modelResult;
                             local.parseModel(data);
-                            resolve([data, model['modelDir'], sourceOrgName]);
+                            resolve(modelResult);
                         },
                         (err: HttpErrorResponse) => {
                             console.log('Cannot load model JSON file', err);
@@ -261,7 +261,7 @@ export class ModelInfoService {
                     );
                 });
             }
-            return this.modelPromise;
+            return this.modelPromises[modelKey];
         }
         return new Promise(function(_resolve, reject) {
             console.log('Model not found in config file');

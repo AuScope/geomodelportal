@@ -674,7 +674,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * Destroys objects and unsubscribes to ensure no memory leaks
      */
     public ngOnDestroy() {
-        this.compSubscr.unsubscribe();
-        this.helpSubscr.unsubscribe();
+        this.compSubscr?.unsubscribe();
+        this.helpSubscr?.unsubscribe();
     }
 }

@@ -1,5 +1,5 @@
-<div class="card text-white bg-{{bgClass}}">
-  <div class="card-header">
+<div class="card h-100 d-flex flex-column text-white bg-{{bgClass}}">
+  <div class="card-header h-100">
     <div class="row">
       <div class="col col-sm-2">
         <img class="thumb-img" src="assets/images/{{icon}}" alt="model-icon"/>
@@ -8,10 +8,10 @@
         <div class="d-block">&nbsp;{{label}}</div>
       </div>
     </div>
-    @if (modelInfoLink!=='') {
-      <div role="link" tabindex="0" class="row" (click)='openModelInfoLink()' (keyup.enter)='openModelInfoLink()'>
+    @if (modelInfoLink !== '') {
+      <div role="link" tabindex="0" class="row" (click)="openModelInfoLink()" (keyup.enter)="openModelInfoLink()">
         <div class="col col-xs-6">
-          <span class="float-right info-link"><a>Model Info & Downloads&nbsp;</a><i class="fa fa-sm fa-external-link" aria-hidden="true"></i></span>
+          <span class="float-right info-link app-link"><a>Model Info & Downloads&nbsp;</a><i class="fa fa-sm fa-external-link" aria-hidden="true"></i></span>
         </div>
       </div>
     }
@@ -21,8 +21,10 @@
       {{modelInfoMessage}}
     </div>
   }
-  <div role="button" tabindex="0" class="card-footer text-end" (click)='navigateToModel()' (keyup.enter)='navigateToModel()'>
-    View Model
-    <i class="fa fa-2x fa-arrow-circle-right" aria-hidden="true"></i>
+  <div class="card-footer text-end mt-auto">
+    <div role="button" tabindex="0" class="app-link" (click)='navigateToModel()' (keyup.enter)='navigateToModel()'>
+      View Model&nbsp;
+      <i class="fa fa-2x fa-arrow-circle-right" aria-hidden="true"></i>
+    </div>
   </div>
 </div>

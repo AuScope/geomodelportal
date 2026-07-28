@@ -1454,7 +1454,40 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * Destroys objects and unsubscribes to ensure no memory leaks
      */
     public ngOnDestroy() {
-        this.helpSubscr.unsubscribe();
+        if (this.helpSubscr) {
+            this.helpSubscr.unsubscribe();
+        }
+
+        if (this.dragTimer) {
+            clearInterval(this.dragTimer);
+            this.dragTimer = null;
+        }
+
+        if (this.trackBallControls) {
+            this.trackBallControls.dispose?.();
+            this.trackBallControls = null;
+        }
+
+        if (this.view) {
+            this.view.dispose?.();
+            this.view = null;
+        }
+
+        if (this.scene) {
+            this.scene.traverse?.((object: any) => {
+                if (object.geometry) {
+                    object.geometry.dispose?.();
+                }
+                if (object.material) {
+                    if (Array.isArray(object.material)) {
+                        object.material.forEach((material: any) => material.dispose?.());
+                    } else {
+                        object.material.dispose?.();
+                    }
+                }
+            });
+            this.scene = null;
+        }
     }
 
 }
