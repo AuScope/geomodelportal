@@ -192,7 +192,6 @@ export class ModelInfoService {
         }
     }
 
-
     /**
      * Add a group to the model state
      * @param groupName name of group to be added
@@ -200,7 +199,6 @@ export class ModelInfoService {
     public addGroup(groupName: string) {
         this.modelPartState[groupName] = {};
     }
-
 
     /**
      * Add a model part to model state
@@ -213,6 +211,14 @@ export class ModelInfoService {
                               volSlice: [0.0, 0.0, 0.0], heightScale: 1.0 };
     }
 
+    /**
+     * Initialises the model state with the provided model information
+     * @param modelInfo model information used to initialise the model state
+     */
+    private initialiseModelState(modelInfo: any) {
+        this.modelPartState = {};
+        this.parseModel(modelInfo);
+    }
 
     /**
      * Retrieves all the model information by retrieving the model file from network
@@ -223,7 +229,9 @@ export class ModelInfoService {
     public async getModelInfo(modelKey: string): Promise<any> {
         const local = this;
         if (Object.prototype.hasOwnProperty.call(this.modelCache, modelKey)) {
-            return new Promise(resolve => resolve(this.modelCache[modelKey]));
+            const cachedModel = this.modelCache[modelKey];
+            this.initialiseModelState(cachedModel[0]);
+            return new Promise(resolve => resolve(cachedModel));
         }
         if (!this.initialised) {
             await this.initialise();
@@ -251,7 +259,7 @@ export class ModelInfoService {
                         data => {
                             const modelResult = [data, model['modelDir'], sourceOrgName];
                             local.modelCache[modelKey] = modelResult;
-                            local.parseModel(data);
+                            local.initialiseModelState(data);
                             resolve(modelResult);
                         },
                         (err: HttpErrorResponse) => {
@@ -330,7 +338,6 @@ export class ModelInfoService {
         }
     }
 
-
     /**
      * Zoom the view into a certain part of the model.
      * Called from the sidebar when user wants a closer look.
@@ -340,7 +347,6 @@ export class ModelInfoService {
     public zoomToPart(groupName: string, partId: string) {
         this.modelControlEventSub.next({ type: ModelControlEventEnum.MOVE_VIEW, new_value: [groupName, partId]});
     }
-
 
     /**
      * Indicate that something has changed for all parts within a group
@@ -355,7 +361,6 @@ export class ModelInfoService {
             }
         }
     }
-
 
     /**
      * Indicate that something has changed
