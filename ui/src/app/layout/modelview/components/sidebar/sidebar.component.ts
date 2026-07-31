@@ -40,10 +40,11 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     private sideBarService: SidebarService;
     private helpinfoService: HelpinfoService;
 
-    public isActive = false;
-    private showMenu: string | null = '';
+    public isActive = false;    
     private pushRightClass: 'push-right';
     private localSeqNum = 0;
+
+    public showMenu: string | null = '';
 
     // Name of model
     public title = '';

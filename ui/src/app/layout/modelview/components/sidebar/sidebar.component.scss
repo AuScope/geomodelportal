@@ -134,9 +134,6 @@
         }
     }
 }
-i.fa.fa-lg.fa-eye, i.fa.fa-lg.fa-compress {
-    float: right;
-}
 @media screen and (max-width: 992px) {
     .sidebar {
         top: 54px;
@@ -167,6 +164,27 @@ i.fa.fa-lg.fa-eye, i.fa.fa-lg.fa-compress {
     padding: 0px;
 }
 
+.group-header {
+    display: flex !important;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0 0.8rem;
+}
+
+.group-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.group-title {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .part-controls {
     vertical-align: 10%;
     padding-left: 10px;
@@ -187,13 +205,36 @@ i.fa.fa-lg.fa-eye, i.fa.fa-lg.fa-compress {
 
 .ul-part-name {
     font-size: 12px;
-    padding-left: 10px;
+    padding-left: 20px;
     margin-bottom: 4px;
 }
 
 .a-part-name {
-    padding: 0 !important;
-    height: 1.25rem !important;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px !important;
+    padding-left: 1px 6px !important;
+
+        .part-left {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            min-width: 0;
+        }
+
+        .part-label {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .part-actions {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex-shrink: 0;
+        }
 }
 
 .popover-header {
@@ -223,15 +264,12 @@ i.fa.fa-lg.fa-eye, i.fa.fa-lg.fa-compress {
 
 .all-tick {
     line-height: 8px;
-    margin-bottom: 0px;
-    margin-right: 6px;
-    text-align: right;
+    margin: 0.8rem 0.3rem;
 }
 
 h2 {
     margin-bottom: -4px !important;
 }
-
 
 /* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-slider-horizontal {
