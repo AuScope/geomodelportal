@@ -34,13 +34,7 @@ export class HelpinfoService {
               found = true;
           }
       }
-      // If you're the first to register
-      if (found) {
-          return this.popoverSubObj.asObservable();
-      // return 'null' if we're not the first to register
-      } else {
-          return null;
-      }
+      return this.popoverSubObj.asObservable();
   }
 
   /**

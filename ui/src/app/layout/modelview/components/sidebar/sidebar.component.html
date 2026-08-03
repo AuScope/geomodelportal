@@ -55,12 +55,12 @@
                               <div class="part-left">
                                 <!-- Model Part Visibility Checkbox -->
                                 <input (click)="checkBoxClick(groupName, subGroupObj.model_url, !modelPartState[groupName][subGroupObj.model_url].displayed)"
-                                    [checked]="modelPartState[groupName][subGroupObj.model_url].displayed" class="vis-toggle" type="checkbox"
-                                    title="{{HELP_TEXT.partTick.title}}"/>
+                                  [checked]="modelPartState[groupName][subGroupObj.model_url].displayed" class="vis-toggle" type="checkbox"
+                                  title="{{HELP_TEXT.partTick.title}}"/>
                                 @if (subGroupObj.type === 'GLTFObject') {
-                                <div class='part-tick-popup' ngbPopover="{{HELP_TEXT.partTick.desc}}"
+                                  <div class='part-tick-popup' ngbPopover="{{HELP_TEXT.partTick.desc}}"
                                     popoverTitle="{{HELP_TEXT.partTick.title}}" placement="bottom" #part_tick_popover="ngbPopover" triggers="manual">
-                                </div>
+                                  </div>
                                 }
                                 <span class="part-label" title="{{subGroupObj.display_name}}">{{subGroupObj.display_name}}</span>                              
                               </div>
@@ -71,25 +71,25 @@
                                     aria-hidden="true" (click)="toggleControls(groupName, subGroupObj.model_url)" title="{{HELP_TEXT.partConfigToggle.title}}">
                                     @if (subGroupObj.type === 'GLTFObject') {
                                     <div ngbPopover="{{HELP_TEXT.partConfigToggle.desc}}"
-                                        popoverTitle="{{HELP_TEXT.partConfigToggle.title}}" placement="bottom" #part_config_popover="ngbPopover" triggers="manual">
+                                      popoverTitle="{{HELP_TEXT.partConfigToggle.title}}" placement="bottom" #part_config_popover="ngbPopover" triggers="manual">
                                     </div>
                                     }
                                 </i>
                                 <!-- Download Model Part -->
                                 @if (subGroupObj.type === 'GLTFObject' && subGroupObj.src_filename !== undefined) {
                                     <i class="fa fa-download"
-                                    (click)="downloadPart(groupName, subGroupObj.src_filename)"
-                                    ngbPopover="{{HELP_TEXT.partDownload.desc}}"
-                                    popoverTitle="{{HELP_TEXT.partDownload.title}}"
-                                    placement="bottom" #part_download_popover="ngbPopover"
-                                    triggers="manual" title="{{HELP_TEXT.partDownload.title}}" aria-hidden="true">
+                                      (click)="downloadPart(groupName, subGroupObj.src_filename)"
+                                      ngbPopover="{{HELP_TEXT.partDownload.desc}}"
+                                      popoverTitle="{{HELP_TEXT.partDownload.title}}"
+                                      placement="bottom" #part_download_popover="ngbPopover"
+                                      triggers="manual" title="{{HELP_TEXT.partDownload.title}}" aria-hidden="true">
                                     </i>
                                 }
                                 <!-- Zoom to Model Part -->
                                 @if (subGroupObj.type === 'GLTFObject') {
                                     <i class="fa fa-lg fa-compress" (click)="zoomToPart(groupName, subGroupObj.model_url)"
-                                    ngbPopover="{{HELP_TEXT.partZoom.desc}}"  popoverTitle="{{HELP_TEXT.partZoom.title}}" placement="left" #part_zoom_popover="ngbPopover"
-                                    triggers="manual" title="{{HELP_TEXT.partZoom.title}}" aria-hidden="true">
+                                      ngbPopover="{{HELP_TEXT.partZoom.desc}}"  popoverTitle="{{HELP_TEXT.partZoom.title}}" placement="left" #part_zoom_popover="ngbPopover"
+                                      triggers="manual" title="{{HELP_TEXT.partZoom.title}}" aria-hidden="true">
                                     </i>
                                 }
                                 <!-- Model Part Reveal -->
@@ -97,9 +97,9 @@
                                     (mouseenter)="revealPart(groupName, subGroupObj.model_url, true)" (mouseleave)="revealPart(groupName, subGroupObj.model_url, false)"
                                     aria-hidden="true" title="{{HELP_TEXT.partEyeball.title}}">
                                     @if (subGroupObj.type === 'GLTFObject') {
-                                    <div
+                                      <div
                                         ngbPopover="{{HELP_TEXT.partEyeball.desc}}" popoverTitle="{{HELP_TEXT.partEyeball.title}}" placement="left" #part_eyeball_popover="ngbPopover" triggers="manual">
-                                    </div>
+                                      </div>
                                     }
                                 </i>
                               </div>
