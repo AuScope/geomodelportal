@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { environment } from '../../../../environments/environment';
+import { Router } from '@angular/router';
 
 /**
  * Used to create a set of card on the screen which user can click on to select
@@ -20,6 +21,8 @@ export class ProviderCardComponent {
     @Input() prePath = '';
     @Input() infoLink = '';
 
+    router = inject(Router);
+
     constructor() {
         // If this website sits in a subdirectory of web server's 'document root' directory
         if (environment.usePrePath) {
@@ -34,7 +37,7 @@ export class ProviderCardComponent {
      */
     public navigateToProvider(modelCount: number) {
         if (modelCount > 0) {
-            window.location.assign(this.prePath + '/provider/' + this.providerPath);
+            this.router.navigate([this.prePath + '/provider/' + this.providerPath]);
         }
     }
 

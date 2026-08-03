@@ -7,7 +7,7 @@
         <ul class="navbar-nav">
             @if (this.provider === "provider") {
                 <li class="nav-item">
-                    <a class="nav-link active" onclick="history.back()">
+                    <a class="nav-link active" href="javascript:void(0)" (click)="navigateToProvider($event)">
                         <i class="fa fa-arrow-left" aria-hidden="true"></i>
                         Model Selection
                     </a>
@@ -15,7 +15,7 @@
             }
 
             <li class="nav-item">
-                <a class="nav-link active" href="{{homePath}}">
+                <a class="nav-link active" href="javascript:void(0)" (click)="navigateToHome($event)">
                     <i class="fa fa-home" aria-hidden="true"></i>
                     &nbsp;Home
                 </a>
@@ -27,8 +27,6 @@
                     AuScope Tools
                 </a>
             </li>
-
-
 
             <li class="nav-item">
                 <a class="nav-link active" href="mailto:cg-admin@csiro.au?Subject=Auscope-geomodel-portal"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;Contact Us</a>

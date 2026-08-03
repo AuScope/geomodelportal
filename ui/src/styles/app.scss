@@ -37,3 +37,29 @@
    background-color: #00CCFF!important;
 }
 
+.title-text {
+    margin-left: 1rem;
+    color: #282572;
+}
+
+/* app-link are right-aligned, inline-app-link are left aligned */
+.app-link,
+.app-link-inline {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 1rem;
+  padding: 2px 6px;
+  transition:
+    background-color 0.15s ease,
+}
+
+.app-link:hover,
+.app-link-inline:hover {
+  background-color: rgb(255 255 255 / 15%);
+}
+
+.app-link:focus,
+.app-link-inline:focus {
+  outline: none;
+}

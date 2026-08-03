@@ -40,10 +40,11 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     private sideBarService: SidebarService;
     private helpinfoService: HelpinfoService;
 
-    public isActive = false;
-    private showMenu: string | null = '';
+    public isActive = false;    
     private pushRightClass: 'push-right';
     private localSeqNum = 0;
+
+    public showMenu: string | null = '';
 
     // Name of model
     public title = '';
@@ -674,7 +675,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * Destroys objects and unsubscribes to ensure no memory leaks
      */
     public ngOnDestroy() {
-        this.compSubscr.unsubscribe();
-        this.helpSubscr.unsubscribe();
+        this.compSubscr?.unsubscribe();
+        this.helpSubscr?.unsubscribe();
     }
 }

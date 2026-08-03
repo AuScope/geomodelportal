@@ -73,8 +73,8 @@ export class ModelInfoService {
     // A promise to provider inform data and initialise
     private initPromise: Promise<any>;
 
-    // A promise to fetch model data
-    private modelPromise: Promise<any>;
+    // A promise to fetch model data, keyed by model URL
+    private modelPromises: Record<string, Promise<any>> = {};
 
     // Used to fetch a list of borehole ids
     private boreholeIdList: string[] = [];
@@ -192,7 +192,6 @@ export class ModelInfoService {
         }
     }
 
-
     /**
      * Add a group to the model state
      * @param groupName name of group to be added
@@ -200,7 +199,6 @@ export class ModelInfoService {
     public addGroup(groupName: string) {
         this.modelPartState[groupName] = {};
     }
-
 
     /**
      * Add a model part to model state
@@ -213,6 +211,14 @@ export class ModelInfoService {
                               volSlice: [0.0, 0.0, 0.0], heightScale: 1.0 };
     }
 
+    /**
+     * Initialises the model state with the provided model information
+     * @param modelInfo model information used to initialise the model state
+     */
+    private initialiseModelState(modelInfo: any) {
+        this.modelPartState = {};
+        this.parseModel(modelInfo);
+    }
 
     /**
      * Retrieves all the model information by retrieving the model file from network
@@ -223,7 +229,9 @@ export class ModelInfoService {
     public async getModelInfo(modelKey: string): Promise<any> {
         const local = this;
         if (Object.prototype.hasOwnProperty.call(this.modelCache, modelKey)) {
-            return new Promise(resolve => resolve(this.modelCache[modelKey]));
+            const cachedModel = this.modelCache[modelKey];
+            this.initialiseModelState(cachedModel[0]);
+            return new Promise(resolve => resolve(cachedModel));
         }
         if (!this.initialised) {
             await this.initialise();
@@ -245,14 +253,14 @@ export class ModelInfoService {
             }
         }
         if (model !== undefined) {
-            if (!this.modelPromise) {
-                this.modelPromise = new Promise(function(resolve, reject) {
+            if (!this.modelPromises[modelKey]) {
+                this.modelPromises[modelKey] = new Promise(function(resolve, reject) {
                     local.httpService.get('./assets/geomodels/' + model['configFile']).subscribe(
                         data => {
-                            // const modelInfo = data as string [];
-                            local.modelCache[modelKey] = data;
-                            local.parseModel(data);
-                            resolve([data, model['modelDir'], sourceOrgName]);
+                            const modelResult = [data, model['modelDir'], sourceOrgName];
+                            local.modelCache[modelKey] = modelResult;
+                            local.initialiseModelState(data);
+                            resolve(modelResult);
                         },
                         (err: HttpErrorResponse) => {
                             console.log('Cannot load model JSON file', err);
@@ -261,7 +269,7 @@ export class ModelInfoService {
                     );
                 });
             }
-            return this.modelPromise;
+            return this.modelPromises[modelKey];
         }
         return new Promise(function(_resolve, reject) {
             console.log('Model not found in config file');
@@ -330,7 +338,6 @@ export class ModelInfoService {
         }
     }
 
-
     /**
      * Zoom the view into a certain part of the model.
      * Called from the sidebar when user wants a closer look.
@@ -340,7 +347,6 @@ export class ModelInfoService {
     public zoomToPart(groupName: string, partId: string) {
         this.modelControlEventSub.next({ type: ModelControlEventEnum.MOVE_VIEW, new_value: [groupName, partId]});
     }
-
 
     /**
      * Indicate that something has changed for all parts within a group
@@ -355,7 +361,6 @@ export class ModelInfoService {
             }
         }
     }
-
 
     /**
      * Indicate that something has changed
