@@ -5,7 +5,7 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "experimentalDecorators": true,
     "target": "es2022",
     "typeRoots": [
@@ -15,7 +15,7 @@
       "es2017",
       "dom"
     ],
-    "module": "es2020",
+    "module": "preserve",
     "baseUrl": "./"
   }
 }

@@ -1,4 +1,4 @@
-import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { enableProdMode, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 
 import { createTranslateLoader } from './app/app.module';
 import { environment } from './environments/environment';
@@ -20,7 +20,7 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
     providers: [
-        importProvidersFrom(CommonModule, BrowserModule, TranslateModule.forRoot({
+        provideZoneChangeDetection(),importProvidersFrom(CommonModule, BrowserModule, TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
                 useFactory: createTranslateLoader,

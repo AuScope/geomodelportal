@@ -118,7 +118,7 @@ export class HeaderComponent implements OnInit {
      * Detects if in the models page and previous page was a provider
      */
     public detectProvider() {
-        const navigationState = (this.router.getCurrentNavigation()?.extras.state ?? window.history.state) as { fromProvider?: boolean; providerPath?: string } | undefined;
+        const navigationState = (this.router.currentNavigation()?.extras.state ?? window.history.state) as { fromProvider?: boolean; providerPath?: string } | undefined;
         const currentPath = this.normalizePath(this.router.url || window.location.pathname);
         const referrerPath = document.referrer ? this.normalizePath(new URL(document.referrer).pathname) : '';
 
