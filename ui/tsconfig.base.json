@@ -1,13 +1,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "downlevelIteration": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "bundler",
     "experimentalDecorators": true,
     "target": "es2022",
+    "allowJs": true,
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -16,6 +16,5 @@
       "dom"
     ],
     "module": "preserve",
-    "baseUrl": "./"
   }
 }

@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 // Most web servers & browsers will compress & decompress files if set up correctly,
 // but for the moment this is required.
-import { Zlib } from 'zlibjs/bin/gunzip.min.js';
+import { ungzip } from 'pako';
+//import 'zlibjs/bin/gunzip.min.js';
 
 // Import itowns library
 // Note: In ThreeJS, buffer geometry ids are created by incrementing a counter which is local to the library.
@@ -47,15 +48,15 @@ export class VolView {
     dataType: DataType = DataType.INT_16;
 
     // These arrays are used to view the data in different formats, using 'ab'  (below) as source
-    uint32View: Uint32Array;
-    uint8View: Uint8Array;
-    dataView: DataView;
+    uint32View!: Uint32Array;
+    uint8View!: Uint8Array;
+    dataView!: DataView;
 
     // Stores the data from within the volume
-    ab: ArrayBuffer;
+    ab!: ArrayBuffer;
 
     // ThreeJS scene object for the wireframe around the volume
-    wireFrObj: ITOWNS.THREE.Object3D = null;
+    wireFrObj: ITOWNS.THREE.Object3D | null = null;
 
     // Min and max values, must be supplied when no colour lookup table is supplied
     maxVal = 0;
@@ -77,7 +78,7 @@ export class VolviewService {
      * @param volDataObj JSON object taken from model config file
      * @param dataType type of data that in within the volume
      */
-    public makeVolView(volDataObj: object, dataType: DataType): VolView {
+    public makeVolView(volDataObj: any, dataType: DataType): VolView {
         const dims = volDataObj['dataDims'];
         const volView = new VolView();
         if (dataType === DataType.BIT_MASK) {
@@ -122,7 +123,7 @@ export class VolviewService {
      * @param val integer to be converted to float
      * @returns floating point number
      */
-    public int_to_float32(val) {
+    public int_to_float32(val: number): number {
         const sign = (val & 0x80000000) >> 31;
         const exp = (val & 0x7F800000) >> 23;
         const frac = val & 0x07FFFFF;
@@ -192,7 +193,7 @@ export class VolviewService {
      * @returns a promise
      */
     public makePromise(volView: VolView, groupName: string, partId: string, volUrl: string, scene: ITOWNS.THREE.Scene,
-                volObjList: ITOWNS.THREE.Object3D[], displayed: boolean): Promise<ITOWNS.THREE.Mesh[]> {
+                volObjList: Array<ITOWNS.THREE.Object3D | null>, displayed: boolean): Promise<ITOWNS.THREE.Mesh[]> {
         const local = this;
         return new Promise( function( resolve, reject ) {
             local.httpService.get(volUrl, { responseType: 'arraybuffer' }).subscribe(
@@ -200,8 +201,7 @@ export class VolviewService {
                     const volResult = data;
                     // If the web server is set up to compress files, then most browsers will decompress
                     // automatically. In future, this step may not be necessary.
-                    const gunzip = new Zlib.Gunzip(new Uint8Array(volResult));
-                    const plain = gunzip.decompress();
+                    const plain = ungzip(new Uint8Array(volResult));
                     volView.ab = new ArrayBuffer(plain.byteLength);
                     volView.uint8View = new Uint8Array(volView.ab);
                     for (let ii = 0; ii < plain.byteLength; ii++) {
@@ -221,18 +221,25 @@ export class VolviewService {
                             // Already in uint8
                             break;
                     }
-                    const objList = local.makeSlices(volView, groupName, partId, [0.0, 0.0, 0.0], [null, null, null], displayed);
+                    const objList: Array<ITOWNS.THREE.Mesh | null> = local.makeSlices(volView, groupName, partId, [0.0, 0.0, 0.0], [null, null, null], displayed);
                     for (const object of objList) {
-                        scene.add(object);
-                        volObjList.push(object);
+                        if (object) {
+                            scene.add(object);
+                            volObjList.push(object);
+                        }
                     }
 
                     // Add wireframe
-                    volView.wireFrObj.visible = displayed;
-                    scene.add(volView.wireFrObj);
-                    volObjList.push(volView.wireFrObj);
-
-                    resolve(objList);
+                    if (volView.wireFrObj) {
+                        volView.wireFrObj.visible = displayed;
+                        scene.add(volView.wireFrObj);
+                        volObjList.push(volView.wireFrObj);
+                    }
+                    resolve(
+                        objList.filter(
+                            (m): m is ITOWNS.THREE.Mesh => m !== null
+                        )
+                    );
                 }, function (err) {
                     console.error('Cannot load volume', err);
                     reject(err);
@@ -326,7 +333,7 @@ export class VolviewService {
                 val = valArr[valArr.length - 1];
             }
             // If the volume contains RGBA
-            if (volView.dataType === DataType.RGBA) {
+            if (volView.dataType === DataType.RGBA && Array.isArray(val)) {
                 dataRGBA[idx * 4] = val[0];
                 dataRGBA[idx * 4 + 1] = val[1];
                 dataRGBA[idx * 4 + 2] = val[2];
@@ -341,11 +348,15 @@ export class VolviewService {
 
             } else {
                 // If no colour data then use greyscale
-                const bwTuple = this.bwLookup(volView, val);
-                dataRGBA[idx * 4] = Math.floor(255.99 * bwTuple[0]);
-                dataRGBA[idx * 4 + 1] = Math.floor(255.99 * bwTuple[1]);
-                dataRGBA[idx * 4 + 2] = Math.floor(255.99 * bwTuple[2]);
-                dataRGBA[idx * 4 + 3] = Math.floor(255.99 * bwTuple[3]);
+                // Note: val is derived from getFromArray which could be (number| [number, number, number, number] | null)
+                //       Presumably this once dealt with RGBA, but bwLookup assumes a single value,hence the typeof check
+                if (typeof val === 'number') {
+                    const bwTuple = this.bwLookup(volView, val);
+                    dataRGBA[idx * 4] = Math.floor(255.99 * bwTuple[0]);
+                    dataRGBA[idx * 4 + 1] = Math.floor(255.99 * bwTuple[1]);
+                    dataRGBA[idx * 4 + 2] = Math.floor(255.99 * bwTuple[2]);
+                    dataRGBA[idx * 4 + 3] = Math.floor(255.99 * bwTuple[3]);
+                }
             }
         }
     }
@@ -365,7 +376,7 @@ export class VolviewService {
        TODO: Make it more general cope with any ORIENTATION
      */
     public makeSlices(volView: VolView, groupName: string, partId: string, pctList: [number, number, number],
-                       objectList: ITOWNS.THREE.Mesh[], displayed: boolean): ITOWNS.THREE.Mesh[] {
+                       objectList: Array<ITOWNS.THREE.Mesh | null>, displayed: boolean): Array<ITOWNS.THREE.Mesh | null> {
 
         // Check for inverted axes
         const inverted = [false, false, false];
@@ -491,15 +502,15 @@ export class VolviewService {
                         }
                     }
                     objectList[dimIdx] = new ITOWNS.THREE.Mesh(geometry, material);
-                    objectList[dimIdx].visible = displayed;
-                    objectList[dimIdx].name = this.makeVolLabel(groupName, partId);
+                    objectList[dimIdx]!.visible = displayed;
+                    objectList[dimIdx]!.name = this.makeVolLabel(groupName, partId);
 
                 } else {
                     // If plane already exists, then just change its material, keeping old opacity
-                    const  oldMaterial = objectList[dimIdx].material;
+                    const  oldMaterial = objectList[dimIdx]!.material;
                     material.opacity = (oldMaterial as ITOWNS.THREE.Material).opacity;
                     material.transparent = (oldMaterial as ITOWNS.THREE.Material).transparent;
-                    objectList[dimIdx].material = material;
+                    objectList[dimIdx]!.material = material;
                 }
 
                 // Calculate position of slice along its dimension, in 3d space
@@ -516,41 +527,41 @@ export class VolviewService {
                     // orientation determines direction relative to origin
                     for (let comp = 0; comp < 3; comp++) {
                         if (comp !== dimIdx) {
-                            objectList[dimIdx].position.setComponent(comp, volView.ORIGIN[comp] +
+                            objectList[dimIdx]!.position.setComponent(comp, volView.ORIGIN[comp] +
                               volView.ORIENTATION[comp].getComponent(comp) * volView.CUBE_SZ[comp] / 2.0);
                         } else {
                             let invOrientOffset = 0.0;
                             if (volView.ORIENTATION[comp].getComponent(comp) < 0.0) {
                                 invOrientOffset = volView.CUBE_SZ[comp];
                             }
-                            objectList[dimIdx].position.setComponent(comp, volView.ORIGIN[comp] - invOrientOffset);
+                            objectList[dimIdx]!.position.setComponent(comp, volView.ORIGIN[comp] - invOrientOffset);
                         }
                     }
-                    objectList[dimIdx].userData.baseSlicePosition = objectList[dimIdx].position.clone();
+                    objectList[dimIdx]!.userData.baseSlicePosition = objectList[dimIdx]!.position.clone();
 
                     // Add in initial displacement
                     const sliceDisp = new ITOWNS.THREE.Vector3(0.0, 0.0, 0.0);
                     sliceDisp.setComponent(dimIdx, disp);
-                    objectList[dimIdx].userData.sliceDisplacement = sliceDisp;
-                    objectList[dimIdx].position.add(sliceDisp);
+                    objectList[dimIdx]!.userData.sliceDisplacement = sliceDisp;
+                    objectList[dimIdx]!.position.add(sliceDisp);
                 }
 
                 // Fetch base position
-                const basePosition: ITOWNS.THREE.Vector3 = objectList[dimIdx].userData.baseSlicePosition.clone();
+                const basePosition: ITOWNS.THREE.Vector3 = objectList[dimIdx]!.userData.baseSlicePosition.clone();
                 // Fetch old slice displacement
-                const oldDisp = objectList[dimIdx].userData.sliceDisplacement;
-                const currentPosition: ITOWNS.THREE.Vector3 = objectList[dimIdx].position.clone();
+                const oldDisp = objectList[dimIdx]!.userData.sliceDisplacement;
+                const currentPosition: ITOWNS.THREE.Vector3 = objectList[dimIdx]!.position.clone();
                 // Calculate new slice displacement
                 const newDisp = new ITOWNS.THREE.Vector3(0.0, 0.0, 0.0);
                 newDisp.setComponent(dimIdx, disp);
 
                 // Adjust position of slice
                 const newPosition = currentPosition.sub(oldDisp).add(newDisp);
-                objectList[dimIdx].position.copy(newPosition);
+                objectList[dimIdx]!.position.copy(newPosition);
 
                 // Store the new 'origPosition' for the height slider to use and new slice displacement
-                objectList[dimIdx].userData.origPosition = basePosition.add(newDisp);
-                objectList[dimIdx].userData.sliceDisplacement = newDisp;
+                objectList[dimIdx]!.userData.origPosition = basePosition.add(newDisp);
+                objectList[dimIdx]!.userData.sliceDisplacement = newDisp;
             }
         }
         return objectList;
@@ -562,7 +573,7 @@ export class VolviewService {
      * @param val the value to convert to a black & white colour
      * @returns [R, G, B, A] numbers
      */
-    private bwLookup(volView, val): [number, number, number, number] {
+    private bwLookup(volView: VolView, val: number): [number, number, number, number] {
         if (volView.minVal === volView.maxVal) {
             return [ 0.5, 0.5, 0.5, 1.0 ];
         }

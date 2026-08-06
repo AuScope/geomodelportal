@@ -50,7 +50,7 @@ export type ModelPartCallbackType =  (groupName: string, modelUrl: string, state
 export class ModelInfoService {
     private httpService: HttpClient;
 
-    private providerModelInfo = {};
+    private providerModelInfo: any = {};
     private providerInfoList: ProviderInfo[] = [];
 
     // Set to true once service has been initialised
@@ -58,27 +58,27 @@ export class ModelInfoService {
 
     // An attempt to make sure loaded files are cached so that files are not downloaded
     // multiple times
-    private modelCache = {};
+    private modelCache: any = {};
 
     // A callback used when some part of the model changes
     // Only one callback can be registered at a time
-    private modelPartCallback: ModelPartCallbackType;
+    private modelPartCallback!: ModelPartCallbackType;
 
     // Stores the current state of the model parts
-    private modelPartState = {};
+    private modelPartState: any = {};
 
     // Subject for catching model control events
     private modelControlEventSub = new Subject<ModelControlEvent>();
 
     // A promise to provider inform data and initialise
-    private initPromise: Promise<any>;
+    private initPromise!: Promise<any>;
 
     // A promise to fetch model data, keyed by model URL
     private modelPromises: Record<string, Promise<any>> = {};
 
     // Used to fetch a list of borehole ids
     private boreholeIdList: string[] = [];
-    private bhPromise: Promise<any>;
+    private bhPromise!: Promise<any>;
 
     // Used to inform of a camera position change
     private cameraPosSub = new Subject<[number, number, number, string]>();
@@ -129,7 +129,7 @@ export class ModelInfoService {
      * @param params parameters Javascript object with key-val pairs
      * @return URL string
      */
-    public buildURL(params): string {
+    public buildURL(params: { [key: string]: string }): string {
         return Object.keys(params).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k])).join('&');
     }
 
@@ -139,7 +139,7 @@ export class ModelInfoService {
      * @param modelName name of model
      * @returns Promise object
      */
-    public getBoreHoleIds(modelName): Promise<any> {
+    public getBoreHoleIds(modelName: string): Promise<any> {
         const local = this;
         const BH_ID = 'borehole:id';
         this.bhPromise = new Promise(function(resolve, reject) {
@@ -174,7 +174,7 @@ export class ModelInfoService {
      * Initialise state of model
      * @param modelInfo model information used to initialise state of model
      */
-    private parseModel(modelInfo) {
+    private parseModel(modelInfo: any) {
         for (const groupName in modelInfo.groups) {
             if (Object.prototype.hasOwnProperty.call(modelInfo.groups, groupName)) {
                 this.addGroup(groupName);
@@ -236,7 +236,7 @@ export class ModelInfoService {
         if (!this.initialised) {
             await this.initialise();
         }
-        let model;
+        let model: any = undefined;
         let sourceOrgName = '';
         for (const providerKey in local.providerModelInfo) {
             if (Object.prototype.hasOwnProperty.call(local.providerModelInfo, providerKey)) {

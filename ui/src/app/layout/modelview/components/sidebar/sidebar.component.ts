@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild, ViewEncapsulation, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ViewEncapsulation, inject, ChangeDetectionStrategy } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { MatSlider, MatSliderThumb, MatSliderChange } from '@angular/material/slider';
@@ -14,7 +14,7 @@ import { NgClass } from '@angular/common';
 import { VolumecontrolsComponent } from './components/volumecontrols/volumecontrols.component';
 
 // Google Analytics
-declare let gtag;
+declare let gtag: any;
 
 // Used to control visibility of parts in the menu
 const DISPLAY_CTRL_ON = 'block';
@@ -29,19 +29,20 @@ const DISPLAY_CTRL_OFF = 'none';
     templateUrl: './sidebar.component.html',
     styleUrls: ['./sidebar.component.scss'],
     encapsulation: ViewEncapsulation.None, // NB: Needed to style the popovers
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [NgClass, NgbPopover, VolumecontrolsComponent, MatSlider,
               MatSliderThumb, FormsModule]
 })
 export class SidebarComponent  implements OnInit, OnDestroy {
     private translate: TranslateService;
-    private modelInfoService: ModelInfoService;
+    public modelInfoService: ModelInfoService;
     private route: ActivatedRoute;
     router: Router;
     private sideBarService: SidebarService;
     private helpinfoService: HelpinfoService;
 
     public isActive = false;    
-    private pushRightClass: 'push-right';
+    private pushRightClass!: 'push-right';
     private localSeqNum = 0;
 
     public showMenu: string | null = '';
@@ -53,10 +54,10 @@ export class SidebarComponent  implements OnInit, OnDestroy {
     public sourceOrgName = '';
 
     // Information taken from model configuration input file
-    private modelConfig = {};
+    public modelConfig: any = {};   // TODO: Make a ModelConfig interface
 
     // Part of the URL which specifies the model name
-    private modelPath: string | null = '';
+    public modelPath: string | null = '';
 
     // Directory name containing model's data files
     private modelDir = '';
@@ -66,16 +67,16 @@ export class SidebarComponent  implements OnInit, OnDestroy {
 
     // State of each part, whether it is displayed or not
     // (initally copied from model info service, then any changes are relayed back to model info service)
-    private modelPartState = {};
+    public modelPartState: any = {};
 
     // Used to toggle the display of menu items (e.g. Height, Transparency) for the parts within the groups
-    private displayControls = {};
+    private displayControls: any = {};
 
     // Subscribe to the help info service
-    private helpSubscr: Subscription;
+    private helpSubscr!: Subscription;
 
     // Subscribe to the sidebar service so that menu items can be revealed by double clicking in the viewing area
-    private compSubscr: Subscription;
+    private compSubscr!: Subscription;
 
     // Menu items use this to trigger the display of help information
     private helpObs: Observable<number> | null = null;
@@ -118,19 +119,19 @@ export class SidebarComponent  implements OnInit, OnDestroy {
 
     // These refer to each help popover in the sidebar
     // NB: If you add a new popover, you must also add a new enum value to WidgetType in 'helpinfo.service'
-    @ViewChild('group_tick_popover') public groupTickPopover: NgbPopover;
-    @ViewChild('group_menu_popover') public groupMenuPopover: NgbPopover;
-    @ViewChild('part_config_popover') public partConfigPopover: NgbPopover;
-    @ViewChild('part_zoom_popover') public partZoomPopover: NgbPopover;
-    @ViewChild('part_download_popover') public partDownloadPopover: NgbPopover;
-    @ViewChild('part_eyeball_popover') public partEyeballPopover: NgbPopover;
-    @ViewChild('part_offset_popover') public partOffsetPopover: NgbPopover;
-    @ViewChild('part_trans_popover') public partTransPopover: NgbPopover;
-    @ViewChild('part_scale_popover') public partScalePopover: NgbPopover;
-    @ViewChild('part_tick_popover') public partTickPopover: NgbPopover;
-    @ViewChild('reset_view_popover', { static: true }) public resetViewPopover: NgbPopover;
-    @ViewChild('mouse_guide_popover', { static: true }) public mouseGuidePopover: NgbPopover;
-    @ViewChild('compass_rose_popover', { static: true }) public compassRosePopover: NgbPopover;
+    @ViewChild('group_tick_popover') public groupTickPopover!: NgbPopover;
+    @ViewChild('group_menu_popover') public groupMenuPopover!: NgbPopover;
+    @ViewChild('part_config_popover') public partConfigPopover!: NgbPopover;
+    @ViewChild('part_zoom_popover') public partZoomPopover!: NgbPopover;
+    @ViewChild('part_download_popover') public partDownloadPopover!: NgbPopover;
+    @ViewChild('part_eyeball_popover') public partEyeballPopover!: NgbPopover;
+    @ViewChild('part_offset_popover') public partOffsetPopover!: NgbPopover;
+    @ViewChild('part_trans_popover') public partTransPopover!: NgbPopover;
+    @ViewChild('part_scale_popover') public partScalePopover!: NgbPopover;
+    @ViewChild('part_tick_popover') public partTickPopover!: NgbPopover;
+    @ViewChild('reset_view_popover', { static: true }) public resetViewPopover!: NgbPopover;
+    @ViewChild('mouse_guide_popover', { static: true }) public mouseGuidePopover!: NgbPopover;
+    @ViewChild('compass_rose_popover', { static: true }) public compassRosePopover!: NgbPopover;
 
     constructor() {
         this.translate = inject(TranslateService);
@@ -408,7 +409,7 @@ export class SidebarComponent  implements OnInit, OnDestroy {
      * @param groupName model part's group name
      * @param partId model part's id
      */
-    private downloadPart(groupName: string, partId: string) {
+    public downloadPart(groupName: string, partId: string) {
         // const partObjList = this.modelConfig['groups'][groupName];
         // for (const partObj of partObjList) {
         //     console.log(partObj.model_url);

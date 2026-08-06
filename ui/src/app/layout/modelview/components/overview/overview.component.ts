@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewEncapsulation, ViewChild, ElementRef, inject } from '@angular/core';
+import { Component, AfterViewInit, ViewEncapsulation, ViewChild, ElementRef, inject, ChangeDetectionStrategy } from '@angular/core';
 import { ModelInfoService, ModelControlEventEnum } from '../../../../shared/services/model-info.service';
 
 // Include threejs library
@@ -25,18 +25,19 @@ const TEXT_SIZE = 400;
     selector: 'app-overview',
     templateUrl: './overview.component.html',
     styleUrls: ['./overview.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     encapsulation: ViewEncapsulation.None // NB: Needed to style the popovers
 })
 export class OverviewComponent implements AfterViewInit {
     private modelInfoService: ModelInfoService;
 
-    @ViewChild('canvas', { static: true }) private canvasRef: ElementRef;
+    @ViewChild('canvas', { static: true }) private canvasRef!: ElementRef;
 
-    private renderer: THREE.WebGLRenderer;
-    private camera: THREE.PerspectiveCamera;
+    private renderer!: THREE.WebGLRenderer;
+    private camera!: THREE.PerspectiveCamera;
 
     // Used to rotate the compass rose
-    private axesObj: THREE.Object3D;
+    private axesObj!: THREE.Object3D;
     public scene: THREE.Scene | null = null;
 
     // Has camera rotation started?

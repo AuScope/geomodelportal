@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { MatSlider, MatSliderThumb } from '@angular/material/slider';
 import { ModelInfoService, ModelPartStateChangeType } from '../../../../../../shared/services/model-info.service';
@@ -7,14 +7,14 @@ import { ModelInfoService, ModelPartStateChangeType } from '../../../../../../sh
     selector: 'app-volumecontrols',
     templateUrl: './volumecontrols.component.html',
     styleUrls: ['./volumecontrols.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [MatSlider, MatSliderThumb, FormsModule]
 })
 export class VolumecontrolsComponent {
-  @Input() dimIdx: number;
-  @Input() groupName: string;
-  @Input() partId: string;
-  @Input() modelPath: string;
-  @Input() modelInfoService: ModelInfoService;
+  @Input() groupName!: string;
+  @Input() partId!: string;
+  @Input() modelPath!: string | null;
+  @Input() modelInfoService!: ModelInfoService;
 
   /**
    * Changes slice of a volume

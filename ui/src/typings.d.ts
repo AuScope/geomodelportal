@@ -1,17 +1,3 @@
-// Minimal type definitions: zlibjs
-declare module 'zlibjs/bin/gunzip.min.js' {
-  namespace Zlib {
-    class Gunzip {
-        constructor(buffer: any);
-        decompress();
-   }
-  }
-}
-
-// Minimal type definitions: three-gltf2-loader
-declare module 'three-gltf2-loader/lib/main';
-
-
 // Minimal type definitions: itowns
 declare module 'itowns/dist/itowns' {
 
@@ -46,7 +32,6 @@ declare module 'itowns/dist/itowns' {
     import * as THREE from 'three';
     export { THREE };
 
-    export * from 'itowns';
     export const STRATEGY_DICHOTOMY: number;
 }
 
