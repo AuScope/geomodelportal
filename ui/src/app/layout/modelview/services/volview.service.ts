@@ -199,9 +199,11 @@ export class VolviewService {
             local.httpService.get(volUrl, { responseType: 'arraybuffer' }).subscribe(
                 function (data) {
                     const volResult = data;
-                    // If the web server is set up to compress files, then most browsers will decompress
-                    // automatically. In future, this step may not be necessary.
-                    const plain = ungzip(new Uint8Array(volResult));
+
+                    // Convert the volume data to an ArrayBuffer, decompressing if not done so by the browser or web server.
+                    const bytes = new Uint8Array(volResult);
+                    const plain = bytes.length >= 2 && bytes[0] === 0x1f && bytes[1] === 0x8b ? ungzip(bytes) : bytes;
+                    
                     volView.ab = new ArrayBuffer(plain.byteLength);
                     volView.uint8View = new Uint8Array(volView.ab);
                     for (let ii = 0; ii < plain.byteLength; ii++) {
