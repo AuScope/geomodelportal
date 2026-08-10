@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { HelpinfoService, WidgetType } from '../../services/helpinfo.service';
 
 
@@ -8,6 +8,7 @@ const MODEL_INIT_MSG = 'Model demonstration';
 @Component({
     selector: 'app-help',
     templateUrl: './help.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./help.component.scss']
 })
 export class HelpComponent {

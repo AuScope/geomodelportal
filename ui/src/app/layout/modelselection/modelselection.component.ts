@@ -1,8 +1,6 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { routerTransition } from '../../router.animations';
-
-
 
 import { ModelInfoService } from '../../shared/services/model-info.service';
 import { ModelCardComponent } from '../../shared/modules/model-card/modelcard.component';
@@ -12,6 +10,7 @@ import { ModelCardComponent } from '../../shared/modules/model-card/modelcard.co
     templateUrl: './modelselection.component.html',
     styleUrls: ['./modelselection.component.scss'],
     animations: [routerTransition()],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [ModelCardComponent]
 })
 export class ModelSelectionComponent implements OnInit {
@@ -30,7 +29,7 @@ export class ModelSelectionComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.providerPath = this.route.snapshot.paramMap.get('providerPath');
+        this.providerPath = this.route.snapshot.paramMap.get('providerPath')!;
         this.modelInfoService.getProviderModelInfo().then(res => { this.providerModels = res; });
     }
 

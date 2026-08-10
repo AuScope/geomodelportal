@@ -1,4 +1,4 @@
-import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { enableProdMode, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 
 import { createTranslateLoader } from './app/app.module';
 import { environment } from './environments/environment';
@@ -6,7 +6,7 @@ import { ModelInfoService } from './app/shared/services/model-info.service';
 import { SidebarService } from './app/layout/modelview/services/sidebar.service';
 import { HelpinfoService } from './app/layout/modelview/services/helpinfo.service';
 import { APP_BASE_HREF, CommonModule } from '@angular/common';
-import { provideHttpClient, withInterceptorsFromDi, HttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, HttpClient, withXhr } from '@angular/common/http';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -20,7 +20,7 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
     providers: [
-        importProvidersFrom(CommonModule, BrowserModule, TranslateModule.forRoot({
+        provideZoneChangeDetection(),importProvidersFrom(CommonModule, BrowserModule, TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
                 useFactory: createTranslateLoader,
@@ -38,7 +38,7 @@ bootstrapApplication(AppComponent, {
                 }
                 return '';
             } },
-        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClient(withXhr(), withInterceptorsFromDi()),
         provideAnimations()
     ]
 })

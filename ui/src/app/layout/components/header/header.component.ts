@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../../../environments/environment';
@@ -9,6 +9,7 @@ import { environment } from '../../../../environments/environment';
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
@@ -118,7 +119,7 @@ export class HeaderComponent implements OnInit {
      * Detects if in the models page and previous page was a provider
      */
     public detectProvider() {
-        const navigationState = (this.router.getCurrentNavigation()?.extras.state ?? window.history.state) as { fromProvider?: boolean; providerPath?: string } | undefined;
+        const navigationState = (this.router.currentNavigation()?.extras.state ?? window.history.state) as { fromProvider?: boolean; providerPath?: string } | undefined;
         const currentPath = this.normalizePath(this.router.url || window.location.pathname);
         const referrerPath = document.referrer ? this.normalizePath(new URL(document.referrer).pathname) : '';
 

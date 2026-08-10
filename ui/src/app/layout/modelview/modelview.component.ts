@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, Renderer2, ElementRef, OnDestroy } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, Renderer2, ElementRef, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { inject } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -13,13 +13,13 @@ import { HelpinfoService } from './services/helpinfo.service';
 import { VolView, VolviewService, DataType } from './services/volview.service';
 import { SceneObject, PlaneSceneObject, WMSSceneObject, VolSceneObject, addSceneObj } from './scene-object';
 import { hasWebGL, detectIE, getWebGLErrorMessage, createErrorBox, createMissingIEMsgBox, makePopup } from './html-helpers';
-import { Zlib } from 'zlibjs/bin/gunzip.min.js';
 import { featureEach } from '@turf/meta';
 import { getCoord, getCoords, getType } from '@turf/invariant';
 import { Feature, Point, LineString } from 'geojson';
+import { ungzip } from 'pako';
 
 // Google Analytics
-declare let gtag;
+declare let gtag: any;
 
 
 // Import itowns library
@@ -52,6 +52,7 @@ const BACKGROUND_COLOUR = 0xC0C0C0;
     templateUrl: './modelview.component.html',
     styleUrls: ['./modelview.component.scss'],
     animations: [routerTransition()],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [SidebarComponent, NgClass, NgbCollapse, HelpComponent, NgStyle, OverviewComponent, DecimalPipe]
 })
 export class ModelViewComponent  implements AfterViewInit, OnDestroy {
@@ -64,46 +65,46 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     private httpService: HttpClient;
     private volViewService: VolviewService;
 
-    @ViewChild('viewerDiv', { static: true }) private viewerDivElem: ElementRef;
-    @ViewChild('popupBoxDiv', { static: true }) private popupBoxDivElem: ElementRef;
-    @ViewChild('errorDiv', { static: true }) private errorDivElem: ElementRef;
-    @ViewChild('spinnerDiv', { static: true }) private spinnerDivElem: ElementRef;
+    @ViewChild('viewerDiv', { static: true }) private viewerDivElem!: ElementRef;
+    @ViewChild('popupBoxDiv', { static: true }) private popupBoxDivElem!: ElementRef;
+    @ViewChild('errorDiv', { static: true }) private errorDivElem!: ElementRef;
+    @ViewChild('spinnerDiv', { static: true }) private spinnerDivElem!: ElementRef;
 
     // iTowns extent object
-    private extentObj;
+    private extentObj: any;
 
     // <div> where the 3d objects are displayed
-    private viewerDiv: HTMLElement| null = null;
+    private viewerDiv: HTMLElement | null = null;
 
     // <div> where popup information boxes live
     private popupBoxDiv: HTMLElement | null = null;
 
     // View object
-    private view;
+    private view: any;
 
     // Scene object
-    private scene;
+    private scene: any;
 
     // Nested dictionary of 'SceneObject' used by model controls div, partId is model URL
-    private sceneArr: Record<string, Record<string, SceneObject>>; // { [groupName: string]: { [partId: string]: SceneObject } };
+    private sceneArr!: Record<string, Record<string, SceneObject>>; // { [groupName: string]: { [partId: string]: SceneObject } };
 
     // Track ball controls object
     private trackBallControls: any = null;
 
     // Raycaster object
-    private raycaster;
+    private raycaster: any;
 
     // Mouse object
     private mouse = new ITOWNS.THREE.Vector2();
 
     // Configuration object
-    private config;
+    private config: any;
 
     // Directory where model files are kept
-    private modelDir;
+    private modelDir: any;
 
     // Current model's name as part if its URL
-    private modelUrlPath;
+    private modelUrlPath: any;
 
     // Virtual sphere radius
     public sphereRadius = 0.0;
@@ -116,7 +117,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     public modelDemoSeqNum = -1.0;
 
     // Subscribe to help info service to allow model demonstrations
-    private helpSubscr: Subscription;
+    private helpSubscr!: Subscription;
 
     // Popup box that is created during sidebar help tour
     public demoPopupMsg = '';
@@ -131,13 +132,13 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     public isMouseGuideOn = false;
 
     // Used to tell user that their browser is not supported
-    private errorDiv;
+    private errorDiv: any;
 
     // Used to indicate that the model is loading
-    private spinnerDiv;
+    private spinnerDiv: any;
 
     // FIXME: To be subsumed into a lookup service in future
-    private volLabelArr: Record<string, Record<string, object>> = {}; // { [groupName: string]: { [partId: string]: object } } = {};
+    private volLabelArr: Record<string, Record<string, any>> = {}; // { [groupName: string]: { [partId: string]: object } } = {};
 
     // Collection of 'VolView' objects, used to keep track of and display volume data
     private volViewArr: Record<string, Record<string, VolView>> = {}; // { [groupName: string]: { [partId: string]: VolView } } = {};
@@ -146,14 +147,14 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
     private gltfLoader;
 
     // Used to create 'FileImport' object to import files into scene
-    private fileImport : FileImport;
+    private fileImport!: FileImport;
 
     // File drop is enabled
     public enableFileDrop = false;
 
     // Is mouse dragging a file into scene?
     private isDragging = false;
-    private dragTimer;
+    private dragTimer: any;
 
     // Model's coordinate reference system
     public crs = 'blah';
@@ -333,7 +334,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param config data from model's configuration file
      * @returns true iff a volume was found else false
      */
-    private initialiseVolume(config) {
+    private initialiseVolume(config: any) {
         // Look for volumes
         if (Object.prototype.hasOwnProperty.call(config, 'groups')) {
             for (const groupName in config.groups) {
@@ -376,7 +377,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * @param config model configuration JSON
      * @param modelDir directory where model files are found
      */
-    private initialiseModel(config, modelDir: string) {
+    private initialiseModel(config: any, modelDir: string) {
         const props = config.properties;
         this.config = config;
         this.modelDir = modelDir;
@@ -579,10 +580,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                     function (gzsonObject) {
                                         console.log('loaded: ', local.modelDir + '/' + part.model_url);
                                         const view = new Uint8Array(gzsonObject);
-                                        const gunzip = new Zlib.Gunzip(view);
                                         let plain;
                                         try {
-                                            plain = gunzip.decompress();
+                                            plain = ungzip(new Uint8Array(view));
                                         } catch (zlibError) {
                                             console.error("Cannot decompress " + part.model_url + ". It is not GZIP:" + zlibError);
                                             const enc = new TextEncoder()
@@ -602,7 +602,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                                 // Colour list
                                                 const colList: number[] = [];
                                                 // Lookup values using colour
-                                                const colourLookup = {};
+                                                const colourLookup: any = {};
                                                 const col = new ITOWNS.THREE.Color();
                                                 featureEach(featureColl, function(feat: Feature<Point>, idx) {
                                                     const coord = getCoord(feat);
@@ -611,9 +611,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                                         col.setRGB(col_tup[0], col_tup[1], col_tup[2]);
                                                         ptList.push(coord[0], coord[1], coord[2]);
                                                         colList.push(col.r, col.g, col.b);
-                                                        colourLookup[col.r.toFixed(2)+"-"
-                                                                     +col.g.toFixed(2)+"-"
-                                                                     +col.b.toFixed(2)] = feat?.properties?.val;
+                                                        colourLookup[col.r.toFixed(2) + "-" +
+                                                                     col.g.toFixed(2) + "-" +
+                                                                     col.b.toFixed(2)] = feat?.properties?.val;
                                                     }
                                                 });
                                                 geometry.setAttribute('position', new ITOWNS.THREE.Float32BufferAttribute(ptList, 3));
@@ -724,7 +724,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             (function(part, grp) {
                                 local.gltfLoader.load('./assets/geomodels/' + local.modelDir + '/' + part.model_url,
                                     // function called if loading successful
-                                    function (gObject) {
+                                    function (gObject: any) {
                                         console.log('loaded: ', local.modelDir + '/' + part.model_url);
                                         gObject.scene.name = part.model_url;
                                         if (!part.displayed) {
@@ -777,7 +777,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         // }
                                     },
                                     // function called when loading fails
-                                    function (error) {
+                                    function (error: any) {
                                         console.error('GLTF/OBJ load error!', error);
                                         local.gltfCnt++;
                                         // Accept errors
@@ -826,7 +826,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                     // Load up GLTF boreholes
                     local.gltfLoader.load('./api/' + modelName + '?' + local.modelInfoService.buildURL(params),
                         // function called if loading successful
-                        function (gObject) {
+                        function (gObject: any) {
                             const groupName = 'NVCL Boreholes';
                             gObject.scene.name = 'Borehole_' + boreholeId;
                             // Add borehole to scene
@@ -847,7 +847,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             }*/
                         },
                         // function called when loading fails
-                        function (error) {
+                        function (error: any) {
                             console.error('BOREHOLE ', boreholeId, ' GLTF load error!', error);
                         }
                     );
@@ -907,7 +907,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         const manager = new ITOWNS.THREE.LoadingManager();
         const local = this;
         const textureLoader = new ITOWNS.THREE.TextureLoader(manager);
-        const promiseList: Promise<ITOWNS.THREE.Mesh>[] = [];
+        const promiseList: Promise<ITOWNS.THREE.Mesh | null>[] = [];
         for (const group in local.config.groups) {
             if (Object.prototype.hasOwnProperty.call(local.config.groups, group)) {
                 const parts = local.config.groups[group];
@@ -1073,6 +1073,10 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      */
     private createView() {
         const local = this;
+        if (!this.viewerDiv) {
+            console.error('Cannot create view because viewerDiv is null');
+            return;
+        }
         // Create an instance of PlanarView
         this.view = new ITOWNS.PlanarView(this.viewerDiv, this.extentObj, {scene3D: this.scene, maxSubdivisionLevel: 2.0,
                                                                            disableSkirt: true, noControls: true});
@@ -1185,7 +1189,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                                         if (objName.indexOf('|') > -1) {
                                             title = objName.split('|')[1];
                                         }
-                                        const popObj = {'title': title, 'val': val };
+                                        const popObj: any = { 'title': title, 'val': val };
                                         const valStr = val.toString();
                                         if (Object.prototype.hasOwnProperty.call(local.volLabelArr, group) &&
                                             Object.prototype.hasOwnProperty.call(local.volLabelArr[group], partId) &&
@@ -1252,9 +1256,9 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
                             const modelName = local.modelUrlPath;
                             local.httpService.get('./api/' + modelName + '?' + local.modelInfoService.buildURL(params)).subscribe(
                                 data => {
-                                    const dataResult = data as string [];
+                                    const dataResult: any = data;
                                     const attrList = dataResult['featureInfos'][0]['featureAttributeList'];
-                                    const queryResult = {};
+                                    const queryResult: any = {};
                                     for (const keyval of attrList) {
                                         queryResult[keyval['name']] = keyval['value'];
                                     }
@@ -1275,12 +1279,11 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
         });
 
         // 3 axis virtual globe controller
-        this.trackBallControls = new ThreeDVirtSphereCtrls(this.scene, this.viewerDiv, this.view.camera.camera3D,
+        this.trackBallControls = new (ThreeDVirtSphereCtrls as any)(this.scene, this.viewerDiv, this.view.camera.camera3D,
                                         this.view, this.extentObj.center().toVector3(), this.initCamDist,
                                         this.cameraPosChange.bind(this));
         this.onResize();
    
-
         // Wait for the signal to start model demonstration
         const helpObs = this.helpinfoService.waitForModelDemo();
         this.helpSubscr = helpObs.subscribe(seqNum => { this.runModelDemo(seqNum); });
@@ -1414,7 +1417,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * and enable on screen instructions
      * @param ev event object
      */
-    public dragEnterHandler(ev) {
+    public dragEnterHandler(ev: DragEvent) {
         ev.preventDefault();
         this.enableFileDrop = true;
     }
@@ -1424,7 +1427,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * prevent default behavior (stop file being opened)
      * @param ev event object
      */
-    public preventDefault(ev) {
+    public preventDefault(ev: DragEvent) {
         // Prevent default behaviour (stop file being opened)
         ev.preventDefault();
         this.isDragging = true;
@@ -1437,7 +1440,7 @@ export class ModelViewComponent  implements AfterViewInit, OnDestroy {
      * When a GOCAD file is droppped into the square, it is converted, then loaded into the scene
      * @param ev event object
      **/
-    public dropHandler(ev) {
+    public dropHandler(ev: DragEvent) {
         // Prevent default behaviour (stop file being opened)
         ev.preventDefault();
         // Tell Google Analytics

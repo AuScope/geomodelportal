@@ -48,7 +48,7 @@
                           <li>
                             <!-- 3D Slice Controls -->
                             @if (isFirst && subGroupObj.type === '3DVolume') {
-                              <app-volumecontrols [dimIdx]="dimIdx" [groupName]="groupName" [partId]="subGroupObj.model_url" [modelPath]="modelPath" [modelInfoService]="modelInfoService"></app-volumecontrols>
+                              <app-volumecontrols [groupName]="groupName" [partId]="subGroupObj.model_url" [modelPath]="modelPath" [modelInfoService]="modelInfoService"></app-volumecontrols>
                             }
                             <a class="a-part-name list-group-item">
                               <!-- Checkbox and name section -->

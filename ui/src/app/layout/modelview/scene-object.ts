@@ -8,7 +8,7 @@ import { VolView, VolviewService } from './services/volview.service';
  * @param sceneObj scene object
  * @param groupName group name
  */
-export function addSceneObj(sceneArr, part, sceneObj: SceneObject, groupName: string) {
+export function addSceneObj(sceneArr: any, part: any, sceneObj: SceneObject, groupName: string) {
     if (!Object.prototype.hasOwnProperty.call(sceneArr, groupName)) {
         sceneArr[groupName] = {};
     }
@@ -43,12 +43,12 @@ export class SceneObject {
             if (visibility) {
                 // Layer 0 is the default layer
                 this.sceneObj.layers.set(0)
-                this.sceneObj.traverse(function(child) {
+                this.sceneObj.traverse(function(child: any) {
                     child.layers.set(0);
                 });
             } else {
                 this.sceneObj.layers.disableAll();
-                this.sceneObj.traverse(function(child) {
+                this.sceneObj.traverse(function(child: any) {
                     child.layers.disableAll();
                 });
             }
@@ -61,7 +61,7 @@ export class SceneObject {
      */
     public setTransparency(transparency: number) {
         const local = this;
-        this.sceneObj.traverseVisible( function(child) {
+        this.sceneObj.traverseVisible(function(child: any) {
             if (child.type === 'Mesh' && Object.prototype.hasOwnProperty.call(child, 'material')) {
                 if (child['material'].type === 'MeshStandardMaterial') {
                     local.setMatTransparency(child['material'], transparency);
@@ -109,7 +109,7 @@ export class SceneObject {
         // Move GLTF object
         let found = false;
         const local = this;
-        this.sceneObj.traverseVisible( function(child) {
+        this.sceneObj.traverseVisible(function(child: any) {
             if (!found && child.type === 'Object3D') {
                 local.setObjDisplacement(child, displacement);
                 found = true;
@@ -136,7 +136,7 @@ export class SceneObject {
         // Move GLTF object
         let found = false;
         const local = this;
-        this.sceneObj.traverseVisible( function(child) {
+        this.sceneObj.traverseVisible(function(child: any) {
             if (!found && child.type === 'Object3D') {
                 local.setObjScale(child, dimIdx, scale);
                 found = true;
@@ -230,7 +230,7 @@ export class VolSceneObject extends SceneObject {
         this.volViewService = volViewService;
         this.volView = volView;
     }
-    public volObjList: ITOWNS.THREE.Mesh[] = [];
+    public volObjList: Array<ITOWNS.THREE.Mesh | null> = [];
     private volViewService: VolviewService;
     private volView: VolView;
 
@@ -240,17 +240,17 @@ export class VolSceneObject extends SceneObject {
      */
     public setVisibility(visibility: boolean) {
         for (const obj of this.volObjList) {
-            obj.visible = visibility;
+            obj!.visible = visibility;
             // Enable/disable layer membership so it can be seen by raycaster and double clicked on
             if (visibility) {
                 // Layer 0 is the default layer
-                obj.layers.set(0)
-                this.sceneObj?.traverse(function(child) {
+                obj!.layers.set(0)
+                this.sceneObj?.traverse(function(child: any) {
                     child.layers.set(0);
                 });
              } else {
-                obj.layers.disableAll();
-                obj.traverse(function(child) {
+                obj!.layers.disableAll();
+                obj!.traverse(function(child: any) {
                     child.layers.disableAll();
                 });
 	    }
@@ -274,7 +274,7 @@ export class VolSceneObject extends SceneObject {
      */
     public setTransparency(transparency: number) {
         for (const obj of this.volObjList) {
-            this.setMatTransparency((obj.material as ITOWNS.THREE.Material), transparency);
+            this.setMatTransparency((obj!.material as ITOWNS.THREE.Material), transparency);
         }
     }
 
@@ -284,7 +284,7 @@ export class VolSceneObject extends SceneObject {
      */
     public setDisplacement(displacement: ITOWNS.THREE.Vector3) {
         for (const obj of this.volObjList) {
-            this.setObjDisplacement(obj, displacement);
+            this.setObjDisplacement(obj!, displacement);
         }
     }
 }

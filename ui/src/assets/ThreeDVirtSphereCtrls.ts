@@ -41,8 +41,8 @@ const VIRT_SPHERE_RADIUS = 0.33333;
 * @param initCameraDist initial distance from camera to centre of model (metres)
 * @param mouseEventCallback function to be called upon mouse events format: function()
 */
-function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.PerspectiveCamera, view,
-                               rotCentre: THREE.Vector3, initCameraDist: number, cameraMoveCallback) {
+function ThreeDVirtSphereCtrls(this: any, scene: THREE.Object3D, viewerDiv: HTMLElement, camera: THREE.PerspectiveCamera, view: any,
+                               rotCentre: THREE.Vector3, initCameraDist: number, cameraMoveCallback: () => void) {
     const local = this;
     this.domElement = view.mainLoop.gfxEngine.renderer.domElement;
     this.rotCentre = rotCentre;
@@ -95,7 +95,7 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
      * Called when we need to update our record of the mouse position and delta
      * @param event mouse event
      */
-    this.updateMousePositionAndDelta = function updateMousePositionAndDelta(event) {
+    this.updateMousePositionAndDelta = function updateMousePositionAndDelta(event: MouseEvent) {
         mousePosition.set(event.offsetX, event.offsetY);
     };
 
@@ -104,7 +104,7 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
       * Called when mouse pointer is moved
       * @param event mouse event
       */
-    this.onMouseMove = function onMouseMove(event) {
+    this.onMouseMove = function onMouseMove(event: MouseEvent) {
         event.preventDefault();
         local.updateMousePositionAndDelta(event);
 
@@ -133,7 +133,7 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
      * Called when mouse wheel is rotated
      * @param event mouse event
      */
-    this.onMouseWheel = function onMouseWheel(event) {
+    this.onMouseWheel = function onMouseWheel(event: WheelEvent) {
         event.preventDefault();
         event.stopPropagation();
         if (event.deltaY > 0) {
@@ -182,7 +182,7 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
      * i.e. update rotational centre of model and mouse position tracking
      * @param event mouse event
      */
-    this.onMouseUp = function onMouseUp(event) {
+    this.onMouseUp = function onMouseUp(event: MouseEvent) {
         event.preventDefault();
         // Try to rotate the object around a point on the model, by casting a ray to centre of screen
         // If no part of the model is in centre of screen, then rotate around a point in space
@@ -234,7 +234,7 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
      * Initiates rotation or drag when any mouse button is pressed down
      * @param event mouse event
      */
-    this.onMouseDown = function onMouseDown(event) {
+    this.onMouseDown = function onMouseDown(event: MouseEvent) {
         event.preventDefault();
         local.updateMousePositionAndDelta(event);
         // Store the current camera position in world coords to help move model rotational centre
@@ -282,7 +282,7 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
     /*
     * Updates the view and camera if needed
     */
-    this.update = function update(_dt, _updateLoopRestarted) {
+    this.update = function update(_dt: number, _updateLoopRestarted: boolean) {
         if (local.state === STATE.DRAG) {
             local.handleDragMovement();
         }
@@ -469,7 +469,7 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
     this.getDirection = (() => {
         const direction = new THREE.Vector3(0, 0, -1);
         const rotation = new THREE.Euler(0, 0, 0, 'YXZ');
-        return (v) => {
+        return (v: THREE.Vector3) => {
             rotation.set(rObject.rotation.x, rObject.rotation.y, rObject.rotation.z);
             v.copy(direction).applyEuler(rotation);
             return v;
@@ -566,14 +566,14 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
      * Moves the camera to look at an object in the scene
      * @param sceneObj object (Object3D) to be looked at
      */
-    this.moveViewToObj = function moveViewToSceneObj(sceneObj) {
+    this.moveViewToObj = function moveViewToSceneObj(sceneObj: THREE.Mesh) {
         let maxR = -1.0;
         let maxObj = null;
         const sumCentre = new THREE.Vector3();
         let numCentre = 0;
         const maxCentre = new THREE.Vector3(-Number.MAX_SAFE_INTEGER, -Number.MAX_SAFE_INTEGER, -Number.MAX_SAFE_INTEGER);
         const minCentre = new THREE.Vector3(Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER);
-        sceneObj.traverse(function(obj) {
+        sceneObj.traverse(function(obj: any) {
             // Survey geometry of object, getting mean centre and dimensions from bounding sphere
             if (obj.geometry && obj.geometry.boundingSphere) {
                 const centre = new THREE.Vector3(obj.geometry.boundingSphere.center.x,
@@ -590,11 +590,11 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
          });
          // If not successful look for vertex coords in geometry attributes
          if (numCentre === 0) {
-             sceneObj.traverse(function(obj) {
-                 let x, y, z;
+             sceneObj.traverse(function(obj: any) {
+                 let x: number, y: number, z: number;
                  // Survey geometry of object, getting mean centre and max & min dimensions
                  if (obj.geometry && obj.geometry.attributes && obj.geometry.attributes.position) {
-                     obj.geometry.attributes.position.array.forEach(function(elem, idx, _arr) {
+                     obj.geometry.attributes.position.array.forEach(function(elem: number, idx: number, _arr: number[]) {
                          switch (idx % 3) {
                              case 0:
                                  x = elem;
@@ -657,7 +657,7 @@ function ThreeDVirtSphereCtrls(scene: THREE.Object3D, viewerDiv, camera: THREE.P
     this.viewerDiv.addEventListener('mousedown', this.onMouseDown, false);
     this.viewerDiv.addEventListener('wheel', this.onMouseWheel, false);
     // Stops the right hand click menu item popping up in the viewing area
-    this.viewerDiv.addEventListener('contextmenu', event => event.preventDefault());
+    this.viewerDiv.addEventListener('contextmenu', (event: any) => event.preventDefault());
 }
 
 export default ThreeDVirtSphereCtrls;

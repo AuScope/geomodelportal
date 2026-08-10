@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, Input, ChangeDetectionStrategy } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { Router } from '@angular/router';
 
@@ -9,15 +9,16 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'app-provider-card',
     templateUrl: './providercard.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./providercard.component.scss']
 })
 export class ProviderCardComponent {
-    @Input() bgClass: string;
-    @Input() icon: string;
-    @Input() count: number;
-    @Input() label: string;
-    @Input() data: number;
-    @Input() providerPath: string;
+    @Input() bgClass!: string;
+    @Input() icon!: string;
+    @Input() count!: number;
+    @Input() label!: string;
+    @Input() data!: number;
+    @Input() providerPath!: string;
     @Input() prePath = '';
     @Input() infoLink = '';
 

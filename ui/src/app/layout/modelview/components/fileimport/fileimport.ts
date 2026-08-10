@@ -22,7 +22,7 @@ export class FileImport {
     private gltfLoader;
 
     // Promise used to wrap loading of GLTF file into scene
-    private gltfPromise;
+    private gltfPromise!: Promise<string[]>;
 
     // Current model's name as part if its URL
     private modelUrlPath: string;
@@ -92,7 +92,7 @@ export class FileImport {
      * Reads and parses file
      * @param data file's data
      */
-    private readAndConvert(data, fileName: string): string[] {
+    private readAndConvert(data: string[] | ArrayBuffer, fileName: string): string[] {
         const local = this;
         try {
             // Convert to string
@@ -104,7 +104,7 @@ export class FileImport {
             }
             const uint = new Uint8Array(arr);
             local.gltfLoader.parse(uint, './api/',
-                function(gObject) {
+                function(gObject: any) {
                     if (gObject) {
                         const fileNameId = local.fileCount.toString() + '_' + fileName.substring(0, 24);
                         local.fileCount++;
@@ -137,7 +137,7 @@ export class FileImport {
                         }
                     }
                 },
-                function(err) {
+                function(err: any) {
                     console.error('An error occurred parsing the GLTF file: ', err);
                 }
             );
@@ -153,9 +153,9 @@ export class FileImport {
      * Fetches file from browser and starts the conversion to GLTF process
      * @param ev event object
      */
-    public doTryConvert(ev) {
+    public doTryConvert(ev: DragEvent) {
         const local = this;
-        if (ev.dataTransfer.items) {
+        if (ev.dataTransfer?.items) {
             // Use DataTransferItemList interface to access the file(s)
             for (const item of ev.dataTransfer.items) {
                 // If dropped items aren't files, reject them
@@ -183,8 +183,11 @@ export class FileImport {
                 }
             }
         } else {
+            if (!ev.dataTransfer) {
+                return;
+            }
             // Use DataTransfer interface to access the file(s)
-            for (let i = 0; i < ev.dataTransfer.files.length; i++) {
+            for (let i = 0; i < ev.dataTransfer?.files.length; i++) {
                 console.log('ev.dataTransfer.files[' + i + '].name = ' + ev.dataTransfer.files[i].name);
             }
        }

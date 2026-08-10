@@ -147,7 +147,7 @@ export function addTextLineToPopup(ngRenderer: Renderer2, popupBoxDiv: HTMLEleme
  * @param popupInfo JSON object of the information to be displayed in the popup box
  * @param point point clicked on in XYZ coordinates (format is [x, y, z]]
  */
-export function makePopup(ngRenderer: Renderer2, popupBoxDiv: HTMLElement, event, popupInfo, point: [number, number, number]) {
+export function makePopup(ngRenderer: Renderer2, popupBoxDiv: HTMLElement, event: MouseEvent, popupInfo: any, point: [number, number, number]) {
     // Position it and let it be seen
     ngRenderer.setStyle(popupBoxDiv, 'top', event.clientY);
     ngRenderer.setStyle(popupBoxDiv, 'left', event.clientX);

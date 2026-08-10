@@ -6,9 +6,14 @@
 */
 {
   "compilerOptions": {
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "moduleResolution": "bundler"
   },
-  "files": [],
+  "files": [
+    "main.ts",
+    "polyfills.ts",
+    "typings.d.ts"
+  ],
   "references": [
     {
       "path": "./src/tsconfig.app.json"
